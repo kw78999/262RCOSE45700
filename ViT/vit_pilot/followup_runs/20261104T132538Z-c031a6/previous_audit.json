@@ -1,0 +1,91 @@
+{
+  "previous_run": "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+  "timing_records": 104,
+  "recomputed": [
+    {
+      "case_id": "fixed_compile_b1_t1",
+      "mean_ms": 3.7102307,
+      "valid_repeats": 20,
+      "stdev_ms": 0.20677282473058003,
+      "batch": 1,
+      "mode": "compile"
+    },
+    {
+      "case_id": "fixed_compile_b4_t1",
+      "mean_ms": 10.47408295,
+      "valid_repeats": 20,
+      "stdev_ms": 0.011273894472466694,
+      "batch": 4,
+      "mode": "compile"
+    },
+    {
+      "case_id": "fixed_eager_b1_t1",
+      "mean_ms": 1027.9730093,
+      "valid_repeats": 20,
+      "stdev_ms": 37.23570512260946,
+      "batch": 1,
+      "mode": "eager"
+    },
+    {
+      "case_id": "fixed_eager_b4_t1",
+      "mean_ms": 1124.33514735,
+      "valid_repeats": 20,
+      "stdev_ms": 39.78590052979099,
+      "batch": 4,
+      "mode": "eager"
+    }
+  ],
+  "input_tensor_hashes_match": {
+    "1": true,
+    "4": true
+  },
+  "input_file_matches": true,
+  "source_review": {
+    "timer": "common.timed_call: prewait outside timer; runner + stream completion inside; no print/file I/O/cpu output copy",
+    "model_load": "vit.prepare_model_inputs before runner/timer; no pre-forward",
+    "runner_reuse": "one runner per worker; compile/model loading outside loop",
+    "input": "fixed stored CPU synthetic tensor; no regeneration",
+    "runtime_internal": "SDK dispatch/program loading/internal copies can still occur inside runner",
+    "precision": "BF16 model/input/output; SDK implicit casting default retained",
+    "torch_cpu_build": "Not evidence of CPU tensor execution; PrivateUse1 Furiosa extension observed"
+  },
+  "original_common_sha256": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+  "previous_config": {
+    "run_id": "20261104T113745Z-8fccff",
+    "device": "furiosa:0",
+    "warmup": 5,
+    "repeats": 20,
+    "trials": 1,
+    "worker_timeout_seconds": 1800,
+    "total_budget_seconds": 7200,
+    "dtype": "torch.bfloat16",
+    "batches": [
+      1,
+      4
+    ],
+    "shape_sequence": [
+      1,
+      1,
+      4,
+      4,
+      1,
+      4
+    ],
+    "model_id": "torchvision.models.vit_b_16",
+    "weights_id": "ViT_B_16_Weights.IMAGENET1K_V1",
+    "atol": null,
+    "rtol": null,
+    "images": null,
+    "cache_state": "fresh_process_persistent_cache_possible",
+    "cache_note": "new run-local cache via verified SDK cache_context; shared by all sequential workers; smoke may populate it",
+    "synthetic_input": true,
+    "expected_fixed_records": 104,
+    "expected_shape_records": 12,
+    "independent_trials_per_case": 1
+  },
+  "original_synthetic_paired_speedup_recalculated": {
+    "1": 277.0644448874837,
+    "4": 107.34449523812488
+  },
+  "original_speedup_interpretation": "Historical mixed-path ratio; not a demonstrated NPU-only Eager/Compile speedup"
+}

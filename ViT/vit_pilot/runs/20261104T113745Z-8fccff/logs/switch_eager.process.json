@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/root/venv/bin/python",
+    "-u",
+    "/root/ViT/vit_pilot/worker.py",
+    "--run",
+    "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+    "--case",
+    "switch_eager",
+    "--kind",
+    "switch",
+    "--mode",
+    "eager",
+    "--trial",
+    "1"
+  ],
+  "started_utc": "2026-11-04T11:53:40.607130+00:00",
+  "timeout_seconds": 1800,
+  "stdout": "logs/switch_eager.stdout.log",
+  "stderr": "logs/switch_eager.stderr.log",
+  "diagnostic_logging": true,
+  "logging_env": {
+    "TORCH_LOGS": "recompiles,graph_breaks",
+    "FURIOSA_TORCH_LOG": "debug"
+  },
+  "worker_id": 110814,
+  "status": "ok",
+  "returncode": 0,
+  "ended_utc": "2026-11-04T11:53:59.617455+00:00",
+  "elapsed_seconds": 19.010349577991292
+}

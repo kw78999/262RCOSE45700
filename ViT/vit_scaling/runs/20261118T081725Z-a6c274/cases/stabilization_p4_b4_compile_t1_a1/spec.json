@@ -1,0 +1,14 @@
+{
+  "case_id": "stabilization_p4_b4_compile_t1_a1",
+  "stage": "stabilization",
+  "pe": 4,
+  "batch": 4,
+  "mode": "compile",
+  "trial": 1,
+  "attempt": 1,
+  "warmup": 500,
+  "worker_protocol": 2,
+  "stabilization_status": null,
+  "cache_path": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/stabilization_p4_b4_compile_t1_a1",
+  "estimated_wall_s": 808.1516779337501
+}

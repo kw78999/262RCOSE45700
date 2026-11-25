@@ -1,0 +1,17 @@
+{"event": "worker_start", "case": "stabilization_p1_b4_eager_t1_a2", "estimate_s": 335, "remaining_s": 33465}
+{"event": "worker_end", "case": "stabilization_p1_b4_eager_t1_a2", "status": "ok", "wall_s": 184.79}
+{"event": "worker_start", "case": "formal_p1_b4_compile_t1_a2", "estimate_s": 645, "remaining_s": 33280}
+{"event": "worker_end", "case": "formal_p1_b4_compile_t1_a2", "status": "ok", "wall_s": 461.38}
+{"event": "worker_start", "case": "formal_p1_b4_eager_t1_a2", "estimate_s": 357, "remaining_s": 32818}
+{"event": "worker_end", "case": "formal_p1_b4_eager_t1_a2", "status": "ok", "wall_s": 251.04}
+{"event": "worker_start", "case": "validation_p8_b4_compile_t1_a1", "estimate_s": 2035, "remaining_s": 32567}
+{"event": "worker_end", "case": "validation_p8_b4_compile_t1_a1", "status": "timeout", "wall_s": 3621.49}
+{"event": "worker_start", "case": "exploration_p8_b4_eager_t1_a1", "estimate_s": 1625, "remaining_s": 28945}
+{"event": "worker_end", "case": "exploration_p8_b4_eager_t1_a1", "status": "ok", "wall_s": 1206.19}
+{"event": "worker_start", "case": "validation_p4_b4_eager_t1_a1", "estimate_s": 573, "remaining_s": 27739}
+{"event": "worker_end", "case": "validation_p4_b4_eager_t1_a1", "status": "ok", "wall_s": 262.1}
+{"event": "worker_start", "case": "validation_p4_b4_compile_t1_a1", "estimate_s": 917, "remaining_s": 27477}
+{"event": "worker_end", "case": "validation_p4_b4_compile_t1_a1", "status": "ok", "wall_s": 489.57}
+{"event": "worker_start", "case": "exploration_p4_b4_compile_t1_a1", "estimate_s": 696, "remaining_s": 26987}
+{"event": "worker_end", "case": "exploration_p4_b4_compile_t1_a1", "status": "contaminated", "wall_s": 489.6}
+{"utc": "2026-11-18T12:55:52.203956+00:00", "worker_count": 43, "raw_timing_rows": 11958, "performance_loops_no_cpu_copy": true, "positive_finite_timings": true, "completed_formal_minima": true, "private_cache_paths_unique": true, "code_hashes": {"code/worker_v2.py": "d1e544f811d86da8700fed9092681d7d8b0085293ba50a551e9cee8602b86906", "code/fastpath_support.py": "38b30feb8ed297a441a13f4c03f6c0ed63ec1e742aecc5f0b813f22b7e2be8cf", "code/worker.py": "b8e0624f3e046fb02361b0adf5e60f4741bb66b622483433dabc7607483cf969", "code/experiment.py": "591783a47cb30e75b1bb0d77f0c598a08abb801600d65bca9ede8c610c18a28d", "code/common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9"}, "quantile_scope": "within one trial; no independent-trial inference from repeated calls", "no_ci_claim": true, "completed_formal_worker_count": 8, "current_protocol_eligible_formal_workers": 4, "legacy_logging_performance_workers_preserved": 14}

@@ -1,0 +1,330 @@
+{
+  "rows": [
+    {
+      "batch": 1,
+      "trial": 1,
+      "K": 1,
+      "G_eager_ms": 97545.903174,
+      "G_compile_ms": 198370.147016,
+      "difference_ms": 100824.243842,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 1,
+      "K": 2,
+      "G_eager_ms": 97590.495024,
+      "G_compile_ms": 198374.695325,
+      "difference_ms": 100784.200301,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 1,
+      "K": 3,
+      "G_eager_ms": 97634.155768,
+      "G_compile_ms": 198378.343947,
+      "difference_ms": 100744.188179,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 1,
+      "K": 4,
+      "G_eager_ms": 97678.666368,
+      "G_compile_ms": 198381.968778,
+      "difference_ms": 100703.30241,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 1,
+      "K": 5,
+      "G_eager_ms": 97722.430273,
+      "G_compile_ms": 198385.60137,
+      "difference_ms": 100663.171097,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 1,
+      "K": 6,
+      "G_eager_ms": 97766.551151,
+      "G_compile_ms": 198389.226581,
+      "difference_ms": 100622.67543,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 2,
+      "K": 1,
+      "G_eager_ms": 97948.202541,
+      "G_compile_ms": 201039.635658,
+      "difference_ms": 103091.433117,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 2,
+      "K": 2,
+      "G_eager_ms": 97993.461569,
+      "G_compile_ms": 201043.844649,
+      "difference_ms": 103050.38308,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 2,
+      "K": 3,
+      "G_eager_ms": 98037.844104,
+      "G_compile_ms": 201047.454753,
+      "difference_ms": 103009.610649,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 2,
+      "K": 4,
+      "G_eager_ms": 98083.221456,
+      "G_compile_ms": 201051.056487,
+      "difference_ms": 102967.835031,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 2,
+      "K": 5,
+      "G_eager_ms": 98128.044772,
+      "G_compile_ms": 201054.652541,
+      "difference_ms": 102926.607769,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 2,
+      "K": 6,
+      "G_eager_ms": 98173.127385,
+      "G_compile_ms": 201058.251435,
+      "difference_ms": 102885.12405,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 3,
+      "K": 1,
+      "G_eager_ms": 97989.372832,
+      "G_compile_ms": 199444.04372,
+      "difference_ms": 101454.670888,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 3,
+      "K": 2,
+      "G_eager_ms": 98034.506773,
+      "G_compile_ms": 199448.579539,
+      "difference_ms": 101414.072766,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 3,
+      "K": 3,
+      "G_eager_ms": 98078.670889,
+      "G_compile_ms": 199452.184023,
+      "difference_ms": 101373.513134,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 3,
+      "K": 4,
+      "G_eager_ms": 98123.586896,
+      "G_compile_ms": 199455.778698,
+      "difference_ms": 101332.191802,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 3,
+      "K": 5,
+      "G_eager_ms": 98167.965665,
+      "G_compile_ms": 199459.370032,
+      "difference_ms": 101291.404367,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 1,
+      "trial": 3,
+      "K": 6,
+      "G_eager_ms": 98212.471306,
+      "G_compile_ms": 199462.964246,
+      "difference_ms": 101250.49294,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 1,
+      "K": 1,
+      "G_eager_ms": 165932.852419,
+      "G_compile_ms": 434130.551461,
+      "difference_ms": 268197.699042,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 1,
+      "K": 2,
+      "G_eager_ms": 166055.139069,
+      "G_compile_ms": 434141.886254,
+      "difference_ms": 268086.747185,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 1,
+      "K": 3,
+      "G_eager_ms": 166178.169508,
+      "G_compile_ms": 434152.328077,
+      "difference_ms": 267974.158569,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 1,
+      "K": 4,
+      "G_eager_ms": 166300.798793,
+      "G_compile_ms": 434162.777991,
+      "difference_ms": 267861.979198,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 1,
+      "K": 5,
+      "G_eager_ms": 166423.809762,
+      "G_compile_ms": 434173.217454,
+      "difference_ms": 267749.407692,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 1,
+      "K": 6,
+      "G_eager_ms": 166546.010511,
+      "G_compile_ms": 434183.682487,
+      "difference_ms": 267637.671976,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 2,
+      "K": 1,
+      "G_eager_ms": 166611.696341,
+      "G_compile_ms": 435647.828175,
+      "difference_ms": 269036.131834,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 2,
+      "K": 2,
+      "G_eager_ms": 166733.070987,
+      "G_compile_ms": 435659.193459,
+      "difference_ms": 268926.122472,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 2,
+      "K": 3,
+      "G_eager_ms": 166854.666398,
+      "G_compile_ms": 435669.638377,
+      "difference_ms": 268814.971979,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 2,
+      "K": 4,
+      "G_eager_ms": 166976.140324,
+      "G_compile_ms": 435680.087095,
+      "difference_ms": 268703.946771,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 2,
+      "K": 5,
+      "G_eager_ms": 167098.184533,
+      "G_compile_ms": 435690.582424,
+      "difference_ms": 268592.397891,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 2,
+      "K": 6,
+      "G_eager_ms": 167220.052669,
+      "G_compile_ms": 435701.068902,
+      "difference_ms": 268481.016233,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 3,
+      "K": 1,
+      "G_eager_ms": 166418.643465,
+      "G_compile_ms": 438948.523598,
+      "difference_ms": 272529.880133,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 3,
+      "K": 2,
+      "G_eager_ms": 166540.68494,
+      "G_compile_ms": 438959.886575,
+      "difference_ms": 272419.201635,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 3,
+      "K": 3,
+      "G_eager_ms": 166662.497741,
+      "G_compile_ms": 438970.307187,
+      "difference_ms": 272307.809446,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 3,
+      "K": 4,
+      "G_eager_ms": 166784.755849,
+      "G_compile_ms": 438980.732309,
+      "difference_ms": 272195.97646,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 3,
+      "K": 5,
+      "G_eager_ms": 166906.818863,
+      "G_compile_ms": 438991.173041,
+      "difference_ms": 272084.354178,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    },
+    {
+      "batch": 4,
+      "trial": 3,
+      "K": 6,
+      "G_eager_ms": 167029.422247,
+      "G_compile_ms": 439001.674224,
+      "difference_ms": 271972.251977,
+      "scope": "actual initial measured interval sum, excludes prepare and outside-timer gaps"
+    }
+  ],
+  "K_lte_initial_count": "actual measured prefix sum",
+  "K_gt_initial_count": "mean-repeat prediction"
+}

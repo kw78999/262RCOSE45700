@@ -1,0 +1,10 @@
+{
+  "Module._call_impl": {
+    "top_frame": "SkipResult(skipped=True, reason='skipped according trace_rules.lookup MOD_SKIPLIST')",
+    "inlined_call": "SkipResult(skipped=False, reason='inlined according trace_rules.lookup MOD_INLINELIST')"
+  },
+  "MultiheadAttention.forward": {
+    "top_frame": "SkipResult(skipped=True, reason='skipped according trace_rules.lookup MOD_SKIPLIST')",
+    "inlined_call": "SkipResult(skipped=False, reason='inlined according trace_rules.lookup MOD_INLINELIST')"
+  }
+}

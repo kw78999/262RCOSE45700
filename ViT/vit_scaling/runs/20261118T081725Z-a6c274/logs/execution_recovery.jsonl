@@ -1,0 +1,1 @@
+{"event": "controller_tool_session_terminated", "exit_code": 143, "controller_pid": 31486, "worker_case": "validation_p1_b4_compile_t1_a1", "worker_continues": true, "cause": "unconfirmed; detach next controller from tool session", "measurement_code_unchanged": true}

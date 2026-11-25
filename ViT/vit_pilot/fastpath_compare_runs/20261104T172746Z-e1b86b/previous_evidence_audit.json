@@ -1,0 +1,50 @@
+{
+  "previous_reference_recomputed": true,
+  "values": [
+    {
+      "mode": "eager_fastpath_off",
+      "batch": 1,
+      "source": "vit_pilot/attention_runs/20261104T153417Z-33d046",
+      "repeat_count": 20,
+      "mean_ms": 44.14919855,
+      "mha_fastpath": false,
+      "cpu_fallback": true,
+      "usage": "historical audit only; excluded from every new prediction/cumulative plan"
+    },
+    {
+      "mode": "eager_fastpath_off",
+      "batch": 4,
+      "source": "vit_pilot/attention_runs/20261104T153417Z-33d046",
+      "repeat_count": 20,
+      "mean_ms": 122.6479077,
+      "mha_fastpath": false,
+      "cpu_fallback": true,
+      "usage": "historical audit only; excluded from every new prediction/cumulative plan"
+    },
+    {
+      "mode": "full_compile",
+      "batch": 1,
+      "source": "vit_pilot/attention_runs/20261104T153417Z-33d046",
+      "repeat_count": 20,
+      "mean_ms": 3.81743095,
+      "mha_fastpath": true,
+      "cpu_fallback": true,
+      "usage": "historical audit only; excluded from every new prediction/cumulative plan"
+    },
+    {
+      "mode": "full_compile",
+      "batch": 4,
+      "source": "vit_pilot/attention_runs/20261104T153417Z-33d046",
+      "repeat_count": 20,
+      "mean_ms": 10.4537506,
+      "mha_fastpath": true,
+      "cpu_fallback": true,
+      "usage": "historical audit only; excluded from every new prediction/cumulative plan"
+    }
+  ],
+  "original_native_fallback_error_confirmed": true,
+  "attention_boundary_condition_excluded": true,
+  "old_numbers_used_in_new_cost_formula": false,
+  "old_assumed_200_400_crossing_used": false,
+  "input_source": "vit_pilot/followup_runs/20261104T132538Z-c031a6/inputs/preprocessed_bf16.pt"
+}

@@ -1,0 +1,3 @@
+{"utc": "2026-11-18T18:57:51.420172+00:00", "pid": 15424, "event": "prepare_start"}
+{"utc": "2026-11-18T18:57:52.815921+00:00", "pid": 15424, "event": "first_start"}
+ERROR furiosa_torch::python_ext: eager fallback is not allowed for the target gm

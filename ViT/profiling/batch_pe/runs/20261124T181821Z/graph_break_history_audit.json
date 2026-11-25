@@ -1,0 +1,75 @@
+[
+  {
+    "run": "preflight",
+    "logs_checked": 7,
+    "graph_break_log_lines": 0,
+    "recompile_events": 2,
+    "graph_break_evidence": [],
+    "recompile_evidence": [
+      {
+        "file": "preflight/logs/substrate-first.log",
+        "line": 145,
+        "text": "V1103 06:30:50.003000 9045 torch/_dynamo/guards.py:4514] [0/1] [__recompiles] Recompiling function <lambda> in /root/ViT/preflight/check_vit.py:78"
+      },
+      {
+        "file": "preflight/logs/substrate-reuse.log",
+        "line": 145,
+        "text": "V1103 06:31:11.203000 9185 torch/_dynamo/guards.py:4514] [0/1] [__recompiles] Recompiling function <lambda> in /root/ViT/preflight/check_vit.py:78"
+      }
+    ]
+  },
+  {
+    "run": "vit_pilot/runs/20261104T113745Z-8fccff",
+    "logs_checked": 23,
+    "graph_break_log_lines": 0,
+    "recompile_events": 1,
+    "graph_break_evidence": [],
+    "recompile_evidence": [
+      {
+        "file": "vit_pilot/runs/20261104T113745Z-8fccff/logs/switch_compile.stderr.log",
+        "line": 3157,
+        "text": "V1104 11:54:14.040000 110885 torch/_dynamo/guards.py:4514] [0/1] [__recompiles] Recompiling function forward in /root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:289"
+      }
+    ]
+  },
+  {
+    "run": "vit_pilot/followup_runs/20261104T132538Z-c031a6",
+    "logs_checked": 40,
+    "graph_break_log_lines": 0,
+    "recompile_events": 0,
+    "graph_break_evidence": [],
+    "recompile_evidence": []
+  },
+  {
+    "run": "vit_pilot/attention_runs/20261104T153417Z-33d046",
+    "logs_checked": 24,
+    "graph_break_log_lines": 0,
+    "recompile_events": 0,
+    "graph_break_evidence": [],
+    "recompile_evidence": []
+  },
+  {
+    "run": "vit_pilot/attention_runs/20261104T160225Z-35e28e",
+    "logs_checked": 8,
+    "graph_break_log_lines": 0,
+    "recompile_events": 0,
+    "graph_break_evidence": [],
+    "recompile_evidence": []
+  },
+  {
+    "run": "vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+    "logs_checked": 46,
+    "graph_break_log_lines": 0,
+    "recompile_events": 0,
+    "graph_break_evidence": [],
+    "recompile_evidence": []
+  },
+  {
+    "run": "vit_scaling/runs/20261118T081725Z-a6c274",
+    "logs_checked": 205,
+    "graph_break_log_lines": 0,
+    "recompile_events": 0,
+    "graph_break_evidence": [],
+    "recompile_evidence": []
+  }
+]

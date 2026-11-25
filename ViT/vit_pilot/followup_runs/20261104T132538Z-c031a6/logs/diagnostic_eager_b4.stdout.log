@@ -1,0 +1,489 @@
+ INFO furiosa_torch::python_ext: Total 926 supported aten ops
+ INFO furiosa_torch::python_ext: Total 802 decomposition rules are added
+DEBUG furiosa_torch::device: set num fusion: Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1)
+ INFO furiosa_torch::config::cache: Using HOME for cache directory: /root/.cache/furiosa/compiler
+ INFO furiosa_torch::config::cache: Using HOME for cache directory: /root/.cache/furiosa/compiler
+{"utc": "2026-11-04T13:27:08.225497+00:00", "monotonic_ns": 1684676694689373, "pid": 112465, "event": "prepare_start", "stage": "diagnostic", "mode": "eager", "batch": 4}
+DEBUG furiosa_torch::device: device index 0: alloc dram & sram 0x100 to avoid allocate 0x0 for tensors, torch treat it as a null pointer
+DEBUG furiosa_torch::device: adjust DRAM shared size to 4294967296
+DEBUG furiosa_torch::device: device index 0: allocated addr isn't 0x0 but NpuOffset(0x17bffff00), possibly memory fusioned or not 0th pe or there is a shared area
+{"utc": "2026-11-04T13:27:09.864363+00:00", "monotonic_ns": 1684678333565336, "pid": 112465, "event": "prepare_end", "input_metadata": {"shape": [4, 3, 224, 224], "dtype": "torch.bfloat16", "device": "furiosa:0"}, "model_metadata": {"training": false, "parameter_dtype": "torch.bfloat16", "parameter_device": "furiosa:0"}, "preparation_ms": 1638.6588709428906, "stream_id": 0}
+{"utc": "2026-11-04T13:27:09.871022+00:00", "monotonic_ns": 1684678340217819, "pid": 112465, "event": "runner_ready", "runner_setup_ms": 0.00174}
+{"utc": "2026-11-04T13:27:09.875889+00:00", "monotonic_ns": 1684678345077639, "pid": 112465, "event": "call_start", "call_index": 1, "phase": "first", "iteration": 1, "batch": 4}
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::conv2d, args=((torch.Size([4, 3, 224, 224]), (150528, 50176, 224, 1), torch.bfloat16, ((4, 3, 224, 224), (150528, 50176, 224, 1), ((None, 1),))), (torch.Size([768, 3, 16, 16]), (768, 256, 16, 1), torch.bfloat16, ((768, 3, 16, 16), (768, 256, 16, 1), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), 16, 16), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%args_0, %args_1, %args_2, [16, 16], [0, 0], [1, 1], False, [0, 0], 1), kwargs = {})
+    return (convolution,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%args_0, %args_1, %args_2, [16, 16], [0, 0], [1, 1], False, [0, 0], 1), kwargs = {})
+    return (convolution,)
+source:
+    convolution          ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:291 x = self._process_input(x)
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=4:150528, 1_1=3:50176, 2_1=224:224, 3_1=224:1], [Broadcast=1]|[0_1=768:768, 1_1=3:256, 2_1=16:16, 3_1=16:1], [Broadcast=1]|[0_1=768:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::conv2d, args=((torch.Size([4, 3, 224, 224]), (150528, 50176, 224, 1), torch.bfloat16, ((4, 3, 224, 224), (150528, 50176, 224, 1), ((None, 1),))), (torch.Size([768, 3, 16, 16]), (768, 256, 16, 1), torch.bfloat16, ((768, 3, 16, 16), (768, 256, 16, 1), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), 16, 16), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:0, None=1:1536] dma_dst_sequencer=0+[None=4:302592, None=1:1536]
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:301056, None=196:2, None=768:392, None=1:2] dma_dst_sequencer=0+[None=4:302592, None=3:100352, None=50176:2]
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::add.Tensor, args=((torch.Size([4, 197, 768]), (151296, 768, 1), torch.bfloat16, ((4, 197, 768), (151296, 768, 1), ((None, 1),))), (torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%args_0, %args_1), kwargs = {})
+    return (add,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%args_0, %args_1), kwargs = {})
+    return (add,)
+source:
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:156 input = input + self.pos_embedding
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=4:151296, 1_1=197:768, 2_1=768:1], [Broadcast=1]|[0_1=1:151296, 1_1=197:768, 2_1=768:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::add.Tensor, args=((torch.Size([4, 197, 768]), (151296, 768, 1), torch.bfloat16, ((4, 197, 768), (151296, 768, 1), ((None, 1),))), (torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::dropout, args=((torch.Size([4, 197, 768]), (151296, 768, 1), torch.bfloat16, ((4, 197, 768), (151296, 768, 1), ((None, 1),))), 0.0, False), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %clone : [num_users=1] = call_function[target=torch.ops.aten.clone.default](args = (%args_0,), kwargs = {})
+    return (clone,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %clone : [num_users=1] = call_function[target=torch.ops.aten.clone.default](args = (%args_0,), kwargs = {})
+    return (clone,)
+source:
+    clone                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:157 return self.ln(self.layers(self.dropout(input)))
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=4:151296, 1_1=197:768, 2_1=768:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::dropout, args=((torch.Size([4, 197, 768]), (151296, 768, 1), torch.bfloat16, ((4, 197, 768), (151296, 768, 1), ((None, 1),))), 0.0, False), traceable_kwargs=(), non_traceable_kwargs=())
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::layer_norm, args=((torch.Size([4, 197, 768]), (151296, 768, 1), torch.bfloat16, ((4, 197, 768), (151296, 768, 1), ((None, 1),))), 768, (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), 1e-06), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %_to_copy : [num_users=2] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %var_mean : [num_users=2] = call_function[target=torch.ops.aten.var_mean.correction](args = (%_to_copy, [2]), kwargs = {correction: 0, keepdim: True})
+    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%var_mean, 0), kwargs = {})
+    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%var_mean, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem, 1e-06), kwargs = {})
+    %rsqrt : [num_users=1] = call_function[target=torch.ops.aten.rsqrt.default](args = (%add,), kwargs = {})
+    %sub : [num_users=1] = call_function[target=torch.ops.aten.sub.Tensor](args = (%_to_copy, %getitem_1), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%sub, %rsqrt), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mul, %args_1), kwargs = {})
+    %add_1 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul_1, %args_2), kwargs = {})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add_1,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_1,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %_to_copy : [num_users=2] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %var_mean : [num_users=2] = call_function[target=torch.ops.aten.var_mean.correction](args = (%_to_copy, [2]), kwargs = {correction: 0, keepdim: True})
+    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%var_mean, 0), kwargs = {})
+    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%var_mean, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem, 1e-06), kwargs = {})
+    %rsqrt : [num_users=1] = call_function[target=torch.ops.aten.rsqrt.default](args = (%add,), kwargs = {})
+    %sub : [num_users=1] = call_function[target=torch.ops.aten.sub.Tensor](args = (%_to_copy, %getitem_1), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%sub, %rsqrt), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mul, %args_1), kwargs = {})
+    %add_1 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul_1, %args_2), kwargs = {})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add_1,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_1,)
+source:
+    _to_copy             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    var_mean             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    getitem              ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    getitem_1            ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    rsqrt                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    sub                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    mul                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    mul_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    add_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    _to_copy_1           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=4:151296, 1_1=197:768, 2_1=768:1], [Broadcast=1]|[0_1=768:1], [Broadcast=1]|[0_1=768:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::layer_norm, args=((torch.Size([4, 197, 768]), (151296, 768, 1), torch.bfloat16, ((4, 197, 768), (151296, 768, 1), ((None, 1),))), 768, (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), 1e-06), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::add.Tensor, args=((torch.Size([4, 197, 768]), (151296, 768, 1), torch.bfloat16, ((4, 197, 768), (151296, 768, 1), ((None, 1),))), (torch.Size([4, 197, 768]), (151296, 768, 1), torch.bfloat16, ((4, 197, 768), (151296, 768, 1), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%args_0, %args_1), kwargs = {})
+    return (add,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%args_0, %args_1), kwargs = {})
+    return (add,)
+source:
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:115 x = x + input
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=4:151296, 1_1=197:768, 2_1=768:1], [Broadcast=1]|[0_1=4:151296, 1_1=197:768, 2_1=768:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::add.Tensor, args=((torch.Size([4, 197, 768]), (151296, 768, 1), torch.bfloat16, ((4, 197, 768), (151296, 768, 1), ((None, 1),))), (torch.Size([4, 197, 768]), (151296, 768, 1), torch.bfloat16, ((4, 197, 768), (151296, 768, 1), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::linear, args=((torch.Size([4, 197, 768]), (151296, 768, 1), torch.bfloat16, ((4, 197, 768), (151296, 768, 1), ((None, 1),))), (torch.Size([3072, 768]), (768, 1), torch.bfloat16, ((3072, 768), (768, 1), ((None, 1),))), (torch.Size([3072]), (1,), torch.bfloat16, ((3072,), (1,), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %permute : [num_users=1] = call_function[target=torch.ops.aten.permute.default](args = (%args_1, [1, 0]), kwargs = {})
+    %view : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%args_0, [788, 768]), kwargs = {})
+    %_to_copy : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_2,), kwargs = {dtype: torch.float32})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%view,), kwargs = {dtype: torch.float32})
+    %_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%permute,), kwargs = {dtype: torch.float32})
+    %mm : [num_users=1] = call_function[target=torch.ops.aten.mm.default](args = (%_to_copy_1, %_to_copy_2), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mm, 1), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul, %mul_1), kwargs = {})
+    %_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add,), kwargs = {dtype: torch.bfloat16})
+    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%_to_copy_3, [4, 197, 3072]), kwargs = {})
+    return (view_1,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %permute : [num_users=1] = call_function[target=torch.ops.aten.permute.default](args = (%args_1, [1, 0]), kwargs = {})
+    %view : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%args_0, [788, 768]), kwargs = {})
+    %_to_copy : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_2,), kwargs = {dtype: torch.float32})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%view,), kwargs = {dtype: torch.float32})
+    %_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%permute,), kwargs = {dtype: torch.float32})
+    %mm : [num_users=1] = call_function[target=torch.ops.aten.mm.default](args = (%_to_copy_1, %_to_copy_2), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mm, 1), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul, %mul_1), kwargs = {})
+    %_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add,), kwargs = {dtype: torch.bfloat16})
+    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%_to_copy_3, [4, 197, 3072]), kwargs = {})
+    return (view_1,)
+source:
+    permute              ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    view                 ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_1           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_2           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mm                   ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_3           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    view_1               ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=4:151296, 1_1=197:768, 2_1=768:1], [Broadcast=1]|[0_1=3072:768, 1_1=768:1], [Broadcast=1]|[0_1=3072:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::linear, args=((torch.Size([4, 197, 768]), (151296, 768, 1), torch.bfloat16, ((4, 197, 768), (151296, 768, 1), ((None, 1),))), (torch.Size([3072, 768]), (768, 1), torch.bfloat16, ((3072, 768), (768, 1), ((None, 1),))), (torch.Size([3072]), (1,), torch.bfloat16, ((3072,), (1,), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::gelu, args=((torch.Size([4, 197, 3072]), (605184, 3072, 1), torch.bfloat16, ((4, 197, 3072), (605184, 3072, 1), ((None, 1),))),), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %_to_copy : [num_users=2] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 0.5), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 0.7071067811865476), kwargs = {})
+    %erf : [num_users=1] = call_function[target=torch.ops.aten.erf.default](args = (%mul_1,), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%erf, 1), kwargs = {})
+    %mul_2 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mul, %add), kwargs = {})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%mul_2,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_1,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %_to_copy : [num_users=2] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 0.5), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 0.7071067811865476), kwargs = {})
+    %erf : [num_users=1] = call_function[target=torch.ops.aten.erf.default](args = (%mul_1,), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%erf, 1), kwargs = {})
+    %mul_2 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mul, %add), kwargs = {})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%mul_2,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_1,)
+source:
+    _to_copy             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    erf                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul_2                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_1           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=4:605184, 1_1=197:3072, 2_1=3072:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::gelu, args=((torch.Size([4, 197, 3072]), (605184, 3072, 1), torch.bfloat16, ((4, 197, 3072), (605184, 3072, 1), ((None, 1),))),), traceable_kwargs=(), non_traceable_kwargs=())
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::dropout, args=((torch.Size([4, 197, 3072]), (605184, 3072, 1), torch.bfloat16, ((4, 197, 3072), (605184, 3072, 1), ((None, 1),))), 0.0, False), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %clone : [num_users=1] = call_function[target=torch.ops.aten.clone.default](args = (%args_0,), kwargs = {})
+    return (clone,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %clone : [num_users=1] = call_function[target=torch.ops.aten.clone.default](args = (%args_0,), kwargs = {})
+    return (clone,)
+source:
+    clone                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=4:605184, 1_1=197:3072, 2_1=3072:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::dropout, args=((torch.Size([4, 197, 3072]), (605184, 3072, 1), torch.bfloat16, ((4, 197, 3072), (605184, 3072, 1), ((None, 1),))), 0.0, False), traceable_kwargs=(), non_traceable_kwargs=())
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::linear, args=((torch.Size([4, 197, 3072]), (605184, 3072, 1), torch.bfloat16, ((4, 197, 3072), (605184, 3072, 1), ((None, 1),))), (torch.Size([768, 3072]), (3072, 1), torch.bfloat16, ((768, 3072), (3072, 1), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %permute : [num_users=1] = call_function[target=torch.ops.aten.permute.default](args = (%args_1, [1, 0]), kwargs = {})
+    %view : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%args_0, [788, 3072]), kwargs = {})
+    %_to_copy : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_2,), kwargs = {dtype: torch.float32})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%view,), kwargs = {dtype: torch.float32})
+    %_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%permute,), kwargs = {dtype: torch.float32})
+    %mm : [num_users=1] = call_function[target=torch.ops.aten.mm.default](args = (%_to_copy_1, %_to_copy_2), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mm, 1), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul, %mul_1), kwargs = {})
+    %_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add,), kwargs = {dtype: torch.bfloat16})
+    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%_to_copy_3, [4, 197, 768]), kwargs = {})
+    return (view_1,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %permute : [num_users=1] = call_function[target=torch.ops.aten.permute.default](args = (%args_1, [1, 0]), kwargs = {})
+    %view : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%args_0, [788, 3072]), kwargs = {})
+    %_to_copy : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_2,), kwargs = {dtype: torch.float32})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%view,), kwargs = {dtype: torch.float32})
+    %_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%permute,), kwargs = {dtype: torch.float32})
+    %mm : [num_users=1] = call_function[target=torch.ops.aten.mm.default](args = (%_to_copy_1, %_to_copy_2), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mm, 1), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul, %mul_1), kwargs = {})
+    %_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add,), kwargs = {dtype: torch.bfloat16})
+    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%_to_copy_3, [4, 197, 768]), kwargs = {})
+    return (view_1,)
+source:
+    permute              ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    view                 ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_1           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_2           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mm                   ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_3           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    view_1               ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=4:605184, 1_1=197:3072, 2_1=3072:1], [Broadcast=1]|[0_1=768:3072, 1_1=3072:1], [Broadcast=1]|[0_1=768:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::linear, args=((torch.Size([4, 197, 3072]), (605184, 3072, 1), torch.bfloat16, ((4, 197, 3072), (605184, 3072, 1), ((None, 1),))), (torch.Size([768, 3072]), (3072, 1), torch.bfloat16, ((768, 3072), (3072, 1), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::linear, args=((torch.Size([4, 768]), (151296, 1), torch.bfloat16, None), (torch.Size([1000, 768]), (768, 1), torch.bfloat16, ((1000, 768), (768, 1), ((None, 1),))), (torch.Size([1000]), (1,), torch.bfloat16, ((1000,), (1,), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %permute : [num_users=1] = call_function[target=torch.ops.aten.permute.default](args = (%args_1, [1, 0]), kwargs = {})
+    %_to_copy : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_2,), kwargs = {dtype: torch.float32})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%permute,), kwargs = {dtype: torch.float32})
+    %mm : [num_users=1] = call_function[target=torch.ops.aten.mm.default](args = (%_to_copy_1, %_to_copy_2), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mm, 1), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul, %mul_1), kwargs = {})
+    %_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_3,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %permute : [num_users=1] = call_function[target=torch.ops.aten.permute.default](args = (%args_1, [1, 0]), kwargs = {})
+    %_to_copy : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_2,), kwargs = {dtype: torch.float32})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%permute,), kwargs = {dtype: torch.float32})
+    %mm : [num_users=1] = call_function[target=torch.ops.aten.mm.default](args = (%_to_copy_1, %_to_copy_2), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mm, 1), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul, %mul_1), kwargs = {})
+    %_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_3,)
+source:
+    permute              ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    _to_copy             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    _to_copy_1           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    _to_copy_2           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    mm                   ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    mul                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    mul_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    _to_copy_3           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=4:151296, 1_1=768:1], [Broadcast=1]|[0_1=1000:768, 1_1=768:1], [Broadcast=1]|[0_1=1000:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::linear, args=((torch.Size([4, 768]), (151296, 1), torch.bfloat16, ((4, 768), (151296, 1), ((None, 1),))), (torch.Size([1000, 768]), (768, 1), torch.bfloat16, ((1000, 768), (768, 1), ((None, 1),))), (torch.Size([1000]), (1,), torch.bfloat16, ((1000,), (1,), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+{"utc": "2026-11-04T13:28:41.563840+00:00", "monotonic_ns": 1684770033034249, "pid": 112465, "event": "call_end", "call_index": 1, "phase": "first", "elapsed_ms": 91687.750047}
+{"utc": "2026-11-04T13:28:41.569467+00:00", "monotonic_ns": 1684770038655739, "pid": 112465, "event": "call_start", "call_index": 2, "phase": "warmup", "iteration": 1, "batch": 4}
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:0, None=1:1536] dma_dst_sequencer=0+[None=4:302592, None=1:1536]
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:301056, None=196:2, None=768:392, None=1:2] dma_dst_sequencer=0+[None=4:302592, None=3:100352, None=50176:2]
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+{"utc": "2026-11-04T13:28:42.650565+00:00", "monotonic_ns": 1684771119762004, "pid": 112465, "event": "call_end", "call_index": 2, "phase": "warmup", "elapsed_ms": 1080.944072}
+{"utc": "2026-11-04T13:28:42.656205+00:00", "monotonic_ns": 1684771125394434, "pid": 112465, "event": "call_start", "call_index": 3, "phase": "warmup", "iteration": 2, "batch": 4}
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:0, None=1:1536] dma_dst_sequencer=0+[None=4:302592, None=1:1536]
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:301056, None=196:2, None=768:392, None=1:2] dma_dst_sequencer=0+[None=4:302592, None=3:100352, None=50176:2]
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+{"utc": "2026-11-04T13:28:43.763592+00:00", "monotonic_ns": 1684772232789929, "pid": 112465, "event": "call_end", "call_index": 3, "phase": "warmup", "elapsed_ms": 1107.223812}
+{"utc": "2026-11-04T13:28:43.770665+00:00", "monotonic_ns": 1684772239854517, "pid": 112465, "event": "call_start", "call_index": 4, "phase": "warmup", "iteration": 3, "batch": 4}
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:0, None=1:1536] dma_dst_sequencer=0+[None=4:302592, None=1:1536]
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:301056, None=196:2, None=768:392, None=1:2] dma_dst_sequencer=0+[None=4:302592, None=3:100352, None=50176:2]
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+{"utc": "2026-11-04T13:28:44.906114+00:00", "monotonic_ns": 1684773375313093, "pid": 112465, "event": "call_end", "call_index": 4, "phase": "warmup", "elapsed_ms": 1135.287424}
+{"utc": "2026-11-04T13:28:44.911943+00:00", "monotonic_ns": 1684773381133306, "pid": 112465, "event": "call_start", "call_index": 5, "phase": "warmup", "iteration": 4, "batch": 4}
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:0, None=1:1536] dma_dst_sequencer=0+[None=4:302592, None=1:1536]
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:301056, None=196:2, None=768:392, None=1:2] dma_dst_sequencer=0+[None=4:302592, None=3:100352, None=50176:2]
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+{"utc": "2026-11-04T13:28:46.012554+00:00", "monotonic_ns": 1684774481752758, "pid": 112465, "event": "call_end", "call_index": 5, "phase": "warmup", "elapsed_ms": 1100.451679}
+{"utc": "2026-11-04T13:28:46.018734+00:00", "monotonic_ns": 1684774487921435, "pid": 112465, "event": "call_start", "call_index": 6, "phase": "warmup", "iteration": 5, "batch": 4}
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:0, None=1:1536] dma_dst_sequencer=0+[None=4:302592, None=1:1536]
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:301056, None=196:2, None=768:392, None=1:2] dma_dst_sequencer=0+[None=4:302592, None=3:100352, None=50176:2]
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+{"utc": "2026-11-04T13:28:47.089531+00:00", "monotonic_ns": 1684775558728304, "pid": 112465, "event": "call_end", "call_index": 6, "phase": "warmup", "elapsed_ms": 1070.641237}
+{"utc": "2026-11-04T13:28:47.094092+00:00", "monotonic_ns": 1684775563281191, "pid": 112465, "event": "call_start", "call_index": 7, "phase": "repeat", "iteration": 1, "batch": 4}
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:0, None=1:1536] dma_dst_sequencer=0+[None=4:302592, None=1:1536]
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:301056, None=196:2, None=768:392, None=1:2] dma_dst_sequencer=0+[None=4:302592, None=3:100352, None=50176:2]
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+{"utc": "2026-11-04T13:28:48.156940+00:00", "monotonic_ns": 1684776626137661, "pid": 112465, "event": "call_end", "call_index": 7, "phase": "repeat", "elapsed_ms": 1062.700689}
+{"utc": "2026-11-04T13:28:48.162495+00:00", "monotonic_ns": 1684776631682891, "pid": 112465, "event": "call_start", "call_index": 8, "phase": "repeat", "iteration": 2, "batch": 4}
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:0, None=1:1536] dma_dst_sequencer=0+[None=4:302592, None=1:1536]
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:301056, None=196:2, None=768:392, None=1:2] dma_dst_sequencer=0+[None=4:302592, None=3:100352, None=50176:2]
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+{"utc": "2026-11-04T13:28:49.245898+00:00", "monotonic_ns": 1684777715097949, "pid": 112465, "event": "call_end", "call_index": 8, "phase": "repeat", "elapsed_ms": 1083.254037}
+{"utc": "2026-11-04T13:28:49.253112+00:00", "monotonic_ns": 1684777722300429, "pid": 112465, "event": "call_start", "call_index": 9, "phase": "repeat", "iteration": 3, "batch": 4}
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:0, None=1:1536] dma_dst_sequencer=0+[None=4:302592, None=1:1536]
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:301056, None=196:2, None=768:392, None=1:2] dma_dst_sequencer=0+[None=4:302592, None=3:100352, None=50176:2]
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+{"utc": "2026-11-04T13:28:50.341561+00:00", "monotonic_ns": 1684778810758771, "pid": 112465, "event": "call_end", "call_index": 9, "phase": "repeat", "elapsed_ms": 1088.29207}
+{"utc": "2026-11-04T13:28:50.343570+00:00", "monotonic_ns": 1684778812757236, "pid": 112465, "event": "profile_start", "note": "Extra call; excluded from all diagnostic/performance timing rows"}
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:0, None=1:1536] dma_dst_sequencer=0+[None=4:302592, None=1:1536]
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=4:301056, None=196:2, None=768:392, None=1:2] dma_dst_sequencer=0+[None=4:302592, None=3:100352, None=50176:2]
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::cpp::log: running CPU fallback of aten::_native_multi_head_attention: not supported yet
+DEBUG furiosa_torch::profiler::profiler: finish profiling, 348 NPU profile records collected
+{"utc": "2026-11-04T13:28:51.607282+00:00", "monotonic_ns": 1684780076477453, "pid": 112465, "event": "profile_end"}
+{"utc": "2026-11-04T13:28:51.608061+00:00", "monotonic_ns": 1684780077247382, "pid": 112465, "event": "worker_end", "status": "ok"}

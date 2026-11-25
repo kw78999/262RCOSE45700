@@ -1,0 +1,58 @@
+         47494 function calls (42580 primitive calls) in 1.108 seconds
+
+   Ordered by: cumulative time
+   List reduced from 206 to 50 due to restriction <50>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    391/1    0.009    0.000    1.106    1.106 /root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py:1772(_wrapped_call_impl)
+    390/1    0.001    0.000    1.106    1.106 /root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py:1780(_call_impl)
+        1    0.003    0.003    1.073    1.073 /root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:289(forward)
+        1    0.000    0.000    1.069    1.069 /root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:154(forward)
+       12    0.001    0.000    1.068    0.089 /root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:110(forward)
+       12    0.000    0.000    1.013    0.084 /root/venv/lib/python3.12/site-packages/torch/nn/modules/activation.py:1255(forward)
+       12    0.973    0.081    1.012    0.084 {built-in method torch._native_multi_head_attention}
+     14/2    0.000    0.000    0.889    0.444 /root/venv/lib/python3.12/site-packages/torch/nn/modules/container.py:248(forward)
+  446/225    0.001    0.000    0.114    0.001 /root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:1165(_fn)
+       98    0.001    0.000    0.064    0.001 {method 'copy_' of 'torch._C.TensorBase' objects}
+       98    0.000    0.000    0.062    0.001 /root/venv/lib/python3.12/site-packages/furiosa/torch/_custom_ops/copy_from.py:21(aten_copy_from)
+       98    0.062    0.001    0.062    0.001 {built-in method furiosa.torch._C._C.memory.copy}
+  251/126    0.001    0.000    0.057    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/profiler/__init__.py:53(wrapped)
+      125    0.001    0.000    0.047    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py:15(run_aten_op)
+      125    0.001    0.000    0.046    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py:22(_run_aten_op)
+       96    0.001    0.000    0.040    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/_custom_ops/copy_from.py:35(aten_to_copy)
+      125    0.001    0.000    0.030    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/_module/runnable.py:255(forward)
+        1    0.000    0.000    0.026    0.026 {built-in method torch.cat}
+        1    0.000    0.000    0.026    0.026 /root/venv/lib/python3.12/site-packages/furiosa/torch/_custom_ops/cat_stack.py:145(aten_cat)
+        1    0.000    0.000    0.026    0.026 /root/venv/lib/python3.12/site-packages/furiosa/torch/_custom_ops/cat_stack.py:54(run)
+        1    0.000    0.000    0.026    0.026 /root/venv/lib/python3.12/site-packages/furiosa/torch/_custom_ops/cat_stack.py:90(_run_inner)
+      125    0.000    0.000    0.022    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/_module/runnable.py:164(forward)
+      125    0.019    0.000    0.019    0.000 {method 'execute' of 'furiosa.torch._C.ir.Runnable' objects}
+       37    0.000    0.000    0.015    0.000 /root/venv/lib/python3.12/site-packages/torch/nn/modules/dropout.py:69(forward)
+       37    0.000    0.000    0.014    0.000 /root/venv/lib/python3.12/site-packages/torch/nn/functional.py:1417(dropout)
+       37    0.000    0.000    0.014    0.000 {built-in method torch.dropout}
+       25    0.000    0.000    0.012    0.000 /root/venv/lib/python3.12/site-packages/torch/nn/modules/normalization.py:228(forward)
+       25    0.000    0.000    0.012    0.000 /root/venv/lib/python3.12/site-packages/torch/nn/functional.py:2914(layer_norm)
+       25    0.003    0.000    0.012    0.000 {built-in method torch.layer_norm}
+      125    0.001    0.000    0.010    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py:136(__init__)
+       25    0.000    0.000    0.008    0.000 /root/venv/lib/python3.12/site-packages/torch/nn/modules/linear.py:130(forward)
+       25    0.000    0.000    0.008    0.000 {built-in method torch._C._nn.linear}
+        1    0.000    0.000    0.007    0.007 /root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:268(_process_input)
+      125    0.000    0.000    0.006    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/_utils.py:7(cache_key_from_args)
+      250    0.000    0.000    0.006    0.000 /root/venv/lib/python3.12/site-packages/torch/utils/_pytree.py:1421(tree_flatten)
+ 1308/250    0.001    0.000    0.005    0.000 /root/venv/lib/python3.12/site-packages/torch/utils/_pytree.py:1429(helper)
+        1    0.000    0.000    0.005    0.005 /root/venv/lib/python3.12/site-packages/torch/nn/modules/conv.py:552(forward)
+        1    0.000    0.000    0.005    0.005 /root/venv/lib/python3.12/site-packages/torch/nn/modules/conv.py:534(_conv_forward)
+        1    0.000    0.000    0.005    0.005 {built-in method torch.conv2d}
+      250    0.001    0.000    0.004    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/profiler/__init__.py:27(wrapped)
+      125    0.000    0.000    0.004    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/export/exported_program.py:175(flatten_inputs)
+       12    0.000    0.000    0.003    0.000 /root/venv/lib/python3.12/site-packages/torch/nn/modules/activation.py:811(forward)
+       12    0.000    0.000    0.003    0.000 {built-in method torch._C._nn.gelu}
+     2366    0.001    0.000    0.002    0.000 /root/venv/lib/python3.12/site-packages/torch/utils/_pytree.py:1048(_get_node_type)
+      126    0.001    0.000    0.002    0.000 /root/venv/lib/python3.12/site-packages/torch/_guards.py:1241(detect_fake_mode)
+     1688    0.001    0.000    0.002    0.000 /root/venv/lib/python3.12/site-packages/torch/utils/_pytree.py:1060(tree_is_leaf)
+      125    0.000    0.000    0.002    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/export/exported_program.py:41(flatten_inputs)
+      503    0.000    0.000    0.002    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/_utils.py:21(<genexpr>)
+      877    0.002    0.000    0.002    0.000 {method '__exit__' of 'furiosa.torch._C.profiler.RecordFunction' objects}
+     2366    0.001    0.000    0.002    0.000 /root/venv/lib/python3.12/site-packages/torch/utils/_pytree.py:694(is_namedtuple_class)
+
+

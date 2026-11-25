@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "utc": "2026-11-04T16:17:39.356531+00:00",
+  "raw_measurements_verified": true,
+  "successful_performance_records": 208,
+  "measured_case_count": 8,
+  "independent_trials_per_case": 1,
+  "unique_real_images": 4,
+  "report_and_plot_artifacts": {
+    "study_report.md": "d53a73e762f59fb3f49780eae9cc2f907b7a7df4a1f502d321b716cb5b5506a9",
+    "feedback_summary.md": "f3517696fba2b2f534f3a01898472fd6adfa435e37835eeb0a74e0cca6d739a4",
+    "study_summary.csv": "424eecf23e1e95143524b9a2318ae2f26e2cef8c75a5fa654491f2323eda7000",
+    "study_output_comparison.json": "25b809fbae9a21444b01d2787e4329669be88fdec73261dade16703061f09767",
+    "study_verification.json": "8f1fe1249f565f230598b48314eac8f423933789588dbb05950085709f8b4212",
+    "figures/01_attention_paths.png": "e2eb11ffe4b4f523c308e67b0cb324fae1cc0e52d65781fe5e89c526b6e13d44",
+    "figures/02_repeat_order.png": "1eac872a7e3ee534134899ac66b2bf24ce87d37f0d5b3f6c7f93ba49d4f05295"
+  },
+  "finite_json_files": 91,
+  "worker_commands": [
+    [
+      "/root/venv/bin/python",
+      "vit_pilot/attention.py",
+      "run"
+    ],
+    [
+      "/root/venv/bin/python",
+      "vit_pilot/attention.py",
+      "run",
+      "--only-attention",
+      "--attention-boundary",
+      "--total-budget",
+      "5550.374782020692"
+    ]
+  ],
+  "report_command": [
+    "/root/venv/bin/python",
+    "vit_pilot/attention_study_report.py",
+    "--controls",
+    "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+    "--attention",
+    "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e"
+  ],
+  "plot_command": [
+    "vit_pilot/.plot-venv/bin/python",
+    "vit_pilot/attention_plots.py",
+    "--run",
+    "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+    "--attention-run",
+    "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e"
+  ],
+  "warm_state_note": "full_compile B1 not_stable; repeat 17=7.094043ms retained; cause unknown",
+  "both_run_code_unchanged_during_workers": true,
+  "prior_results_preserved": true
+}

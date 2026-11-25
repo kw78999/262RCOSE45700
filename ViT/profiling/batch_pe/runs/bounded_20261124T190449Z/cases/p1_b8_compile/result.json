@@ -1,0 +1,37 @@
+{
+  "pe": 1,
+  "batch": 8,
+  "mode": "compile",
+  "source_run": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274",
+  "warmup": 3,
+  "samples": [],
+  "cache_source": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/formal_p1_b4_compile_t3_a1",
+  "timeout_s": 120,
+  "status": "running",
+  "started_utc": "2026-11-24T19:10:53.943244+00:00",
+  "pid": 1046127,
+  "backend_calls": [],
+  "warmup_ms": [],
+  "versions": {
+    "torch": "2.10.0+cpu",
+    "furiosa": "furiosa-torch 2026.4.0 (rev: 5800e2ba24, built_at: 2026-10-12T09:11:33Z)"
+  },
+  "fusion": "Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1)",
+  "device_configuration": "(Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3', 'furiosa:4', 'furiosa:5', 'furiosa:6', 'furiosa:7'])",
+  "effective": {
+    "device": "furiosa:0",
+    "dtype": "BF16",
+    "mha_fastpath": false,
+    "cpu_fallback": false,
+    "torch_threads": 22,
+    "torch_interop_threads": 64,
+    "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "profile_level": "trace"
+  },
+  "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+  "input_hash": "3250b6c5d081efbce824750c14d94e325bc866593fe6948ecfd6f75b3c13207f",
+  "initial_model_and_input_transfer_wall_ms": 45.664343,
+  "controller_status": "timeout",
+  "wall_s": 123.63542999979109,
+  "returncode": -15
+}

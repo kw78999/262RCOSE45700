@@ -1,0 +1,396 @@
+{
+  "pe": 1,
+  "batch": 1,
+  "mode": "eager",
+  "attempts": 10,
+  "old_status_counts": {
+    "ok": 8,
+    "error": 2
+  },
+  "successful_stages": [
+    "diagnostic",
+    "exploration",
+    "formal",
+    "stabilization"
+  ],
+  "cache_source": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/formal_p1_b1_eager_t3_a1",
+  "cache_source_case": "formal_p1_b1_eager_t3_a1",
+  "source_run": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274",
+  "warmup": 100,
+  "samples": [],
+  "timeout_s": 3600,
+  "control": "OFF/ON/ON/OFF; 10 resident forward calls per block",
+  "status": "ok",
+  "started_utc": "2026-11-24T19:02:41.502517+00:00",
+  "pid": 1044060,
+  "backend_calls": [],
+  "warmup_ms": [
+    44.714665,
+    44.578323,
+    44.135935,
+    44.281927,
+    45.258116,
+    45.542521,
+    45.026602,
+    45.069642,
+    45.199195,
+    44.773907,
+    47.499478,
+    45.604862,
+    44.851268,
+    44.953519,
+    45.135723,
+    45.051262,
+    45.142693,
+    45.081962,
+    45.018741,
+    44.888829,
+    45.073842,
+    45.174254,
+    45.401858,
+    44.808517,
+    44.97333,
+    44.97201,
+    45.922558,
+    45.072592,
+    44.704115,
+    45.655633,
+    45.671563,
+    45.885017,
+    45.040681,
+    45.074952,
+    45.045531,
+    45.079502,
+    45.217495,
+    45.128353,
+    45.196315,
+    45.162903,
+    45.064862,
+    45.036661,
+    45.165283,
+    45.121653,
+    45.098792,
+    45.095482,
+    45.011331,
+    45.092862,
+    45.135103,
+    45.094262,
+    45.117313,
+    45.193504,
+    45.135774,
+    45.132513,
+    45.059242,
+    45.113782,
+    45.062192,
+    45.127702,
+    44.978439,
+    45.094562,
+    45.079172,
+    45.161263,
+    45.072282,
+    45.136032,
+    45.113092,
+    45.034721,
+    45.043761,
+    45.135313,
+    45.165873,
+    45.093722,
+    45.043431,
+    44.954119,
+    45.006361,
+    45.027721,
+    45.151843,
+    45.229915,
+    44.932039,
+    45.00509,
+    45.01242,
+    45.059791,
+    44.9731,
+    45.193653,
+    45.062451,
+    45.079912,
+    45.055461,
+    46.113631,
+    45.042331,
+    44.782506,
+    45.02225,
+    44.98668,
+    45.154823,
+    45.075212,
+    45.165653,
+    45.00662,
+    45.071161,
+    44.949068,
+    45.144392,
+    45.163633,
+    45.103991,
+    45.092552
+  ],
+  "versions": {
+    "torch": "2.10.0+cpu",
+    "furiosa": "furiosa-torch 2026.4.0 (rev: 5800e2ba24, built_at: 2026-10-12T09:11:33Z)"
+  },
+  "fusion": "Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1)",
+  "device_configuration": "(Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3', 'furiosa:4', 'furiosa:5', 'furiosa:6', 'furiosa:7'])",
+  "effective": {
+    "device": "furiosa:0",
+    "dtype": "BF16",
+    "mha_fastpath": false,
+    "cpu_fallback": false,
+    "torch_threads": 22,
+    "torch_interop_threads": 64,
+    "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "profile_level": "trace"
+  },
+  "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+  "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+  "initial_model_and_input_transfer_wall_ms": 37.225087,
+  "first_forward_wall_ms": 6230.578076,
+  "output_finite": true,
+  "backend_calls_before_samples": 0,
+  "control_samples": [
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 1,
+      "forward_wall_ms": 44.960099
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 2,
+      "forward_wall_ms": 44.96561
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 3,
+      "forward_wall_ms": 44.993199
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 4,
+      "forward_wall_ms": 45.062571
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 5,
+      "forward_wall_ms": 45.162013
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 6,
+      "forward_wall_ms": 45.56336
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 7,
+      "forward_wall_ms": 45.00199
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 8,
+      "forward_wall_ms": 45.141753
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 9,
+      "forward_wall_ms": 45.00587
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 10,
+      "forward_wall_ms": 44.940439
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 1,
+      "forward_wall_ms": 63.632637
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 2,
+      "forward_wall_ms": 64.644727
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 3,
+      "forward_wall_ms": 64.140307
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 4,
+      "forward_wall_ms": 64.380741
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 5,
+      "forward_wall_ms": 64.104897
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 6,
+      "forward_wall_ms": 63.898873
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 7,
+      "forward_wall_ms": 64.152617
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 8,
+      "forward_wall_ms": 64.129887
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 9,
+      "forward_wall_ms": 64.105006
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 10,
+      "forward_wall_ms": 64.091536
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 1,
+      "forward_wall_ms": 64.357731
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 2,
+      "forward_wall_ms": 64.30609
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 3,
+      "forward_wall_ms": 64.259319
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 4,
+      "forward_wall_ms": 64.568065
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 5,
+      "forward_wall_ms": 64.639936
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 6,
+      "forward_wall_ms": 64.544365
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 7,
+      "forward_wall_ms": 65.094925
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 8,
+      "forward_wall_ms": 64.154807
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 9,
+      "forward_wall_ms": 64.059826
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 10,
+      "forward_wall_ms": 64.182778
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 1,
+      "forward_wall_ms": 44.48566
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 2,
+      "forward_wall_ms": 44.244806
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 3,
+      "forward_wall_ms": 44.289596
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 4,
+      "forward_wall_ms": 44.077162
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 5,
+      "forward_wall_ms": 44.348478
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 6,
+      "forward_wall_ms": 44.243876
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 7,
+      "forward_wall_ms": 44.318297
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 8,
+      "forward_wall_ms": 44.217396
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 9,
+      "forward_wall_ms": 44.282086
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 10,
+      "forward_wall_ms": 44.260576
+    }
+  ],
+  "backend_calls_during_samples": 0,
+  "stream_complete": true,
+  "ended_utc": "2026-11-24T19:02:59.464170+00:00"
+}

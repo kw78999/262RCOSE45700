@@ -1,0 +1,7 @@
+{
+  "vit_scaling/runs/20261118T081725Z-a6c274/manifest.json": "88d70dde4ee30538a7ebde9b11e1a9ed776f8769f2a8361270c5977f0029a989",
+  "vit_scaling/runs/20261118T081725Z-a6c274/assets.json": "c0257239a39229d8c4627239241d41c156c8736eac6a229a251c7704d80dba3b",
+  "vit_scaling/runs/20261118T081725Z-a6c274/experiment_config.json": "8f02c148fec0bd42acdb7c238ef4e11b33f19b9339d36979e13d21662aa077c0",
+  "vit_scaling/runs/20261118T081725Z-a6c274/coverage.csv": "0b685cb4aa79ec3d4b5712d4dfdf8a3a275280ffbfe89377fbccc8bf7187b260",
+  "vit_scaling/runs/20261118T081725Z-a6c274/condition_summary.csv": "e47b4ecdd58a6529cfa053ea251b154a13d224f0e30b7934cbd5944a8edc1642"
+}

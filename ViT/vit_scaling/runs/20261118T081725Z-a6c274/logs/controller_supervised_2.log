@@ -1,0 +1,5 @@
+{"event": "worker_start", "case": "diagnostic_p2_b1_eager_t1_a1", "estimate_s": 1200, "remaining_s": 40133}
+{"event": "worker_end", "case": "diagnostic_p2_b1_eager_t1_a1", "status": "ok", "wall_s": 117.52}
+{"event": "worker_start", "case": "diagnostic_p2_b1_compile_t1_a1", "estimate_s": 1200, "remaining_s": 40015}
+{"event": "worker_end", "case": "diagnostic_p2_b1_compile_t1_a1", "status": "contaminated", "wall_s": 189.94}
+{"utc": "2026-11-18T09:13:43.521187+00:00", "worker_count": 14, "raw_timing_rows": 5491, "performance_loops_no_cpu_copy": true, "positive_finite_timings": true, "completed_formal_minima": true, "private_cache_paths_unique": true, "code_hashes": {"code/fastpath_support.py": "38b30feb8ed297a441a13f4c03f6c0ed63ec1e742aecc5f0b813f22b7e2be8cf", "code/worker.py": "b8e0624f3e046fb02361b0adf5e60f4741bb66b622483433dabc7607483cf969", "code/experiment.py": "591783a47cb30e75b1bb0d77f0c598a08abb801600d65bca9ede8c610c18a28d", "code/common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9"}, "quantile_scope": "within one trial; no independent-trial inference from repeated calls", "no_ci_claim": true, "completed_formal_worker_count": 4}

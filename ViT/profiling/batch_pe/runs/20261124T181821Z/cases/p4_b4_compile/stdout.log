@@ -1,0 +1,17 @@
+{"utc": "2026-11-24T18:23:54.488127+00:00", "event": "first_start"}
+{"utc": "2026-11-24T18:24:04.635580+00:00", "event": "first_end", "ms": 10145.174791}
+{"utc": "2026-11-24T18:24:05.191960+00:00", "event": "warmup_end", "calls": 100}
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 7: invalid trace reference time
+{"utc": "2026-11-24T18:24:05.200304+00:00", "event": "sample_end", "iteration": 1, "h2d_wall_ms": 0.587898, "forward_wall_ms": 5.719475, "d2h_wall_ms": 0.230243, "serial_request_wall_sum_ms": 6.537616}
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 8: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 7: invalid trace reference time
+{"utc": "2026-11-24T18:24:05.207692+00:00", "event": "sample_end", "iteration": 2, "h2d_wall_ms": 0.376065, "forward_wall_ms": 5.627264, "d2h_wall_ms": 0.212783, "serial_request_wall_sum_ms": 6.216112}
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 8: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 7: invalid trace reference time
+{"utc": "2026-11-24T18:24:05.215065+00:00", "event": "sample_end", "iteration": 3, "h2d_wall_ms": 0.348315, "forward_wall_ms": 5.632194, "d2h_wall_ms": 0.215743, "serial_request_wall_sum_ms": 6.196252}
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 8: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 7: invalid trace reference time
+{"utc": "2026-11-24T18:24:05.222448+00:00", "event": "sample_end", "iteration": 4, "h2d_wall_ms": 0.360865, "forward_wall_ms": 5.631173, "d2h_wall_ms": 0.212462, "serial_request_wall_sum_ms": 6.2045}
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 8: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 7: invalid trace reference time
+{"utc": "2026-11-24T18:24:05.229811+00:00", "event": "sample_end", "iteration": 5, "h2d_wall_ms": 0.352095, "forward_wall_ms": 5.625673, "d2h_wall_ms": 0.213292, "serial_request_wall_sum_ms": 6.19106}

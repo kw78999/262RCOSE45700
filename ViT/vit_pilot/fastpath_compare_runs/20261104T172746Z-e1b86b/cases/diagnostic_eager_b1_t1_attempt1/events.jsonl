@@ -1,0 +1,9 @@
+{"utc": "2026-11-04T17:30:21.682653+00:00", "monotonic_ns": 1699270151845461, "pid": 281045, "event": "model_input_prepare_start"}
+{"utc": "2026-11-04T17:30:23.441759+00:00", "monotonic_ns": 1699271910957459, "pid": 281045, "event": "model_input_prepare_end", "elapsed_ms": 1758.918664}
+{"utc": "2026-11-04T17:30:23.442019+00:00", "monotonic_ns": 1699271911204241, "pid": 281045, "event": "runner_setup_start"}
+{"utc": "2026-11-04T17:30:23.442076+00:00", "monotonic_ns": 1699271911259389, "pid": 281045, "event": "runner_setup_end", "elapsed_ms": 0.00279}
+{"utc": "2026-11-04T17:30:23.446935+00:00", "monotonic_ns": 1699271916124561, "pid": 281045, "event": "phase_start", "phase": "first", "requested_calls": 1}
+{"utc": "2026-11-04T17:32:01.980616+00:00", "monotonic_ns": 1699370449810500, "pid": 281045, "event": "phase_end", "phase": "first", "wall_ms": 98537.828155, "measured_sum_ms": 98532.335596}
+{"utc": "2026-11-04T17:32:01.986038+00:00", "monotonic_ns": 1699370455227268, "pid": 281045, "event": "profile_start", "note": "Extra call excluded from all main and cumulative timing rows"}
+{"utc": "2026-11-04T17:32:02.132356+00:00", "monotonic_ns": 1699370601551316, "pid": 281045, "event": "profile_end", "native_mha_host_count": 0, "npu_task_events": 185, "backend_entry_count": 0, "all_op_placement": "unverified", "actual_codegen_count": null, "disk_cache_hit": null, "disk_cache_miss": null}
+{"utc": "2026-11-04T17:32:02.132833+00:00", "monotonic_ns": 1699370602019204, "pid": 281045, "event": "worker_end", "status": "ok"}

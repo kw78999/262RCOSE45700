@@ -1,0 +1,116 @@
+Traceback (most recent call last):
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/compiler/__init__.py", line 83, in compile
+    runnable = compiler.compile(
+               ^^^^^^^^^^^^^^^^^
+furiosa.torch._C.error.CompileError: (cache at /root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/formal_p1_b1_eager_t4_a1/7a0434fb8d66f44d)
+
+Caused by:
+   0: failed to compile /tmp/.tmpzcUwe6.c
+   1: In file included from <stdin>:1:
+      /tmp/.tmpTUYkZ6/pe.h:4:10: fatal error: assert.h: No such file or directory
+          4 | #include <assert.h>
+            |          ^~~~~~~~~~
+      compilation terminated.
+
+   2: failed to run cc
+   3: process exited unsuccessfully: exit status: 1
+
+Location:
+    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/npu-utils/src/command.rs:137:17
+
+Location:
+    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/global-compiler/src/lib.rs:95:64
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/code/worker_v2.py", line 116, in main
+    y=call('first',1); event('first_end', elapsed_ms=r['timings'][-1]['elapsed_ms']); save()
+      ^^^^^^^^^^^^^^^
+  File "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/code/worker_v2.py", line 111, in call
+    y,ms,valid=timed_call(runner,x,stream.synchronize)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/code/common.py", line 69, in timed_call
+    output = runner(inputs)
+             ^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py", line 291, in forward
+    x = self._process_input(x)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py", line 277, in _process_input
+    x = self.conv_proj(x)
+        ^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 553, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 548, in _conv_forward
+    return F.conv2d(
+           ^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py", line 19, in run_aten_op
+    return _run_aten_op(qualified_aten_op_name, op_callable, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py", line 42, in _run_aten_op
+    raise e
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py", line 38, in _run_aten_op
+    m = aten_op.compile_and_load(device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py", line 173, in compile_and_load
+    return _compile_and_load_cached(self, device).out()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py", line 28, in out
+    raise self.cached.with_traceback(self.original_traceback)
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py", line 96, in _compile
+    compiled = CompileModule.from_exported(exported, task_name=task_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_module/runnable.py", line 222, in from_exported
+    compiler.compile(exported, compiler_config, task_name=task_name)
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/profiler/__init__.py", line 35, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/compiler/__init__.py", line 94, in compile
+    raise error.UnsupportedOpError(
+furiosa.torch._C.error.UnsupportedOpError: failed to compile
+graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%args_0, %args_1, %args_2, [16, 16], [0, 0], [1, 1], False, [0, 0], 1), kwargs = {})
+    return (convolution,)
+source:
+    convolution          ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:291 x = self._process_input(x)
+compile error:
+(cache at /root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/formal_p1_b1_eager_t4_a1/7a0434fb8d66f44d)
+
+Caused by:
+   0: failed to compile /tmp/.tmpzcUwe6.c
+   1: In file included from <stdin>:1:
+      /tmp/.tmpTUYkZ6/pe.h:4:10: fatal error: assert.h: No such file or directory
+          4 | #include <assert.h>
+            |          ^~~~~~~~~~
+      compilation terminated.
+
+   2: failed to run cc
+   3: process exited unsuccessfully: exit status: 1
+
+Location:
+    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/npu-utils/src/command.rs:137:17
+
+Location:
+    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/global-compiler/src/lib.rs:95:64

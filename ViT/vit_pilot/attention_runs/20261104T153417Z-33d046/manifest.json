@@ -1,0 +1,392 @@
+{
+  "run_id": "20261104T153417Z-33d046",
+  "created_utc": "2026-11-04T15:34:17.371950+00:00",
+  "command": [
+    "vit_pilot/attention.py",
+    "run"
+  ],
+  "code_sha256": {
+    "attention.py": "482d3fec815de01ed653b1d152bbd24ae8c392c149a278c4ff8faf35684abf34",
+    "attention_worker.py": "a12b801f65c9e20ace2735d745866e0385013c89ecd36ed8d838610fc43841bb",
+    "attention_analysis.py": "7cdbb63e6130af00dc0a867daef4a1b54514ec711e2a959681e407180793aa2f",
+    "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+    "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+    "environment.py": "8a2e154f2d64facf5218b9e8282de8605d815a908b3d3c92ffcda0ef0a3f15ab"
+  },
+  "assets_dir": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6",
+  "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+  "input_hashes": {
+    "1": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+    "4": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7"
+  },
+  "workers": [
+    {
+      "case_id": "diagnostic_eager_default_b1_strict",
+      "stage": "diagnostic",
+      "mode": "eager_default",
+      "batch": 1,
+      "strict": true,
+      "status": "error",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/diagnostic_eager_default_b1_strict",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/attention_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+        "--case",
+        "diagnostic_eager_default_b1_strict"
+      ],
+      "started_utc": "2026-11-04T15:34:20.236751+00:00",
+      "timeout_s": 1800,
+      "pid": 243095,
+      "returncode": 1,
+      "ended_utc": "2026-11-04T15:34:47.280118+00:00",
+      "worker_elapsed_s": 27.042909264098853
+    },
+    {
+      "case_id": "diagnostic_eager_default_b1",
+      "stage": "diagnostic",
+      "mode": "eager_default",
+      "batch": 1,
+      "strict": false,
+      "status": "ok",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/diagnostic_eager_default_b1",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/attention_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+        "--case",
+        "diagnostic_eager_default_b1"
+      ],
+      "started_utc": "2026-11-04T15:34:47.286495+00:00",
+      "timeout_s": 1800,
+      "pid": 243338,
+      "returncode": 0,
+      "validation_for_expansion": true,
+      "ended_utc": "2026-11-04T15:35:55.419366+00:00",
+      "worker_elapsed_s": 68.13241675193422
+    },
+    {
+      "case_id": "diagnostic_attention_compile_b1_strict",
+      "stage": "diagnostic",
+      "mode": "attention_compile",
+      "batch": 1,
+      "strict": true,
+      "status": "error",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/diagnostic_attention_compile_b1_strict",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/attention_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+        "--case",
+        "diagnostic_attention_compile_b1_strict"
+      ],
+      "started_utc": "2026-11-04T15:35:55.425772+00:00",
+      "timeout_s": 1800,
+      "pid": 243910,
+      "returncode": 1,
+      "ended_utc": "2026-11-04T15:36:22.869383+00:00",
+      "worker_elapsed_s": 27.44313173601404
+    },
+    {
+      "case_id": "diagnostic_eager_fastpath_off_b1_strict",
+      "stage": "diagnostic",
+      "mode": "eager_fastpath_off",
+      "batch": 1,
+      "strict": true,
+      "status": "ok",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/diagnostic_eager_fastpath_off_b1_strict",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/attention_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+        "--case",
+        "diagnostic_eager_fastpath_off_b1_strict"
+      ],
+      "started_utc": "2026-11-04T15:36:22.875961+00:00",
+      "timeout_s": 1800,
+      "pid": 244170,
+      "returncode": 0,
+      "validation_for_expansion": true,
+      "ended_utc": "2026-11-04T15:38:06.092765+00:00",
+      "worker_elapsed_s": 103.21633581793867
+    },
+    {
+      "case_id": "diagnostic_eager_default_b4",
+      "stage": "diagnostic",
+      "mode": "eager_default",
+      "batch": 4,
+      "strict": false,
+      "status": "ok",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/diagnostic_eager_default_b4",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/attention_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+        "--case",
+        "diagnostic_eager_default_b4"
+      ],
+      "started_utc": "2026-11-04T15:38:06.099247+00:00",
+      "timeout_s": 1800,
+      "pid": 245039,
+      "returncode": 0,
+      "validation_for_expansion": true,
+      "ended_utc": "2026-11-04T15:39:43.699380+00:00",
+      "worker_elapsed_s": 97.59966229088604
+    },
+    {
+      "case_id": "diagnostic_attention_compile_b4_strict",
+      "stage": "diagnostic",
+      "mode": "attention_compile",
+      "batch": 4,
+      "strict": true,
+      "status": "held",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/diagnostic_attention_compile_b4_strict",
+      "reason": "Corresponding batch-1 diagnostic did not succeed"
+    },
+    {
+      "case_id": "diagnostic_eager_fastpath_off_b4_strict",
+      "stage": "diagnostic",
+      "mode": "eager_fastpath_off",
+      "batch": 4,
+      "strict": true,
+      "status": "ok",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/diagnostic_eager_fastpath_off_b4_strict",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/attention_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+        "--case",
+        "diagnostic_eager_fastpath_off_b4_strict"
+      ],
+      "started_utc": "2026-11-04T15:39:43.711686+00:00",
+      "timeout_s": 1800,
+      "pid": 245811,
+      "returncode": 0,
+      "validation_for_expansion": true,
+      "ended_utc": "2026-11-04T15:42:36.831477+00:00",
+      "worker_elapsed_s": 173.02983254007995
+    },
+    {
+      "case_id": "performance_eager_default_b1",
+      "stage": "performance",
+      "mode": "eager_default",
+      "batch": 1,
+      "strict": false,
+      "status": "ok",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/performance_eager_default_b1",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/attention_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+        "--case",
+        "performance_eager_default_b1"
+      ],
+      "started_utc": "2026-11-04T15:42:36.837796+00:00",
+      "timeout_s": 1800,
+      "pid": 247125,
+      "returncode": 0,
+      "validation_for_expansion": true,
+      "ended_utc": "2026-11-04T15:44:10.226854+00:00",
+      "worker_elapsed_s": 93.38853960903361
+    },
+    {
+      "case_id": "performance_attention_compile_b1",
+      "stage": "performance",
+      "mode": "attention_compile",
+      "batch": 1,
+      "strict": false,
+      "status": "held",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/performance_attention_compile_b1",
+      "reason": "Strict diagnostic failed; retain failure and do not expand this variant"
+    },
+    {
+      "case_id": "performance_eager_fastpath_off_b1",
+      "stage": "performance",
+      "mode": "eager_fastpath_off",
+      "batch": 1,
+      "strict": false,
+      "status": "ok",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/performance_eager_fastpath_off_b1",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/attention_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+        "--case",
+        "performance_eager_fastpath_off_b1"
+      ],
+      "started_utc": "2026-11-04T15:44:10.238983+00:00",
+      "timeout_s": 1800,
+      "pid": 247724,
+      "returncode": 0,
+      "validation_for_expansion": true,
+      "ended_utc": "2026-11-04T15:45:54.229517+00:00",
+      "worker_elapsed_s": 103.99002468306571
+    },
+    {
+      "case_id": "performance_full_compile_b1",
+      "stage": "performance",
+      "mode": "full_compile",
+      "batch": 1,
+      "strict": false,
+      "status": "ok",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/performance_full_compile_b1",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/attention_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+        "--case",
+        "performance_full_compile_b1"
+      ],
+      "started_utc": "2026-11-04T15:45:54.235846+00:00",
+      "timeout_s": 1800,
+      "pid": 248557,
+      "returncode": 0,
+      "validation_for_expansion": true,
+      "ended_utc": "2026-11-04T15:49:25.486933+00:00",
+      "worker_elapsed_s": 211.24937988305464
+    },
+    {
+      "case_id": "performance_eager_default_b4",
+      "stage": "performance",
+      "mode": "eager_default",
+      "batch": 4,
+      "strict": false,
+      "status": "ok",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/performance_eager_default_b4",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/attention_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+        "--case",
+        "performance_eager_default_b4"
+      ],
+      "started_utc": "2026-11-04T15:49:25.493306+00:00",
+      "timeout_s": 1800,
+      "pid": 260802,
+      "returncode": 0,
+      "validation_for_expansion": true,
+      "ended_utc": "2026-11-04T15:51:29.078494+00:00",
+      "worker_elapsed_s": 123.58432362414896
+    },
+    {
+      "case_id": "performance_attention_compile_b4",
+      "stage": "performance",
+      "mode": "attention_compile",
+      "batch": 4,
+      "strict": false,
+      "status": "held",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/performance_attention_compile_b4",
+      "reason": "Corresponding batch-1 performance did not succeed"
+    },
+    {
+      "case_id": "performance_eager_fastpath_off_b4",
+      "stage": "performance",
+      "mode": "eager_fastpath_off",
+      "batch": 4,
+      "strict": false,
+      "status": "ok",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/performance_eager_fastpath_off_b4",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/attention_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+        "--case",
+        "performance_eager_fastpath_off_b4"
+      ],
+      "started_utc": "2026-11-04T15:51:29.090787+00:00",
+      "timeout_s": 1800,
+      "pid": 261581,
+      "returncode": 0,
+      "validation_for_expansion": true,
+      "ended_utc": "2026-11-04T15:54:23.610993+00:00",
+      "worker_elapsed_s": 174.51964898011647
+    },
+    {
+      "case_id": "performance_full_compile_b4",
+      "stage": "performance",
+      "mode": "full_compile",
+      "batch": 4,
+      "strict": false,
+      "status": "ok",
+      "cache_path": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/cache/performance_full_compile_b4",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/attention_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046",
+        "--case",
+        "performance_full_compile_b4"
+      ],
+      "started_utc": "2026-11-04T15:54:23.617239+00:00",
+      "timeout_s": 1800,
+      "pid": 262883,
+      "returncode": 0,
+      "validation_for_expansion": true,
+      "ended_utc": "2026-11-04T16:01:50.046840+00:00",
+      "worker_elapsed_s": 446.42901279893704
+    }
+  ],
+  "npu_used_s": 1649.6252179793082,
+  "status": "finished",
+  "sync": "furiosa.torch.current_stream(device).synchronize(); query checked after preparation",
+  "timing_scope": "CPU dispatch through current-stream completion; internal transfers included; external pre/post transfers excluded",
+  "cache_condition": "new private SDK cache per worker; system-wide cold and actual cache hit/miss unverified",
+  "additional_sources": [
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/torch/nn/modules/activation.py",
+      "sha256": "d2929845da0371704b4fa75d9ef487ac3842525e6a979c526016a740926aa900"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py",
+      "sha256": "34c99682b7832a5110dfd85bd886f542fa62aff35ddf3f1473ea86a8abd4adeb"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/torch/_dynamo/variables/torch.py",
+      "sha256": "9e5e8be5f35a590cba52b47d727cb8ecde5bffc12dac84a9fea5be2b4a2e5579"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/torch/backends/mha/__init__.py",
+      "sha256": "b54994ae6d19dc8e5d9c39e149bb8381989f1837a67603eb75076ca24bd5b2c0"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_db/local_decomp.py",
+      "sha256": "6670b10f8fd6ab35ec65b87d9e14e40bd9b5ae46cfba8865d461f6675f2418c9"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/export/passes.py",
+      "sha256": "c3aefd53db981abb523a463d70156b0025cb09f6db387ca8838f5dd29fa3570e"
+    }
+  ],
+  "ended_utc": "2026-11-04T16:01:50.047413+00:00",
+  "code_sha256_after": {
+    "attention.py": "482d3fec815de01ed653b1d152bbd24ae8c392c149a278c4ff8faf35684abf34",
+    "attention_worker.py": "a12b801f65c9e20ace2735d745866e0385013c89ecd36ed8d838610fc43841bb",
+    "attention_analysis.py": "7cdbb63e6130af00dc0a867daef4a1b54514ec711e2a959681e407180793aa2f",
+    "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+    "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+    "environment.py": "8a2e154f2d64facf5218b9e8282de8605d815a908b3d3c92ffcda0ef0a3f15ab"
+  }
+}

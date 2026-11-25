@@ -1,0 +1,16 @@
+{"utc": "2026-11-04T11:53:43.411906+00:00", "monotonic_ns": 1679071881100808, "pid": 110814, "event": "prepare_start", "kind": "switch", "mode": "eager", "batch": 1}
+{"utc": "2026-11-04T11:53:45.076703+00:00", "monotonic_ns": 1679073545906938, "pid": 110814, "event": "prepare_end", "elapsed_ms": 1664.6137670613825, "stream_id": 0, "input_metadata": {"1": {"shape": [1, 3, 224, 224], "dtype": "torch.bfloat16", "device": "furiosa:0"}, "4": {"shape": [4, 3, 224, 224], "dtype": "torch.bfloat16", "device": "furiosa:0"}}, "training": false}
+{"utc": "2026-11-04T11:53:45.076959+00:00", "monotonic_ns": 1679073546143712, "pid": 110814, "event": "runner_ready", "runner_setup_ms": 0.00678}
+{"utc": "2026-11-04T11:53:45.077630+00:00", "monotonic_ns": 1679073546816673, "pid": 110814, "event": "call_start", "call_index": 1, "phase": "switch", "iteration": 1, "batch": 1}
+{"utc": "2026-11-04T11:53:49.595103+00:00", "monotonic_ns": 1679078064296076, "pid": 110814, "event": "call_end", "call_index": 1, "batch": 1, "phase": "switch", "elapsed_ms": 4512.679095}
+{"utc": "2026-11-04T11:53:49.595642+00:00", "monotonic_ns": 1679078064828185, "pid": 110814, "event": "call_start", "call_index": 2, "phase": "switch", "iteration": 2, "batch": 1}
+{"utc": "2026-11-04T11:53:50.606925+00:00", "monotonic_ns": 1679079076123437, "pid": 110814, "event": "call_end", "call_index": 2, "batch": 1, "phase": "switch", "elapsed_ms": 1005.574049}
+{"utc": "2026-11-04T11:53:50.607688+00:00", "monotonic_ns": 1679079076875549, "pid": 110814, "event": "call_start", "call_index": 3, "phase": "switch", "iteration": 3, "batch": 4}
+{"utc": "2026-11-04T11:53:55.290793+00:00", "monotonic_ns": 1679083759986883, "pid": 110814, "event": "call_end", "call_index": 3, "batch": 4, "phase": "switch", "elapsed_ms": 4678.853035}
+{"utc": "2026-11-04T11:53:55.291612+00:00", "monotonic_ns": 1679083760799496, "pid": 110814, "event": "call_start", "call_index": 4, "phase": "switch", "iteration": 4, "batch": 4}
+{"utc": "2026-11-04T11:53:56.439190+00:00", "monotonic_ns": 1679084908388927, "pid": 110814, "event": "call_end", "call_index": 4, "batch": 4, "phase": "switch", "elapsed_ms": 1143.335152}
+{"utc": "2026-11-04T11:53:56.440109+00:00", "monotonic_ns": 1679084909295812, "pid": 110814, "event": "call_start", "call_index": 5, "phase": "switch", "iteration": 5, "batch": 1}
+{"utc": "2026-11-04T11:53:57.490879+00:00", "monotonic_ns": 1679085960077810, "pid": 110814, "event": "call_end", "call_index": 5, "batch": 1, "phase": "switch", "elapsed_ms": 1044.323334}
+{"utc": "2026-11-04T11:53:57.492089+00:00", "monotonic_ns": 1679085961277140, "pid": 110814, "event": "call_start", "call_index": 6, "phase": "switch", "iteration": 6, "batch": 4}
+{"utc": "2026-11-04T11:53:58.633582+00:00", "monotonic_ns": 1679087102779134, "pid": 110814, "event": "call_end", "call_index": 6, "batch": 4, "phase": "switch", "elapsed_ms": 1136.91225}
+{"utc": "2026-11-04T11:53:58.635365+00:00", "monotonic_ns": 1679087104552393, "pid": 110814, "event": "worker_end", "status": "ok"}

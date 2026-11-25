@@ -1,0 +1,273 @@
+INFO:furiosa_torch:Total 926 supported aten ops
+INFO:furiosa_torch:Total 802 decomposition rules are added
+INFO:furiosa_torch:Building exported program AtenOp(aten_op_name=aten::conv2d, args=((torch.Size([1, 3, 224, 224]), (150528, 50176, 224, 1), torch.bfloat16, ((1, 3, 224, 224), (150528, 50176, 224, 1), ((None, 1),))), (torch.Size([768, 3, 16, 16]), (768, 256, 16, 1), torch.bfloat16, ((768, 3, 16, 16), (768, 256, 16, 1), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), 16, 16), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG:furiosa_torch:original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%args_0, %args_1, %args_2, [16, 16], [0, 0], [1, 1], False, [0, 0], 1), kwargs = {})
+    return (convolution,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%args_0, %args_1, %args_2, [16, 16], [0, 0], [1, 1], False, [0, 0], 1), kwargs = {})
+    return (convolution,)
+source:
+    convolution          ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:291 x = self._process_input(x)
+DEBUG:furiosa_torch:graph compiled successfully
+INFO:furiosa_torch:Loading to furiosa:0 for AtenOp(aten_op_name=aten::conv2d, args=((torch.Size([1, 3, 224, 224]), (150528, 50176, 224, 1), torch.bfloat16, ((1, 3, 224, 224), (150528, 50176, 224, 1), ((None, 1),))), (torch.Size([768, 3, 16, 16]), (768, 256, 16, 1), torch.bfloat16, ((768, 3, 16, 16), (768, 256, 16, 1), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), 16, 16), traceable_kwargs=(), non_traceable_kwargs=())
+INFO:furiosa_torch:Building exported program AtenOp(aten_op_name=aten::add.Tensor, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), (torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG:furiosa_torch:original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%args_0, %args_1), kwargs = {})
+    return (add,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%args_0, %args_1), kwargs = {})
+    return (add,)
+source:
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:156 input = input + self.pos_embedding
+DEBUG:furiosa_torch:graph compiled successfully
+INFO:furiosa_torch:Loading to furiosa:0 for AtenOp(aten_op_name=aten::add.Tensor, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), (torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+INFO:furiosa_torch:Building exported program AtenOp(aten_op_name=aten::dropout, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), 0.0, False), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG:furiosa_torch:original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %clone : [num_users=1] = call_function[target=torch.ops.aten.clone.default](args = (%args_0,), kwargs = {})
+    return (clone,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %clone : [num_users=1] = call_function[target=torch.ops.aten.clone.default](args = (%args_0,), kwargs = {})
+    return (clone,)
+source:
+    clone                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:157 return self.ln(self.layers(self.dropout(input)))
+DEBUG:furiosa_torch:graph compiled successfully
+INFO:furiosa_torch:Loading to furiosa:0 for AtenOp(aten_op_name=aten::dropout, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), 0.0, False), traceable_kwargs=(), non_traceable_kwargs=())
+INFO:furiosa_torch:Building exported program AtenOp(aten_op_name=aten::layer_norm, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), 768, (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), 1e-06), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG:furiosa_torch:original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %_to_copy : [num_users=2] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %var_mean : [num_users=2] = call_function[target=torch.ops.aten.var_mean.correction](args = (%_to_copy, [2]), kwargs = {correction: 0, keepdim: True})
+    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%var_mean, 0), kwargs = {})
+    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%var_mean, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem, 1e-06), kwargs = {})
+    %rsqrt : [num_users=1] = call_function[target=torch.ops.aten.rsqrt.default](args = (%add,), kwargs = {})
+    %sub : [num_users=1] = call_function[target=torch.ops.aten.sub.Tensor](args = (%_to_copy, %getitem_1), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%sub, %rsqrt), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mul, %args_1), kwargs = {})
+    %add_1 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul_1, %args_2), kwargs = {})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add_1,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_1,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %_to_copy : [num_users=2] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %var_mean : [num_users=2] = call_function[target=torch.ops.aten.var_mean.correction](args = (%_to_copy, [2]), kwargs = {correction: 0, keepdim: True})
+    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%var_mean, 0), kwargs = {})
+    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%var_mean, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem, 1e-06), kwargs = {})
+    %rsqrt : [num_users=1] = call_function[target=torch.ops.aten.rsqrt.default](args = (%add,), kwargs = {})
+    %sub : [num_users=1] = call_function[target=torch.ops.aten.sub.Tensor](args = (%_to_copy, %getitem_1), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%sub, %rsqrt), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mul, %args_1), kwargs = {})
+    %add_1 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul_1, %args_2), kwargs = {})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add_1,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_1,)
+source:
+    _to_copy             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    var_mean             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    getitem              ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    getitem_1            ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    rsqrt                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    sub                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    mul                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    mul_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    add_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    _to_copy_1           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+DEBUG:furiosa_torch:graph compiled successfully
+INFO:furiosa_torch:Loading to furiosa:0 for AtenOp(aten_op_name=aten::layer_norm, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), 768, (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), 1e-06), traceable_kwargs=(), non_traceable_kwargs=())
+INFO:furiosa_torch:Building exported program AtenOp(aten_op_name=aten::linear, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), (torch.Size([3072, 768]), (768, 1), torch.bfloat16, ((3072, 768), (768, 1), ((None, 1),))), (torch.Size([3072]), (1,), torch.bfloat16, ((3072,), (1,), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG:furiosa_torch:original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %permute : [num_users=1] = call_function[target=torch.ops.aten.permute.default](args = (%args_1, [1, 0]), kwargs = {})
+    %view : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%args_0, [197, 768]), kwargs = {})
+    %_to_copy : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_2,), kwargs = {dtype: torch.float32})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%view,), kwargs = {dtype: torch.float32})
+    %_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%permute,), kwargs = {dtype: torch.float32})
+    %mm : [num_users=1] = call_function[target=torch.ops.aten.mm.default](args = (%_to_copy_1, %_to_copy_2), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mm, 1), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul, %mul_1), kwargs = {})
+    %_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add,), kwargs = {dtype: torch.bfloat16})
+    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%_to_copy_3, [1, 197, 3072]), kwargs = {})
+    return (view_1,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %permute : [num_users=1] = call_function[target=torch.ops.aten.permute.default](args = (%args_1, [1, 0]), kwargs = {})
+    %view : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%args_0, [197, 768]), kwargs = {})
+    %_to_copy : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_2,), kwargs = {dtype: torch.float32})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%view,), kwargs = {dtype: torch.float32})
+    %_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%permute,), kwargs = {dtype: torch.float32})
+    %mm : [num_users=1] = call_function[target=torch.ops.aten.mm.default](args = (%_to_copy_1, %_to_copy_2), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mm, 1), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul, %mul_1), kwargs = {})
+    %_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add,), kwargs = {dtype: torch.bfloat16})
+    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%_to_copy_3, [1, 197, 3072]), kwargs = {})
+    return (view_1,)
+source:
+    permute              ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    view                 ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_1           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_2           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mm                   ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_3           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    view_1               ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+DEBUG:furiosa_torch:graph compiled successfully
+INFO:furiosa_torch:Loading to furiosa:0 for AtenOp(aten_op_name=aten::linear, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), (torch.Size([3072, 768]), (768, 1), torch.bfloat16, ((3072, 768), (768, 1), ((None, 1),))), (torch.Size([3072]), (1,), torch.bfloat16, ((3072,), (1,), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+INFO:furiosa_torch:Building exported program AtenOp(aten_op_name=aten::gelu, args=((torch.Size([1, 197, 3072]), (605184, 3072, 1), torch.bfloat16, ((1, 197, 3072), (605184, 3072, 1), ((None, 1),))),), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG:furiosa_torch:original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %_to_copy : [num_users=2] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 0.5), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 0.7071067811865476), kwargs = {})
+    %erf : [num_users=1] = call_function[target=torch.ops.aten.erf.default](args = (%mul_1,), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%erf, 1), kwargs = {})
+    %mul_2 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mul, %add), kwargs = {})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%mul_2,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_1,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %_to_copy : [num_users=2] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 0.5), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 0.7071067811865476), kwargs = {})
+    %erf : [num_users=1] = call_function[target=torch.ops.aten.erf.default](args = (%mul_1,), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%erf, 1), kwargs = {})
+    %mul_2 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mul, %add), kwargs = {})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%mul_2,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_1,)
+source:
+    _to_copy             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    erf                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul_2                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_1           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+DEBUG:furiosa_torch:graph compiled successfully
+INFO:furiosa_torch:Loading to furiosa:0 for AtenOp(aten_op_name=aten::gelu, args=((torch.Size([1, 197, 3072]), (605184, 3072, 1), torch.bfloat16, ((1, 197, 3072), (605184, 3072, 1), ((None, 1),))),), traceable_kwargs=(), non_traceable_kwargs=())
+INFO:furiosa_torch:Building exported program AtenOp(aten_op_name=aten::dropout, args=((torch.Size([1, 197, 3072]), (605184, 3072, 1), torch.bfloat16, ((1, 197, 3072), (605184, 3072, 1), ((None, 1),))), 0.0, False), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG:furiosa_torch:original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %clone : [num_users=1] = call_function[target=torch.ops.aten.clone.default](args = (%args_0,), kwargs = {})
+    return (clone,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %clone : [num_users=1] = call_function[target=torch.ops.aten.clone.default](args = (%args_0,), kwargs = {})
+    return (clone,)
+source:
+    clone                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+DEBUG:furiosa_torch:graph compiled successfully
+INFO:furiosa_torch:Loading to furiosa:0 for AtenOp(aten_op_name=aten::dropout, args=((torch.Size([1, 197, 3072]), (605184, 3072, 1), torch.bfloat16, ((1, 197, 3072), (605184, 3072, 1), ((None, 1),))), 0.0, False), traceable_kwargs=(), non_traceable_kwargs=())
+INFO:furiosa_torch:Building exported program AtenOp(aten_op_name=aten::linear, args=((torch.Size([1, 197, 3072]), (605184, 3072, 1), torch.bfloat16, ((1, 197, 3072), (605184, 3072, 1), ((None, 1),))), (torch.Size([768, 3072]), (3072, 1), torch.bfloat16, ((768, 3072), (3072, 1), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG:furiosa_torch:original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %permute : [num_users=1] = call_function[target=torch.ops.aten.permute.default](args = (%args_1, [1, 0]), kwargs = {})
+    %view : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%args_0, [197, 3072]), kwargs = {})
+    %_to_copy : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_2,), kwargs = {dtype: torch.float32})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%view,), kwargs = {dtype: torch.float32})
+    %_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%permute,), kwargs = {dtype: torch.float32})
+    %mm : [num_users=1] = call_function[target=torch.ops.aten.mm.default](args = (%_to_copy_1, %_to_copy_2), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mm, 1), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul, %mul_1), kwargs = {})
+    %_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add,), kwargs = {dtype: torch.bfloat16})
+    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%_to_copy_3, [1, 197, 768]), kwargs = {})
+    return (view_1,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %permute : [num_users=1] = call_function[target=torch.ops.aten.permute.default](args = (%args_1, [1, 0]), kwargs = {})
+    %view : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%args_0, [197, 3072]), kwargs = {})
+    %_to_copy : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_2,), kwargs = {dtype: torch.float32})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%view,), kwargs = {dtype: torch.float32})
+    %_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%permute,), kwargs = {dtype: torch.float32})
+    %mm : [num_users=1] = call_function[target=torch.ops.aten.mm.default](args = (%_to_copy_1, %_to_copy_2), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mm, 1), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul, %mul_1), kwargs = {})
+    %_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add,), kwargs = {dtype: torch.bfloat16})
+    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%_to_copy_3, [1, 197, 768]), kwargs = {})
+    return (view_1,)
+source:
+    permute              ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    view                 ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_1           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_2           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mm                   ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    mul_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    _to_copy_3           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+    view_1               ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:118 y = self.mlp(y)
+DEBUG:furiosa_torch:graph compiled successfully
+INFO:furiosa_torch:Loading to furiosa:0 for AtenOp(aten_op_name=aten::linear, args=((torch.Size([1, 197, 3072]), (605184, 3072, 1), torch.bfloat16, ((1, 197, 3072), (605184, 3072, 1), ((None, 1),))), (torch.Size([768, 3072]), (3072, 1), torch.bfloat16, ((768, 3072), (3072, 1), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+INFO:furiosa_torch:Building exported program AtenOp(aten_op_name=aten::linear, args=((torch.Size([1, 768]), (151296, 1), torch.bfloat16, None), (torch.Size([1000, 768]), (768, 1), torch.bfloat16, ((1000, 768), (768, 1), ((None, 1),))), (torch.Size([1000]), (1,), torch.bfloat16, ((1000,), (1,), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG:furiosa_torch:original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %permute : [num_users=1] = call_function[target=torch.ops.aten.permute.default](args = (%args_1, [1, 0]), kwargs = {})
+    %_to_copy : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_2,), kwargs = {dtype: torch.float32})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%permute,), kwargs = {dtype: torch.float32})
+    %mm : [num_users=1] = call_function[target=torch.ops.aten.mm.default](args = (%_to_copy_1, %_to_copy_2), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mm, 1), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul, %mul_1), kwargs = {})
+    %_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_3,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %permute : [num_users=1] = call_function[target=torch.ops.aten.permute.default](args = (%args_1, [1, 0]), kwargs = {})
+    %_to_copy : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_2,), kwargs = {dtype: torch.float32})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %_to_copy_2 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%permute,), kwargs = {dtype: torch.float32})
+    %mm : [num_users=1] = call_function[target=torch.ops.aten.mm.default](args = (%_to_copy_1, %_to_copy_2), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mm, 1), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%_to_copy, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul, %mul_1), kwargs = {})
+    %_to_copy_3 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_3,)
+source:
+    permute              ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    _to_copy             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    _to_copy_1           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    _to_copy_2           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    mm                   ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    mul                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    mul_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+    _to_copy_3           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:303 x = self.heads(x)
+DEBUG:furiosa_torch:graph compiled successfully
+INFO:furiosa_torch:Loading to furiosa:0 for AtenOp(aten_op_name=aten::linear, args=((torch.Size([1, 768]), (151296, 1), torch.bfloat16, ((1, 768), (151296, 1), ((None, 1),))), (torch.Size([1000, 768]), (768, 1), torch.bfloat16, ((1000, 768), (768, 1), ((None, 1),))), (torch.Size([1000]), (1,), torch.bfloat16, ((1000,), (1,), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())

@@ -1,0 +1,46 @@
+{
+  "pe": 8,
+  "batch": 4,
+  "mode": "compile",
+  "attempts": 1,
+  "old_status_counts": {
+    "timeout": 1
+  },
+  "successful_stages": [],
+  "cache_source": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/validation_p8_b4_compile_t1_a1",
+  "cache_source_case": "validation_p8_b4_compile_t1_a1",
+  "source_run": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274",
+  "warmup": 20,
+  "samples": [],
+  "timeout_s": 3600,
+  "status": "resource_limit",
+  "started_utc": "2026-11-24T18:24:33.314222+00:00",
+  "pid": 1042534,
+  "backend_calls": [],
+  "warmup_ms": [],
+  "versions": {
+    "torch": "2.10.0+cpu",
+    "furiosa": "furiosa-torch 2026.4.0 (rev: 5800e2ba24, built_at: 2026-10-12T09:11:33Z)"
+  },
+  "fusion": "Fusion(num_fusion=8, num_pe_per_cluster=4, num_chips=1, num_clusters_per_chip=2)",
+  "device_configuration": "(Fusion(num_fusion=8, num_pe_per_cluster=4, num_chips=1, num_clusters_per_chip=2), Single, ['furiosa:0'])",
+  "effective": {
+    "device": "furiosa:0",
+    "dtype": "BF16",
+    "mha_fastpath": false,
+    "cpu_fallback": false,
+    "torch_threads": 22,
+    "torch_interop_threads": 64,
+    "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "profile_level": "trace"
+  },
+  "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+  "input_hash": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7",
+  "initial_model_and_input_transfer_wall_ms": 39.79202,
+  "controller_status": "resource_limit",
+  "returncode": -15,
+  "wall_s": 243.21493657073006,
+  "foreign_pids": [],
+  "termination_reason": "cgroup memory headroom below 8 GiB",
+  "terminated_phase": "first_forward_compile"
+}

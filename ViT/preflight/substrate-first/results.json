@@ -1,0 +1,608 @@
+[
+  {
+    "kind": "scope",
+    "substrate": true,
+    "python": "/root/venv/bin/python",
+    "torch": "2.10.0+cpu",
+    "runtime": "furiosa-torch 2026.4.0 (rev: 5800e2ba24, built_at: 2026-10-12T09:11:33Z)",
+    "device": "furiosa:0",
+    "cpu_fallback": true,
+    "compiler": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "note": "Preflight only; no accuracy pass criterion; no cold-cache claim"
+  },
+  {
+    "kind": "cache",
+    "original": "CacheConfig { root_dir: Some(\"/root/.cache/furiosa/compiler\"), summary: false, ensure: false, failure_link_dir: None }",
+    "selected": "/root/ViT/preflight/substrate-first/compiler-cache",
+    "already_exists": false
+  },
+  {
+    "kind": "call",
+    "label": "batch1/eager/0",
+    "shape": [
+      1,
+      16
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0",
+    "host_return_ms": 595.970218,
+    "completion_ms": 596.01415,
+    "query_at_return": false,
+    "backend_calls": 0,
+    "lru_before": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 0,
+        "maxsize": 8192,
+        "currsize": 0
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 0,
+        "maxsize": 8192,
+        "currsize": 0
+      },
+      "_compile_and_load_cached": {
+        "hits": 0,
+        "misses": 0,
+        "maxsize": 32,
+        "currsize": 0
+      }
+    },
+    "lru_after": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_and_load_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 32,
+        "currsize": 1
+      }
+    }
+  },
+  {
+    "kind": "call",
+    "label": "batch1/eager/1",
+    "shape": [
+      1,
+      16
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0",
+    "host_return_ms": 0.176735,
+    "completion_ms": 0.212896,
+    "query_at_return": true,
+    "backend_calls": 0,
+    "lru_before": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_and_load_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 32,
+        "currsize": 1
+      }
+    },
+    "lru_after": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_and_load_cached": {
+        "hits": 1,
+        "misses": 1,
+        "maxsize": 32,
+        "currsize": 1
+      }
+    }
+  },
+  {
+    "kind": "call",
+    "label": "batch1/eager/2",
+    "shape": [
+      1,
+      16
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0",
+    "host_return_ms": 0.148454,
+    "completion_ms": 0.182275,
+    "query_at_return": true,
+    "backend_calls": 0,
+    "lru_before": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_and_load_cached": {
+        "hits": 1,
+        "misses": 1,
+        "maxsize": 32,
+        "currsize": 1
+      }
+    },
+    "lru_after": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_and_load_cached": {
+        "hits": 2,
+        "misses": 1,
+        "maxsize": 32,
+        "currsize": 1
+      }
+    }
+  },
+  {
+    "kind": "dynamo_backend_call",
+    "count": 1,
+    "nodes": 3
+  },
+  {
+    "kind": "call",
+    "label": "batch1/compile/0",
+    "shape": [
+      1,
+      16
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0",
+    "host_return_ms": 450.15666,
+    "completion_ms": 450.197221,
+    "query_at_return": true,
+    "backend_calls": 1,
+    "lru_before": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_and_load_cached": {
+        "hits": 2,
+        "misses": 1,
+        "maxsize": 32,
+        "currsize": 1
+      }
+    },
+    "lru_after": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_and_load_cached": {
+        "hits": 2,
+        "misses": 1,
+        "maxsize": 32,
+        "currsize": 1
+      }
+    }
+  },
+  {
+    "kind": "call",
+    "label": "batch1/compile/1",
+    "shape": [
+      1,
+      16
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0",
+    "host_return_ms": 0.106283,
+    "completion_ms": 0.140874,
+    "query_at_return": false,
+    "backend_calls": 1,
+    "lru_before": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_and_load_cached": {
+        "hits": 2,
+        "misses": 1,
+        "maxsize": 32,
+        "currsize": 1
+      }
+    },
+    "lru_after": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_and_load_cached": {
+        "hits": 2,
+        "misses": 1,
+        "maxsize": 32,
+        "currsize": 1
+      }
+    }
+  },
+  {
+    "kind": "call",
+    "label": "batch1/compile/2",
+    "shape": [
+      1,
+      16
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0",
+    "host_return_ms": 0.064582,
+    "completion_ms": 0.094653,
+    "query_at_return": false,
+    "backend_calls": 1,
+    "lru_before": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_and_load_cached": {
+        "hits": 2,
+        "misses": 1,
+        "maxsize": 32,
+        "currsize": 1
+      }
+    },
+    "lru_after": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_and_load_cached": {
+        "hits": 2,
+        "misses": 1,
+        "maxsize": 32,
+        "currsize": 1
+      }
+    }
+  },
+  {
+    "kind": "difference",
+    "stage": "batch1",
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "max_relative_to_eager": 0.0,
+    "rmse": 0.0,
+    "pass_fail": "UNASSESSED: tolerance not specified"
+  },
+  {
+    "kind": "call",
+    "label": "batch2/eager/0",
+    "shape": [
+      2,
+      16
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0",
+    "host_return_ms": 417.178957,
+    "completion_ms": 417.215288,
+    "query_at_return": false,
+    "backend_calls": 1,
+    "lru_before": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 1,
+        "maxsize": 8192,
+        "currsize": 1
+      },
+      "_compile_and_load_cached": {
+        "hits": 2,
+        "misses": 1,
+        "maxsize": 32,
+        "currsize": 1
+      }
+    },
+    "lru_after": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_and_load_cached": {
+        "hits": 2,
+        "misses": 2,
+        "maxsize": 32,
+        "currsize": 2
+      }
+    }
+  },
+  {
+    "kind": "dynamo_backend_call",
+    "count": 2,
+    "nodes": 3
+  },
+  {
+    "kind": "call",
+    "label": "batch2/compile/0",
+    "shape": [
+      2,
+      16
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0",
+    "host_return_ms": 422.799933,
+    "completion_ms": 422.842874,
+    "query_at_return": true,
+    "backend_calls": 2,
+    "lru_before": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_and_load_cached": {
+        "hits": 2,
+        "misses": 2,
+        "maxsize": 32,
+        "currsize": 2
+      }
+    },
+    "lru_after": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_and_load_cached": {
+        "hits": 2,
+        "misses": 2,
+        "maxsize": 32,
+        "currsize": 2
+      }
+    }
+  },
+  {
+    "kind": "difference",
+    "stage": "batch2",
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "max_relative_to_eager": 0.0,
+    "rmse": 0.0,
+    "pass_fail": "UNASSESSED: tolerance not specified"
+  },
+  {
+    "kind": "call",
+    "label": "return_batch1/eager/0",
+    "shape": [
+      1,
+      16
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0",
+    "host_return_ms": 0.183715,
+    "completion_ms": 0.217756,
+    "query_at_return": true,
+    "backend_calls": 2,
+    "lru_before": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_and_load_cached": {
+        "hits": 2,
+        "misses": 2,
+        "maxsize": 32,
+        "currsize": 2
+      }
+    },
+    "lru_after": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_and_load_cached": {
+        "hits": 3,
+        "misses": 2,
+        "maxsize": 32,
+        "currsize": 2
+      }
+    }
+  },
+  {
+    "kind": "call",
+    "label": "return_batch1/compile/0",
+    "shape": [
+      1,
+      16
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0",
+    "host_return_ms": 0.091503,
+    "completion_ms": 0.122264,
+    "query_at_return": false,
+    "backend_calls": 2,
+    "lru_before": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_and_load_cached": {
+        "hits": 3,
+        "misses": 2,
+        "maxsize": 32,
+        "currsize": 2
+      }
+    },
+    "lru_after": {
+      "_build_exported_program_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_cached": {
+        "hits": 0,
+        "misses": 2,
+        "maxsize": 8192,
+        "currsize": 2
+      },
+      "_compile_and_load_cached": {
+        "hits": 3,
+        "misses": 2,
+        "maxsize": 32,
+        "currsize": 2
+      }
+    }
+  },
+  {
+    "kind": "difference",
+    "stage": "return_batch1",
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "max_relative_to_eager": 0.0,
+    "rmse": 0.0,
+    "pass_fail": "UNASSESSED: tolerance not specified"
+  },
+  {
+    "kind": "torch_profiler",
+    "activities": "{<ProfilerActivity.CPU: 0>, <ProfilerActivity.PrivateUse1: 5>}",
+    "event_devices": [
+      "DeviceType.CPU"
+    ]
+  },
+  {
+    "kind": "finished",
+    "status": "success",
+    "scope": "substrate only"
+  }
+]

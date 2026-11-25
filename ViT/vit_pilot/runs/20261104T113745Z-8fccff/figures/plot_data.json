@@ -1,0 +1,708 @@
+{
+  "summary": [
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "fixed_eager_b1_t1",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 1,
+      "status": "ok",
+      "reason": null,
+      "model_id": "torchvision.models.vit_b_16",
+      "weights_id": "ViT_B_16_Weights.IMAGENET1K_V1",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "input_hash": "808a6e08cd33ab81c5a77c5692e1c64e14077461763ab111dcbb7e76be116d7f",
+      "input_ids": [
+        "synthetic_seed42_0"
+      ],
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "requested_repeats": 20,
+      "completed_repeats": 20,
+      "valid_repeats": 20,
+      "first_call_ms": 4530.82063,
+      "runner_setup_ms": 0.00281,
+      "mean_ms": 1027.9730093,
+      "median_ms": 1020.352557,
+      "stdev_ms": 37.23570512260946,
+      "throughput_images_s": 0.97278818699817,
+      "throughput_reason": null,
+      "first_call_extra_ms": 3502.8476207000003,
+      "compiler_time_ms": null,
+      "warm_state_assessment": "preliminary_stable",
+      "warm_state_reason": "Heuristic only: repeat CV=0.0362, half-mean relative drift=0.0233; thresholds 0.10; compiler events unobserved in performance logs",
+      "validation_status": "structure_finite_ok_tolerance_unset",
+      "execution_path_status": "unknown_all_op_placement_unverified",
+      "timing_scope": "cpu_dispatch_model_call_and_current_stream_completion_excludes_transfers",
+      "cache_state": "fresh_process_persistent_cache_possible"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "fixed_compile_b1_t1",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "status": "ok",
+      "reason": null,
+      "model_id": "torchvision.models.vit_b_16",
+      "weights_id": "ViT_B_16_Weights.IMAGENET1K_V1",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "input_hash": "808a6e08cd33ab81c5a77c5692e1c64e14077461763ab111dcbb7e76be116d7f",
+      "input_ids": [
+        "synthetic_seed42_0"
+      ],
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "requested_repeats": 20,
+      "completed_repeats": 20,
+      "valid_repeats": 20,
+      "first_call_ms": 9660.353193,
+      "runner_setup_ms": 148.881477,
+      "mean_ms": 3.7102307,
+      "median_ms": 3.664551,
+      "stdev_ms": 0.20677282473058003,
+      "throughput_images_s": 269.5250190237496,
+      "throughput_reason": null,
+      "first_call_extra_ms": 9656.6429623,
+      "compiler_time_ms": null,
+      "warm_state_assessment": "preliminary_stable",
+      "warm_state_reason": "Heuristic only: repeat CV=0.0557, half-mean relative drift=0.0252; thresholds 0.10; compiler events unobserved in performance logs",
+      "validation_status": "structure_finite_ok_tolerance_unset",
+      "execution_path_status": "single_sdk_segment_observed_all_op_placement_unverified",
+      "timing_scope": "cpu_dispatch_model_call_and_current_stream_completion_excludes_transfers",
+      "cache_state": "fresh_process_persistent_cache_possible"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "fixed_eager_b4_t1",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 1,
+      "status": "ok",
+      "reason": null,
+      "model_id": "torchvision.models.vit_b_16",
+      "weights_id": "ViT_B_16_Weights.IMAGENET1K_V1",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "input_hash": "dddca074d096a9851cd91884341cf9975592e09e67d24a0577df522b749700aa",
+      "input_ids": [
+        "synthetic_seed42_0",
+        "synthetic_seed42_1",
+        "synthetic_seed42_2",
+        "synthetic_seed42_3"
+      ],
+      "dtype": "torch.bfloat16",
+      "shape": [
+        4,
+        3,
+        224,
+        224
+      ],
+      "requested_repeats": 20,
+      "completed_repeats": 20,
+      "valid_repeats": 20,
+      "first_call_ms": 4818.074599,
+      "runner_setup_ms": 0.0029,
+      "mean_ms": 1124.33514735,
+      "median_ms": 1129.1694815,
+      "stdev_ms": 39.78590052979099,
+      "throughput_images_s": 3.557658060790676,
+      "throughput_reason": null,
+      "first_call_extra_ms": 3693.73945165,
+      "compiler_time_ms": null,
+      "warm_state_assessment": "preliminary_stable",
+      "warm_state_reason": "Heuristic only: repeat CV=0.0354, half-mean relative drift=0.0282; thresholds 0.10; compiler events unobserved in performance logs",
+      "validation_status": "structure_finite_ok_tolerance_unset",
+      "execution_path_status": "unknown_all_op_placement_unverified",
+      "timing_scope": "cpu_dispatch_model_call_and_current_stream_completion_excludes_transfers",
+      "cache_state": "fresh_process_persistent_cache_possible"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "fixed_compile_b4_t1",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 1,
+      "status": "ok",
+      "reason": null,
+      "model_id": "torchvision.models.vit_b_16",
+      "weights_id": "ViT_B_16_Weights.IMAGENET1K_V1",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "input_hash": "dddca074d096a9851cd91884341cf9975592e09e67d24a0577df522b749700aa",
+      "input_ids": [
+        "synthetic_seed42_0",
+        "synthetic_seed42_1",
+        "synthetic_seed42_2",
+        "synthetic_seed42_3"
+      ],
+      "dtype": "torch.bfloat16",
+      "shape": [
+        4,
+        3,
+        224,
+        224
+      ],
+      "requested_repeats": 20,
+      "completed_repeats": 20,
+      "valid_repeats": 20,
+      "first_call_ms": 9993.05646,
+      "runner_setup_ms": 148.884767,
+      "mean_ms": 10.47408295,
+      "median_ms": 10.472346,
+      "stdev_ms": 0.011273894472466694,
+      "throughput_images_s": 381.89500876542127,
+      "throughput_reason": null,
+      "first_call_extra_ms": 9982.58237705,
+      "compiler_time_ms": null,
+      "warm_state_assessment": "preliminary_stable",
+      "warm_state_reason": "Heuristic only: repeat CV=0.0011, half-mean relative drift=0.0001; thresholds 0.10; compiler events unobserved in performance logs",
+      "validation_status": "structure_finite_ok_tolerance_unset",
+      "execution_path_status": "single_sdk_segment_observed_all_op_placement_unverified",
+      "timing_scope": "cpu_dispatch_model_call_and_current_stream_completion_excludes_transfers",
+      "cache_state": "fresh_process_persistent_cache_possible"
+    }
+  ],
+  "shape": [
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_eager",
+      "mode": "eager",
+      "call_index": 1,
+      "batch": 1,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:53:45.077630+00:00",
+      "end_utc": "2026-11-04T11:53:49.595103+00:00",
+      "elapsed_ms": 4512.679095,
+      "timing_valid": true,
+      "pytorch_recompile_events": 0,
+      "guard_failure_reason": null,
+      "backend_calls": 0,
+      "backend_event_kind": null,
+      "sdk_compile_entry_log_count": 9,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "process_lru_delta": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 9
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 9
+        },
+        "_compile_and_load_cached": {
+          "hits": 116,
+          "misses": 9
+        }
+      },
+      "cache_state": "fresh_process_persistent_cache_possible",
+      "execution_path_status": "unknown_all_op_placement_unverified",
+      "graph_break_log_count": 0,
+      "sdk_segment_log_records": [],
+      "cpu_fallback_log_count": 0,
+      "observation_reason": "PyTorch event counts are matched stderr entries; SDK entry count is stdout log lines, not actual codegen; disk hit/miss unknown",
+      "log_ref": "logs/switch_eager.stderr.log :: VIT_CALL_BEGIN call_index=1; logs/switch_eager.stdout.log :: call_start/end"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_eager",
+      "mode": "eager",
+      "call_index": 2,
+      "batch": 1,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:53:49.595642+00:00",
+      "end_utc": "2026-11-04T11:53:50.606925+00:00",
+      "elapsed_ms": 1005.574049,
+      "timing_valid": true,
+      "pytorch_recompile_events": 0,
+      "guard_failure_reason": null,
+      "backend_calls": 0,
+      "backend_event_kind": null,
+      "sdk_compile_entry_log_count": 0,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "process_lru_delta": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 125,
+          "misses": 0
+        }
+      },
+      "cache_state": "same_process_reuse",
+      "execution_path_status": "unknown_all_op_placement_unverified",
+      "graph_break_log_count": 0,
+      "sdk_segment_log_records": [],
+      "cpu_fallback_log_count": 0,
+      "observation_reason": "PyTorch event counts are matched stderr entries; SDK entry count is stdout log lines, not actual codegen; disk hit/miss unknown",
+      "log_ref": "logs/switch_eager.stderr.log :: VIT_CALL_BEGIN call_index=2; logs/switch_eager.stdout.log :: call_start/end"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_eager",
+      "mode": "eager",
+      "call_index": 3,
+      "batch": 4,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:53:50.607688+00:00",
+      "end_utc": "2026-11-04T11:53:55.290793+00:00",
+      "elapsed_ms": 4678.853035,
+      "timing_valid": true,
+      "pytorch_recompile_events": 0,
+      "guard_failure_reason": null,
+      "backend_calls": 0,
+      "backend_event_kind": null,
+      "sdk_compile_entry_log_count": 10,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "process_lru_delta": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 10
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 10
+        },
+        "_compile_and_load_cached": {
+          "hits": 115,
+          "misses": 10
+        }
+      },
+      "cache_state": "same_process_reuse",
+      "execution_path_status": "unknown_all_op_placement_unverified",
+      "graph_break_log_count": 0,
+      "sdk_segment_log_records": [],
+      "cpu_fallback_log_count": 0,
+      "observation_reason": "PyTorch event counts are matched stderr entries; SDK entry count is stdout log lines, not actual codegen; disk hit/miss unknown",
+      "log_ref": "logs/switch_eager.stderr.log :: VIT_CALL_BEGIN call_index=3; logs/switch_eager.stdout.log :: call_start/end"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_eager",
+      "mode": "eager",
+      "call_index": 4,
+      "batch": 4,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:53:55.291612+00:00",
+      "end_utc": "2026-11-04T11:53:56.439190+00:00",
+      "elapsed_ms": 1143.335152,
+      "timing_valid": true,
+      "pytorch_recompile_events": 0,
+      "guard_failure_reason": null,
+      "backend_calls": 0,
+      "backend_event_kind": null,
+      "sdk_compile_entry_log_count": 0,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "process_lru_delta": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 125,
+          "misses": 0
+        }
+      },
+      "cache_state": "same_process_reuse",
+      "execution_path_status": "unknown_all_op_placement_unverified",
+      "graph_break_log_count": 0,
+      "sdk_segment_log_records": [],
+      "cpu_fallback_log_count": 0,
+      "observation_reason": "PyTorch event counts are matched stderr entries; SDK entry count is stdout log lines, not actual codegen; disk hit/miss unknown",
+      "log_ref": "logs/switch_eager.stderr.log :: VIT_CALL_BEGIN call_index=4; logs/switch_eager.stdout.log :: call_start/end"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_eager",
+      "mode": "eager",
+      "call_index": 5,
+      "batch": 1,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:53:56.440109+00:00",
+      "end_utc": "2026-11-04T11:53:57.490879+00:00",
+      "elapsed_ms": 1044.323334,
+      "timing_valid": true,
+      "pytorch_recompile_events": 0,
+      "guard_failure_reason": null,
+      "backend_calls": 0,
+      "backend_event_kind": null,
+      "sdk_compile_entry_log_count": 0,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "process_lru_delta": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 125,
+          "misses": 0
+        }
+      },
+      "cache_state": "same_process_reuse",
+      "execution_path_status": "unknown_all_op_placement_unverified",
+      "graph_break_log_count": 0,
+      "sdk_segment_log_records": [],
+      "cpu_fallback_log_count": 0,
+      "observation_reason": "PyTorch event counts are matched stderr entries; SDK entry count is stdout log lines, not actual codegen; disk hit/miss unknown",
+      "log_ref": "logs/switch_eager.stderr.log :: VIT_CALL_BEGIN call_index=5; logs/switch_eager.stdout.log :: call_start/end"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_eager",
+      "mode": "eager",
+      "call_index": 6,
+      "batch": 4,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:53:57.492089+00:00",
+      "end_utc": "2026-11-04T11:53:58.633582+00:00",
+      "elapsed_ms": 1136.91225,
+      "timing_valid": true,
+      "pytorch_recompile_events": 0,
+      "guard_failure_reason": null,
+      "backend_calls": 0,
+      "backend_event_kind": null,
+      "sdk_compile_entry_log_count": 0,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "process_lru_delta": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 125,
+          "misses": 0
+        }
+      },
+      "cache_state": "same_process_reuse",
+      "execution_path_status": "unknown_all_op_placement_unverified",
+      "graph_break_log_count": 0,
+      "sdk_segment_log_records": [],
+      "cpu_fallback_log_count": 0,
+      "observation_reason": "PyTorch event counts are matched stderr entries; SDK entry count is stdout log lines, not actual codegen; disk hit/miss unknown",
+      "log_ref": "logs/switch_eager.stderr.log :: VIT_CALL_BEGIN call_index=6; logs/switch_eager.stdout.log :: call_start/end"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_compile",
+      "mode": "compile",
+      "call_index": 1,
+      "batch": 1,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:54:04.329782+00:00",
+      "end_utc": "2026-11-04T11:54:14.023124+00:00",
+      "elapsed_ms": 9688.795442,
+      "timing_valid": true,
+      "pytorch_recompile_events": 0,
+      "guard_failure_reason": null,
+      "backend_calls": 1,
+      "backend_event_kind": "initial_backend_entry",
+      "sdk_compile_entry_log_count": 1,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "process_lru_delta": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0
+        }
+      },
+      "cache_state": "fresh_process_persistent_cache_possible",
+      "execution_path_status": "single_sdk_segment_observed_all_op_placement_unverified",
+      "graph_break_log_count": 0,
+      "sdk_segment_log_records": [
+        "split into 1 submodules, 1 to compile"
+      ],
+      "cpu_fallback_log_count": 0,
+      "observation_reason": "PyTorch event counts are matched stderr entries; SDK entry count is stdout log lines, not actual codegen; disk hit/miss unknown",
+      "log_ref": "logs/switch_compile.stderr.log :: VIT_CALL_BEGIN call_index=1; logs/switch_compile.stdout.log :: call_start/end"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_compile",
+      "mode": "compile",
+      "call_index": 2,
+      "batch": 1,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:54:14.023872+00:00",
+      "end_utc": "2026-11-04T11:54:14.035246+00:00",
+      "elapsed_ms": 3.845782,
+      "timing_valid": true,
+      "pytorch_recompile_events": 0,
+      "guard_failure_reason": null,
+      "backend_calls": 0,
+      "backend_event_kind": null,
+      "sdk_compile_entry_log_count": 0,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "process_lru_delta": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0
+        }
+      },
+      "cache_state": "same_process_reuse",
+      "execution_path_status": "unknown_all_op_placement_unverified",
+      "graph_break_log_count": 0,
+      "sdk_segment_log_records": [],
+      "cpu_fallback_log_count": 0,
+      "observation_reason": "PyTorch event counts are matched stderr entries; SDK entry count is stdout log lines, not actual codegen; disk hit/miss unknown",
+      "log_ref": "logs/switch_compile.stderr.log :: VIT_CALL_BEGIN call_index=2; logs/switch_compile.stdout.log :: call_start/end"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_compile",
+      "mode": "compile",
+      "call_index": 3,
+      "batch": 4,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:54:14.035692+00:00",
+      "end_utc": "2026-11-04T11:54:23.987965+00:00",
+      "elapsed_ms": 9947.787923,
+      "timing_valid": true,
+      "pytorch_recompile_events": 1,
+      "guard_failure_reason": [
+        "V1104 11:54:14.040000 110885 torch/_dynamo/guards.py:4514] [0/1] [__recompiles]     triggered by the following guard failure(s):",
+        "V1104 11:54:14.040000 110885 torch/_dynamo/guards.py:4514] [0/1] [__recompiles]     - 0/0: tensor 'x' size mismatch at index 0. expected 1, actual 4"
+      ],
+      "backend_calls": 1,
+      "backend_event_kind": "subsequent_backend_entry",
+      "sdk_compile_entry_log_count": 1,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "process_lru_delta": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0
+        }
+      },
+      "cache_state": "same_process_reuse",
+      "execution_path_status": "single_sdk_segment_observed_all_op_placement_unverified",
+      "graph_break_log_count": 0,
+      "sdk_segment_log_records": [
+        "split into 1 submodules, 1 to compile"
+      ],
+      "cpu_fallback_log_count": 0,
+      "observation_reason": "PyTorch event counts are matched stderr entries; SDK entry count is stdout log lines, not actual codegen; disk hit/miss unknown",
+      "log_ref": "logs/switch_compile.stderr.log :: VIT_CALL_BEGIN call_index=3; logs/switch_compile.stdout.log :: call_start/end"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_compile",
+      "mode": "compile",
+      "call_index": 4,
+      "batch": 4,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:54:23.988874+00:00",
+      "end_utc": "2026-11-04T11:54:24.004533+00:00",
+      "elapsed_ms": 10.626341,
+      "timing_valid": true,
+      "pytorch_recompile_events": 0,
+      "guard_failure_reason": null,
+      "backend_calls": 0,
+      "backend_event_kind": null,
+      "sdk_compile_entry_log_count": 0,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "process_lru_delta": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0
+        }
+      },
+      "cache_state": "same_process_reuse",
+      "execution_path_status": "unknown_all_op_placement_unverified",
+      "graph_break_log_count": 0,
+      "sdk_segment_log_records": [],
+      "cpu_fallback_log_count": 0,
+      "observation_reason": "PyTorch event counts are matched stderr entries; SDK entry count is stdout log lines, not actual codegen; disk hit/miss unknown",
+      "log_ref": "logs/switch_compile.stderr.log :: VIT_CALL_BEGIN call_index=4; logs/switch_compile.stdout.log :: call_start/end"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_compile",
+      "mode": "compile",
+      "call_index": 5,
+      "batch": 1,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:54:24.005107+00:00",
+      "end_utc": "2026-11-04T11:54:24.014302+00:00",
+      "elapsed_ms": 3.810642,
+      "timing_valid": true,
+      "pytorch_recompile_events": 0,
+      "guard_failure_reason": null,
+      "backend_calls": 0,
+      "backend_event_kind": null,
+      "sdk_compile_entry_log_count": 0,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "process_lru_delta": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0
+        }
+      },
+      "cache_state": "same_process_reuse",
+      "execution_path_status": "unknown_all_op_placement_unverified",
+      "graph_break_log_count": 0,
+      "sdk_segment_log_records": [],
+      "cpu_fallback_log_count": 0,
+      "observation_reason": "PyTorch event counts are matched stderr entries; SDK entry count is stdout log lines, not actual codegen; disk hit/miss unknown",
+      "log_ref": "logs/switch_compile.stderr.log :: VIT_CALL_BEGIN call_index=5; logs/switch_compile.stdout.log :: call_start/end"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_compile",
+      "mode": "compile",
+      "call_index": 6,
+      "batch": 4,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:54:24.014871+00:00",
+      "end_utc": "2026-11-04T11:54:24.030325+00:00",
+      "elapsed_ms": 10.53725,
+      "timing_valid": true,
+      "pytorch_recompile_events": 0,
+      "guard_failure_reason": null,
+      "backend_calls": 0,
+      "backend_event_kind": null,
+      "sdk_compile_entry_log_count": 0,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "process_lru_delta": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0
+        }
+      },
+      "cache_state": "same_process_reuse",
+      "execution_path_status": "unknown_all_op_placement_unverified",
+      "graph_break_log_count": 0,
+      "sdk_segment_log_records": [],
+      "cpu_fallback_log_count": 0,
+      "observation_reason": "PyTorch event counts are matched stderr entries; SDK entry count is stdout log lines, not actual codegen; disk hit/miss unknown",
+      "log_ref": "logs/switch_compile.stderr.log :: VIT_CALL_BEGIN call_index=6; logs/switch_compile.stdout.log :: call_start/end"
+    }
+  ],
+  "config": {
+    "run_id": "20261104T113745Z-8fccff",
+    "device": "furiosa:0",
+    "warmup": 5,
+    "repeats": 20,
+    "trials": 1,
+    "worker_timeout_seconds": 1800,
+    "total_budget_seconds": 7200,
+    "dtype": "torch.bfloat16",
+    "batches": [
+      1,
+      4
+    ],
+    "shape_sequence": [
+      1,
+      1,
+      4,
+      4,
+      1,
+      4
+    ],
+    "model_id": "torchvision.models.vit_b_16",
+    "weights_id": "ViT_B_16_Weights.IMAGENET1K_V1",
+    "atol": null,
+    "rtol": null,
+    "images": null,
+    "cache_state": "fresh_process_persistent_cache_possible",
+    "cache_note": "new run-local cache via verified SDK cache_context; shared by all sequential workers; smoke may populate it",
+    "synthetic_input": true,
+    "expected_fixed_records": 104,
+    "expected_shape_records": 12,
+    "independent_trials_per_case": 1
+  }
+}

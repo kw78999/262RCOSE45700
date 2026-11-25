@@ -1,0 +1,298 @@
+{
+  "batches": [
+    {
+      "batch": 1,
+      "status": "observed_crossing_reached",
+      "prediction_source_trial": 1,
+      "planned_N": 2962,
+      "eager_case_id": "cumulative_eager_b1_t1",
+      "compile_case_id": "cumulative_compile_b1_t1",
+      "first_observed_compile_advantage_N": 2514,
+      "final_winning_suffix_start_N": 2514,
+      "transitions": [
+        {
+          "N": 1,
+          "state": "eager_faster",
+          "difference_ms": 104088.067755
+        },
+        {
+          "N": 2514,
+          "state": "compile_faster",
+          "difference_ms": -29.85874
+        }
+      ],
+      "checkpoints": [
+        {
+          "label": "0.8x",
+          "N": 1974,
+          "observed": {
+            "run_id": "20261104T172746Z-e1b86b",
+            "batch": 1,
+            "N": 1974,
+            "K": 1980,
+            "effective_images": 1974,
+            "prediction_source_trial": 1,
+            "observed_eager_ms": 187015.785016,
+            "observed_compile_ms": 209334.021084,
+            "observed_difference_ms": 22318.236068,
+            "predicted_eager_ms": 185474.86217,
+            "predicted_compile_ms": 205606.69866548,
+            "predicted_difference_ms": 20131.83649548,
+            "output_validation_status": "eligible"
+          },
+          "reason": null
+        },
+        {
+          "label": "1.0x",
+          "N": 2468,
+          "observed": {
+            "run_id": "20261104T172746Z-e1b86b",
+            "batch": 1,
+            "N": 2468,
+            "K": 2474,
+            "effective_images": 2468,
+            "prediction_source_trial": 1,
+            "observed_eager_ms": 209267.116225,
+            "observed_compile_ms": 211137.375496,
+            "observed_difference_ms": 1870.259271,
+            "predicted_eager_ms": 207424.155809,
+            "predicted_compile_ms": 207412.89482036,
+            "predicted_difference_ms": -11.26098864,
+            "output_validation_status": "eligible"
+          },
+          "reason": null
+        },
+        {
+          "label": "1.2x",
+          "N": 2962,
+          "observed": {
+            "run_id": "20261104T172746Z-e1b86b",
+            "batch": 1,
+            "N": 2962,
+            "K": 2968,
+            "effective_images": 2962,
+            "prediction_source_trial": 1,
+            "observed_eager_ms": 231510.898737,
+            "observed_compile_ms": 212937.016724,
+            "observed_difference_ms": -18573.882013,
+            "predicted_eager_ms": 229373.449448,
+            "predicted_compile_ms": 209219.09097524,
+            "predicted_difference_ms": -20154.35847276,
+            "output_validation_status": "eligible"
+          },
+          "reason": null
+        }
+      ],
+      "completed_common_calls": 2962,
+      "scope": "sum of S/F/W/work measured intervals; outside-timer checks/logs/prewait and process wall excluded",
+      "validation_output_eligible": true,
+      "reason": null,
+      "observed_end_difference_ms": -18573.882013,
+      "first_observed_K": 2520,
+      "first_observed_effective_images": 2514,
+      "observed_startup": {
+        "eager": {
+          "S_ms": 0.00212,
+          "F_ms": 97809.273966,
+          "W_ms": 223.013042,
+          "A_ms": 98032.289128
+        },
+        "compile": {
+          "S_ms": 240.535118,
+          "F_ms": 201902.188926,
+          "W_ms": 18.782132,
+          "A_ms": 202161.506176
+        }
+      },
+      "observed_work_mean_ms": {
+        "eager": 45.06367643787981,
+        "compile": 3.637917133018231
+      },
+      "primary_median_N": 2468,
+      "primary_trial_N_range": [
+        2462,
+        2489
+      ],
+      "observed_minus_predicted_median_N": 46,
+      "relative_crossing_difference": 0.018638573743922304,
+      "posthoc_observed_startup_with_primary_rates": {
+        "status": "finite_break_even",
+        "N_win": 2554,
+        "K_win": 2560,
+        "effective_images": 2554,
+        "forward_count": 2560,
+        "including_preparation_images": 2560,
+        "real_crossing_N": 2553.7201149061148,
+        "delta_A_ms": 104129.217048,
+        "delta_t_ms": 40.77550098,
+        "last_advantage_N": null,
+        "tie_N": null,
+        "first_eager_strict_N": null,
+        "numeric_rule": "durations rounded to integer ns using Decimal(str(ms))*1e6, ROUND_HALF_EVEN; sums/means/crossings use exact Fraction; no epsilon",
+        "A_e_ms": 98032.289128,
+        "A_c_ms": 202161.506176,
+        "t_e_ms": 44.4317685,
+        "t_c_ms": 3.65626752,
+        "exact_delta_A": "13016152131/125000",
+        "exact_delta_t": "2038775049/50000000",
+        "exact_real_crossing_N": "1735486950800/679591683",
+        "T_e_at_N_ms": 211511.025877,
+        "T_c_at_N_ms": 211499.61342208,
+        "difference_at_N_ms": -11.41245492,
+        "strict_at_N": true,
+        "predecessor_N": 2553,
+        "difference_at_predecessor_ms": 29.36304606
+      },
+      "posthoc_note": "Uses new cumulative startup with unchanged main-trial rates; not the primary prediction or an extra independent trial"
+    },
+    {
+      "batch": 4,
+      "status": "observed_crossing_reached",
+      "prediction_source_trial": 2,
+      "planned_N": 2896,
+      "eager_case_id": "cumulative_eager_b4_t1",
+      "compile_case_id": "cumulative_compile_b4_t1",
+      "first_observed_compile_advantage_N": 2412,
+      "final_winning_suffix_start_N": 2412,
+      "transitions": [
+        {
+          "N": 1,
+          "state": "eager_faster",
+          "difference_ms": 270251.056095
+        },
+        {
+          "N": 2412,
+          "state": "compile_faster",
+          "difference_ms": -84.370203
+        }
+      ],
+      "checkpoints": [
+        {
+          "label": "0.8x",
+          "N": 1930,
+          "observed": {
+            "run_id": "20261104T172746Z-e1b86b",
+            "batch": 4,
+            "N": 1930,
+            "K": 1936,
+            "effective_images": 7720,
+            "prediction_source_trial": 2,
+            "observed_eager_ms": 403304.874596,
+            "observed_compile_ms": 457237.684669,
+            "observed_difference_ms": 53932.810073,
+            "predicted_eager_ms": 402253.4931786,
+            "predicted_compile_ms": 455925.668405,
+            "predicted_difference_ms": 53672.1752264,
+            "output_validation_status": "eligible"
+          },
+          "reason": null
+        },
+        {
+          "label": "1.0x",
+          "N": 2413,
+          "observed": {
+            "run_id": "20261104T172746Z-e1b86b",
+            "batch": 4,
+            "N": 2413,
+            "K": 2419,
+            "effective_images": 9652,
+            "prediction_source_trial": 2,
+            "observed_eager_ms": 462489.524539,
+            "observed_compile_ms": 462292.91062,
+            "observed_difference_ms": -196.613919,
+            "predicted_eager_ms": 461072.74279836,
+            "predicted_compile_ms": 460987.0578143,
+            "predicted_difference_ms": -85.68498406,
+            "output_validation_status": "eligible"
+          },
+          "reason": null
+        },
+        {
+          "label": "1.2x",
+          "N": 2896,
+          "observed": {
+            "run_id": "20261104T172746Z-e1b86b",
+            "batch": 4,
+            "N": 2896,
+            "K": 2902,
+            "effective_images": 11584,
+            "prediction_source_trial": 2,
+            "observed_eager_ms": 521675.65169,
+            "observed_compile_ms": 467348.458265,
+            "observed_difference_ms": -54327.193425,
+            "predicted_eager_ms": 519891.99241812,
+            "predicted_compile_ms": 466048.4472236,
+            "predicted_difference_ms": -53843.54519452,
+            "output_validation_status": "eligible"
+          },
+          "reason": null
+        }
+      ],
+      "completed_common_calls": 2896,
+      "scope": "sum of S/F/W/work measured intervals; outside-timer checks/logs/prewait and process wall excluded",
+      "validation_output_eligible": true,
+      "reason": null,
+      "observed_end_difference_ms": -54327.193425,
+      "first_observed_K": 2418,
+      "first_observed_effective_images": 9648,
+      "observed_startup": {
+        "eager": {
+          "S_ms": 0.00252,
+          "F_ms": 166067.708307,
+          "W_ms": 612.07408,
+          "A_ms": 166679.784907
+        },
+        "compile": {
+          "S_ms": 240.870633,
+          "F_ms": 436749.153186,
+          "W_ms": 53.100246,
+          "A_ms": 437043.124065
+        }
+      },
+      "observed_work_mean_ms": {
+        "eager": 122.58144571236188,
+        "compile": 10.464549102209945
+      },
+      "primary_median_N": 2413,
+      "primary_trial_N_range": [
+        2385,
+        2429
+      ],
+      "observed_minus_predicted_median_N": -1,
+      "relative_crossing_difference": -0.0004144218814753353,
+      "posthoc_observed_startup_with_primary_rates": {
+        "status": "finite_break_even",
+        "N_win": 2430,
+        "K_win": 2436,
+        "effective_images": 9720,
+        "forward_count": 2436,
+        "including_preparation_images": 9744,
+        "real_crossing_N": 2429.1423115071307,
+        "delta_A_ms": 270363.339158,
+        "delta_t_ms": 111.29991762,
+        "last_advantage_N": null,
+        "tie_N": null,
+        "first_eager_strict_N": null,
+        "numeric_rule": "durations rounded to integer ns using Decimal(str(ms))*1e6, ROUND_HALF_EVEN; sums/means/crossings use exact Fraction; no epsilon",
+        "A_e_ms": 166679.784907,
+        "A_c_ms": 437043.124065,
+        "t_e_ms": 121.77898472,
+        "t_c_ms": 10.4790671,
+        "exact_delta_A": "135181669579/500000",
+        "exact_delta_t": "5564995881/50000000",
+        "exact_real_crossing_N": "13518166957900/5564995881",
+        "T_e_at_N_ms": 462602.7177766,
+        "T_c_at_N_ms": 462507.257118,
+        "difference_at_N_ms": -95.4606586,
+        "strict_at_N": true,
+        "predecessor_N": 2429,
+        "difference_at_predecessor_ms": 15.83925902
+      },
+      "posthoc_note": "Uses new cumulative startup with unchanged main-trial rates; not the primary prediction or an extra independent trial"
+    }
+  ],
+  "folded_into_independent_trials": false,
+  "primary_predictions_refitted": false,
+  "cumulative_output_checks": "every work output copied to CPU and checked outside model timer; no per-output files",
+  "outside_timer_gap_limit": "Output checks and scheduling between calls can affect execution; sums are not process wall time"
+}

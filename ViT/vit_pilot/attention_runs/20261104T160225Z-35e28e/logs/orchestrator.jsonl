@@ -1,0 +1,10 @@
+{"utc": "2026-11-04T16:02:25.930078+00:00", "monotonic_ns": 1693994399264675, "pid": 276033, "event": "run_start", "run_dir": "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e"}
+{"utc": "2026-11-04T16:02:28.791342+00:00", "monotonic_ns": 1693997260529702, "pid": 276033, "event": "worker_start", "case_id": "diagnostic_attention_compile_b1_strict", "limit_s": 1800}
+{"utc": "2026-11-04T16:04:27.212549+00:00", "monotonic_ns": 1694115681736020, "pid": 276033, "event": "worker_end", "case_id": "diagnostic_attention_compile_b1_strict", "status": "ok", "elapsed_s": 118.42077096411958, "npu_used_s": 118.42077096411958}
+{"utc": "2026-11-04T16:04:27.219675+00:00", "monotonic_ns": 1694115688862934, "pid": 276033, "event": "worker_start", "case_id": "diagnostic_attention_compile_b4_strict", "limit_s": 1800}
+{"utc": "2026-11-04T16:08:02.487426+00:00", "monotonic_ns": 1694330956612709, "pid": 276033, "event": "worker_end", "case_id": "diagnostic_attention_compile_b4_strict", "status": "ok", "elapsed_s": 215.26734318002127, "npu_used_s": 333.68811414414085}
+{"utc": "2026-11-04T16:08:02.493728+00:00", "monotonic_ns": 1694330962915033, "pid": 276033, "event": "worker_start", "case_id": "performance_attention_compile_b1", "limit_s": 1800}
+{"utc": "2026-11-04T16:10:02.384695+00:00", "monotonic_ns": 1694450853882038, "pid": 276033, "event": "worker_end", "case_id": "performance_attention_compile_b1", "status": "ok", "elapsed_s": 119.89055454009213, "npu_used_s": 453.578668684233}
+{"utc": "2026-11-04T16:10:02.391035+00:00", "monotonic_ns": 1694450860222385, "pid": 276033, "event": "worker_start", "case_id": "performance_attention_compile_b4", "limit_s": 1800}
+{"utc": "2026-11-04T16:13:39.552303+00:00", "monotonic_ns": 1694668021489320, "pid": 276033, "event": "worker_end", "case_id": "performance_attention_compile_b4", "status": "ok", "elapsed_s": 217.1608539901208, "npu_used_s": 670.7395226743538}
+{"utc": "2026-11-04T16:13:39.589703+00:00", "monotonic_ns": 1694668058895514, "pid": 276033, "event": "run_end", "run_dir": "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e", "npu_used_s": 670.7395226743538}

@@ -1,0 +1,22 @@
+{
+  "pe": 4,
+  "batch": 1,
+  "mode": "compile",
+  "attempts": 7,
+  "old_status_counts": {
+    "ok": 6,
+    "error": 1
+  },
+  "successful_stages": [
+    "diagnostic",
+    "exploration",
+    "formal",
+    "stabilization"
+  ],
+  "cache_source": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/formal_p4_b1_compile_t3_a1",
+  "cache_source_case": "formal_p4_b1_compile_t3_a1",
+  "source_run": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274",
+  "warmup": 100,
+  "samples": 5,
+  "timeout_s": 3600
+}

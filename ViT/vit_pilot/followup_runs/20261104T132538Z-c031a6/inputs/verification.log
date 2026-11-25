@@ -1,0 +1,6 @@
+OK 01_cat: /root/ViT/data/vit_real_images_4/images/01_cat.png
+OK 02_coffee: /root/ViT/data/vit_real_images_4/images/02_coffee.png
+OK 03_astronaut: /root/ViT/data/vit_real_images_4/images/03_astronaut.png
+OK 04_rocket: /root/ViT/data/vit_real_images_4/images/04_rocket.jpg
+Verified 4 real photographs. Ground-truth labels are not provided.
+

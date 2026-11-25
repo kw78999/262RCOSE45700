@@ -1,0 +1,19 @@
+[
+  {
+    "kind": "scope",
+    "substrate": false,
+    "python": "/root/venv/bin/python",
+    "torch": "2.10.0+cpu",
+    "runtime": "furiosa-torch 2026.4.0 (rev: 5800e2ba24, built_at: 2026-10-12T09:11:33Z)",
+    "device": "furiosa:0",
+    "cpu_fallback": true,
+    "compiler": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "note": "Preflight only; no accuracy pass criterion; no cold-cache claim"
+  },
+  {
+    "kind": "cache",
+    "original": "CacheConfig { root_dir: Some(\"/root/.cache/furiosa/compiler\"), summary: false, ensure: false, failure_link_dir: None }",
+    "selected": "/root/ViT/preflight/vit-attempt/compiler-cache",
+    "already_exists": false
+  }
+]

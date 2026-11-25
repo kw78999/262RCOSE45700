@@ -1,0 +1,272 @@
+{
+  "1": {
+    "run_id": "20261104T132538Z-c031a6",
+    "stage": "performance",
+    "trial": 1,
+    "synthetic_input": false,
+    "global_unique_images": 4,
+    "tolerance_status": "pending",
+    "accuracy_computed": false,
+    "loss_computed": false,
+    "batches": [
+      {
+        "batch": 1,
+        "trial": 1,
+        "eager_case_id": "performance_eager_b1_t1",
+        "compile_case_id": "performance_compile_b1_t1",
+        "status": "not_compared",
+        "tolerance_status": "pending",
+        "input_kind": "real",
+        "global_unique_samples": 4,
+        "max_abs_error": null,
+        "mean_abs_error": null,
+        "cosine_per_image": null,
+        "cosine_mean": null,
+        "cosine_min": null,
+        "top1_matches": null,
+        "compared_images": null,
+        "top1_ratio": null,
+        "mismatches": [],
+        "reason": "Pair condition mismatch/missing: weights_sha256",
+        "synthetic_input": false,
+        "ground_truth_available": false,
+        "accuracy_computed": false,
+        "loss_computed": false,
+        "prediction_score_type": "logit",
+        "images": [],
+        "identical_logits_for_distinct_inputs": [],
+        "eligible_for_timing": false,
+        "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256",
+        "mode_eligibility": {
+          "eager": {
+            "eligible": false,
+            "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256; eager: actual CPU model tensor fallback observed"
+          },
+          "compile": {
+            "eligible": false,
+            "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256"
+          }
+        }
+      },
+      {
+        "batch": 4,
+        "trial": 1,
+        "eager_case_id": "performance_eager_b4_t1",
+        "compile_case_id": "performance_compile_b4_t1",
+        "status": "not_compared",
+        "tolerance_status": "pending",
+        "input_kind": "real",
+        "global_unique_samples": 4,
+        "max_abs_error": null,
+        "mean_abs_error": null,
+        "cosine_per_image": null,
+        "cosine_mean": null,
+        "cosine_min": null,
+        "top1_matches": null,
+        "compared_images": null,
+        "top1_ratio": null,
+        "mismatches": [],
+        "reason": "Pair condition mismatch/missing: weights_sha256",
+        "synthetic_input": false,
+        "ground_truth_available": false,
+        "accuracy_computed": false,
+        "loss_computed": false,
+        "prediction_score_type": "logit",
+        "images": [],
+        "identical_logits_for_distinct_inputs": [],
+        "eligible_for_timing": false,
+        "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256",
+        "mode_eligibility": {
+          "eager": {
+            "eligible": false,
+            "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256; eager: actual CPU model tensor fallback observed"
+          },
+          "compile": {
+            "eligible": false,
+            "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256"
+          }
+        }
+      }
+    ]
+  },
+  "2": {
+    "run_id": "20261104T132538Z-c031a6",
+    "stage": "performance",
+    "trial": 2,
+    "synthetic_input": false,
+    "global_unique_images": 4,
+    "tolerance_status": "pending",
+    "accuracy_computed": false,
+    "loss_computed": false,
+    "batches": [
+      {
+        "batch": 1,
+        "trial": 2,
+        "eager_case_id": "performance_eager_b1_t2",
+        "compile_case_id": "performance_compile_b1_t2",
+        "status": "not_compared",
+        "tolerance_status": "pending",
+        "input_kind": "real",
+        "global_unique_samples": 4,
+        "max_abs_error": null,
+        "mean_abs_error": null,
+        "cosine_per_image": null,
+        "cosine_mean": null,
+        "cosine_min": null,
+        "top1_matches": null,
+        "compared_images": null,
+        "top1_ratio": null,
+        "mismatches": [],
+        "reason": "Pair condition mismatch/missing: weights_sha256",
+        "synthetic_input": false,
+        "ground_truth_available": false,
+        "accuracy_computed": false,
+        "loss_computed": false,
+        "prediction_score_type": "logit",
+        "images": [],
+        "identical_logits_for_distinct_inputs": [],
+        "eligible_for_timing": false,
+        "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256",
+        "mode_eligibility": {
+          "eager": {
+            "eligible": false,
+            "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256; eager: actual CPU model tensor fallback observed"
+          },
+          "compile": {
+            "eligible": false,
+            "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256"
+          }
+        }
+      },
+      {
+        "batch": 4,
+        "trial": 2,
+        "eager_case_id": "performance_eager_b4_t2",
+        "compile_case_id": "performance_compile_b4_t2",
+        "status": "not_compared",
+        "tolerance_status": "pending",
+        "input_kind": "real",
+        "global_unique_samples": 4,
+        "max_abs_error": null,
+        "mean_abs_error": null,
+        "cosine_per_image": null,
+        "cosine_mean": null,
+        "cosine_min": null,
+        "top1_matches": null,
+        "compared_images": null,
+        "top1_ratio": null,
+        "mismatches": [],
+        "reason": "Pair condition mismatch/missing: weights_sha256",
+        "synthetic_input": false,
+        "ground_truth_available": false,
+        "accuracy_computed": false,
+        "loss_computed": false,
+        "prediction_score_type": "logit",
+        "images": [],
+        "identical_logits_for_distinct_inputs": [],
+        "eligible_for_timing": false,
+        "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256",
+        "mode_eligibility": {
+          "eager": {
+            "eligible": false,
+            "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256; eager: actual CPU model tensor fallback observed"
+          },
+          "compile": {
+            "eligible": false,
+            "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256"
+          }
+        }
+      }
+    ]
+  },
+  "3": {
+    "run_id": "20261104T132538Z-c031a6",
+    "stage": "performance",
+    "trial": 3,
+    "synthetic_input": false,
+    "global_unique_images": 4,
+    "tolerance_status": "pending",
+    "accuracy_computed": false,
+    "loss_computed": false,
+    "batches": [
+      {
+        "batch": 1,
+        "trial": 3,
+        "eager_case_id": "performance_eager_b1_t3",
+        "compile_case_id": "performance_compile_b1_t3",
+        "status": "not_compared",
+        "tolerance_status": "pending",
+        "input_kind": "real",
+        "global_unique_samples": 4,
+        "max_abs_error": null,
+        "mean_abs_error": null,
+        "cosine_per_image": null,
+        "cosine_mean": null,
+        "cosine_min": null,
+        "top1_matches": null,
+        "compared_images": null,
+        "top1_ratio": null,
+        "mismatches": [],
+        "reason": "Pair condition mismatch/missing: weights_sha256",
+        "synthetic_input": false,
+        "ground_truth_available": false,
+        "accuracy_computed": false,
+        "loss_computed": false,
+        "prediction_score_type": "logit",
+        "images": [],
+        "identical_logits_for_distinct_inputs": [],
+        "eligible_for_timing": false,
+        "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256",
+        "mode_eligibility": {
+          "eager": {
+            "eligible": false,
+            "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256; eager: actual CPU model tensor fallback observed"
+          },
+          "compile": {
+            "eligible": false,
+            "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256"
+          }
+        }
+      },
+      {
+        "batch": 4,
+        "trial": 3,
+        "eager_case_id": "performance_eager_b4_t3",
+        "compile_case_id": "performance_compile_b4_t3",
+        "status": "not_compared",
+        "tolerance_status": "pending",
+        "input_kind": "real",
+        "global_unique_samples": 4,
+        "max_abs_error": null,
+        "mean_abs_error": null,
+        "cosine_per_image": null,
+        "cosine_mean": null,
+        "cosine_min": null,
+        "top1_matches": null,
+        "compared_images": null,
+        "top1_ratio": null,
+        "mismatches": [],
+        "reason": "Pair condition mismatch/missing: weights_sha256",
+        "synthetic_input": false,
+        "ground_truth_available": false,
+        "accuracy_computed": false,
+        "loss_computed": false,
+        "prediction_score_type": "logit",
+        "images": [],
+        "identical_logits_for_distinct_inputs": [],
+        "eligible_for_timing": false,
+        "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256",
+        "mode_eligibility": {
+          "eager": {
+            "eligible": false,
+            "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256; eager: actual CPU model tensor fallback observed"
+          },
+          "compile": {
+            "eligible": false,
+            "hold_reason": "Missing/invalid output or completion evidence; Pair condition mismatch/missing: weights_sha256"
+          }
+        }
+      }
+    ]
+  }
+}

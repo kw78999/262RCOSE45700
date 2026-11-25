@@ -1,0 +1,224 @@
+{
+  "utc": "2026-11-04T15:34:17.377375+00:00",
+  "executable": "/root/venv/bin/python",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "os": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+  "prefix": "/root/venv",
+  "base_prefix": "/usr",
+  "packages": {
+    "torch": {
+      "version": "2.10.0+cpu",
+      "requires": [
+        "filelock",
+        "typing-extensions>=4.10.0",
+        "setuptools; python_version >= \"3.12\"",
+        "sympy>=1.13.3",
+        "networkx>=2.5.1",
+        "jinja2",
+        "fsspec>=0.8.5",
+        "optree>=0.13.0; extra == \"optree\"",
+        "opt-einsum>=3.3; extra == \"opt-einsum\"",
+        "pyyaml; extra == \"pyyaml\""
+      ]
+    },
+    "torchvision": {
+      "version": "0.25.0+cpu",
+      "requires": [
+        "numpy",
+        "torch (==2.10.0)",
+        "pillow (!=8.3.*,>=5.3.0)",
+        "gdown (>=4.7.3) ; extra == 'gdown'",
+        "scipy ; extra == 'scipy'"
+      ]
+    },
+    "furiosa-torch": {
+      "version": "2026.4.0",
+      "requires": [
+        "torch==2.10.0",
+        "numpy>=2.2.6",
+        "furiosa-kernels==2026.4.0",
+        "typing-extensions>=4.0"
+      ]
+    },
+    "furiosa-kernels": {
+      "version": "2026.4.0",
+      "requires": [
+        "mypy==2.2.0",
+        "typing-extensions"
+      ]
+    },
+    "furiosa-runtime": null,
+    "furiosa-sdk": null,
+    "numpy": {
+      "version": "2.5.4",
+      "requires": null
+    },
+    "Pillow": {
+      "version": "13.0.0",
+      "requires": [
+        "furo; extra == \"docs\"",
+        "olefile; extra == \"docs\"",
+        "sphinx>=8.2; extra == \"docs\"",
+        "sphinx-autobuild; extra == \"docs\"",
+        "sphinx-copybutton; extra == \"docs\"",
+        "sphinx-inline-tabs; extra == \"docs\"",
+        "sphinxext-opengraph; extra == \"docs\"",
+        "olefile; extra == \"fpx\"",
+        "olefile; extra == \"mic\"",
+        "arro3-compute; extra == \"test-arrow\"",
+        "arro3-core; extra == \"test-arrow\"",
+        "nanoarrow; extra == \"test-arrow\"",
+        "pyarrow; extra == \"test-arrow\"",
+        "coverage>=7.4.2; extra == \"tests\"",
+        "defusedxml; extra == \"tests\"",
+        "markdown2; extra == \"tests\"",
+        "olefile; extra == \"tests\"",
+        "packaging; extra == \"tests\"",
+        "psutil; (sys_platform == \"linux\" or sys_platform == \"darwin\") and extra == \"tests\"",
+        "pytest; extra == \"tests\"",
+        "pytest-cov; extra == \"tests\"",
+        "pytest-timeout; extra == \"tests\"",
+        "pytest-xdist; extra == \"tests\"",
+        "setuptools; extra == \"tests\"",
+        "trove-classifiers>=2024.10.12; extra == \"tests\"",
+        "defusedxml; extra == \"xmp\""
+      ]
+    },
+    "matplotlib": null
+  },
+  "environment": {
+    "VIRTUAL_ENV": "/root/venv",
+    "RUST_LOG": "warn"
+  },
+  "environment_ownership": "unknown; existing environment left unchanged",
+  "commands": [
+    {
+      "command": [
+        "furiosa-smi",
+        "version"
+      ],
+      "returncode": 0,
+      "stdout": "- furiosa-smi\n  2026.4.0\n\n- device driver\n  2026.4.0, 32ffd4e\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "furiosa-smi",
+        "info"
+      ],
+      "returncode": 0,
+      "stdout": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu1   | 2026.4.0, 93d67f3 | 33.87°C |  38 W | 0000:04:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "furiosa-smi",
+        "status"
+      ],
+      "returncode": 0,
+      "stdout": "+------+--------+---------------------------+-------------+\n| Arch | Device | Memory                    | Utilization |\n+------+--------+---------------------------+-------------+\n| RNGD | npu1   |  0.00/47.50 GiB   (0.00%) |      -      |\n+------+--------+---------------------------+-------------+\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "furiosa-smi",
+        "ps"
+      ],
+      "returncode": 0,
+      "stdout": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dpkg-query",
+        "-W",
+        "*furiosa*"
+      ],
+      "returncode": 0,
+      "stdout": "furiosa-smi\t2026.4.0-4\n",
+      "stderr": ""
+    }
+  ],
+  "torch_import": {
+    "ok": true,
+    "version": "2.10.0+cpu",
+    "path": "/root/venv/lib/python3.12/site-packages/torch/__init__.py"
+  },
+  "torchvision_import": {
+    "ok": true,
+    "version": "0.25.0+cpu",
+    "path": "/root/venv/lib/python3.12/site-packages/torchvision/__init__.py"
+  },
+  "furiosa": {
+    "version": "furiosa-torch 2026.4.0 (rev: 5800e2ba24, built_at: 2026-10-12T09:11:33Z)",
+    "available": true,
+    "devices": [
+      "furiosa:0",
+      "furiosa:1",
+      "furiosa:2",
+      "furiosa:3",
+      "furiosa:4",
+      "furiosa:5",
+      "furiosa:6",
+      "furiosa:7"
+    ],
+    "device_configuration": "(Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3', 'furiosa:4', 'furiosa:5', 'furiosa:6', 'furiosa:7'])",
+    "cpu_fallback_default": true,
+    "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "cache_config": "CacheConfig { root_dir: Some(\"/root/.cache/furiosa/compiler\"), summary: false, ensure: false, failure_link_dir: None }"
+  },
+  "torch_logs_supported": {
+    "recompiles": true,
+    "graph_breaks": true
+  },
+  "sources": [
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/__init__.py",
+      "sha256": "d1ce6339a8d2f47bdcb43f037f0a68d6966ac322455dbe90ea5becf511aa2c82"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/torch_compile.py",
+      "sha256": "71b7b82ed4878c5ff0e08f1e853a117350ebd1a56e7e201579643b33f9bc6c0d"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py",
+      "sha256": "67e035377927150a64b84b33d1629956bdd84e7fdf6b507a2c1138124efe1a86"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py",
+      "sha256": "e7daecbdd9fb72aca665a697b2fdb18a15cb6ab4fdfc07f43c092f415c75a494"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/_exported_program.py",
+      "sha256": "83e792e7ce31f268ccc102329986011aac84db43609cae357c36a9d99ce611b4"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/config/_cache.py",
+      "sha256": "4a78701220a5beeab3daa7e59ac76d6bb4842754666e9b3c36a8e059b5dc70a9"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/config/_stream.py",
+      "sha256": "f3c8768d3878b776c4213b0dfb3b0b1767a9905e49f10374db3ccb574fe0cd89"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/config/_env.py",
+      "sha256": "8893883f026f48f3293eb7576ce57fb5b9c611789ee47c3452782c27bc09b00a"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_C/stream/__init__.pyi",
+      "sha256": "cb2ceddb75858cb7a6fbd295087fde7cfb36e8bbe9cb8754b73bc44d7a63e39c"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/config/_cpu_fallback.py",
+      "sha256": "4446547d0fd7f27b6381cc50ad02186a0ce24a6010ceb759e0dc9f3b1d50be8a"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/torch/_logging/_registrations.py",
+      "sha256": "ad95a7ecd434f374ec22f43d54f2daec24d1f9796ec1ac3a8ea4b4872abaff9b"
+    },
+    {
+      "path": "/root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py",
+      "sha256": "0bc594b9ca7bdd84a8b4631d4adfeee9e9a4093776e1d0b42ff77736fedaefb6"
+    }
+  ]
+}

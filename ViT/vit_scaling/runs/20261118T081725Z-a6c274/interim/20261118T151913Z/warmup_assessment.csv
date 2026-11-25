@@ -1,0 +1,9 @@
+case_id,pe,batch,mode,warmup_count,first5_mean_ms,next15_mean_ms,last60_mean_ms,first5_to_last60_ratio,stabilization_status
+stabilization_p1_b1_compile_t1_a2,1,1,compile,100,3.7833934,3.6201482,3.66938555,1.0310700111630406,heuristic_satisfied
+stabilization_p1_b1_eager_t1_a2,1,1,eager,100,44.815734,44.730250133333335,44.68630601666667,1.0028963679227605,heuristic_satisfied
+stabilization_p1_b4_compile_t1_a2,1,4,compile,140,10.6740566,10.4808934,10.4774241,1.018767255970864,heuristic_satisfied
+stabilization_p1_b4_eager_t1_a2,1,4,eager,100,122.4350226,122.74479526666667,122.62427623333333,0.9984566381213682,heuristic_satisfied
+stabilization_p8_b1_eager_t1_a1,8,1,eager,100,44.4691202,44.464811266666665,44.375768183333335,1.0021036710008262,heuristic_satisfied
+stabilization_p8_b1_compile_t1_a1,8,1,compile,100,2.1216682,1.9274560666666667,1.8754893,1.1312611594211708,heuristic_satisfied
+stabilization_p4_b1_compile_t1_a1,4,1,compile,140,2.0135672,1.8072666,1.8559419166666666,1.0849300734671876,heuristic_satisfied
+stabilization_p4_b1_eager_t1_a1,4,1,eager,180,50.9118596,50.5186986,46.95744031666666,1.0842128373409186,heuristic_satisfied

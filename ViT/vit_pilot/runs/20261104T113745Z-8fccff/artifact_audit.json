@@ -1,0 +1,10 @@
+{
+  "utc": "2026-11-04T12:00:37.459558+00:00",
+  "status": "pass",
+  "errors": [],
+  "fixed_records": 104,
+  "fixed_valid_records": 104,
+  "shape_status_records": 12,
+  "shape_completed_valid_records": 12,
+  "note": "Independent read-back CSV arithmetic, units, counts, pair metadata, JSON finite serialization and plot-source checks; not a model correctness pass"
+}

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "conditions": 14,
+  "captures": 70,
+  "sum_tolerance_pct": 1e-08,
+  "aggregation": "sum(component durations across 5 captures) / sum(serial request durations across same captures)",
+  "compilation_checked": "no forward compile span, no backend re-entry, no recompile log",
+  "errors": [],
+  "source_sha256": "45fd1bc1722712c867166ca35bf45d5c8805ae94240ca3231aa5e7326da5071b"
+}

@@ -1,0 +1,49 @@
+{
+  "utc": "2026-11-04T12:00:35.921869+00:00",
+  "expected_fixed_records": 104,
+  "actual_fixed_records": 104,
+  "completed_valid_fixed_records": 104,
+  "fixed_count_check": "pass",
+  "expected_shape_calls": 12,
+  "shape_status_rows": 12,
+  "completed_shape_calls": 12,
+  "shape_count_check": "pass",
+  "csv_row_count_matches": true,
+  "recalculation": [
+    {
+      "case_id": "fixed_eager_b1_t1",
+      "valid_repeats_match": true,
+      "mean_matches": true,
+      "throughput_matches": true
+    },
+    {
+      "case_id": "fixed_compile_b1_t1",
+      "valid_repeats_match": true,
+      "mean_matches": true,
+      "throughput_matches": true
+    },
+    {
+      "case_id": "fixed_eager_b4_t1",
+      "valid_repeats_match": true,
+      "mean_matches": true,
+      "throughput_matches": true
+    },
+    {
+      "case_id": "fixed_compile_b4_t1",
+      "valid_repeats_match": true,
+      "mean_matches": true,
+      "throughput_matches": true
+    }
+  ],
+  "script_sha256_at_analysis": {
+    "pilot.py": "90c02fef0abb3f5c0196d3759fcc5898e89a0837742fa998181b172732b22a6e",
+    "prepare.py": "ac70c1196e34dbfc18281cc81dce1cc8ce06d6d023c4d497765763d7c8d923be",
+    "verify_artifacts.py": "72126bbf02d1e3b73518a22bc31d4ad525d10084f4dbe1761ed512ad065a8564",
+    "plots.py": "f2c19018ffb5197ce1ef79461ee976943d9e4443a0776b911ef03c68a427bcfa",
+    "analyze.py": "f12dc6a8a22abad0e8f7397a3b3751d2146274c76c53a4f3a955ace709098544",
+    "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+    "worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13",
+    "environment.py": "8a2e154f2d64facf5218b9e8282de8605d815a908b3d3c92ffcda0ef0a3f15ab",
+    "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9"
+  }
+}

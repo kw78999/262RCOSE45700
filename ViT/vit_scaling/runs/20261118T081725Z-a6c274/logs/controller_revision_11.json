@@ -1,0 +1,6 @@
+{
+  "utc": "2026-11-18T14:06:09.255236+00:00",
+  "reason": "Resume after unverified short-lived PID; keep contaminated attempt excluded. Capture process identity during smi query; preserve worker v2. Complete core3 before conditional larger-batch frontier; select at most 2 representative pairs for5 trials. Autosupervisor waits for 2 idle observations before resuming device holds.",
+  "old_contaminated_case": "exploration_p4_b4_compile_t1_a1",
+  "measurement_worker_unchanged": "d1e544f811d86da8700fed9092681d7d8b0085293ba50a551e9cee8602b86906"
+}

@@ -1,0 +1,84 @@
+{
+  "utc": "2026-11-18T19:22:08.858948+00:00",
+  "elapsed_wall_s": 39883.194928,
+  "budget_s": 43200,
+  "remaining_s": 3320.5014169999995,
+  "completed_and_partial_worker_wall_s": 31353.38833620654,
+  "incomplete_first_attempts": [
+    {
+      "case_id": "validation_p8_b4_compile_t1_a1",
+      "status": "timeout",
+      "wall_s": 3616.597105,
+      "scope": "start event to worker end including termination; not a completed timed_call"
+    },
+    {
+      "case_id": "formal_p1_b1_eager_t4_a1",
+      "status": "error",
+      "wall_s": 19.218883,
+      "scope": "start event to worker end including termination; not a completed timed_call"
+    },
+    {
+      "case_id": "formal_p1_b1_compile_t4_a1",
+      "status": "error",
+      "wall_s": 201.13051,
+      "scope": "start event to worker end including termination; not a completed timed_call"
+    },
+    {
+      "case_id": "formal_p1_b1_compile_t5_a1",
+      "status": "error",
+      "wall_s": 197.742787,
+      "scope": "start event to worker end including termination; not a completed timed_call"
+    },
+    {
+      "case_id": "formal_p1_b1_eager_t5_a1",
+      "status": "error",
+      "wall_s": 18.310228,
+      "scope": "start event to worker end including termination; not a completed timed_call"
+    },
+    {
+      "case_id": "formal_p4_b4_compile_t4_a1",
+      "status": "error",
+      "wall_s": 464.864113,
+      "scope": "start event to worker end including termination; not a completed timed_call"
+    },
+    {
+      "case_id": "formal_p4_b4_eager_t4_a1",
+      "status": "error",
+      "wall_s": 25.437183,
+      "scope": "start event to worker end including termination; not a completed timed_call"
+    },
+    {
+      "case_id": "formal_p4_b4_eager_t5_a1",
+      "status": "error",
+      "wall_s": 25.458068,
+      "scope": "start event to worker end including termination; not a completed timed_call"
+    },
+    {
+      "case_id": "formal_p4_b4_compile_t5_a1",
+      "status": "error",
+      "wall_s": 465.729292,
+      "scope": "start event to worker end including termination; not a completed timed_call"
+    },
+    {
+      "case_id": "stability_p4_b1_compile_t1_a1",
+      "status": "error",
+      "wall_s": 196.607816,
+      "scope": "start event to worker end including termination; not a completed timed_call"
+    },
+    {
+      "case_id": "stability_p4_b1_eager_t1_a1",
+      "status": "error",
+      "wall_s": 23.321151,
+      "scope": "start event to worker end including termination; not a completed timed_call"
+    }
+  ],
+  "active_worker_wall_s": 0,
+  "model_input_prepare_ms": 163492.108018,
+  "runner_wrapper_setup_ms": 6955.696356,
+  "first_call_total_ms": 24223156.520235,
+  "warmup_total_ms": 257352.931658,
+  "exploration_and_formal_repeat_total_ms": 947286.81096,
+  "stability_total_ms": 0,
+  "pure_compiler_time_ms": null,
+  "first_call_is_not_pure_compiler_time": true
+}

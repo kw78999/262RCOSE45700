@@ -1,0 +1,322 @@
+[
+  {
+    "case_id": "stabilization_p1_b1_compile_t1_a2",
+    "pe": 1,
+    "batch": 1,
+    "mode": "compile",
+    "checks": [
+      {
+        "calls": 100,
+        "stable": true,
+        "window_means_ms": [
+          3.67091055,
+          3.6688403,
+          3.6684058
+        ],
+        "window_cvs": [
+          0.001460018586648414,
+          0.0012555210256144209,
+          0.0015570873699851152
+        ],
+        "max_relative_mean_change": 0.0006827897829624341,
+        "heuristic_only": true
+      }
+    ]
+  },
+  {
+    "case_id": "stabilization_p1_b1_eager_t1_a2",
+    "pe": 1,
+    "batch": 1,
+    "mode": "eager",
+    "checks": [
+      {
+        "calls": 100,
+        "stable": true,
+        "window_means_ms": [
+          44.6852585,
+          44.68598935,
+          44.6876702
+        ],
+        "window_cvs": [
+          0.0020203590563911897,
+          0.001712586580374417,
+          0.0027519325098697843
+        ],
+        "max_relative_mean_change": 5.397081903413259e-05,
+        "heuristic_only": true
+      }
+    ]
+  },
+  {
+    "case_id": "stabilization_p1_b4_compile_t1_a2",
+    "pe": 1,
+    "batch": 4,
+    "mode": "compile",
+    "checks": [
+      {
+        "calls": 100,
+        "stable": false,
+        "window_means_ms": [
+          10.4819475,
+          10.6681525,
+          10.4779119
+        ],
+        "window_cvs": [
+          0.0009455044029996337,
+          0.07957682667416506,
+          0.000996003844257188
+        ],
+        "max_relative_mean_change": 0.01815634659039267,
+        "heuristic_only": true
+      },
+      {
+        "calls": 120,
+        "stable": false,
+        "window_means_ms": [
+          10.6681525,
+          10.4779119,
+          10.4762794
+        ],
+        "window_cvs": [
+          0.07957682667416506,
+          0.000996003844257188,
+          0.0006641084528358385
+        ],
+        "max_relative_mean_change": 0.018315004084369813,
+        "heuristic_only": true
+      },
+      {
+        "calls": 140,
+        "stable": true,
+        "window_means_ms": [
+          10.4779119,
+          10.4762794,
+          10.478081
+        ],
+        "window_cvs": [
+          0.000996003844257188,
+          0.0006641084528358385,
+          0.0006331090142532132
+        ],
+        "max_relative_mean_change": 0.0001719694493829138,
+        "heuristic_only": true
+      }
+    ]
+  },
+  {
+    "case_id": "stabilization_p1_b4_eager_t1_a2",
+    "pe": 1,
+    "batch": 4,
+    "mode": "eager",
+    "checks": [
+      {
+        "calls": 100,
+        "stable": true,
+        "window_means_ms": [
+          122.720595,
+          122.62776465,
+          122.52446905
+        ],
+        "window_cvs": [
+          0.000745930562692012,
+          0.0007131011048327757,
+          0.0006627170645806708
+        ],
+        "max_relative_mean_change": 0.001600708426004127,
+        "heuristic_only": true
+      }
+    ]
+  },
+  {
+    "case_id": "stabilization_p8_b1_eager_t1_a1",
+    "pe": 8,
+    "batch": 1,
+    "mode": "eager",
+    "checks": [
+      {
+        "calls": 100,
+        "stable": true,
+        "window_means_ms": [
+          44.28468905,
+          44.4466788,
+          44.3959367
+        ],
+        "window_cvs": [
+          0.001658999404854127,
+          0.006500906453321764,
+          0.0022041410064628647
+        ],
+        "max_relative_mean_change": 0.003657917747081907,
+        "heuristic_only": true
+      }
+    ]
+  },
+  {
+    "case_id": "stabilization_p8_b1_compile_t1_a1",
+    "pe": 8,
+    "batch": 1,
+    "mode": "compile",
+    "checks": [
+      {
+        "calls": 100,
+        "stable": true,
+        "window_means_ms": [
+          1.8749885,
+          1.8764754,
+          1.8750040000000001
+        ],
+        "window_cvs": [
+          0.005694114704051507,
+          0.006796661127503742,
+          0.004714897738830474
+        ],
+        "max_relative_mean_change": 0.0007930181971782524,
+        "heuristic_only": true
+      }
+    ]
+  },
+  {
+    "case_id": "stabilization_p4_b1_compile_t1_a1",
+    "pe": 4,
+    "batch": 1,
+    "mode": "compile",
+    "checks": [
+      {
+        "calls": 100,
+        "stable": false,
+        "window_means_ms": [
+          1.80132745,
+          1.81467575,
+          1.85525795
+        ],
+        "window_cvs": [
+          0.003052007738868305,
+          0.013235416348649033,
+          0.007261833937164492
+        ],
+        "max_relative_mean_change": 0.029939309479795062,
+        "heuristic_only": true
+      },
+      {
+        "calls": 120,
+        "stable": false,
+        "window_means_ms": [
+          1.81467575,
+          1.85525795,
+          1.8524987
+        ],
+        "window_cvs": [
+          0.013235416348649033,
+          0.007261833937164492,
+          0.008925235481848339
+        ],
+        "max_relative_mean_change": 0.02236333405568458,
+        "heuristic_only": true
+      },
+      {
+        "calls": 140,
+        "stable": true,
+        "window_means_ms": [
+          1.85525795,
+          1.8524987,
+          1.8600691
+        ],
+        "window_cvs": [
+          0.007261833937164492,
+          0.008925235481848339,
+          0.0041710415840580045
+        ],
+        "max_relative_mean_change": 0.004086588562788318,
+        "heuristic_only": true
+      }
+    ]
+  },
+  {
+    "case_id": "stabilization_p4_b1_eager_t1_a1",
+    "pe": 4,
+    "batch": 1,
+    "mode": "eager",
+    "checks": [
+      {
+        "calls": 100,
+        "stable": false,
+        "window_means_ms": [
+          50.72913285,
+          49.24416215,
+          43.91462015
+        ],
+        "window_cvs": [
+          0.0013032249562779563,
+          0.05544761252841819,
+          0.0012089704011512335
+        ],
+        "max_relative_mean_change": 0.1551764008597487,
+        "heuristic_only": true
+      },
+      {
+        "calls": 120,
+        "stable": false,
+        "window_means_ms": [
+          49.24416215,
+          43.91462015,
+          43.987677
+        ],
+        "window_cvs": [
+          0.05544761252841819,
+          0.0012089704011512335,
+          0.001689600399552765
+        ],
+        "max_relative_mean_change": 0.12136145051000757,
+        "heuristic_only": true
+      },
+      {
+        "calls": 140,
+        "stable": false,
+        "window_means_ms": [
+          43.91462015,
+          43.987677,
+          46.6781756
+        ],
+        "window_cvs": [
+          0.0012089704011512335,
+          0.001689600399552765,
+          0.02514296242342992
+        ],
+        "max_relative_mean_change": 0.06293019137044742,
+        "heuristic_only": true
+      },
+      {
+        "calls": 160,
+        "stable": false,
+        "window_means_ms": [
+          43.987677,
+          46.6781756,
+          47.10595225
+        ],
+        "window_cvs": [
+          0.001689600399552765,
+          0.02514296242342992,
+          0.002159137762268414
+        ],
+        "max_relative_mean_change": 0.07088974600772846,
+        "heuristic_only": true
+      },
+      {
+        "calls": 180,
+        "stable": true,
+        "window_means_ms": [
+          46.6781756,
+          47.10595225,
+          47.0881931
+        ],
+        "window_cvs": [
+          0.02514296242342992,
+          0.002159137762268414,
+          0.0014116303064595215
+        ],
+        "max_relative_mean_change": 0.009164382380017377,
+        "heuristic_only": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "unique_cases": true,
+  "planned_mode_conditions": 56,
+  "attempted_mode_conditions": 5,
+  "measured_samples": 0,
+  "no_pending": true,
+  "no_repeat_attempts": true,
+  "null_timings_without_samples": true,
+  "elapsed_under_610_s": true
+}

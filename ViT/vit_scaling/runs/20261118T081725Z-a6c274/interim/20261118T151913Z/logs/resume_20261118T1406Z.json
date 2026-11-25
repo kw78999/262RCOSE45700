@@ -1,0 +1,8 @@
+{
+  "utc": "2026-11-18T14:07:26.711193+00:00",
+  "device_idle_confirmed_before_resume": true,
+  "foreign_processes_terminated": false,
+  "npu_reset": false,
+  "run_budget_origin_unchanged": true,
+  "tool_approval_timeout": "Read-only status calls timed out around 11:20UTC; access succeeded after user continuation. Background controller had independently held at12:55UTC for unknown exited PID."
+}

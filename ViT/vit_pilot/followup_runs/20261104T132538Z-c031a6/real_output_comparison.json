@@ -1,0 +1,239 @@
+{
+  "run_id": "20261104T132538Z-c031a6",
+  "stage": "validation",
+  "trial": 1,
+  "synthetic_input": false,
+  "global_unique_images": 4,
+  "tolerance_status": "pending",
+  "accuracy_computed": false,
+  "loss_computed": false,
+  "batches": [
+    {
+      "batch": 1,
+      "trial": 1,
+      "eager_case_id": "validation_eager_b1",
+      "compile_case_id": "validation_compile_b1",
+      "status": "structure_finite_ok_tolerance_unset",
+      "tolerance_status": "pending",
+      "input_kind": "real",
+      "global_unique_samples": 4,
+      "max_abs_error": 0.021484375,
+      "mean_abs_error": 0.004210958257317543,
+      "cosine_per_image": [
+        0.999952209453315
+      ],
+      "cosine_mean": 0.999952209453315,
+      "cosine_min": 0.999952209453315,
+      "top1_matches": 1,
+      "compared_images": 1,
+      "top1_ratio": 1.0,
+      "mismatches": [],
+      "eager_shape": [
+        1,
+        1000
+      ],
+      "compile_shape": [
+        1,
+        1000
+      ],
+      "eager_nan": 0,
+      "eager_inf": 0,
+      "compile_nan": 0,
+      "compile_inf": 0,
+      "cosine_undefined_reasons": [],
+      "input_ids": [
+        "01_cat"
+      ],
+      "reason": "Output tolerance not agreed; small-input consistency only",
+      "synthetic_input": false,
+      "ground_truth_available": false,
+      "accuracy_computed": false,
+      "loss_computed": false,
+      "prediction_score_type": "logit",
+      "images": [
+        {
+          "input_id": "01_cat",
+          "actual_path": "/root/ViT/data/vit_real_images_4/images/01_cat.png",
+          "file_sha256": "596aa1e7cb875eb79f437e310381d26b338a81c2da23439704a73c4651e8c4bb",
+          "preprocessed_bf16_tensor_sha256": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+          "eager": {
+            "mode": "eager",
+            "class_index": 285,
+            "class_name": "Egyptian cat",
+            "logit": 8.375
+          },
+          "compile": {
+            "mode": "compile",
+            "class_index": 285,
+            "class_name": "Egyptian cat",
+            "logit": 8.375
+          },
+          "top1_match": true,
+          "cosine": 0.999952209453315,
+          "max_abs_error": 0.021484375
+        }
+      ],
+      "identical_logits_for_distinct_inputs": [],
+      "eligible_for_timing": true,
+      "hold_reason": null,
+      "mode_eligibility": {
+        "eager": {
+          "eligible": false,
+          "hold_reason": "eager: actual CPU model tensor fallback observed"
+        },
+        "compile": {
+          "eligible": true,
+          "hold_reason": null
+        }
+      }
+    },
+    {
+      "batch": 4,
+      "trial": 1,
+      "eager_case_id": "validation_eager_b4",
+      "compile_case_id": "validation_compile_b4",
+      "status": "structure_finite_ok_tolerance_unset",
+      "tolerance_status": "pending",
+      "input_kind": "real",
+      "global_unique_samples": 4,
+      "max_abs_error": 0.0625,
+      "mean_abs_error": 0.004746693652123213,
+      "cosine_per_image": [
+        0.9999525052231488,
+        0.9999605671407702,
+        0.9999426951551098,
+        0.9999469673908863
+      ],
+      "cosine_mean": 0.9999506837274788,
+      "cosine_min": 0.9999426951551098,
+      "top1_matches": 4,
+      "compared_images": 4,
+      "top1_ratio": 1.0,
+      "mismatches": [],
+      "eager_shape": [
+        4,
+        1000
+      ],
+      "compile_shape": [
+        4,
+        1000
+      ],
+      "eager_nan": 0,
+      "eager_inf": 0,
+      "compile_nan": 0,
+      "compile_inf": 0,
+      "cosine_undefined_reasons": [],
+      "input_ids": [
+        "01_cat",
+        "02_coffee",
+        "03_astronaut",
+        "04_rocket"
+      ],
+      "reason": "Output tolerance not agreed; small-input consistency only",
+      "synthetic_input": false,
+      "ground_truth_available": false,
+      "accuracy_computed": false,
+      "loss_computed": false,
+      "prediction_score_type": "logit",
+      "images": [
+        {
+          "input_id": "01_cat",
+          "actual_path": "/root/ViT/data/vit_real_images_4/images/01_cat.png",
+          "file_sha256": "596aa1e7cb875eb79f437e310381d26b338a81c2da23439704a73c4651e8c4bb",
+          "preprocessed_bf16_tensor_sha256": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+          "eager": {
+            "mode": "eager",
+            "class_index": 285,
+            "class_name": "Egyptian cat",
+            "logit": 8.375
+          },
+          "compile": {
+            "mode": "compile",
+            "class_index": 285,
+            "class_name": "Egyptian cat",
+            "logit": 8.375
+          },
+          "top1_match": true,
+          "cosine": 0.9999525052231488,
+          "max_abs_error": 0.01953125
+        },
+        {
+          "input_id": "02_coffee",
+          "actual_path": "/root/ViT/data/vit_real_images_4/images/02_coffee.png",
+          "file_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+          "preprocessed_bf16_tensor_sha256": "4ea265c14a561fe24274681d4b2ef9e322546f6bac87406720fb85ff52656fa1",
+          "eager": {
+            "mode": "eager",
+            "class_index": 967,
+            "class_name": "espresso",
+            "logit": 9.3125
+          },
+          "compile": {
+            "mode": "compile",
+            "class_index": 967,
+            "class_name": "espresso",
+            "logit": 9.3125
+          },
+          "top1_match": true,
+          "cosine": 0.9999605671407702,
+          "max_abs_error": 0.015625
+        },
+        {
+          "input_id": "03_astronaut",
+          "actual_path": "/root/ViT/data/vit_real_images_4/images/03_astronaut.png",
+          "file_sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+          "preprocessed_bf16_tensor_sha256": "0a6b11cb4fcf5dee68933a16074c1d22e02c2b86e5a83bc26eb4806c29eadcf9",
+          "eager": {
+            "mode": "eager",
+            "class_index": 450,
+            "class_name": "bobsled",
+            "logit": 8.375
+          },
+          "compile": {
+            "mode": "compile",
+            "class_index": 450,
+            "class_name": "bobsled",
+            "logit": 8.375
+          },
+          "top1_match": true,
+          "cosine": 0.9999426951551098,
+          "max_abs_error": 0.046875
+        },
+        {
+          "input_id": "04_rocket",
+          "actual_path": "/root/ViT/data/vit_real_images_4/images/04_rocket.jpg",
+          "file_sha256": "c2dd0de7c538df8d111e479619b129464d0269d0ae5fd18ca91d33a7fdfea95c",
+          "preprocessed_bf16_tensor_sha256": "d531112805bf45d520ad339f2dc698e5ffc2a1e03c450c9030b1fb85547eeeaa",
+          "eager": {
+            "mode": "eager",
+            "class_index": 540,
+            "class_name": "drilling platform",
+            "logit": 8.375
+          },
+          "compile": {
+            "mode": "compile",
+            "class_index": 540,
+            "class_name": "drilling platform",
+            "logit": 8.3125
+          },
+          "top1_match": true,
+          "cosine": 0.9999469673908863,
+          "max_abs_error": 0.0625
+        }
+      ],
+      "identical_logits_for_distinct_inputs": [],
+      "eligible_for_timing": true,
+      "hold_reason": null,
+      "mode_eligibility": {
+        "eager": {
+          "eligible": false,
+          "hold_reason": "eager: actual CPU model tensor fallback observed"
+        },
+        "compile": {
+          "eligible": true,
+          "hold_reason": null
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "own_descendant_verified": true,
+  "unrelated_and_exited_rejected": true,
+  "method": "Linux process group/session + PPID chain before/after SMI",
+  "npu_forward": false
+}

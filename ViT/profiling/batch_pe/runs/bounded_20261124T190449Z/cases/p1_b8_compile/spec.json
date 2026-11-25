@@ -1,0 +1,10 @@
+{
+  "pe": 1,
+  "batch": 8,
+  "mode": "compile",
+  "source_run": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274",
+  "warmup": 3,
+  "samples": 5,
+  "cache_source": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/formal_p1_b4_compile_t3_a1",
+  "timeout_s": 120
+}

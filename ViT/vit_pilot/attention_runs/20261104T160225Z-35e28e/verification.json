@@ -1,0 +1,95 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "check": "input_weights_dtype",
+      "case_id": "diagnostic_attention_compile_b1_strict",
+      "passed": true
+    },
+    {
+      "check": "reference_compatibility",
+      "case_id": "diagnostic_attention_compile_b1_strict",
+      "reference": "eager",
+      "passed": true
+    },
+    {
+      "check": "reference_compatibility",
+      "case_id": "diagnostic_attention_compile_b1_strict",
+      "reference": "compile",
+      "passed": true
+    },
+    {
+      "check": "input_weights_dtype",
+      "case_id": "diagnostic_attention_compile_b4_strict",
+      "passed": true
+    },
+    {
+      "check": "reference_compatibility",
+      "case_id": "diagnostic_attention_compile_b4_strict",
+      "reference": "eager",
+      "passed": true
+    },
+    {
+      "check": "reference_compatibility",
+      "case_id": "diagnostic_attention_compile_b4_strict",
+      "reference": "compile",
+      "passed": true
+    },
+    {
+      "check": "input_weights_dtype",
+      "case_id": "performance_attention_compile_b1",
+      "passed": true
+    },
+    {
+      "check": "reference_compatibility",
+      "case_id": "performance_attention_compile_b1",
+      "reference": "eager",
+      "passed": true
+    },
+    {
+      "check": "reference_compatibility",
+      "case_id": "performance_attention_compile_b1",
+      "reference": "compile",
+      "passed": true
+    },
+    {
+      "check": "timing_row_count",
+      "case_id": "performance_attention_compile_b1",
+      "passed": true
+    },
+    {
+      "check": "input_weights_dtype",
+      "case_id": "performance_attention_compile_b4",
+      "passed": true
+    },
+    {
+      "check": "reference_compatibility",
+      "case_id": "performance_attention_compile_b4",
+      "reference": "eager",
+      "passed": true
+    },
+    {
+      "check": "reference_compatibility",
+      "case_id": "performance_attention_compile_b4",
+      "reference": "compile",
+      "passed": true
+    },
+    {
+      "check": "timing_row_count",
+      "case_id": "performance_attention_compile_b4",
+      "passed": true
+    },
+    {
+      "check": "original_code_unchanged_during_run",
+      "passed": true
+    },
+    {
+      "check": "asset_file_hash",
+      "passed": true
+    }
+  ],
+  "performance_records": 52,
+  "expected_if_all_completed": 52,
+  "completed_performance_workers": 2,
+  "diagnostic_records": 2
+}

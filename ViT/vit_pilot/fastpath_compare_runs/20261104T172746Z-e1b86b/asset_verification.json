@@ -1,0 +1,30 @@
+{
+  "status": "pass",
+  "input_file_sha256": "4896db25d7de29a9a24694d6db1c93ec5d58d4eca4a3193623b64a27494ad728",
+  "weights_file_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+  "state_dict_official_fp32_cpu_sha256": "2156081c85fd9668ac4c8526c91252b803d40d130e9193da3e0400a66d9b79bb",
+  "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+  "state_entry_count": 152,
+  "state_hash_scope": "official torchvision-loaded model keys, FP32/BF16 CPU before NPU transfer; raw checkpoint hash separately recorded",
+  "state_dict_after_device_hash": null,
+  "after_device_reason": "Not copied back before first call; device/dtype/sync metadata checked instead",
+  "batch_hashes": {
+    "1": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+    "4": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7"
+  },
+  "math_tests_command": [
+    "/root/venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/root/ViT/vit_pilot/tests/fastpath_compare",
+    "-p",
+    "test_math.py",
+    "-v"
+  ],
+  "math_tests_passed": true,
+  "state_dict_raw_checkpoint_fp32_sha256": "5f66e83f612abc14202be37184e999c83559a63f2c1e6d19a33e96a0be9e2222",
+  "corrected_utc": "2026-11-04T17:30:17.984044+00:00",
+  "correction_reason": "Official torchvision MLPBlock loader remaps legacy linear_1/linear_2 keys to 0/3; all 152 tensors exactly equal after key normalization"
+}

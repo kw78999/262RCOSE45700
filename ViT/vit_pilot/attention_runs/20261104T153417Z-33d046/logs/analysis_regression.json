@@ -1,0 +1,14 @@
+[
+  {
+    "batch": 1,
+    "passed": true,
+    "npu_forward": false,
+    "source": "existing saved real-image logits"
+  },
+  {
+    "batch": 4,
+    "passed": true,
+    "npu_forward": false,
+    "source": "existing saved real-image logits"
+  }
+]

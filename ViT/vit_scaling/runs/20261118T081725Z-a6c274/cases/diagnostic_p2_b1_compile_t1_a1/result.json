@@ -1,0 +1,126 @@
+{
+  "case_id": "diagnostic_p2_b1_compile_t1_a1",
+  "stage": "diagnostic",
+  "pe": 2,
+  "batch": 1,
+  "mode": "compile",
+  "trial": 1,
+  "attempt": 1,
+  "warmup": 0,
+  "stabilization_status": null,
+  "cache_path": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/diagnostic_p2_b1_compile_t1_a1",
+  "estimated_wall_s": 1200,
+  "status": "ok",
+  "started_utc": "2026-11-18T09:10:30.606968+00:00",
+  "pid": 89975,
+  "timings": [
+    {
+      "phase": "first",
+      "iteration": 1,
+      "elapsed_ms": 182953.761943,
+      "offset_s": 1.18e-06
+    }
+  ],
+  "compiler_time_ms": null,
+  "actual_codegen_count": null,
+  "disk_cache_hit": null,
+  "disk_cache_miss": null,
+  "backend_entries": [
+    {
+      "index": 1,
+      "call": {
+        "phase": "first",
+        "iteration": 1
+      },
+      "utc": "2026-11-18T09:10:35.511799+00:00"
+    }
+  ],
+  "controls": [
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    },
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    },
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    },
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    }
+  ],
+  "provisional": true,
+  "timing_scope": "CPU dispatch + runner + current fused-device stream completion; external transfers excluded",
+  "system_cold": false,
+  "cache_miss_verified": false,
+  "performance_loop_output_copies": 0,
+  "fusion": {
+    "num_fusion": 2,
+    "num_pe_per_cluster": 2,
+    "num_chips": 1,
+    "num_clusters_per_chip": 1
+  },
+  "device_configuration": "(Fusion(num_fusion=2, num_pe_per_cluster=2, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3'])",
+  "available_logical_devices": [
+    "furiosa:0",
+    "furiosa:1",
+    "furiosa:2",
+    "furiosa:3"
+  ],
+  "cache_existed_at_entry": false,
+  "effective": {
+    "torch_threads": 22,
+    "torch_interop_threads": 64,
+    "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "automatic_dynamic_shapes": false,
+    "recompile_limit": 8,
+    "backend_eager_fallback": false,
+    "suppress_errors": false,
+    "compile_kwargs": "backend only; all other arguments omitted"
+  },
+  "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+  "unique_image_count": 1,
+  "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+  "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+  "model_input_prepare_ms": 1212.99982,
+  "stream_id": 0,
+  "sync_contract": "installed logical-device current_stream contract; per-PE internal implementation opaque",
+  "runner_setup_ms": 139.406685,
+  "output_check": {
+    "shape": [
+      1,
+      1000
+    ],
+    "nan_count": 0,
+    "inf_count": 0
+  },
+  "output_file": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cases/diagnostic_p2_b1_compile_t1_a1/output.pt",
+  "path_observations": {
+    "npu_task_events": 1,
+    "task_names": [
+      "npu0pe0-1::Task::vit_scaling_single_model"
+    ],
+    "task_arg_configurations": [
+      {
+        "begin_cycle": "366299537329",
+        "chip_index": "0",
+        "cluster_index": "0",
+        "cycle_actual": "4469673",
+        "device_index": "0",
+        "end_cycle": "366304007002",
+        "stream_id": "0",
+        "thread.id": "1",
+        "uid": "0"
+      }
+    ],
+    "native_mha_host_count": 0,
+    "backend_entry_count": 1,
+    "all_op_placement": "unverified",
+    "task_count_is_not_kernel_or_fusion_count": true
+  },
+  "ended_utc": "2026-11-18T09:13:37.718372+00:00"
+}

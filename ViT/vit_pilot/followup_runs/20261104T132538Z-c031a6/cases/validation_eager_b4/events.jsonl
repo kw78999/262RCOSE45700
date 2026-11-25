@@ -1,0 +1,6 @@
+{"utc": "2026-11-04T13:47:28.568519+00:00", "monotonic_ns": 1685897037710380, "pid": 151825, "event": "prepare_start", "stage": "validation", "mode": "eager", "batch": 4}
+{"utc": "2026-11-04T13:47:29.628444+00:00", "monotonic_ns": 1685898097643291, "pid": 151825, "event": "prepare_end", "input_metadata": {"shape": [4, 3, 224, 224], "dtype": "torch.bfloat16", "device": "furiosa:0"}, "model_metadata": {"training": false, "parameter_dtype": "torch.bfloat16", "parameter_device": "furiosa:0"}, "preparation_ms": 1059.715097071603, "stream_id": 0}
+{"utc": "2026-11-04T13:47:29.635061+00:00", "monotonic_ns": 1685898104248134, "pid": 151825, "event": "runner_ready", "runner_setup_ms": 0.0021}
+{"utc": "2026-11-04T13:47:29.640101+00:00", "monotonic_ns": 1685898109288365, "pid": 151825, "event": "call_start", "call_index": 1, "phase": "first", "iteration": 1, "batch": 4}
+{"utc": "2026-11-04T13:49:00.782635+00:00", "monotonic_ns": 1685989251828921, "pid": 151825, "event": "call_end", "call_index": 1, "phase": "first", "elapsed_ms": 91142.384514}
+{"utc": "2026-11-04T13:49:00.788016+00:00", "monotonic_ns": 1685989257203847, "pid": 151825, "event": "worker_end", "status": "ok"}

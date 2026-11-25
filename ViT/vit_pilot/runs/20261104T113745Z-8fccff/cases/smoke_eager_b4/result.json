@@ -1,0 +1,70 @@
+{
+  "case_id": "smoke_eager_b4",
+  "mode": "eager",
+  "kind": "smoke",
+  "batch": 4,
+  "trial": 1,
+  "status": "ok",
+  "started_utc": "2026-11-04T11:42:51.805314+00:00",
+  "timings": [
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "smoke_eager_b4",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 1,
+      "phase": "smoke",
+      "iteration": 1,
+      "elapsed_ms": 90985.470393,
+      "timing_valid": true,
+      "status": "ok"
+    }
+  ],
+  "calls": [],
+  "compiler_time_ms": null,
+  "compiler_time_reason": "SDK codegen duration not independently observed",
+  "execution_path_status": "unknown",
+  "cache_hit": null,
+  "cache_miss": null,
+  "sync_method": "furiosa.torch.current_stream(device).synchronize()",
+  "timing_scope": "cpu_dispatch_model_call_and_current_stream_completion_excludes_transfers",
+  "cache_state": "fresh_process_persistent_cache_possible",
+  "effective": {
+    "cpu_fallback": true,
+    "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "backend_eager_fallback": false,
+    "torch_compile": {
+      "dynamic": "default (omitted)",
+      "fullgraph": "default (omitted)",
+      "mode": "default (omitted)"
+    },
+    "dynamo": {
+      "suppress_errors": false,
+      "dynamic_shapes": true,
+      "automatic_dynamic_shapes": false,
+      "recompile_limit": 8
+    },
+    "original_cache_config": "CacheConfig { root_dir: Some(\"/root/.cache/furiosa/compiler\"), summary: false, ensure: false, failure_link_dir: None }",
+    "cache_config": "CacheConfig { root_dir: Some(\"/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff/compiler-cache\"), summary: false, ensure: false, failure_link_dir: None }"
+  },
+  "cache_path": "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff/compiler-cache",
+  "preparation_ms": 1076.430263929069,
+  "sync_checked": true,
+  "stream_id": 0,
+  "runner_setup_ms": 0.00144,
+  "active_call": null,
+  "output_metadata": {
+    "shape": [
+      4,
+      1000
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0",
+    "nan_count": 0,
+    "inf_count": 0
+  },
+  "output_structure_valid": true,
+  "dtype_valid": true,
+  "output_file": "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff/outputs/smoke_eager_b4.pt",
+  "ended_utc": "2026-11-04T11:44:26.647187+00:00"
+}

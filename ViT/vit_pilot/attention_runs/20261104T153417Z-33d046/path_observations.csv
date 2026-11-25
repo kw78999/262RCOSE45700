@@ -1,0 +1,8 @@
+case_id,mode,batch,strict,status,native_mha_host_count,native_mha_host_inclusive_ms,npu_task_events,backend_entries,recompile_limit_warning,recompile_logs_present,graph_break_logs_present,actual_codegen_count,disk_cache_hit,disk_cache_miss,log_reference
+diagnostic_eager_default_b1_strict,eager_default,1,True,error,,,,0,False,False,False,,,,/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/logs/diagnostic_eager_default_b1_strict.stderr.log
+diagnostic_eager_default_b1,eager_default,1,False,ok,12,1025.0781129999998,125,0,False,False,False,,,,/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/logs/diagnostic_eager_default_b1.stderr.log
+diagnostic_attention_compile_b1_strict,attention_compile,1,True,error,,,,0,False,False,False,,,,/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/logs/diagnostic_attention_compile_b1_strict.stderr.log
+diagnostic_eager_fastpath_off_b1_strict,eager_fastpath_off,1,True,ok,0,0,185,0,False,False,False,,,,/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/logs/diagnostic_eager_fastpath_off_b1_strict.stderr.log
+diagnostic_eager_default_b4,eager_default,4,False,ok,12,1011.60685,125,0,False,False,False,,,,/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/logs/diagnostic_eager_default_b4.stderr.log
+diagnostic_attention_compile_b4_strict,attention_compile,4,True,held,,,,,False,False,False,,,,/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/logs/diagnostic_attention_compile_b4_strict.stderr.log
+diagnostic_eager_fastpath_off_b4_strict,eager_fastpath_off,4,True,ok,0,0,184,0,False,False,False,,,,/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/logs/diagnostic_eager_fastpath_off_b4_strict.stderr.log

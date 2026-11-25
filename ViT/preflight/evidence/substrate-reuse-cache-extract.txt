@@ -1,0 +1,9 @@
+49: DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+74: DEBUG furiosa_torch::python_ext: split into 1 submodules, 1 to compile
+75: DEBUG furiosa_torch split into 1 submodules, 1 to compile
+98: DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+139: DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+145: V1103 06:31:11.203000 9185 torch/_dynamo/guards.py:4514] [0/1] [__recompiles] Recompiling function <lambda> in /root/ViT/preflight/check_vit.py:78
+165: DEBUG furiosa_torch::python_ext: split into 1 submodules, 1 to compile
+166: DEBUG furiosa_torch split into 1 submodules, 1 to compile
+189: DEBUG furiosa_torch::compiler: compile without given compiler config, use default config

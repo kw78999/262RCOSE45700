@@ -1,0 +1,89 @@
+{
+  "status": "pass",
+  "utc": "2026-11-04T19:01:25.282171+00:00",
+  "checks": [
+    {
+      "case_id": "performance_eager_b1_t1",
+      "status": "pass",
+      "rows": 56,
+      "metrics_and_A_recomputed": true
+    },
+    {
+      "case_id": "performance_compile_b1_t1",
+      "status": "pass",
+      "rows": 56,
+      "metrics_and_A_recomputed": true
+    },
+    {
+      "case_id": "performance_compile_b4_t1",
+      "status": "pass",
+      "rows": 56,
+      "metrics_and_A_recomputed": true
+    },
+    {
+      "case_id": "performance_eager_b4_t1",
+      "status": "pass",
+      "rows": 56,
+      "metrics_and_A_recomputed": true
+    },
+    {
+      "case_id": "performance_compile_b1_t2",
+      "status": "pass",
+      "rows": 56,
+      "metrics_and_A_recomputed": true
+    },
+    {
+      "case_id": "performance_eager_b1_t2",
+      "status": "pass",
+      "rows": 56,
+      "metrics_and_A_recomputed": true
+    },
+    {
+      "case_id": "performance_eager_b4_t2",
+      "status": "pass",
+      "rows": 56,
+      "metrics_and_A_recomputed": true
+    },
+    {
+      "case_id": "performance_compile_b4_t2",
+      "status": "pass",
+      "rows": 56,
+      "metrics_and_A_recomputed": true
+    },
+    {
+      "case_id": "performance_eager_b4_t3",
+      "status": "pass",
+      "rows": 56,
+      "metrics_and_A_recomputed": true
+    },
+    {
+      "case_id": "performance_compile_b4_t3",
+      "status": "pass",
+      "rows": 56,
+      "metrics_and_A_recomputed": true
+    },
+    {
+      "case_id": "performance_compile_b1_t3",
+      "status": "pass",
+      "rows": 56,
+      "metrics_and_A_recomputed": true
+    },
+    {
+      "case_id": "performance_eager_b1_t3",
+      "status": "pass",
+      "rows": 56,
+      "metrics_and_A_recomputed": true
+    }
+  ],
+  "successful_performance_rows": 672,
+  "expected_if_all_completed": 672,
+  "direct_CSV_recalculation": true,
+  "exact_ns_boundary_checks": true,
+  "initial_prefix_no_double_count": true,
+  "cumulative_prefix_recomputed": true,
+  "old_measurements_in_new_prediction": false,
+  "protected_files_unchanged": true,
+  "all_workers_complete": true,
+  "all_unheld_workers_complete": true,
+  "all_attempts_successful": false
+}

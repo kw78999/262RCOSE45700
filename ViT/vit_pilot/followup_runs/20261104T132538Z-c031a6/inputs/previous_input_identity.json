@@ -1,0 +1,9 @@
+{
+  "path": "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff/inputs.pt",
+  "sha256": "53ecedeab5084573dd71df9a11f87c7d33add3afc2768f8aaf025740332f79fd",
+  "batch_hashes": {
+    "1": "808a6e08cd33ab81c5a77c5692e1c64e14077461763ab111dcbb7e76be116d7f",
+    "4": "dddca074d096a9851cd91884341cf9975592e09e67d24a0577df522b749700aa"
+  },
+  "regenerated": false
+}

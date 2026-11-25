@@ -1,0 +1,3 @@
+run_id,batch,trial,eager_case_id,compile_case_id,compile_speedup,comparable,provisional,hold_reason,output_validation_status
+20261104T113745Z-8fccff,1,1,fixed_eager_b1_t1,fixed_compile_b1_t1,277.0644448874837,True,True,Preliminary only: output tolerance or all-op execution path unverified,structure_finite_ok_tolerance_unset
+20261104T113745Z-8fccff,4,1,fixed_eager_b4_t1,fixed_compile_b4_t1,107.34449523812488,True,True,Preliminary only: output tolerance or all-op execution path unverified,structure_finite_ok_tolerance_unset

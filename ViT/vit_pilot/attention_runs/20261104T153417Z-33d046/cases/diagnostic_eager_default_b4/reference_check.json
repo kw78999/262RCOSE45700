@@ -1,0 +1,69 @@
+{
+  "candidate": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/outputs/diagnostic_eager_default_b4.pt",
+  "reference": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/outputs/validation_eager_b4.pt",
+  "tolerance_status": "pending",
+  "allclose": null,
+  "accuracy_computed": false,
+  "structural_finite_ok": true,
+  "top1_matches": 4,
+  "compared_images": 4,
+  "max_abs_error": 0.0,
+  "mean_abs_error": 0.0,
+  "cosine_per_image": [
+    1.0000000000000002,
+    1.0000000000000002,
+    0.9999999999999998,
+    1.0000000000000002
+  ],
+  "cosine_mean": 1.0,
+  "cosine_min": 0.9999999999999998,
+  "cosine_undefined_reason": null,
+  "top1_ratio": 1.0,
+  "images": [
+    {
+      "input_id": "01_cat",
+      "candidate_class": 285,
+      "reference_class": 285,
+      "candidate_class_name": "Egyptian cat",
+      "reference_class_name": "Egyptian cat",
+      "candidate_logit": 8.375,
+      "reference_logit": 8.375,
+      "top1_match": true,
+      "cosine": 1.0000000000000002
+    },
+    {
+      "input_id": "02_coffee",
+      "candidate_class": 967,
+      "reference_class": 967,
+      "candidate_class_name": "espresso",
+      "reference_class_name": "espresso",
+      "candidate_logit": 9.3125,
+      "reference_logit": 9.3125,
+      "top1_match": true,
+      "cosine": 1.0000000000000002
+    },
+    {
+      "input_id": "03_astronaut",
+      "candidate_class": 450,
+      "reference_class": 450,
+      "candidate_class_name": "bobsled",
+      "reference_class_name": "bobsled",
+      "candidate_logit": 8.375,
+      "reference_logit": 8.375,
+      "top1_match": true,
+      "cosine": 0.9999999999999998
+    },
+    {
+      "input_id": "04_rocket",
+      "candidate_class": 540,
+      "reference_class": 540,
+      "candidate_class_name": "drilling platform",
+      "reference_class_name": "drilling platform",
+      "candidate_logit": 8.375,
+      "reference_logit": 8.375,
+      "top1_match": true,
+      "cosine": 1.0000000000000002
+    }
+  ],
+  "mismatches": []
+}

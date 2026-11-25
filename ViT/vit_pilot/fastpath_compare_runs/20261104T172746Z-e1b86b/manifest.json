@@ -1,0 +1,1186 @@
+{
+  "run_id": "20261104T172746Z-e1b86b",
+  "created_utc": "2026-11-04T17:27:46.445462+00:00",
+  "command": [
+    "/root/venv/bin/python",
+    "vit_pilot/fastpath_compare.py",
+    "run",
+    "--stop-after",
+    "diagnostic"
+  ],
+  "status": "finished",
+  "workers": [
+    {
+      "case_id": "diagnostic_eager_b1_t1",
+      "root_case_id": "diagnostic_eager_b1_t1",
+      "stage": "diagnostic",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 1,
+      "status": "error",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/diagnostic/diagnostic_eager_b1_t1",
+      "started_utc": "2026-11-04T17:27:50.403812+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "diagnostic_eager_b1_t1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 4.783254554960877,
+      "pid": 280827,
+      "returncode": 1,
+      "ended_utc": "2026-11-04T17:27:55.187623+00:00",
+      "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {}
+    },
+    {
+      "case_id": "diagnostic_compile_b1_t1",
+      "root_case_id": "diagnostic_compile_b1_t1",
+      "stage": "diagnostic",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "status": "error",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/diagnostic/diagnostic_compile_b1_t1",
+      "started_utc": "2026-11-04T17:27:55.201261+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "diagnostic_compile_b1_t1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 5.038791710976511,
+      "pid": 280871,
+      "returncode": 1,
+      "ended_utc": "2026-11-04T17:28:00.240604+00:00",
+      "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {}
+    },
+    {
+      "case_id": "diagnostic_eager_b4_t1",
+      "root_case_id": "diagnostic_eager_b4_t1",
+      "stage": "diagnostic",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 1,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/diagnostic/diagnostic_eager_b4_t1",
+      "hold_history": [
+        {
+          "utc": "2026-11-04T17:28:00.249226+00:00",
+          "reason": "Corresponding B1 diagnostic did not succeed"
+        }
+      ],
+      "reason": "Corresponding B1 diagnostic did not succeed",
+      "started_utc": "2026-11-04T17:35:32.402217+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "diagnostic_eager_b4_t1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 171.97724891919643,
+      "pid": 294110,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T17:38:24.380168+00:00",
+      "input_hash": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "diagnostic_compile_b4_t1",
+      "root_case_id": "diagnostic_compile_b4_t1",
+      "stage": "diagnostic",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 1,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/diagnostic/diagnostic_compile_b4_t1",
+      "hold_history": [
+        {
+          "utc": "2026-11-04T17:28:00.251817+00:00",
+          "reason": "Corresponding B1 diagnostic did not succeed"
+        }
+      ],
+      "reason": "Corresponding B1 diagnostic did not succeed",
+      "started_utc": "2026-11-04T17:38:24.393832+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "diagnostic_compile_b4_t1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 448.06698635593057,
+      "pid": 295454,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T17:45:52.461527+00:00",
+      "input_hash": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "performance_eager_b1_t1",
+      "root_case_id": "performance_eager_b1_t1",
+      "stage": "performance",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 1,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/performance/performance_eager_b1_t1",
+      "started_utc": "2026-11-04T17:46:40.562771+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "performance_eager_b1_t1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 104.7696673059836,
+      "pid": 308681,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T17:48:25.333223+00:00",
+      "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "performance_compile_b1_t1",
+      "root_case_id": "performance_compile_b1_t1",
+      "stage": "performance",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/performance/performance_compile_b1_t1",
+      "started_utc": "2026-11-04T17:48:25.347428+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "performance_compile_b1_t1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 205.2977416641079,
+      "pid": 309531,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T17:51:50.645950+00:00",
+      "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "performance_compile_b4_t1",
+      "root_case_id": "performance_compile_b4_t1",
+      "stage": "performance",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 1,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/performance/performance_compile_b4_t1",
+      "started_utc": "2026-11-04T17:51:50.665246+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "performance_compile_b4_t1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 442.9037499909755,
+      "pid": 321749,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T17:59:13.569792+00:00",
+      "input_hash": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "performance_eager_b4_t1",
+      "root_case_id": "performance_eager_b4_t1",
+      "stage": "performance",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 1,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/performance/performance_eager_b4_t1",
+      "started_utc": "2026-11-04T17:59:13.586157+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "performance_eager_b4_t1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 177.73546689283103,
+      "pid": 334924,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T18:02:11.322463+00:00",
+      "input_hash": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "performance_compile_b1_t2",
+      "root_case_id": "performance_compile_b1_t2",
+      "stage": "performance",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 2,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/performance/performance_compile_b1_t2",
+      "started_utc": "2026-11-04T18:02:11.337911+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "performance_compile_b1_t2"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 208.16049281298183,
+      "pid": 336275,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T18:05:39.499260+00:00",
+      "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "performance_eager_b1_t2",
+      "root_case_id": "performance_eager_b1_t2",
+      "stage": "performance",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 2,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/performance/performance_eager_b1_t2",
+      "started_utc": "2026-11-04T18:05:39.514245+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "performance_eager_b1_t2"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 105.17079881811514,
+      "pid": 348489,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T18:07:24.685923+00:00",
+      "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "performance_eager_b4_t2",
+      "root_case_id": "performance_eager_b4_t2",
+      "stage": "performance",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 2,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/performance/performance_eager_b4_t2",
+      "started_utc": "2026-11-04T18:07:24.703469+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "performance_eager_b4_t2"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 178.5904598380439,
+      "pid": 349321,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T18:10:23.294854+00:00",
+      "input_hash": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "performance_compile_b4_t2",
+      "root_case_id": "performance_compile_b4_t2",
+      "stage": "performance",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 2,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/performance/performance_compile_b4_t2",
+      "started_utc": "2026-11-04T18:10:23.311782+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "performance_compile_b4_t2"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 444.4071327429265,
+      "pid": 350630,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T18:17:47.719859+00:00",
+      "input_hash": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "performance_eager_b4_t3",
+      "root_case_id": "performance_eager_b4_t3",
+      "stage": "performance",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 3,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/performance/performance_eager_b4_t3",
+      "started_utc": "2026-11-04T18:17:47.736222+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "performance_eager_b4_t3"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 178.5442043230869,
+      "pid": 363756,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T18:20:46.281431+00:00",
+      "input_hash": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "performance_compile_b4_t3",
+      "root_case_id": "performance_compile_b4_t3",
+      "stage": "performance",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 3,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/performance/performance_compile_b4_t3",
+      "started_utc": "2026-11-04T18:20:46.298555+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "performance_compile_b4_t3"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 448.28054901584983,
+      "pid": 365066,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T18:28:14.580112+00:00",
+      "input_hash": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "performance_compile_b1_t3",
+      "root_case_id": "performance_compile_b1_t3",
+      "stage": "performance",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 3,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/performance/performance_compile_b1_t3",
+      "started_utc": "2026-11-04T18:28:14.596899+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "performance_compile_b1_t3"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 206.45748987910338,
+      "pid": 378197,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T18:31:41.055414+00:00",
+      "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "performance_eager_b1_t3",
+      "root_case_id": "performance_eager_b1_t3",
+      "stage": "performance",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 3,
+      "status": "ok",
+      "target_calls": null,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/performance/performance_eager_b1_t3",
+      "started_utc": "2026-11-04T18:31:41.073088+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "performance_eager_b1_t3"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 105.27123692585155,
+      "pid": 390411,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T18:33:26.345359+00:00",
+      "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "cumulative_eager_b1_t1",
+      "root_case_id": "cumulative_eager_b1_t1",
+      "stage": "cumulative",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 1,
+      "status": "ok",
+      "target_calls": 2962,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/cumulative/cumulative_eager_b1_t1",
+      "started_utc": "2026-11-04T18:33:26.511937+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "cumulative_eager_b1_t1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 238.39340419392101,
+      "pid": 391248,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T18:37:24.906449+00:00",
+      "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "cumulative_compile_b1_t1",
+      "root_case_id": "cumulative_compile_b1_t1",
+      "stage": "cumulative",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "status": "ok",
+      "target_calls": 2962,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/cumulative/cumulative_compile_b1_t1",
+      "started_utc": "2026-11-04T18:37:24.927413+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "cumulative_compile_b1_t1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 220.5621681038756,
+      "pid": 392098,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T18:41:05.490709+00:00",
+      "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "cumulative_eager_b4_t1",
+      "root_case_id": "cumulative_eager_b4_t1",
+      "stage": "cumulative",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 1,
+      "status": "ok",
+      "target_calls": 2896,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/cumulative/cumulative_eager_b4_t1",
+      "started_utc": "2026-11-04T18:41:05.510112+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "cumulative_eager_b4_t1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 528.9384375610389,
+      "pid": 404307,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T18:49:54.449703+00:00",
+      "input_hash": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "case_id": "cumulative_compile_b4_t1",
+      "root_case_id": "cumulative_compile_b4_t1",
+      "stage": "cumulative",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 1,
+      "status": "ok",
+      "target_calls": 2896,
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/cumulative/cumulative_compile_b4_t1",
+      "started_utc": "2026-11-04T18:49:54.470509+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "cumulative_compile_b4_t1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 477.0268393799197,
+      "pid": 405719,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T18:57:51.498534+00:00",
+      "input_hash": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "root_case_id": "diagnostic_eager_b1_t1",
+      "stage": "diagnostic",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 1,
+      "target_calls": null,
+      "case_id": "diagnostic_eager_b1_t1_attempt1",
+      "status": "ok",
+      "retry_reason": "Correct canonical state hash reference for official torchvision legacy MLP key conversion; no model/timer/SDK changes",
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/diagnostic/diagnostic_eager_b1_t1_attempt1",
+      "started_utc": "2026-11-04T17:30:18.880954+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "diagnostic_eager_b1_t1_attempt1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 104.02060353197157,
+      "pid": 281045,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T17:32:02.902184+00:00",
+      "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    },
+    {
+      "root_case_id": "diagnostic_compile_b1_t1",
+      "stage": "diagnostic",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "target_calls": null,
+      "case_id": "diagnostic_compile_b1_t1_attempt1",
+      "status": "ok",
+      "retry_reason": "Correct canonical state hash reference for official torchvision legacy MLP key conversion; no model/timer/SDK changes",
+      "cache_path": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/caches/diagnostic/diagnostic_compile_b1_t1_attempt1",
+      "started_utc": "2026-11-04T17:32:02.915480+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/fastpath_compare_worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--case",
+        "diagnostic_compile_b1_t1_attempt1"
+      ],
+      "limit_s": 1800,
+      "wall_elapsed_s": 206.7529363159556,
+      "pid": 281869,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T17:35:29.669042+00:00",
+      "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+      "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+      "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+      "cache_state": "fresh_process_private_sdk_cache_initially_absent_system_cold_unverified",
+      "control_snapshots": {
+        "after_prepare": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "before_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        },
+        "after_measure": {
+          "mha_fastpath": false,
+          "cpu_fallback": false
+        }
+      }
+    }
+  ],
+  "npu_budget_used_s": 5211.149660837604,
+  "execution_order": [
+    "diagnostic_eager_b1_t1",
+    "diagnostic_compile_b1_t1",
+    "diagnostic_eager_b1_t1_attempt1",
+    "diagnostic_compile_b1_t1_attempt1",
+    "diagnostic_eager_b4_t1",
+    "diagnostic_compile_b4_t1",
+    "performance_eager_b1_t1",
+    "performance_compile_b1_t1",
+    "performance_compile_b4_t1",
+    "performance_eager_b4_t1",
+    "performance_compile_b1_t2",
+    "performance_eager_b1_t2",
+    "performance_eager_b4_t2",
+    "performance_compile_b4_t2",
+    "performance_eager_b4_t3",
+    "performance_compile_b4_t3",
+    "performance_compile_b1_t3",
+    "performance_eager_b1_t3",
+    "cumulative_eager_b1_t1",
+    "cumulative_compile_b1_t1",
+    "cumulative_eager_b4_t1",
+    "cumulative_compile_b4_t1"
+  ],
+  "resume_history": [
+    {
+      "utc": "2026-11-04T17:30:18.845228+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "vit_pilot/fastpath_compare.py",
+        "resume",
+        "--run-dir",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--stop-after",
+        "diagnostic",
+        "--retry-case",
+        "diagnostic_eager_b1_t1",
+        "--retry-case",
+        "diagnostic_compile_b1_t1",
+        "--retry-reason",
+        "Correct canonical state hash reference for official torchvision legacy MLP key conversion; no model/timer/SDK changes"
+      ],
+      "budget_used_before": 9.822046265937388
+    },
+    {
+      "utc": "2026-11-04T17:46:37.784500+00:00",
+      "command": [
+        "/root/venv/bin/python",
+        "vit_pilot/fastpath_compare.py",
+        "resume",
+        "--run-dir",
+        "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b",
+        "--stop-after",
+        "cumulative"
+      ],
+      "budget_used_before": 940.6398213889915
+    }
+  ],
+  "code_sha256": {
+    "fastpath_compare.py": "81e0ba69c78ca29ec81d911f868e9fe4958004aa92dcafa14c92eb386b984388",
+    "fastpath_compare_worker.py": "0b65ec648349c3c5cf0872adb86b16fa072cea381ec506cd6d75bae7092771a6",
+    "fastpath_support.py": "38b30feb8ed297a441a13f4c03f6c0ed63ec1e742aecc5f0b813f22b7e2be8cf",
+    "fastpath_math.py": "6ca5f36a06b9d8e3130a883e075585287aa754c0d7f8ea012b01502c84539b71",
+    "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+    "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+    "environment.py": "8a2e154f2d64facf5218b9e8282de8605d815a908b3d3c92ffcda0ef0a3f15ab",
+    "attention_analysis.py": "b377708cf454ba2d7095068d9966a0611a1a1e5cdf454e1e4e82acc27fa9c0cb"
+  },
+  "sdk_actual_codegen_count": null,
+  "disk_cache_hit": null,
+  "disk_cache_miss": null,
+  "expected_performance_rows": 672,
+  "protected_files_sha256": {
+    "/root/ViT/vit_pilot/attention_worker.py": "a12b801f65c9e20ace2735d745866e0385013c89ecd36ed8d838610fc43841bb",
+    "/root/ViT/vit_pilot/pilot.py": "90c02fef0abb3f5c0196d3759fcc5898e89a0837742fa998181b172732b22a6e",
+    "/root/ViT/vit_pilot/prepare.py": "ac70c1196e34dbfc18281cc81dce1cc8ce06d6d023c4d497765763d7c8d923be",
+    "/root/ViT/vit_pilot/followup_plots.py": "1f3e201fb50daedec72b51e8eba52da6fcdc53aa35f05e2ebbb0294159d613be",
+    "/root/ViT/vit_pilot/followup.py": "2c905109262276847de21456d566e314444dd96853904c68ce73fa50d9be63bc",
+    "/root/ViT/vit_pilot/followup_verify.py": "a085b5ed5645a5e759374e97859dd3ff6403d03513b3baa2b700572c92e874d9",
+    "/root/ViT/vit_pilot/verify_artifacts.py": "72126bbf02d1e3b73518a22bc31d4ad525d10084f4dbe1761ed512ad065a8564",
+    "/root/ViT/vit_pilot/followup_worker.py": "87e46681e6326d78a06b1d570ee58b19a2876915059dc64fd333f5c81ed792cf",
+    "/root/ViT/vit_pilot/followup_analysis.py": "81bdc270ef47723ce0b05f22c665415cde9b489b824d2751d69f687969e22136",
+    "/root/ViT/vit_pilot/plots.py": "f2c19018ffb5197ce1ef79461ee976943d9e4443a0776b911ef03c68a427bcfa",
+    "/root/ViT/vit_pilot/attention_plots.py": "d0fb43dafd0383a5865c06c7e1459bb30b232d32d2a8c6bb6764b9d3bc146c75",
+    "/root/ViT/vit_pilot/analyze.py": "f12dc6a8a22abad0e8f7397a3b3751d2146274c76c53a4f3a955ace709098544",
+    "/root/ViT/vit_pilot/attention_boundary_worker.py": "b7c635d2f9760fe85e4a6ca007fb4e5511249f67fafc58e31f7ddab978b91fef",
+    "/root/ViT/vit_pilot/attention.py": "dcd1bf25b6ca9f1b2e9bcfd79b908d5886e18a4ed86a6eecee885be16a5e8b85",
+    "/root/ViT/vit_pilot/worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13",
+    "/root/ViT/vit_pilot/attention_study_report.py": "c01960f0e82b4bef517b629517ae387b24a5f6d7d8f396fbbb340d964821ad3d",
+    "/root/ViT/vit_pilot/common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+    "/root/ViT/vit_pilot/vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+    "/root/ViT/vit_pilot/README.md": "94520ba13be2ef6fdea1f0d354f252c6f8508bf03b473616b237c5f0612b2c13",
+    "/root/ViT/vit_pilot/FOLLOWUP_README.md": "bd1f4e9e641e47eb068cdafb64ce2ceaa29aa392813daa043dcdc6c9b4a813b4",
+    "/root/ViT/vit_pilot/ATTENTION_README.md": "2a43e824a008d6ce6a7e4f714138933b71a05fce54f1080dd35d5d9c061be302",
+    "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/assets.json": "6f0178c8c1886727adfa7a0ff94c46b12e5b5516a76f00509e0e4b6c807098dd",
+    "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/manifest.json": "a94441997a697abd8083d1280b7e0e27c288e2a48530089df15bee90d43caea5",
+    "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/timings.csv": "3dc5dfb3f9bca843dd22fc7cc71ed47d5866240eb6cc4d627dc8bace311cc536",
+    "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/summary.csv": "c0ea3dab50d1bd0fdf66223ba02689df7b1548db6ad399a131794bac2d624935",
+    "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/report.md": "63ae01b7c7be624dfc9e791db1e271fc76677ebad8487aebbba1e719f17d4827",
+    "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/feedback_summary.md": "63ae01b7c7be624dfc9e791db1e271fc76677ebad8487aebbba1e719f17d4827",
+    "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/assets.json": "6f0178c8c1886727adfa7a0ff94c46b12e5b5516a76f00509e0e4b6c807098dd",
+    "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/manifest.json": "9dba1b24f4de740f957436b17c494143e08629d91087f8126beccaec39a3a292",
+    "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/timings.csv": "db793844b822ee5b33d69aab1c3829d27ae6e7a6f4387a0697e6c467b34ae464",
+    "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/summary.csv": "64565c37b453432dd71412f97c13485b118db55bbcc049f5dd4ad1749dad7104",
+    "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/report.md": "5260eebfb3e6157e775acd00704b63a8ba1317027e5d8fa3b685d8baae773152",
+    "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/feedback_summary.md": "f3517696fba2b2f534f3a01898472fd6adfa435e37835eeb0a74e0cca6d739a4",
+    "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/assets.json": "6f0178c8c1886727adfa7a0ff94c46b12e5b5516a76f00509e0e4b6c807098dd",
+    "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/manifest.json": "9c923170a59bc71dcbe2b5e58c4ea2e13fa70cce714a110eaf6e77f572c0aaa5",
+    "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/timings.csv": "d385ee661eacba53dc0f7c73c42f968cef9e147d9897959804be2e5911d09d5d",
+    "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/report.md": "d2aa26cfbc906a4ea18d7bd254cd808caeb88613a4c407a563823a2387aeee5a",
+    "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/feedback_summary.md": "bdef401bed40c27bc2be0a9e773e2c3f0f1c2cd28613d0b0d47421d61c86efbb"
+  },
+  "control_source_sha256": {
+    "/root/venv/lib/python3.12/site-packages/torch/backends/mha/__init__.py": "b54994ae6d19dc8e5d9c39e149bb8381989f1837a67603eb75076ca24bd5b2c0",
+    "/root/venv/lib/python3.12/site-packages/torch/nn/modules/activation.py": "d2929845da0371704b4fa75d9ef487ac3842525e6a979c526016a740926aa900",
+    "/root/venv/lib/python3.12/site-packages/furiosa/torch/_C/profiler/__init__.pyi": "90f9f543f332273331409836f57ff156fc512adeff2a909277a77f5694437014"
+  },
+  "last_update_utc": "2026-11-04T18:57:51.532572+00:00",
+  "code_sha256_after": {
+    "fastpath_compare.py": "81e0ba69c78ca29ec81d911f868e9fe4958004aa92dcafa14c92eb386b984388",
+    "fastpath_compare_worker.py": "0b65ec648349c3c5cf0872adb86b16fa072cea381ec506cd6d75bae7092771a6",
+    "fastpath_support.py": "38b30feb8ed297a441a13f4c03f6c0ed63ec1e742aecc5f0b813f22b7e2be8cf",
+    "fastpath_math.py": "6ca5f36a06b9d8e3130a883e075585287aa754c0d7f8ea012b01502c84539b71",
+    "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+    "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+    "environment.py": "8a2e154f2d64facf5218b9e8282de8605d815a908b3d3c92ffcda0ef0a3f15ab",
+    "attention_analysis.py": "b377708cf454ba2d7095068d9966a0611a1a1e5cdf454e1e4e82acc27fa9c0cb"
+  },
+  "all_workers_complete": true,
+  "all_unheld_workers_complete": true,
+  "code_revision_history": [
+    {
+      "utc": "2026-11-04T17:30:18.844243+00:00",
+      "reason": "Correct canonical state hash reference for official torchvision legacy MLP key conversion; no model/timer/SDK changes",
+      "before": {
+        "fastpath_compare.py": "58476b42742760fd346396223710b9459ed8fc4b253ab87c9bd54243d6226d15",
+        "fastpath_compare_worker.py": "0b65ec648349c3c5cf0872adb86b16fa072cea381ec506cd6d75bae7092771a6",
+        "fastpath_support.py": "38b30feb8ed297a441a13f4c03f6c0ed63ec1e742aecc5f0b813f22b7e2be8cf",
+        "fastpath_math.py": "6ca5f36a06b9d8e3130a883e075585287aa754c0d7f8ea012b01502c84539b71",
+        "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+        "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+        "environment.py": "8a2e154f2d64facf5218b9e8282de8605d815a908b3d3c92ffcda0ef0a3f15ab",
+        "attention_analysis.py": "b377708cf454ba2d7095068d9966a0611a1a1e5cdf454e1e4e82acc27fa9c0cb"
+      },
+      "after": {
+        "fastpath_compare.py": "81e0ba69c78ca29ec81d911f868e9fe4958004aa92dcafa14c92eb386b984388",
+        "fastpath_compare_worker.py": "0b65ec648349c3c5cf0872adb86b16fa072cea381ec506cd6d75bae7092771a6",
+        "fastpath_support.py": "38b30feb8ed297a441a13f4c03f6c0ed63ec1e742aecc5f0b813f22b7e2be8cf",
+        "fastpath_math.py": "6ca5f36a06b9d8e3130a883e075585287aa754c0d7f8ea012b01502c84539b71",
+        "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+        "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+        "environment.py": "8a2e154f2d64facf5218b9e8282de8605d815a908b3d3c92ffcda0ef0a3f15ab",
+        "attention_analysis.py": "b377708cf454ba2d7095068d9966a0611a1a1e5cdf454e1e4e82acc27fa9c0cb"
+      },
+      "revision": 1
+    }
+  ],
+  "all_attempts_successful": false,
+  "logical_worker_count": 20,
+  "attempt_count": 22,
+  "artifacts": {
+    "performance_output_comparison.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/performance_output_comparison.json",
+    "initial_prefix.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/initial_prefix.json",
+    "diagnostic_output_comparison.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/diagnostic_output_comparison.json",
+    "image_manifest.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/image_manifest.json",
+    "break_even_trials.csv": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/break_even_trials.csv",
+    "timings.csv": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/timings.csv",
+    "assets.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/assets.json",
+    "interim_b1_trial1.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/interim_b1_trial1.json",
+    "independent_verification.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/independent_verification.json",
+    "artifact_audit.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/artifact_audit.json",
+    "path_evidence.md": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/path_evidence.md",
+    "cumulative_output_comparison.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/cumulative_output_comparison.json",
+    "README.md": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/README.md",
+    "cumulative_validation.csv": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/cumulative_validation.csv",
+    "cumulative_plan.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/cumulative_plan.json",
+    "break_even_summary.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/break_even_summary.json",
+    "manifest.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/manifest.json",
+    "diagnostic_observations.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/diagnostic_observations.json",
+    "output_comparison.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/output_comparison.json",
+    "feedback_summary.md": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/feedback_summary.md",
+    "config.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/config.json",
+    "asset_verification.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/asset_verification.json",
+    "report.md": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/report.md",
+    "cumulative_validation_summary.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/cumulative_validation_summary.json",
+    "previous_evidence_audit.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/previous_evidence_audit.json",
+    "environment.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/environment.json",
+    "trial_summary.csv": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/trial_summary.csv",
+    "final_artifact_audit.json": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/final_artifact_audit.json",
+    "figures": "/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/figures"
+  }
+}

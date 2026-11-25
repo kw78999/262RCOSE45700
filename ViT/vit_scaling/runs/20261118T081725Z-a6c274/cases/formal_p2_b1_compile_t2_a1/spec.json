@@ -1,0 +1,14 @@
+{
+  "case_id": "formal_p2_b1_compile_t2_a1",
+  "stage": "formal",
+  "pe": 2,
+  "batch": 1,
+  "mode": "compile",
+  "trial": 2,
+  "attempt": 1,
+  "warmup": 100,
+  "worker_protocol": 2,
+  "stabilization_status": "heuristic_satisfied",
+  "cache_path": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/formal_p2_b1_compile_t2_a1",
+  "estimated_wall_s": 283.4821809879405
+}

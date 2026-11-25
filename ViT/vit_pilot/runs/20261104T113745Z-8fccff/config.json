@@ -1,0 +1,33 @@
+{
+  "run_id": "20261104T113745Z-8fccff",
+  "device": "furiosa:0",
+  "warmup": 5,
+  "repeats": 20,
+  "trials": 1,
+  "worker_timeout_seconds": 1800,
+  "total_budget_seconds": 7200,
+  "dtype": "torch.bfloat16",
+  "batches": [
+    1,
+    4
+  ],
+  "shape_sequence": [
+    1,
+    1,
+    4,
+    4,
+    1,
+    4
+  ],
+  "model_id": "torchvision.models.vit_b_16",
+  "weights_id": "ViT_B_16_Weights.IMAGENET1K_V1",
+  "atol": null,
+  "rtol": null,
+  "images": null,
+  "cache_state": "fresh_process_persistent_cache_possible",
+  "cache_note": "new run-local cache via verified SDK cache_context; shared by all sequential workers; smoke may populate it",
+  "synthetic_input": true,
+  "expected_fixed_records": 104,
+  "expected_shape_records": 12,
+  "independent_trials_per_case": 1
+}

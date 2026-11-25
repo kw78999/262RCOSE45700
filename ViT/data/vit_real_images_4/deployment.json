@@ -1,0 +1,13 @@
+{
+  "archive": "/root/ViT/vit_real_images_4.zip",
+  "archive_sha256": "21203a03565578093dbf6bb7879fd6a52f363edd34f03d9500b0eb320978c9f6",
+  "dataset_root": "/root/ViT/data/vit_real_images_4",
+  "images_root": "/root/ViT/data/vit_real_images_4/images",
+  "verification_command": [
+    "/root/venv/bin/python",
+    "/root/ViT/data/vit_real_images_4/prepare_images.py",
+    "--verify-only"
+  ],
+  "verification_returncode": 0,
+  "original_files_preserved": true
+}

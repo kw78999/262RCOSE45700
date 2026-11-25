@@ -1,0 +1,7 @@
+{"utc": "2026-11-24T19:03:04.832055+00:00", "event": "first_start"}
+{"utc": "2026-11-24T19:03:14.925245+00:00", "event": "first_end", "ms": 10090.930205}
+{"utc": "2026-11-24T19:03:15.291930+00:00", "event": "warmup_end", "calls": 100}
+{"utc": "2026-11-24T19:03:15.329286+00:00", "event": "control_block_end", "block": 1, "profiled": false}
+{"utc": "2026-11-24T19:03:15.371175+00:00", "event": "control_block_end", "block": 2, "profiled": true}
+{"utc": "2026-11-24T19:03:15.412347+00:00", "event": "control_block_end", "block": 3, "profiled": true}
+{"utc": "2026-11-24T19:03:15.449116+00:00", "event": "control_block_end", "block": 4, "profiled": false}

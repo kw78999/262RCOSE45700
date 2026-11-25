@@ -1,0 +1,14 @@
+{
+  "case_id": "exploration_p8_b4_eager_t1_a1",
+  "stage": "exploration",
+  "pe": 8,
+  "batch": 4,
+  "mode": "eager",
+  "trial": 1,
+  "attempt": 1,
+  "warmup": 20,
+  "worker_protocol": 2,
+  "stabilization_status": null,
+  "cache_path": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/exploration_p8_b4_eager_t1_a1",
+  "estimated_wall_s": 1624.6725323926998
+}

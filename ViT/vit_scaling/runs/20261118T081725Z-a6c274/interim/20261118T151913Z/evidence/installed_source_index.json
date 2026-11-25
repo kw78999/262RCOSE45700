@@ -1,0 +1,62 @@
+[
+  {
+    "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/__init__.py",
+    "snapshot": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/evidence/__init__.py",
+    "sha256": "d1ce6339a8d2f47bdcb43f037f0a68d6966ac322455dbe90ea5becf511aa2c82"
+  },
+  {
+    "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_C/device/__init__.pyi",
+    "snapshot": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/evidence/_C__device____init__.pyi",
+    "sha256": "e9fb9fe3c738790a0efe0c3898d21474b718c7b3f96bad56f23fa012726eeb30"
+  },
+  {
+    "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_C/stream/__init__.pyi",
+    "snapshot": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/evidence/_C__stream____init__.pyi",
+    "sha256": "cb2ceddb75858cb7a6fbd295087fde7cfb36e8bbe9cb8754b73bc44d7a63e39c"
+  },
+  {
+    "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/config/_stream.py",
+    "snapshot": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/evidence/config___stream.py",
+    "sha256": "f3c8768d3878b776c4213b0dfb3b0b1767a9905e49f10374db3ccb574fe0cd89"
+  },
+  {
+    "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py",
+    "snapshot": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/evidence/_backend__eager.py",
+    "sha256": "67e035377927150a64b84b33d1629956bdd84e7fdf6b507a2c1138124efe1a86"
+  },
+  {
+    "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py",
+    "snapshot": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/evidence/_backend__aten.py",
+    "sha256": "e7daecbdd9fb72aca665a697b2fdb18a15cb6ab4fdfc07f43c092f415c75a494"
+  },
+  {
+    "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/torch_compile.py",
+    "snapshot": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/evidence/_backend__torch_compile.py",
+    "sha256": "71b7b82ed4878c5ff0e08f1e853a117350ebd1a56e7e201579643b33f9bc6c0d"
+  },
+  {
+    "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/runnable_sequence.py",
+    "snapshot": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/evidence/_backend__runnable_sequence.py",
+    "sha256": "6eb64f5e27ceef9ab83fd2efe714da6f71a184356ab79b9ec993981ff31dd5c3"
+  },
+  {
+    "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_module/runnable.py",
+    "snapshot": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/evidence/_module__runnable.py",
+    "sha256": "b1543327efa66bdc2d9c22d1316cdca96c1a2c994d40c42ec9a26f293e510b3a"
+  },
+  {
+    "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/_module/visa.py",
+    "snapshot": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/evidence/_module__visa.py",
+    "sha256": "996b7b9ef3586bc4c1d703813d23935ec1da42da5553af256de8375107c95e52"
+  },
+  {
+    "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/compiler/__init__.py",
+    "snapshot": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/evidence/compiler____init__.py",
+    "sha256": "69e6a180a29aa8dc7d91d0313ffcfcc20b74e5f9ff5fc2fa3e6a19fe8580707c"
+  },
+  {
+    "path": "/root/venv/lib/python3.12/site-packages/furiosa/torch/config/_cache.py",
+    "snapshot": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/evidence/config___cache.py",
+    "sha256": "4a78701220a5beeab3daa7e59ac76d6bb4842754666e9b3c36a8e059b5dc70a9"
+  }
+]

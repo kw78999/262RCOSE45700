@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-18T10:52:22.942577+00:00",
+  "controller_pid": 171378,
+  "worker": "stabilization_p1_b4_compile_t1_a2",
+  "worker_terminated": false,
+  "reason": "Execution feasibility only; excluded from current performance aggregates. Prioritize current-protocol core3 trials over redundant feasibility reruns."
+}

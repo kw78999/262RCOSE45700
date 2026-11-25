@@ -1,0 +1,27 @@
+[
+  {
+    "name": "TorchDynamo Cache Lookup",
+    "count": 1,
+    "total_cpu_us": 531.977
+  },
+  {
+    "name": "Torch-Compiled Region: 0/0",
+    "count": 1,
+    "total_cpu_us": 414.4660000000001
+  },
+  {
+    "name": "Pregraph bytecode",
+    "count": 1,
+    "total_cpu_us": 135.76099999999997
+  },
+  {
+    "name": "aten::view",
+    "count": 4,
+    "total_cpu_us": 2.199999999999818
+  },
+  {
+    "name": "aten::empty",
+    "count": 1,
+    "total_cpu_us": 2.160000000000082
+  }
+]

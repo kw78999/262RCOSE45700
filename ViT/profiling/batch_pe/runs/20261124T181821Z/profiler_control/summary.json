@@ -1,0 +1,24 @@
+[
+  {
+    "mode": "eager",
+    "off_calls": 20,
+    "on_calls": 20,
+    "off_mean_ms": 44.67824185,
+    "off_median_ms": 44.7130495,
+    "on_mean_ms": 64.2724535,
+    "on_median_ms": 64.1687925,
+    "on_over_off_median": 1.4351244931303555,
+    "backend_reentries": 0
+  },
+  {
+    "mode": "compile",
+    "off_calls": 20,
+    "on_calls": 20,
+    "off_mean_ms": 3.64797635,
+    "off_median_ms": 3.648588,
+    "on_mean_ms": 3.7719864,
+    "on_median_ms": 3.755175,
+    "on_over_off_median": 1.02921321892195,
+    "backend_reentries": 0
+  }
+]

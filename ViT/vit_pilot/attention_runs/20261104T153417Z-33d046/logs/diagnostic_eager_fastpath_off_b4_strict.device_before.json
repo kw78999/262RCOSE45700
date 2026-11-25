@@ -1,0 +1,9 @@
+{
+  "command": [
+    "furiosa-smi",
+    "ps"
+  ],
+  "returncode": 0,
+  "stdout": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n",
+  "stderr": ""
+}

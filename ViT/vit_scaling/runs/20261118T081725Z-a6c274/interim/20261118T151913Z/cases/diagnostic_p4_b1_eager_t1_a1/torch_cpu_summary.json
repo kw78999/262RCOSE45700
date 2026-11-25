@@ -1,0 +1,122 @@
+[
+  {
+    "name": "aten::conv2d",
+    "count": 1,
+    "total_cpu_us": 315.505
+  },
+  {
+    "name": "aten::empty",
+    "count": 186,
+    "total_cpu_us": 374.0110000000083
+  },
+  {
+    "name": "aten::view",
+    "count": 512,
+    "total_cpu_us": 2986.6340000000714
+  },
+  {
+    "name": "aten::reshape",
+    "count": 1,
+    "total_cpu_us": 65.15099999999995
+  },
+  {
+    "name": "aten::empty_strided",
+    "count": 109,
+    "total_cpu_us": 101.36800000007031
+  },
+  {
+    "name": "aten::permute",
+    "count": 13,
+    "total_cpu_us": 40.17200000001503
+  },
+  {
+    "name": "aten::as_strided",
+    "count": 149,
+    "total_cpu_us": 88.18599999997036
+  },
+  {
+    "name": "aten::expand",
+    "count": 1,
+    "total_cpu_us": 1.6200000000000045
+  },
+  {
+    "name": "aten::cat",
+    "count": 1,
+    "total_cpu_us": 26075.765
+  },
+  {
+    "name": "aten::slice",
+    "count": 2,
+    "total_cpu_us": 4.2000000000000455
+  },
+  {
+    "name": "aten::copy_",
+    "count": 2,
+    "total_cpu_us": 25956.572
+  },
+  {
+    "name": "aten::_copy_from",
+    "count": 2,
+    "total_cpu_us": 25946.132
+  },
+  {
+    "name": "aten::add",
+    "count": 25,
+    "total_cpu_us": 5107.89899999999
+  },
+  {
+    "name": "aten::dropout",
+    "count": 37,
+    "total_cpu_us": 7263.695000000032
+  },
+  {
+    "name": "aten::layer_norm",
+    "count": 25,
+    "total_cpu_us": 5404.654000000013
+  },
+  {
+    "name": "aten::transpose",
+    "count": 72,
+    "total_cpu_us": 97.68599999995058
+  },
+  {
+    "name": "aten::linear",
+    "count": 49,
+    "total_cpu_us": 10389.353999999992
+  },
+  {
+    "name": "aten::unflatten",
+    "count": 12,
+    "total_cpu_us": 504.53999999999724
+  },
+  {
+    "name": "aten::unsqueeze",
+    "count": 12,
+    "total_cpu_us": 22.279999999995198
+  },
+  {
+    "name": "aten::squeeze",
+    "count": 12,
+    "total_cpu_us": 16.040000000019063
+  },
+  {
+    "name": "aten::contiguous",
+    "count": 24,
+    "total_cpu_us": 4828.0259999999835
+  },
+  {
+    "name": "aten::select",
+    "count": 37,
+    "total_cpu_us": 61.14200000001074
+  },
+  {
+    "name": "aten::scaled_dot_product_attention",
+    "count": 12,
+    "total_cpu_us": 2615.2310000000107
+  },
+  {
+    "name": "aten::gelu",
+    "count": 12,
+    "total_cpu_us": 2386.0600000000086
+  }
+]

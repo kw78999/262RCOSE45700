@@ -1,0 +1,7 @@
+batch,baseline_case,candidate_case,candidate_mode,baseline_mean_over_candidate_mean,comparison_possible,scope,tolerance_status,reason
+1,,performance_attention_compile_b1,attention_compile,,False,preliminary whole-model wall time; baseline includes CPU tensor fallback; not NPU-only speedup,pending,Incomplete/invalid/incompatible pair
+1,,,eager_fastpath_off,,False,preliminary whole-model wall time; baseline includes CPU tensor fallback; not NPU-only speedup,pending,Incomplete/invalid/incompatible pair
+1,,,full_compile,,False,preliminary whole-model wall time; baseline includes CPU tensor fallback; not NPU-only speedup,pending,Incomplete/invalid/incompatible pair
+4,,performance_attention_compile_b4,attention_compile,,False,preliminary whole-model wall time; baseline includes CPU tensor fallback; not NPU-only speedup,pending,Incomplete/invalid/incompatible pair
+4,,,eager_fastpath_off,,False,preliminary whole-model wall time; baseline includes CPU tensor fallback; not NPU-only speedup,pending,Incomplete/invalid/incompatible pair
+4,,,full_compile,,False,preliminary whole-model wall time; baseline includes CPU tensor fallback; not NPU-only speedup,pending,Incomplete/invalid/incompatible pair

@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-04T11:58:45.976604+00:00",
+  "versions": {
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "furiosa-torch": "2026.4.0",
+    "furiosa-kernels": "2026.4.0",
+    "furiosa-runtime": null,
+    "furiosa-sdk": null,
+    "numpy": "2.5.4",
+    "Pillow": "13.0.0",
+    "matplotlib": null
+  },
+  "existing_environment_versions_unchanged": true,
+  "plot_environment": "/root/ViT/vit_pilot/.plot-venv",
+  "plot_install_report": "../../plot_install.json"
+}

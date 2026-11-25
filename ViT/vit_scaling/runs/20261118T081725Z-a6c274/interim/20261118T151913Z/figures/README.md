@@ -1,0 +1,1 @@
+Figures 01–09 include matching CSV exports. Formal and exploration distinguished. All performance provisional; numerical tolerance pending. Blank panels/cells mean missing data, with coverage reasons in coverage.csv. Min–max ranges are descriptive, not confidence intervals. PNGs are static export artifacts.

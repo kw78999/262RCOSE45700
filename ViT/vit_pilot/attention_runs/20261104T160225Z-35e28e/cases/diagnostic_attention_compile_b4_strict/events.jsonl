@@ -1,0 +1,9 @@
+{"utc": "2026-11-04T16:04:29.984838+00:00", "monotonic_ns": 1694118454025880, "pid": 276852, "event": "prepare_start", "mode": "attention_compile", "batch": 4}
+{"utc": "2026-11-04T16:04:31.781752+00:00", "monotonic_ns": 1694120250949456, "pid": 276852, "event": "prepare_end", "preparation_ms": 1648.233954}
+{"utc": "2026-11-04T16:04:31.781924+00:00", "monotonic_ns": 1694120251109237, "pid": 276852, "event": "runner_ready", "runner_setup_ms": 148.537042, "compiled_modules": ["encoder.layers.encoder_layer_0.self_attention", "encoder.layers.encoder_layer_1.self_attention", "encoder.layers.encoder_layer_2.self_attention", "encoder.layers.encoder_layer_3.self_attention", "encoder.layers.encoder_layer_4.self_attention", "encoder.layers.encoder_layer_5.self_attention", "encoder.layers.encoder_layer_6.self_attention", "encoder.layers.encoder_layer_7.self_attention", "encoder.layers.encoder_layer_8.self_attention", "encoder.layers.encoder_layer_9.self_attention", "encoder.layers.encoder_layer_10.self_attention", "encoder.layers.encoder_layer_11.self_attention"]}
+{"utc": "2026-11-04T16:04:31.791561+00:00", "monotonic_ns": 1694120260750414, "pid": 276852, "event": "call_start", "call_index": 1, "phase": "first", "iteration": 1}
+{"utc": "2026-11-04T16:05:07.143326+00:00", "monotonic_ns": 1694155612512500, "pid": 276852, "event": "backend_entry", "index": 1, "call_index": 1}
+{"utc": "2026-11-04T16:08:01.195353+00:00", "monotonic_ns": 1694329664548571, "pid": 276852, "event": "call_end", "call_index": 1, "phase": "first", "elapsed_ms": 209403.584235}
+{"utc": "2026-11-04T16:08:01.196774+00:00", "monotonic_ns": 1694329665961525, "pid": 276852, "event": "profile_start"}
+{"utc": "2026-11-04T16:08:01.362380+00:00", "monotonic_ns": 1694329831573786, "pid": 276852, "event": "profile_end"}
+{"utc": "2026-11-04T16:08:01.362807+00:00", "monotonic_ns": 1694329831993370, "pid": 276852, "event": "worker_end", "status": "ok"}

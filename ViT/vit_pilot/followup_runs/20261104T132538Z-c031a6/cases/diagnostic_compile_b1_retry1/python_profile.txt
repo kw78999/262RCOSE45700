@@ -1,0 +1,58 @@
+         251 function calls (248 primitive calls) in 0.004 seconds
+
+   Ordered by: cumulative time
+   List reduced from 59 to 50 due to restriction <50>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.003    0.003    0.003    0.003 {method 'synchronize' of 'furiosa.torch._C.stream.Stream' objects}
+        1    0.000    0.000    0.001    0.001 /root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:453(__call__)
+      2/1    0.000    0.000    0.001    0.001 /root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py:1772(_wrapped_call_impl)
+      2/1    0.000    0.000    0.001    0.001 /root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py:1780(_call_impl)
+        1    0.000    0.000    0.001    0.001 /root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:904(compile_wrapper)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:289(forward)
+        3    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:1165(_fn)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/torch_compile.py:212(forward)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/profiler/__init__.py:53(wrapped)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/runnable_sequence.py:418(run_sequence)
+        1    0.000    0.000    0.000    0.000 {method 'run' of 'furiosa.torch._C.module.RunnableSequence' objects}
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/export/passes.py:548(filter_inputs)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        2    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/_compile.py:42(inner)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/utils/_pytree.py:1447(tree_unflatten)
+      154    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/furiosa/torch/export/passes.py:550(<genexpr>)
+      2/1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/utils/_pytree.py:1275(unflatten)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.12/contextlib.py:132(__enter__)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/_dynamo/utils.py:4979(record_pregraph_bytecode_enter)
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.next}
+        2    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:208(_set_in_optimized_module)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:2160(fn)
+        2    0.000    0.000    0.000    0.000 {method '__exit__' of 'furiosa.torch._C.profiler.RecordFunction' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.12/contextlib.py:299(helper)
+        1    0.000    0.000    0.000    0.000 {method '__enter__' of 'torch._C._profiler.RecordFunctionFast' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.12/contextlib.py:104(__init__)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:738(call_on_enter)
+       16    0.000    0.000    0.000    0.000 {built-in method torch._C._dynamo.eval_frame.set_eval_frame}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.12/contextlib.py:141(__exit__)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:1064(on_enter)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py:695(top_saved_tensors_hooks)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/utils/_pytree.py:1383(_is_pytreespec_instance)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/_dynamo/utils.py:4990(record_pregraph_bytecode_exit)
+        1    0.000    0.000    0.000    0.000 {built-in method torch._C._functorch.pop_dynamic_layer_stack_and_undo_to_depth}
+        2    0.000    0.000    0.000    0.000 {built-in method torch._C._get_tracing_state}
+        5    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        1    0.000    0.000    0.000    0.000 <string>:2(guard)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:2145(hooks_ids_fn)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/_dynamo/mutation_guard.py:135(install_generation_tagging_init)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/compiler/__init__.py:439(is_compiling)
+        4    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:229(_callback_from_stance)
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/_guards.py:864(try_get)
+        1    0.000    0.000    0.000    0.000 {method '__exit__' of 'torch._C._profiler.RecordFunctionFast' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method torch._C._functorch.get_dynamic_layer_stack_depth}
+        1    0.000    0.000    0.000    0.000 {built-in method torch._C._autograd._top_saved_tensors_default_hooks}
+        2    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/utils/_pytree.py:1183(is_leaf)
+        3    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        1    0.000    0.000    0.000    0.000 /root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py:125(_has_any_global_hook)
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method torch._C._is_tracing}
+
+

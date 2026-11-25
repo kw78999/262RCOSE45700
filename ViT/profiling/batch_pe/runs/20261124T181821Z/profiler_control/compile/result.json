@@ -1,0 +1,400 @@
+{
+  "pe": 1,
+  "batch": 1,
+  "mode": "compile",
+  "attempts": 10,
+  "old_status_counts": {
+    "ok": 8,
+    "error": 2
+  },
+  "successful_stages": [
+    "diagnostic",
+    "exploration",
+    "formal",
+    "stabilization"
+  ],
+  "cache_source": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/formal_p1_b1_compile_t3_a1",
+  "cache_source_case": "formal_p1_b1_compile_t3_a1",
+  "source_run": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274",
+  "warmup": 100,
+  "samples": [],
+  "timeout_s": 3600,
+  "control": "OFF/ON/ON/OFF; 10 resident forward calls per block",
+  "status": "ok",
+  "started_utc": "2026-11-24T19:03:00.111673+00:00",
+  "pid": 1044326,
+  "backend_calls": [
+    {
+      "wall_ms": 1.142632
+    }
+  ],
+  "warmup_ms": [
+    3.819301,
+    3.667139,
+    3.642887,
+    3.640478,
+    3.636608,
+    3.651168,
+    3.658468,
+    3.613887,
+    3.618347,
+    3.614178,
+    3.616607,
+    3.613387,
+    3.609727,
+    3.617738,
+    3.630707,
+    3.708259,
+    3.683209,
+    3.686138,
+    3.682379,
+    3.682259,
+    3.682918,
+    3.666278,
+    3.662869,
+    3.643538,
+    3.653718,
+    3.653968,
+    3.670519,
+    3.661738,
+    3.631297,
+    3.634778,
+    3.624307,
+    3.618628,
+    3.618637,
+    3.621887,
+    3.624057,
+    3.616147,
+    3.611017,
+    3.619958,
+    3.611627,
+    3.642218,
+    3.616637,
+    3.618027,
+    3.623858,
+    3.611507,
+    3.605177,
+    3.608267,
+    3.623477,
+    3.610237,
+    3.614427,
+    3.630117,
+    3.71591,
+    3.681468,
+    3.686999,
+    3.688688,
+    3.678509,
+    3.687869,
+    3.668568,
+    3.686288,
+    3.681669,
+    3.679538,
+    3.678138,
+    3.679168,
+    3.684119,
+    3.671088,
+    3.683109,
+    3.682158,
+    3.690729,
+    3.674448,
+    3.687369,
+    3.683288,
+    3.680258,
+    3.680278,
+    3.688699,
+    3.680049,
+    3.689658,
+    3.685299,
+    3.684068,
+    3.682828,
+    3.684888,
+    3.679769,
+    3.685489,
+    3.682708,
+    3.678789,
+    3.678388,
+    3.682519,
+    3.690428,
+    3.686209,
+    3.665008,
+    3.682449,
+    3.680028,
+    3.675499,
+    3.687608,
+    3.677658,
+    3.678229,
+    3.693449,
+    3.674588,
+    3.689609,
+    3.681958,
+    3.679389,
+    3.694359
+  ],
+  "versions": {
+    "torch": "2.10.0+cpu",
+    "furiosa": "furiosa-torch 2026.4.0 (rev: 5800e2ba24, built_at: 2026-10-12T09:11:33Z)"
+  },
+  "fusion": "Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1)",
+  "device_configuration": "(Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3', 'furiosa:4', 'furiosa:5', 'furiosa:6', 'furiosa:7'])",
+  "effective": {
+    "device": "furiosa:0",
+    "dtype": "BF16",
+    "mha_fastpath": false,
+    "cpu_fallback": false,
+    "torch_threads": 22,
+    "torch_interop_threads": 64,
+    "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "profile_level": "trace"
+  },
+  "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+  "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+  "initial_model_and_input_transfer_wall_ms": 37.371977,
+  "first_forward_wall_ms": 10090.930205,
+  "output_finite": true,
+  "backend_calls_before_samples": 1,
+  "control_samples": [
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 1,
+      "forward_wall_ms": 3.663308
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 2,
+      "forward_wall_ms": 3.653298
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 3,
+      "forward_wall_ms": 3.644858
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 4,
+      "forward_wall_ms": 3.690279
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 5,
+      "forward_wall_ms": 3.677859
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 6,
+      "forward_wall_ms": 3.684128
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 7,
+      "forward_wall_ms": 3.673808
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 8,
+      "forward_wall_ms": 3.684718
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 9,
+      "forward_wall_ms": 3.683478
+    },
+    {
+      "block": 1,
+      "profiled": false,
+      "iteration": 10,
+      "forward_wall_ms": 3.674919
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 1,
+      "forward_wall_ms": 4.056525
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 2,
+      "forward_wall_ms": 3.784491
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 3,
+      "forward_wall_ms": 3.77652
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 4,
+      "forward_wall_ms": 3.76386
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 5,
+      "forward_wall_ms": 3.75016
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 6,
+      "forward_wall_ms": 3.75011
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 7,
+      "forward_wall_ms": 3.76041
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 8,
+      "forward_wall_ms": 3.76219
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 9,
+      "forward_wall_ms": 3.74808
+    },
+    {
+      "block": 2,
+      "profiled": true,
+      "iteration": 10,
+      "forward_wall_ms": 3.7557
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 1,
+      "forward_wall_ms": 3.774651
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 2,
+      "forward_wall_ms": 3.75246
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 3,
+      "forward_wall_ms": 3.75326
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 4,
+      "forward_wall_ms": 3.75465
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 5,
+      "forward_wall_ms": 3.76044
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 6,
+      "forward_wall_ms": 3.7484
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 7,
+      "forward_wall_ms": 3.73965
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 8,
+      "forward_wall_ms": 3.74503
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 9,
+      "forward_wall_ms": 3.762141
+    },
+    {
+      "block": 3,
+      "profiled": true,
+      "iteration": 10,
+      "forward_wall_ms": 3.741
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 1,
+      "forward_wall_ms": 3.636898
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 2,
+      "forward_wall_ms": 3.652318
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 3,
+      "forward_wall_ms": 3.630558
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 4,
+      "forward_wall_ms": 3.633417
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 5,
+      "forward_wall_ms": 3.606798
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 6,
+      "forward_wall_ms": 3.620537
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 7,
+      "forward_wall_ms": 3.615537
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 8,
+      "forward_wall_ms": 3.613607
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 9,
+      "forward_wall_ms": 3.611427
+    },
+    {
+      "block": 4,
+      "profiled": false,
+      "iteration": 10,
+      "forward_wall_ms": 3.607777
+    }
+  ],
+  "backend_calls_during_samples": 0,
+  "stream_complete": true,
+  "ended_utc": "2026-11-24T19:03:15.449788+00:00"
+}

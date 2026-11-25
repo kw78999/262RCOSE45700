@@ -1,0 +1,602 @@
+{
+  "run_id": "20261104T113745Z-8fccff",
+  "started_utc": "2026-11-04T11:37:45.477956+00:00",
+  "status": "finished",
+  "command": [
+    "/root/venv/bin/python",
+    "vit_pilot/pilot.py",
+    "run"
+  ],
+  "code_sha256": {
+    "pilot.py": "69c4984c3f0562ebee6760c196deb8bedfcc28d5c965231095b9045fc45f8d32",
+    "prepare.py": "ac70c1196e34dbfc18281cc81dce1cc8ce06d6d023c4d497765763d7c8d923be",
+    "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+    "worker.py": "02ce8019d7a78ac6a1667ce8bb3d4831fb8993674ba137acf4a159bfe972d2ca",
+    "environment.py": "8a2e154f2d64facf5218b9e8282de8605d815a908b3d3c92ffcda0ef0a3f15ab",
+    "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9"
+  },
+  "git_commit": null,
+  "git_reason": "/root/ViT is not a git repository",
+  "workers": [
+    {
+      "case_id": "smoke_eager_b1",
+      "kind": "smoke",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 1,
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+        "--case",
+        "smoke_eager_b1",
+        "--kind",
+        "smoke",
+        "--mode",
+        "eager",
+        "--trial",
+        "1",
+        "--batch",
+        "1"
+      ],
+      "started_utc": "2026-11-04T11:38:11.461075+00:00",
+      "timeout_seconds": 1800,
+      "stdout": "logs/smoke_eager_b1.stdout.log",
+      "stderr": "logs/smoke_eager_b1.stderr.log",
+      "diagnostic_logging": true,
+      "logging_env": {
+        "TORCH_LOGS": "recompiles,graph_breaks",
+        "FURIOSA_TORCH_LOG": "debug"
+      },
+      "worker_id": 83496,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T11:39:19.487367+00:00",
+      "elapsed_seconds": 68.0263180360198,
+      "resolved_code_sha256": {
+        "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+        "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+        "worker.py": "02ce8019d7a78ac6a1667ce8bb3d4831fb8993674ba137acf4a159bfe972d2ca"
+      },
+      "source_snapshot": "code/initial/worker.py",
+      "source_resolution": "Retrospective source/launch-order audit; initial SHA256 captured before run, v2 only added diagnostic stderr markers before B4 smoke. All fixed/switch workers used identical v2."
+    },
+    {
+      "case_id": "smoke_compile_b1",
+      "kind": "smoke",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+        "--case",
+        "smoke_compile_b1",
+        "--kind",
+        "smoke",
+        "--mode",
+        "compile",
+        "--trial",
+        "1",
+        "--batch",
+        "1"
+      ],
+      "started_utc": "2026-11-04T11:39:19.602133+00:00",
+      "timeout_seconds": 1800,
+      "stdout": "logs/smoke_compile_b1.stdout.log",
+      "stderr": "logs/smoke_compile_b1.stderr.log",
+      "diagnostic_logging": true,
+      "logging_env": {
+        "TORCH_LOGS": "recompiles,graph_breaks",
+        "FURIOSA_TORCH_LOG": "debug"
+      },
+      "worker_id": 84039,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T11:42:51.656112+00:00",
+      "elapsed_seconds": 212.05400473601185,
+      "resolved_code_sha256": {
+        "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+        "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+        "worker.py": "02ce8019d7a78ac6a1667ce8bb3d4831fb8993674ba137acf4a159bfe972d2ca"
+      },
+      "source_snapshot": "code/initial/worker.py",
+      "source_resolution": "Retrospective source/launch-order audit; initial SHA256 captured before run, v2 only added diagnostic stderr markers before B4 smoke. All fixed/switch workers used identical v2."
+    },
+    {
+      "case_id": "smoke_eager_b4",
+      "kind": "smoke",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 1,
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+        "--case",
+        "smoke_eager_b4",
+        "--kind",
+        "smoke",
+        "--mode",
+        "eager",
+        "--trial",
+        "1",
+        "--batch",
+        "4"
+      ],
+      "started_utc": "2026-11-04T11:42:51.771250+00:00",
+      "timeout_seconds": 1800,
+      "stdout": "logs/smoke_eager_b4.stdout.log",
+      "stderr": "logs/smoke_eager_b4.stderr.log",
+      "diagnostic_logging": true,
+      "logging_env": {
+        "TORCH_LOGS": "recompiles,graph_breaks",
+        "FURIOSA_TORCH_LOG": "debug"
+      },
+      "worker_id": 96471,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T11:44:27.790353+00:00",
+      "elapsed_seconds": 96.01912706904113,
+      "resolved_code_sha256": {
+        "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+        "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+        "worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13"
+      },
+      "source_snapshot": "code/final/worker.py",
+      "source_resolution": "Retrospective source/launch-order audit; initial SHA256 captured before run, v2 only added diagnostic stderr markers before B4 smoke. All fixed/switch workers used identical v2."
+    },
+    {
+      "case_id": "smoke_compile_b4",
+      "kind": "smoke",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 1,
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+        "--case",
+        "smoke_compile_b4",
+        "--kind",
+        "smoke",
+        "--mode",
+        "compile",
+        "--trial",
+        "1",
+        "--batch",
+        "4"
+      ],
+      "started_utc": "2026-11-04T11:44:27.906141+00:00",
+      "timeout_seconds": 1800,
+      "stdout": "logs/smoke_compile_b4.stdout.log",
+      "stderr": "logs/smoke_compile_b4.stderr.log",
+      "diagnostic_logging": true,
+      "logging_env": {
+        "TORCH_LOGS": "recompiles,graph_breaks",
+        "FURIOSA_TORCH_LOG": "debug"
+      },
+      "worker_id": 97243,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T11:51:53.996541+00:00",
+      "elapsed_seconds": 446.0904246380087,
+      "resolved_code_sha256": {
+        "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+        "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+        "worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13"
+      },
+      "source_snapshot": "code/final/worker.py",
+      "source_resolution": "Retrospective source/launch-order audit; initial SHA256 captured before run, v2 only added diagnostic stderr markers before B4 smoke. All fixed/switch workers used identical v2."
+    },
+    {
+      "case_id": "fixed_eager_b1_t1",
+      "kind": "fixed",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 1,
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+        "--case",
+        "fixed_eager_b1_t1",
+        "--kind",
+        "fixed",
+        "--mode",
+        "eager",
+        "--trial",
+        "1",
+        "--batch",
+        "1"
+      ],
+      "started_utc": "2026-11-04T11:51:54.111404+00:00",
+      "timeout_seconds": 1800,
+      "stdout": "logs/fixed_eager_b1_t1.stdout.log",
+      "stderr": "logs/fixed_eager_b1_t1.stderr.log",
+      "diagnostic_logging": false,
+      "logging_env": {
+        "TORCH_LOGS": null,
+        "FURIOSA_TORCH_LOG": "warn"
+      },
+      "worker_id": 110522,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T11:52:30.121398+00:00",
+      "elapsed_seconds": 36.010018911911175,
+      "resolved_code_sha256": {
+        "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+        "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+        "worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13"
+      },
+      "source_snapshot": "code/final/worker.py",
+      "source_resolution": "Retrospective source/launch-order audit; initial SHA256 captured before run, v2 only added diagnostic stderr markers before B4 smoke. All fixed/switch workers used identical v2."
+    },
+    {
+      "case_id": "fixed_compile_b1_t1",
+      "kind": "fixed",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+        "--case",
+        "fixed_compile_b1_t1",
+        "--kind",
+        "fixed",
+        "--mode",
+        "compile",
+        "--trial",
+        "1",
+        "--batch",
+        "1"
+      ],
+      "started_utc": "2026-11-04T11:52:30.236364+00:00",
+      "timeout_seconds": 1800,
+      "stdout": "logs/fixed_compile_b1_t1.stdout.log",
+      "stderr": "logs/fixed_compile_b1_t1.stderr.log",
+      "diagnostic_logging": false,
+      "logging_env": {
+        "TORCH_LOGS": null,
+        "FURIOSA_TORCH_LOG": "warn"
+      },
+      "worker_id": 110642,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T11:52:46.241500+00:00",
+      "elapsed_seconds": 16.00516244606115,
+      "resolved_code_sha256": {
+        "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+        "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+        "worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13"
+      },
+      "source_snapshot": "code/final/worker.py",
+      "source_resolution": "Retrospective source/launch-order audit; initial SHA256 captured before run, v2 only added diagnostic stderr markers before B4 smoke. All fixed/switch workers used identical v2."
+    },
+    {
+      "case_id": "fixed_eager_b4_t1",
+      "kind": "fixed",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 1,
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+        "--case",
+        "fixed_eager_b4_t1",
+        "--kind",
+        "fixed",
+        "--mode",
+        "eager",
+        "--trial",
+        "1",
+        "--batch",
+        "4"
+      ],
+      "started_utc": "2026-11-04T11:52:46.356440+00:00",
+      "timeout_seconds": 1800,
+      "stdout": "logs/fixed_eager_b4_t1.stdout.log",
+      "stderr": "logs/fixed_eager_b4_t1.stderr.log",
+      "diagnostic_logging": false,
+      "logging_env": {
+        "TORCH_LOGS": null,
+        "FURIOSA_TORCH_LOG": "warn"
+      },
+      "worker_id": 110697,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T11:53:24.373008+00:00",
+      "elapsed_seconds": 38.016594431130216,
+      "resolved_code_sha256": {
+        "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+        "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+        "worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13"
+      },
+      "source_snapshot": "code/final/worker.py",
+      "source_resolution": "Retrospective source/launch-order audit; initial SHA256 captured before run, v2 only added diagnostic stderr markers before B4 smoke. All fixed/switch workers used identical v2."
+    },
+    {
+      "case_id": "fixed_compile_b4_t1",
+      "kind": "fixed",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 1,
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+        "--case",
+        "fixed_compile_b4_t1",
+        "--kind",
+        "fixed",
+        "--mode",
+        "compile",
+        "--trial",
+        "1",
+        "--batch",
+        "4"
+      ],
+      "started_utc": "2026-11-04T11:53:24.487733+00:00",
+      "timeout_seconds": 1800,
+      "stdout": "logs/fixed_compile_b4_t1.stdout.log",
+      "stderr": "logs/fixed_compile_b4_t1.stderr.log",
+      "diagnostic_logging": false,
+      "logging_env": {
+        "TORCH_LOGS": null,
+        "FURIOSA_TORCH_LOG": "warn"
+      },
+      "worker_id": 110759,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T11:53:40.492184+00:00",
+      "elapsed_seconds": 16.00447508599609,
+      "resolved_code_sha256": {
+        "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+        "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+        "worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13"
+      },
+      "source_snapshot": "code/final/worker.py",
+      "source_resolution": "Retrospective source/launch-order audit; initial SHA256 captured before run, v2 only added diagnostic stderr markers before B4 smoke. All fixed/switch workers used identical v2."
+    },
+    {
+      "case_id": "switch_eager",
+      "kind": "switch",
+      "mode": "eager",
+      "batch": null,
+      "trial": 1,
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+        "--case",
+        "switch_eager",
+        "--kind",
+        "switch",
+        "--mode",
+        "eager",
+        "--trial",
+        "1"
+      ],
+      "started_utc": "2026-11-04T11:53:40.607130+00:00",
+      "timeout_seconds": 1800,
+      "stdout": "logs/switch_eager.stdout.log",
+      "stderr": "logs/switch_eager.stderr.log",
+      "diagnostic_logging": true,
+      "logging_env": {
+        "TORCH_LOGS": "recompiles,graph_breaks",
+        "FURIOSA_TORCH_LOG": "debug"
+      },
+      "worker_id": 110814,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T11:53:59.617455+00:00",
+      "elapsed_seconds": 19.010349577991292,
+      "resolved_code_sha256": {
+        "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+        "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+        "worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13"
+      },
+      "source_snapshot": "code/final/worker.py",
+      "source_resolution": "Retrospective source/launch-order audit; initial SHA256 captured before run, v2 only added diagnostic stderr markers before B4 smoke. All fixed/switch workers used identical v2."
+    },
+    {
+      "case_id": "switch_compile",
+      "kind": "switch",
+      "mode": "compile",
+      "batch": null,
+      "trial": 1,
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "/root/ViT/vit_pilot/worker.py",
+        "--run",
+        "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+        "--case",
+        "switch_compile",
+        "--kind",
+        "switch",
+        "--mode",
+        "compile",
+        "--trial",
+        "1"
+      ],
+      "started_utc": "2026-11-04T11:53:59.732800+00:00",
+      "timeout_seconds": 1800,
+      "stdout": "logs/switch_compile.stdout.log",
+      "stderr": "logs/switch_compile.stderr.log",
+      "diagnostic_logging": true,
+      "logging_env": {
+        "TORCH_LOGS": "recompiles,graph_breaks",
+        "FURIOSA_TORCH_LOG": "debug"
+      },
+      "worker_id": 110885,
+      "returncode": 0,
+      "ended_utc": "2026-11-04T11:54:25.738427+00:00",
+      "elapsed_seconds": 26.005651420913637,
+      "resolved_code_sha256": {
+        "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+        "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+        "worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13"
+      },
+      "source_snapshot": "code/final/worker.py",
+      "source_resolution": "Retrospective source/launch-order audit; initial SHA256 captured before run, v2 only added diagnostic stderr markers before B4 smoke. All fixed/switch workers used identical v2."
+    }
+  ],
+  "sync_method": "furiosa.torch.current_stream(device).synchronize()",
+  "timing_scope": "cpu_dispatch_model_call_and_current_stream_completion_excludes_transfers",
+  "cache_conditions": "new run-local cache via verified SDK cache_context; shared by all sequential workers; smoke may populate it",
+  "interpreter": "/root/venv/bin/python",
+  "asset_preparation": {
+    "command": [
+      "/root/venv/bin/python",
+      "-u",
+      "/root/ViT/vit_pilot/prepare.py",
+      "--run",
+      "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff"
+    ],
+    "started_utc": "2026-11-04T11:37:48.339854+00:00",
+    "timeout_seconds": 1800,
+    "stdout": "logs/assets.stdout.log",
+    "stderr": "logs/assets.stderr.log",
+    "diagnostic_logging": false,
+    "logging_env": {
+      "TORCH_LOGS": null,
+      "FURIOSA_TORCH_LOG": "warn"
+    },
+    "worker_id": 83445,
+    "status": "ok",
+    "returncode": 0,
+    "ended_utc": "2026-11-04T11:38:11.343392+00:00",
+    "elapsed_seconds": 23.003560630138963
+  },
+  "assets": {
+    "model_id": "torchvision.models.vit_b_16",
+    "weights_id": "ViT_B_16_Weights.IMAGENET1K_V1",
+    "weights_url": "https://download.pytorch.org/models/vit_b_16-c867db91.pth",
+    "weights_file": "/root/.cache/torch/hub/checkpoints/vit_b_16-c867db91.pth",
+    "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+    "synthetic_input": true,
+    "real_image_validation": false,
+    "seed": 42,
+    "unique_samples": 4,
+    "input_ids": [
+      "synthetic_seed42_0",
+      "synthetic_seed42_1",
+      "synthetic_seed42_2",
+      "synthetic_seed42_3"
+    ],
+    "source_hashes": null,
+    "input_file_sha256": "53ecedeab5084573dd71df9a11f87c7d33add3afc2768f8aaf025740332f79fd",
+    "stored_dtype": "torch.float32",
+    "dtype": "torch.bfloat16",
+    "sample_bf16_sha256": [
+      "808a6e08cd33ab81c5a77c5692e1c64e14077461763ab111dcbb7e76be116d7f",
+      "c5807a5bd32c927ad366fa54bf04c086f9db11537fe1dc0ea1a7e5f24911923a",
+      "3abccce69ed2e1edb14160c2ca6a2252bc75f5cb8e2336721d4510094e11938e",
+      "2fc9d36c20032b9bb8d0401a4220595c7b41b7eaf69250374bea5288e6eb1aad"
+    ],
+    "batch_hashes": {
+      "1": "808a6e08cd33ab81c5a77c5692e1c64e14077461763ab111dcbb7e76be116d7f",
+      "4": "dddca074d096a9851cd91884341cf9975592e09e67d24a0577df522b749700aa"
+    },
+    "input_shapes": {
+      "1": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "4": [
+        4,
+        3,
+        224,
+        224
+      ]
+    },
+    "tokens_per_image": 197,
+    "preprocessing": "none; fixed random normal tensor"
+  },
+  "ended_utc": "2026-11-04T11:54:25.745817+00:00",
+  "budget_remaining_seconds": 6199.732836963143,
+  "code_provenance": {
+    "executed_controller": "code/initial/pilot.py",
+    "initial_sha256": {
+      "pilot.py": "69c4984c3f0562ebee6760c196deb8bedfcc28d5c965231095b9045fc45f8d32",
+      "prepare.py": "ac70c1196e34dbfc18281cc81dce1cc8ce06d6d023c4d497765763d7c8d923be",
+      "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+      "worker.py": "02ce8019d7a78ac6a1667ce8bb3d4831fb8993674ba137acf4a159bfe972d2ca",
+      "environment.py": "8a2e154f2d64facf5218b9e8282de8605d815a908b3d3c92ffcda0ef0a3f15ab",
+      "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9"
+    },
+    "final_sha256": {
+      "pilot.py": "90c02fef0abb3f5c0196d3759fcc5898e89a0837742fa998181b172732b22a6e",
+      "prepare.py": "ac70c1196e34dbfc18281cc81dce1cc8ce06d6d023c4d497765763d7c8d923be",
+      "verify_artifacts.py": "72126bbf02d1e3b73518a22bc31d4ad525d10084f4dbe1761ed512ad065a8564",
+      "plots.py": "f2c19018ffb5197ce1ef79461ee976943d9e4443a0776b911ef03c68a427bcfa",
+      "analyze.py": "f12dc6a8a22abad0e8f7397a3b3751d2146274c76c53a4f3a955ace709098544",
+      "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+      "worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13",
+      "environment.py": "8a2e154f2d64facf5218b9e8282de8605d815a908b3d3c92ffcda0ef0a3f15ab",
+      "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9"
+    },
+    "notes": [
+      "Initial snapshots verified byte-for-byte against manifest startup SHA256.",
+      "worker v2 added imports and stderr call markers for switch diagnostics only; model/timer/compile flags unchanged. All fixed cases share v2.",
+      "Final pilot CLI additionally persists running worker IDs and validates finite CLI budgets. The completed NPU run used archived initial controller.",
+      "Analysis/report/plot scripts were completed and revised while smoke ran, then used on saved outputs; no additional model forward for analysis."
+    ]
+  },
+  "timing_scope_details": "Excludes explicit external model/input preparation transfers and post-measurement CPU output copy; model-internal DMA, compilation/program loading/dispatch/completion costs are included when they occur during runner call.",
+  "result_artifacts": [
+    "timings.csv",
+    "summary.csv",
+    "comparisons.csv",
+    "shape_switch.csv",
+    "output_comparison.json",
+    "artifact_audit.json",
+    "figures/01_fixed_batch.png",
+    "figures/02_shape_switch.png",
+    "report.md",
+    "feedback_summary.md"
+  ],
+  "final_postprocessing": {
+    "recorded_utc": "2026-11-04T12:02:29.563275+00:00",
+    "analysis_command": [
+      "/root/venv/bin/python",
+      "vit_pilot/pilot.py",
+      "analyze",
+      "--run-dir",
+      "vit_pilot/runs/20261104T113745Z-8fccff"
+    ],
+    "audit_command": [
+      "/root/venv/bin/python",
+      "vit_pilot/verify_artifacts.py",
+      "vit_pilot/runs/20261104T113745Z-8fccff"
+    ],
+    "artifact_audit_status": "pass",
+    "analysis_tests": "8 passed; vit_pilot/tests/analysis_check.log; synthetic fixtures kept separate from NPU measurements"
+  }
+}

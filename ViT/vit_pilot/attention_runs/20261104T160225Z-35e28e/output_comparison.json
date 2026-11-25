@@ -1,0 +1,433 @@
+{
+  "synthetic_input": false,
+  "unique_images": 4,
+  "tolerance_status": "pending",
+  "accuracy_computed": false,
+  "loss_computed": false,
+  "comparisons": [
+    {
+      "case_id": "diagnostic_attention_compile_b1_strict",
+      "reference_mode": "eager",
+      "candidate": "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/outputs/diagnostic_attention_compile_b1_strict.pt",
+      "reference": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/outputs/validation_eager_b1.pt",
+      "tolerance_status": "pending",
+      "allclose": null,
+      "accuracy_computed": false,
+      "structural_finite_ok": true,
+      "top1_matches": 1,
+      "compared_images": 1,
+      "max_abs_error": 0.03125,
+      "mean_abs_error": 0.005744428839534521,
+      "cosine_per_image": [
+        0.9999103994672576
+      ],
+      "cosine_mean": 0.9999103994672576,
+      "cosine_min": 0.9999103994672576,
+      "cosine_undefined_reason": null,
+      "top1_ratio": 1.0,
+      "images": [
+        {
+          "input_id": "01_cat",
+          "candidate_class": 285,
+          "reference_class": 285,
+          "candidate_class_name": "Egyptian cat",
+          "reference_class_name": "Egyptian cat",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999103994672576
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "case_id": "diagnostic_attention_compile_b1_strict",
+      "reference_mode": "compile",
+      "candidate": "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/outputs/diagnostic_attention_compile_b1_strict.pt",
+      "reference": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/outputs/validation_compile_b1.pt",
+      "tolerance_status": "pending",
+      "allclose": null,
+      "accuracy_computed": false,
+      "structural_finite_ok": true,
+      "top1_matches": 1,
+      "compared_images": 1,
+      "max_abs_error": 0.03125,
+      "mean_abs_error": 0.004309101030230522,
+      "cosine_per_image": [
+        0.9999470513684665
+      ],
+      "cosine_mean": 0.9999470513684665,
+      "cosine_min": 0.9999470513684665,
+      "cosine_undefined_reason": null,
+      "top1_ratio": 1.0,
+      "images": [
+        {
+          "input_id": "01_cat",
+          "candidate_class": 285,
+          "reference_class": 285,
+          "candidate_class_name": "Egyptian cat",
+          "reference_class_name": "Egyptian cat",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999470513684665
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "case_id": "diagnostic_attention_compile_b4_strict",
+      "reference_mode": "eager",
+      "candidate": "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/outputs/diagnostic_attention_compile_b4_strict.pt",
+      "reference": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/outputs/validation_eager_b4.pt",
+      "tolerance_status": "pending",
+      "allclose": null,
+      "accuracy_computed": false,
+      "structural_finite_ok": true,
+      "top1_matches": 4,
+      "compared_images": 4,
+      "max_abs_error": 0.046875,
+      "mean_abs_error": 0.005081953946501017,
+      "cosine_per_image": [
+        0.9999340489649866,
+        0.9999490408687509,
+        0.9999520678841148,
+        0.9999465261458319
+      ],
+      "cosine_mean": 0.9999454209659211,
+      "cosine_min": 0.9999340489649866,
+      "cosine_undefined_reason": null,
+      "top1_ratio": 1.0,
+      "images": [
+        {
+          "input_id": "01_cat",
+          "candidate_class": 285,
+          "reference_class": 285,
+          "candidate_class_name": "Egyptian cat",
+          "reference_class_name": "Egyptian cat",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999340489649866
+        },
+        {
+          "input_id": "02_coffee",
+          "candidate_class": 967,
+          "reference_class": 967,
+          "candidate_class_name": "espresso",
+          "reference_class_name": "espresso",
+          "candidate_logit": 9.3125,
+          "reference_logit": 9.3125,
+          "top1_match": true,
+          "cosine": 0.9999490408687509
+        },
+        {
+          "input_id": "03_astronaut",
+          "candidate_class": 450,
+          "reference_class": 450,
+          "candidate_class_name": "bobsled",
+          "reference_class_name": "bobsled",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999520678841148
+        },
+        {
+          "input_id": "04_rocket",
+          "candidate_class": 540,
+          "reference_class": 540,
+          "candidate_class_name": "drilling platform",
+          "reference_class_name": "drilling platform",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999465261458319
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "case_id": "diagnostic_attention_compile_b4_strict",
+      "reference_mode": "compile",
+      "candidate": "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/outputs/diagnostic_attention_compile_b4_strict.pt",
+      "reference": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/outputs/validation_compile_b4.pt",
+      "tolerance_status": "pending",
+      "allclose": null,
+      "accuracy_computed": false,
+      "structural_finite_ok": true,
+      "top1_matches": 4,
+      "compared_images": 4,
+      "max_abs_error": 0.0625,
+      "mean_abs_error": 0.004768894053995609,
+      "cosine_per_image": [
+        0.9999523230469326,
+        0.9999544810892633,
+        0.9999452774368216,
+        0.9999414450045616
+      ],
+      "cosine_mean": 0.9999483816443948,
+      "cosine_min": 0.9999414450045616,
+      "cosine_undefined_reason": null,
+      "top1_ratio": 1.0,
+      "images": [
+        {
+          "input_id": "01_cat",
+          "candidate_class": 285,
+          "reference_class": 285,
+          "candidate_class_name": "Egyptian cat",
+          "reference_class_name": "Egyptian cat",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999523230469326
+        },
+        {
+          "input_id": "02_coffee",
+          "candidate_class": 967,
+          "reference_class": 967,
+          "candidate_class_name": "espresso",
+          "reference_class_name": "espresso",
+          "candidate_logit": 9.3125,
+          "reference_logit": 9.3125,
+          "top1_match": true,
+          "cosine": 0.9999544810892633
+        },
+        {
+          "input_id": "03_astronaut",
+          "candidate_class": 450,
+          "reference_class": 450,
+          "candidate_class_name": "bobsled",
+          "reference_class_name": "bobsled",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999452774368216
+        },
+        {
+          "input_id": "04_rocket",
+          "candidate_class": 540,
+          "reference_class": 540,
+          "candidate_class_name": "drilling platform",
+          "reference_class_name": "drilling platform",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.3125,
+          "top1_match": true,
+          "cosine": 0.9999414450045616
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "case_id": "performance_attention_compile_b1",
+      "reference_mode": "eager",
+      "candidate": "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/outputs/performance_attention_compile_b1.pt",
+      "reference": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/outputs/validation_eager_b1.pt",
+      "tolerance_status": "pending",
+      "allclose": null,
+      "accuracy_computed": false,
+      "structural_finite_ok": true,
+      "top1_matches": 1,
+      "compared_images": 1,
+      "max_abs_error": 0.03125,
+      "mean_abs_error": 0.005744428839534521,
+      "cosine_per_image": [
+        0.9999103994672576
+      ],
+      "cosine_mean": 0.9999103994672576,
+      "cosine_min": 0.9999103994672576,
+      "cosine_undefined_reason": null,
+      "top1_ratio": 1.0,
+      "images": [
+        {
+          "input_id": "01_cat",
+          "candidate_class": 285,
+          "reference_class": 285,
+          "candidate_class_name": "Egyptian cat",
+          "reference_class_name": "Egyptian cat",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999103994672576
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "case_id": "performance_attention_compile_b1",
+      "reference_mode": "compile",
+      "candidate": "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/outputs/performance_attention_compile_b1.pt",
+      "reference": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/outputs/validation_compile_b1.pt",
+      "tolerance_status": "pending",
+      "allclose": null,
+      "accuracy_computed": false,
+      "structural_finite_ok": true,
+      "top1_matches": 1,
+      "compared_images": 1,
+      "max_abs_error": 0.03125,
+      "mean_abs_error": 0.004309101030230522,
+      "cosine_per_image": [
+        0.9999470513684665
+      ],
+      "cosine_mean": 0.9999470513684665,
+      "cosine_min": 0.9999470513684665,
+      "cosine_undefined_reason": null,
+      "top1_ratio": 1.0,
+      "images": [
+        {
+          "input_id": "01_cat",
+          "candidate_class": 285,
+          "reference_class": 285,
+          "candidate_class_name": "Egyptian cat",
+          "reference_class_name": "Egyptian cat",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999470513684665
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "case_id": "performance_attention_compile_b4",
+      "reference_mode": "eager",
+      "candidate": "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/outputs/performance_attention_compile_b4.pt",
+      "reference": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/outputs/validation_eager_b4.pt",
+      "tolerance_status": "pending",
+      "allclose": null,
+      "accuracy_computed": false,
+      "structural_finite_ok": true,
+      "top1_matches": 4,
+      "compared_images": 4,
+      "max_abs_error": 0.046875,
+      "mean_abs_error": 0.005081953946501017,
+      "cosine_per_image": [
+        0.9999340489649866,
+        0.9999490408687509,
+        0.9999520678841148,
+        0.9999465261458319
+      ],
+      "cosine_mean": 0.9999454209659211,
+      "cosine_min": 0.9999340489649866,
+      "cosine_undefined_reason": null,
+      "top1_ratio": 1.0,
+      "images": [
+        {
+          "input_id": "01_cat",
+          "candidate_class": 285,
+          "reference_class": 285,
+          "candidate_class_name": "Egyptian cat",
+          "reference_class_name": "Egyptian cat",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999340489649866
+        },
+        {
+          "input_id": "02_coffee",
+          "candidate_class": 967,
+          "reference_class": 967,
+          "candidate_class_name": "espresso",
+          "reference_class_name": "espresso",
+          "candidate_logit": 9.3125,
+          "reference_logit": 9.3125,
+          "top1_match": true,
+          "cosine": 0.9999490408687509
+        },
+        {
+          "input_id": "03_astronaut",
+          "candidate_class": 450,
+          "reference_class": 450,
+          "candidate_class_name": "bobsled",
+          "reference_class_name": "bobsled",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999520678841148
+        },
+        {
+          "input_id": "04_rocket",
+          "candidate_class": 540,
+          "reference_class": 540,
+          "candidate_class_name": "drilling platform",
+          "reference_class_name": "drilling platform",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999465261458319
+        }
+      ],
+      "mismatches": []
+    },
+    {
+      "case_id": "performance_attention_compile_b4",
+      "reference_mode": "compile",
+      "candidate": "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/outputs/performance_attention_compile_b4.pt",
+      "reference": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/outputs/validation_compile_b4.pt",
+      "tolerance_status": "pending",
+      "allclose": null,
+      "accuracy_computed": false,
+      "structural_finite_ok": true,
+      "top1_matches": 4,
+      "compared_images": 4,
+      "max_abs_error": 0.0625,
+      "mean_abs_error": 0.004768894053995609,
+      "cosine_per_image": [
+        0.9999523230469326,
+        0.9999544810892633,
+        0.9999452774368216,
+        0.9999414450045616
+      ],
+      "cosine_mean": 0.9999483816443948,
+      "cosine_min": 0.9999414450045616,
+      "cosine_undefined_reason": null,
+      "top1_ratio": 1.0,
+      "images": [
+        {
+          "input_id": "01_cat",
+          "candidate_class": 285,
+          "reference_class": 285,
+          "candidate_class_name": "Egyptian cat",
+          "reference_class_name": "Egyptian cat",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999523230469326
+        },
+        {
+          "input_id": "02_coffee",
+          "candidate_class": 967,
+          "reference_class": 967,
+          "candidate_class_name": "espresso",
+          "reference_class_name": "espresso",
+          "candidate_logit": 9.3125,
+          "reference_logit": 9.3125,
+          "top1_match": true,
+          "cosine": 0.9999544810892633
+        },
+        {
+          "input_id": "03_astronaut",
+          "candidate_class": 450,
+          "reference_class": 450,
+          "candidate_class_name": "bobsled",
+          "reference_class_name": "bobsled",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.375,
+          "top1_match": true,
+          "cosine": 0.9999452774368216
+        },
+        {
+          "input_id": "04_rocket",
+          "candidate_class": 540,
+          "reference_class": 540,
+          "candidate_class_name": "drilling platform",
+          "reference_class_name": "drilling platform",
+          "candidate_logit": 8.375,
+          "reference_logit": 8.3125,
+          "top1_match": true,
+          "cosine": 0.9999414450045616
+        }
+      ],
+      "mismatches": []
+    }
+  ]
+}

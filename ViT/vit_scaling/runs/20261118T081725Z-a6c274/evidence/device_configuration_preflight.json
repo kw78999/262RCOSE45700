@@ -1,0 +1,84 @@
+{
+  "provenance": "Pre-run tool execution, serial isolated processes, 2026-11-18 UTC; original code and observed values preserved here",
+  "probes": [
+    {
+      "requested_pe": 1,
+      "probe": "set_fusion then get_device_configuration then current_stream synchronize/query; isolated process",
+      "observed_sdk_fusion": {
+        "num_fusion": 1,
+        "num_pe_per_cluster": 1,
+        "num_chips": 1,
+        "num_clusters_per_chip": 1
+      },
+      "observed_available_logical_devices": [
+        "furiosa:0",
+        "furiosa:1",
+        "furiosa:2",
+        "furiosa:3",
+        "furiosa:4",
+        "furiosa:5",
+        "furiosa:6",
+        "furiosa:7"
+      ],
+      "stream_id": 0,
+      "query_completed": true,
+      "model_forward_performed": false,
+      "actual_pe_utilization": "not established by this probe"
+    },
+    {
+      "requested_pe": 2,
+      "probe": "set_fusion then get_device_configuration then current_stream synchronize/query; isolated process",
+      "observed_sdk_fusion": {
+        "num_fusion": 2,
+        "num_pe_per_cluster": 2,
+        "num_chips": 1,
+        "num_clusters_per_chip": 1
+      },
+      "observed_available_logical_devices": [
+        "furiosa:0",
+        "furiosa:1",
+        "furiosa:2",
+        "furiosa:3"
+      ],
+      "stream_id": 0,
+      "query_completed": true,
+      "model_forward_performed": false,
+      "actual_pe_utilization": "not established by this probe"
+    },
+    {
+      "requested_pe": 4,
+      "probe": "set_fusion then get_device_configuration then current_stream synchronize/query; isolated process",
+      "observed_sdk_fusion": {
+        "num_fusion": 4,
+        "num_pe_per_cluster": 4,
+        "num_chips": 1,
+        "num_clusters_per_chip": 1
+      },
+      "observed_available_logical_devices": [
+        "furiosa:0",
+        "furiosa:1"
+      ],
+      "stream_id": 0,
+      "query_completed": true,
+      "model_forward_performed": false,
+      "actual_pe_utilization": "not established by this probe"
+    },
+    {
+      "requested_pe": 8,
+      "probe": "set_fusion then get_device_configuration then current_stream synchronize/query; isolated process",
+      "observed_sdk_fusion": {
+        "num_fusion": 8,
+        "num_pe_per_cluster": 4,
+        "num_chips": 1,
+        "num_clusters_per_chip": 2
+      },
+      "observed_available_logical_devices": [
+        "furiosa:0"
+      ],
+      "stream_id": 0,
+      "query_completed": true,
+      "model_forward_performed": false,
+      "actual_pe_utilization": "not established by this probe"
+    }
+  ]
+}

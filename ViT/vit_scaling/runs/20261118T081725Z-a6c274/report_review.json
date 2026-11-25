@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-18T23:54:39.599167+00:00",
+  "status": "passed",
+  "scope": "CPU artifact consistency and report review; not numerical tolerance approval or completion of missing experiments",
+  "checks": {
+    "assertions": 1777,
+    "formal_trials": 36,
+    "formal_conditions": 12,
+    "paired_trials": 18,
+    "scaling_rows": 36,
+    "raw_timing_rows": 81789,
+    "host_header_error_workers": 10,
+    "successful_stability_workers": 0,
+    "raw_case_files_unchanged": 522,
+    "finite_output_checks": 14
+  },
+  "failures": [],
+  "primary_numeric_artifacts_unchanged": [
+    "trial_summary.csv",
+    "condition_summary.csv",
+    "paired_speedups.csv",
+    "scaling_summary.csv",
+    "output_validation.json"
+  ],
+  "experiment_status": "finished_with_coverage_recorded",
+  "environment_error": "assert.h not found by SDK host C compiler",
+  "npu_calls_added": 0
+}

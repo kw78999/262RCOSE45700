@@ -1,0 +1,510 @@
+{
+  "case_id": "exploration_p4_b4_compile_t1_a1",
+  "stage": "exploration",
+  "pe": 4,
+  "batch": 4,
+  "mode": "compile",
+  "trial": 1,
+  "attempt": 1,
+  "warmup": 20,
+  "worker_protocol": 2,
+  "stabilization_status": null,
+  "cache_path": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/exploration_p4_b4_compile_t1_a1",
+  "estimated_wall_s": 696.3516779337501,
+  "status": "ok",
+  "started_utc": "2026-11-18T12:47:39.111967+00:00",
+  "pid": 258601,
+  "timings": [
+    {
+      "phase": "first",
+      "iteration": 1,
+      "elapsed_ms": 479072.558566,
+      "offset_s": 1.4e-06
+    },
+    {
+      "phase": "warmup",
+      "iteration": 1,
+      "elapsed_ms": 6.483965,
+      "offset_s": 479.073644157
+    },
+    {
+      "phase": "warmup",
+      "iteration": 2,
+      "elapsed_ms": 5.485075,
+      "offset_s": 479.080216804
+    },
+    {
+      "phase": "warmup",
+      "iteration": 3,
+      "elapsed_ms": 5.489256,
+      "offset_s": 479.08574794
+    },
+    {
+      "phase": "warmup",
+      "iteration": 4,
+      "elapsed_ms": 5.483435,
+      "offset_s": 479.091280047
+    },
+    {
+      "phase": "warmup",
+      "iteration": 5,
+      "elapsed_ms": 5.479285,
+      "offset_s": 479.096807533
+    },
+    {
+      "phase": "warmup",
+      "iteration": 6,
+      "elapsed_ms": 5.477846,
+      "offset_s": 479.10232972
+    },
+    {
+      "phase": "warmup",
+      "iteration": 7,
+      "elapsed_ms": 5.502006,
+      "offset_s": 479.107849616
+    },
+    {
+      "phase": "warmup",
+      "iteration": 8,
+      "elapsed_ms": 5.534537,
+      "offset_s": 479.113397332
+    },
+    {
+      "phase": "warmup",
+      "iteration": 9,
+      "elapsed_ms": 5.530026,
+      "offset_s": 479.11899132
+    },
+    {
+      "phase": "warmup",
+      "iteration": 10,
+      "elapsed_ms": 5.526737,
+      "offset_s": 479.124574308
+    },
+    {
+      "phase": "warmup",
+      "iteration": 11,
+      "elapsed_ms": 5.535086,
+      "offset_s": 479.130152145
+    },
+    {
+      "phase": "warmup",
+      "iteration": 12,
+      "elapsed_ms": 5.521827,
+      "offset_s": 479.135739212
+    },
+    {
+      "phase": "warmup",
+      "iteration": 13,
+      "elapsed_ms": 5.515767,
+      "offset_s": 479.14131676
+    },
+    {
+      "phase": "warmup",
+      "iteration": 14,
+      "elapsed_ms": 5.518126,
+      "offset_s": 479.146884687
+    },
+    {
+      "phase": "warmup",
+      "iteration": 15,
+      "elapsed_ms": 5.521046,
+      "offset_s": 479.152457714
+    },
+    {
+      "phase": "warmup",
+      "iteration": 16,
+      "elapsed_ms": 5.526287,
+      "offset_s": 479.158029941
+    },
+    {
+      "phase": "warmup",
+      "iteration": 17,
+      "elapsed_ms": 5.520156,
+      "offset_s": 479.163614759
+    },
+    {
+      "phase": "warmup",
+      "iteration": 18,
+      "elapsed_ms": 5.533767,
+      "offset_s": 479.169191566
+    },
+    {
+      "phase": "warmup",
+      "iteration": 19,
+      "elapsed_ms": 5.532906,
+      "offset_s": 479.174790874
+    },
+    {
+      "phase": "warmup",
+      "iteration": 20,
+      "elapsed_ms": 5.522607,
+      "offset_s": 479.180375781
+    },
+    {
+      "phase": "repeat",
+      "iteration": 1,
+      "elapsed_ms": 5.525207,
+      "offset_s": 479.18703797
+    },
+    {
+      "phase": "repeat",
+      "iteration": 2,
+      "elapsed_ms": 5.495525,
+      "offset_s": 479.192619217
+    },
+    {
+      "phase": "repeat",
+      "iteration": 3,
+      "elapsed_ms": 5.493416,
+      "offset_s": 479.198158313
+    },
+    {
+      "phase": "repeat",
+      "iteration": 4,
+      "elapsed_ms": 5.496236,
+      "offset_s": 479.20369337
+    },
+    {
+      "phase": "repeat",
+      "iteration": 5,
+      "elapsed_ms": 5.525837,
+      "offset_s": 479.209234887
+    },
+    {
+      "phase": "repeat",
+      "iteration": 6,
+      "elapsed_ms": 5.524346,
+      "offset_s": 479.214812794
+    },
+    {
+      "phase": "repeat",
+      "iteration": 7,
+      "elapsed_ms": 5.516497,
+      "offset_s": 479.220394072
+    },
+    {
+      "phase": "repeat",
+      "iteration": 8,
+      "elapsed_ms": 5.517596,
+      "offset_s": 479.225963119
+    },
+    {
+      "phase": "repeat",
+      "iteration": 9,
+      "elapsed_ms": 5.522026,
+      "offset_s": 479.231533676
+    },
+    {
+      "phase": "repeat",
+      "iteration": 10,
+      "elapsed_ms": 5.530036,
+      "offset_s": 479.237111113
+    },
+    {
+      "phase": "repeat",
+      "iteration": 11,
+      "elapsed_ms": 5.527277,
+      "offset_s": 479.242693251
+    },
+    {
+      "phase": "repeat",
+      "iteration": 12,
+      "elapsed_ms": 5.526106,
+      "offset_s": 479.248273678
+    },
+    {
+      "phase": "repeat",
+      "iteration": 13,
+      "elapsed_ms": 5.537447,
+      "offset_s": 479.253858336
+    },
+    {
+      "phase": "repeat",
+      "iteration": 14,
+      "elapsed_ms": 5.533766,
+      "offset_s": 479.259449463
+    },
+    {
+      "phase": "repeat",
+      "iteration": 15,
+      "elapsed_ms": 5.543337,
+      "offset_s": 479.265036931
+    },
+    {
+      "phase": "repeat",
+      "iteration": 16,
+      "elapsed_ms": 5.529696,
+      "offset_s": 479.270632658
+    },
+    {
+      "phase": "repeat",
+      "iteration": 17,
+      "elapsed_ms": 5.533056,
+      "offset_s": 479.276220096
+    },
+    {
+      "phase": "repeat",
+      "iteration": 18,
+      "elapsed_ms": 5.527176,
+      "offset_s": 479.281808013
+    },
+    {
+      "phase": "repeat",
+      "iteration": 19,
+      "elapsed_ms": 5.526637,
+      "offset_s": 479.287387701
+    },
+    {
+      "phase": "repeat",
+      "iteration": 20,
+      "elapsed_ms": 5.519816,
+      "offset_s": 479.292965408
+    },
+    {
+      "phase": "repeat",
+      "iteration": 21,
+      "elapsed_ms": 5.519256,
+      "offset_s": 479.298537455
+    },
+    {
+      "phase": "repeat",
+      "iteration": 22,
+      "elapsed_ms": 5.529447,
+      "offset_s": 479.304113763
+    },
+    {
+      "phase": "repeat",
+      "iteration": 23,
+      "elapsed_ms": 5.516056,
+      "offset_s": 479.30969669
+    },
+    {
+      "phase": "repeat",
+      "iteration": 24,
+      "elapsed_ms": 5.517916,
+      "offset_s": 479.315265267
+    },
+    {
+      "phase": "repeat",
+      "iteration": 25,
+      "elapsed_ms": 5.510336,
+      "offset_s": 479.320833824
+    },
+    {
+      "phase": "repeat",
+      "iteration": 26,
+      "elapsed_ms": 5.519697,
+      "offset_s": 479.326402872
+    },
+    {
+      "phase": "repeat",
+      "iteration": 27,
+      "elapsed_ms": 5.515316,
+      "offset_s": 479.331975009
+    },
+    {
+      "phase": "repeat",
+      "iteration": 28,
+      "elapsed_ms": 5.527416,
+      "offset_s": 479.337550476
+    },
+    {
+      "phase": "repeat",
+      "iteration": 29,
+      "elapsed_ms": 5.527007,
+      "offset_s": 479.343131263
+    },
+    {
+      "phase": "repeat",
+      "iteration": 30,
+      "elapsed_ms": 5.529826,
+      "offset_s": 479.348718871
+    },
+    {
+      "phase": "repeat",
+      "iteration": 31,
+      "elapsed_ms": 5.519017,
+      "offset_s": 479.354301368
+    },
+    {
+      "phase": "repeat",
+      "iteration": 32,
+      "elapsed_ms": 5.540947,
+      "offset_s": 479.359879656
+    },
+    {
+      "phase": "repeat",
+      "iteration": 33,
+      "elapsed_ms": 5.519616,
+      "offset_s": 479.365472713
+    },
+    {
+      "phase": "repeat",
+      "iteration": 34,
+      "elapsed_ms": 5.540367,
+      "offset_s": 479.37104544
+    },
+    {
+      "phase": "repeat",
+      "iteration": 35,
+      "elapsed_ms": 5.527496,
+      "offset_s": 479.376637708
+    },
+    {
+      "phase": "repeat",
+      "iteration": 36,
+      "elapsed_ms": 5.526236,
+      "offset_s": 479.382223056
+    },
+    {
+      "phase": "repeat",
+      "iteration": 37,
+      "elapsed_ms": 5.516696,
+      "offset_s": 479.387801753
+    },
+    {
+      "phase": "repeat",
+      "iteration": 38,
+      "elapsed_ms": 5.525476,
+      "offset_s": 479.39337175
+    },
+    {
+      "phase": "repeat",
+      "iteration": 39,
+      "elapsed_ms": 5.522447,
+      "offset_s": 479.398950148
+    },
+    {
+      "phase": "repeat",
+      "iteration": 40,
+      "elapsed_ms": 5.520796,
+      "offset_s": 479.404524065
+    },
+    {
+      "phase": "repeat",
+      "iteration": 41,
+      "elapsed_ms": 5.528336,
+      "offset_s": 479.410097312
+    },
+    {
+      "phase": "repeat",
+      "iteration": 42,
+      "elapsed_ms": 5.522227,
+      "offset_s": 479.415678139
+    },
+    {
+      "phase": "repeat",
+      "iteration": 43,
+      "elapsed_ms": 5.532796,
+      "offset_s": 479.421252257
+    },
+    {
+      "phase": "repeat",
+      "iteration": 44,
+      "elapsed_ms": 5.547407,
+      "offset_s": 479.426839734
+    },
+    {
+      "phase": "repeat",
+      "iteration": 45,
+      "elapsed_ms": 5.523006,
+      "offset_s": 479.432441192
+    },
+    {
+      "phase": "repeat",
+      "iteration": 46,
+      "elapsed_ms": 5.538357,
+      "offset_s": 479.438017299
+    },
+    {
+      "phase": "repeat",
+      "iteration": 47,
+      "elapsed_ms": 5.527276,
+      "offset_s": 479.443609727
+    },
+    {
+      "phase": "repeat",
+      "iteration": 48,
+      "elapsed_ms": 5.520426,
+      "offset_s": 479.449189844
+    },
+    {
+      "phase": "repeat",
+      "iteration": 49,
+      "elapsed_ms": 5.525066,
+      "offset_s": 479.454763562
+    },
+    {
+      "phase": "repeat",
+      "iteration": 50,
+      "elapsed_ms": 5.530766,
+      "offset_s": 479.460340749
+    }
+  ],
+  "compiler_time_ms": null,
+  "actual_codegen_count": null,
+  "disk_cache_hit": null,
+  "disk_cache_miss": null,
+  "backend_entries": [],
+  "controls": [
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    },
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    },
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    },
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    }
+  ],
+  "provisional": true,
+  "timing_scope": "CPU dispatch + runner + current fused-device stream completion; external transfers excluded",
+  "system_cold": false,
+  "cache_miss_verified": false,
+  "performance_loop_output_copies": 0,
+  "python_sdk_logger_level": 30,
+  "fusion": {
+    "num_fusion": 4,
+    "num_pe_per_cluster": 4,
+    "num_chips": 1,
+    "num_clusters_per_chip": 1
+  },
+  "device_configuration": "(Fusion(num_fusion=4, num_pe_per_cluster=4, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1'])",
+  "available_logical_devices": [
+    "furiosa:0",
+    "furiosa:1"
+  ],
+  "cache_existed_at_entry": false,
+  "effective": {
+    "torch_threads": 22,
+    "torch_interop_threads": 64,
+    "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "automatic_dynamic_shapes": false,
+    "recompile_limit": 8,
+    "backend_eager_fallback": false,
+    "suppress_errors": false,
+    "compile_kwargs": "backend only; all other arguments omitted"
+  },
+  "input_hash": "e943285ad3e9668d6e3a6466aae88f6e2697109336cbfe4aed83cae62579b7f7",
+  "unique_image_count": 4,
+  "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+  "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+  "model_input_prepare_ms": 1868.883222,
+  "stream_id": 0,
+  "sync_contract": "installed logical-device current_stream contract; per-PE internal implementation opaque",
+  "runner_setup_ms": 143.715631,
+  "warmup_count": 20,
+  "repeat_count": 50,
+  "repeat_sum_ms": 276.2180659999999,
+  "repeat_minimum_met": null,
+  "python_sdk_logger_level_at_end": 30,
+  "ended_utc": "2026-11-18T12:55:43.398024+00:00"
+}

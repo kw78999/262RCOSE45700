@@ -1,0 +1,81 @@
+{
+  "status": "available",
+  "trace_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/cases/diagnostic_compile_b1_retry1/furiosa_trace.json",
+  "events": 22,
+  "name_counts": {
+    "followup_representative_call": 1,
+    "torch_compile::run_sequence": 1,
+    "tensor::empty": 3,
+    "Stream::launch": 1,
+    "RunnableSequence::push_combined_profile_records": 1,
+    "RunnableSequence::build_copy_profiles_to_cpu": 1,
+    "memory::build_copy": 1,
+    "memory::build_host_npu_copy": 1,
+    "memory::generate_byte_offset_scatter": 1,
+    "Stream::enqueue": 1,
+    "Profiler::push_npu_profile_record": 2,
+    "Stream::synchronize": 1,
+    "npu1pe0::profile_d2h::followup_representative_call": 1,
+    "thread_name": 3,
+    "npu1pe0::launch::followup_representative_call": 1,
+    "npu1pe0::Task::followup_representative_call": 2
+  },
+  "npu_task_count": 2,
+  "npu_task_names": {
+    "npu1pe0::Task::followup_representative_call": 2
+  },
+  "cpu_fallback_execution_spans": 0,
+  "selected_host_spans": [
+    {
+      "name": "followup_representative_call",
+      "count": 1,
+      "observed_durations_ms": [
+        4.178416
+      ]
+    },
+    {
+      "name": "run_by_cpu::executed_by_cpu",
+      "count": 0,
+      "observed_durations_ms": []
+    },
+    {
+      "name": "Stream::synchronize",
+      "count": 1,
+      "observed_durations_ms": [
+        3.406164
+      ]
+    },
+    {
+      "name": "TpModule::run",
+      "count": 0,
+      "observed_durations_ms": []
+    },
+    {
+      "name": "Runnable::forward",
+      "count": 0,
+      "observed_durations_ms": []
+    },
+    {
+      "name": "torch_compile::run_sequence",
+      "count": 1,
+      "observed_durations_ms": [
+        0.37255600000000005
+      ]
+    },
+    {
+      "name": "flatten_inputs",
+      "count": 0,
+      "observed_durations_ms": []
+    },
+    {
+      "name": "memory::copy",
+      "count": 0,
+      "observed_durations_ms": []
+    }
+  ],
+  "npu_task_durations_ms": [
+    1.6365210000000001,
+    1.7496840000000002
+  ],
+  "duration_note": "Chrome trace durations in microseconds converted to ms; spans/tasks may overlap or nest. Do not sum as a latency decomposition. Profile call is separate from performance."
+}

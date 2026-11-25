@@ -1,0 +1,85 @@
+UTC 2026-11-03T06:29:54.946449+00:00
+executable /root/venv/bin/python prefix /root/venv base_prefix /usr
+python 3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0] platform Linux-6.8.0-124-generic-x86_64-with-glibc2.39
+VIRTUAL_ENV /root/venv
+CONDA_PREFIX None
+PATH /root/venv/bin:/root/.codex/tmp/arg0-linux/codex-arg0YyBa29:/root/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/bin/remote-cli:/root/venv/bin:/root/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/root/.vscode-server/extensions/openai.chatgpt-26.1021.22027-linux-x64/bin/linux-x86_64
+TORCH_HOME None
+XDG_CACHE_HOME None
+RUST_LOG warn
+package torch 2.10.0+cpu
+package torchvision NOT INSTALLED
+package furiosa-torch 2026.4.0
+package furiosa-kernels 2026.4.0
+package furiosa-runtime NOT INSTALLED
+package furiosa-sdk NOT INSTALLED
+$ furiosa-smi version
+- furiosa-smi
+  2026.4.0
+
+- device driver
+  2026.4.0, 32ffd4e
+
+ exit 0
+$ furiosa-smi info
++------+--------+-------------------+---------+-------+--------------+
+| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |
++------+--------+-------------------+---------+-------+--------------+
+| RNGD | npu1   | 2026.4.0, 93d67f3 | 36.10°C |  38 W | 0000:04:00.0 |
++------+--------+-------------------+---------+-------+--------------+
+ exit 0
+$ furiosa-smi status
++------+--------+---------------------------+-------------+
+| Arch | Device | Memory                    | Utilization |
++------+--------+---------------------------+-------------+
+| RNGD | npu1   |  0.00/47.50 GiB   (0.00%) |      -      |
++------+--------+---------------------------+-------------+
+ exit 0
+$ furiosa-smi ps
++-----+----------+-----+
+| PID | NPU core | CMD |
++-----+----------+-----+
+ exit 0
+$ python -m pip list
+Package           Version
+----------------- ----------
+ast_serialize     0.13.1
+filelock          3.32.3
+fsspec            2026.7.0
+furiosa-kernels   2026.4.0
+furiosa-torch     2026.4.0
+Jinja2            3.1.6
+librt             0.16.0
+MarkupSafe        3.0.3
+mpmath            1.3.0
+mypy              2.2.0
+mypy_extensions   1.1.0
+networkx          3.6.1
+numpy             2.5.4
+pathspec          1.1.1
+pip               26.2.2
+setuptools        78.1.0
+sympy             1.14.0
+torch             2.10.0+cpu
+typing_extensions 4.16.0
+ exit 0
+$ dpkg-query -W *furiosa*
+furiosa-smi	2026.4.0-4
+ exit 0
+torch 2.10.0+cpu cuda available False
+furiosa runtime/compiler build furiosa-torch 2026.4.0 (rev: 5800e2ba24, built_at: 2026-10-12T09:11:33Z)
+is_available True
+get_available_devices ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3', 'furiosa:4', 'furiosa:5', 'furiosa:6', 'furiosa:7']
+get_device_configuration (Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3', 'furiosa:4', 'furiosa:5', 'furiosa:6', 'furiosa:7'])
+get_amp_supported_dtype []
+cpu_fallback True
+cache CacheConfig { root_dir: Some("/root/.cache/furiosa/compiler"), summary: false, ensure: false, failure_link_dir: None }
+compiler CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }
+torch.profiler.supported_activities {<ProfilerActivity.CPU: 0>, <ProfilerActivity.PrivateUse1: 5>}
+eager lru _build_exported_program_cached CacheInfo(hits=0, misses=0, maxsize=8192, currsize=0)
+eager lru _compile_cached CacheInfo(hits=0, misses=0, maxsize=8192, currsize=0)
+eager lru _compile_and_load_cached CacheInfo(hits=0, misses=0, maxsize=32, currsize=0)
+source evidence /root/venv/lib/python3.12/site-packages/furiosa/torch ['__init__.py', '_backend/eager.py', '_backend/aten.py', '_backend/torch_compile.py', '_backend/_exported_program.py', '_backend/runnable_sequence.py', '_module/dfg.py', '_module/runnable.py', 'config/__init__.py', 'config/_env.py', 'config/_cache.py', 'config/_stream.py', '_C/stream/__init__.pyi', '_C/profiler/__init__.pyi', '_C/config/cache/__init__.pyi', '_C/config/compiler/__init__.pyi', '_C/device/__init__.pyi', '_custom_ops/copy_from.py', '_register.py']
+existing cache /root/.cache/torch/hub/checkpoints exists False
+existing cache /root/.cache/furiosa/compiler exists True
+top-level entries ['135d14dc3d43231b', '1798bb72c06de41b', '1b8672649b0c01f5', '1e06c6171df2b383', '1e7b34efd6000573', '21402973e4e88b4b', '2c9010c904a09734', '344b25450bb0573e', '410fec74112af5e9', '535c121745612d22', '60d8fc9d5dd5e556', '74e2d36036349df5', '83d942627b665251', '8bcd3aa1048d1255', '91123ba1ed64f59a', 'ad01bb6da2d336b1', 'b8d4a95c47cb67b9', 'b9936c605d5aceff', 'c0f569cc5d47afb3', 'ca5e4772c75891ea', 'cb8d3ceda9918456', 'd62ad06abf1a131e', 'e36da089ee0933d8', 'ed7cb2237bbd7489', 'f1c342d2bb494b88', 'f63664f60b1bb4aa', 'f8ac5f60e8821496', 'fc99bf3420ea4751']

@@ -1,0 +1,14 @@
+{
+  "case_id": "formal_p4_b1_compile_t3_a1",
+  "stage": "formal",
+  "pe": 4,
+  "batch": 1,
+  "mode": "compile",
+  "trial": 3,
+  "attempt": 1,
+  "warmup": 180,
+  "worker_protocol": 2,
+  "stabilization_status": "heuristic_satisfied",
+  "cache_path": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/formal_p4_b1_compile_t3_a1",
+  "estimated_wall_s": 309.732736347481
+}

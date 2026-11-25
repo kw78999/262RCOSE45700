@@ -1,0 +1,513 @@
+{
+  "case_id": "exploration_p1_b1_eager_t1_a1",
+  "stage": "exploration",
+  "pe": 1,
+  "batch": 1,
+  "mode": "eager",
+  "trial": 1,
+  "attempt": 1,
+  "warmup": 20,
+  "stabilization_status": null,
+  "cache_path": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/exploration_p1_b1_eager_t1_a1",
+  "estimated_wall_s": 166.39246618709169,
+  "status": "ok",
+  "started_utc": "2026-11-18T09:25:47.172310+00:00",
+  "pid": 111236,
+  "timings": [
+    {
+      "phase": "first",
+      "iteration": 1,
+      "elapsed_ms": 98004.669186,
+      "offset_s": 1.18e-06
+    },
+    {
+      "phase": "warmup",
+      "iteration": 1,
+      "elapsed_ms": 44.433587,
+      "offset_s": 98.005291455
+    },
+    {
+      "phase": "warmup",
+      "iteration": 2,
+      "elapsed_ms": 44.802713,
+      "offset_s": 98.049790164
+    },
+    {
+      "phase": "warmup",
+      "iteration": 3,
+      "elapsed_ms": 44.844993,
+      "offset_s": 98.094632407
+    },
+    {
+      "phase": "warmup",
+      "iteration": 4,
+      "elapsed_ms": 45.028756,
+      "offset_s": 98.139518611
+    },
+    {
+      "phase": "warmup",
+      "iteration": 5,
+      "elapsed_ms": 44.843064,
+      "offset_s": 98.184592598
+    },
+    {
+      "phase": "warmup",
+      "iteration": 6,
+      "elapsed_ms": 45.020097,
+      "offset_s": 98.229474912
+    },
+    {
+      "phase": "warmup",
+      "iteration": 7,
+      "elapsed_ms": 45.044867,
+      "offset_s": 98.274535429
+    },
+    {
+      "phase": "warmup",
+      "iteration": 8,
+      "elapsed_ms": 44.534528,
+      "offset_s": 98.319620376
+    },
+    {
+      "phase": "warmup",
+      "iteration": 9,
+      "elapsed_ms": 44.691141,
+      "offset_s": 98.364194455
+    },
+    {
+      "phase": "warmup",
+      "iteration": 10,
+      "elapsed_ms": 45.039226,
+      "offset_s": 98.408925807
+    },
+    {
+      "phase": "warmup",
+      "iteration": 11,
+      "elapsed_ms": 45.112797,
+      "offset_s": 98.454004875
+    },
+    {
+      "phase": "warmup",
+      "iteration": 12,
+      "elapsed_ms": 45.009636,
+      "offset_s": 98.499157343
+    },
+    {
+      "phase": "warmup",
+      "iteration": 13,
+      "elapsed_ms": 45.006826,
+      "offset_s": 98.544214429
+    },
+    {
+      "phase": "warmup",
+      "iteration": 14,
+      "elapsed_ms": 44.901734,
+      "offset_s": 98.589261456
+    },
+    {
+      "phase": "warmup",
+      "iteration": 15,
+      "elapsed_ms": 44.968306,
+      "offset_s": 98.634202531
+    },
+    {
+      "phase": "warmup",
+      "iteration": 16,
+      "elapsed_ms": 45.009926,
+      "offset_s": 98.679209867
+    },
+    {
+      "phase": "warmup",
+      "iteration": 17,
+      "elapsed_ms": 45.011496,
+      "offset_s": 98.724260994
+    },
+    {
+      "phase": "warmup",
+      "iteration": 18,
+      "elapsed_ms": 45.019696,
+      "offset_s": 98.769313231
+    },
+    {
+      "phase": "warmup",
+      "iteration": 19,
+      "elapsed_ms": 44.861624,
+      "offset_s": 98.814373117
+    },
+    {
+      "phase": "warmup",
+      "iteration": 20,
+      "elapsed_ms": 44.984866,
+      "offset_s": 98.859280062
+    },
+    {
+      "phase": "repeat",
+      "iteration": 1,
+      "elapsed_ms": 44.947346,
+      "offset_s": 98.905285853
+    },
+    {
+      "phase": "repeat",
+      "iteration": 2,
+      "elapsed_ms": 45.028716,
+      "offset_s": 98.950284749
+    },
+    {
+      "phase": "repeat",
+      "iteration": 3,
+      "elapsed_ms": 44.957835,
+      "offset_s": 98.995355736
+    },
+    {
+      "phase": "repeat",
+      "iteration": 4,
+      "elapsed_ms": 44.951725,
+      "offset_s": 99.040354602
+    },
+    {
+      "phase": "repeat",
+      "iteration": 5,
+      "elapsed_ms": 44.879354,
+      "offset_s": 99.085347407
+    },
+    {
+      "phase": "repeat",
+      "iteration": 6,
+      "elapsed_ms": 44.931684,
+      "offset_s": 99.130269272
+    },
+    {
+      "phase": "repeat",
+      "iteration": 7,
+      "elapsed_ms": 44.936445,
+      "offset_s": 99.175241217
+    },
+    {
+      "phase": "repeat",
+      "iteration": 8,
+      "elapsed_ms": 45.015276,
+      "offset_s": 99.220222563
+    },
+    {
+      "phase": "repeat",
+      "iteration": 9,
+      "elapsed_ms": 44.835924,
+      "offset_s": 99.26527763
+    },
+    {
+      "phase": "repeat",
+      "iteration": 10,
+      "elapsed_ms": 45.456882,
+      "offset_s": 99.310154924
+    },
+    {
+      "phase": "repeat",
+      "iteration": 11,
+      "elapsed_ms": 45.088728,
+      "offset_s": 99.355655598
+    },
+    {
+      "phase": "repeat",
+      "iteration": 12,
+      "elapsed_ms": 44.962596,
+      "offset_s": 99.400786226
+    },
+    {
+      "phase": "repeat",
+      "iteration": 13,
+      "elapsed_ms": 45.006176,
+      "offset_s": 99.445791532
+    },
+    {
+      "phase": "repeat",
+      "iteration": 14,
+      "elapsed_ms": 44.859264,
+      "offset_s": 99.490841478
+    },
+    {
+      "phase": "repeat",
+      "iteration": 15,
+      "elapsed_ms": 45.001596,
+      "offset_s": 99.535744073
+    },
+    {
+      "phase": "repeat",
+      "iteration": 16,
+      "elapsed_ms": 44.957446,
+      "offset_s": 99.58079607
+    },
+    {
+      "phase": "repeat",
+      "iteration": 17,
+      "elapsed_ms": 45.126628,
+      "offset_s": 99.625794526
+    },
+    {
+      "phase": "repeat",
+      "iteration": 18,
+      "elapsed_ms": 45.026076,
+      "offset_s": 99.670962564
+    },
+    {
+      "phase": "repeat",
+      "iteration": 19,
+      "elapsed_ms": 44.842103,
+      "offset_s": 99.716030081
+    },
+    {
+      "phase": "repeat",
+      "iteration": 20,
+      "elapsed_ms": 44.955225,
+      "offset_s": 99.760914176
+    },
+    {
+      "phase": "repeat",
+      "iteration": 21,
+      "elapsed_ms": 44.967246,
+      "offset_s": 99.805912772
+    },
+    {
+      "phase": "repeat",
+      "iteration": 22,
+      "elapsed_ms": 45.066767,
+      "offset_s": 99.850920828
+    },
+    {
+      "phase": "repeat",
+      "iteration": 23,
+      "elapsed_ms": 44.850434,
+      "offset_s": 99.896027445
+    },
+    {
+      "phase": "repeat",
+      "iteration": 24,
+      "elapsed_ms": 44.909315,
+      "offset_s": 99.94092253
+    },
+    {
+      "phase": "repeat",
+      "iteration": 25,
+      "elapsed_ms": 44.944045,
+      "offset_s": 99.985874555
+    },
+    {
+      "phase": "repeat",
+      "iteration": 26,
+      "elapsed_ms": 44.926355,
+      "offset_s": 100.030860661
+    },
+    {
+      "phase": "repeat",
+      "iteration": 27,
+      "elapsed_ms": 44.825403,
+      "offset_s": 100.075827957
+    },
+    {
+      "phase": "repeat",
+      "iteration": 28,
+      "elapsed_ms": 44.988786,
+      "offset_s": 100.12069423
+    },
+    {
+      "phase": "repeat",
+      "iteration": 29,
+      "elapsed_ms": 44.957326,
+      "offset_s": 100.165724137
+    },
+    {
+      "phase": "repeat",
+      "iteration": 30,
+      "elapsed_ms": 44.846794,
+      "offset_s": 100.210723453
+    },
+    {
+      "phase": "repeat",
+      "iteration": 31,
+      "elapsed_ms": 44.928175,
+      "offset_s": 100.255614467
+    },
+    {
+      "phase": "repeat",
+      "iteration": 32,
+      "elapsed_ms": 44.987756,
+      "offset_s": 100.300583533
+    },
+    {
+      "phase": "repeat",
+      "iteration": 33,
+      "elapsed_ms": 45.165149,
+      "offset_s": 100.345612979
+    },
+    {
+      "phase": "repeat",
+      "iteration": 34,
+      "elapsed_ms": 44.984426,
+      "offset_s": 100.390818629
+    },
+    {
+      "phase": "repeat",
+      "iteration": 35,
+      "elapsed_ms": 44.965376,
+      "offset_s": 100.435844875
+    },
+    {
+      "phase": "repeat",
+      "iteration": 36,
+      "elapsed_ms": 44.947815,
+      "offset_s": 100.480851211
+    },
+    {
+      "phase": "repeat",
+      "iteration": 37,
+      "elapsed_ms": 44.986696,
+      "offset_s": 100.525840797
+    },
+    {
+      "phase": "repeat",
+      "iteration": 38,
+      "elapsed_ms": 44.904764,
+      "offset_s": 100.570870384
+    },
+    {
+      "phase": "repeat",
+      "iteration": 39,
+      "elapsed_ms": 44.874024,
+      "offset_s": 100.615821769
+    },
+    {
+      "phase": "repeat",
+      "iteration": 40,
+      "elapsed_ms": 44.808623,
+      "offset_s": 100.660736804
+    },
+    {
+      "phase": "repeat",
+      "iteration": 41,
+      "elapsed_ms": 44.828824,
+      "offset_s": 100.705585958
+    },
+    {
+      "phase": "repeat",
+      "iteration": 42,
+      "elapsed_ms": 44.961385,
+      "offset_s": 100.750456672
+    },
+    {
+      "phase": "repeat",
+      "iteration": 43,
+      "elapsed_ms": 44.951885,
+      "offset_s": 100.795460198
+    },
+    {
+      "phase": "repeat",
+      "iteration": 44,
+      "elapsed_ms": 44.881794,
+      "offset_s": 100.840453364
+    },
+    {
+      "phase": "repeat",
+      "iteration": 45,
+      "elapsed_ms": 44.783282,
+      "offset_s": 100.885376679
+    },
+    {
+      "phase": "repeat",
+      "iteration": 46,
+      "elapsed_ms": 44.808223,
+      "offset_s": 100.930201413
+    },
+    {
+      "phase": "repeat",
+      "iteration": 47,
+      "elapsed_ms": 44.211614,
+      "offset_s": 100.975055436
+    },
+    {
+      "phase": "repeat",
+      "iteration": 48,
+      "elapsed_ms": 43.9348,
+      "offset_s": 101.019308021
+    },
+    {
+      "phase": "repeat",
+      "iteration": 49,
+      "elapsed_ms": 43.993941,
+      "offset_s": 101.063283692
+    },
+    {
+      "phase": "repeat",
+      "iteration": 50,
+      "elapsed_ms": 44.121863,
+      "offset_s": 101.107319654
+    }
+  ],
+  "compiler_time_ms": null,
+  "actual_codegen_count": null,
+  "disk_cache_hit": null,
+  "disk_cache_miss": null,
+  "backend_entries": [],
+  "controls": [
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    },
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    },
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    },
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    }
+  ],
+  "provisional": true,
+  "timing_scope": "CPU dispatch + runner + current fused-device stream completion; external transfers excluded",
+  "system_cold": false,
+  "cache_miss_verified": false,
+  "performance_loop_output_copies": 0,
+  "fusion": {
+    "num_fusion": 1,
+    "num_pe_per_cluster": 1,
+    "num_chips": 1,
+    "num_clusters_per_chip": 1
+  },
+  "device_configuration": "(Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3', 'furiosa:4', 'furiosa:5', 'furiosa:6', 'furiosa:7'])",
+  "available_logical_devices": [
+    "furiosa:0",
+    "furiosa:1",
+    "furiosa:2",
+    "furiosa:3",
+    "furiosa:4",
+    "furiosa:5",
+    "furiosa:6",
+    "furiosa:7"
+  ],
+  "cache_existed_at_entry": false,
+  "effective": {
+    "torch_threads": 22,
+    "torch_interop_threads": 64,
+    "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "automatic_dynamic_shapes": false,
+    "recompile_limit": 8,
+    "backend_eager_fallback": false,
+    "suppress_errors": false,
+    "compile_kwargs": "backend only; all other arguments omitted"
+  },
+  "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+  "unique_image_count": 1,
+  "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+  "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+  "model_input_prepare_ms": 1810.032146,
+  "stream_id": 0,
+  "sync_contract": "installed logical-device current_stream contract; per-PE internal implementation opaque",
+  "runner_setup_ms": 0.00459,
+  "warmup_count": 20,
+  "repeat_count": 50,
+  "repeat_sum_ms": 2244.079911,
+  "repeat_minimum_met": null,
+  "ended_utc": "2026-11-18T09:27:32.920229+00:00"
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "name": "aten::conv2d",
+    "count": 1,
+    "self_cpu_ms": 0.3459229999999999,
+    "total_cpu_ms": 0.34927299999999994
+  },
+  {
+    "name": "aten::empty",
+    "count": 138,
+    "self_cpu_ms": 0.25386099999998046,
+    "total_cpu_ms": 0.25386099999998046
+  },
+  {
+    "name": "aten::view",
+    "count": 176,
+    "self_cpu_ms": 0.16392999999996585,
+    "total_cpu_ms": 0.17177999999996588
+  },
+  {
+    "name": "aten::reshape",
+    "count": 1,
+    "self_cpu_ms": 0.002609999999999957,
+    "total_cpu_ms": 0.06849100000000004
+  },
+  {
+    "name": "aten::empty_strided",
+    "count": 1,
+    "self_cpu_ms": 0.00325,
+    "total_cpu_ms": 0.00325
+  },
+  {
+    "name": "aten::permute",
+    "count": 1,
+    "self_cpu_ms": 0.004419999999999959,
+    "total_cpu_ms": 0.006
+  },
+  {
+    "name": "aten::as_strided",
+    "count": 5,
+    "self_cpu_ms": 0.005190000000004033,
+    "total_cpu_ms": 0.005190000000004033
+  },
+  {
+    "name": "aten::expand",
+    "count": 1,
+    "self_cpu_ms": 0.0024700000000000273,
+    "total_cpu_ms": 0.002909999999999968
+  },
+  {
+    "name": "aten::cat",
+    "count": 1,
+    "self_cpu_ms": 0.09145000000000436,
+    "total_cpu_ms": 26.147455
+  },
+  {
+    "name": "aten::slice",
+    "count": 2,
+    "self_cpu_ms": 0.004860000000000014,
+    "total_cpu_ms": 0.006009999999999991
+  },
+  {
+    "name": "aten::copy_",
+    "count": 2,
+    "self_cpu_ms": 0.012249999999997385,
+    "total_cpu_ms": 26.017723999999998
+  },
+  {
+    "name": "aten::_copy_from",
+    "count": 2,
+    "self_cpu_ms": 26.005474000000003,
+    "total_cpu_ms": 26.005474000000003
+  },
+  {
+    "name": "aten::add",
+    "count": 25,
+    "self_cpu_ms": 5.545470000000016,
+    "total_cpu_ms": 5.60108000000002
+  },
+  {
+    "name": "aten::dropout",
+    "count": 37,
+    "self_cpu_ms": 7.624181000000008,
+    "total_cpu_ms": 7.703908999999996
+  },
+  {
+    "name": "aten::layer_norm",
+    "count": 25,
+    "self_cpu_ms": 5.553041000000005,
+    "total_cpu_ms": 5.614771999999986
+  },
+  {
+    "name": "TorchDynamo Cache Lookup",
+    "count": 12,
+    "self_cpu_ms": 0.18048200000000725,
+    "total_cpu_ms": 0.18048200000000725
+  },
+  {
+    "name": "Torch-Compiled Region: 0/0",
+    "count": 12,
+    "self_cpu_ms": 1.3053310000000091,
+    "total_cpu_ms": 1.3972209999999978
+  },
+  {
+    "name": "Pregraph bytecode",
+    "count": 12,
+    "self_cpu_ms": 0.051180000000014846,
+    "total_cpu_ms": 0.051180000000014846
+  },
+  {
+    "name": "aten::linear",
+    "count": 25,
+    "self_cpu_ms": 5.212969000000001,
+    "total_cpu_ms": 5.270905999999992
+  },
+  {
+    "name": "aten::gelu",
+    "count": 12,
+    "self_cpu_ms": 2.344998999999996,
+    "total_cpu_ms": 2.3688220000000038
+  },
+  {
+    "name": "aten::select",
+    "count": 1,
+    "self_cpu_ms": 0.006440000000002328,
+    "total_cpu_ms": 0.008460000000006403
+  }
+]

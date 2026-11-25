@@ -1,0 +1,5 @@
+batch,mode,old_trials,old_median_trial_mean_ms,new_trials,new_median_trial_mean_ms,new_over_old,causal_attribution
+1,compile,3,3.63669236,3,3.671246870044053,1.0095016313241445,not established; changed physical device/date/warmup and repeat policy
+1,eager,3,44.7699428,3,45.094517358,1.007249831867107,not established; changed physical device/date/warmup and repeat policy
+4,compile,3,10.4780352,3,10.477635689005236,0.9999618715735213,not established; changed physical device/date/warmup and repeat policy
+4,eager,3,122.48178712,3,122.953629326,1.003852345863779,not established; changed physical device/date/warmup and repeat policy

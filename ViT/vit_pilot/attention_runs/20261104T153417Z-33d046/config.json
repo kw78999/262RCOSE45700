@@ -1,0 +1,14 @@
+{
+  "run_id": "20261104T153417Z-33d046",
+  "assets_dir": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6",
+  "device": "furiosa:0",
+  "warmup": 5,
+  "repeats": 20,
+  "independent_trials": 1,
+  "worker_timeout_s": 1800,
+  "total_budget_s": 7200,
+  "purpose": "attention fallback mechanism and partial compile feasibility; preliminary single trial",
+  "atol": null,
+  "rtol": null,
+  "synthetic_input": false
+}

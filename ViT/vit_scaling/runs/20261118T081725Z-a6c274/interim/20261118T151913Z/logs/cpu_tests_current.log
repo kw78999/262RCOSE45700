@@ -1,0 +1,10 @@
+test_end_to_end_grouping_pairing_scaling_without_pooling_exploration (test_contract.ArtifactFixture.test_end_to_end_grouping_pairing_scaling_without_pooling_exploration) ... ok
+test_descriptive_stats_keep_slow_calls (test_contract.ContractTests.test_descriptive_stats_keep_slow_calls) ... ok
+test_minimum_not_a_steady_state_proof (test_contract.ContractTests.test_minimum_not_a_steady_state_proof) ... ok
+test_output_metrics_have_pending_tolerance (test_contract.ContractTests.test_output_metrics_have_pending_tolerance) ... ok
+test_recent_window_drift_and_noise (test_contract.ContractTests.test_recent_window_drift_and_noise) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 3.479s
+
+OK

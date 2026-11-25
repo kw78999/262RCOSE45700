@@ -1,0 +1,39 @@
+{"utc": "2026-11-04T18:49:57.282269+00:00", "monotonic_ns": 1704045751460214, "pid": 405719, "event": "model_input_prepare_start"}
+{"utc": "2026-11-04T18:49:58.460786+00:00", "monotonic_ns": 1704046929984057, "pid": 405719, "event": "model_input_prepare_end", "elapsed_ms": 1178.353219}
+{"utc": "2026-11-04T18:49:58.460995+00:00", "monotonic_ns": 1704046930179970, "pid": 405719, "event": "runner_setup_start"}
+{"utc": "2026-11-04T18:49:58.701932+00:00", "monotonic_ns": 1704047171129244, "pid": 405719, "event": "runner_setup_end", "elapsed_ms": 240.870633}
+{"utc": "2026-11-04T18:49:58.708376+00:00", "monotonic_ns": 1704047177565045, "pid": 405719, "event": "phase_start", "phase": "first", "requested_calls": 1}
+{"utc": "2026-11-04T18:57:15.459857+00:00", "monotonic_ns": 1704483929055365, "pid": 405719, "event": "phase_end", "phase": "first", "wall_ms": 436757.051242, "measured_sum_ms": 436749.153186}
+{"utc": "2026-11-04T18:57:15.468117+00:00", "monotonic_ns": 1704483937306186, "pid": 405719, "event": "phase_start", "phase": "warmup", "requested_calls": 5}
+{"utc": "2026-11-04T18:57:15.522970+00:00", "monotonic_ns": 1704483992163185, "pid": 405719, "event": "phase_end", "phase": "warmup", "wall_ms": 63.012009, "measured_sum_ms": 53.100246}
+{"utc": "2026-11-04T18:57:15.526892+00:00", "monotonic_ns": 1704483996079917, "pid": 405719, "event": "phase_start", "phase": "work", "requested_calls": 2896}
+{"utc": "2026-11-04T18:57:16.609772+00:00", "monotonic_ns": 1704485078967751, "pid": 405719, "event": "work_progress", "completed": 100, "target": 2896, "measured_sum_ms": 1044.812828}
+{"utc": "2026-11-04T18:57:17.696241+00:00", "monotonic_ns": 1704486165442177, "pid": 405719, "event": "work_progress", "completed": 200, "target": 2896, "measured_sum_ms": 2090.057687}
+{"utc": "2026-11-04T18:57:18.781840+00:00", "monotonic_ns": 1704487251036323, "pid": 405719, "event": "work_progress", "completed": 300, "target": 2896, "measured_sum_ms": 3136.085194}
+{"utc": "2026-11-04T18:57:19.870329+00:00", "monotonic_ns": 1704488339524560, "pid": 405719, "event": "work_progress", "completed": 400, "target": 2896, "measured_sum_ms": 4182.24872}
+{"utc": "2026-11-04T18:57:20.958805+00:00", "monotonic_ns": 1704489428011113, "pid": 405719, "event": "work_progress", "completed": 500, "target": 2896, "measured_sum_ms": 5227.811733}
+{"utc": "2026-11-04T18:57:22.044866+00:00", "monotonic_ns": 1704490514062298, "pid": 405719, "event": "work_progress", "completed": 600, "target": 2896, "measured_sum_ms": 6272.673018}
+{"utc": "2026-11-04T18:57:23.136105+00:00", "monotonic_ns": 1704491605300685, "pid": 405719, "event": "work_progress", "completed": 700, "target": 2896, "measured_sum_ms": 7318.48374}
+{"utc": "2026-11-04T18:57:24.228050+00:00", "monotonic_ns": 1704492697246602, "pid": 405719, "event": "work_progress", "completed": 800, "target": 2896, "measured_sum_ms": 8364.046995}
+{"utc": "2026-11-04T18:57:25.321129+00:00", "monotonic_ns": 1704493790324967, "pid": 405719, "event": "work_progress", "completed": 900, "target": 2896, "measured_sum_ms": 9410.001878}
+{"utc": "2026-11-04T18:57:26.415338+00:00", "monotonic_ns": 1704494884534749, "pid": 405719, "event": "work_progress", "completed": 1000, "target": 2896, "measured_sum_ms": 10456.274825}
+{"utc": "2026-11-04T18:57:27.509665+00:00", "monotonic_ns": 1704495978860850, "pid": 405719, "event": "work_progress", "completed": 1100, "target": 2896, "measured_sum_ms": 11502.338503}
+{"utc": "2026-11-04T18:57:28.604850+00:00", "monotonic_ns": 1704497074045883, "pid": 405719, "event": "work_progress", "completed": 1200, "target": 2896, "measured_sum_ms": 12550.010603}
+{"utc": "2026-11-04T18:57:29.703393+00:00", "monotonic_ns": 1704498172589525, "pid": 405719, "event": "work_progress", "completed": 1300, "target": 2896, "measured_sum_ms": 13598.7289}
+{"utc": "2026-11-04T18:57:30.799802+00:00", "monotonic_ns": 1704499268998844, "pid": 405719, "event": "work_progress", "completed": 1400, "target": 2896, "measured_sum_ms": 14644.807150999999}
+{"utc": "2026-11-04T18:57:31.897664+00:00", "monotonic_ns": 1704500366860667, "pid": 405719, "event": "work_progress", "completed": 1500, "target": 2896, "measured_sum_ms": 15693.571009}
+{"utc": "2026-11-04T18:57:32.997000+00:00", "monotonic_ns": 1704501466196474, "pid": 405719, "event": "work_progress", "completed": 1600, "target": 2896, "measured_sum_ms": 16740.25828}
+{"utc": "2026-11-04T18:57:34.096457+00:00", "monotonic_ns": 1704502565653219, "pid": 405719, "event": "work_progress", "completed": 1700, "target": 2896, "measured_sum_ms": 17787.09687}
+{"utc": "2026-11-04T18:57:35.196637+00:00", "monotonic_ns": 1704503665832994, "pid": 405719, "event": "work_progress", "completed": 1800, "target": 2896, "measured_sum_ms": 18833.622227}
+{"utc": "2026-11-04T18:57:36.297937+00:00", "monotonic_ns": 1704504767134387, "pid": 405719, "event": "work_progress", "completed": 1900, "target": 2896, "measured_sum_ms": 19880.491487}
+{"utc": "2026-11-04T18:57:37.399464+00:00", "monotonic_ns": 1704505868660321, "pid": 405719, "event": "work_progress", "completed": 2000, "target": 2896, "measured_sum_ms": 20927.064988}
+{"utc": "2026-11-04T18:57:38.502344+00:00", "monotonic_ns": 1704506971540216, "pid": 405719, "event": "work_progress", "completed": 2100, "target": 2896, "measured_sum_ms": 21973.957932}
+{"utc": "2026-11-04T18:57:39.605252+00:00", "monotonic_ns": 1704508074448649, "pid": 405719, "event": "work_progress", "completed": 2200, "target": 2896, "measured_sum_ms": 23020.492797}
+{"utc": "2026-11-04T18:57:40.708983+00:00", "monotonic_ns": 1704509178179033, "pid": 405719, "event": "work_progress", "completed": 2300, "target": 2896, "measured_sum_ms": 24066.998917}
+{"utc": "2026-11-04T18:57:41.813405+00:00", "monotonic_ns": 1704510282600597, "pid": 405719, "event": "work_progress", "completed": 2400, "target": 2896, "measured_sum_ms": 25113.63853}
+{"utc": "2026-11-04T18:57:42.919056+00:00", "monotonic_ns": 1704511388252601, "pid": 405719, "event": "work_progress", "completed": 2500, "target": 2896, "measured_sum_ms": 26160.513563}
+{"utc": "2026-11-04T18:57:44.024657+00:00", "monotonic_ns": 1704512493853610, "pid": 405719, "event": "work_progress", "completed": 2600, "target": 2896, "measured_sum_ms": 27207.030006}
+{"utc": "2026-11-04T18:57:45.130401+00:00", "monotonic_ns": 1704513599597978, "pid": 405719, "event": "work_progress", "completed": 2700, "target": 2896, "measured_sum_ms": 28253.875737}
+{"utc": "2026-11-04T18:57:46.237337+00:00", "monotonic_ns": 1704514706533675, "pid": 405719, "event": "work_progress", "completed": 2800, "target": 2896, "measured_sum_ms": 29300.466249}
+{"utc": "2026-11-04T18:57:47.301132+00:00", "monotonic_ns": 1704515770327729, "pid": 405719, "event": "phase_end", "phase": "work", "wall_ms": 31778.038021, "measured_sum_ms": 30305.3342}
+{"utc": "2026-11-04T18:57:47.338050+00:00", "monotonic_ns": 1704515807239325, "pid": 405719, "event": "worker_end", "status": "ok"}

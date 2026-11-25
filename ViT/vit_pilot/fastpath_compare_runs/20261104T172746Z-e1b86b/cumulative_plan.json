@@ -1,0 +1,35 @@
+{
+  "plans": [
+    {
+      "batch": 1,
+      "status": "planned_full_target",
+      "median_N_win": 2468,
+      "desired_calls": 2962,
+      "target_calls": 2962,
+      "max_calls": 10000,
+      "conservative_worker_wall_bounds_s": {
+        "eager": 411.73129462264,
+        "compile": 383.34615199006
+      },
+      "remaining_reserved_budget_s": 2658.6937417884515,
+      "prediction_inputs": "current performance trials only; previous experiments excluded"
+    },
+    {
+      "batch": 4,
+      "status": "planned_full_target",
+      "median_N_win": 2413,
+      "desired_calls": 2896,
+      "target_calls": 2896,
+      "max_calls": 10000,
+      "conservative_worker_wall_bounds_s": {
+        "eager": 848.10733399078,
+        "compile": 769.5084914017
+      },
+      "remaining_reserved_budget_s": 1041.0779163959714,
+      "prediction_inputs": "current performance trials only; previous experiments excluded"
+    }
+  ],
+  "budget_used_at_planning_s": 3746.2288115988486,
+  "total_budget_s": 7200,
+  "rule": "1.5*max(new-trial prepare+A+N*t)/1000 +60 seconds +N*0.001 seconds per mode"
+}

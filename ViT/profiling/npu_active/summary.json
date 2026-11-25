@@ -1,0 +1,232 @@
+[
+  {
+    "source": "vit_pilot/attention_runs/20261104T153417Z-33d046/cases/diagnostic_eager_default_b1/furiosa_trace.json",
+    "case": "diagnostic_eager_default_b1",
+    "classification": "ok",
+    "task_events": 125,
+    "observed_active_union_ms": 3.0652530000002387,
+    "summed_task_ms": 3.0652530000002387,
+    "first_to_last_task_ms": 1083.762463,
+    "sha256": "11cfda54378dc8cc28cc727c5a9f3828a8c8aa03683bcaca21f6cf364ed13c36"
+  },
+  {
+    "source": "vit_pilot/attention_runs/20261104T153417Z-33d046/cases/diagnostic_eager_default_b4/furiosa_trace.json",
+    "case": "diagnostic_eager_default_b4",
+    "classification": "ok",
+    "task_events": 125,
+    "observed_active_union_ms": 9.09104699999891,
+    "summed_task_ms": 9.09104699999891,
+    "first_to_last_task_ms": 1149.8372650000001,
+    "sha256": "e091cb512a5ec568bc860d8d28eed2f3f7ada5085f1d74f9021af6cb633ef5d4"
+  },
+  {
+    "source": "vit_pilot/attention_runs/20261104T153417Z-33d046/cases/diagnostic_eager_fastpath_off_b1_strict/furiosa_trace.json",
+    "case": "diagnostic_eager_fastpath_off_b1_strict",
+    "classification": "ok",
+    "task_events": 185,
+    "observed_active_union_ms": 5.289141999999979,
+    "summed_task_ms": 5.289141999999979,
+    "first_to_last_task_ms": 74.045674,
+    "sha256": "105d98e636062520b68e64b5f1fc86be0121f8d0b560a9944cfad6cbbb766e58"
+  },
+  {
+    "source": "vit_pilot/attention_runs/20261104T153417Z-33d046/cases/diagnostic_eager_fastpath_off_b4_strict/furiosa_trace.json",
+    "case": "diagnostic_eager_fastpath_off_b4_strict",
+    "classification": "ok",
+    "task_events": 184,
+    "observed_active_union_ms": 15.077560999999928,
+    "summed_task_ms": 15.077560999999928,
+    "first_to_last_task_ms": 46.09233600000001,
+    "sha256": "8a028371910d6f460d8e30df97f4b15d171acbc3af2fb7d759efa9a8041297ef"
+  },
+  {
+    "source": "vit_pilot/attention_runs/20261104T160225Z-35e28e/cases/diagnostic_attention_compile_b1_strict/furiosa_trace.json",
+    "case": "diagnostic_attention_compile_b1_strict",
+    "classification": "ok",
+    "task_events": 137,
+    "observed_active_union_ms": 4.829813000000038,
+    "summed_task_ms": 4.829813000000038,
+    "first_to_last_task_ms": 56.125265000000006,
+    "sha256": "68a82a0f36aad1c871eb9fe0a99eccae1408943cb3377809d34cc90c76b4941a"
+  },
+  {
+    "source": "vit_pilot/attention_runs/20261104T160225Z-35e28e/cases/diagnostic_attention_compile_b4_strict/furiosa_trace.json",
+    "case": "diagnostic_attention_compile_b4_strict",
+    "classification": "ok",
+    "task_events": 137,
+    "observed_active_union_ms": 13.578821999999716,
+    "summed_task_ms": 13.578821999999716,
+    "first_to_last_task_ms": 135.519074,
+    "sha256": "95e99feab37d45abea7c89197d8febd54d5c46c001f6cb6b155400b9277ea0f5"
+  },
+  {
+    "source": "vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/cases/diagnostic_compile_b1_t1_attempt1/furiosa_trace.json",
+    "case": "diagnostic_compile_b1_t1_attempt1",
+    "classification": "ok",
+    "task_events": 2,
+    "observed_active_union_ms": 3.3888869999999995,
+    "summed_task_ms": 3.3888869999999995,
+    "first_to_last_task_ms": 3.3963059999999996,
+    "sha256": "a568d316f518f3cd80ea00300f4188da5074e181d3275d6ae6e4dfca2e64ebc5"
+  },
+  {
+    "source": "vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/cases/diagnostic_compile_b4_t1/furiosa_trace.json",
+    "case": "diagnostic_compile_b4_t1",
+    "classification": "ok",
+    "task_events": 3,
+    "observed_active_union_ms": 10.153386000000003,
+    "summed_task_ms": 10.153386000000003,
+    "first_to_last_task_ms": 10.168821,
+    "sha256": "b30837922873940288ce010de4217c97b0e507179807d8e1cde4ce47b935523c"
+  },
+  {
+    "source": "vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/cases/diagnostic_eager_b1_t1_attempt1/furiosa_trace.json",
+    "case": "diagnostic_eager_b1_t1_attempt1",
+    "classification": "ok",
+    "task_events": 185,
+    "observed_active_union_ms": 5.286207999999984,
+    "summed_task_ms": 5.286207999999984,
+    "first_to_last_task_ms": 72.498546,
+    "sha256": "6f3f7786c91dcbc6c080d327516b12342eebc6da86cc843d7c33211b7f1c16db"
+  },
+  {
+    "source": "vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/cases/diagnostic_eager_b4_t1/furiosa_trace.json",
+    "case": "diagnostic_eager_b4_t1",
+    "classification": "ok",
+    "task_events": 185,
+    "observed_active_union_ms": 15.203462000000188,
+    "summed_task_ms": 15.203462000000188,
+    "first_to_last_task_ms": 150.69382099999999,
+    "sha256": "fea65d46aca539c525248eadc44e5f987f9b3905ff12c2eb071737212539a0b1"
+  },
+  {
+    "source": "vit_pilot/followup_runs/20261104T132538Z-c031a6/cases/diagnostic_compile_b1_retry1/furiosa_trace.json",
+    "case": "diagnostic_compile_b1_retry1",
+    "classification": "ok",
+    "task_events": 2,
+    "observed_active_union_ms": 3.3862050000000004,
+    "summed_task_ms": 3.3862050000000004,
+    "first_to_last_task_ms": 3.3934840000000004,
+    "sha256": "3af4808af36e5238b815faf94bfd871dd2f73a5feb9e4b919a418a569e54141d"
+  },
+  {
+    "source": "vit_pilot/followup_runs/20261104T132538Z-c031a6/cases/diagnostic_compile_b4_retry1/furiosa_trace.json",
+    "case": "diagnostic_compile_b4_retry1",
+    "classification": "ok",
+    "task_events": 2,
+    "observed_active_union_ms": 6.957539000000001,
+    "summed_task_ms": 6.957539000000001,
+    "first_to_last_task_ms": 6.965021000000001,
+    "sha256": "83ed1900c1936765d8bb4262a1bd57db15e613ea31e5f115bdb0721b3de72dd3"
+  },
+  {
+    "source": "vit_pilot/followup_runs/20261104T132538Z-c031a6/cases/diagnostic_eager_b1/furiosa_trace.json",
+    "case": "diagnostic_eager_b1",
+    "classification": "ok",
+    "task_events": 125,
+    "observed_active_union_ms": 3.06530600000159,
+    "summed_task_ms": 3.06530600000159,
+    "first_to_last_task_ms": 1105.33979,
+    "sha256": "e2e0480678d60bf209deb129c6fd680fefc3c4eb7d08d478edeade171b0fbacc"
+  },
+  {
+    "source": "vit_pilot/followup_runs/20261104T132538Z-c031a6/cases/diagnostic_eager_b4/furiosa_trace.json",
+    "case": "diagnostic_eager_b4",
+    "classification": "ok",
+    "task_events": 125,
+    "observed_active_union_ms": 9.097977999998866,
+    "summed_task_ms": 9.097977999998866,
+    "first_to_last_task_ms": 1164.3070609999997,
+    "sha256": "dbdea2283258c466c30cecb961457f7504c3d3c10058b27f727b1644e048bdc5"
+  },
+  {
+    "source": "vit_scaling/runs/20261118T081725Z-a6c274/cases/diagnostic_p1_b1_compile_t1_a1/furiosa_trace.json",
+    "case": "diagnostic_p1_b1_compile_t1_a1",
+    "classification": "ok",
+    "task_events": 2,
+    "observed_active_union_ms": 3.3849230000000023,
+    "summed_task_ms": 3.3849230000000023,
+    "first_to_last_task_ms": 3.3922890000000008,
+    "sha256": "50a023dd7b7900fb28f40e8f2f54c407458ce553d97c67d1ae7081481a30eced"
+  },
+  {
+    "source": "vit_scaling/runs/20261118T081725Z-a6c274/cases/diagnostic_p1_b1_eager_t1_a1/furiosa_trace.json",
+    "case": "diagnostic_p1_b1_eager_t1_a1",
+    "classification": "ok",
+    "task_events": 185,
+    "observed_active_union_ms": 5.287845999999972,
+    "summed_task_ms": 5.287845999999972,
+    "first_to_last_task_ms": 78.338465,
+    "sha256": "e528fae7d279c38ff0d1a64298da8c959247f46317c43c765e0752c9bc230cf9"
+  },
+  {
+    "source": "vit_scaling/runs/20261118T081725Z-a6c274/cases/diagnostic_p2_b1_compile_t1_a1/furiosa_trace.json",
+    "case": "diagnostic_p2_b1_compile_t1_a1",
+    "classification": "contaminated",
+    "task_events": 1,
+    "observed_active_union_ms": 2.23484,
+    "summed_task_ms": 2.23484,
+    "first_to_last_task_ms": 2.23484,
+    "sha256": "64da4868f377972eb3c6d2a9631a6467dedd2d8f7593d8b3c15c8d0079c6619f"
+  },
+  {
+    "source": "vit_scaling/runs/20261118T081725Z-a6c274/cases/diagnostic_p2_b1_compile_t1_a2/furiosa_trace.json",
+    "case": "diagnostic_p2_b1_compile_t1_a2",
+    "classification": "ok",
+    "task_events": 0,
+    "observed_active_union_ms": null,
+    "summed_task_ms": null,
+    "first_to_last_task_ms": null,
+    "sha256": "5501054200f6e196c7098d0db43b1bed161802019d10b92764093e74e835fc2e"
+  },
+  {
+    "source": "vit_scaling/runs/20261118T081725Z-a6c274/cases/diagnostic_p2_b1_eager_t1_a1/furiosa_trace.json",
+    "case": "diagnostic_p2_b1_eager_t1_a1",
+    "classification": "ok",
+    "task_events": 185,
+    "observed_active_union_ms": 3.3942020000000612,
+    "summed_task_ms": 3.3942020000000612,
+    "first_to_last_task_ms": 66.371941,
+    "sha256": "f7e8257ee70877036d24c49cfbd3b5337096e7771cd6d02f8794fb24e8993a21"
+  },
+  {
+    "source": "vit_scaling/runs/20261118T081725Z-a6c274/cases/diagnostic_p4_b1_compile_t1_a1/furiosa_trace.json",
+    "case": "diagnostic_p4_b1_compile_t1_a1",
+    "classification": "ok",
+    "task_events": 0,
+    "observed_active_union_ms": null,
+    "summed_task_ms": null,
+    "first_to_last_task_ms": null,
+    "sha256": "5f8472ff255cc975ce2c65f058e2a8a69ba0cdbea91a25f432a56964eb48e632"
+  },
+  {
+    "source": "vit_scaling/runs/20261118T081725Z-a6c274/cases/diagnostic_p4_b1_eager_t1_a1/furiosa_trace.json",
+    "case": "diagnostic_p4_b1_eager_t1_a1",
+    "classification": "ok",
+    "task_events": 184,
+    "observed_active_union_ms": 2.405961000000025,
+    "summed_task_ms": 2.405961000000025,
+    "first_to_last_task_ms": 43.444396000000005,
+    "sha256": "4e65f308e1e8fbb1c3bab7ca02d82005ab24fe0ad03d804a42127e88a4e83dd4"
+  },
+  {
+    "source": "vit_scaling/runs/20261118T081725Z-a6c274/cases/diagnostic_p8_b1_compile_t1_a1/furiosa_trace.json",
+    "case": "diagnostic_p8_b1_compile_t1_a1",
+    "classification": "ok",
+    "task_events": 0,
+    "observed_active_union_ms": null,
+    "summed_task_ms": null,
+    "first_to_last_task_ms": null,
+    "sha256": "1394a7b4182298e12259726bf6a22d86ff3b441171966b2a8ebc00328e2fbce3"
+  },
+  {
+    "source": "vit_scaling/runs/20261118T081725Z-a6c274/cases/diagnostic_p8_b1_eager_t1_a1/furiosa_trace.json",
+    "case": "diagnostic_p8_b1_eager_t1_a1",
+    "classification": "ok",
+    "task_events": 368,
+    "observed_active_union_ms": 2.499735000000048,
+    "summed_task_ms": 4.7022850000000656,
+    "first_to_last_task_ms": 45.718757,
+    "sha256": "b1110ea7bd046634fe4df6c7142f74d945ee9dcd31f6cbab2c6373912bdd4009"
+  }
+]

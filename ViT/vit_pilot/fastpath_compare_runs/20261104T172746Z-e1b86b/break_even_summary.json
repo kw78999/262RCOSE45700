@@ -1,0 +1,452 @@
+{
+  "numeric_rule": "durations rounded to integer ns using Decimal(str(ms))*1e6, ROUND_HALF_EVEN; sums/means/crossings use exact Fraction; no epsilon",
+  "scenario": "T(N)=S+F+sum(W)+N*mean_repeat; N>=1 additional work batch calls after first+warmups",
+  "prepare_excluded": true,
+  "process_wall_excluded": true,
+  "pure_compiler_time_ms": null,
+  "old_measurements_used": false,
+  "trials": [
+    {
+      "status": "finite_break_even",
+      "N_win": 2468,
+      "K_win": 2474,
+      "effective_images": 2468,
+      "forward_count": 2474,
+      "including_preparation_images": 2474,
+      "real_crossing_N": 2467.7238295454536,
+      "delta_A_ms": 100622.67543,
+      "delta_t_ms": 40.77550098,
+      "last_advantage_N": null,
+      "tie_N": null,
+      "first_eager_strict_N": null,
+      "numeric_rule": "durations rounded to integer ns using Decimal(str(ms))*1e6, ROUND_HALF_EVEN; sums/means/crossings use exact Fraction; no epsilon",
+      "A_e_ms": 97766.551151,
+      "A_c_ms": 198389.226581,
+      "t_e_ms": 44.4317685,
+      "t_c_ms": 3.65626752,
+      "exact_delta_A": "10062267543/100000",
+      "exact_delta_t": "2038775049/50000000",
+      "exact_real_crossing_N": "559014863500/226530561",
+      "T_e_at_N_ms": 207424.155809,
+      "T_c_at_N_ms": 207412.89482036,
+      "difference_at_N_ms": -11.26098864,
+      "strict_at_N": true,
+      "predecessor_N": 2467,
+      "difference_at_predecessor_ms": 29.51451234,
+      "S_eager_ms": 0.00085,
+      "F_eager_ms": 97545.902324,
+      "W_eager_ms": 220.647977,
+      "S_compile_ms": 268.074228,
+      "F_compile_ms": 198102.072788,
+      "W_compile_ms": 19.079565,
+      "compile_speedup": 12.15222033315549,
+      "variation_assessment": "mean_gap_exceeds_descriptive_combined_SD",
+      "combined_repeat_SD_ms": 0.08131122292256392,
+      "warm_state_assessments": {
+        "eager": "preliminary_stable",
+        "compile": "preliminary_stable"
+      },
+      "limitations": [
+        "Output tolerance pending",
+        "All-op placement/codegen/disk cache unverified",
+        "Only three independent paired trials"
+      ],
+      "initial_K_with_compile_advantage": [],
+      "G_Nplus_initial_equals_T": true,
+      "run_id": "20261104T172746Z-e1b86b",
+      "batch": 1,
+      "trial": 1,
+      "eager_case_id": "performance_eager_b1_t1",
+      "compile_case_id": "performance_compile_b1_t1",
+      "output_validation_status": "eligible_tolerance_pending"
+    },
+    {
+      "status": "finite_break_even",
+      "N_win": 2489,
+      "K_win": 2495,
+      "effective_images": 2489,
+      "forward_count": 2495,
+      "including_preparation_images": 2495,
+      "real_crossing_N": 2488.80812143839,
+      "delta_A_ms": 102885.12405,
+      "delta_t_ms": 41.33911456,
+      "last_advantage_N": null,
+      "tie_N": null,
+      "first_eager_strict_N": null,
+      "numeric_rule": "durations rounded to integer ns using Decimal(str(ms))*1e6, ROUND_HALF_EVEN; sums/means/crossings use exact Fraction; no epsilon",
+      "A_e_ms": 98173.127385,
+      "A_c_ms": 201058.251435,
+      "t_e_ms": 44.96857498,
+      "t_c_ms": 3.62946042,
+      "exact_delta_A": "2057702481/20000",
+      "exact_delta_t": "129184733/3125000",
+      "exact_real_crossing_N": "1286064050625/516738932",
+      "T_e_at_N_ms": 210099.91051022,
+      "T_c_at_N_ms": 210091.97842038,
+      "difference_at_N_ms": -7.93208984,
+      "strict_at_N": true,
+      "predecessor_N": 2488,
+      "difference_at_predecessor_ms": 33.40702472,
+      "S_eager_ms": 0.000531,
+      "F_eager_ms": 97948.20201,
+      "W_eager_ms": 224.924844,
+      "S_compile_ms": 257.965378,
+      "F_compile_ms": 200781.67028,
+      "W_compile_ms": 18.615777,
+      "compile_speedup": 12.38987887351035,
+      "variation_assessment": "mean_gap_exceeds_descriptive_combined_SD",
+      "combined_repeat_SD_ms": 0.11382077749916068,
+      "warm_state_assessments": {
+        "eager": "preliminary_stable",
+        "compile": "preliminary_stable"
+      },
+      "limitations": [
+        "Output tolerance pending",
+        "All-op placement/codegen/disk cache unverified",
+        "Only three independent paired trials"
+      ],
+      "initial_K_with_compile_advantage": [],
+      "G_Nplus_initial_equals_T": true,
+      "run_id": "20261104T172746Z-e1b86b",
+      "batch": 1,
+      "trial": 2,
+      "eager_case_id": "performance_eager_b1_t2",
+      "compile_case_id": "performance_compile_b1_t2",
+      "output_validation_status": "eligible_tolerance_pending"
+    },
+    {
+      "status": "finite_break_even",
+      "N_win": 2462,
+      "K_win": 2468,
+      "effective_images": 2462,
+      "forward_count": 2468,
+      "including_preparation_images": 2468,
+      "real_crossing_N": 2461.52423785938,
+      "delta_A_ms": 101250.49294,
+      "delta_t_ms": 41.13325044,
+      "last_advantage_N": null,
+      "tie_N": null,
+      "first_eager_strict_N": null,
+      "numeric_rule": "durations rounded to integer ns using Decimal(str(ms))*1e6, ROUND_HALF_EVEN; sums/means/crossings use exact Fraction; no epsilon",
+      "A_e_ms": 98212.471306,
+      "A_c_ms": 199462.964246,
+      "t_e_ms": 44.7699428,
+      "t_c_ms": 3.63669236,
+      "exact_delta_A": "5062524647/50000",
+      "exact_delta_t": "1028331261/25000000",
+      "exact_real_crossing_N": "2531262323500/1028331261",
+      "T_e_at_N_ms": 208436.0704796,
+      "T_c_at_N_ms": 208416.50083632,
+      "difference_at_N_ms": -19.56964328,
+      "strict_at_N": true,
+      "predecessor_N": 2461,
+      "difference_at_predecessor_ms": 21.56360716,
+      "S_eager_ms": 0.000631,
+      "F_eager_ms": 97989.372201,
+      "W_eager_ms": 223.098474,
+      "S_compile_ms": 242.512048,
+      "F_compile_ms": 199201.531672,
+      "W_compile_ms": 18.920526,
+      "compile_speedup": 12.310621402135869,
+      "variation_assessment": "mean_gap_exceeds_descriptive_combined_SD",
+      "combined_repeat_SD_ms": 0.08647317102933025,
+      "warm_state_assessments": {
+        "eager": "preliminary_stable",
+        "compile": "preliminary_stable"
+      },
+      "limitations": [
+        "Output tolerance pending",
+        "All-op placement/codegen/disk cache unverified",
+        "Only three independent paired trials"
+      ],
+      "initial_K_with_compile_advantage": [],
+      "G_Nplus_initial_equals_T": true,
+      "run_id": "20261104T172746Z-e1b86b",
+      "batch": 1,
+      "trial": 3,
+      "eager_case_id": "performance_eager_b1_t3",
+      "compile_case_id": "performance_compile_b1_t3",
+      "output_validation_status": "eligible_tolerance_pending"
+    },
+    {
+      "status": "finite_break_even",
+      "N_win": 2385,
+      "K_win": 2391,
+      "effective_images": 9540,
+      "forward_count": 2391,
+      "including_preparation_images": 9564,
+      "real_crossing_N": 2384.5838670635426,
+      "delta_A_ms": 267637.671976,
+      "delta_t_ms": 112.2366362,
+      "last_advantage_N": null,
+      "tie_N": null,
+      "first_eager_strict_N": null,
+      "numeric_rule": "durations rounded to integer ns using Decimal(str(ms))*1e6, ROUND_HALF_EVEN; sums/means/crossings use exact Fraction; no epsilon",
+      "A_e_ms": 166546.010511,
+      "A_c_ms": 434183.682487,
+      "t_e_ms": 122.7146714,
+      "t_c_ms": 10.4780352,
+      "exact_delta_A": "33454708997/125000",
+      "exact_delta_t": "561183181/5000000",
+      "exact_real_crossing_N": "1338188359880/561183181",
+      "T_e_at_N_ms": 459220.5018,
+      "T_c_at_N_ms": 459173.796439,
+      "difference_at_N_ms": -46.705361,
+      "strict_at_N": true,
+      "predecessor_N": 2384,
+      "difference_at_predecessor_ms": 65.5312752,
+      "S_eager_ms": 0.00252,
+      "F_eager_ms": 165932.849899,
+      "W_eager_ms": 613.158092,
+      "S_compile_ms": 243.029937,
+      "F_compile_ms": 433887.521524,
+      "W_compile_ms": 53.131026,
+      "compile_speedup": 11.711610913465915,
+      "variation_assessment": "mean_gap_exceeds_descriptive_combined_SD",
+      "combined_repeat_SD_ms": 0.10631869173194297,
+      "warm_state_assessments": {
+        "eager": "preliminary_stable",
+        "compile": "preliminary_stable"
+      },
+      "limitations": [
+        "Output tolerance pending",
+        "All-op placement/codegen/disk cache unverified",
+        "Only three independent paired trials"
+      ],
+      "initial_K_with_compile_advantage": [],
+      "G_Nplus_initial_equals_T": true,
+      "run_id": "20261104T172746Z-e1b86b",
+      "batch": 4,
+      "trial": 1,
+      "eager_case_id": "performance_eager_b4_t1",
+      "compile_case_id": "performance_compile_b4_t1",
+      "output_validation_status": "eligible_tolerance_pending"
+    },
+    {
+      "status": "finite_break_even",
+      "N_win": 2413,
+      "K_win": 2419,
+      "effective_images": 9652,
+      "forward_count": 2419,
+      "including_preparation_images": 9676,
+      "real_crossing_N": 2412.2301433290136,
+      "delta_A_ms": 268481.016233,
+      "delta_t_ms": 111.29991762,
+      "last_advantage_N": null,
+      "tie_N": null,
+      "first_eager_strict_N": null,
+      "numeric_rule": "durations rounded to integer ns using Decimal(str(ms))*1e6, ROUND_HALF_EVEN; sums/means/crossings use exact Fraction; no epsilon",
+      "A_e_ms": 167220.052669,
+      "A_c_ms": 435701.068902,
+      "t_e_ms": 121.77898472,
+      "t_c_ms": 10.4790671,
+      "exact_delta_A": "268481016233/1000000",
+      "exact_delta_t": "5564995881/50000000",
+      "exact_real_crossing_N": "13424050811650/5564995881",
+      "T_e_at_N_ms": 461072.74279836,
+      "T_c_at_N_ms": 460987.0578143,
+      "difference_at_N_ms": -85.68498406,
+      "strict_at_N": true,
+      "predecessor_N": 2412,
+      "difference_at_predecessor_ms": 25.61493356,
+      "S_eager_ms": 0.00273,
+      "F_eager_ms": 166611.693611,
+      "W_eager_ms": 608.356328,
+      "S_compile_ms": 243.640516,
+      "F_compile_ms": 435404.187659,
+      "W_compile_ms": 53.240727,
+      "compile_speedup": 11.621166613199756,
+      "variation_assessment": "mean_gap_exceeds_descriptive_combined_SD",
+      "combined_repeat_SD_ms": 0.1361379047031014,
+      "warm_state_assessments": {
+        "eager": "preliminary_stable",
+        "compile": "preliminary_stable"
+      },
+      "limitations": [
+        "Output tolerance pending",
+        "All-op placement/codegen/disk cache unverified",
+        "Only three independent paired trials"
+      ],
+      "initial_K_with_compile_advantage": [],
+      "G_Nplus_initial_equals_T": true,
+      "run_id": "20261104T172746Z-e1b86b",
+      "batch": 4,
+      "trial": 2,
+      "eager_case_id": "performance_eager_b4_t2",
+      "compile_case_id": "performance_compile_b4_t2",
+      "output_validation_status": "eligible_tolerance_pending"
+    },
+    {
+      "status": "finite_break_even",
+      "N_win": 2429,
+      "K_win": 2435,
+      "effective_images": 9716,
+      "forward_count": 2435,
+      "including_preparation_images": 9740,
+      "real_crossing_N": 2428.0081170882595,
+      "delta_A_ms": 271972.251977,
+      "delta_t_ms": 112.01455632,
+      "last_advantage_N": null,
+      "tie_N": null,
+      "first_eager_strict_N": null,
+      "numeric_rule": "durations rounded to integer ns using Decimal(str(ms))*1e6, ROUND_HALF_EVEN; sums/means/crossings use exact Fraction; no epsilon",
+      "A_e_ms": 167029.422247,
+      "A_c_ms": 439001.674224,
+      "t_e_ms": 122.48178712,
+      "t_c_ms": 10.4672308,
+      "exact_delta_A": "271972251977/1000000",
+      "exact_delta_t": "700090977/6250000",
+      "exact_real_crossing_N": "6799306299425/2800363908",
+      "T_e_at_N_ms": 464537.68316148,
+      "T_c_at_N_ms": 464426.5778372,
+      "difference_at_N_ms": -111.10532428,
+      "strict_at_N": true,
+      "predecessor_N": 2428,
+      "difference_at_predecessor_ms": 0.90923204,
+      "S_eager_ms": 0.00263,
+      "F_eager_ms": 166418.640835,
+      "W_eager_ms": 610.778782,
+      "S_compile_ms": 242.101012,
+      "F_compile_ms": 438706.422586,
+      "W_compile_ms": 53.150626,
+      "compile_speedup": 11.70145088613122,
+      "variation_assessment": "mean_gap_exceeds_descriptive_combined_SD",
+      "combined_repeat_SD_ms": 0.14672382770120046,
+      "warm_state_assessments": {
+        "eager": "preliminary_stable",
+        "compile": "preliminary_stable"
+      },
+      "limitations": [
+        "Output tolerance pending",
+        "All-op placement/codegen/disk cache unverified",
+        "Only three independent paired trials"
+      ],
+      "initial_K_with_compile_advantage": [],
+      "G_Nplus_initial_equals_T": true,
+      "run_id": "20261104T172746Z-e1b86b",
+      "batch": 4,
+      "trial": 3,
+      "eager_case_id": "performance_eager_b4_t3",
+      "compile_case_id": "performance_compile_b4_t3",
+      "output_validation_status": "eligible_tolerance_pending"
+    }
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "statuses": [
+        {
+          "trial": 1,
+          "status": "finite_break_even",
+          "N_win": 2468
+        },
+        {
+          "trial": 2,
+          "status": "finite_break_even",
+          "N_win": 2489
+        },
+        {
+          "trial": 3,
+          "status": "finite_break_even",
+          "N_win": 2462
+        }
+      ],
+      "valid_finite_paired_trials": 3,
+      "requested_paired_trials": 3,
+      "N_win": {
+        "values": [
+          2468,
+          2489,
+          2462
+        ],
+        "median": 2468,
+        "minimum": 2462,
+        "maximum": 2489,
+        "count": 3
+      },
+      "representative_trial": 1,
+      "mode_mean_ms": {
+        "eager": {
+          "values": [
+            44.4317685,
+            44.96857498,
+            44.7699428
+          ],
+          "median": 44.7699428,
+          "minimum": 44.4317685,
+          "maximum": 44.96857498,
+          "count": 3
+        },
+        "compile": {
+          "values": [
+            3.65626752,
+            3.62946042,
+            3.63669236
+          ],
+          "median": 3.63669236,
+          "minimum": 3.62946042,
+          "maximum": 3.65626752,
+          "count": 3
+        }
+      }
+    },
+    {
+      "batch": 4,
+      "statuses": [
+        {
+          "trial": 1,
+          "status": "finite_break_even",
+          "N_win": 2385
+        },
+        {
+          "trial": 2,
+          "status": "finite_break_even",
+          "N_win": 2413
+        },
+        {
+          "trial": 3,
+          "status": "finite_break_even",
+          "N_win": 2429
+        }
+      ],
+      "valid_finite_paired_trials": 3,
+      "requested_paired_trials": 3,
+      "N_win": {
+        "values": [
+          2385,
+          2413,
+          2429
+        ],
+        "median": 2413,
+        "minimum": 2385,
+        "maximum": 2429,
+        "count": 3
+      },
+      "representative_trial": 2,
+      "mode_mean_ms": {
+        "eager": {
+          "values": [
+            122.7146714,
+            121.77898472,
+            122.48178712
+          ],
+          "median": 122.48178712,
+          "minimum": 121.77898472,
+          "maximum": 122.7146714,
+          "count": 3
+        },
+        "compile": {
+          "values": [
+            10.4780352,
+            10.4790671,
+            10.4672308
+          ],
+          "median": 10.4780352,
+          "minimum": 10.4672308,
+          "maximum": 10.4790671,
+          "count": 3
+        }
+      }
+    }
+  ]
+}

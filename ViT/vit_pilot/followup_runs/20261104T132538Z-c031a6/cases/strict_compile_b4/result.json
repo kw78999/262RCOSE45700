@@ -1,0 +1,89 @@
+{
+  "case_id": "strict_compile_b4",
+  "stage": "strict",
+  "mode": "compile",
+  "batch": 4,
+  "trial": 1,
+  "status": "interrupted",
+  "started_utc": "2026-11-04T13:32:29.882686+00:00",
+  "timings": [
+    {
+      "run_id": "20261104T132538Z-c031a6",
+      "case_id": "strict_compile_b4",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 1,
+      "phase": "first",
+      "iteration": 1,
+      "status": "interrupted",
+      "elapsed_ms": null,
+      "timing_valid": false
+    }
+  ],
+  "observations": [],
+  "backend_entries": [],
+  "active_call": null,
+  "input_hash": "dddca074d096a9851cd91884341cf9975592e09e67d24a0577df522b749700aa",
+  "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+  "dtype": "torch.bfloat16",
+  "sync_checked": true,
+  "timing_scope": "cpu_dispatch_runner_and_current_stream_completion_excludes_external_prepost_transfers",
+  "code_sha256": {
+    "followup_worker.py": "4b8f012ddff160a5f468ccd9138a0b0afaf0afc4474103359909c50594d98d64",
+    "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+    "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee"
+  },
+  "actual_codegen_count": null,
+  "disk_cache_hit": null,
+  "disk_cache_miss": null,
+  "compiler_time_ms": null,
+  "unknown_reason": "No independent actual codegen/disk hit-miss instrumentation",
+  "assets_dir": "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+  "input_file_sha256": "53ecedeab5084573dd71df9a11f87c7d33add3afc2768f8aaf025740332f79fd",
+  "synthetic_input": true,
+  "cache_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/diagnostic/compiler-cache",
+  "cache_existed_at_entry": true,
+  "cache_state": "stage_local_sdk_cache_reuse",
+  "effective": {
+    "cpu_fallback_original": true,
+    "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "backend_eager_fallback": false,
+    "device_configuration": "(Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3', 'furiosa:4', 'furiosa:5', 'furiosa:6', 'furiosa:7'])",
+    "torch_threads": 22,
+    "torch_interop_threads": 64,
+    "torch_compile_kwargs": "backend only; dynamic/fullgraph/mode/options omitted",
+    "suppress_errors": false,
+    "dynamic_shapes": true,
+    "automatic_dynamic_shapes": false,
+    "recompile_limit": 8,
+    "cpu_fallback": false,
+    "cache_config": "CacheConfig { root_dir: Some(\"/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/diagnostic/compiler-cache\"), summary: false, ensure: false, failure_link_dir: None }"
+  },
+  "stream_id": 0,
+  "preparation_ms": 1162.3896099627018,
+  "input_metadata": {
+    "shape": [
+      4,
+      3,
+      224,
+      224
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0"
+  },
+  "model_metadata": {
+    "training": false,
+    "parameter_dtype": "torch.bfloat16",
+    "parameter_device": "furiosa:0"
+  },
+  "device_use_snapshot": {
+    "command": [
+      "furiosa-smi",
+      "ps"
+    ],
+    "returncode": 0,
+    "stdout": "+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------+\n| PID    | NPU core | CMD                                                                                                                                                      |\n+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------+\n| 125506 | npu1:0   | /root/venv/bin/python -u /root/ViT/vit_pilot/followup_worker.py --run /root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6 --case strict_compile_b4 |\n+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------+\n",
+    "stderr": ""
+  },
+  "runner_setup_ms": 239.298034
+}

@@ -1,0 +1,81 @@
+{
+  "case_id": "formal_p1_b1_eager_t4_a1",
+  "stage": "formal",
+  "pe": 1,
+  "batch": 1,
+  "mode": "eager",
+  "trial": 4,
+  "attempt": 1,
+  "warmup": 100,
+  "worker_protocol": 2,
+  "stabilization_status": "heuristic_satisfied",
+  "cache_path": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/formal_p1_b1_eager_t4_a1",
+  "estimated_wall_s": 198.04499655285002,
+  "status": "error",
+  "started_utc": "2026-11-18T18:53:47.889194+00:00",
+  "pid": 2877,
+  "timings": [],
+  "compiler_time_ms": null,
+  "actual_codegen_count": null,
+  "disk_cache_hit": null,
+  "disk_cache_miss": null,
+  "backend_entries": [],
+  "controls": [
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    },
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    },
+    {
+      "mha_fastpath": false,
+      "cpu_fallback": false
+    }
+  ],
+  "provisional": true,
+  "timing_scope": "CPU dispatch + runner + current fused-device stream completion; external transfers excluded",
+  "system_cold": false,
+  "cache_miss_verified": false,
+  "performance_loop_output_copies": 0,
+  "python_sdk_logger_level": 30,
+  "fusion": {
+    "num_fusion": 1,
+    "num_pe_per_cluster": 1,
+    "num_chips": 1,
+    "num_clusters_per_chip": 1
+  },
+  "device_configuration": "(Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3', 'furiosa:4', 'furiosa:5', 'furiosa:6', 'furiosa:7'])",
+  "available_logical_devices": [
+    "furiosa:0",
+    "furiosa:1",
+    "furiosa:2",
+    "furiosa:3",
+    "furiosa:4",
+    "furiosa:5",
+    "furiosa:6",
+    "furiosa:7"
+  ],
+  "cache_existed_at_entry": false,
+  "effective": {
+    "torch_threads": 22,
+    "torch_interop_threads": 64,
+    "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "automatic_dynamic_shapes": false,
+    "recompile_limit": 8,
+    "backend_eager_fallback": false,
+    "suppress_errors": false,
+    "compile_kwargs": "backend only; all other arguments omitted"
+  },
+  "input_hash": "08b52c5a2a27fe6d0e20fa7d2d99a1c8cf03671ba9c0d51f7ff2490732c33d23",
+  "unique_image_count": 1,
+  "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+  "state_dict_bf16_cpu_sha256": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396",
+  "model_input_prepare_ms": 2905.223513,
+  "stream_id": 0,
+  "sync_contract": "installed logical-device current_stream contract; per-PE internal implementation opaque",
+  "runner_setup_ms": 0.00402,
+  "error": "Traceback (most recent call last):\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/compiler/__init__.py\", line 83, in compile\n    runnable = compiler.compile(\n               ^^^^^^^^^^^^^^^^^\nfuriosa.torch._C.error.CompileError: (cache at /root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/formal_p1_b1_eager_t4_a1/7a0434fb8d66f44d)\n\nCaused by:\n   0: failed to compile /tmp/.tmpzcUwe6.c\n   1: In file included from <stdin>:1:\n      /tmp/.tmpTUYkZ6/pe.h:4:10: fatal error: assert.h: No such file or directory\n          4 | #include <assert.h>\n            |          ^~~~~~~~~~\n      compilation terminated.\n\n   2: failed to run cc\n   3: process exited unsuccessfully: exit status: 1\n\nLocation:\n    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/npu-utils/src/command.rs:137:17\n\nLocation:\n    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/global-compiler/src/lib.rs:95:64\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/code/worker_v2.py\", line 116, in main\n    y=call('first',1); event('first_end', elapsed_ms=r['timings'][-1]['elapsed_ms']); save()\n      ^^^^^^^^^^^^^^^\n  File \"/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/code/worker_v2.py\", line 111, in call\n    y,ms,valid=timed_call(runner,x,stream.synchronize)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/code/common.py\", line 69, in timed_call\n    output = runner(inputs)\n             ^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py\", line 291, in forward\n    x = self._process_input(x)\n        ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py\", line 277, in _process_input\n    x = self.conv_proj(x)\n        ^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/conv.py\", line 553, in forward\n    return self._conv_forward(input, self.weight, self.bias)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/conv.py\", line 548, in _conv_forward\n    return F.conv2d(\n           ^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1181, in _fn\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py\", line 19, in run_aten_op\n    return _run_aten_op(qualified_aten_op_name, op_callable, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1181, in _fn\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py\", line 42, in _run_aten_op\n    raise e\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py\", line 38, in _run_aten_op\n    m = aten_op.compile_and_load(device)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py\", line 173, in compile_and_load\n    return _compile_and_load_cached(self, device).out()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py\", line 28, in out\n    raise self.cached.with_traceback(self.original_traceback)\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py\", line 96, in _compile\n    compiled = CompileModule.from_exported(exported, task_name=task_name)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_module/runnable.py\", line 222, in from_exported\n    compiler.compile(exported, compiler_config, task_name=task_name)\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/profiler/__init__.py\", line 35, in wrapped\n    return f(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/compiler/__init__.py\", line 94, in compile\n    raise error.UnsupportedOpError(\nfuriosa.torch._C.error.UnsupportedOpError: failed to compile\ngraph():\n    %args_0 : [num_users=1] = placeholder[target=args_0]\n    %args_1 : [num_users=1] = placeholder[target=args_1]\n    %args_2 : [num_users=1] = placeholder[target=args_2]\n    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%args_0, %args_1, %args_2, [16, 16], [0, 0], [1, 1], False, [0, 0], 1), kwargs = {})\n    return (convolution,)\nsource:\n    convolution          ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:291 x = self._process_input(x)\ncompile error:\n(cache at /root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/formal_p1_b1_eager_t4_a1/7a0434fb8d66f44d)\n\nCaused by:\n   0: failed to compile /tmp/.tmpzcUwe6.c\n   1: In file included from <stdin>:1:\n      /tmp/.tmpTUYkZ6/pe.h:4:10: fatal error: assert.h: No such file or directory\n          4 | #include <assert.h>\n            |          ^~~~~~~~~~\n      compilation terminated.\n\n   2: failed to run cc\n   3: process exited unsuccessfully: exit status: 1\n\nLocation:\n    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/npu-utils/src/command.rs:137:17\n\nLocation:\n    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/global-compiler/src/lib.rs:95:64\n",
+  "ended_utc": "2026-11-18T18:54:21.312796+00:00"
+}

@@ -1,0 +1,19 @@
+{
+  "figures": {
+    "repeat_comparison.png": "44a66932a0530a04dfe64a16e80ce49fa6464f004077d909a10a4ec8896c56b1",
+    "startup_components.png": "70659f9bc27d17dccde95f7a496903c28c37f3f1a108e69c860647593935d288",
+    "repeat_order.png": "aefb0f81908e5d4d959f307fb1abd289adf7e594477afc816efd4305cf12d891",
+    "cumulative_time_b1.png": "10a93267f0de7885c38283fad93f86754be192d1d674b344bf4c70d8e76e1e0e",
+    "cumulative_time_b4.png": "26a964c233802b9d4066ff3ec609912f78033a10b9564da040005e3c83f6e8f6"
+  },
+  "inputs": [
+    "trial_summary.csv",
+    "timings.csv",
+    "break_even_summary.json",
+    "cumulative_validation.csv",
+    "cumulative_validation_summary.json"
+  ],
+  "no_old_performance_inputs": true,
+  "units": "ms per batch call; cumulative seconds",
+  "SD": "sample SD ddof=1; not CI"
+}

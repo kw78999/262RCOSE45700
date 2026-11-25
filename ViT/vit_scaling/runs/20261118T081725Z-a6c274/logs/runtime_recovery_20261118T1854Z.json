@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-18T18:54:58.049561+00:00",
+  "pid1_estimated_start_utc": "2026-11-18T18:30:42.889561+00:00",
+  "pid1_estimated_start_kst": "2026-11-19T03:30:42.889561+09:00",
+  "previous_manifest_last_observed_utc": "2026-11-18T18:30:29.245894+00:00",
+  "inference": "PID 1 restarted near the old manifest stopping time and all three old experiment PIDs are absent; consistent with execution-container/runtime restart. Trigger and cause unverified; not attributed to SSH.",
+  "previous_worker": "validation_p1_b16_compile_t1_a1",
+  "previous_worker_status": "interrupted; incomplete first call, no output or latency conclusion",
+  "new_supervisor_pid": 2868,
+  "new_controller_pid": 2870,
+  "active_cases": [
+    "formal_p1_b1_compile_t4_a1"
+  ],
+  "smi_observation": "Only owned worker 2877 on npu0:0 after restart",
+  "SIGHUP_ignored_verified_pids": [
+    2868,
+    2870,
+    2877
+  ],
+  "budget_unchanged_s": 43200,
+  "deadline_kst": "2026-11-19T05:17:25.664027+09:00",
+  "code_change": "supervisor SIGHUP ignore only; frozen performance worker unchanged",
+  "worker_v2_sha256": "d1e544f811d86da8700fed9092681d7d8b0085293ba50a551e9cee8602b86906"
+}

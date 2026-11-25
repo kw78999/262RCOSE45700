@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-18T10:32:07.511189+00:00",
+  "reason": "SDK Python logger defaults DEBUG despite root WARNING; explicit SDK logger WARNING outside diagnostics",
+  "old_worker_sha256": "b8e0624f3e046fb02361b0adf5e60f4741bb66b622483433dabc7607483cf969",
+  "new_worker_sha256": "d1e544f811d86da8700fed9092681d7d8b0085293ba50a551e9cee8602b86906",
+  "controller_pid": 155660,
+  "live_worker": "validation_p8_b4_eager_t1_a1",
+  "live_worker_terminated": false,
+  "performance_v1": "raw preserved; excluded from current aggregates; new attempts scheduled",
+  "measurement_boundary_model_precision_unchanged": true
+}

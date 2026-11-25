@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-04T14:33:13.309776+00:00",
+  "status": "pass",
+  "errors": [],
+  "expected_performance_records": 672,
+  "actual_performance_records": 336,
+  "completed_valid_performance_records": 336,
+  "completed_workers": 6,
+  "expected_workers": 12,
+  "all_workers_complete": false,
+  "held_workers": 6,
+  "expected_records_for_unheld_workers": 336,
+  "all_unheld_workers_complete": true,
+  "note": "Only performance rows counted; diagnostics and output verification excluded; repeats are not independent trials"
+}

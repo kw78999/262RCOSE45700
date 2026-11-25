@@ -1,0 +1,15 @@
+{
+  "source_run": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274",
+  "budget_s": 600,
+  "worker_timeout_s": 120,
+  "warmup": 3,
+  "samples": 5,
+  "independent_trials": 1,
+  "retries": 0,
+  "memory_headroom_gib": 8,
+  "performance_status": "exploratory; no stabilization or statistical confidence claim",
+  "selection": "only batch/PE combinations without any historical worker",
+  "command": [
+    "profiling/batch_pe/bounded.py"
+  ]
+}

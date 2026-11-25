@@ -1,0 +1,11 @@
+{"utc": "2026-11-04T18:31:43.870184+00:00", "monotonic_ns": 1702952339376845, "pid": 390411, "event": "model_input_prepare_start"}
+{"utc": "2026-11-04T18:31:45.097488+00:00", "monotonic_ns": 1702953566684975, "pid": 390411, "event": "model_input_prepare_end", "elapsed_ms": 1227.148328}
+{"utc": "2026-11-04T18:31:45.097690+00:00", "monotonic_ns": 1702953566874908, "pid": 390411, "event": "runner_setup_start"}
+{"utc": "2026-11-04T18:31:45.097742+00:00", "monotonic_ns": 1702953566925858, "pid": 390411, "event": "runner_setup_end", "elapsed_ms": 0.000631}
+{"utc": "2026-11-04T18:31:45.102878+00:00", "monotonic_ns": 1702953572066137, "pid": 390411, "event": "phase_start", "phase": "first", "requested_calls": 1}
+{"utc": "2026-11-04T18:33:23.093739+00:00", "monotonic_ns": 1703051562933691, "pid": 390411, "event": "phase_end", "phase": "first", "wall_ms": 97995.386853, "measured_sum_ms": 97989.372201}
+{"utc": "2026-11-04T18:33:23.097936+00:00", "monotonic_ns": 1703051567124434, "pid": 390411, "event": "phase_start", "phase": "warmup", "requested_calls": 5}
+{"utc": "2026-11-04T18:33:23.322623+00:00", "monotonic_ns": 1703051791817604, "pid": 390411, "event": "phase_end", "phase": "warmup", "wall_ms": 228.769912, "measured_sum_ms": 223.098474}
+{"utc": "2026-11-04T18:33:23.328295+00:00", "monotonic_ns": 1703051797483039, "pid": 390411, "event": "phase_start", "phase": "repeat", "requested_calls": 50}
+{"utc": "2026-11-04T18:33:25.570702+00:00", "monotonic_ns": 1703054039896347, "pid": 390411, "event": "phase_end", "phase": "repeat", "wall_ms": 2247.984641, "measured_sum_ms": 2238.49714}
+{"utc": "2026-11-04T18:33:25.577798+00:00", "monotonic_ns": 1703054046984714, "pid": 390411, "event": "worker_end", "status": "ok"}

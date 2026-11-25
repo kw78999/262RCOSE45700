@@ -1,0 +1,402 @@
+{
+  "checks": [
+    {
+      "batch": 1,
+      "trial": 1,
+      "eager_case_id": "validation_eager_b1",
+      "compile_case_id": "performance_compile_b1_t1",
+      "status": "structure_finite_ok_tolerance_unset",
+      "tolerance_status": "pending",
+      "accuracy_vs_ground_truth": null,
+      "accuracy_reason": "No labeled accuracy evaluation",
+      "input_kind": "real",
+      "global_unique_samples": 4,
+      "max_abs_error": 0.021484375,
+      "mean_abs_error": 0.004210958257317543,
+      "cosine_per_image": [
+        0.999952209453315
+      ],
+      "cosine_mean": 0.999952209453315,
+      "cosine_min": 0.999952209453315,
+      "top1_matches": 1,
+      "compared_images": 1,
+      "top1_ratio": 1.0,
+      "mismatches": [],
+      "eager_shape": [
+        1,
+        1000
+      ],
+      "compile_shape": [
+        1,
+        1000
+      ],
+      "eager_nan": 0,
+      "eager_inf": 0,
+      "compile_nan": 0,
+      "compile_inf": 0,
+      "cosine_undefined_reasons": [],
+      "input_ids": [
+        "01_cat"
+      ],
+      "reason": "Output tolerance not agreed; small-input consistency only",
+      "comparison_type": "performance logits vs independent validation Eager reference",
+      "reference_execution_path": "CPU/NPU mixed Eager; output reference only, never a performance denominator",
+      "reference_cache_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/validation/compiler-cache",
+      "performance_cache_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/performance/performance_compile_b1_t1",
+      "speedup": null,
+      "speedup_reason": "Reference is from output verification, not a performance trial",
+      "current_predictions": [
+        {
+          "input_id": "01_cat",
+          "class_index": 285,
+          "class_name": "Egyptian cat",
+          "logit": 8.375
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "trial": 1,
+      "eager_case_id": "validation_eager_b4",
+      "compile_case_id": "performance_compile_b4_t1",
+      "status": "structure_finite_ok_tolerance_unset",
+      "tolerance_status": "pending",
+      "accuracy_vs_ground_truth": null,
+      "accuracy_reason": "No labeled accuracy evaluation",
+      "input_kind": "real",
+      "global_unique_samples": 4,
+      "max_abs_error": 0.0625,
+      "mean_abs_error": 0.004746693652123213,
+      "cosine_per_image": [
+        0.9999525052231488,
+        0.9999605671407702,
+        0.9999426951551098,
+        0.9999469673908863
+      ],
+      "cosine_mean": 0.9999506837274788,
+      "cosine_min": 0.9999426951551098,
+      "top1_matches": 4,
+      "compared_images": 4,
+      "top1_ratio": 1.0,
+      "mismatches": [],
+      "eager_shape": [
+        4,
+        1000
+      ],
+      "compile_shape": [
+        4,
+        1000
+      ],
+      "eager_nan": 0,
+      "eager_inf": 0,
+      "compile_nan": 0,
+      "compile_inf": 0,
+      "cosine_undefined_reasons": [],
+      "input_ids": [
+        "01_cat",
+        "02_coffee",
+        "03_astronaut",
+        "04_rocket"
+      ],
+      "reason": "Output tolerance not agreed; small-input consistency only",
+      "comparison_type": "performance logits vs independent validation Eager reference",
+      "reference_execution_path": "CPU/NPU mixed Eager; output reference only, never a performance denominator",
+      "reference_cache_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/validation/compiler-cache",
+      "performance_cache_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/performance/performance_compile_b4_t1",
+      "speedup": null,
+      "speedup_reason": "Reference is from output verification, not a performance trial",
+      "current_predictions": [
+        {
+          "input_id": "01_cat",
+          "class_index": 285,
+          "class_name": "Egyptian cat",
+          "logit": 8.375
+        },
+        {
+          "input_id": "02_coffee",
+          "class_index": 967,
+          "class_name": "espresso",
+          "logit": 9.3125
+        },
+        {
+          "input_id": "03_astronaut",
+          "class_index": 450,
+          "class_name": "bobsled",
+          "logit": 8.375
+        },
+        {
+          "input_id": "04_rocket",
+          "class_index": 540,
+          "class_name": "drilling platform",
+          "logit": 8.3125
+        }
+      ]
+    },
+    {
+      "batch": 1,
+      "trial": 2,
+      "eager_case_id": "validation_eager_b1",
+      "compile_case_id": "performance_compile_b1_t2",
+      "status": "structure_finite_ok_tolerance_unset",
+      "tolerance_status": "pending",
+      "accuracy_vs_ground_truth": null,
+      "accuracy_reason": "No labeled accuracy evaluation",
+      "input_kind": "real",
+      "global_unique_samples": 4,
+      "max_abs_error": 0.021484375,
+      "mean_abs_error": 0.004210958257317543,
+      "cosine_per_image": [
+        0.999952209453315
+      ],
+      "cosine_mean": 0.999952209453315,
+      "cosine_min": 0.999952209453315,
+      "top1_matches": 1,
+      "compared_images": 1,
+      "top1_ratio": 1.0,
+      "mismatches": [],
+      "eager_shape": [
+        1,
+        1000
+      ],
+      "compile_shape": [
+        1,
+        1000
+      ],
+      "eager_nan": 0,
+      "eager_inf": 0,
+      "compile_nan": 0,
+      "compile_inf": 0,
+      "cosine_undefined_reasons": [],
+      "input_ids": [
+        "01_cat"
+      ],
+      "reason": "Output tolerance not agreed; small-input consistency only",
+      "comparison_type": "performance logits vs independent validation Eager reference",
+      "reference_execution_path": "CPU/NPU mixed Eager; output reference only, never a performance denominator",
+      "reference_cache_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/validation/compiler-cache",
+      "performance_cache_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/performance/performance_compile_b1_t2",
+      "speedup": null,
+      "speedup_reason": "Reference is from output verification, not a performance trial",
+      "current_predictions": [
+        {
+          "input_id": "01_cat",
+          "class_index": 285,
+          "class_name": "Egyptian cat",
+          "logit": 8.375
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "trial": 2,
+      "eager_case_id": "validation_eager_b4",
+      "compile_case_id": "performance_compile_b4_t2",
+      "status": "structure_finite_ok_tolerance_unset",
+      "tolerance_status": "pending",
+      "accuracy_vs_ground_truth": null,
+      "accuracy_reason": "No labeled accuracy evaluation",
+      "input_kind": "real",
+      "global_unique_samples": 4,
+      "max_abs_error": 0.0625,
+      "mean_abs_error": 0.004746693652123213,
+      "cosine_per_image": [
+        0.9999525052231488,
+        0.9999605671407702,
+        0.9999426951551098,
+        0.9999469673908863
+      ],
+      "cosine_mean": 0.9999506837274788,
+      "cosine_min": 0.9999426951551098,
+      "top1_matches": 4,
+      "compared_images": 4,
+      "top1_ratio": 1.0,
+      "mismatches": [],
+      "eager_shape": [
+        4,
+        1000
+      ],
+      "compile_shape": [
+        4,
+        1000
+      ],
+      "eager_nan": 0,
+      "eager_inf": 0,
+      "compile_nan": 0,
+      "compile_inf": 0,
+      "cosine_undefined_reasons": [],
+      "input_ids": [
+        "01_cat",
+        "02_coffee",
+        "03_astronaut",
+        "04_rocket"
+      ],
+      "reason": "Output tolerance not agreed; small-input consistency only",
+      "comparison_type": "performance logits vs independent validation Eager reference",
+      "reference_execution_path": "CPU/NPU mixed Eager; output reference only, never a performance denominator",
+      "reference_cache_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/validation/compiler-cache",
+      "performance_cache_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/performance/performance_compile_b4_t2",
+      "speedup": null,
+      "speedup_reason": "Reference is from output verification, not a performance trial",
+      "current_predictions": [
+        {
+          "input_id": "01_cat",
+          "class_index": 285,
+          "class_name": "Egyptian cat",
+          "logit": 8.375
+        },
+        {
+          "input_id": "02_coffee",
+          "class_index": 967,
+          "class_name": "espresso",
+          "logit": 9.3125
+        },
+        {
+          "input_id": "03_astronaut",
+          "class_index": 450,
+          "class_name": "bobsled",
+          "logit": 8.375
+        },
+        {
+          "input_id": "04_rocket",
+          "class_index": 540,
+          "class_name": "drilling platform",
+          "logit": 8.3125
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "trial": 3,
+      "eager_case_id": "validation_eager_b4",
+      "compile_case_id": "performance_compile_b4_t3",
+      "status": "structure_finite_ok_tolerance_unset",
+      "tolerance_status": "pending",
+      "accuracy_vs_ground_truth": null,
+      "accuracy_reason": "No labeled accuracy evaluation",
+      "input_kind": "real",
+      "global_unique_samples": 4,
+      "max_abs_error": 0.0625,
+      "mean_abs_error": 0.004746693652123213,
+      "cosine_per_image": [
+        0.9999525052231488,
+        0.9999605671407702,
+        0.9999426951551098,
+        0.9999469673908863
+      ],
+      "cosine_mean": 0.9999506837274788,
+      "cosine_min": 0.9999426951551098,
+      "top1_matches": 4,
+      "compared_images": 4,
+      "top1_ratio": 1.0,
+      "mismatches": [],
+      "eager_shape": [
+        4,
+        1000
+      ],
+      "compile_shape": [
+        4,
+        1000
+      ],
+      "eager_nan": 0,
+      "eager_inf": 0,
+      "compile_nan": 0,
+      "compile_inf": 0,
+      "cosine_undefined_reasons": [],
+      "input_ids": [
+        "01_cat",
+        "02_coffee",
+        "03_astronaut",
+        "04_rocket"
+      ],
+      "reason": "Output tolerance not agreed; small-input consistency only",
+      "comparison_type": "performance logits vs independent validation Eager reference",
+      "reference_execution_path": "CPU/NPU mixed Eager; output reference only, never a performance denominator",
+      "reference_cache_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/validation/compiler-cache",
+      "performance_cache_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/performance/performance_compile_b4_t3",
+      "speedup": null,
+      "speedup_reason": "Reference is from output verification, not a performance trial",
+      "current_predictions": [
+        {
+          "input_id": "01_cat",
+          "class_index": 285,
+          "class_name": "Egyptian cat",
+          "logit": 8.375
+        },
+        {
+          "input_id": "02_coffee",
+          "class_index": 967,
+          "class_name": "espresso",
+          "logit": 9.3125
+        },
+        {
+          "input_id": "03_astronaut",
+          "class_index": 450,
+          "class_name": "bobsled",
+          "logit": 8.375
+        },
+        {
+          "input_id": "04_rocket",
+          "class_index": 540,
+          "class_name": "drilling platform",
+          "logit": 8.3125
+        }
+      ]
+    },
+    {
+      "batch": 1,
+      "trial": 3,
+      "eager_case_id": "validation_eager_b1",
+      "compile_case_id": "performance_compile_b1_t3",
+      "status": "structure_finite_ok_tolerance_unset",
+      "tolerance_status": "pending",
+      "accuracy_vs_ground_truth": null,
+      "accuracy_reason": "No labeled accuracy evaluation",
+      "input_kind": "real",
+      "global_unique_samples": 4,
+      "max_abs_error": 0.021484375,
+      "mean_abs_error": 0.004210958257317543,
+      "cosine_per_image": [
+        0.999952209453315
+      ],
+      "cosine_mean": 0.999952209453315,
+      "cosine_min": 0.999952209453315,
+      "top1_matches": 1,
+      "compared_images": 1,
+      "top1_ratio": 1.0,
+      "mismatches": [],
+      "eager_shape": [
+        1,
+        1000
+      ],
+      "compile_shape": [
+        1,
+        1000
+      ],
+      "eager_nan": 0,
+      "eager_inf": 0,
+      "compile_nan": 0,
+      "compile_inf": 0,
+      "cosine_undefined_reasons": [],
+      "input_ids": [
+        "01_cat"
+      ],
+      "reason": "Output tolerance not agreed; small-input consistency only",
+      "comparison_type": "performance logits vs independent validation Eager reference",
+      "reference_execution_path": "CPU/NPU mixed Eager; output reference only, never a performance denominator",
+      "reference_cache_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/validation/compiler-cache",
+      "performance_cache_path": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/caches/performance/performance_compile_b1_t3",
+      "speedup": null,
+      "speedup_reason": "Reference is from output verification, not a performance trial",
+      "current_predictions": [
+        {
+          "input_id": "01_cat",
+          "class_index": 285,
+          "class_name": "Egyptian cat",
+          "logit": 8.375
+        }
+      ]
+    }
+  ],
+  "accuracy_computed": false,
+  "loss_computed": false
+}

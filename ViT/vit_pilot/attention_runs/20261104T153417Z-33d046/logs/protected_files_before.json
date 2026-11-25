@@ -1,0 +1,21 @@
+{
+  "/root/ViT/vit_pilot/common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9",
+  "/root/ViT/vit_pilot/vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+  "/root/ViT/vit_pilot/worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13",
+  "/root/ViT/vit_pilot/pilot.py": "90c02fef0abb3f5c0196d3759fcc5898e89a0837742fa998181b172732b22a6e",
+  "/root/ViT/vit_pilot/followup.py": "2c905109262276847de21456d566e314444dd96853904c68ce73fa50d9be63bc",
+  "/root/ViT/vit_pilot/followup_worker.py": "87e46681e6326d78a06b1d570ee58b19a2876915059dc64fd333f5c81ed792cf",
+  "/root/ViT/vit_pilot/followup_analysis.py": "81bdc270ef47723ce0b05f22c665415cde9b489b824d2751d69f687969e22136",
+  "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/assets.json": "6f0178c8c1886727adfa7a0ff94c46b12e5b5516a76f00509e0e4b6c807098dd",
+  "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/image_manifest.json": "20be622aa862c1d1a14a15ab5d046ff02f836b36c923b1fa4afc45680c6b6dd9",
+  "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/manifest.json": "9c923170a59bc71dcbe2b5e58c4ea2e13fa70cce714a110eaf6e77f572c0aaa5",
+  "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/timings.csv": "d385ee661eacba53dc0f7c73c42f968cef9e147d9897959804be2e5911d09d5d",
+  "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/trial_summary.csv": "f06137feccdf6a96163dc5fd48732c2ed480d275274d462b7470e9e6e5645554",
+  "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/report.md": "d2aa26cfbc906a4ea18d7bd254cd808caeb88613a4c407a563823a2387aeee5a",
+  "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/feedback_summary.md": "bdef401bed40c27bc2be0a9e773e2c3f0f1c2cd28613d0b0d47421d61c86efbb",
+  "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/inputs/preprocessed_fp32.pt": "523a74eff0210ae0d6687c914e433cdd206aedc7cf3aa75b897d16b4f6864fca",
+  "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/inputs/preprocessed_bf16.pt": "4896db25d7de29a9a24694d6db1c93ec5d58d4eca4a3193623b64a27494ad728",
+  "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff/report.md": "719f452ac03ab3509c23edf1cf27ca760d74b75f09ff5553233fcffeaf8cba17",
+  "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff/timings.csv": "faa7186dbb6c3c88fb6a676a8dd4317c9a75c596127c5072999a47ecb207f164",
+  "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff/assets.json": "9fa0b87e99226440b1788df889be03b2dd4f47e66c052fe143a8b050e8f30ebf"
+}

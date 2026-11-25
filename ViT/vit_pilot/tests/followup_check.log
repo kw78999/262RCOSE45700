@@ -1,0 +1,10 @@
+test_mixed_eager_holds_only_that_mode (test_followup.FollowupTests.test_mixed_eager_holds_only_that_mode) ... ok
+test_native_fallback_not_missed_by_python_logger_absence (test_followup.FollowupTests.test_native_fallback_not_missed_by_python_logger_absence) ... ok
+test_prior_compile_prediction_change_holds_later_trials (test_followup.FollowupTests.test_prior_compile_prediction_change_holds_later_trials) ... ok
+test_top1_mismatch_holds_both_modes (test_followup.FollowupTests.test_top1_mismatch_holds_both_modes) ... ok
+test_trace_counts_not_codegen (test_followup.FollowupTests.test_trace_counts_not_codegen) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 4.600s
+
+OK

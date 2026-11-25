@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-18T15:19:13.635475+00:00",
+  "elapsed_wall_s": 25307.971448,
+  "budget_s": 43200,
+  "remaining_s": 17892.028552,
+  "completed_and_partial_worker_wall_s": 20567.2598722095,
+  "incomplete_first_attempts": [
+    {
+      "case_id": "validation_p8_b4_compile_t1_a1",
+      "status": "timeout",
+      "wall_s": 3616.597105,
+      "scope": "start event to worker end including termination; not a completed timed_call"
+    }
+  ],
+  "active_worker_wall_s": 138.81199,
+  "model_input_prepare_ms": 91602.153615,
+  "runner_wrapper_setup_ms": 4060.76782,
+  "first_call_total_ms": 16063895.586179,
+  "warmup_total_ms": 123340.403488,
+  "exploration_and_formal_repeat_total_ms": 361965.883549,
+  "stability_total_ms": 0,
+  "pure_compiler_time_ms": null,
+  "first_call_is_not_pure_compiler_time": true,
+  "analysis_generated_utc": "2026-11-18T15:19:26.970848+00:00",
+  "scope": "Immutable interim cutoff; partial active result excluded; phase totals include preserved legacy attempts.",
+  "compiler_time_ms": null
+}

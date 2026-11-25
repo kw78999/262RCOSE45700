@@ -1,0 +1,26 @@
+{"utc": "2026-11-24T18:24:11.677781+00:00", "event": "first_start"}
+{"utc": "2026-11-24T18:24:18.791888+00:00", "event": "first_end", "ms": 7098.06882}
+{"utc": "2026-11-24T18:24:31.126363+00:00", "event": "warmup_end", "calls": 100}
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 111812: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 7: invalid trace reference time
+{"utc": "2026-11-24T18:24:31.367036+00:00", "event": "sample_end", "iteration": 1, "h2d_wall_ms": 0.526047, "forward_wall_ms": 143.413603, "d2h_wall_ms": 0.275623, "serial_request_wall_sum_ms": 144.215273}
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 8: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 4453: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 4454: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 7: invalid trace reference time
+{"utc": "2026-11-24T18:24:31.524499+00:00", "event": "sample_end", "iteration": 2, "h2d_wall_ms": 0.349625, "forward_wall_ms": 143.116428, "d2h_wall_ms": 0.272813, "serial_request_wall_sum_ms": 143.738866}
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 8: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 4453: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 4454: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 7: invalid trace reference time
+{"utc": "2026-11-24T18:24:31.682082+00:00", "event": "sample_end", "iteration": 3, "h2d_wall_ms": 0.354175, "forward_wall_ms": 143.21714, "d2h_wall_ms": 0.270834, "serial_request_wall_sum_ms": 143.842149}
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 8: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 4453: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 4454: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 7: invalid trace reference time
+{"utc": "2026-11-24T18:24:31.845337+00:00", "event": "sample_end", "iteration": 4, "h2d_wall_ms": 0.356495, "forward_wall_ms": 148.836413, "d2h_wall_ms": 0.268493, "serial_request_wall_sum_ms": 149.461401}
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 8: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 4453: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 4454: invalid trace reference time
+ WARN furiosa_torch::profiler::exporter: failed to write NPU profiler span 7: invalid trace reference time
+{"utc": "2026-11-24T18:24:32.003009+00:00", "event": "sample_end", "iteration": 5, "h2d_wall_ms": 0.348934, "forward_wall_ms": 143.28132, "d2h_wall_ms": 0.265484, "serial_request_wall_sum_ms": 143.895738}

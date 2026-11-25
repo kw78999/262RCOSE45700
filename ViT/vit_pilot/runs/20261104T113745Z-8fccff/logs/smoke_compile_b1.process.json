@@ -1,0 +1,33 @@
+{
+  "command": [
+    "/root/venv/bin/python",
+    "-u",
+    "/root/ViT/vit_pilot/worker.py",
+    "--run",
+    "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+    "--case",
+    "smoke_compile_b1",
+    "--kind",
+    "smoke",
+    "--mode",
+    "compile",
+    "--trial",
+    "1",
+    "--batch",
+    "1"
+  ],
+  "started_utc": "2026-11-04T11:39:19.602133+00:00",
+  "timeout_seconds": 1800,
+  "stdout": "logs/smoke_compile_b1.stdout.log",
+  "stderr": "logs/smoke_compile_b1.stderr.log",
+  "diagnostic_logging": true,
+  "logging_env": {
+    "TORCH_LOGS": "recompiles,graph_breaks",
+    "FURIOSA_TORCH_LOG": "debug"
+  },
+  "worker_id": 84039,
+  "status": "ok",
+  "returncode": 0,
+  "ended_utc": "2026-11-04T11:42:51.656112+00:00",
+  "elapsed_seconds": 212.05400473601185
+}

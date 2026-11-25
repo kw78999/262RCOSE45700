@@ -1,0 +1,3 @@
+{"event": "worker_start", "case": "exploration_p1_b4_compile_t1_a1", "estimate_s": 607, "remaining_s": 36221}
+{"event": "worker_end", "case": "exploration_p1_b4_compile_t1_a1", "status": "ok", "wall_s": 450.2}
+{"event": "worker_start", "case": "validation_p8_b4_eager_t1_a1", "estimate_s": 1635, "remaining_s": 35771}

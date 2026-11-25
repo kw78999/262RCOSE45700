@@ -1,0 +1,10 @@
+{
+  "status": "verified",
+  "raw_checkpoint_unchanged": true,
+  "tensor_values_all_equal": true,
+  "compared_entries": 152,
+  "renamed_entries": 48,
+  "installed_source": "/root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:54-75",
+  "fp32_hash": "2156081c85fd9668ac4c8526c91252b803d40d130e9193da3e0400a66d9b79bb",
+  "bf16_hash": "4a1c8a59001eee9cc34e4b396860819d40c3badd62f91b06133ee79c5455c396"
+}

@@ -1,0 +1,4 @@
+{
+  "user_boundary_top_frame": "SkipResult(skipped=False, reason='inlined according trace_rules.lookup inlined by default')",
+  "npu_forward": false
+}

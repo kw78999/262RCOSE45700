@@ -1,0 +1,13 @@
+test_diagnostic_counts_are_distinct (test_analysis.AnalysisTests.test_diagnostic_counts_are_distinct) ... ok
+test_explicit_tolerance (test_analysis.AnalysisTests.test_explicit_tolerance) ... ok
+test_invalid_and_incomplete_never_get_throughput (test_analysis.AnalysisTests.test_invalid_and_incomplete_never_get_throughput) ... ok
+test_sample_sd_throughput_and_negative_extra (test_analysis.AnalysisTests.test_sample_sd_throughput_and_negative_extra) ... ok
+test_timer_contract (test_analysis.AnalysisTests.test_timer_contract) ... ok
+test_unset_tolerance_and_mismatch_details (test_analysis.AnalysisTests.test_unset_tolerance_and_mismatch_details) ... ok
+test_warm_state_is_only_a_heuristic (test_analysis.AnalysisTests.test_warm_state_is_only_a_heuristic) ... ok
+test_zero_cosine_and_nonfinite (test_analysis.AnalysisTests.test_zero_cosine_and_nonfinite) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 3.396s
+
+OK

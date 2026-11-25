@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-18T10:29:38.222323+00:00",
+  "basis": "Observed successful worker first-call and repeat costs; conservative extrapolation; hypothetical warmup500",
+  "not_hardware_support_test": true,
+  "controller_revision": "controller_revision_7",
+  "csv": "planning_estimates.csv"
+}

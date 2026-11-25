@@ -1,0 +1,169 @@
+{
+  "furiosa": {
+    "events": 50,
+    "names": {
+      "eager": 1,
+      "aten::add.Tensor": 1,
+      "run_aten_op::build_aten_op": 1,
+      "run_aten_op::compile_and_load": 1,
+      "CompileModule::forward": 1,
+      "flatten_inputs": 1,
+      "Runnable::forward": 1,
+      "Runnable::allocate_outputs": 1,
+      "tensor::empty": 6,
+      "Runnable::build_operands": 1,
+      "TpModule::run": 1,
+      "TpModule::module_profile_context": 1,
+      "TpModule::generate_profile_tensor": 1,
+      "Stream::launch": 2,
+      "TpModule::push_npu_profile_record": 1,
+      "TpModule::build_copy_profiles_to_cpu": 1,
+      "memory::build_copy": 2,
+      "memory::build_host_npu_copy": 2,
+      "memory::generate_byte_offset_scatter": 2,
+      "Stream::enqueue": 2,
+      "Profiler::push_npu_profile_record": 4,
+      "unflatten_outputs": 1,
+      "Stream::synchronize": 2,
+      "compile": 1,
+      "torch_compile::run_sequence": 1,
+      "RunnableSequence::push_combined_profile_records": 1,
+      "RunnableSequence::build_copy_profiles_to_cpu": 1,
+      "npu1pe0::profile_d2h::aten::add.Tensor": 1,
+      "thread_name": 3,
+      "npu1pe0::launch::aten::add.Tensor": 1,
+      "npu1pe0::Task::aten::add.Tensor": 1,
+      "npu1pe0::profile_d2h::compile": 1,
+      "npu1pe0::launch::compile": 1,
+      "npu1pe0::Task::compile": 1
+    },
+    "npu_events": [
+      {
+        "args": {
+          "chip_index": "0",
+          "cluster_index": "0",
+          "device_index": "0",
+          "stream_id": "0",
+          "thread.id": "0"
+        },
+        "cat": "FuriosaTorch",
+        "dur": 55.75999999999999,
+        "id": 214,
+        "name": "npu1pe0::profile_d2h::aten::add.Tensor",
+        "ph": "X",
+        "pid": 0,
+        "tid": 0,
+        "ts": 143.762
+      },
+      {
+        "args": {
+          "chip_index": "0",
+          "cluster_index": "0",
+          "device_index": "0",
+          "stream_id": "0",
+          "thread.id": "0"
+        },
+        "cat": "FuriosaTorch",
+        "dur": 7.320000000000007,
+        "id": 215,
+        "name": "npu1pe0::launch::aten::add.Tensor",
+        "ph": "X",
+        "pid": 0,
+        "tid": 0,
+        "ts": 85.962
+      },
+      {
+        "args": {
+          "begin_cycle": "3916892427",
+          "chip_index": "0",
+          "cluster_index": "0",
+          "cycle_actual": "2037",
+          "device_index": "0",
+          "end_cycle": "3916894464",
+          "stream_id": "0",
+          "thread.id": "1",
+          "uid": "0"
+        },
+        "cat": "FuriosaTorch",
+        "dur": 1.0209999999999866,
+        "id": 216,
+        "name": "npu1pe0::Task::aten::add.Tensor",
+        "ph": "X",
+        "pid": 0,
+        "tid": 1,
+        "ts": 88.739
+      },
+      {
+        "args": {
+          "chip_index": "0",
+          "cluster_index": "0",
+          "device_index": "0",
+          "stream_id": "0",
+          "thread.id": "0"
+        },
+        "cat": "FuriosaTorch",
+        "dur": 45.160000000000025,
+        "id": 217,
+        "name": "npu1pe0::profile_d2h::compile",
+        "ph": "X",
+        "pid": 0,
+        "tid": 0,
+        "ts": 361.282
+      },
+      {
+        "args": {
+          "chip_index": "0",
+          "cluster_index": "0",
+          "device_index": "0",
+          "stream_id": "0",
+          "thread.id": "0"
+        },
+        "cat": "FuriosaTorch",
+        "dur": 7.159999999999968,
+        "id": 218,
+        "name": "npu1pe0::launch::compile",
+        "ph": "X",
+        "pid": 0,
+        "tid": 0,
+        "ts": 308.802
+      },
+      {
+        "args": {
+          "begin_cycle": "3917338180",
+          "chip_index": "0",
+          "cluster_index": "0",
+          "cycle_actual": "2020",
+          "device_index": "0",
+          "end_cycle": "3917340200",
+          "stream_id": "0",
+          "thread.id": "1",
+          "uid": "0"
+        },
+        "cat": "FuriosaTorch",
+        "dur": 1.0070000000000618,
+        "id": 219,
+        "name": "npu1pe0::Task::compile",
+        "ph": "X",
+        "pid": 0,
+        "tid": 1,
+        "ts": 311.631
+      }
+    ]
+  },
+  "torch": {
+    "events": 61,
+    "names": {
+      "rngd-preflight": 1,
+      "aten::add": 1,
+      "process_name": 17,
+      "process_labels": 17,
+      "process_sort_index": 18,
+      "thread_name": 2,
+      "thread_sort_index": 2,
+      "PyTorch Profiler (0)": 1,
+      "Iteration Start: PyTorch Profiler": 1,
+      "Record Window End": 1
+    },
+    "npu_events": []
+  }
+}

@@ -1,0 +1,13 @@
+case_id,stage,pe,batch,mode,trial,attempt,status,worker_protocol,logging_protocol_current,model_input_prepare_ms,S_ms,F_ms,W_ms,A_ms,compiler_time_ms,incomplete_first_attempt_wall_s,incomplete_first_wall_scope
+formal_p1_b1_compile_t1_a2,formal,1,1,compile,1,2,ok,2,True,1511.836789,140.081874,199511.330597,367.757692,200019.170163,,,
+formal_p1_b1_eager_t1_a2,formal,1,1,eager,1,2,ok,2,True,1199.965347,0.0047,97959.191082,4487.800111,102446.99589300001,,,
+formal_p1_b4_compile_t1_a2,formal,1,4,compile,1,2,ok,2,True,1186.73247,145.319175,440915.586243,1468.075359,442528.980777,,,
+formal_p1_b4_eager_t1_a2,formal,1,4,eager,1,2,ok,2,True,1528.613736,0.00324,166526.597434,17078.174778,183604.77545199997,,,
+formal_p8_b1_compile_t1_a1,formal,8,1,compile,1,1,ok,2,True,1900.527519,144.419842,460719.4798,189.924248,461053.82389,,,
+formal_p8_b1_eager_t1_a1,formal,8,1,eager,1,1,ok,2,True,2050.486043,0.00395,367846.176074,4737.606287,372583.786311,,,
+formal_p8_b1_eager_t2_a1,formal,8,1,eager,2,1,ok,2,True,1928.167379,0.00408,369417.83789,4438.184503,373856.026473,,,
+formal_p8_b1_compile_t2_a1,formal,8,1,compile,2,1,ok,2,True,1908.830221,144.195008,462266.860785,188.587352,462599.64314500004,,,
+formal_p8_b1_compile_t3_a1,formal,8,1,compile,3,1,ok,2,True,1974.434835,142.571356,459034.657337,191.665369,459368.894062,,,
+formal_p8_b1_eager_t3_a1,formal,8,1,eager,3,1,ok,2,True,1710.807388,0.00553,370971.176958,4519.610485,375490.79297300003,,,
+formal_p4_b1_eager_t1_a1,formal,4,1,eager,1,1,ok,2,True,1869.14455,0.00486,121352.286903,8039.480461,129391.772224,,,
+formal_p4_b1_compile_t1_a1,formal,4,1,compile,1,1,ok,2,True,1882.023277,144.063034,204732.581668,327.621796,205204.26649799998,,,

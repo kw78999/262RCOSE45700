@@ -1,0 +1,56 @@
+[
+  {
+    "case_id": "diagnostic_attention_compile_b1_strict",
+    "mode": "attention_compile",
+    "batch": 1,
+    "strict": true,
+    "status": "ok",
+    "native_mha_host_count": 0,
+    "native_mha_host_inclusive_ms": 0,
+    "npu_task_events": 137,
+    "backend_entries": 1,
+    "backend_targets": [
+      [
+        "transpose",
+        "<function multi_head_attention_forward at 0x768e98e0b060>",
+        "<built-in function getitem>",
+        "transpose"
+      ]
+    ],
+    "recompile_limit_warning": false,
+    "recompile_logs_present": false,
+    "graph_break_logs_present": false,
+    "actual_codegen_count": null,
+    "disk_cache_hit": null,
+    "disk_cache_miss": null,
+    "log_reference": "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/logs/diagnostic_attention_compile_b1_strict.stderr.log",
+    "error": null
+  },
+  {
+    "case_id": "diagnostic_attention_compile_b4_strict",
+    "mode": "attention_compile",
+    "batch": 4,
+    "strict": true,
+    "status": "ok",
+    "native_mha_host_count": 0,
+    "native_mha_host_inclusive_ms": 0,
+    "npu_task_events": 137,
+    "backend_entries": 1,
+    "backend_targets": [
+      [
+        "transpose",
+        "<function multi_head_attention_forward at 0x70c51c40f060>",
+        "<built-in function getitem>",
+        "transpose"
+      ]
+    ],
+    "recompile_limit_warning": false,
+    "recompile_logs_present": false,
+    "graph_break_logs_present": false,
+    "actual_codegen_count": null,
+    "disk_cache_hit": null,
+    "disk_cache_miss": null,
+    "log_reference": "/root/ViT/vit_pilot/attention_runs/20261104T160225Z-35e28e/logs/diagnostic_attention_compile_b4_strict.stderr.log",
+    "error": null
+  }
+]

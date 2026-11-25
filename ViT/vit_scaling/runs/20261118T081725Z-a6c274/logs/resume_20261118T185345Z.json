@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-18T18:53:45.630931+00:00",
+  "previous_controller_pid": 269543,
+  "previous_supervisor_pid": 269542,
+  "previous_worker_pid": 463186,
+  "observed_previous_pids_alive": {
+    "269542": false,
+    "269543": false,
+    "463186": false
+  },
+  "last_manifest_updated_utc": "2026-11-18T18:30:29.245894+00:00",
+  "interrupted_case": "validation_p1_b16_compile_t1_a1",
+  "cause": "unknown; no exit event or exception recorded; not attributed to SSH",
+  "device_observation": "furiosa-smi ps empty, memory 0.00/47.50 GiB before resume",
+  "resume_policy": "existing manifest; no overwrite of completed case/cache/output; interrupted attempt preserved; same original 43200-second wall budget",
+  "lifecycle_change": "supervisor explicitly ignores SIGHUP before detach; inherited across subprocess exec; protection against SIGKILL/container teardown/host shutdown is not provided",
+  "code_hashes": {
+    "code/resume_revision_20261118T185345Z/process_guard.py": "a3907fdeb8554388c87800bde4afaa6b03fa4276e932ecdd4bb03c9259f624ff",
+    "code/resume_revision_20261118T185345Z/supervise.py": "bb3dfe99d818ac054dc50dd97812931a6b8493e4d6cb426b1d01669ce32fb086",
+    "code/resume_revision_20261118T185345Z/plots.py": "81edbdaf416445834991e9b3f8500902ee21b0b444b9c318966b07e81e5c389a",
+    "code/resume_revision_20261118T185345Z/analyze.py": "0d1848536211490b522c61a4fedc85bb086d120f3cd574702044dc23833830af",
+    "code/resume_revision_20261118T185345Z/experiment.py": "f47a9d39fecb566e8afff95487feeac2028cb067c0a5f15c2fe6540ebaccd4cf"
+  }
+}

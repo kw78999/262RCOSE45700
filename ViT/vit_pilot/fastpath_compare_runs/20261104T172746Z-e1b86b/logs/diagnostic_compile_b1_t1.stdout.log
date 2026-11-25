@@ -1,0 +1,8 @@
+ INFO furiosa_torch::python_ext: Total 926 supported aten ops
+ INFO furiosa_torch::python_ext: Total 802 decomposition rules are added
+DEBUG furiosa_torch::device: set num fusion: Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1)
+ INFO furiosa_torch::config::cache: Using HOME for cache directory: /root/.cache/furiosa/compiler
+ INFO furiosa_torch::config::cache: Using HOME for cache directory: /root/.cache/furiosa/compiler
+{"utc": "2026-11-04T17:27:58.003354+00:00", "monotonic_ns": 1699126472546589, "pid": 280871, "event": "model_input_prepare_start"}
+{"utc": "2026-11-04T17:27:59.695105+00:00", "monotonic_ns": 1699128164309186, "pid": 280871, "event": "worker_error", "error": "Traceback (most recent call last):\n  File \"/root/ViT/vit_pilot/fastpath_compare_worker.py\", line 61, in main\n    if r['state_dict_bf16_cpu_sha256']!=verified['state_dict_bf16_cpu_sha256']: raise RuntimeError('BF16 state_dict mismatch')\n                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: BF16 state_dict mismatch\n"}
+{"utc": "2026-11-04T17:27:59.695938+00:00", "monotonic_ns": 1699128165125702, "pid": 280871, "event": "worker_end", "status": "error"}

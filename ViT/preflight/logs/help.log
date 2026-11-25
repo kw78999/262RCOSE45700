@@ -1,0 +1,18 @@
+usage: check_vit.py [-h] [--substrate] [--device DEVICE] [--repeats {1,2,3}]
+                    --run-dir RUN_DIR [--cache-dir CACHE_DIR] [--profile]
+                    [--allow-weight-download]
+
+Small RNGD preflight. Never installs packages, rewrites ops, or removes
+caches. Default: ViT; --substrate: BF16 addition API check, never a ViT
+benchmark. Use an external `timeout` to bound compiler/runtime waits.
+
+options:
+  -h, --help            show this help message and exit
+  --substrate
+  --device DEVICE
+  --repeats {1,2,3}
+  --run-dir RUN_DIR
+  --cache-dir CACHE_DIR
+                        Explicit opt-in reuse of a private compiler cache
+  --profile             Extra profiled calls AFTER unprofiled measurements
+  --allow-weight-download

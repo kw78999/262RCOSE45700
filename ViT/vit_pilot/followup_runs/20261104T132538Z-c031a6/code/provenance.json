@@ -1,0 +1,37 @@
+{
+  "initial": {
+    "pilot.py": "90c02fef0abb3f5c0196d3759fcc5898e89a0837742fa998181b172732b22a6e",
+    "prepare.py": "ac70c1196e34dbfc18281cc81dce1cc8ce06d6d023c4d497765763d7c8d923be",
+    "followup.py": "34cfa829e7e9acc7205451d3f9c8f36402ae1ace7ac40f8e279591b8b763c41e",
+    "verify_artifacts.py": "72126bbf02d1e3b73518a22bc31d4ad525d10084f4dbe1761ed512ad065a8564",
+    "followup_worker.py": "4b8f012ddff160a5f468ccd9138a0b0afaf0afc4474103359909c50594d98d64",
+    "plots.py": "f2c19018ffb5197ce1ef79461ee976943d9e4443a0776b911ef03c68a427bcfa",
+    "analyze.py": "f12dc6a8a22abad0e8f7397a3b3751d2146274c76c53a4f3a955ace709098544",
+    "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+    "worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13",
+    "environment.py": "8a2e154f2d64facf5218b9e8282de8605d815a908b3d3c92ffcda0ef0a3f15ab",
+    "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9"
+  },
+  "final": {
+    "pilot.py": "90c02fef0abb3f5c0196d3759fcc5898e89a0837742fa998181b172732b22a6e",
+    "prepare.py": "ac70c1196e34dbfc18281cc81dce1cc8ce06d6d023c4d497765763d7c8d923be",
+    "followup_plots.py": "1f3e201fb50daedec72b51e8eba52da6fcdc53aa35f05e2ebbb0294159d613be",
+    "followup.py": "2c905109262276847de21456d566e314444dd96853904c68ce73fa50d9be63bc",
+    "followup_verify.py": "a085b5ed5645a5e759374e97859dd3ff6403d03513b3baa2b700572c92e874d9",
+    "verify_artifacts.py": "72126bbf02d1e3b73518a22bc31d4ad525d10084f4dbe1761ed512ad065a8564",
+    "followup_worker.py": "87e46681e6326d78a06b1d570ee58b19a2876915059dc64fd333f5c81ed792cf",
+    "followup_analysis.py": "81bdc270ef47723ce0b05f22c665415cde9b489b824d2751d69f687969e22136",
+    "plots.py": "f2c19018ffb5197ce1ef79461ee976943d9e4443a0776b911ef03c68a427bcfa",
+    "analyze.py": "f12dc6a8a22abad0e8f7397a3b3751d2146274c76c53a4f3a955ace709098544",
+    "vit.py": "e8802c4842403d12bf45a26c7fc65a36abeda166ba02e5ce9767c46409b323ee",
+    "worker.py": "1677e9676b691004af197cc19c79c01adefa33d7f4aa1f6160c49116fb724d13",
+    "environment.py": "8a2e154f2d64facf5218b9e8282de8605d815a908b3d3c92ffcda0ef0a3f15ab",
+    "common.py": "2ca3097717b94c35aad6f339e3eb0175a8a2b4cd43ce06cd8bcf00f79962c2d9"
+  },
+  "notes": [
+    "Existing nine pilot Python files unchanged; verified against startup SHA256.",
+    "New followup worker diagnostic observer utc argument bug corrected; initial attempt and own interrupted strict case preserved, retries use new IDs.",
+    "All six performance workers used identical followup_worker/common/vit source hashes; no model/timer/precision/attention/compile setting changes.",
+    "Final analysis/report/plot/audit code completed from saved actual outputs; no additional NPU forward for postprocessing."
+  ]
+}

@@ -1,0 +1,9 @@
+{"event": "worker_start", "case": "stabilization_p1_b1_compile_t1_a2", "estimate_s": 302, "remaining_s": 34597}
+{"event": "worker_end", "case": "stabilization_p1_b1_compile_t1_a2", "status": "ok", "wall_s": 219.08}
+{"event": "worker_start", "case": "stabilization_p1_b1_eager_t1_a2", "estimate_s": 191, "remaining_s": 34378}
+{"event": "worker_end", "case": "stabilization_p1_b1_eager_t1_a2", "status": "ok", "wall_s": 108.45}
+{"event": "worker_start", "case": "formal_p1_b1_compile_t1_a2", "estimate_s": 317, "remaining_s": 34269}
+{"event": "worker_end", "case": "formal_p1_b1_compile_t1_a2", "status": "ok", "wall_s": 217.07}
+{"event": "worker_start", "case": "formal_p1_b1_eager_t1_a2", "estimate_s": 197, "remaining_s": 34052}
+{"event": "worker_end", "case": "formal_p1_b1_eager_t1_a2", "status": "ok", "wall_s": 130.57}
+{"event": "worker_start", "case": "stabilization_p1_b4_compile_t1_a2", "estimate_s": 630, "remaining_s": 33921}

@@ -1,0 +1,419 @@
+[
+  {
+    "pe": 2,
+    "batch": 4,
+    "mode": "eager",
+    "status": "timeout",
+    "reason": "",
+    "case": "cases/p2_b4_eager",
+    "wall_s": 120.37632733443752,
+    "samples": 0,
+    "forward_median_ms": null,
+    "npu_task_median_ms": null
+  },
+  {
+    "pe": 2,
+    "batch": 4,
+    "mode": "compile",
+    "status": "timeout",
+    "reason": "",
+    "case": "cases/p2_b4_compile",
+    "wall_s": 123.53344791708514,
+    "samples": 0,
+    "forward_median_ms": null,
+    "npu_task_median_ms": null
+  },
+  {
+    "pe": 1,
+    "batch": 8,
+    "mode": "eager",
+    "status": "timeout",
+    "reason": "",
+    "case": "cases/p1_b8_eager",
+    "wall_s": 120.4817825248465,
+    "samples": 0,
+    "forward_median_ms": null,
+    "npu_task_median_ms": null
+  },
+  {
+    "pe": 1,
+    "batch": 8,
+    "mode": "compile",
+    "status": "timeout",
+    "reason": "",
+    "case": "cases/p1_b8_compile",
+    "wall_s": 123.63542999979109,
+    "samples": 0,
+    "forward_median_ms": null,
+    "npu_task_median_ms": null
+  },
+  {
+    "pe": 2,
+    "batch": 8,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "lower_batch_resource_or_timeout; support unverified"
+  },
+  {
+    "pe": 2,
+    "batch": 8,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "lower_batch_resource_or_timeout; support unverified"
+  },
+  {
+    "pe": 4,
+    "batch": 8,
+    "mode": "eager",
+    "status": "timeout",
+    "reason": "",
+    "case": "cases/p4_b8_eager",
+    "wall_s": 107.36346820509061,
+    "samples": 0,
+    "forward_median_ms": null,
+    "npu_task_median_ms": null
+  },
+  {
+    "pe": 4,
+    "batch": 8,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 8,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 8,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 2,
+    "batch": 16,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 2,
+    "batch": 16,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 4,
+    "batch": 16,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 4,
+    "batch": 16,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 16,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 16,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 1,
+    "batch": 32,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 1,
+    "batch": 32,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 2,
+    "batch": 32,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 2,
+    "batch": 32,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 4,
+    "batch": 32,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 4,
+    "batch": 32,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 32,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 32,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 1,
+    "batch": 64,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 1,
+    "batch": 64,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 2,
+    "batch": 64,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 2,
+    "batch": 64,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 4,
+    "batch": 64,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 4,
+    "batch": 64,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 64,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 64,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 1,
+    "batch": 128,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 1,
+    "batch": 128,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 2,
+    "batch": 128,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 2,
+    "batch": 128,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 4,
+    "batch": 128,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 4,
+    "batch": 128,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 128,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 128,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 1,
+    "batch": 256,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 1,
+    "batch": 256,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 2,
+    "batch": 256,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 2,
+    "batch": 256,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 4,
+    "batch": 256,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 4,
+    "batch": 256,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 256,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 256,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 1,
+    "batch": 512,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 1,
+    "batch": 512,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 2,
+    "batch": 512,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 2,
+    "batch": 512,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 4,
+    "batch": 512,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 4,
+    "batch": 512,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 512,
+    "mode": "eager",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  },
+  {
+    "pe": 8,
+    "batch": 512,
+    "mode": "compile",
+    "status": "not_attempted",
+    "reason": "total_time_budget"
+  }
+]

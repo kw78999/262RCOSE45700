@@ -1,0 +1,25 @@
+{
+  "run_id": "20261104T132538Z-c031a6",
+  "device": "furiosa:0",
+  "worker_timeout_seconds": 1800,
+  "total_budget_seconds": 7200,
+  "warmup": 5,
+  "repeats": 50,
+  "trials": 3,
+  "atol": null,
+  "rtol": null,
+  "previous_run": "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff",
+  "images": [
+    "/root/ViT/data/vit_real_images_4/images/01_cat.png",
+    "/root/ViT/data/vit_real_images_4/images/02_coffee.png",
+    "/root/ViT/data/vit_real_images_4/images/03_astronaut.png",
+    "/root/ViT/data/vit_real_images_4/images/04_rocket.jpg"
+  ],
+  "dataset_root": "/root/ViT/data/vit_real_images_4",
+  "dtype": "torch.bfloat16",
+  "synthetic_input": false,
+  "model_id": "torchvision.models.vit_b_16",
+  "weights_id": "ViT_B_16_Weights.IMAGENET1K_V1",
+  "expected_performance_records": 672,
+  "unique_images": 4
+}

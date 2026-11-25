@@ -1,0 +1,15 @@
+ViT 미시작 조건 제한 탐색 결과
+
+기존 미시작: 28개 batch/PE 조합, Eager/Compile 56개 조건.
+기존 사유: 핵심 paired3 정식 측정 우선, 예약 예산 및 worker 시간 예측, 8 PE B4 Compile 3600초 시간 초과에 따른 상위 배치 보류, B256/512의 선행 성공 조건 미충족. 마지막 재개에서는 assert.h 오류 10건이 발생했고 약 55.3분의 예산을 남긴 채 종료됐다.
+
+새 탐색: 전체 600초, 조건당 120초(종료 대기 최대 3초 별도), 단일 worker, 자동 재시도 0회. 워밍업 3회 및 프로파일링 5회 예정이었으나 첫 호출 미완료로 실제 측정은 0회.
+PE 2, B4, eager: timeout, worker 120.4초, samples 0
+PE 2, B4, compile: timeout, worker 123.5초, samples 0
+PE 1, B8, eager: timeout, worker 120.5초, samples 0
+PE 1, B8, compile: timeout, worker 123.6초, samples 0
+PE 4, B8, eager: timeout, worker 107.4초, samples 0
+
+총 595.5초. 상태: {'timeout': 5, 'not_attempted': 51}.
+나머지 조건은 작은 배치 실패 후 보류하거나 총시간 예산으로 미시작. 미지원이나 메모리 부족으로 판정하지 않는다. 첫 forward에는 export/compile/cache/load/실행이 포함되며, 시간 초과만으로 이 비용들을 개별 분리할 수 없다.
+반복 횟수를 줄여도 최초 컴파일 비용은 줄지 않는다. 이번 탐색에서 새로운 처리량/최적 배치/PE 결론은 얻지 못했다. 다음 실측에는 호스트 컴파일러·헤더 가용성을 확인하고, 소수 조건의 최초 컴파일에 별도 예산을 배정해야 한다.

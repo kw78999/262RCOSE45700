@@ -1,0 +1,93 @@
+{
+  "run_id": "20261104T113745Z-8fccff",
+  "global_unique_samples": 4,
+  "note": "B1 reuses the first B4 input; do not count as five independent samples",
+  "comparisons": [
+    {
+      "batch": 1,
+      "trial": 1,
+      "eager_case_id": "fixed_eager_b1_t1",
+      "compile_case_id": "fixed_compile_b1_t1",
+      "status": "structure_finite_ok_tolerance_unset",
+      "tolerance_status": "unset",
+      "accuracy_vs_ground_truth": null,
+      "accuracy_reason": "No labeled accuracy evaluation",
+      "input_kind": "synthetic",
+      "global_unique_samples": 4,
+      "max_abs_error": 0.015625,
+      "mean_abs_error": 0.003264301223680377,
+      "cosine_per_image": [
+        0.999989970372989
+      ],
+      "cosine_mean": 0.999989970372989,
+      "cosine_min": 0.999989970372989,
+      "top1_matches": 1,
+      "compared_images": 1,
+      "top1_ratio": 1.0,
+      "mismatches": [],
+      "eager_shape": [
+        1,
+        1000
+      ],
+      "compile_shape": [
+        1,
+        1000
+      ],
+      "eager_nan": 0,
+      "eager_inf": 0,
+      "compile_nan": 0,
+      "compile_inf": 0,
+      "cosine_undefined_reasons": [],
+      "input_ids": [
+        "synthetic_seed42_0"
+      ],
+      "reason": "Output tolerance not agreed; small-input consistency only"
+    },
+    {
+      "batch": 4,
+      "trial": 1,
+      "eager_case_id": "fixed_eager_b4_t1",
+      "compile_case_id": "fixed_compile_b4_t1",
+      "status": "structure_finite_ok_tolerance_unset",
+      "tolerance_status": "unset",
+      "accuracy_vs_ground_truth": null,
+      "accuracy_reason": "No labeled accuracy evaluation",
+      "input_kind": "synthetic",
+      "global_unique_samples": 4,
+      "max_abs_error": 0.03125,
+      "mean_abs_error": 0.003441368695348501,
+      "cosine_per_image": [
+        0.9999904417486462,
+        0.9999880329553009,
+        0.9999900330705642,
+        0.9999860051478102
+      ],
+      "cosine_mean": 0.9999886282305803,
+      "cosine_min": 0.9999860051478102,
+      "top1_matches": 4,
+      "compared_images": 4,
+      "top1_ratio": 1.0,
+      "mismatches": [],
+      "eager_shape": [
+        4,
+        1000
+      ],
+      "compile_shape": [
+        4,
+        1000
+      ],
+      "eager_nan": 0,
+      "eager_inf": 0,
+      "compile_nan": 0,
+      "compile_inf": 0,
+      "cosine_undefined_reasons": [],
+      "input_ids": [
+        "synthetic_seed42_0",
+        "synthetic_seed42_1",
+        "synthetic_seed42_2",
+        "synthetic_seed42_3"
+      ],
+      "reason": "Output tolerance not agreed; small-input consistency only"
+    }
+  ]
+}

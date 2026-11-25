@@ -1,0 +1,13 @@
+{
+  "utc": "2026-11-18T14:35:33.880768+00:00",
+  "scope": "/root/ViT; generated figures and virtualenv site-packages excluded",
+  "files": [
+    "data/vit_real_images_4/images/01_cat.png",
+    "data/vit_real_images_4/images/02_coffee.png",
+    "data/vit_real_images_4/images/03_astronaut.png",
+    "data/vit_real_images_4/images/04_rocket.jpg"
+  ],
+  "additional_project_real_images_found": 0,
+  "other_filesystems_not_searched": true,
+  "new_accuracy_dataset_introduced": false
+}

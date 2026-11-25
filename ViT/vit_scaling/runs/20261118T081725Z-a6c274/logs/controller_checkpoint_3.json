@@ -1,0 +1,6 @@
+{
+  "reason": "Reserve paired stability budget before core trials; only start complete trial groups",
+  "controller_pid": 96892,
+  "worker_case": "exploration_p1_b4_eager_t1_a1",
+  "worker_terminated": false
+}

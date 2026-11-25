@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-04T14:33:17.494190+00:00",
+  "status": "pass",
+  "errors": [],
+  "performance_records": 336,
+  "successful_workers": 6,
+  "held_workers": 6,
+  "expected_full_design_records": 672,
+  "expected_records_for_successful_workers": 336,
+  "existing_sources_unchanged": true,
+  "notes": "Independent CSV arithmetic and metadata/file/tensor/plot-source audit; no NPU or model forward, no output tolerance acceptance claim"
+}

@@ -1,0 +1,2451 @@
+
+### /root/venv/lib/python3.12/site-packages/furiosa/torch/__init__.py
+1: __all__ = [
+2:     # tensor
+3:     "empty",
+4:     "empty_sharded",
+5:     "empty_strided_sharded",
+6:     "copy_from_tensor",
+7:     "resize",
+8:     "with_memory_type",
+9:     "MemoryType",
+10:     # device API
+11:     "device",
+12:     "is_initialized",
+13:     "get_amp_supported_dtype",
+14:     "is_available",
+15:     "is_register_hook",
+16:     "manual_seed_all",
+17:     "register_hook",
+18:     "_generator_default_state_tensor",
+19:     "_generator_state_tensor",
+20:     "_is_in_bad_fork",
+21:     # torch.compile backend
+22:     "backend",
+23:     "backend_eager_fallback",
+24:     # modules
+25:     "DfgModule",
+26:     "LowerModule",
+27:     "TclModule",
+28:     "CompileModule",
+29:     "Runnable",
+30:     "TpModule",
+31:     "compile_from_visa",
+32:     "compile_from_visa_str",
+33:     # furiosa custom device APIs
+34:     "set_fusion",
+35:     "get_fusion",
+36:     "Fusion",
+37:     "get_available_devices",
+38:     "get_device_configuration",
+39:     "MeshKind",
+40:     "set_mesh_kind",
+41:     "get_mesh_kind",
+42:     "current_device",
+43:     "exchange_device",
+44:     # stream API
+45:     "Stream",
+46:     "Event",
+47:     "current_stream",
+48:     "default_stream",
+49:     "set_stream",
+50:     "stream",
+51:     # compiler & configs
+52:     "compiler",
+53:     "config",
+54:     # ir
+55:     "ir",
+56:     # extra
+57:     "ext",
+58:     "export",
+59:     "dryrun",
+60:     "error",
+61:     "version",
+62: ]
+63: 
+64: from collections.abc import Sequence
+65: from contextlib import contextmanager
+66: 
+67: import torch
+68: 
+69: from furiosa.torch._C import version
+70: from furiosa.torch._C._ext import (
+71:     get_amp_supported_dtype,
+72:     is_available,
+73:     is_register_hook,
+74:     manual_seed_all,
+75:     register_hook,
+76:     _generator_default_state_tensor,
+77:     _generator_state_tensor,
+78:     _is_in_bad_fork,
+79: )
+80: from furiosa.torch._C.device import (
+81:     set_fusion,
+82:     get_fusion,
+83:     Fusion,
+84:     get_available_devices,
+85:     get_device_configuration,
+86:     MeshKind,
+87:     set_mesh_kind,
+88:     get_mesh_kind,
+89:     exchange_device,
+90:     current_device,
+91: )
+92: from furiosa.torch._C.stream import (
+93:     Stream,
+94:     Event,
+95: )
+96: from furiosa.torch.config._stream import current_stream, default_stream, set_stream
+97: from furiosa.torch._C.tensor import empty, copy_from_tensor
+98: from furiosa.torch import error, ir
+99: from furiosa.torch._tensor import MemoryType, _set_dram_shape, with_memory_type
+100: from furiosa.torch import export
+101: from furiosa.torch import compiler
+102: from furiosa.torch import config
+103: from furiosa.torch._module import (
+104:     CompileModule,
+105:     DfgModule,
+106:     LowerModule,
+107:     TclModule,
+108:     Runnable,
+109:     TpModule,
+110:     compile_from_visa,
+111:     compile_from_visa_str,
+112: )
+113: from furiosa.torch._backend.torch_compile import backend, backend_eager_fallback
+114: from furiosa.torch import ext
+115: from furiosa.torch import dryrun
+116: from furiosa.torch._custom_ops.empty import _resolve_device
+117: 
+118: 
+119: @contextmanager
+120: def stream(device=None):
+121:     """
+122:     A context manager that creates a new stream on the specified device and sets it as the current stream within the context.
+123: 
+124:     Args:
+125:         device (torch.device, optional): The device on which to create the new stream. If None, the current device will be used.
+126:     """
+127:     device = device if device is not None else current_device()
+128:     new_s = Stream(device)
+129:     prev_s = set_stream(new_s)
+130:     try:
+131:         yield new_s
+132:     finally:
+133:         assert set_stream(prev_s).stream_id == new_s.stream_id
+134: 
+135: 
+136: @contextmanager
+137: def device(device):
+138:     """
+139:     A context manager that temporarily sets the current device to the specified device.
+140: 
+141:     Args:
+142:         device (torch.device, optional): The device to set as the current device within the context.
+143:     """
+144:     this = device
+145:     prev = exchange_device(device)
+146:     try:
+147:         yield device
+148:     finally:
+149:         assert exchange_device(prev) == this
+150: 
+151: 
+152: def is_initialized() -> bool:
+153:     """
+154:     Check if the Furiosa NPU device has been initialized.
+155: 
+156:     Returns:
+157:         bool: True if the device is initialized, False otherwise.
+158:     """
+159:     # Report backend hook registration state.
+160:     return is_register_hook()
+161: 
+162: 
+163: def empty_sharded(
+164:     size: Sequence[int],
+165:     *,
+166:     shard_axes: Sequence[tuple[int, int]],
+167:     dtype: torch.dtype | None = None,
+168:     device: torch.device | None = None,
+169: ) -> torch.Tensor:
+170:     """Allocate from host/logical sizes with host-axis shard splits."""
+171:     dtype = dtype if dtype is not None else torch.get_default_dtype()
+172:     dram_shape = ir.FlatDramShape.from_host_sizes(list(size), shard_axes, dtype)
+173:     return empty(dram_shape, _resolve_device(device))
+174: 
+175: 
+176: def empty_strided_sharded(
+177:     size: Sequence[int],
+178:     stride: Sequence[int],
+179:     *,
+180:     shard_axes: Sequence[tuple[int, int]],
+181:     dtype: torch.dtype | None = None,
+182:     device: torch.device | None = None,
+183: ) -> torch.Tensor:
+184:     """Allocate from host/logical sizes and strides with host-axis shard splits."""
+185:     dtype = dtype if dtype is not None else torch.get_default_dtype()
+186:     dram_shape = ir.FlatDramShape.from_host_sizes_and_strides(
+187:         list(size), list(stride), shard_axes, dtype
+188:     )
+189:     return empty(dram_shape, _resolve_device(device))
+190: 
+191: 
+192: # FIXME, this is a temporary API for matching up dram shape, calling resize_ will break
+193: # dram shape integrity, we need to find a better way to handle this.
+194: def resize(t, size: list[int]):
+195:     t.resize_(size)
+196:     dram_shape = ir.FlatDramShape.new_as_broadcast(size, t.dtype)
+197:     _set_dram_shape(t, dram_shape)
+198:     return t
+
+### /root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/torch_compile.py
+1: import logging
+2: import functools
+3: from collections.abc import Callable, Mapping
+4: from typing import Optional
+5: 
+6: import torch
+7: from torch.utils import _pytree as pytree
+8: from torch._subclasses.fake_tensor import FakeTensorMode
+9: 
+10: from furiosa.torch import error
+11: from furiosa.torch import _utils
+12: from furiosa.torch.export import PassContext, make_pass_context
+13: from furiosa.torch.export._meta import is_runnable_node
+14: from furiosa.torch.export.passes import (
+15:     _inline_dfg_tensors_from_user_inputs,
+16:     _split_by_runnable,
+17: )
+18: from furiosa.torch._module import CompileModule
+19: from .runnable_sequence import build_sequence, run_sequence
+20: 
+21: logger = logging.getLogger("furiosa_torch")
+22: 
+23: 
+24: class _Backend:
+25:     def __init__(
+26:         self,
+27:         compiler_config=None,
+28:         *,
+29:         eager_fallback=False,
+30:         decomp_overrides: Mapping[torch._ops.OpOverload, Callable] = {},
+31:     ):
+32:         self.compiler_config = compiler_config
+33:         self.eager_fallback = eager_fallback
+34:         self.decomp_overrides = dict(decomp_overrides)
+35:         # Snapshot overrides so cached forwards use one stable decomposition table.
+36:         self._pass_context = make_pass_context(self.decomp_overrides)
+37: 
+38:     @classmethod
+39:     def with_config(
+40:         cls,
+41:         compiler_config=None,
+42:         *,
+43:         eager_fallback=False,
+44:         decomp_overrides: Mapping[torch._ops.OpOverload, Callable] = {},
+45:     ) -> "_Backend":
+46:         """
+47:         backend for proper compilation, it will compile the graph and execute it with the compiled Runnable
+48: 
+49:         Args:
+50:             compiler_config: Compiler configuration
+51:             eager_fallback: If True, fall back to eager execution when an op is
+52:                 unsupported on the device.
+53:             decomp_overrides: Mapping of ``torch._ops.OpOverload`` to a Python
+54:                 decomposition callable. Same-key entries override the built-in
+55:                 ``STD_DECOMPOSITIONS`` (an override warning is logged). The
+56:                 mapping is folded into the backend's pass context at
+57:                 construction time, so later mutation of this attribute is not
+58:                 honored — build a new backend via ``with_config`` to switch
+59:                 rule sets.
+60: 
+61:         Returns:
+62:             Callable: A function that takes inputs and returns outputs
+63:         """
+64:         return cls(
+65:             compiler_config,
+66:             eager_fallback=eager_fallback,
+67:             decomp_overrides=decomp_overrides,
+68:         )
+69: 
+70:     def __call__(
+71:         self, gm: torch.fx.GraphModule, example_inputs: tuple[torch.Tensor, ...]
+72:     ):
+73:         """
+74:         backend for proper compilation, it will compile the graph and execute it with the compiled Runnable
+75: 
+76:         Args:
+77:             gm (torch.fx.GraphModule): GraphModule to be compiled
+78: 
+79:         Returns:
+80:             Callable: A function that takes inputs and returns outputs
+81:         """
+82:         return _backend_inner(
+83:             gm,
+84:             self.compiler_config,
+85:             self.eager_fallback,
+86:             pass_context=self._pass_context,
+87:         )
+88: 
+89:     def backend(
+90:         self, gm: torch.fx.GraphModule, example_inputs: tuple[torch.Tensor, ...]
+91:     ):
+92:         """
+93:         Alias of `__call__`.
+94:         """
+95:         return self(gm, example_inputs)
+96: 
+97:     def precompile(
+98:         self, gm: torch.fx.GraphModule, example_inputs: tuple[torch.Tensor, ...]
+99:     ):
+100:         """
+101:         backend for warm up compile cache
+102:         """
+103: 
+104:         logger.debug(f"precompile gm {gm.graph}")
+105: 
+106:         seq_plan = None
+107: 
+108:         def forward(*args):
+109:             nonlocal gm, seq_plan
+110: 
+111:             try:
+112:                 if seq_plan is None:
+113:                     split_gm, filter_inputs = _build_segmented(
+114:                         gm, args, self.compiler_config, self._pass_context
+115:                     )
+116:                     seq_plan = build_sequence(split_gm, filter_inputs(args))
+117:                     seq_plan.filter_inputs = filter_inputs
+118:             except Exception as e:
+119:                 logger.warning(f"failed to precompile target gm: {e}")
+120:             return _run_fake(gm, *args)
+121: 
+122:         return forward
+123: 
+124: 
+125: backend = _Backend()
+126: backend_eager_fallback = _Backend(eager_fallback=True)
+127: 
+128: 
+129: def _run_fake(gm: torch.fx.GraphModule, *args, **kwargs) -> tuple[torch.Tensor, ...]:
+130:     fake_mode = FakeTensorMode()
+131:     converter = fake_mode.fake_tensor_converter
+132:     to_fake = functools.partial(converter.from_real_tensor, fake_mode)
+133: 
+134:     fake_args = pytree.tree_map(to_fake, args)
+135:     fake_kwrags = pytree.tree_map(to_fake, kwargs)
+136:     with fake_mode:
+137:         fake_outputs = gm(*fake_args, **fake_kwrags)
+138:     return tuple(
+139:         torch.empty_strided(t.shape, t.stride(), dtype=t.dtype, device=t.device).zero_()
+140:         for t in fake_outputs
+141:     )
+142: 
+143: 
+144: def _example_tensor(node: torch.fx.Node) -> torch.Tensor:
+145:     meta = node.meta
+146:     if "val" in meta:
+147:         return meta["val"]
+148:     if "example_value" in meta:
+149:         return meta["example_value"]
+150:     raise KeyError(f"node {node} has no 'val'/'example_value' meta")
+151: 
+152: 
+153: def _build_segmented(
+154:     gm: torch.fx.GraphModule,
+155:     args: tuple[torch.Tensor, ...],
+156:     compiler_config,
+157:     pass_context: Optional[PassContext],
+158: ) -> tuple[torch.fx.GraphModule, Callable]:
+159:     """Prepare the split graph and input filter for ``RunnableSequence``.
+160: 
+161:     DFG tensors are inlined as constants first, so the returned filter removes
+162:     them from runtime inputs.
+163:     """
+164:     ep, filter_inputs = _inline_dfg_tensors_from_user_inputs(gm, args)
+165:     inlined_gm = ep.module(check_guards=False)
+166: 
+167:     split_gm = _split_by_runnable(inlined_gm)
+168:     logger.debug(f"building segmented gm, split {split_gm.graph}")
+169: 
+170:     segment_names = {
+171:         name
+172:         for name, sub in split_gm.named_children()
+173:         if isinstance(sub, torch.fx.GraphModule)
+174:         and not any(is_runnable_node(n) for n in sub.graph.nodes)
+175:     }
+176:     logger.debug(
+177:         f"split into {len(list(split_gm.named_children()))} submodules, "
+178:         f"{len(segment_names)} to compile"
+179:     )
+180: 
+181:     for name in segment_names:
+182:         submod = getattr(split_gm, name)
+183:         seg_args = tuple(
+184:             _example_tensor(n) for n in submod.graph.find_nodes(op="placeholder")
+185:         )
+186:         cm = CompileModule.from_module(
+187:             submod,
+188:             seg_args,
+189:             compiler_config=compiler_config,
+190:             pass_context=pass_context,
+191:         )
+192:         # Empty binaries have no device work to move.
+193:         if cm.runnable._inner.binary.numel() > 0:
+194:             device = _utils.ensure_furiosa_device(seg_args)
+195:             cm.to(device)
+196:         cm._segment_example_inputs = seg_args  # for `flatten_inputs` order recovery
+197:         setattr(split_gm, name, cm)
+198: 
+199:     return split_gm, filter_inputs
+200: 
+201: 
+202: def _backend_inner(
+203:     gm: torch.fx.GraphModule,
+204:     compiler_config=None,
+205:     eager_fallback=False,
+206:     *,
+207:     pass_context: Optional[PassContext] = None,
+208: ):
+209:     logger.debug(f"torch.compile {gm.graph}")
+210:     seq_plan = None
+211: 
+212:     def forward(*args):
+213:         nonlocal gm, compiler_config, seq_plan
+214: 
+215:         # Build the segmented RunnableSequence once; later calls only bind inputs.
+216:         try:
+217:             if seq_plan is None:
+218:                 split_gm, filter_inputs = _build_segmented(
+219:                     gm, args, compiler_config, pass_context
+220:                 )
+221:                 seq_plan = build_sequence(split_gm, filter_inputs(args))
+222:                 seq_plan.filter_inputs = filter_inputs
+223:             return run_sequence(seq_plan, args)
+224:         except (error.UnsupportedOpError, NotImplementedError) as e:
+225:             if not eager_fallback:
+226:                 # Implicit eager execution is disabled, re-raise the exception
+227:                 logger.error(
+228:                     f"eager fallback is not allowed for the target gm", exc_info=e
+229:                 )
+230:                 raise e from None
+231:             logger.debug(f"eager fallback for the target gm: {e}")
+232:             return gm(*args)
+233: 
+234:     return forward
+
+### /root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py
+1: import logging
+2: 
+3: import torch
+4: 
+5: from furiosa.torch import _utils, error, config
+6: from furiosa.torch.profiler import RecordFunction
+7: 
+8: from ._exported_program import run_by_cpu
+9: from .aten import AtenOp
+10: 
+11: 
+12: logger = logging.getLogger("furiosa_torch")
+13: 
+14: 
+15: @torch.compiler.disable
+16: def run_aten_op(aten_op_name, op_callable, *args, **kwargs):
+17:     qualified_aten_op_name = f"aten::{aten_op_name}"
+18:     with RecordFunction(qualified_aten_op_name):
+19:         return _run_aten_op(qualified_aten_op_name, op_callable, *args, **kwargs)
+20: 
+21: 
+22: @torch.compiler.disable
+23: def _run_aten_op(qualified_aten_op_name, op_callable, *args, **kwargs):
+24:     with RecordFunction(f"run_aten_op::build_aten_op"):
+25:         given_device = kwargs.pop("device", None)
+26:         aten_op = AtenOp(qualified_aten_op_name, op_callable, args, kwargs)
+27:         # Pass the flattened tensor-only leaves the program was traced from;
+28:         # the original nested args would mismatch the exported input spec.
+29:         traceable_args = aten_op.traceable_args
+30:         traceable_kwargs = aten_op.traceable_kwargs
+31: 
+32:     try:
+33:         with RecordFunction(f"run_aten_op::compile_and_load"):
+34:             tensors = list(
+35:                 filter(lambda t: isinstance(t, torch.Tensor), traceable_args)
+36:             )
+37:             device = _utils.ensure_furiosa_device(tensors, given_device=given_device)
+38:             m = aten_op.compile_and_load(device)
+39:         outputs = m(*traceable_args, **traceable_kwargs)
+40:     except error.UnsupportedOpError as e:
+41:         if not config.get_cpu_fallback():
+42:             raise e
+43:         else:
+44:             with RecordFunction(f"run_aten_op::build_exported_program"):
+45:                 exported = aten_op.build_exported_program()
+46:                 traceable_args = aten_op.traceable_args
+47:                 traceable_kwargs = aten_op.traceable_kwargs
+48: 
+49:             logger.debug(
+50:                 f"failed to compile & run {qualified_aten_op_name} on Furiosa, fallback to CPU",
+51:                 exc_info=e,
+52:             )
+53:             outputs = run_by_cpu(exported, traceable_args, traceable_kwargs)
+54: 
+55:     return outputs
+
+### /root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py
+1: import logging
+2: from dataclasses import dataclass
+3: from functools import lru_cache
+4: from types import TracebackType
+5: from typing import Optional
+6: 
+7: import torch
+8: from torch.utils import _pytree as pytree
+9: 
+10: from furiosa.torch._module import CompileModule
+11: from furiosa.torch import _utils
+12: from furiosa.torch.export import PASSES
+13: from furiosa.torch.profiler import instrument_with_name
+14: from ._utils import cache_key_from_args
+15: 
+16: 
+17: logger = logging.getLogger("furiosa_torch")
+18: 
+19: 
+20: @dataclass
+21: class AtenOpCompileResult:
+22:     cached: torch.nn.Module | Exception
+23:     lru_cache_hit: bool = False
+24:     original_traceback: Optional[TracebackType] = None
+25: 
+26:     def out(self):
+27:         if isinstance(self.cached, Exception):
+28:             raise self.cached.with_traceback(self.original_traceback)
+29:         return self.cached
+30: 
+31: 
+32: @instrument_with_name("AtenOp::build_exported_program")
+33: @torch.compiler.disable
+34: def _build_exported_program(aten_op) -> torch.export.ExportedProgram:
+35:     logger.info("Building exported program %s", aten_op)
+36: 
+37:     op_callable = aten_op.op_callable
+38:     args = aten_op.traceable_args
+39:     args_spec = aten_op.args_spec
+40:     non_traceable_args = aten_op.non_traceable_args
+41:     non_traceable_kwargs = aten_op.non_traceable_kwargs
+42:     traceable_kwargs = aten_op.traceable_kwargs
+43:     num_flattened_args = len(args) + len(non_traceable_args)
+44: 
+45:     class M(torch.nn.Module):
+46:         def __init__(self, non_traceable_args, non_traceable_kwargs):
+47:             super().__init__()
+48:             # torch export can't trace argument-related types,
+49:             # such as torch.device, torch.dtype, etc.
+50:             self.non_traceable_args = non_traceable_args
+51:             self.non_traceable_kwargs = non_traceable_kwargs
+52: 
+53:         def forward(self, *args, **kwargs):
+54:             traceable_args = iter(args)
+55:             flattened_args = [
+56:                 self.non_traceable_args[index]
+57:                 if index in self.non_traceable_args
+58:                 else next(traceable_args)
+59:                 for index in range(num_flattened_args)
+60:             ]
+61:             structured_args = pytree.tree_unflatten(flattened_args, args_spec)
+62:             return op_callable(*structured_args, **self.non_traceable_kwargs, **kwargs)
+63: 
+64:     fake_args, fake_kwargs = _utils.to_fake_furiosa_tensors((args, traceable_kwargs))
+65: 
+66:     exported = torch.export.export(
+67:         M(non_traceable_args, non_traceable_kwargs),
+68:         fake_args,
+69:         fake_kwargs,
+70:         strict=False,
+71:     )
+72:     for p in PASSES:
+73:         exported = p(exported)
+74:     return exported
+75: 
+76: 
+77: _build_exported_program_cached = lru_cache(maxsize=8192)(_build_exported_program)
+78: 
+79: 
+80: def set_build_exported_program_cache(maxsize: int):
+81:     global _build_exported_program_cached
+82:     _build_exported_program_cached.cache_clear()
+83:     _build_exported_program_cached = lru_cache(maxsize=maxsize)(_build_exported_program)
+84: 
+85: 
+86: @instrument_with_name("AtenOp::compile")
+87: @torch.compiler.disable
+88: def _compile(aten_op) -> AtenOpCompileResult:
+89:     location = _utils._find_user_call_site()
+90:     location_suffix = f" at {location}" if location is not None else ""
+91: 
+92:     task_name = f"{aten_op.aten_op_name}{location_suffix}"
+93: 
+94:     try:
+95:         exported = _build_exported_program_cached(aten_op)
+96:         compiled = CompileModule.from_exported(exported, task_name=task_name)
+97:         return AtenOpCompileResult(compiled)
+98:     except Exception as e:
+99:         import traceback
+100: 
+101:         original_tb = e.__traceback__
+102:         # Clear locals from exception traceback to allow tensor deallocation
+103:         traceback.clear_frames(original_tb)
+104:         return AtenOpCompileResult(e, original_traceback=original_tb)
+105: 
+106: 
+107: _compile_cached = lru_cache(maxsize=8192)(_compile)
+108: 
+109: 
+110: def set_compile_cache(maxsize: int):
+111:     global _compile_cached
+112:     _compile_cached.cache_clear()
+113:     _compile_cached = lru_cache(maxsize=maxsize)(_compile)
+114: 
+115: 
+116: @instrument_with_name("AtenOp::compile_and_load")
+117: @torch.compiler.disable
+118: def _compile_and_load(aten_op, device: torch.device) -> AtenOpCompileResult:
+119:     ret = _compile_cached(aten_op)
+120:     if isinstance(ret.cached, torch.nn.Module):
+121:         logger.info("Loading to %s for %s", device, aten_op)
+122:         ret.cached.to(device)
+123:     return ret
+124: 
+125: 
+126: _compile_and_load_cached = lru_cache(maxsize=32)(_compile_and_load)
+127: 
+128: 
+129: def set_load_cache(maxsize: int):
+130:     global _compile_and_load_cached
+131:     _compile_and_load_cached.cache_clear()
+132:     _compile_and_load_cached = lru_cache(maxsize=maxsize)(_compile_and_load)
+133: 
+134: 
+135: class AtenOp:
+136:     def __init__(
+137:         self,
+138:         aten_op_name,
+139:         op_callable,
+140:         args,
+141:         kwargs,
+142:     ):
+143:         self.aten_op_name = aten_op_name
+144:         self.op_callable = op_callable
+145: 
+146:         flattened_args, self.args_spec = pytree.tree_flatten(args)
+147: 
+148:         self.non_traceable_args = {}
+149:         traceable_args = []
+150:         for index, arg in enumerate(flattened_args):
+151:             if isinstance(arg, torch.Tensor):
+152:                 traceable_args.append(arg)
+153:             else:
+154:                 self.non_traceable_args[index] = arg
+155:         self.traceable_args = tuple(traceable_args)
+156: 
+157:         self.non_traceable_kwargs = {}
+158:         self.traceable_kwargs = {}
+159:         for key, value in kwargs.items():
+160:             if isinstance(value, torch.Tensor):
+161:                 self.traceable_kwargs[key] = value
+162:             else:
+163:                 self.non_traceable_kwargs[key] = value
+164: 
+165:         self.args = args
+166:         self.flatten_shape_params = cache_key_from_args(args, kwargs)
+167:         self.aten_op_hash = hash((self.aten_op_name, self.flatten_shape_params))
+168: 
+169:     def build_exported_program(self) -> torch.export.ExportedProgram:
+170:         return _build_exported_program_cached(self)
+171: 
+172:     def compile_and_load(self, device: torch.device) -> CompileModule:
+173:         return _compile_and_load_cached(self, device).out()
+174: 
+175:     def compile(self) -> CompileModule:
+176:         return _compile_cached(self).out()
+177: 
+178:     def compile_raw(self) -> AtenOpCompileResult:
+179:         cache_info_before = _compile_cached.cache_info()
+180:         compile_result = _compile_cached(self)
+181:         cache_info_after = _compile_cached.cache_info()
+182:         return AtenOpCompileResult(
+183:             cached=compile_result.cached,
+184:             lru_cache_hit=cache_info_after.hits > cache_info_before.hits,
+185:         )
+186: 
+187:     def __hash__(self):
+188:         return self.aten_op_hash
+189: 
+190:     def __eq__(self, other):
+191:         if not isinstance(other, AtenOp):
+192:             return False
+193:         eq = self.aten_op_name == other.aten_op_name
+194:         eq &= self.flatten_shape_params == other.flatten_shape_params
+195:         return eq
+196: 
+197:     def __str__(self):
+198:         # Exclude treespec when printing
+199:         args = cache_key_from_args(self.args, {})[1:]
+200:         traceable_kwargs = cache_key_from_args((), self.traceable_kwargs)[1:]
+201:         non_traceable_kwargs = cache_key_from_args((), self.non_traceable_kwargs)[1:]
+202: 
+203:         return f"AtenOp(aten_op_name={self.aten_op_name}, args={args}, traceable_kwargs={traceable_kwargs}, non_traceable_kwargs={non_traceable_kwargs})"
+
+### /root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/_exported_program.py
+1: import logging
+2: from typing import Any
+3: 
+4: import torch
+5: from torch.utils import _pytree as pytree
+6: 
+7: from furiosa.torch import _utils
+8: from furiosa.torch.export._utils import ep_to_cpu
+9: from furiosa.torch.profiler import RecordFunction
+10: 
+11: 
+12: logger = logging.getLogger("furiosa_torch")
+13: 
+14: 
+15: _run_by_cpu_marker = "run_by_cpu"
+16: _copy_to_cpu_marker = "run_by_cpu::copy_to_cpu"
+17: _executed_by_cpu_marker = "run_by_cpu::executed_by_cpu"
+18: _copy_to_device_marker = "run_by_cpu::copy_to_device"
+19: 
+20: 
+21: def run_by_cpu(
+22:     exported: torch.export.ExportedProgram,
+23:     args: tuple[Any, ...],
+24:     kwargs: dict[str, Any],
+25: ) -> Any:
+26:     if torch.compiler.is_compiling():
+27:         return exported.module()(*args, **kwargs)
+28: 
+29:     with RecordFunction(_run_by_cpu_marker):
+30:         return _run_by_cpu_inner(exported, args, kwargs)
+31: 
+32: 
+33: def _run_by_cpu_inner(
+34:     exported: torch.export.ExportedProgram,
+35:     args: tuple[Any, ...],
+36:     kwargs: dict[str, Any],
+37: ) -> Any:
+38:     with RecordFunction(_copy_to_cpu_marker):
+39:         cpu_args = pytree.tree_map(
+40:             lambda t: t.cpu() if isinstance(t, torch.Tensor) else t, args
+41:         )
+42:         cpu_kwargs = pytree.tree_map(
+43:             lambda t: t.cpu() if isinstance(t, torch.Tensor) else t,
+44:             kwargs,
+45:         )
+46: 
+47:     # Fallback inputs are on CPU, but decompositions may leave Furiosa device
+48:     # literals in factory nodes; remap them to avoid interior Furiosa tensors.
+49:     cpu_exported = ep_to_cpu(exported)
+50:     with RecordFunction(_executed_by_cpu_marker):
+51:         outputs = cpu_exported.module()(*cpu_args, **cpu_kwargs)
+52: 
+53:     input_device = _utils.ensure_same_device(args)
+54:     output_device = _utils.ensure_same_device(
+55:         outputs if isinstance(outputs, list | tuple) else [outputs]
+56:     )
+57: 
+58:     if input_device == output_device:
+59:         return outputs
+60: 
+61:     # CPU fallback mutates CPU copies, so copy them back to honor in-place ops.
+62:     with RecordFunction(_copy_to_device_marker):
+63:         furiosa_flatten, _ = pytree.tree_flatten((args, kwargs))
+64:         cpu_flatten, _ = pytree.tree_flatten((cpu_args, cpu_kwargs))
+65:         for furiosa, cpu in zip(furiosa_flatten, cpu_flatten):
+66:             if not isinstance(furiosa, torch.Tensor):
+67:                 continue
+68:             furiosa.copy_(cpu)
+69:         return _utils.move_strided(outputs, device=input_device)
+
+### /root/venv/lib/python3.12/site-packages/furiosa/torch/config/_cache.py
+1: from contextlib import contextmanager
+2: 
+3: from furiosa.torch._C.config import cache, env
+4: 
+5: 
+6: def set_eager_cache_size(
+7:     num_exported_program: int = env.eager_num_exported_program(),
+8:     num_compiled: int = env.eager_num_compiled(),
+9:     num_load: int = env.eager_num_load(),
+10: ):
+11:     """
+12:     Set the eager cache size. num_load is for the cache of loaded modules, it may cause Furiosa OOM
+13:     if the cached modules are too large, or too many
+14: 
+15:     Args:
+16:         num_exported_program (int): The maximum number of exported programs to cache.
+17:         num_compiled (int): The maximum number of compiled modules to cache.
+18:         num_load (int): The maximum number of loaded modules to cache.
+19:     """
+20:     from furiosa.torch._backend.aten import (
+21:         set_build_exported_program_cache,
+22:         set_compile_cache,
+23:         set_load_cache,
+24:     )
+25: 
+26:     set_build_exported_program_cache(num_exported_program)
+27:     set_compile_cache(num_compiled)
+28:     set_load_cache(num_load)
+29: 
+30: 
+31: @contextmanager
+32: def cache_context(
+33:     root_dir=cache.CacheConfig.default_cache_dir(),
+34:     summary: bool = False,
+35:     ensure: bool = False,
+36:     failure_link_dir: str | None = None,
+37: ):
+38:     """
+39:     A context manager that scopes the compiler cache configuration.
+40: 
+41:     Args:
+42:         root_dir (Optional[str]): The cache directory to use within this scope.
+43:             Defaults to the default cache directory (see `CacheConfig.default_cache_dir`).
+44:             Pass `None` explicitly to disable caching within this scope.
+45:         summary (bool): Whether to dump summary after compilation.
+46:         ensure (bool): Whether to ensure the cache directory exists before compilation.
+47:         failure_link_dir (Optional[str]): The directory to link failed compilation artifacts for debugging.
+48:             If None, no links will be created. If provided, the directory will be created if it does not exist.
+49:     """
+50:     cache_config = cache.CacheConfig(
+51:         root_dir=root_dir,
+52:         summary=summary,
+53:         ensure=ensure,
+54:         failure_link_dir=failure_link_dir,
+55:     )
+56:     prev = cache.set_cache_config(cache_config)
+57:     try:
+58:         yield cache_config
+59:     finally:
+60:         cache.set_cache_config(prev)
+
+### /root/venv/lib/python3.12/site-packages/furiosa/torch/config/_stream.py
+1: import torch
+2: 
+3: from furiosa.torch._C.config import stream as config
+4: from furiosa.torch._C.stream import Stream
+5: 
+6: 
+7: def current_stream(device: torch.device | str) -> Stream:
+8:     """Get the current stream for `device`.
+9: 
+10:     If no stream has been explicitly set, the current stream is the default stream for that
+11:     device. NPU operations are submitted to the current stream of their target device.
+12: 
+13:     Args:
+14:         device (torch.device or str): Furiosa device to query.
+15: 
+16:     Returns:
+17:         Stream: The stream currently selected for the device.
+18:     """
+19:     return config.current_stream(device)
+20: 
+21: 
+22: def default_stream(device: torch.device | str) -> Stream:
+23:     """Get the default stream for `device`.
+24: 
+25:     The device keeps this stream alive for as long as it is initialized, so repeated calls return
+26:     handles to the same default stream.
+27: 
+28:     Args:
+29:         device (torch.device or str): Furiosa device to query.
+30: 
+31:     Returns:
+32:         Stream: The default stream for the device.
+33:     """
+34:     return config.default_stream(device)
+35: 
+36: 
+37: def set_stream(stream: Stream) -> Stream:
+38:     """Set `stream` as the current stream for its device and return the previously current stream.
+39: 
+40:     Save the returned stream to restore it later.
+41: 
+42:     Args:
+43:         stream (Stream): Stream to make current for its device.
+44: 
+45:     Returns:
+46:         Stream: The previously current stream for the same device.
+47:     """
+48:     return config.set_stream(stream)
+
+### /root/venv/lib/python3.12/site-packages/furiosa/torch/config/_env.py
+1: __all__ = [
+2:     "FURIOSA_TORCH_LOG",
+3:     "FURIOSA_TORCH_PROFILE",
+4:     "FURIOSA_TORCH_STREAM_MAX_INFLIGHT",
+5:     "FURIOSA_TORCH_SKIP_VERSION_CHECK",
+6:     "is_version_check_skipped",
+7:     "FURIOSA_TORCH_DISABLE_TILED_EXECUTION",
+8:     "is_tiled_execution_disabled",
+9:     "FURIOSA_TORCH_EAGER_NUM_EXPORTED_PROGRAM",
+10:     "FURIOSA_TORCH_EAGER_DEFAULT_NUM_EXPORTED_PROGRAM",
+11:     "eager_num_exported_program",
+12:     "FURIOSA_TORCH_EAGER_NUM_COMPILED",
+13:     "FURIOSA_TORCH_EAGER_DEFAULT_NUM_COMPILED",
+14:     "eager_num_compiled",
+15:     "FURIOSA_TORCH_EAGER_NUM_LOAD",
+16:     "FURIOSA_TORCH_EAGER_DEFAULT_NUM_LOAD",
+17:     "eager_num_load",
+18: ]
+19: 
+20: # `pyo3_stub_gen::module_variable!` (used for the constants below) has no way to
+21: # attach a docstring to a generated .pyi entry, so the constants are re-declared
+22: # here in plain Python — griffe reads attribute docstrings from real source, not
+23: # from the compiled extension's stub.
+24: from furiosa.torch._C.config import env as _env
+25: from furiosa.torch._C.config.env import (
+26:     is_version_check_skipped,
+27:     is_tiled_execution_disabled,
+28:     eager_num_exported_program,
+29:     eager_num_compiled,
+30:     eager_num_load,
+31: )
+32: 
+33: FURIOSA_TORCH_LOG: str = _env.FURIOSA_TORCH_LOG
+34: """
+35: Name of the environment variable that controls the verbosity of furiosa-torch's Rust-side logging.
+36: 
+37: Accepts the same directive syntax as `tracing-subscriber`'s `EnvFilter` (as used by, e.g.,
+38: `RUST_LOG`): either a single level applied everywhere, or a comma-separated list of
+39: `target=level` pairs. Levels are `trace`, `debug`, `info`, `warn`, `error` (case-insensitive).
+40: 
+41: If unset, defaults to `furiosa_torch=warn` (only warnings and errors from furiosa-torch itself).
+42: 
+43: Examples:
+44: 
+45: ```
+46: FURIOSA_TORCH_LOG=debug                          # everything at DEBUG or above
+47: FURIOSA_TORCH_LOG=furiosa_torch=trace            # only furiosa_torch spans, at TRACE
+48: FURIOSA_TORCH_LOG=furiosa_torch=debug,device_runtime=warn
+49: ```
+50: """
+51: 
+52: FURIOSA_TORCH_PROFILE: str = _env.FURIOSA_TORCH_PROFILE
+53: """
+54: Name of the environment variable that controls the profiler's trace-level filter and, at the same
+55: time, how much NPU profiling detail is collected.
+56: 
+57: Accepts the same directive syntax as `FURIOSA_TORCH_LOG`. When parsed as a plain level, it also
+58: selects the NPU profiling scope:
+59: 
+60: - `trace`: full detail — operator- and DMA-level NPU timing (highest overhead).
+61: - `debug` or `info`: task-level NPU timing only.
+62: - `warn` or `error`: NPU profiling disabled.
+63: 
+64: If unset, defaults to `info` (task-level NPU timing, no operator/DMA detail).
+65: 
+66: Must be set before a profiling session starts (e.g. before entering `furiosa.torch.profiler`),
+67: since the filter and NPU profiling scope are both fixed at logging/subscriber initialization.
+68: 
+69: Examples:
+70: 
+71: ```
+72: FURIOSA_TORCH_PROFILE=trace   # full NPU profiling detail
+73: FURIOSA_TORCH_PROFILE=warn    # disable NPU profiling entirely
+74: ```
+75: """
+76: 
+77: FURIOSA_TORCH_STREAM_MAX_INFLIGHT: str = _env.FURIOSA_TORCH_STREAM_MAX_INFLIGHT
+78: """
+79: Name of the environment variable that overrides the maximum number of inflight (submitted but not
+80: yet retired) operations allowed per stream.
+81: 
+82: Parsed as a non-negative integer; an unset or unparsable value falls back to the built-in default
+83: of 32. Mainly useful for performance testing and probing device capabilities — most users
+84: shouldn't need to change it.
+85: 
+86: Example:
+87: 
+88: ```
+89: FURIOSA_TORCH_STREAM_MAX_INFLIGHT=64
+90: ```
+91: """
+92: 
+93: FURIOSA_TORCH_SKIP_VERSION_CHECK: str = _env.FURIOSA_TORCH_SKIP_VERSION_CHECK
+94: """
+95: Name of the environment variable that, when set to `"1"`, skips the compatibility check that
+96: `compile_from_visa`/`compile_from_visa_str` run against the installed `furiosa-opt`
+97: (VISA/`cargo-furiosa-opt`) version. See `is_version_check_skipped`.
+98: 
+99: By default, `furiosa-opt` must report a stable (non-prerelease) version compatible with `0.5.x`;
+100: otherwise those functions raise `RuntimeError` before compiling.
+101: 
+102: Note the value itself is `FURIOSA_TORCH_SKIP_FURIOSA_OPT_VERSION_CHECK`, not
+103: `FURIOSA_TORCH_SKIP_VERSION_CHECK` — use this constant rather than hardcoding the name.
+104: 
+105: Example:
+106: 
+107: ```
+108: FURIOSA_TORCH_SKIP_FURIOSA_OPT_VERSION_CHECK=1
+109: ```
+110: """
+111: 
+112: FURIOSA_TORCH_DISABLE_TILED_EXECUTION: str = _env.FURIOSA_TORCH_DISABLE_TILED_EXECUTION
+113: """
+114: Name of the environment variable that, when set to `"1"`, disables tiled execution of the
+115: typecast custom op, falling back to a single-kernel implementation. See
+116: `is_tiled_execution_disabled`.
+117: 
+118: Useful for isolating whether a bug or performance regression is specific to the tiled path.
+119: 
+120: Example:
+121: 
+122: ```
+123: FURIOSA_TORCH_DISABLE_TILED_EXECUTION=1
+124: ```
+125: """
+126: 
+127: FURIOSA_TORCH_EAGER_NUM_EXPORTED_PROGRAM: str = (
+128:     _env.FURIOSA_TORCH_EAGER_NUM_EXPORTED_PROGRAM
+129: )
+130: """
+131: Name of the environment variable that overrides the maximum number of
+132: `torch.export.ExportedProgram` objects cached during eager execution (the first of the three
+133: caches configured by `set_eager_cache_size`).
+134: 
+135: Parsed as an integer; falls back to `FURIOSA_TORCH_EAGER_DEFAULT_NUM_EXPORTED_PROGRAM` (8192) if
+136: unset or unparsable. See `eager_num_exported_program`.
+137: 
+138: Example:
+139: 
+140: ```
+141: FURIOSA_TORCH_EAGER_DEFAULT_NUM_EXPORTED_PROGRAM=4096
+142: ```
+143: """
+144: 
+145: FURIOSA_TORCH_EAGER_DEFAULT_NUM_EXPORTED_PROGRAM: int = (
+146:     _env.FURIOSA_TORCH_EAGER_DEFAULT_NUM_EXPORTED_PROGRAM
+147: )
+148: """
+149: Built-in default for the exported-program cache size in eager execution (currently `8192`), used
+150: when `FURIOSA_TORCH_EAGER_NUM_EXPORTED_PROGRAM` is unset. See `eager_num_exported_program`.
+151: """
+152: 
+153: FURIOSA_TORCH_EAGER_NUM_COMPILED: str = _env.FURIOSA_TORCH_EAGER_NUM_COMPILED
+154: """
+155: Name of the environment variable that overrides the maximum number of compiled artifacts cached
+156: during eager execution (the second of the three caches configured by `set_eager_cache_size`).
+157: 
+158: Parsed as an integer; falls back to `FURIOSA_TORCH_EAGER_DEFAULT_NUM_COMPILED` (8192) if unset or
+159: unparsable. See `eager_num_compiled`.
+160: 
+161: Example:
+162: 
+163: ```
+164: FURIOSA_TORCH_EAGER_DEFAULT_NUM_COMPILED=4096
+165: ```
+166: """
+167: 
+168: FURIOSA_TORCH_EAGER_DEFAULT_NUM_COMPILED: int = (
+169:     _env.FURIOSA_TORCH_EAGER_DEFAULT_NUM_COMPILED
+170: )
+171: """
+172: Built-in default for the compiled-artifact cache size in eager execution (currently `8192`), used
+173: when `FURIOSA_TORCH_EAGER_NUM_COMPILED` is unset. See `eager_num_compiled`.
+174: """
+175: 
+176: FURIOSA_TORCH_EAGER_NUM_LOAD: str = _env.FURIOSA_TORCH_EAGER_NUM_LOAD
+177: """
+178: Name of the environment variable that overrides the maximum number of *loaded* (device-resident)
+179: modules cached during eager execution (the third of the three caches configured by
+180: `set_eager_cache_size`).
+181: 
+182: Parsed as an integer; falls back to `FURIOSA_TORCH_EAGER_DEFAULT_NUM_LOAD` (2048) if unset or
+183: unparsable. See `eager_num_load`.
+184: 
+185: Unlike the exported-program and compiled caches, entries here hold device memory: setting this too
+186: high, or caching modules that are individually too large, can exhaust device memory (OOM).
+187: 
+188: Example:
+189: 
+190: ```
+191: FURIOSA_TORCH_EAGER_DEFAULT_NUM_LOAD=512
+192: ```
+193: """
+194: 
+195: FURIOSA_TORCH_EAGER_DEFAULT_NUM_LOAD: int = _env.FURIOSA_TORCH_EAGER_DEFAULT_NUM_LOAD
+196: """
+197: Built-in default for the loaded-module cache size in eager execution (currently `2048`), used when
+198: `FURIOSA_TORCH_EAGER_NUM_LOAD` is unset. See `eager_num_load`.
+199: """
+
+### /root/venv/lib/python3.12/site-packages/furiosa/torch/_C/stream/__init__.pyi
+1: # This file is automatically generated by pyo3_stub_gen
+2: # ruff: noqa: E501, F401, F403, F405
+3: 
+4: import builtins
+5: import torch
+6: import typing
+7: __all__ = [
+8:     "Event",
+9:     "Stream",
+10: ]
+11: 
+12: @typing.final
+13: class Event:
+14:     r"""
+15:     A marker that records a point in a `Stream`.
+16:     
+17:     Events are used to query completion, synchronize the host with previously submitted work,
+18:     measure elapsed time between two recorded points, or make one stream wait for work recorded in
+19:     another stream.
+20:     
+21:     An event is associated with a Furiosa device. When recorded, it captures the work already
+22:     submitted to the selected stream. When another stream waits on that event, future work on the
+23:     waiting stream is ordered after the event without blocking the host thread.
+24:     
+25:     Note:
+26:         `record()` and `wait()` use the current stream of the event device when no stream is
+27:         passed explicitly. Use an explicit `Stream` when debugging cross-stream ordering; it makes
+28:         the dependency edge easier to see.
+29:     """
+30:     def __new__(cls, device: torch.device | builtins.str) -> Event:
+31:         r"""
+32:         Create a new event on `device`.
+33:         
+34:         Args:
+35:             device (torch.device or str): Furiosa device for the event, such as `torch.device("furiosa:0")` or `"furiosa:0"`.
+36:         
+37:         Returns:
+38:             Event: An event object for the given Furiosa device.
+39:         """
+40:     def query(self) -> builtins.bool:
+41:         r"""
+42:         Check whether the event has no unfinished work.
+43:         
+44:         An event that has not been recorded is considered complete. `query()` is a non-blocking
+45:         completion check. If the event will be used with `elapsed_time()`, call `synchronize()`
+46:         before reading elapsed time.
+47:         
+48:         Returns:
+49:             bool: `True` if the event is complete or has not been recorded, `False` if the work captured by the event is still unfinished.
+50:         """
+51:     def synchronize(self) -> None:
+52:         r"""
+53:         Block the host thread until the event has completed.
+54:         
+55:         If the event was recorded, the host waits for the work captured by the event and stores
+56:         timing information for `elapsed_time()`. Synchronizing an event that has not been recorded
+57:         returns without waiting.
+58:         """
+59:     def record(self, stream: typing.Optional[Stream] = None) -> None:
+60:         r"""
+61:         Record this event at the current point of `stream`.
+62:         
+63:         Work submitted to that stream before the record must complete before the event is
+64:         considered complete. Recording the same event again updates it to a new recorded point.
+65:         
+66:         Args:
+67:             stream (Stream, optional): Stream to record on. If omitted, the current stream of the event device is used.
+68:         """
+69:     def wait(self, stream: typing.Optional[Stream] = None) -> None:
+70:         r"""
+71:         Make future work submitted to `stream` wait until this event completes.
+72:         
+73:         Adds a stream dependency and does not synchronize the host thread. Waiting on an event
+74:         that has not been recorded is a no-op.
+75:         
+76:         Args:
+77:             stream (Stream, optional): Stream that should wait for the event. If omitted, the current stream of the event device is used.
+78:         """
+79:     def elapsed_time(self, other: Event) -> builtins.float:
+80:         r"""
+81:         Return the elapsed time between this event and `other` in milliseconds.
+82:         
+83:         Both events must be recorded and synchronized so timing information is available.
+84:         `start.elapsed_time(end)` returns the time from `start` to `end`.
+85:         
+86:         Note:
+87:             `self` must finish before `other`. Timestamps are compared using each event's
+88:             completion time, not its record point. Calling `start.elapsed_time(finish)` when
+89:             `finish` completed before `start` raises a runtime error.
+90:         
+91:         Args:
+92:             other (Event): The later event to compare against this event.
+93:         
+94:         Returns:
+95:             float: Elapsed time in milliseconds.
+96:         """
+97: 
+98: @typing.final
+99: class Stream:
+100:     r"""
+101:     A logical, in-order queue for submitting NPU work asynchronously to a Furiosa device.
+102:     
+103:     `torch.furiosa.Stream` follows semantics similar to [`torch.Stream`](https://docs.pytorch.org/docs/2.12/generated/torch.Stream.html),
+104:     so PyTorch users can apply a familiar stream-oriented programming model to `furiosa-torch`.
+105:     From the host's point of view, operations are enqueued onto a stream and the host can continue
+106:     other jobs while the device executes the submitted work. The stream provides `query()` to poll
+107:     whether previously submitted work has completed and `synchronize()` to block until completion
+108:     is guaranteed.
+109:     
+110:     Work submitted through the same stream is executed in submission order. Different streams are
+111:     separate logical queues. They let you group submissions, switch the current stream for a block
+112:     of code, and express dependencies between streams with `Event` objects.
+113:     
+114:     Multiple streams do not currently guarantee parallel NPU execution. Use them to separate
+115:     execution flow, make producer and consumer phases easier to read, and express ordering without
+116:     blocking the host between every step.
+117:     
+118:     Each device has a default stream. User-created streams provide additional logical queues for
+119:     the same device, and data copies and compute submitted through a stream follow the same
+120:     ordering model.
+121:     """
+122:     @property
+123:     def stream_id(self) -> builtins.int:
+124:         r"""
+125:         The stream identifier for this device.
+126:         
+127:         The identifier is scoped to a single Furiosa device, so two different devices may have
+128:         streams with the same `stream_id`. The default stream has ID `0`.
+129:         """
+130:     def __eq__(self, other: builtins.object, /) -> builtins.bool: ...
+131:     def __new__(cls, device: torch.device | builtins.str) -> Stream:
+132:         r"""
+133:         Create a new stream on `device`.
+134:         
+135:         Args:
+136:             device (torch.device or str): Furiosa device for the stream, such as `torch.device("furiosa:0")` or `"furiosa:0"`.
+137:         
+138:         Returns:
+139:             Stream: A stream object for the given Furiosa device.
+140:         """
+141:     def query(self) -> builtins.bool:
+142:         r"""
+143:         Check whether all work previously submitted to this stream has completed.
+144:         
+145:         `query()` is a non-blocking check and returns immediately without synchronizing the host
+146:         thread.
+147:         
+148:         Returns:
+149:             bool: `True` if the stream has no in-flight tasks, `False` otherwise.
+150:         """
+151:     def synchronize(self) -> None:
+152:         r"""
+153:         Block the host thread until all work previously submitted to this stream has completed.
+154:         
+155:         Does not wait for unrelated streams unless their work is ordered before this stream through
+156:         events or `wait_stream()`.
+157:         """
+158:     def record_event(self, event: typing.Optional[Event] = None) -> Event:
+159:         r"""
+160:         Record an event at the current point in this stream.
+161:         
+162:         Later work submitted to another stream can wait on the returned event without blocking the
+163:         host.
+164:         
+165:         Args:
+166:             event (Event, optional): Event to record. If omitted, a new `Event` is allocated for this stream's device.
+167:         
+168:         Returns:
+169:             Event: The recorded event.
+170:         """
+171:     def wait_event(self, event: Event) -> None:
+172:         r"""
+173:         Make future work submitted to this stream wait until the recorded point of `event` has completed.
+174:         
+175:         Adds a dependency between streams and does not synchronize the host thread.
+176:         
+177:         Args:
+178:             event (Event): Event to wait for. If the event has not been recorded, no wait is enqueued.
+179:         """
+180:     def wait_stream(self, stream: Stream) -> None:
+181:         r"""
+182:         Synchronize this stream with another stream.
+183:         
+184:         Future work submitted to this stream waits until all work already submitted to `stream` at
+185:         the time of the call has completed.
+186:         
+187:         Args:
+188:             stream (Stream): Stream whose already-submitted work must complete before this stream continues.
+189:         """
+190:     def __enter__(self) -> Stream: ...
+191:     def __exit__(self, _exc_type: typing.Optional[typing.Any] = None, _exc_value: typing.Optional[typing.Any] = None, _traceback: typing.Optional[typing.Any] = None) -> None: ...
+192: 
+
+### /root/venv/lib/python3.12/site-packages/furiosa/torch/config/_cpu_fallback.py
+1: from contextlib import contextmanager
+2: 
+3: from furiosa.torch._C.config import cpu_fallback as _native_cpu_fallback
+4: 
+5: 
+6: def set_cpu_fallback(fallback: bool) -> bool:
+7:     """
+8:     Set the CPU fallback mode for Furiosa Torch.
+9: 
+10:     When CPU fallback is enabled, unsupported operators can run on CPU
+11:     while supported operators continue running on NPU. This improves
+12:     compatibility at the cost of potentially worse performance due to CPU
+13:     execution.
+14: 
+15:     Args:
+16:         fallback (bool): Whether to enable CPU fallback mode.
+17: 
+18:     Returns:
+19:         bool: The previous CPU fallback mode before this change.
+20:     """
+21:     return _native_cpu_fallback.set_cpu_fallback(fallback)
+22: 
+23: 
+24: def get_cpu_fallback() -> bool:
+25:     """
+26:     Get the current CPU fallback mode for Furiosa Torch.
+27: 
+28:     Returns:
+29:         bool: Whether CPU fallback mode is currently enabled.
+30:     """
+31:     return _native_cpu_fallback.get_cpu_fallback()
+32: 
+33: 
+34: @contextmanager
+35: def cpu_fallback(fallback: bool):
+36:     """
+37:     Temporarily set the CPU fallback mode within the context.
+38: 
+39:     Args:
+40:         fallback (bool): Whether to enable CPU fallback mode within the context.
+41:     """
+42:     try:
+43:         prev = set_cpu_fallback(fallback)
+44:         yield
+45:     finally:
+46:         set_cpu_fallback(prev)
+
+### /root/venv/lib/python3.12/site-packages/torch/_logging/_registrations.py
+1: # flake8: noqa: B950
+2: from ._internal import register_artifact, register_log
+3: 
+4: 
+5: DYNAMIC = [
+6:     "torch.fx.experimental.symbolic_shapes",
+7:     "torch.fx.experimental.sym_node",
+8:     "torch.fx.experimental.recording",
+9: ]
+10: DISTRIBUTED = [
+11:     "torch.distributed",
+12:     "torch._dynamo.backends.distributed",
+13:     "torch.nn.parallel.distributed",
+14: ]
+15: 
+16: register_log(
+17:     "async_compile",
+18:     [
+19:         "torch._inductor.async_compile",
+20:         "torch._inductor.compile_worker.tracked_process_pool",
+21:     ],
+22: )
+23: register_log(
+24:     "cache", ("torch._inductor.remote_cache", "torch._inductor.fb.remote_cache")
+25: )
+26: register_log("dynamo", ["torch._dynamo", *DYNAMIC])
+27: register_log("fake_tensor", ["torch._subclasses.fake_tensor"])
+28: register_log("aot", ["torch._functorch.aot_autograd", "torch._functorch._aot_autograd"])
+29: register_log("autograd", "torch.autograd")
+30: register_log("inductor", ["torch._inductor", "torch._inductor.cudagraph_trees"])
+31: 
+32: register_artifact(
+33:     "cudagraphs",
+34:     "Logs information from wrapping inductor generated code with cudagraphs.",
+35: )
+36: 
+37: register_log("dynamic", DYNAMIC)
+38: register_log("torch", "torch")
+39: register_log("distributed", DISTRIBUTED)
+40: register_log(
+41:     "c10d", ["torch.distributed.distributed_c10d", "torch.distributed.rendezvous"]
+42: )
+43: register_log(
+44:     "ddp", ["torch.nn.parallel.distributed", "torch._dynamo.backends.distributed"]
+45: )
+46: register_log("pp", ["torch.distributed.pipelining"])
+47: register_log("fsdp", ["torch.distributed.fsdp", "torch.distributed._composable.fsdp"])
+48: register_log("dtensor", ["torch.distributed._tensor", "torch.distributed.tensor"])
+49: register_log("onnx", "torch.onnx")
+50: register_log(
+51:     "export",
+52:     [
+53:         "torch._dynamo",
+54:         "torch.export",
+55:         "torch.export.dynamic_shapes",
+56:         *DYNAMIC,
+57:         "torch._export.converter",
+58:         "torch._export.non_strict_utils",
+59:         "torch._export.serde.serialize",
+60:         "torch.fx.experimental.proxy_tensor",
+61:     ],
+62: )
+63: 
+64: register_artifact(
+65:     "guards",
+66:     "This prints the guards for every compiled Dynamo frame. It does not tell you where the guards come from.",
+67:     visible=True,
+68: )
+69: register_artifact("verbose_guards", "", off_by_default=True)
+70: register_artifact(
+71:     "bytecode",
+72:     "Prints the original and modified bytecode from Dynamo. Mostly useful if you're debugging our bytecode generation in Dynamo.",
+73:     off_by_default=True,
+74: )
+75: register_artifact(
+76:     "graph",
+77:     "Prints the dynamo traced graph (prior to AOTDispatch) in a table. If you prefer python code use `graph_code` instead. ",
+78: )
+79: register_artifact("graph_code", "Like `graph`, but gives you the Python code instead.")
+80: register_artifact(
+81:     "graph_code_verbose",
+82:     "Verbose FX pass logs, e.g. from tensorify_python_scalars and runtime_assert.",
+83: )
+84: register_artifact(
+85:     "graph_sizes", "Prints the sizes of all FX nodes in the dynamo graph."
+86: )
+87: register_artifact(
+88:     "trace_source",
+89:     "As we execute bytecode, prints the file name / line number we are processing and the actual source code. Useful with `bytecode`",
+90: )
+91: register_artifact(
+92:     "trace_call",
+93:     "Like trace_source, but it will give you the per-expression blow-by-blow if your Python is recent enough.",
+94: )
+95: register_artifact(
+96:     "trace_bytecode",
+97:     "As we trace bytecode, prints the instruction and the current stack.",
+98: )
+99: register_artifact(
+100:     "aot_graphs",
+101:     "Prints the FX forward and backward graph generated by AOTDispatch, after partitioning. Useful to understand what's being given to Inductor",
+102:     visible=True,
+103: )
+104: register_artifact(
+105:     "aot_joint_graph",
+106:     "Print FX joint graph from AOTAutograd, prior to partitioning. Useful for debugging partitioning",
+107: )
+108: register_artifact(
+109:     "aot_graphs_effects",
+110:     "Prints the FX forward and backward graph generated by AOTDispatch, useful for debugging effects processing.",
+111:     visible=True,
+112: )
+113: register_artifact(
+114:     "pre_grad_graphs",
+115:     "Prints the FX graph before inductor pre grad passes. Useful to understand what's being given to Inductor before grad passes",
+116: )
+117: register_artifact(
+118:     "post_grad_graphs",
+119:     "Prints the FX graph generated by post grad passes. Useful to understand what's being given to Inductor after post grad passes",
+120: )
+121: register_artifact(
+122:     "ir_pre_fusion",
+123:     "Prints the IR before inductor fusion passes.",
+124:     off_by_default=True,
+125: )
+126: register_artifact(
+127:     "ir_post_fusion",
+128:     "Prints the IR after inductor fusion passes.",
+129:     off_by_default=True,
+130: )
+131: register_artifact(
+132:     "compiled_autograd",
+133:     "Prints various logs in compiled_autograd, including but not limited to the graphs. Useful for debugging compiled_autograd.",
+134:     visible=True,
+135: )
+136: register_artifact(
+137:     "compiled_autograd_verbose",
+138:     "Will affect performance. Prints compiled_autograd logs with C++ info e.g. autograd node -> fx node mapping",
+139:     off_by_default=True,
+140: )
+141: register_artifact(
+142:     "ddp_graphs",
+143:     "Only relevant for compiling DDP. DDP splits into multiple graphs to trigger comms early. This will print each individual graph here.",
+144: )
+145: register_artifact(
+146:     "recompiles",
+147:     "Prints the reason why we recompiled a graph. Very, very useful.",
+148:     visible=True,
+149: )
+150: register_artifact(
+151:     "recompiles_verbose",
+152:     "Prints all guard checks that fail during a recompilation. "
+153:     "At runtime, Dynamo will stop at the first failed check for each failing guard. "
+154:     "So not all logged failing checks are actually ran by Dynamo.",
+155:     visible=True,
+156:     off_by_default=True,
+157: )
+158: register_artifact(
+159:     "graph_breaks",
+160:     "Prints whenever Dynamo decides that it needs to graph break (i.e. create a new graph). Useful for debugging why torch.compile has poor performance",
+161:     visible=True,
+162: )
+163: register_artifact(
+164:     "not_implemented",
+165:     "Prints log messages whenever we return NotImplemented in a multi-dispatch, letting you trace through each object we attempted to dispatch to",
+166: )
+167: register_artifact(
+168:     "output_code",
+169:     "Prints the code that Inductor generates (either Triton or C++)",
+170:     off_by_default=True,
+171:     visible=True,
+172: )
+173: register_artifact(
+174:     "kernel_code",
+175:     "Prints the code that Inductor generates (on a per-kernel basis)",
+176:     off_by_default=True,
+177:     visible=True,
+178: )
+179: register_artifact(
+180:     "schedule",
+181:     "Inductor scheduler information. Useful if working on Inductor fusion algo",
+182:     off_by_default=True,
+183: )
+184: register_artifact("perf_hints", "", off_by_default=True)
+185: register_artifact("onnx_diagnostics", "", off_by_default=True)
+186: register_artifact("compute_dependencies", "", off_by_default=True)
+187: register_artifact(
+188:     "fusion",
+189:     "Detailed Inductor fusion decisions. More detailed than 'schedule'",
+190:     off_by_default=True,
+191: )
+192: register_artifact(
+193:     "loop_ordering",
+194:     "Logs related to loop ordering",
+195:     off_by_default=True,
+196: )
+197: register_artifact(
+198:     "loop_tiling",
+199:     "Logs related to loop ordering",
+200:     off_by_default=True,
+201: )
+202: 
+203: register_artifact(
+204:     "overlap",
+205:     "Detailed Inductor compute/comm overlap decisions",
+206:     off_by_default=True,
+207: )
+208: register_artifact(
+209:     "sym_node",
+210:     "Logs extra info for various SymNode operations",
+211:     off_by_default=True,
+212: )
+213: register_artifact(
+214:     "trace_shape_events",
+215:     "Logs traces for every ShapeEnv operation that we record for replay",
+216:     off_by_default=True,
+217: )
+218: register_artifact(
+219:     "cudagraph_static_inputs",
+220:     "Logs static inputs handling in dynamo, AOT, and cudagraphs",
+221:     off_by_default=True,
+222: )
+223: register_artifact(
+224:     "benchmarking",
+225:     "Detailed Inductor benchmarking information.",
+226:     off_by_default=True,
+227: )
+228: register_artifact(
+229:     "node_runtime_estimation",
+230:     "Node runtime estimation for compile-time optimization decisions.",
+231:     off_by_default=True,
+232: )
+233: register_artifact(
+234:     "autotuning",
+235:     "Autotuning choice logs, such as kernel source, perf, and tuning parameters.",
+236:     off_by_default=True,
+237: )
+238: register_artifact(
+239:     "graph_region_expansion",
+240:     "Logs detailed steps of the duplicate graph region tracker expansion algorithm",
+241:     off_by_default=True,
+242: )
+243: 
+244: register_artifact(
+245:     "inductor_metrics",
+246:     "Logs Inductor metrics, such as num_bytes, nodes_num_elem, node_runtimes",
+247:     off_by_default=True,
+248: )
+249: register_artifact(
+250:     "hierarchical_compile",
+251:     "Logs debug info for hierarchical compilation",
+252:     off_by_default=True,
+253: )
+254: register_artifact(
+255:     "annotation",
+256:     "Logs detailed steps of the creating annotation on graph nodes",
+257:     off_by_default=True,
+258: )
+259: register_artifact("custom_format_test_artifact", "Testing only", log_format="")
+
+### /root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py
+1: import math
+2: from collections import OrderedDict
+3: from functools import partial
+4: from typing import Any, Callable, NamedTuple, Optional
+5: 
+6: import torch
+7: import torch.nn as nn
+8: 
+9: from ..ops.misc import Conv2dNormActivation, MLP
+10: from ..transforms._presets import ImageClassification, InterpolationMode
+11: from ..utils import _log_api_usage_once
+12: from ._api import register_model, Weights, WeightsEnum
+13: from ._meta import _IMAGENET_CATEGORIES
+14: from ._utils import _ovewrite_named_param, handle_legacy_interface
+15: 
+16: 
+17: __all__ = [
+18:     "VisionTransformer",
+19:     "ViT_B_16_Weights",
+20:     "ViT_B_32_Weights",
+21:     "ViT_L_16_Weights",
+22:     "ViT_L_32_Weights",
+23:     "ViT_H_14_Weights",
+24:     "vit_b_16",
+25:     "vit_b_32",
+26:     "vit_l_16",
+27:     "vit_l_32",
+28:     "vit_h_14",
+29: ]
+30: 
+31: 
+32: class ConvStemConfig(NamedTuple):
+33:     out_channels: int
+34:     kernel_size: int
+35:     stride: int
+36:     norm_layer: Callable[..., nn.Module] = nn.BatchNorm2d
+37:     activation_layer: Callable[..., nn.Module] = nn.ReLU
+38: 
+39: 
+40: class MLPBlock(MLP):
+41:     """Transformer MLP block."""
+42: 
+43:     _version = 2
+44: 
+45:     def __init__(self, in_dim: int, mlp_dim: int, dropout: float):
+46:         super().__init__(in_dim, [mlp_dim, in_dim], activation_layer=nn.GELU, inplace=None, dropout=dropout)
+47: 
+48:         for m in self.modules():
+49:             if isinstance(m, nn.Linear):
+50:                 nn.init.xavier_uniform_(m.weight)
+51:                 if m.bias is not None:
+52:                     nn.init.normal_(m.bias, std=1e-6)
+53: 
+54:     def _load_from_state_dict(
+55:         self,
+56:         state_dict,
+57:         prefix,
+58:         local_metadata,
+59:         strict,
+60:         missing_keys,
+61:         unexpected_keys,
+62:         error_msgs,
+63:     ):
+64:         version = local_metadata.get("version", None)
+65: 
+66:         if version is None or version < 2:
+67:             # Replacing legacy MLPBlock with MLP. See https://github.com/pytorch/vision/pull/6053
+68:             for i in range(2):
+69:                 for type in ["weight", "bias"]:
+70:                     old_key = f"{prefix}linear_{i+1}.{type}"
+71:                     new_key = f"{prefix}{3*i}.{type}"
+72:                     if old_key in state_dict:
+73:                         state_dict[new_key] = state_dict.pop(old_key)
+74: 
+75:         super()._load_from_state_dict(
+76:             state_dict,
+77:             prefix,
+78:             local_metadata,
+79:             strict,
+80:             missing_keys,
+81:             unexpected_keys,
+82:             error_msgs,
+83:         )
+84: 
+85: 
+86: class EncoderBlock(nn.Module):
+87:     """Transformer encoder block."""
+88: 
+89:     def __init__(
+90:         self,
+91:         num_heads: int,
+92:         hidden_dim: int,
+93:         mlp_dim: int,
+94:         dropout: float,
+95:         attention_dropout: float,
+96:         norm_layer: Callable[..., torch.nn.Module] = partial(nn.LayerNorm, eps=1e-6),
+97:     ):
+98:         super().__init__()
+99:         self.num_heads = num_heads
+100: 
+101:         # Attention block
+102:         self.ln_1 = norm_layer(hidden_dim)
+103:         self.self_attention = nn.MultiheadAttention(hidden_dim, num_heads, dropout=attention_dropout, batch_first=True)
+104:         self.dropout = nn.Dropout(dropout)
+105: 
+106:         # MLP block
+107:         self.ln_2 = norm_layer(hidden_dim)
+108:         self.mlp = MLPBlock(hidden_dim, mlp_dim, dropout)
+109: 
+110:     def forward(self, input: torch.Tensor):
+111:         torch._assert(input.dim() == 3, f"Expected (batch_size, seq_length, hidden_dim) got {input.shape}")
+112:         x = self.ln_1(input)
+113:         x, _ = self.self_attention(x, x, x, need_weights=False)
+114:         x = self.dropout(x)
+115:         x = x + input
+116: 
+117:         y = self.ln_2(x)
+118:         y = self.mlp(y)
+119:         return x + y
+120: 
+121: 
+122: class Encoder(nn.Module):
+123:     """Transformer Model Encoder for sequence to sequence translation."""
+124: 
+125:     def __init__(
+126:         self,
+127:         seq_length: int,
+128:         num_layers: int,
+129:         num_heads: int,
+130:         hidden_dim: int,
+131:         mlp_dim: int,
+132:         dropout: float,
+133:         attention_dropout: float,
+134:         norm_layer: Callable[..., torch.nn.Module] = partial(nn.LayerNorm, eps=1e-6),
+135:     ):
+136:         super().__init__()
+137:         # Note that batch_size is on the first dim because
+138:         # we have batch_first=True in nn.MultiAttention() by default
+139:         self.pos_embedding = nn.Parameter(torch.empty(1, seq_length, hidden_dim).normal_(std=0.02))  # from BERT
+140:         self.dropout = nn.Dropout(dropout)
+141:         layers: OrderedDict[str, nn.Module] = OrderedDict()
+142:         for i in range(num_layers):
+143:             layers[f"encoder_layer_{i}"] = EncoderBlock(
+144:                 num_heads,
+145:                 hidden_dim,
+146:                 mlp_dim,
+147:                 dropout,
+148:                 attention_dropout,
+149:                 norm_layer,
+150:             )
+151:         self.layers = nn.Sequential(layers)
+152:         self.ln = norm_layer(hidden_dim)
+153: 
+154:     def forward(self, input: torch.Tensor):
+155:         torch._assert(input.dim() == 3, f"Expected (batch_size, seq_length, hidden_dim) got {input.shape}")
+156:         input = input + self.pos_embedding
+157:         return self.ln(self.layers(self.dropout(input)))
+158: 
+159: 
+160: class VisionTransformer(nn.Module):
+161:     """Vision Transformer as per https://arxiv.org/abs/2010.11929."""
+162: 
+163:     def __init__(
+164:         self,
+165:         image_size: int,
+166:         patch_size: int,
+167:         num_layers: int,
+168:         num_heads: int,
+169:         hidden_dim: int,
+170:         mlp_dim: int,
+171:         dropout: float = 0.0,
+172:         attention_dropout: float = 0.0,
+173:         num_classes: int = 1000,
+174:         representation_size: Optional[int] = None,
+175:         norm_layer: Callable[..., torch.nn.Module] = partial(nn.LayerNorm, eps=1e-6),
+176:         conv_stem_configs: Optional[list[ConvStemConfig]] = None,
+177:     ):
+178:         super().__init__()
+179:         _log_api_usage_once(self)
+180:         torch._assert(image_size % patch_size == 0, "Input shape indivisible by patch size!")
+181:         self.image_size = image_size
+182:         self.patch_size = patch_size
+183:         self.hidden_dim = hidden_dim
+184:         self.mlp_dim = mlp_dim
+185:         self.attention_dropout = attention_dropout
+186:         self.dropout = dropout
+187:         self.num_classes = num_classes
+188:         self.representation_size = representation_size
+189:         self.norm_layer = norm_layer
+190: 
+191:         if conv_stem_configs is not None:
+192:             # As per https://arxiv.org/abs/2106.14881
+193:             seq_proj = nn.Sequential()
+194:             prev_channels = 3
+195:             for i, conv_stem_layer_config in enumerate(conv_stem_configs):
+196:                 seq_proj.add_module(
+197:                     f"conv_bn_relu_{i}",
+198:                     Conv2dNormActivation(
+199:                         in_channels=prev_channels,
+200:                         out_channels=conv_stem_layer_config.out_channels,
+201:                         kernel_size=conv_stem_layer_config.kernel_size,
+202:                         stride=conv_stem_layer_config.stride,
+203:                         norm_layer=conv_stem_layer_config.norm_layer,
+204:                         activation_layer=conv_stem_layer_config.activation_layer,
+205:                     ),
+206:                 )
+207:                 prev_channels = conv_stem_layer_config.out_channels
+208:             seq_proj.add_module(
+209:                 "conv_last", nn.Conv2d(in_channels=prev_channels, out_channels=hidden_dim, kernel_size=1)
+210:             )
+211:             self.conv_proj: nn.Module = seq_proj
+212:         else:
+213:             self.conv_proj = nn.Conv2d(
+214:                 in_channels=3, out_channels=hidden_dim, kernel_size=patch_size, stride=patch_size
+215:             )
+216: 
+217:         seq_length = (image_size // patch_size) ** 2
+218: 
+219:         # Add a class token
+220:         self.class_token = nn.Parameter(torch.zeros(1, 1, hidden_dim))
+221:         seq_length += 1
+222: 
+223:         self.encoder = Encoder(
+224:             seq_length,
+225:             num_layers,
+226:             num_heads,
+227:             hidden_dim,
+228:             mlp_dim,
+229:             dropout,
+230:             attention_dropout,
+231:             norm_layer,
+232:         )
+233:         self.seq_length = seq_length
+234: 
+235:         heads_layers: OrderedDict[str, nn.Module] = OrderedDict()
+236:         if representation_size is None:
+237:             heads_layers["head"] = nn.Linear(hidden_dim, num_classes)
+238:         else:
+239:             heads_layers["pre_logits"] = nn.Linear(hidden_dim, representation_size)
+240:             heads_layers["act"] = nn.Tanh()
+241:             heads_layers["head"] = nn.Linear(representation_size, num_classes)
+242: 
+243:         self.heads = nn.Sequential(heads_layers)
+244: 
+245:         if isinstance(self.conv_proj, nn.Conv2d):
+246:             # Init the patchify stem
+247:             fan_in = self.conv_proj.in_channels * self.conv_proj.kernel_size[0] * self.conv_proj.kernel_size[1]
+248:             nn.init.trunc_normal_(self.conv_proj.weight, std=math.sqrt(1 / fan_in))
+249:             if self.conv_proj.bias is not None:
+250:                 nn.init.zeros_(self.conv_proj.bias)
+251:         elif self.conv_proj.conv_last is not None and isinstance(self.conv_proj.conv_last, nn.Conv2d):
+252:             # Init the last 1x1 conv of the conv stem
+253:             nn.init.normal_(
+254:                 self.conv_proj.conv_last.weight, mean=0.0, std=math.sqrt(2.0 / self.conv_proj.conv_last.out_channels)
+255:             )
+256:             if self.conv_proj.conv_last.bias is not None:
+257:                 nn.init.zeros_(self.conv_proj.conv_last.bias)
+258: 
+259:         if hasattr(self.heads, "pre_logits") and isinstance(self.heads.pre_logits, nn.Linear):
+260:             fan_in = self.heads.pre_logits.in_features
+261:             nn.init.trunc_normal_(self.heads.pre_logits.weight, std=math.sqrt(1 / fan_in))
+262:             nn.init.zeros_(self.heads.pre_logits.bias)
+263: 
+264:         if isinstance(self.heads.head, nn.Linear):
+265:             nn.init.zeros_(self.heads.head.weight)
+266:             nn.init.zeros_(self.heads.head.bias)
+267: 
+268:     def _process_input(self, x: torch.Tensor) -> torch.Tensor:
+269:         n, c, h, w = x.shape
+270:         p = self.patch_size
+271:         torch._assert(h == self.image_size, f"Wrong image height! Expected {self.image_size} but got {h}!")
+272:         torch._assert(w == self.image_size, f"Wrong image width! Expected {self.image_size} but got {w}!")
+273:         n_h = h // p
+274:         n_w = w // p
+275: 
+276:         # (n, c, h, w) -> (n, hidden_dim, n_h, n_w)
+277:         x = self.conv_proj(x)
+278:         # (n, hidden_dim, n_h, n_w) -> (n, hidden_dim, (n_h * n_w))
+279:         x = x.reshape(n, self.hidden_dim, n_h * n_w)
+280: 
+281:         # (n, hidden_dim, (n_h * n_w)) -> (n, (n_h * n_w), hidden_dim)
+282:         # The self attention layer expects inputs in the format (N, S, E)
+283:         # where S is the source sequence length, N is the batch size, E is the
+284:         # embedding dimension
+285:         x = x.permute(0, 2, 1)
+286: 
+287:         return x
+288: 
+289:     def forward(self, x: torch.Tensor):
+290:         # Reshape and permute the input tensor
+291:         x = self._process_input(x)
+292:         n = x.shape[0]
+293: 
+294:         # Expand the class token to the full batch
+295:         batch_class_token = self.class_token.expand(n, -1, -1)
+296:         x = torch.cat([batch_class_token, x], dim=1)
+297: 
+298:         x = self.encoder(x)
+299: 
+300:         # Classifier "token" as used by standard language architectures
+301:         x = x[:, 0]
+302: 
+303:         x = self.heads(x)
+304: 
+305:         return x
+306: 
+307: 
+308: def _vision_transformer(
+309:     patch_size: int,
+310:     num_layers: int,
+311:     num_heads: int,
+312:     hidden_dim: int,
+313:     mlp_dim: int,
+314:     weights: Optional[WeightsEnum],
+315:     progress: bool,
+316:     **kwargs: Any,
+317: ) -> VisionTransformer:
+318:     if weights is not None:
+319:         _ovewrite_named_param(kwargs, "num_classes", len(weights.meta["categories"]))
+320:         assert weights.meta["min_size"][0] == weights.meta["min_size"][1]
+321:         _ovewrite_named_param(kwargs, "image_size", weights.meta["min_size"][0])
+322:     image_size = kwargs.pop("image_size", 224)
+323: 
+324:     model = VisionTransformer(
+325:         image_size=image_size,
+326:         patch_size=patch_size,
+327:         num_layers=num_layers,
+328:         num_heads=num_heads,
+329:         hidden_dim=hidden_dim,
+330:         mlp_dim=mlp_dim,
+331:         **kwargs,
+332:     )
+333: 
+334:     if weights:
+335:         model.load_state_dict(weights.get_state_dict(progress=progress, check_hash=True))
+336: 
+337:     return model
+338: 
+339: 
+340: _COMMON_META: dict[str, Any] = {
+341:     "categories": _IMAGENET_CATEGORIES,
+342: }
+343: 
+344: _COMMON_SWAG_META = {
+345:     **_COMMON_META,
+346:     "recipe": "https://github.com/facebookresearch/SWAG",
+347:     "license": "https://github.com/facebookresearch/SWAG/blob/main/LICENSE",
+348: }
+349: 
+350: 
+351: class ViT_B_16_Weights(WeightsEnum):
+352:     IMAGENET1K_V1 = Weights(
+353:         url="https://download.pytorch.org/models/vit_b_16-c867db91.pth",
+354:         transforms=partial(ImageClassification, crop_size=224),
+355:         meta={
+356:             **_COMMON_META,
+357:             "num_params": 86567656,
+358:             "min_size": (224, 224),
+359:             "recipe": "https://github.com/pytorch/vision/tree/main/references/classification#vit_b_16",
+360:             "_metrics": {
+361:                 "ImageNet-1K": {
+362:                     "acc@1": 81.072,
+363:                     "acc@5": 95.318,
+364:                 }
+365:             },
+366:             "_ops": 17.564,
+367:             "_file_size": 330.285,
+368:             "_docs": """
+369:                 These weights were trained from scratch by using a modified version of `DeIT
+370:                 <https://arxiv.org/abs/2012.12877>`_'s training recipe.
+371:             """,
+372:         },
+373:     )
+374:     IMAGENET1K_SWAG_E2E_V1 = Weights(
+375:         url="https://download.pytorch.org/models/vit_b_16_swag-9ac1b537.pth",
+376:         transforms=partial(
+377:             ImageClassification,
+378:             crop_size=384,
+379:             resize_size=384,
+380:             interpolation=InterpolationMode.BICUBIC,
+381:         ),
+382:         meta={
+383:             **_COMMON_SWAG_META,
+384:             "num_params": 86859496,
+385:             "min_size": (384, 384),
+386:             "_metrics": {
+387:                 "ImageNet-1K": {
+388:                     "acc@1": 85.304,
+389:                     "acc@5": 97.650,
+390:                 }
+391:             },
+392:             "_ops": 55.484,
+393:             "_file_size": 331.398,
+394:             "_docs": """
+395:                 These weights are learnt via transfer learning by end-to-end fine-tuning the original
+396:                 `SWAG <https://arxiv.org/abs/2201.08371>`_ weights on ImageNet-1K data.
+397:             """,
+398:         },
+399:     )
+400:     IMAGENET1K_SWAG_LINEAR_V1 = Weights(
+401:         url="https://download.pytorch.org/models/vit_b_16_lc_swag-4e70ced5.pth",
+402:         transforms=partial(
+403:             ImageClassification,
+404:             crop_size=224,
+405:             resize_size=224,
+406:             interpolation=InterpolationMode.BICUBIC,
+407:         ),
+408:         meta={
+409:             **_COMMON_SWAG_META,
+410:             "recipe": "https://github.com/pytorch/vision/pull/5793",
+411:             "num_params": 86567656,
+412:             "min_size": (224, 224),
+413:             "_metrics": {
+414:                 "ImageNet-1K": {
+415:                     "acc@1": 81.886,
+416:                     "acc@5": 96.180,
+417:                 }
+418:             },
+419:             "_ops": 17.564,
+420:             "_file_size": 330.285,
+421:             "_docs": """
+422:                 These weights are composed of the original frozen `SWAG <https://arxiv.org/abs/2201.08371>`_ trunk
+423:                 weights and a linear classifier learnt on top of them trained on ImageNet-1K data.
+424:             """,
+425:         },
+426:     )
+427:     DEFAULT = IMAGENET1K_V1
+428: 
+429: 
+430: class ViT_B_32_Weights(WeightsEnum):
+431:     IMAGENET1K_V1 = Weights(
+432:         url="https://download.pytorch.org/models/vit_b_32-d86f8d99.pth",
+433:         transforms=partial(ImageClassification, crop_size=224),
+434:         meta={
+435:             **_COMMON_META,
+436:             "num_params": 88224232,
+437:             "min_size": (224, 224),
+438:             "recipe": "https://github.com/pytorch/vision/tree/main/references/classification#vit_b_32",
+439:             "_metrics": {
+440:                 "ImageNet-1K": {
+441:                     "acc@1": 75.912,
+442:                     "acc@5": 92.466,
+443:                 }
+444:             },
+445:             "_ops": 4.409,
+446:             "_file_size": 336.604,
+447:             "_docs": """
+448:                 These weights were trained from scratch by using a modified version of `DeIT
+449:                 <https://arxiv.org/abs/2012.12877>`_'s training recipe.
+450:             """,
+451:         },
+452:     )
+453:     DEFAULT = IMAGENET1K_V1
+454: 
+455: 
+456: class ViT_L_16_Weights(WeightsEnum):
+457:     IMAGENET1K_V1 = Weights(
+458:         url="https://download.pytorch.org/models/vit_l_16-852ce7e3.pth",
+459:         transforms=partial(ImageClassification, crop_size=224, resize_size=242),
+460:         meta={
+461:             **_COMMON_META,
+462:             "num_params": 304326632,
+463:             "min_size": (224, 224),
+464:             "recipe": "https://github.com/pytorch/vision/tree/main/references/classification#vit_l_16",
+465:             "_metrics": {
+466:                 "ImageNet-1K": {
+467:                     "acc@1": 79.662,
+468:                     "acc@5": 94.638,
+469:                 }
+470:             },
+471:             "_ops": 61.555,
+472:             "_file_size": 1161.023,
+473:             "_docs": """
+474:                 These weights were trained from scratch by using a modified version of TorchVision's
+475:                 `new training recipe
+476:                 <https://pytorch.org/blog/how-to-train-state-of-the-art-models-using-torchvision-latest-primitives/>`_.
+477:             """,
+478:         },
+479:     )
+480:     IMAGENET1K_SWAG_E2E_V1 = Weights(
+481:         url="https://download.pytorch.org/models/vit_l_16_swag-4f3808c9.pth",
+482:         transforms=partial(
+483:             ImageClassification,
+484:             crop_size=512,
+485:             resize_size=512,
+486:             interpolation=InterpolationMode.BICUBIC,
+487:         ),
+488:         meta={
+489:             **_COMMON_SWAG_META,
+490:             "num_params": 305174504,
+491:             "min_size": (512, 512),
+492:             "_metrics": {
+493:                 "ImageNet-1K": {
+494:                     "acc@1": 88.064,
+495:                     "acc@5": 98.512,
+496:                 }
+497:             },
+498:             "_ops": 361.986,
+499:             "_file_size": 1164.258,
+500:             "_docs": """
+501:                 These weights are learnt via transfer learning by end-to-end fine-tuning the original
+502:                 `SWAG <https://arxiv.org/abs/2201.08371>`_ weights on ImageNet-1K data.
+503:             """,
+504:         },
+505:     )
+506:     IMAGENET1K_SWAG_LINEAR_V1 = Weights(
+507:         url="https://download.pytorch.org/models/vit_l_16_lc_swag-4d563306.pth",
+508:         transforms=partial(
+509:             ImageClassification,
+510:             crop_size=224,
+511:             resize_size=224,
+512:             interpolation=InterpolationMode.BICUBIC,
+513:         ),
+514:         meta={
+515:             **_COMMON_SWAG_META,
+516:             "recipe": "https://github.com/pytorch/vision/pull/5793",
+517:             "num_params": 304326632,
+518:             "min_size": (224, 224),
+519:             "_metrics": {
+520:                 "ImageNet-1K": {
+521:                     "acc@1": 85.146,
+522:                     "acc@5": 97.422,
+523:                 }
+524:             },
+525:             "_ops": 61.555,
+526:             "_file_size": 1161.023,
+527:             "_docs": """
+528:                 These weights are composed of the original frozen `SWAG <https://arxiv.org/abs/2201.08371>`_ trunk
+529:                 weights and a linear classifier learnt on top of them trained on ImageNet-1K data.
+530:             """,
+531:         },
+532:     )
+533:     DEFAULT = IMAGENET1K_V1
+534: 
+535: 
+536: class ViT_L_32_Weights(WeightsEnum):
+537:     IMAGENET1K_V1 = Weights(
+538:         url="https://download.pytorch.org/models/vit_l_32-c7638314.pth",
+539:         transforms=partial(ImageClassification, crop_size=224),
+540:         meta={
+541:             **_COMMON_META,
+542:             "num_params": 306535400,
+543:             "min_size": (224, 224),
+544:             "recipe": "https://github.com/pytorch/vision/tree/main/references/classification#vit_l_32",
+545:             "_metrics": {
+546:                 "ImageNet-1K": {
+547:                     "acc@1": 76.972,
+548:                     "acc@5": 93.07,
+549:                 }
+550:             },
+551:             "_ops": 15.378,
+552:             "_file_size": 1169.449,
+553:             "_docs": """
+554:                 These weights were trained from scratch by using a modified version of `DeIT
+555:                 <https://arxiv.org/abs/2012.12877>`_'s training recipe.
+556:             """,
+557:         },
+558:     )
+559:     DEFAULT = IMAGENET1K_V1
+560: 
+561: 
+562: class ViT_H_14_Weights(WeightsEnum):
+563:     IMAGENET1K_SWAG_E2E_V1 = Weights(
+564:         url="https://download.pytorch.org/models/vit_h_14_swag-80465313.pth",
+565:         transforms=partial(
+566:             ImageClassification,
+567:             crop_size=518,
+568:             resize_size=518,
+569:             interpolation=InterpolationMode.BICUBIC,
+570:         ),
+571:         meta={
+572:             **_COMMON_SWAG_META,
+573:             "num_params": 633470440,
+574:             "min_size": (518, 518),
+575:             "_metrics": {
+576:                 "ImageNet-1K": {
+577:                     "acc@1": 88.552,
+578:                     "acc@5": 98.694,
+579:                 }
+580:             },
+581:             "_ops": 1016.717,
+582:             "_file_size": 2416.643,
+583:             "_docs": """
+584:                 These weights are learnt via transfer learning by end-to-end fine-tuning the original
+585:                 `SWAG <https://arxiv.org/abs/2201.08371>`_ weights on ImageNet-1K data.
+586:             """,
+587:         },
+588:     )
+589:     IMAGENET1K_SWAG_LINEAR_V1 = Weights(
+590:         url="https://download.pytorch.org/models/vit_h_14_lc_swag-c1eb923e.pth",
+591:         transforms=partial(
+592:             ImageClassification,
+593:             crop_size=224,
+594:             resize_size=224,
+595:             interpolation=InterpolationMode.BICUBIC,
+596:         ),
+597:         meta={
+598:             **_COMMON_SWAG_META,
+599:             "recipe": "https://github.com/pytorch/vision/pull/5793",
+600:             "num_params": 632045800,
+601:             "min_size": (224, 224),
+602:             "_metrics": {
+603:                 "ImageNet-1K": {
+604:                     "acc@1": 85.708,
+605:                     "acc@5": 97.730,
+606:                 }
+607:             },
+608:             "_ops": 167.295,
+609:             "_file_size": 2411.209,
+610:             "_docs": """
+611:                 These weights are composed of the original frozen `SWAG <https://arxiv.org/abs/2201.08371>`_ trunk
+612:                 weights and a linear classifier learnt on top of them trained on ImageNet-1K data.
+613:             """,
+614:         },
+615:     )
+616:     DEFAULT = IMAGENET1K_SWAG_E2E_V1
+617: 
+618: 
+619: @register_model()
+620: @handle_legacy_interface(weights=("pretrained", ViT_B_16_Weights.IMAGENET1K_V1))
+621: def vit_b_16(*, weights: Optional[ViT_B_16_Weights] = None, progress: bool = True, **kwargs: Any) -> VisionTransformer:
+622:     """
+623:     Constructs a vit_b_16 architecture from
+624:     `An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale <https://arxiv.org/abs/2010.11929>`_.
+625: 
+626:     Args:
+627:         weights (:class:`~torchvision.models.ViT_B_16_Weights`, optional): The pretrained
+628:             weights to use. See :class:`~torchvision.models.ViT_B_16_Weights`
+629:             below for more details and possible values. By default, no pre-trained weights are used.
+630:         progress (bool, optional): If True, displays a progress bar of the download to stderr. Default is True.
+631:         **kwargs: parameters passed to the ``torchvision.models.vision_transformer.VisionTransformer``
+632:             base class. Please refer to the `source code
+633:             <https://github.com/pytorch/vision/blob/main/torchvision/models/vision_transformer.py>`_
+634:             for more details about this class.
+635: 
+636:     .. autoclass:: torchvision.models.ViT_B_16_Weights
+637:         :members:
+638:     """
+639:     weights = ViT_B_16_Weights.verify(weights)
+640: 
+641:     return _vision_transformer(
+642:         patch_size=16,
+643:         num_layers=12,
+644:         num_heads=12,
+645:         hidden_dim=768,
+646:         mlp_dim=3072,
+647:         weights=weights,
+648:         progress=progress,
+649:         **kwargs,
+650:     )
+651: 
+652: 
+653: @register_model()
+654: @handle_legacy_interface(weights=("pretrained", ViT_B_32_Weights.IMAGENET1K_V1))
+655: def vit_b_32(*, weights: Optional[ViT_B_32_Weights] = None, progress: bool = True, **kwargs: Any) -> VisionTransformer:
+656:     """
+657:     Constructs a vit_b_32 architecture from
+658:     `An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale <https://arxiv.org/abs/2010.11929>`_.
+659: 
+660:     Args:
+661:         weights (:class:`~torchvision.models.ViT_B_32_Weights`, optional): The pretrained
+662:             weights to use. See :class:`~torchvision.models.ViT_B_32_Weights`
+663:             below for more details and possible values. By default, no pre-trained weights are used.
+664:         progress (bool, optional): If True, displays a progress bar of the download to stderr. Default is True.
+665:         **kwargs: parameters passed to the ``torchvision.models.vision_transformer.VisionTransformer``
+666:             base class. Please refer to the `source code
+667:             <https://github.com/pytorch/vision/blob/main/torchvision/models/vision_transformer.py>`_
+668:             for more details about this class.
+669: 
+670:     .. autoclass:: torchvision.models.ViT_B_32_Weights
+671:         :members:
+672:     """
+673:     weights = ViT_B_32_Weights.verify(weights)
+674: 
+675:     return _vision_transformer(
+676:         patch_size=32,
+677:         num_layers=12,
+678:         num_heads=12,
+679:         hidden_dim=768,
+680:         mlp_dim=3072,
+681:         weights=weights,
+682:         progress=progress,
+683:         **kwargs,
+684:     )
+685: 
+686: 
+687: @register_model()
+688: @handle_legacy_interface(weights=("pretrained", ViT_L_16_Weights.IMAGENET1K_V1))
+689: def vit_l_16(*, weights: Optional[ViT_L_16_Weights] = None, progress: bool = True, **kwargs: Any) -> VisionTransformer:
+690:     """
+691:     Constructs a vit_l_16 architecture from
+692:     `An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale <https://arxiv.org/abs/2010.11929>`_.
+693: 
+694:     Args:
+695:         weights (:class:`~torchvision.models.ViT_L_16_Weights`, optional): The pretrained
+696:             weights to use. See :class:`~torchvision.models.ViT_L_16_Weights`
+697:             below for more details and possible values. By default, no pre-trained weights are used.
+698:         progress (bool, optional): If True, displays a progress bar of the download to stderr. Default is True.
+699:         **kwargs: parameters passed to the ``torchvision.models.vision_transformer.VisionTransformer``
+700:             base class. Please refer to the `source code
+701:             <https://github.com/pytorch/vision/blob/main/torchvision/models/vision_transformer.py>`_
+702:             for more details about this class.
+703: 
+704:     .. autoclass:: torchvision.models.ViT_L_16_Weights
+705:         :members:
+706:     """
+707:     weights = ViT_L_16_Weights.verify(weights)
+708: 
+709:     return _vision_transformer(
+710:         patch_size=16,
+711:         num_layers=24,
+712:         num_heads=16,
+713:         hidden_dim=1024,
+714:         mlp_dim=4096,
+715:         weights=weights,
+716:         progress=progress,
+717:         **kwargs,
+718:     )
+719: 
+720: 
+721: @register_model()
+722: @handle_legacy_interface(weights=("pretrained", ViT_L_32_Weights.IMAGENET1K_V1))
+723: def vit_l_32(*, weights: Optional[ViT_L_32_Weights] = None, progress: bool = True, **kwargs: Any) -> VisionTransformer:
+724:     """
+725:     Constructs a vit_l_32 architecture from
+726:     `An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale <https://arxiv.org/abs/2010.11929>`_.
+727: 
+728:     Args:
+729:         weights (:class:`~torchvision.models.ViT_L_32_Weights`, optional): The pretrained
+730:             weights to use. See :class:`~torchvision.models.ViT_L_32_Weights`
+731:             below for more details and possible values. By default, no pre-trained weights are used.
+732:         progress (bool, optional): If True, displays a progress bar of the download to stderr. Default is True.
+733:         **kwargs: parameters passed to the ``torchvision.models.vision_transformer.VisionTransformer``
+734:             base class. Please refer to the `source code
+735:             <https://github.com/pytorch/vision/blob/main/torchvision/models/vision_transformer.py>`_
+736:             for more details about this class.
+737: 
+738:     .. autoclass:: torchvision.models.ViT_L_32_Weights
+739:         :members:
+740:     """
+741:     weights = ViT_L_32_Weights.verify(weights)
+742: 
+743:     return _vision_transformer(
+744:         patch_size=32,
+745:         num_layers=24,
+746:         num_heads=16,
+747:         hidden_dim=1024,
+748:         mlp_dim=4096,
+749:         weights=weights,
+750:         progress=progress,
+751:         **kwargs,
+752:     )
+753: 
+754: 
+755: @register_model()
+756: @handle_legacy_interface(weights=("pretrained", None))
+757: def vit_h_14(*, weights: Optional[ViT_H_14_Weights] = None, progress: bool = True, **kwargs: Any) -> VisionTransformer:
+758:     """
+759:     Constructs a vit_h_14 architecture from
+760:     `An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale <https://arxiv.org/abs/2010.11929>`_.
+761: 
+762:     Args:
+763:         weights (:class:`~torchvision.models.ViT_H_14_Weights`, optional): The pretrained
+764:             weights to use. See :class:`~torchvision.models.ViT_H_14_Weights`
+765:             below for more details and possible values. By default, no pre-trained weights are used.
+766:         progress (bool, optional): If True, displays a progress bar of the download to stderr. Default is True.
+767:         **kwargs: parameters passed to the ``torchvision.models.vision_transformer.VisionTransformer``
+768:             base class. Please refer to the `source code
+769:             <https://github.com/pytorch/vision/blob/main/torchvision/models/vision_transformer.py>`_
+770:             for more details about this class.
+771: 
+772:     .. autoclass:: torchvision.models.ViT_H_14_Weights
+773:         :members:
+774:     """
+775:     weights = ViT_H_14_Weights.verify(weights)
+776: 
+777:     return _vision_transformer(
+778:         patch_size=14,
+779:         num_layers=32,
+780:         num_heads=16,
+781:         hidden_dim=1280,
+782:         mlp_dim=5120,
+783:         weights=weights,
+784:         progress=progress,
+785:         **kwargs,
+786:     )
+787: 
+788: 
+789: def interpolate_embeddings(
+790:     image_size: int,
+791:     patch_size: int,
+792:     model_state: "OrderedDict[str, torch.Tensor]",
+793:     interpolation_mode: str = "bicubic",
+794:     reset_heads: bool = False,
+795: ) -> "OrderedDict[str, torch.Tensor]":
+796:     """This function helps interpolate positional embeddings during checkpoint loading,
+797:     especially when you want to apply a pre-trained model on images with different resolution.
+798: 
+799:     Args:
+800:         image_size (int): Image size of the new model.
+801:         patch_size (int): Patch size of the new model.
+802:         model_state (OrderedDict[str, torch.Tensor]): State dict of the pre-trained model.
+803:         interpolation_mode (str): The algorithm used for upsampling. Default: bicubic.
+804:         reset_heads (bool): If true, not copying the state of heads. Default: False.
+805: 
+806:     Returns:
+807:         OrderedDict[str, torch.Tensor]: A state dict which can be loaded into the new model.
+808:     """
+809:     # Shape of pos_embedding is (1, seq_length, hidden_dim)
+810:     pos_embedding = model_state["encoder.pos_embedding"]
+811:     n, seq_length, hidden_dim = pos_embedding.shape
+812:     if n != 1:
+813:         raise ValueError(f"Unexpected position embedding shape: {pos_embedding.shape}")
+814: 
+815:     new_seq_length = (image_size // patch_size) ** 2 + 1
+816: 
+817:     # Need to interpolate the weights for the position embedding.
+818:     # We do this by reshaping the positions embeddings to a 2d grid, performing
+819:     # an interpolation in the (h, w) space and then reshaping back to a 1d grid.
+820:     if new_seq_length != seq_length:
+821:         # The class token embedding shouldn't be interpolated, so we split it up.
+822:         seq_length -= 1
+823:         new_seq_length -= 1
+824:         pos_embedding_token = pos_embedding[:, :1, :]
+825:         pos_embedding_img = pos_embedding[:, 1:, :]
+826: 
+827:         # (1, seq_length, hidden_dim) -> (1, hidden_dim, seq_length)
+828:         pos_embedding_img = pos_embedding_img.permute(0, 2, 1)
+829:         seq_length_1d = int(math.sqrt(seq_length))
+830:         if seq_length_1d * seq_length_1d != seq_length:
+831:             raise ValueError(
+832:                 f"seq_length is not a perfect square! Instead got seq_length_1d * seq_length_1d = {seq_length_1d * seq_length_1d } and seq_length = {seq_length}"
+833:             )
+834: 
+835:         # (1, hidden_dim, seq_length) -> (1, hidden_dim, seq_l_1d, seq_l_1d)
+836:         pos_embedding_img = pos_embedding_img.reshape(1, hidden_dim, seq_length_1d, seq_length_1d)
+837:         new_seq_length_1d = image_size // patch_size
+838: 
+839:         # Perform interpolation.
+840:         # (1, hidden_dim, seq_l_1d, seq_l_1d) -> (1, hidden_dim, new_seq_l_1d, new_seq_l_1d)
+841:         new_pos_embedding_img = nn.functional.interpolate(
+842:             pos_embedding_img,
+843:             size=new_seq_length_1d,
+844:             mode=interpolation_mode,
+845:             align_corners=True,
+846:         )
+847: 
+848:         # (1, hidden_dim, new_seq_l_1d, new_seq_l_1d) -> (1, hidden_dim, new_seq_length)
+849:         new_pos_embedding_img = new_pos_embedding_img.reshape(1, hidden_dim, new_seq_length)
+850: 
+851:         # (1, hidden_dim, new_seq_length) -> (1, new_seq_length, hidden_dim)
+852:         new_pos_embedding_img = new_pos_embedding_img.permute(0, 2, 1)
+853:         new_pos_embedding = torch.cat([pos_embedding_token, new_pos_embedding_img], dim=1)
+854: 
+855:         model_state["encoder.pos_embedding"] = new_pos_embedding
+856: 
+857:         if reset_heads:
+858:             model_state_copy: "OrderedDict[str, torch.Tensor]" = OrderedDict()
+859:             for k, v in model_state.items():
+860:                 if not k.startswith("heads"):
+861:                     model_state_copy[k] = v
+862:             model_state = model_state_copy
+863: 
+864:     return model_state

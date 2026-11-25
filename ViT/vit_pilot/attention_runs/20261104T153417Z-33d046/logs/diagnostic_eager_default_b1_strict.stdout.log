@@ -1,0 +1,119 @@
+ INFO furiosa_torch::python_ext: Total 926 supported aten ops
+ INFO furiosa_torch::python_ext: Total 802 decomposition rules are added
+DEBUG furiosa_torch::device: set num fusion: Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1)
+ INFO furiosa_torch::config::cache: Using HOME for cache directory: /root/.cache/furiosa/compiler
+ INFO furiosa_torch::config::cache: Using HOME for cache directory: /root/.cache/furiosa/compiler
+{"utc": "2026-11-04T15:34:23.037334+00:00", "monotonic_ns": 1692311506526108, "pid": 243095, "event": "prepare_start", "mode": "eager_default", "batch": 1}
+DEBUG furiosa_torch::device: device index 0: alloc dram & sram 0x100 to avoid allocate 0x0 for tensors, torch treat it as a null pointer
+DEBUG furiosa_torch::device: adjust DRAM shared size to 4294967296
+DEBUG furiosa_torch::device: device index 0: allocated addr isn't 0x0 but NpuOffset(0x17bffff00), possibly memory fusioned or not 0th pe or there is a shared area
+{"utc": "2026-11-04T15:34:24.231125+00:00", "monotonic_ns": 1692312700325582, "pid": 243095, "event": "prepare_end", "preparation_ms": 1193.634261}
+{"utc": "2026-11-04T15:34:24.231339+00:00", "monotonic_ns": 1692312700523915, "pid": 243095, "event": "runner_ready", "runner_setup_ms": 0.00114, "compiled_modules": []}
+{"utc": "2026-11-04T15:34:24.239165+00:00", "monotonic_ns": 1692312708354813, "pid": 243095, "event": "call_start", "call_index": 1, "phase": "first", "iteration": 1}
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::conv2d, args=((torch.Size([1, 3, 224, 224]), (150528, 50176, 224, 1), torch.bfloat16, ((1, 3, 224, 224), (150528, 50176, 224, 1), ((None, 1),))), (torch.Size([768, 3, 16, 16]), (768, 256, 16, 1), torch.bfloat16, ((768, 3, 16, 16), (768, 256, 16, 1), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), 16, 16), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%args_0, %args_1, %args_2, [16, 16], [0, 0], [1, 1], False, [0, 0], 1), kwargs = {})
+    return (convolution,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%args_0, %args_1, %args_2, [16, 16], [0, 0], [1, 1], False, [0, 0], 1), kwargs = {})
+    return (convolution,)
+source:
+    convolution          ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:291 x = self._process_input(x)
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=1:150528, 1_1=3:50176, 2_1=224:224, 3_1=224:1], [Broadcast=1]|[0_1=768:768, 1_1=3:256, 2_1=16:16, 3_1=16:1], [Broadcast=1]|[0_1=768:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::conv2d, args=((torch.Size([1, 3, 224, 224]), (150528, 50176, 224, 1), torch.bfloat16, ((1, 3, 224, 224), (150528, 50176, 224, 1), ((None, 1),))), (torch.Size([768, 3, 16, 16]), (768, 256, 16, 1), torch.bfloat16, ((768, 3, 16, 16), (768, 256, 16, 1), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), 16, 16), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::memory::copy: dma_src_sequencer=0+[None=196:2, None=768:392, None=1:2] dma_dst_sequencer=0+[None=3:100352, None=50176:2]
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::add.Tensor, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), (torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%args_0, %args_1), kwargs = {})
+    return (add,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%args_0, %args_1), kwargs = {})
+    return (add,)
+source:
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:156 input = input + self.pos_embedding
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=1:151296, 1_1=197:768, 2_1=768:1], [Broadcast=1]|[0_1=1:151296, 1_1=197:768, 2_1=768:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::add.Tensor, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), (torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),)))), traceable_kwargs=(), non_traceable_kwargs=())
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::dropout, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), 0.0, False), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %clone : [num_users=1] = call_function[target=torch.ops.aten.clone.default](args = (%args_0,), kwargs = {})
+    return (clone,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %clone : [num_users=1] = call_function[target=torch.ops.aten.clone.default](args = (%args_0,), kwargs = {})
+    return (clone,)
+source:
+    clone                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:157 return self.ln(self.layers(self.dropout(input)))
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=1:151296, 1_1=197:768, 2_1=768:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::dropout, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), 0.0, False), traceable_kwargs=(), non_traceable_kwargs=())
+ INFO furiosa_torch::python_ext: Building exported program AtenOp(aten_op_name=aten::layer_norm, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), 768, (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), 1e-06), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG furiosa_torch::python_ext: original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %_to_copy : [num_users=2] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %var_mean : [num_users=2] = call_function[target=torch.ops.aten.var_mean.correction](args = (%_to_copy, [2]), kwargs = {correction: 0, keepdim: True})
+    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%var_mean, 0), kwargs = {})
+    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%var_mean, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem, 1e-06), kwargs = {})
+    %rsqrt : [num_users=1] = call_function[target=torch.ops.aten.rsqrt.default](args = (%add,), kwargs = {})
+    %sub : [num_users=1] = call_function[target=torch.ops.aten.sub.Tensor](args = (%_to_copy, %getitem_1), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%sub, %rsqrt), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mul, %args_1), kwargs = {})
+    %add_1 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul_1, %args_2), kwargs = {})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add_1,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_1,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %_to_copy : [num_users=2] = call_function[target=torch.ops.aten._to_copy.default](args = (%args_0,), kwargs = {dtype: torch.float32})
+    %var_mean : [num_users=2] = call_function[target=torch.ops.aten.var_mean.correction](args = (%_to_copy, [2]), kwargs = {correction: 0, keepdim: True})
+    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%var_mean, 0), kwargs = {})
+    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%var_mean, 1), kwargs = {})
+    %add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem, 1e-06), kwargs = {})
+    %rsqrt : [num_users=1] = call_function[target=torch.ops.aten.rsqrt.default](args = (%add,), kwargs = {})
+    %sub : [num_users=1] = call_function[target=torch.ops.aten.sub.Tensor](args = (%_to_copy, %getitem_1), kwargs = {})
+    %mul : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%sub, %rsqrt), kwargs = {})
+    %mul_1 : [num_users=1] = call_function[target=torch.ops.aten.mul.Tensor](args = (%mul, %args_1), kwargs = {})
+    %add_1 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%mul_1, %args_2), kwargs = {})
+    %_to_copy_1 : [num_users=1] = call_function[target=torch.ops.aten._to_copy.default](args = (%add_1,), kwargs = {dtype: torch.bfloat16})
+    return (_to_copy_1,)
+source:
+    _to_copy             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    var_mean             ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    getitem              ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    getitem_1            ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    add                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    rsqrt                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    sub                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    mul                  ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    mul_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    add_1                ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+    _to_copy_1           ../venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py:112 x = self.ln_1(input)
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=1:151296, 1_1=197:768, 2_1=768:1], [Broadcast=1]|[0_1=768:1], [Broadcast=1]|[0_1=768:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::python_ext: graph compiled successfully
+ INFO furiosa_torch::python_ext: Loading to furiosa:0 for AtenOp(aten_op_name=aten::layer_norm, args=((torch.Size([1, 197, 768]), (151296, 768, 1), torch.bfloat16, ((1, 197, 768), (151296, 768, 1), ((None, 1),))), 768, (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), (torch.Size([768]), (1,), torch.bfloat16, ((768,), (1,), ((None, 1),))), 1e-06), traceable_kwargs=(), non_traceable_kwargs=())
+{"utc": "2026-11-04T15:34:46.643186+00:00", "monotonic_ns": 1692335112378495, "pid": 243095, "event": "worker_error", "error": "Traceback (most recent call last):\n  File \"/root/ViT/vit_pilot/attention_worker.py\", line 122, in main\n    y, elapsed, valid = timed_call(runner, x, stream.synchronize)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/ViT/vit_pilot/common.py\", line 69, in timed_call\n    output = runner(inputs)\n             ^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py\", line 298, in forward\n    x = self.encoder(x)\n        ^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py\", line 157, in forward\n    return self.ln(self.layers(self.dropout(input)))\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/container.py\", line 253, in forward\n    input = module(input)\n            ^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torchvision/models/vision_transformer.py\", line 113, in forward\n    x, _ = self.self_attention(x, x, x, need_weights=False)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/activation.py\", line 1431, in forward\n    return torch._native_multi_head_attention(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: CPU fallback is disabled for aten::_native_multi_head_attention\n"}
+{"utc": "2026-11-04T15:34:46.643802+00:00", "monotonic_ns": 1692335112988925, "pid": 243095, "event": "worker_end", "status": "error"}

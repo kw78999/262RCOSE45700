@@ -1,0 +1,11 @@
+graph():
+    %l_query_ : torch.Tensor [num_users=1] = placeholder[target=L_query_]
+    %l_self_modules_original_attention_parameters_in_proj_bias_ : torch.nn.parameter.Parameter [num_users=1] = placeholder[target=L_self_modules_original_attention_parameters_in_proj_bias_]
+    %l_self_modules_original_attention_parameters_in_proj_weight_ : torch.nn.parameter.Parameter [num_users=1] = placeholder[target=L_self_modules_original_attention_parameters_in_proj_weight_]
+    %l_self_modules_original_attention_modules_out_proj_parameters_weight_ : torch.nn.parameter.Parameter [num_users=1] = placeholder[target=L_self_modules_original_attention_modules_out_proj_parameters_weight_]
+    %l_self_modules_original_attention_modules_out_proj_parameters_bias_ : torch.nn.parameter.Parameter [num_users=1] = placeholder[target=L_self_modules_original_attention_modules_out_proj_parameters_bias_]
+    %query : [num_users=1] = call_method[target=transpose](args = (%l_query_, 1, 0), kwargs = {})
+    %multi_head_attention_forward : [num_users=1] = call_function[target=torch.nn.functional.multi_head_attention_forward](args = (%query, %query, %query, 768, 12, %l_self_modules_original_attention_parameters_in_proj_weight_, %l_self_modules_original_attention_parameters_in_proj_bias_, None, None, False, 0.0, %l_self_modules_original_attention_modules_out_proj_parameters_weight_, %l_self_modules_original_attention_modules_out_proj_parameters_bias_), kwargs = {training: False, key_padding_mask: None, need_weights: False, attn_mask: None, average_attn_weights: True, is_causal: False})
+    %attn_output : [num_users=1] = call_function[target=operator.getitem](args = (%multi_head_attention_forward, 0), kwargs = {})
+    %transpose_1 : [num_users=1] = call_method[target=transpose](args = (%attn_output, 1, 0), kwargs = {})
+    return (transpose_1,)

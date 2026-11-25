@@ -1,0 +1,11 @@
+label,host_return_ms,completion_ms,query_at_return
+batch1/eager/0,378.102557,378.147408,False
+batch1/eager/1,0.162674,0.194615,True
+batch1/eager/2,0.141634,0.173415,True
+batch1/compile/0,251.911753,251.946705,False
+batch1/compile/1,0.082812,0.112923,False
+batch1/compile/2,0.071352,0.100273,False
+batch2/eager/0,229.22512,229.263962,False
+batch2/compile/0,244.415221,244.450322,False
+return_batch1/eager/0,0.170455,0.202966,False
+return_batch1/compile/0,0.087873,0.113963,False

@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/root/venv/bin/python",
+    "-u",
+    "/root/ViT/vit_pilot/prepare.py",
+    "--run",
+    "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff"
+  ],
+  "started_utc": "2026-11-04T11:37:48.339854+00:00",
+  "timeout_seconds": 1800,
+  "stdout": "logs/assets.stdout.log",
+  "stderr": "logs/assets.stderr.log",
+  "diagnostic_logging": false,
+  "logging_env": {
+    "TORCH_LOGS": null,
+    "FURIOSA_TORCH_LOG": "warn"
+  },
+  "worker_id": 83445,
+  "status": "ok",
+  "returncode": 0,
+  "ended_utc": "2026-11-04T11:38:11.343392+00:00",
+  "elapsed_seconds": 23.003560630138963
+}

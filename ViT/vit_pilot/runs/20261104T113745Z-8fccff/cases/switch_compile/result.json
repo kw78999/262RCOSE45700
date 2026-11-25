@@ -1,0 +1,478 @@
+{
+  "case_id": "switch_compile",
+  "mode": "compile",
+  "kind": "switch",
+  "batch": 1,
+  "trial": 1,
+  "status": "ok",
+  "started_utc": "2026-11-04T11:53:59.766973+00:00",
+  "timings": [
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_compile",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "phase": "switch",
+      "iteration": 1,
+      "elapsed_ms": 9688.795442,
+      "timing_valid": true,
+      "status": "ok"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_compile",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "phase": "switch",
+      "iteration": 2,
+      "elapsed_ms": 3.845782,
+      "timing_valid": true,
+      "status": "ok"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_compile",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 1,
+      "phase": "switch",
+      "iteration": 3,
+      "elapsed_ms": 9947.787923,
+      "timing_valid": true,
+      "status": "ok"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_compile",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 1,
+      "phase": "switch",
+      "iteration": 4,
+      "elapsed_ms": 10.626341,
+      "timing_valid": true,
+      "status": "ok"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_compile",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "phase": "switch",
+      "iteration": 5,
+      "elapsed_ms": 3.810642,
+      "timing_valid": true,
+      "status": "ok"
+    },
+    {
+      "run_id": "20261104T113745Z-8fccff",
+      "case_id": "switch_compile",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 1,
+      "phase": "switch",
+      "iteration": 6,
+      "elapsed_ms": 10.53725,
+      "timing_valid": true,
+      "status": "ok"
+    }
+  ],
+  "calls": [
+    {
+      "call_index": 1,
+      "batch": 1,
+      "elapsed_ms": 9688.795442,
+      "timing_valid": true,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:54:04.329782+00:00",
+      "end_utc": "2026-11-04T11:54:14.023124+00:00",
+      "start_monotonic_ns": 1679092798968988,
+      "end_monotonic_ns": 1679102492318413,
+      "backend_calls_cumulative": 1,
+      "lru_before": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 32,
+          "currsize": 0
+        }
+      },
+      "lru_after": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 32,
+          "currsize": 0
+        }
+      },
+      "pytorch_recompile_events": null,
+      "guard_failure_reason": null,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "cache_state": "fresh_process_persistent_cache_possible"
+    },
+    {
+      "call_index": 2,
+      "batch": 1,
+      "elapsed_ms": 3.845782,
+      "timing_valid": true,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:54:14.023872+00:00",
+      "end_utc": "2026-11-04T11:54:14.035246+00:00",
+      "start_monotonic_ns": 1679102493059815,
+      "end_monotonic_ns": 1679102504434459,
+      "backend_calls_cumulative": 1,
+      "lru_before": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 32,
+          "currsize": 0
+        }
+      },
+      "lru_after": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 32,
+          "currsize": 0
+        }
+      },
+      "pytorch_recompile_events": null,
+      "guard_failure_reason": null,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "cache_state": "same_process_reuse"
+    },
+    {
+      "call_index": 3,
+      "batch": 4,
+      "elapsed_ms": 9947.787923,
+      "timing_valid": true,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:54:14.035692+00:00",
+      "end_utc": "2026-11-04T11:54:23.987965+00:00",
+      "start_monotonic_ns": 1679102504878556,
+      "end_monotonic_ns": 1679112457161421,
+      "backend_calls_cumulative": 2,
+      "lru_before": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 32,
+          "currsize": 0
+        }
+      },
+      "lru_after": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 32,
+          "currsize": 0
+        }
+      },
+      "pytorch_recompile_events": null,
+      "guard_failure_reason": null,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "cache_state": "same_process_reuse"
+    },
+    {
+      "call_index": 4,
+      "batch": 4,
+      "elapsed_ms": 10.626341,
+      "timing_valid": true,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:54:23.988874+00:00",
+      "end_utc": "2026-11-04T11:54:24.004533+00:00",
+      "start_monotonic_ns": 1679112458060906,
+      "end_monotonic_ns": 1679112473720868,
+      "backend_calls_cumulative": 2,
+      "lru_before": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 32,
+          "currsize": 0
+        }
+      },
+      "lru_after": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 32,
+          "currsize": 0
+        }
+      },
+      "pytorch_recompile_events": null,
+      "guard_failure_reason": null,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "cache_state": "same_process_reuse"
+    },
+    {
+      "call_index": 5,
+      "batch": 1,
+      "elapsed_ms": 3.810642,
+      "timing_valid": true,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:54:24.005107+00:00",
+      "end_utc": "2026-11-04T11:54:24.014302+00:00",
+      "start_monotonic_ns": 1679112474293858,
+      "end_monotonic_ns": 1679112483490416,
+      "backend_calls_cumulative": 2,
+      "lru_before": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 32,
+          "currsize": 0
+        }
+      },
+      "lru_after": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 32,
+          "currsize": 0
+        }
+      },
+      "pytorch_recompile_events": null,
+      "guard_failure_reason": null,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "cache_state": "same_process_reuse"
+    },
+    {
+      "call_index": 6,
+      "batch": 4,
+      "elapsed_ms": 10.53725,
+      "timing_valid": true,
+      "status": "ok",
+      "start_utc": "2026-11-04T11:54:24.014871+00:00",
+      "end_utc": "2026-11-04T11:54:24.030325+00:00",
+      "start_monotonic_ns": 1679112484057665,
+      "end_monotonic_ns": 1679112499514724,
+      "backend_calls_cumulative": 2,
+      "lru_before": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 32,
+          "currsize": 0
+        }
+      },
+      "lru_after": {
+        "_build_exported_program_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 8192,
+          "currsize": 0
+        },
+        "_compile_and_load_cached": {
+          "hits": 0,
+          "misses": 0,
+          "maxsize": 32,
+          "currsize": 0
+        }
+      },
+      "pytorch_recompile_events": null,
+      "guard_failure_reason": null,
+      "furiosa_actual_compile_count": null,
+      "disk_cache_hit": null,
+      "disk_cache_miss": null,
+      "cache_state": "same_process_reuse"
+    }
+  ],
+  "compiler_time_ms": null,
+  "compiler_time_reason": "SDK codegen duration not independently observed",
+  "execution_path_status": "unknown",
+  "cache_hit": null,
+  "cache_miss": null,
+  "sync_method": "furiosa.torch.current_stream(device).synchronize()",
+  "timing_scope": "cpu_dispatch_model_call_and_current_stream_completion_excludes_transfers",
+  "cache_state": "fresh_process_persistent_cache_possible",
+  "effective": {
+    "cpu_fallback": true,
+    "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "backend_eager_fallback": false,
+    "torch_compile": {
+      "dynamic": "default (omitted)",
+      "fullgraph": "default (omitted)",
+      "mode": "default (omitted)"
+    },
+    "dynamo": {
+      "suppress_errors": false,
+      "dynamic_shapes": true,
+      "automatic_dynamic_shapes": false,
+      "recompile_limit": 8
+    },
+    "original_cache_config": "CacheConfig { root_dir: Some(\"/root/.cache/furiosa/compiler\"), summary: false, ensure: false, failure_link_dir: None }",
+    "cache_config": "CacheConfig { root_dir: Some(\"/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff/compiler-cache\"), summary: false, ensure: false, failure_link_dir: None }"
+  },
+  "cache_path": "/root/ViT/vit_pilot/runs/20261104T113745Z-8fccff/compiler-cache",
+  "preparation_ms": 1644.9989241082221,
+  "sync_checked": true,
+  "stream_id": 0,
+  "runner_setup_ms": 148.595094,
+  "active_call": null,
+  "output_metadata": {
+    "shape": [
+      4,
+      1000
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0",
+    "nan_count": 0,
+    "inf_count": 0
+  },
+  "output_structure_valid": true,
+  "dtype_valid": true,
+  "ended_utc": "2026-11-04T11:54:24.031646+00:00"
+}

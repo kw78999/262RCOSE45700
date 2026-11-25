@@ -1,0 +1,32 @@
+[
+  {
+    "name": "TorchDynamo Cache Lookup",
+    "count": 1,
+    "self_cpu_ms": 0.5426230000000001,
+    "total_cpu_ms": 0.5426230000000001
+  },
+  {
+    "name": "Torch-Compiled Region: 0/0",
+    "count": 1,
+    "self_cpu_ms": 0.5052330000000002,
+    "total_cpu_ms": 0.6679030000000001
+  },
+  {
+    "name": "Pregraph bytecode",
+    "count": 1,
+    "self_cpu_ms": 0.15529100000000004,
+    "total_cpu_ms": 0.15529100000000004
+  },
+  {
+    "name": "aten::view",
+    "count": 4,
+    "self_cpu_ms": 0.0027189999999998236,
+    "total_cpu_ms": 0.0027189999999998236
+  },
+  {
+    "name": "aten::empty",
+    "count": 1,
+    "self_cpu_ms": 0.004660000000000082,
+    "total_cpu_ms": 0.004660000000000082
+  }
+]

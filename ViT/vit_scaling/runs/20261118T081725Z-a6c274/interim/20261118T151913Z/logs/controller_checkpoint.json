@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-18T08:28:21.612247+00:00",
+  "action": "controller_only_checkpoint_after_completed_worker",
+  "case": "stabilization_p1_b1_eager_t1_a1",
+  "controller_pid": 4961,
+  "reason": "Apply budget reservation and balanced mode order; no in-flight model worker terminated"
+}

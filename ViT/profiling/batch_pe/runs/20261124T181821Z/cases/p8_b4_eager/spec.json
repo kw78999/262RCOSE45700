@@ -1,0 +1,19 @@
+{
+  "pe": 8,
+  "batch": 4,
+  "mode": "eager",
+  "attempts": 2,
+  "old_status_counts": {
+    "ok": 2
+  },
+  "successful_stages": [
+    "exploration",
+    "validation"
+  ],
+  "cache_source": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/exploration_p8_b4_eager_t1_a1",
+  "cache_source_case": "exploration_p8_b4_eager_t1_a1",
+  "source_run": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274",
+  "warmup": 20,
+  "samples": 5,
+  "timeout_s": 3600
+}

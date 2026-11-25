@@ -1,0 +1,7 @@
+{
+  "pid": 1042534,
+  "memory_limit_bytes": 171798691840,
+  "memory_used_bytes": 163339362304,
+  "reason": "cgroup memory headroom below 8 GiB",
+  "action": "SIGTERM own worker process group"
+}

@@ -1,0 +1,8 @@
+{"utc": "2026-11-04T15:39:46.623559+00:00", "monotonic_ns": 1692635092752313, "pid": 245811, "event": "prepare_start", "mode": "eager_fastpath_off", "batch": 4}
+{"utc": "2026-11-04T15:39:48.285229+00:00", "monotonic_ns": 1692636754429141, "pid": 245811, "event": "prepare_end", "preparation_ms": 1661.499675}
+{"utc": "2026-11-04T15:39:48.285458+00:00", "monotonic_ns": 1692636754642284, "pid": 245811, "event": "runner_ready", "runner_setup_ms": 0.00143, "compiled_modules": []}
+{"utc": "2026-11-04T15:39:48.290516+00:00", "monotonic_ns": 1692636759703997, "pid": 245811, "event": "call_start", "call_index": 1, "phase": "first", "iteration": 1}
+{"utc": "2026-11-04T15:42:35.816349+00:00", "monotonic_ns": 1692804285544572, "pid": 245811, "event": "call_end", "call_index": 1, "phase": "first", "elapsed_ms": 167525.681003}
+{"utc": "2026-11-04T15:42:35.817797+00:00", "monotonic_ns": 1692804286983826, "pid": 245811, "event": "profile_start"}
+{"utc": "2026-11-04T15:42:36.032660+00:00", "monotonic_ns": 1692804501854605, "pid": 245811, "event": "profile_end"}
+{"utc": "2026-11-04T15:42:36.033058+00:00", "monotonic_ns": 1692804502244092, "pid": 245811, "event": "worker_end", "status": "ok"}

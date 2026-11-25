@@ -1,0 +1,7 @@
+stage,pe,batch,trial,eager_case,compile_case,eager_mean_ms,compile_mean_ms,eager_over_compile,same_input_hash,same_common_warmup,provisional
+formal,1,1,1,formal_p1_b1_eager_t1_a2,formal_p1_b1_compile_t1_a2,45.213304518,3.671246870044053,12.315517348321897,True,True,True
+formal,1,4,1,formal_p1_b4_eager_t1_a2,formal_p1_b4_compile_t1_a2,122.502178896,10.47889207120419,11.690375095343699,True,True,True
+formal,8,1,1,formal_p8_b1_eager_t1_a1,formal_p8_b1_compile_t1_a1,46.379860916,1.89013252995653,24.537888312554813,True,True,True
+formal,8,1,2,formal_p8_b1_eager_t2_a1,formal_p8_b1_compile_t2_a1,45.204083708,1.9100504123376623,23.666434883609103,True,True,True
+formal,8,1,3,formal_p8_b1_eager_t3_a1,formal_p8_b1_compile_t3_a1,46.767665292,1.8772116906906906,24.91336780179148,True,True,True
+formal,4,1,1,formal_p4_b1_eager_t1_a1,formal_p4_b1_compile_t1_a1,44.954168412,1.8304150102489019,24.55954969790544,True,True,True

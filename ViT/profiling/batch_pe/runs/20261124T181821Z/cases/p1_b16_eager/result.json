@@ -1,0 +1,109 @@
+{
+  "pe": 1,
+  "batch": 16,
+  "mode": "eager",
+  "attempts": 1,
+  "old_status_counts": {
+    "ok": 1
+  },
+  "successful_stages": [
+    "validation"
+  ],
+  "cache_source": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/cache/validation_p1_b16_eager_t1_a1",
+  "cache_source_case": "validation_p1_b16_eager_t1_a1",
+  "source_run": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274",
+  "warmup": 20,
+  "samples": [
+    {
+      "iteration": 1,
+      "h2d_wall_ms": 1.051213,
+      "forward_wall_ms": 473.11246,
+      "d2h_wall_ms": 0.305604,
+      "serial_request_wall_sum_ms": 474.469277
+    },
+    {
+      "iteration": 2,
+      "h2d_wall_ms": 0.880651,
+      "forward_wall_ms": 473.086909,
+      "d2h_wall_ms": 0.296164,
+      "serial_request_wall_sum_ms": 474.26372399999997
+    },
+    {
+      "iteration": 3,
+      "h2d_wall_ms": 0.887471,
+      "forward_wall_ms": 472.981788,
+      "d2h_wall_ms": 0.317754,
+      "serial_request_wall_sum_ms": 474.187013
+    },
+    {
+      "iteration": 4,
+      "h2d_wall_ms": 0.891182,
+      "forward_wall_ms": 473.039399,
+      "d2h_wall_ms": 0.358585,
+      "serial_request_wall_sum_ms": 474.289166
+    },
+    {
+      "iteration": 5,
+      "h2d_wall_ms": 0.896702,
+      "forward_wall_ms": 473.003038,
+      "d2h_wall_ms": 0.283484,
+      "serial_request_wall_sum_ms": 474.183224
+    }
+  ],
+  "timeout_s": 3600,
+  "status": "ok",
+  "started_utc": "2026-11-24T18:31:16.882876+00:00",
+  "pid": 1043277,
+  "backend_calls": [],
+  "warmup_ms": [
+    464.308563,
+    464.242522,
+    464.205091,
+    464.271292,
+    464.203852,
+    464.290792,
+    464.291012,
+    464.289003,
+    464.362194,
+    464.221362,
+    464.252593,
+    464.231892,
+    464.269913,
+    464.262312,
+    464.277183,
+    464.220773,
+    464.180531,
+    464.228572,
+    464.246383,
+    464.208792
+  ],
+  "versions": {
+    "torch": "2.10.0+cpu",
+    "furiosa": "furiosa-torch 2026.4.0 (rev: 5800e2ba24, built_at: 2026-10-12T09:11:33Z)"
+  },
+  "fusion": "Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1)",
+  "device_configuration": "(Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3', 'furiosa:4', 'furiosa:5', 'furiosa:6', 'furiosa:7'])",
+  "effective": {
+    "device": "furiosa:0",
+    "dtype": "BF16",
+    "mha_fastpath": false,
+    "cpu_fallback": false,
+    "torch_threads": 22,
+    "torch_interop_threads": 64,
+    "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+    "profile_level": "trace"
+  },
+  "weights_sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+  "input_hash": "77ab4ddb190aee220c140948fc208b09047aef716ad9f22e7a36c6d96a5e6187",
+  "initial_model_and_input_transfer_wall_ms": 40.368901,
+  "first_forward_wall_ms": 7223.866931,
+  "output_finite": true,
+  "backend_calls_before_samples": 0,
+  "backend_calls_during_samples": 0,
+  "stream_complete": true,
+  "ended_utc": "2026-11-24T18:31:40.609127+00:00",
+  "controller_status": "ok",
+  "returncode": 0,
+  "wall_s": 25.003907308913767,
+  "foreign_pids": []
+}

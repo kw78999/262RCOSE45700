@@ -1,0 +1,8 @@
+{
+  "elapsed_s": 595.479523811955,
+  "stop_reason": "total_time_budget",
+  "counts": {
+    "timeout": 5,
+    "not_attempted": 51
+  }
+}

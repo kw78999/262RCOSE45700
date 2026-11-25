@@ -1,0 +1,19 @@
+{
+  "source_run": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274",
+  "source_run_id": "20261118T081725Z-a6c274",
+  "cutoff_utc": "2026-11-18T15:19:13.635475+00:00",
+  "cutoff_kst": "2026-11-19T00:19:13.635475+09:00",
+  "snapshot_directory": "/root/ViT/vit_scaling/runs/20261118T081725Z-a6c274/interim/20261118T151913Z",
+  "source_status_at_cutoff": "running",
+  "source_manifest_sha256": "516a32ec783508179d76fdd891abeb2e657633c5ee901aa3ae0305874dc303cd",
+  "source_manifest_updated_utc": "2026-11-18T15:18:55.471967+00:00",
+  "worker_count": 56,
+  "active_workers_at_cutoff": [
+    "formal_p4_b1_compile_t2_a1"
+  ],
+  "elapsed_wall_s_at_cutoff": 25307.971448,
+  "remaining_budget_s_at_cutoff": 17892.028552,
+  "input_tensor_and_weights": "Original immutable assets retained; hashes and paths in assets.json. Large tensors and SDK caches are not duplicated.",
+  "completed_case_artifacts": "Completed/failed cases, output tensors and diagnostic traces copied locally; in-flight result excluded. Result JSON original absolute output paths retained unchanged.",
+  "parent_experiment": "Continues independently. This snapshot is excluded from resume state and performance workers."
+}

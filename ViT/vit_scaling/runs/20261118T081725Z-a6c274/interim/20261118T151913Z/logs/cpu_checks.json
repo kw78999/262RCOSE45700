@@ -1,0 +1,7 @@
+{
+  "command": "/root/venv/bin/python -m unittest discover -s vit_scaling/tests -v",
+  "tests": 5,
+  "result": "passed",
+  "includes_npu_measurements": false,
+  "stdout_log": "logs/cpu_tests.log"
+}

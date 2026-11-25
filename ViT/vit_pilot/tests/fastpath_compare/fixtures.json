@@ -1,0 +1,14 @@
+[
+  {"id":"strict_tie_boundary","Ae":10,"Ac":110,"te":10,"tc":5,"status":"finite_break_even","N":21},
+  {"id":"from_first_work","Ae":100,"Ac":20,"te":10,"tc":5,"status":"already_beneficial","N":1},
+  {"id":"equal_rate_advantage","Ae":100,"Ac":20,"te":5,"tc":5,"status":"always_beneficial","N":1},
+  {"id":"equal_rate_tie","Ae":20,"Ac":20,"te":5,"tc":5,"status":"always_tied","N":null},
+  {"id":"equal_rate_loss","Ae":20,"Ac":100,"te":5,"tc":5,"status":"no_break_even","N":null},
+  {"id":"slower_no_startup_advantage","Ae":10,"Ac":110,"te":5,"tc":10,"status":"no_break_even","N":null},
+  {"id":"initial_advantage_only","Ae":100,"Ac":0,"te":5,"tc":10,"status":"initial_advantage_only","N":1,"last":19},
+  {"id":"fractional_initial_advantage_only","Ae":102,"Ac":0,"te":5,"tc":10,"status":"initial_advantage_only","N":1,"last":20},
+  {"id":"no_integer_advantage","Ae":1,"Ac":0,"te":5,"tc":10,"status":"no_break_even","N":null},
+  {"id":"missing","Ae":null,"Ac":110,"te":5,"tc":10,"status":"insufficient_data","N":null},
+  {"id":"negative_cost","Ae":-1,"Ac":110,"te":5,"tc":10,"status":"invalid","N":null},
+  {"id":"zero_repeat_duration","Ae":1,"Ac":110,"te":0,"tc":10,"status":"invalid","N":null}
+]

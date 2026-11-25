@@ -1,0 +1,33 @@
+{
+  "candidate": "/root/ViT/vit_pilot/attention_runs/20261104T153417Z-33d046/outputs/performance_eager_fastpath_off_b1.pt",
+  "reference": "/root/ViT/vit_pilot/followup_runs/20261104T132538Z-c031a6/outputs/validation_eager_b1.pt",
+  "tolerance_status": "pending",
+  "allclose": null,
+  "accuracy_computed": false,
+  "structural_finite_ok": true,
+  "top1_matches": 1,
+  "compared_images": 1,
+  "max_abs_error": 0.0419921875,
+  "mean_abs_error": 0.006191168446093798,
+  "cosine_per_image": [
+    0.9998906217897576
+  ],
+  "cosine_mean": 0.9998906217897576,
+  "cosine_min": 0.9998906217897576,
+  "cosine_undefined_reason": null,
+  "top1_ratio": 1.0,
+  "images": [
+    {
+      "input_id": "01_cat",
+      "candidate_class": 285,
+      "reference_class": 285,
+      "candidate_class_name": "Egyptian cat",
+      "reference_class_name": "Egyptian cat",
+      "candidate_logit": 8.375,
+      "reference_logit": 8.375,
+      "top1_match": true,
+      "cosine": 0.9998906217897576
+    }
+  ],
+  "mismatches": []
+}

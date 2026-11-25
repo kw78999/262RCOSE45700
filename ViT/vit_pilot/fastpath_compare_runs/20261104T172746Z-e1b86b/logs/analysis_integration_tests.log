@@ -1,0 +1,11 @@
+test_exact_observed_crossing (test_cumulative.CumulativeIntegrationTest.test_exact_observed_crossing) ... ok
+test_transitions_and_no_refit (test_cumulative.CumulativeIntegrationTest.test_transitions_and_no_refit) ... ok
+test_exact_tie_and_decimal_boundary (test_math.BreakEvenTest.test_exact_tie_and_decimal_boundary) ... ok
+test_no_double_count_and_prefix (test_math.BreakEvenTest.test_no_double_count_and_prefix) ... ok
+test_nonfinite_and_negative_times (test_math.BreakEvenTest.test_nonfinite_and_negative_times) ... ok
+test_requested_cases (test_math.BreakEvenTest.test_requested_cases) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.008s
+
+OK

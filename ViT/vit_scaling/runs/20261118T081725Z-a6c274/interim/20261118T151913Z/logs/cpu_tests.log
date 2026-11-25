@@ -1,0 +1,22 @@
+test_end_to_end_grouping_pairing_scaling_without_pooling_exploration (test_contract.ArtifactFixture.test_end_to_end_grouping_pairing_scaling_without_pooling_exploration) ... /root/ViT/vit_scaling/analyze.py:282: ResourceWarning: unclosed file <_io.TextIOWrapper name='/root/ViT/vit_pilot/fastpath_compare_runs/20261104T172746Z-e1b86b/trial_summary.csv' mode='r' encoding='UTF-8'>
+  old=list(csv.DictReader((Path(cfg['prior_run'])/'trial_summary.csv').open()));oldg=defaultdict(list)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/root/ViT/vit_scaling/tests/test_contract.py:62: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/vit_scaling_cpu_fixture_1liy4qwf/paired_speedups.csv' mode='r' encoding='UTF-8'>
+  paired=list(csv.DictReader((run/'paired_speedups.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/root/ViT/vit_scaling/tests/test_contract.py:65: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/vit_scaling_cpu_fixture_1liy4qwf/scaling_summary.csv' mode='r' encoding='UTF-8'>
+  scaling=list(csv.DictReader((run/'scaling_summary.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/root/ViT/vit_scaling/tests/test_contract.py:69: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/vit_scaling_cpu_fixture_1liy4qwf/condition_summary.csv' mode='r' encoding='UTF-8'>
+  summary=list(csv.DictReader((run/'condition_summary.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_descriptive_stats_keep_slow_calls (test_contract.ContractTests.test_descriptive_stats_keep_slow_calls) ... ok
+test_minimum_not_a_steady_state_proof (test_contract.ContractTests.test_minimum_not_a_steady_state_proof) ... ok
+test_output_metrics_have_pending_tolerance (test_contract.ContractTests.test_output_metrics_have_pending_tolerance) ... ok
+test_recent_window_drift_and_noise (test_contract.ContractTests.test_recent_window_drift_and_noise) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 3.614s
+
+OK
