@@ -1,0 +1,59 @@
+{
+  "started_kst": "2026-11-04T17:28:05.919237+09:00",
+  "target": "resnet50",
+  "experiment": "isolated_module_latency",
+  "model_variant": "bn_folded_output_split128",
+  "status": "stopped_for_relaunch",
+  "phase": "finished",
+  "runner_pid": 73956,
+  "jobs": [
+    {
+      "name": "eager-b1-cold",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.module_worker",
+        "--config",
+        "/root/Resnet/Phase_1/results/b1-module-latency-20261104-172803/config.json",
+        "--mode",
+        "eager",
+        "--cache-intent",
+        "empty_project_cache",
+        "--cache",
+        "/root/Resnet/Phase_1/results/b1-module-latency-20261104-172803/caches/eager",
+        "--output",
+        "/root/Resnet/Phase_1/results/b1-module-latency-20261104-172803/jobs/eager-b1-cold"
+      ],
+      "status": "interrupted",
+      "profile": false,
+      "worker_pid": 73969,
+      "elapsed_s": 120.01337417517789,
+      "current_node": "layer2_0_conv2",
+      "current_module": "layer2.0.conv2",
+      "completed_nodes": 39,
+      "total_nodes": 187,
+      "failed_nodes": 0,
+      "stop_reason": "CSV atomic update and crash cleanup validation before fresh-cache restart"
+    }
+  ],
+  "skipped": [],
+  "planned_case_count": 4,
+  "support_gate": {
+    "status": "per_node_validation"
+  },
+  "deadline_kst": "2026-11-04T18:29:33.073009+09:00",
+  "max_runtime_s": 3690,
+  "measurement_scope": "isolated node forward + NPU synchronization; H2D/D2H excluded",
+  "compile_scope": "per-node compilation; no cross-module fusion; not full-model latency",
+  "cache_scope": "empty at case start, shared within one mode's node sequence; reuse in a new process",
+  "worker_source_snapshot": "/root/Resnet/Phase_1/results/b1-module-latency-20261104-172803/source",
+  "tables": {
+    "module_rows": 42,
+    "successful_node_measurements": 29,
+    "failed_node_measurements": 0,
+    "comparison_rows": 0
+  },
+  "finished_kst": "2026-11-04T17:32:45.741703+09:00",
+  "stop_reason": "CSV atomic update and crash cleanup validation before fresh-cache restart"
+}

@@ -1,0 +1,164 @@
+{
+  "scope": "Isolated diagnostics only; main experiment settings unchanged",
+  "jobs": [
+    {
+      "case": "conv1",
+      "mode": "eager",
+      "exit_code": 0,
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.conv_layout_diagnostics",
+        "--case",
+        "conv1",
+        "--mode",
+        "eager",
+        "--run-dir",
+        "/root/Resnet/Phase_1/results/conv-layout-review-20261104/conv1-eager",
+        "--summary"
+      ]
+    },
+    {
+      "case": "stride1",
+      "mode": "eager",
+      "exit_code": 1,
+      "status": "failed",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.conv_layout_diagnostics",
+        "--case",
+        "stride1",
+        "--mode",
+        "eager",
+        "--run-dir",
+        "/root/Resnet/Phase_1/results/conv-layout-review-20261104/stride1-eager"
+      ]
+    },
+    {
+      "case": "split_out",
+      "mode": "eager",
+      "exit_code": 1,
+      "status": "failed",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.conv_layout_diagnostics",
+        "--case",
+        "split_out",
+        "--mode",
+        "eager",
+        "--run-dir",
+        "/root/Resnet/Phase_1/results/conv-layout-review-20261104/split_out-eager",
+        "--summary"
+      ]
+    },
+    {
+      "case": "split_out",
+      "mode": "compile",
+      "exit_code": 1,
+      "status": "failed",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.conv_layout_diagnostics",
+        "--case",
+        "split_out",
+        "--mode",
+        "compile",
+        "--run-dir",
+        "/root/Resnet/Phase_1/results/conv-layout-review-20261104/split_out-compile",
+        "--summary"
+      ]
+    },
+    {
+      "case": "dma_only",
+      "mode": "eager",
+      "exit_code": 1,
+      "status": "failed",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.conv_layout_diagnostics",
+        "--case",
+        "dma_only",
+        "--mode",
+        "eager",
+        "--run-dir",
+        "/root/Resnet/Phase_1/results/conv-layout-review-20261104/dma_only-eager"
+      ]
+    },
+    {
+      "case": "split_out",
+      "mode": "eager",
+      "chunk": 128,
+      "exit_code": 0,
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.conv_layout_diagnostics",
+        "--case",
+        "split_out",
+        "--mode",
+        "eager",
+        "--chunk",
+        "128",
+        "--run-dir",
+        "/root/Resnet/Phase_1/results/conv-layout-review-20261104/split128-eager",
+        "--summary"
+      ]
+    },
+    {
+      "case": "split_out",
+      "mode": "compile",
+      "chunk": 128,
+      "exit_code": 0,
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.conv_layout_diagnostics",
+        "--case",
+        "split_out",
+        "--mode",
+        "compile",
+        "--chunk",
+        "128",
+        "--run-dir",
+        "/root/Resnet/Phase_1/results/conv-layout-review-20261104/split128-compile",
+        "--summary"
+      ]
+    },
+    {
+      "case": "vision_hint",
+      "mode": "eager",
+      "chunk": 256,
+      "exit_code": 1,
+      "status": "failed",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.conv_layout_diagnostics",
+        "--case",
+        "vision_hint",
+        "--mode",
+        "eager",
+        "--chunk",
+        "256",
+        "--run-dir",
+        "/root/Resnet/Phase_1/results/conv-layout-review-20261104/vision_hint-eager",
+        "--summary"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+variant,batch,in_ch,out_ch,hw,kernel,stride,status,reason,compile_s
+b16-original,16,256,1024,14,1,1,FAIL,insufficient sequencer entries: required 9,33.4
+b16-out_split512,16,256,512,14,1,1,FAIL,insufficient sequencer entries: required 9,29.0
+b16-out_split256,16,256,256,14,1,1,FAIL,insufficient sequencer entries: required 9,22.2
+b16-batch_split8,8,256,1024,14,1,1,OK,,25.2

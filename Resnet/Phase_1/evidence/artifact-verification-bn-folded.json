@@ -1,0 +1,12 @@
+{
+  "status": "ok",
+  "folded_pairs": 53,
+  "same_folded_state_in_validation_eager_compile_reproducer": true,
+  "state_sha256": "73d260e221fc017b5acd7066fbdfe3948195ce25e2c03916ef6d045a0abc68bb",
+  "original_and_folded_results_separate": true,
+  "measurement_sources_unchanged_since_run_start": true,
+  "failed_samples_excluded": true,
+  "skipped_conditions": 20,
+  "isolated_conv_failure_reproduced": true,
+  "document_links_valid": true
+}

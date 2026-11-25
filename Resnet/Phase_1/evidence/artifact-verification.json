@@ -1,0 +1,18 @@
+{
+  "baseline-20261104_measurement_sources_match": true,
+  "conv1-diagnostic-20261104_measurement_sources_match": true,
+  "failed_original_has_no_inference_metrics": true,
+  "conv1_performance_samples": 776,
+  "conv1_output_comparisons": 16,
+  "mixed_compile_backend_counts": [
+    1,
+    2,
+    2,
+    3,
+    3,
+    4,
+    4
+  ],
+  "separate_observation_processes_ok": true,
+  "document_local_links_exist": true
+}

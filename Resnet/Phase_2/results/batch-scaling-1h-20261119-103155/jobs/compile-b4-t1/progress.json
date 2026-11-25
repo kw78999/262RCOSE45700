@@ -1,0 +1,99 @@
+{
+  "status": "running",
+  "job": "compile-b4-t1",
+  "mode": "compile",
+  "batch": 4,
+  "trial": 1,
+  "cache_dir": "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/caches/compile-b4-t1",
+  "smoke": false,
+  "config": {
+    "experiment": "phase2_batch_scaling",
+    "model": "resnet50",
+    "model_variant": "bn_folded_output_split128",
+    "weights": "IMAGENET1K_V2",
+    "precision": "bfloat16",
+    "bn_folded": true,
+    "output_split_channels": 128,
+    "expected_state_sha256": "f4ffc8727491492e195b9c024f145293f422696cdbeed6d8c064016158753469",
+    "device": "furiosa:0",
+    "seed": 2026,
+    "image_size": 224,
+    "cpu_threads": 1,
+    "warmup": 10,
+    "repeats": 50,
+    "aux_warmup": 5,
+    "aux_repeats": 50,
+    "core_batches": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "core_trials": 3,
+    "revalidation_batch": 1,
+    "revalidation_trials": 5,
+    "extension_batches": [
+      64,
+      128,
+      256
+    ],
+    "extension_trials": 3,
+    "timeout_s": 7200,
+    "max_total_s": 43200
+  },
+  "cpu_fallback": false,
+  "device_configuration": "(Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3', 'furiosa:4', 'furiosa:5', 'furiosa:6', 'furiosa:7'])",
+  "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+  "compile_options": "SDK defaults; torch.compile(model, backend=counter -> ft.backend)",
+  "torch_threads": 1,
+  "timing_scope": {
+    "forward_to_cpu": "input pre-staged on NPU; forward until output.to('cpu') returned",
+    "aux": "separate loop: H2D | forward+synchronize | D2H, each closed by synchronize"
+  },
+  "cache_state": "new_empty_project_cache_directory",
+  "stage": "first_call",
+  "model_load_ms": 469.881645,
+  "weights": {
+    "model": "torchvision.models.resnet50",
+    "weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "checkpoint": "/root/Resnet/.cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth",
+    "sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+  },
+  "model_variant": "bn_folded_output_split128",
+  "state_sha256": "f4ffc8727491492e195b9c024f145293f422696cdbeed6d8c064016158753469",
+  "model_to_device_ms": 51.223587,
+  "input": {
+    "shape": [
+      4,
+      3,
+      224,
+      224
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:0",
+    "kind": "synthetic normal, Phase 1 seed rule"
+  },
+  "eager_cache_initial": {
+    "_build_exported_program_cached": {
+      "hits": 0,
+      "misses": 0,
+      "maxsize": 8192,
+      "currsize": 0
+    },
+    "_compile_cached": {
+      "hits": 0,
+      "misses": 0,
+      "maxsize": 8192,
+      "currsize": 0
+    },
+    "_compile_and_load_cached": {
+      "hits": 0,
+      "misses": 0,
+      "maxsize": 32,
+      "currsize": 0
+    }
+  }
+}

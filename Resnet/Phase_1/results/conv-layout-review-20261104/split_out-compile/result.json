@@ -1,0 +1,68 @@
+{
+  "status": "failed",
+  "case": "split_out",
+  "mode": "compile",
+  "scope": "Isolated compiler diagnostic, not ResNet50 benchmark",
+  "cpu_fallback": false,
+  "sdk": "furiosa-torch 2026.4.0 (rev: 5800e2ba24, built_at: 2026-10-12T09:11:33Z)",
+  "module": "layer4.0.conv2",
+  "input_shape": [
+    1,
+    512,
+    14,
+    14
+  ],
+  "weight_shape": [
+    512,
+    512,
+    3,
+    3
+  ],
+  "stride": [
+    2,
+    2
+  ],
+  "logical_weight_bytes": 4718592,
+  "cpu_bf16_partition_vs_original": {
+    "status": "measured",
+    "shape": [
+      1,
+      512,
+      7,
+      7
+    ],
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "rmse": 0.0,
+    "cosine_mean": 1.0,
+    "cosine_min": 1.0,
+    "cosine_undefined_samples": 0,
+    "prediction_agreement": null,
+    "acceptance": "not_defined; numerical metrics only, no ImageNet accuracy claim"
+  },
+  "partition_axis": "output_channels",
+  "chunk_size": 256,
+  "partition_weight_shapes": [
+    [
+      256,
+      512,
+      3,
+      3
+    ],
+    [
+      256,
+      512,
+      3,
+      3
+    ]
+  ],
+  "cpu_fp32_partition_equivalence_passed": true,
+  "compiler_config_before": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+  "compiler_config_effective": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+  "stage": "first_call",
+  "attempt_elapsed_s": 8.37919762916863,
+  "backend_calls": 1,
+  "error_type": "UnsupportedOpError",
+  "error": "failed to compile\ngraph():\n    %l_inputs_ : [num_users=2] = placeholder[target=l_inputs_]\n    %l_self_modules_parts_modules_0_parameters_weight_ : [num_users=1] = placeholder[target=l_self_modules_parts_modules_0_parameters_weight_]\n    %l_self_modules_parts_modules_0_parameters_bias_ : [num_users=1] = placeholder[target=l_self_modules_parts_modules_0_parameters_bias_]\n    %l_self_modules_parts_modules_1_parameters_weight_ : [num_users=1] = placeholder[target=l_self_modules_parts_modules_1_parameters_weight_]\n    %l_self_modules_parts_modules_1_parameters_bias_ : [num_users=1] = placeholder[target=l_self_modules_parts_modules_1_parameters_bias_]\n    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%l_inputs_, %l_self_modules_parts_modules_0_parameters_weight_, %l_self_modules_parts_modules_0_parameters_bias_, [2, 2], [1, 1], [1, 1], False, [0, 0], 1), kwargs = {})\n    %convolution_1 : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%l_inputs_, %l_self_modules_parts_modules_1_parameters_weight_, %l_self_modules_parts_modules_1_parameters_bias_, [2, 2], [1, 1], [1, 1], False, [0, 0], 1), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%convolution, %convolution_1], 1), kwargs = {})\n    return (cat,)\nsource:\n    convolution          Resnet/Phase_1/conv_layout_diagnostics.py:40 return torch.cat([part(inputs) for part in self.parts], dim=1)\n    convolution_1        Resnet/Phase_1/conv_layout_diagnostics.py:40 return torch.cat([part(inputs) for part in self.parts], dim=1)\n    cat                  Resnet/Phase_1/conv_layout_diagnostics.py:40 return torch.cat([part(inputs) for part in self.parts], dim=1)\ncompile error:\n(cache at /root/Resnet/Phase_1/results/conv-layout-review-20261104/split_out-compile/compiler-cache/c62749b99477bbd2)\n\nCaused by:\n   0: O296 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=256:4608, 1_1=512:9, 2_1=3:3, 3_1=3:1])\n      -> [] | [] | [1_16=32, 0_128=2] | [0_1=128, 1_1=16, 2_1=3] | [3_1=3](4)\n      -> (E) []|[]|[]|[1_16=32, 0_128=2]|[0_1=128, 2_1=3, 3_1=3]|[1_1=16](8) @ [0=256, 1=512, 2=3, 3=3]\n   1: while verifying LowLevelTailCrop\n   2: verification of operator failed:\n      LowLevelTailCrop\n      broadcast_axes: [AxisIndex(0), AxisIndex(2), AxisIndex(4), AxisIndex(6)]\n      name: \n\n      input tensors: 1\n        input T7: [] | [] | [A3_1=32, E_12=1, A2_1=2, E_12=1] | [A1_1=128, E_12=1, A0_1=4, E_3=4, E_1=3] | [TAIL_1=8](4), 6291456 B, bf16, sram\n        source: unknown\n        total bytes: 6291456\n      output tensors: 1\n        output T8: [] | [] | [A3_1=32, E_12=1, A2_1=2, E_12=1] | [A1_1=128, E_12=1, A0_1=4, E_3=4, E_1=3] | [TAIL_1=4](4), 3145728 B, bf16, sram\n        source: unknown\n        total bytes: 3145728\n   3: Condition failed: `tensors.try_get(input)?\n      .element_type.size_in_bytes_with_length(input_shape.slice_volume()) <=\n      u16::MAX as usize`\n\nLocation:\n    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/global-compiler/src/lib.rs:65:30",
+  "traceback": "Traceback (most recent call last):\n  File \"/root/Resnet/Phase_1/conv_layout_diagnostics.py\", line 113, in main\n    elapsed, output = measure_e2e(function, inputs, device)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/Resnet/runtime.py\", line 38, in measure_e2e\n    output = function(device_input)\n             ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 465, in __call__\n    return super().__call__(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 953, in compile_wrapper\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/Resnet/Phase_1/conv_layout_diagnostics.py\", line 39, in forward\n    def forward(self, inputs):\n  File \"/root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1181, in _fn\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/torch_compile.py\", line 230, in forward\n    raise e from None\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/torch_compile.py\", line 218, in forward\n    split_gm, filter_inputs = _build_segmented(\n                              ^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/torch_compile.py\", line 186, in _build_segmented\n    cm = CompileModule.from_module(\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_module/runnable.py\", line 240, in from_module\n    return cls.from_exported(\n           ^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_module/runnable.py\", line 222, in from_exported\n    compiler.compile(exported, compiler_config, task_name=task_name)\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/profiler/__init__.py\", line 35, in wrapped\n    return f(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/compiler/__init__.py\", line 94, in compile\n    raise error.UnsupportedOpError(\nfuriosa.torch._C.error.UnsupportedOpError: failed to compile\ngraph():\n    %l_inputs_ : [num_users=2] = placeholder[target=l_inputs_]\n    %l_self_modules_parts_modules_0_parameters_weight_ : [num_users=1] = placeholder[target=l_self_modules_parts_modules_0_parameters_weight_]\n    %l_self_modules_parts_modules_0_parameters_bias_ : [num_users=1] = placeholder[target=l_self_modules_parts_modules_0_parameters_bias_]\n    %l_self_modules_parts_modules_1_parameters_weight_ : [num_users=1] = placeholder[target=l_self_modules_parts_modules_1_parameters_weight_]\n    %l_self_modules_parts_modules_1_parameters_bias_ : [num_users=1] = placeholder[target=l_self_modules_parts_modules_1_parameters_bias_]\n    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%l_inputs_, %l_self_modules_parts_modules_0_parameters_weight_, %l_self_modules_parts_modules_0_parameters_bias_, [2, 2], [1, 1], [1, 1], False, [0, 0], 1), kwargs = {})\n    %convolution_1 : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%l_inputs_, %l_self_modules_parts_modules_1_parameters_weight_, %l_self_modules_parts_modules_1_parameters_bias_, [2, 2], [1, 1], [1, 1], False, [0, 0], 1), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%convolution, %convolution_1], 1), kwargs = {})\n    return (cat,)\nsource:\n    convolution          Resnet/Phase_1/conv_layout_diagnostics.py:40 return torch.cat([part(inputs) for part in self.parts], dim=1)\n    convolution_1        Resnet/Phase_1/conv_layout_diagnostics.py:40 return torch.cat([part(inputs) for part in self.parts], dim=1)\n    cat                  Resnet/Phase_1/conv_layout_diagnostics.py:40 return torch.cat([part(inputs) for part in self.parts], dim=1)\ncompile error:\n(cache at /root/Resnet/Phase_1/results/conv-layout-review-20261104/split_out-compile/compiler-cache/c62749b99477bbd2)\n\nCaused by:\n   0: O296 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=256:4608, 1_1=512:9, 2_1=3:3, 3_1=3:1])\n      -> [] | [] | [1_16=32, 0_128=2] | [0_1=128, 1_1=16, 2_1=3] | [3_1=3](4)\n      -> (E) []|[]|[]|[1_16=32, 0_128=2]|[0_1=128, 2_1=3, 3_1=3]|[1_1=16](8) @ [0=256, 1=512, 2=3, 3=3]\n   1: while verifying LowLevelTailCrop\n   2: verification of operator failed:\n      LowLevelTailCrop\n      broadcast_axes: [AxisIndex(0), AxisIndex(2), AxisIndex(4), AxisIndex(6)]\n      name: \n\n      input tensors: 1\n        input T7: [] | [] | [A3_1=32, E_12=1, A2_1=2, E_12=1] | [A1_1=128, E_12=1, A0_1=4, E_3=4, E_1=3] | [TAIL_1=8](4), 6291456 B, bf16, sram\n        source: unknown\n        total bytes: 6291456\n      output tensors: 1\n        output T8: [] | [] | [A3_1=32, E_12=1, A2_1=2, E_12=1] | [A1_1=128, E_12=1, A0_1=4, E_3=4, E_1=3] | [TAIL_1=4](4), 3145728 B, bf16, sram\n        source: unknown\n        total bytes: 3145728\n   3: Condition failed: `tensors.try_get(input)?\n      .element_type.size_in_bytes_with_length(input_shape.slice_volume()) <=\n      u16::MAX as usize`\n\nLocation:\n    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/global-compiler/src/lib.rs:65:30\n"
+}

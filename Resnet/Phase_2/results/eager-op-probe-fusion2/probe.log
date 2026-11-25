@@ -1,0 +1,88 @@
+b8 aten::conv2d conv1 (+0) OK 3.2s
+b8 aten::relu_ relu (+0) OK 1.3s
+b8 aten::max_pool2d maxpool (+0) OK 1.1s
+b8 aten::conv2d layer1.0.conv1 (+0) OK 11.1s
+b8 aten::relu_ layer1.0.relu (+2) OK 0.6s
+b8 aten::conv2d layer1.0.conv2 (+2) OK 17.5s
+b8 aten::conv2d layer1.0.conv3 (+3) OK 100.9s
+b8 aten::add_.Tensor layer1.0 (+2) OK 1.7s
+b8 aten::relu_ layer1.0.relu (+2) OK 1.3s
+b8 aten::conv2d layer1.1.conv1 (+1) OK 109.3s
+b8 aten::conv2d layer2.0.conv1 (+0) OK 171.3s
+b8 aten::relu_ layer2.0.relu (+0) OK 1.2s
+b8 aten::conv2d layer2.0.conv2 (+0) OK 17.8s
+b8 aten::relu_ layer2.0.relu (+3) OK 0.5s
+b8 aten::conv2d layer2.0.conv3 (+3) OK 31.3s
+b8 aten::conv2d layer2.0.downsample.0 (+0) OK 124.1s
+b8 aten::add_.Tensor layer2.0 (+3) OK 0.7s
+b8 aten::relu_ layer2.0.relu (+3) OK 0.7s
+b8 aten::conv2d layer2.1.conv1 (+2) OK 577.3s
+b8 aten::conv2d layer2.1.conv2 (+2) OK 27.6s
+b8 aten::conv2d layer3.0.conv1 (+0) OK 144.3s
+b8 aten::relu_ layer3.0.relu (+0) OK 0.9s
+b8 aten::conv2d layer3.0.conv2 (+0) OK 13.2s
+b8 aten::relu_ layer3.0.relu (+5) OK 0.7s
+b8 aten::conv2d layer3.0.conv3 (+5) FAIL insufficient sequencer entries: required 9 16.0s
+b8 aten::conv2d layer3.0.downsample.0 (+0) OK 107.2s
+b8 aten::add_.Tensor layer3.0 (+5) OK 1.2s
+b8 aten::relu_ layer3.0.relu (+5) OK 1.1s
+b8 aten::conv2d layer3.1.conv1 (+4) FAIL insufficient sequencer entries: required 9 41.4s
+b8 aten::conv2d layer3.1.conv2 (+4) FAIL insufficient sequencer entries: required 9 11.5s
+b8 aten::conv2d layer4.0.conv1 (+0) FAIL insufficient sequencer entries: required 9 54.3s
+b8 aten::relu_ layer4.0.relu (+0) OK 1.0s
+b8 aten::conv2d layer4.0.conv2.parts.0 (+3) FAIL insufficient sequencer entries: required 9 8.2s
+b8 aten::cat layer4.0.conv2 (+2) OK 1.3s
+b8 aten::relu_ layer4.0.relu (+2) OK 0.9s
+b8 aten::conv2d layer4.0.conv3 (+2) OK 26.7s
+b8 aten::conv2d layer4.0.downsample.0 (+0) OK 110.2s
+b8 aten::add_.Tensor layer4.0 (+2) OK 1.2s
+b8 aten::relu_ layer4.0.relu (+2) OK 1.0s
+b8 aten::conv2d layer4.1.conv1 (+1) OK 24.6s
+b8 aten::conv2d layer4.1.conv2.parts.0 (+7) OK 7.1s
+b8 aten::adaptive_avg_pool2d avgpool (+0) OK 1.0s
+b8 aten::flatten.using_ints  (+0) OK 0.6s
+b8 aten::linear fc (+0) OK 2.1s
+b16 aten::conv2d conv1 (+0) OK 5.8s
+b16 aten::relu_ relu (+0) OK 1.8s
+b16 aten::max_pool2d maxpool (+0) OK 2.0s
+b16 aten::conv2d layer1.0.conv1 (+0) OK 25.6s
+b16 aten::relu_ layer1.0.relu (+2) OK 0.9s
+b16 aten::conv2d layer1.0.conv2 (+2) OK 29.7s
+b16 aten::conv2d layer1.0.conv3 (+3) OK 101.5s
+b16 aten::add_.Tensor layer1.0 (+2) OK 3.4s
+b16 aten::relu_ layer1.0.relu (+2) OK 2.4s
+b16 aten::conv2d layer1.1.conv1 (+1) OK 144.8s
+b16 aten::conv2d layer2.0.conv1 (+0) OK 202.2s
+b16 aten::relu_ layer2.0.relu (+0) OK 1.5s
+b16 aten::conv2d layer2.0.conv2 (+0) OK 34.4s
+b16 aten::relu_ layer2.0.relu (+3) OK 1.1s
+b16 aten::conv2d layer2.0.conv3 (+3) OK 208.2s
+b16 aten::conv2d layer2.0.downsample.0 (+0) OK 431.7s
+b16 aten::add_.Tensor layer2.0 (+3) OK 0.9s
+b16 aten::relu_ layer2.0.relu (+3) OK 0.9s
+b16 aten::conv2d layer2.1.conv1 (+2) OK 136.3s
+b16 aten::conv2d layer2.1.conv2 (+2) OK 15.3s
+b16 aten::conv2d layer3.0.conv1 (+0) OK 175.8s
+b16 aten::relu_ layer3.0.relu (+0) OK 0.5s
+b16 aten::conv2d layer3.0.conv2 (+0) OK 10.8s
+b16 aten::relu_ layer3.0.relu (+5) OK 0.5s
+b16 aten::conv2d layer3.0.conv3 (+5) FAIL insufficient sequencer entries: required 9 20.7s
+b16 aten::conv2d layer3.0.downsample.0 (+0) OK 180.6s
+b16 aten::add_.Tensor layer3.0 (+5) FAIL 0: O18 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=16:200704, 1_1=1024:196, 2_1=14:14, 3_1=14:1]) | -> [] | [] | [0_8=2, 1_16=64] | [0_1=8, 1_1=16, 2_1=14] | [3_1=16](8) | -> (E) []|[]|[]|[0_8=2, 1_16=64]|[0_1=8, 1_1=16, 2_1=14]|[3_1=16](8) @ [0=16, 1=1024, 2=14, 3=14(+2)] | 1: while verifying LowLevelTailCrop | 2: verification of operator failed: | LowLevelTailCrop | broadcast_axes: [AxisIndex(0), AxisIndex(2), AxisIndex(4), AxisIndex(6), AxisIndex(8)] | name: | input tensors: 1 | input T7: [] | [] | [A4_1=2, E_2=1, A3_1=64, E_2=1] | [A2_1=8, E_2=1, A1_1=16, E_2=1, A0_1=7, E_1=2] | [TAIL_1=20](8), 11010048 B, bf16, sram | source: unknown | total bytes: 11010048 | output tensors: 1 | output T8: [] | [] | [A4_1=2, E_2=1, A3_1=64, E_2=1] | [A2_1=8, E_2=1, A1_1=16, E_2=1, A0_1=7, E_1=2] | [TAIL_1=16](8), 7340032 B, bf16, sram | source: unknown | total bytes: 7340032 | 3: Condition failed: `tensors.try_get(input)? | .element_type.size_in_bytes_with_length(input_shape.slice_volume()) <= | u16::MAX as usize` 0.5s
+b16 aten::relu_ layer3.0.relu (+5) FAIL 0: O20 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=16:200704, 1_1=1024:196, 2_1=14:14, 3_1=14:1]) | -> [] | [] | [1_128=8, 0_1=16] | [1_1=128, 2_1=14] | [3_1=14](4) | -> (E) []|[]|[]|[1_128=8, 0_1=16]|[1_1=128, 2_1=14]|[3_1=14](8) @ [0=16, 1=1024, 2=14, 3=14] | 1: while verifying LowLevelTailCrop | 2: verification of operator failed: | LowLevelTailCrop | broadcast_axes: [AxisIndex(0), AxisIndex(2), AxisIndex(4), AxisIndex(6)] | name: | input tensors: 1 | input T7: [] | [] | [A3_1=8, E_2=1, A2_1=16, E_2=1] | [A1_1=128, E_2=1, A0_1=7, E_1=2] | [TAIL_1=20](4), 9175040 B, bf16, sram | source: unknown | total bytes: 9175040 | output tensors: 1 | output T8: [] | [] | [A3_1=8, E_2=1, A2_1=16, E_2=1] | [A1_1=128, E_2=1, A0_1=7, E_1=2] | [TAIL_1=16](4), 7340032 B, bf16, sram | source: unknown | total bytes: 7340032 | 3: Condition failed: `tensors.try_get(input)? | .element_type.size_in_bytes_with_length(input_shape.slice_volume()) <= | u16::MAX as usize` 0.3s
+b16 aten::conv2d layer3.1.conv1 (+4) OK 43.0s
+b16 aten::conv2d layer3.1.conv2 (+4) FAIL insufficient sequencer entries: required 9 6.0s
+b16 aten::conv2d layer4.0.conv1 (+0) OK 74.7s
+b16 aten::relu_ layer4.0.relu (+0) OK 0.5s
+b16 aten::conv2d layer4.0.conv2.parts.0 (+3) FAIL insufficient sequencer entries: required 9 6.1s
+b16 aten::cat layer4.0.conv2 (+2) OK 0.6s
+b16 aten::relu_ layer4.0.relu (+2) OK 0.6s
+b16 aten::conv2d layer4.0.conv3 (+2) OK 13.9s
+b16 aten::conv2d layer4.0.downsample.0 (+0) OK 96.5s
+b16 aten::add_.Tensor layer4.0 (+2) OK 1.6s
+b16 aten::relu_ layer4.0.relu (+2) OK 1.8s
+b16 aten::conv2d layer4.1.conv1 (+1) OK 22.4s
+b16 aten::conv2d layer4.1.conv2.parts.0 (+7) OK 5.9s
+b16 aten::adaptive_avg_pool2d avgpool (+0) OK 0.6s
+b16 aten::flatten.using_ints  (+0) OK 0.4s
+b16 aten::linear fc (+0) OK 1.6s

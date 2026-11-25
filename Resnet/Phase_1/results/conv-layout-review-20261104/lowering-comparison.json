@@ -1,0 +1,1257 @@
+{
+  "successful_lowering_graphs": [
+    {
+      "trial": "conv1-eager",
+      "postlower_json": "conv1-eager/compiler-cache/8698a51f33c1387d/summary/json/postlower_ir_viewer.json",
+      "tailcrops": [
+        {
+          "operator": "155",
+          "history": {
+            "prelower": "O114",
+            "postlower": "O155"
+          },
+          "inputs": [
+            {
+              "tensor": 81,
+              "dtype": "Bfloat16",
+              "total_bytes": 573440,
+              "partition_positions": 64,
+              "slice_bytes": 8960,
+              "layout": {
+                "chip_shape": {
+                  "inner": []
+                },
+                "cluster_shape": {
+                  "inner": []
+                },
+                "partitioning_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A4"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 64
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 2
+                        }
+                      },
+                      "size": 1
+                    }
+                  ]
+                },
+                "in_slice_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A3"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 8
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 2
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A2"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 2
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A1"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 2
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A0"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 7
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 1
+                    }
+                  ]
+                },
+                "tail_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "TAIL"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 20
+                    }
+                  ]
+                },
+                "tail_shape_alignment": 4
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial": "split128-eager",
+      "postlower_json": "split128-eager/compiler-cache/3757222ecbf35dfd/summary/json/postlower_ir_viewer.json",
+      "tailcrops": [
+        {
+          "operator": "215",
+          "history": {
+            "prelower": "O169",
+            "postlower": "O215"
+          },
+          "inputs": [
+            {
+              "tensor": 120,
+              "dtype": "Bfloat16",
+              "total_bytes": 286720,
+              "partition_positions": 64,
+              "slice_bytes": 4480,
+              "layout": {
+                "chip_shape": {
+                  "inner": []
+                },
+                "cluster_shape": {
+                  "inner": []
+                },
+                "partitioning_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A4"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 64
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 2
+                        }
+                      },
+                      "size": 1
+                    }
+                  ]
+                },
+                "in_slice_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A3"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 4
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 2
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A2"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 2
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A1"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 2
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A0"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 7
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 1
+                    }
+                  ]
+                },
+                "tail_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "TAIL"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 20
+                    }
+                  ]
+                },
+                "tail_shape_alignment": 4
+              }
+            }
+          ]
+        },
+        {
+          "operator": "179",
+          "history": {
+            "prelower": "O167",
+            "postlower": "O179"
+          },
+          "inputs": [
+            {
+              "tensor": 89,
+              "dtype": "Bfloat16",
+              "total_bytes": 3145728,
+              "partition_positions": 64,
+              "slice_bytes": 49152,
+              "layout": {
+                "chip_shape": {
+                  "inner": []
+                },
+                "cluster_shape": {
+                  "inner": []
+                },
+                "partitioning_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A3"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 16
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A2"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 4
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    }
+                  ]
+                },
+                "in_slice_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A1"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 8
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A0"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 32
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 3
+                        }
+                      },
+                      "size": 4
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 3
+                    }
+                  ]
+                },
+                "tail_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "TAIL"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 8
+                    }
+                  ]
+                },
+                "tail_shape_alignment": 4
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial": "split128-compile",
+      "postlower_json": "split128-compile/compiler-cache/5d077e3da011cb16/summary/json/postlower_ir_viewer.json",
+      "tailcrops": [
+        {
+          "operator": "562",
+          "history": {
+            "prelower": "O532",
+            "postlower": "O562"
+          },
+          "inputs": [
+            {
+              "tensor": 289,
+              "dtype": "Bfloat16",
+              "total_bytes": 3145728,
+              "partition_positions": 64,
+              "slice_bytes": 49152,
+              "layout": {
+                "chip_shape": {
+                  "inner": []
+                },
+                "cluster_shape": {
+                  "inner": []
+                },
+                "partitioning_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A3"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 16
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A2"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 4
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    }
+                  ]
+                },
+                "in_slice_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A1"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 8
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A0"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 32
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 3
+                        }
+                      },
+                      "size": 4
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 3
+                    }
+                  ]
+                },
+                "tail_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "TAIL"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 8
+                    }
+                  ]
+                },
+                "tail_shape_alignment": 4
+              }
+            }
+          ]
+        },
+        {
+          "operator": "571",
+          "history": {
+            "prelower": "O529",
+            "postlower": "O571"
+          },
+          "inputs": [
+            {
+              "tensor": 298,
+              "dtype": "Bfloat16",
+              "total_bytes": 3145728,
+              "partition_positions": 64,
+              "slice_bytes": 49152,
+              "layout": {
+                "chip_shape": {
+                  "inner": []
+                },
+                "cluster_shape": {
+                  "inner": []
+                },
+                "partitioning_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A3"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 16
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A2"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 4
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    }
+                  ]
+                },
+                "in_slice_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A1"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 8
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A0"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 32
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 3
+                        }
+                      },
+                      "size": 4
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 3
+                    }
+                  ]
+                },
+                "tail_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "TAIL"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 8
+                    }
+                  ]
+                },
+                "tail_shape_alignment": 4
+              }
+            }
+          ]
+        },
+        {
+          "operator": "580",
+          "history": {
+            "prelower": "O526",
+            "postlower": "O580"
+          },
+          "inputs": [
+            {
+              "tensor": 307,
+              "dtype": "Bfloat16",
+              "total_bytes": 3145728,
+              "partition_positions": 64,
+              "slice_bytes": 49152,
+              "layout": {
+                "chip_shape": {
+                  "inner": []
+                },
+                "cluster_shape": {
+                  "inner": []
+                },
+                "partitioning_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A3"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 16
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A2"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 4
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    }
+                  ]
+                },
+                "in_slice_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A1"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 8
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A0"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 32
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 3
+                        }
+                      },
+                      "size": 4
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 3
+                    }
+                  ]
+                },
+                "tail_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "TAIL"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 8
+                    }
+                  ]
+                },
+                "tail_shape_alignment": 4
+              }
+            }
+          ]
+        },
+        {
+          "operator": "623",
+          "history": {
+            "prelower": "O522",
+            "postlower": "O623"
+          },
+          "inputs": [
+            {
+              "tensor": 342,
+              "dtype": "Bfloat16",
+              "total_bytes": 3145728,
+              "partition_positions": 64,
+              "slice_bytes": 49152,
+              "layout": {
+                "chip_shape": {
+                  "inner": []
+                },
+                "cluster_shape": {
+                  "inner": []
+                },
+                "partitioning_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A3"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 16
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A2"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 4
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    }
+                  ]
+                },
+                "in_slice_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A1"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 8
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 12
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A0"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 32
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 3
+                        }
+                      },
+                      "size": 4
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 3
+                    }
+                  ]
+                },
+                "tail_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "TAIL"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 8
+                    }
+                  ]
+                },
+                "tail_shape_alignment": 4
+              }
+            }
+          ]
+        },
+        {
+          "operator": "553",
+          "history": {
+            "prelower": "O524",
+            "postlower": "O553"
+          },
+          "inputs": [
+            {
+              "tensor": 280,
+              "dtype": "Bfloat16",
+              "total_bytes": 286720,
+              "partition_positions": 64,
+              "slice_bytes": 4480,
+              "layout": {
+                "chip_shape": {
+                  "inner": []
+                },
+                "cluster_shape": {
+                  "inner": []
+                },
+                "partitioning_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A4"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 64
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 2
+                        }
+                      },
+                      "size": 1
+                    }
+                  ]
+                },
+                "in_slice_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A3"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 4
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 2
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A2"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 2
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A1"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 2
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 1
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "A0"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 7
+                    },
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "E"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 1
+                    }
+                  ]
+                },
+                "tail_shape": {
+                  "inner": [
+                    {
+                      "tag": {
+                        "LabelStride": {
+                          "label": {
+                            "inner": "TAIL"
+                          },
+                          "stride": 1
+                        }
+                      },
+                      "size": 20
+                    }
+                  ]
+                },
+                "tail_shape_alignment": 4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "baseline_conv2_from_error": {
+    "crop_total_input_bytes": 6291456,
+    "partition_positions": 64,
+    "crop_input_slice_bytes": 98304,
+    "crop_output_slice_bytes": 49152,
+    "u16_max": 65535,
+    "slice_formula": "32 * 16 * 4 * 3 * 8 * 2"
+  },
+  "split128_eager_vs_compile": {
+    "status": "measured",
+    "shape": [
+      1,
+      512,
+      7,
+      7
+    ],
+    "max_abs_error": 9.5367431640625e-07,
+    "mean_abs_error": 5.939557179424071e-11,
+    "rmse": 6.7421686011925885e-09,
+    "cosine_mean": 1.0,
+    "cosine_min": 1.0,
+    "cosine_undefined_samples": 0,
+    "prediction_agreement": null,
+    "acceptance": "not_defined; numerical metrics only, no ImageNet accuracy claim"
+  },
+  "failed_cache_note": "output.bin in the failed baseline contains the serialized failure message; existence does not establish success"
+}

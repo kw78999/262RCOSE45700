@@ -1,0 +1,1162 @@
+{
+  "experiment": "phase2_batch_scaling",
+  "started_kst": "2026-11-19T10:31:58.809618+09:00",
+  "status": "finished",
+  "plan": [
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 1,
+      "name": "eager-b1-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "name": "compile-b1-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 2,
+      "trial": 1,
+      "name": "compile-b2-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 2,
+      "trial": 1,
+      "name": "eager-b2-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 1,
+      "name": "eager-b4-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 1,
+      "name": "compile-b4-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 8,
+      "trial": 1,
+      "name": "compile-b8-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 8,
+      "trial": 1,
+      "name": "eager-b8-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 16,
+      "trial": 1,
+      "name": "eager-b16-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 16,
+      "trial": 1,
+      "name": "compile-b16-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 32,
+      "trial": 1,
+      "name": "compile-b32-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 32,
+      "trial": 1,
+      "name": "eager-b32-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 2,
+      "name": "compile-b1-t2"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 2,
+      "name": "eager-b1-t2"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 2,
+      "trial": 2,
+      "name": "eager-b2-t2"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 2,
+      "trial": 2,
+      "name": "compile-b2-t2"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 2,
+      "name": "compile-b4-t2"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 2,
+      "name": "eager-b4-t2"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 8,
+      "trial": 2,
+      "name": "eager-b8-t2"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 8,
+      "trial": 2,
+      "name": "compile-b8-t2"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 16,
+      "trial": 2,
+      "name": "compile-b16-t2"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 16,
+      "trial": 2,
+      "name": "eager-b16-t2"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 32,
+      "trial": 2,
+      "name": "eager-b32-t2"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 32,
+      "trial": 2,
+      "name": "compile-b32-t2"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 3,
+      "name": "eager-b1-t3"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 3,
+      "name": "compile-b1-t3"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 2,
+      "trial": 3,
+      "name": "compile-b2-t3"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 2,
+      "trial": 3,
+      "name": "eager-b2-t3"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 3,
+      "name": "eager-b4-t3"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 3,
+      "name": "compile-b4-t3"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 8,
+      "trial": 3,
+      "name": "compile-b8-t3"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 8,
+      "trial": 3,
+      "name": "eager-b8-t3"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 16,
+      "trial": 3,
+      "name": "eager-b16-t3"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 16,
+      "trial": 3,
+      "name": "compile-b16-t3"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 32,
+      "trial": 3,
+      "name": "compile-b32-t3"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 32,
+      "trial": 3,
+      "name": "eager-b32-t3"
+    },
+    {
+      "phase": "revalidation_extra",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 4,
+      "name": "compile-b1-t4"
+    },
+    {
+      "phase": "revalidation_extra",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 4,
+      "name": "eager-b1-t4"
+    },
+    {
+      "phase": "revalidation_extra",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 5,
+      "name": "eager-b1-t5"
+    },
+    {
+      "phase": "revalidation_extra",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 5,
+      "name": "compile-b1-t5"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 64,
+      "trial": 1,
+      "name": "eager-b64-t1"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 64,
+      "trial": 1,
+      "name": "compile-b64-t1"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 64,
+      "trial": 2,
+      "name": "compile-b64-t2"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 64,
+      "trial": 2,
+      "name": "eager-b64-t2"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 64,
+      "trial": 3,
+      "name": "eager-b64-t3"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 64,
+      "trial": 3,
+      "name": "compile-b64-t3"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 128,
+      "trial": 1,
+      "name": "compile-b128-t1"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 128,
+      "trial": 1,
+      "name": "eager-b128-t1"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 128,
+      "trial": 2,
+      "name": "eager-b128-t2"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 128,
+      "trial": 2,
+      "name": "compile-b128-t2"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 128,
+      "trial": 3,
+      "name": "compile-b128-t3"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 128,
+      "trial": 3,
+      "name": "eager-b128-t3"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 256,
+      "trial": 1,
+      "name": "eager-b256-t1"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 256,
+      "trial": 1,
+      "name": "compile-b256-t1"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 256,
+      "trial": 2,
+      "name": "compile-b256-t2"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 256,
+      "trial": 2,
+      "name": "eager-b256-t2"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 256,
+      "trial": 3,
+      "name": "eager-b256-t3"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 256,
+      "trial": 3,
+      "name": "compile-b256-t3"
+    }
+  ],
+  "jobs": [
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 1,
+      "name": "eager-b1-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/config.json",
+        "--mode",
+        "eager",
+        "--batch",
+        "1",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/caches/eager-b1-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/jobs/eager-b1-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/tmp/eager-b1-t1"
+      },
+      "timeout_s": 3600,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 38.28°C |  38 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-19T10:31:58.841557+09:00",
+      "worker_pid": 60857,
+      "elapsed_s": 466.56180817773566,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 460403.118774,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 37.91°C |  41 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "name": "compile-b1-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/config.json",
+        "--mode",
+        "compile",
+        "--batch",
+        "1",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/caches/compile-b1-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/jobs/compile-b1-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/tmp/compile-b1-t1"
+      },
+      "timeout_s": 3133,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 37.91°C |  41 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-19T10:39:45.467283+09:00",
+      "worker_pid": 62998,
+      "elapsed_s": 432.90363370021805,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 426592.942488,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.02°C |  41 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 2,
+      "trial": 1,
+      "name": "compile-b2-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/config.json",
+        "--mode",
+        "compile",
+        "--batch",
+        "2",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/caches/compile-b2-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/jobs/compile-b2-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/tmp/compile-b2-t1"
+      },
+      "timeout_s": 2700,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.02°C |  41 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-19T10:46:58.427469+09:00",
+      "worker_pid": 65560,
+      "elapsed_s": 665.8425808949396,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 658979.346035,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.21°C |  41 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 2,
+      "trial": 1,
+      "name": "eager-b2-t1",
+      "status": "failed",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/config.json",
+        "--mode",
+        "eager",
+        "--batch",
+        "2",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/caches/eager-b2-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/jobs/eager-b2-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/tmp/eager-b2-t1"
+      },
+      "timeout_s": 2034,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.21°C |  41 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-19T10:58:04.334150+09:00",
+      "worker_pid": 68751,
+      "elapsed_s": 380.89347555162385,
+      "exit_code": 1,
+      "timed_out": false,
+      "first_call_ms": null,
+      "stage": "first_call",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.58°C |  38 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 1,
+      "name": "eager-b4-t1",
+      "status": "failed",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/config.json",
+        "--mode",
+        "eager",
+        "--batch",
+        "4",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/caches/eager-b4-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/jobs/eager-b4-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/tmp/eager-b4-t1"
+      },
+      "timeout_s": 1653,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.58°C |  38 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-19T11:04:25.290972+09:00",
+      "worker_pid": 71122,
+      "elapsed_s": 568.1405389388092,
+      "exit_code": 1,
+      "timed_out": false,
+      "first_call_ms": null,
+      "stage": "first_call",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 40.88°C |  38 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 1,
+      "name": "compile-b4-t1",
+      "status": "timeout",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/config.json",
+        "--mode",
+        "compile",
+        "--batch",
+        "4",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/caches/compile-b4-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/jobs/compile-b4-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/batch-scaling-1h-20261119-103155/tmp/compile-b4-t1"
+      },
+      "timeout_s": 1085,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 40.88°C |  38 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-19T11:13:53.562897+09:00",
+      "worker_pid": 74191,
+      "elapsed_s": 1087.7205479866825,
+      "exit_code": -15,
+      "timed_out": true,
+      "first_call_ms": null,
+      "stage": "first_call",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.58°C |  38 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 8,
+      "trial": 1,
+      "name": "compile-b8-t1",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 8,
+      "trial": 1,
+      "name": "eager-b8-t1",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 16,
+      "trial": 1,
+      "name": "eager-b16-t1",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 16,
+      "trial": 1,
+      "name": "compile-b16-t1",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 32,
+      "trial": 1,
+      "name": "compile-b32-t1",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 32,
+      "trial": 1,
+      "name": "eager-b32-t1",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 2,
+      "name": "compile-b1-t2",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 2,
+      "name": "eager-b1-t2",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 2,
+      "trial": 2,
+      "name": "eager-b2-t2",
+      "reason": "same mode and batch already failed or timed out in an earlier trial"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 2,
+      "trial": 2,
+      "name": "compile-b2-t2",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 2,
+      "name": "compile-b4-t2",
+      "reason": "same mode and batch already failed or timed out in an earlier trial"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 2,
+      "name": "eager-b4-t2",
+      "reason": "same mode and batch already failed or timed out in an earlier trial"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 8,
+      "trial": 2,
+      "name": "eager-b8-t2",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 8,
+      "trial": 2,
+      "name": "compile-b8-t2",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 16,
+      "trial": 2,
+      "name": "compile-b16-t2",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 16,
+      "trial": 2,
+      "name": "eager-b16-t2",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 32,
+      "trial": 2,
+      "name": "eager-b32-t2",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 32,
+      "trial": 2,
+      "name": "compile-b32-t2",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 3,
+      "name": "eager-b1-t3",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 3,
+      "name": "compile-b1-t3",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 2,
+      "trial": 3,
+      "name": "compile-b2-t3",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 2,
+      "trial": 3,
+      "name": "eager-b2-t3",
+      "reason": "same mode and batch already failed or timed out in an earlier trial"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 4,
+      "trial": 3,
+      "name": "eager-b4-t3",
+      "reason": "same mode and batch already failed or timed out in an earlier trial"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 4,
+      "trial": 3,
+      "name": "compile-b4-t3",
+      "reason": "same mode and batch already failed or timed out in an earlier trial"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 8,
+      "trial": 3,
+      "name": "compile-b8-t3",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 8,
+      "trial": 3,
+      "name": "eager-b8-t3",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 16,
+      "trial": 3,
+      "name": "eager-b16-t3",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 16,
+      "trial": 3,
+      "name": "compile-b16-t3",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 32,
+      "trial": 3,
+      "name": "compile-b32-t3",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 32,
+      "trial": 3,
+      "name": "eager-b32-t3",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "revalidation_extra",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 4,
+      "name": "compile-b1-t4",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "revalidation_extra",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 4,
+      "name": "eager-b1-t4",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "revalidation_extra",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 5,
+      "name": "eager-b1-t5",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "revalidation_extra",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 5,
+      "name": "compile-b1-t5",
+      "reason": "worker-time budget exhausted before this job started"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 64,
+      "trial": 1,
+      "name": "eager-b64-t1",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 64,
+      "trial": 1,
+      "name": "compile-b64-t1",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 64,
+      "trial": 2,
+      "name": "compile-b64-t2",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 64,
+      "trial": 2,
+      "name": "eager-b64-t2",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 64,
+      "trial": 3,
+      "name": "eager-b64-t3",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 64,
+      "trial": 3,
+      "name": "compile-b64-t3",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 128,
+      "trial": 1,
+      "name": "compile-b128-t1",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 128,
+      "trial": 1,
+      "name": "eager-b128-t1",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 128,
+      "trial": 2,
+      "name": "eager-b128-t2",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 128,
+      "trial": 2,
+      "name": "compile-b128-t2",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 128,
+      "trial": 3,
+      "name": "compile-b128-t3",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 128,
+      "trial": 3,
+      "name": "eager-b128-t3",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 256,
+      "trial": 1,
+      "name": "eager-b256-t1",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 256,
+      "trial": 1,
+      "name": "compile-b256-t1",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 256,
+      "trial": 2,
+      "name": "compile-b256-t2",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 256,
+      "trial": 2,
+      "name": "eager-b256-t2",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 256,
+      "trial": 3,
+      "name": "eager-b256-t3",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    },
+    {
+      "phase": "extension",
+      "mode": "compile",
+      "batch": 256,
+      "trial": 3,
+      "name": "compile-b256-t3",
+      "reason": "extension stops for this mode: batch 32 did not succeed"
+    }
+  ],
+  "worker_elapsed_s": 3602.062585250009,
+  "max_total_s": 3600,
+  "new_process_per_job": true,
+  "new_cache_directory_per_job": true,
+  "serial_device_execution": true,
+  "cache_reset_scope": "new project directory per job; system and device state untouched",
+  "runner_pid": 60816,
+  "toolchain_preflight": {
+    "ok": true,
+    "command": "aarch64-linux-gnu-gcc -E (assert.h)",
+    "stderr": ""
+  },
+  "tables": {
+    "ok_jobs": 3,
+    "failed_jobs": 3,
+    "batches_measured": [
+      1,
+      2
+    ],
+    "planned": 58,
+    "not_run": 52
+  },
+  "finished_kst": "2026-11-19T11:32:01.512166+09:00"
+}

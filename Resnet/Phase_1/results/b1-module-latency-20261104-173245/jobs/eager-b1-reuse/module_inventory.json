@@ -1,0 +1,5190 @@
+[
+  {
+    "index": 0,
+    "node": "conv1",
+    "module": "conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        3,
+        224,
+        224
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      112,
+      112
+    ]
+  },
+  {
+    "index": 1,
+    "node": "bn1",
+    "module": "bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        64,
+        112,
+        112
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      112,
+      112
+    ]
+  },
+  {
+    "index": 2,
+    "node": "relu",
+    "module": "relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        112,
+        112
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      112,
+      112
+    ]
+  },
+  {
+    "index": 3,
+    "node": "maxpool",
+    "module": "maxpool",
+    "operator": "MaxPool2d",
+    "kind": "call_module",
+    "module_stack": [
+      "maxpool"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        112,
+        112
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 4,
+    "node": "layer1_0_conv1",
+    "module": "layer1.0.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.0",
+      "layer1.0.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 5,
+    "node": "layer1_0_bn1",
+    "module": "layer1.0.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.0",
+      "layer1.0.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 6,
+    "node": "layer1_0_relu",
+    "module": "layer1.0.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.0",
+      "layer1.0.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 7,
+    "node": "layer1_0_conv2",
+    "module": "layer1.0.conv2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.0",
+      "layer1.0.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 8,
+    "node": "layer1_0_bn2",
+    "module": "layer1.0.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.0",
+      "layer1.0.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 9,
+    "node": "layer1_0_relu_1",
+    "module": "layer1.0.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.0",
+      "layer1.0.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 10,
+    "node": "layer1_0_conv3",
+    "module": "layer1.0.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.0",
+      "layer1.0.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 11,
+    "node": "layer1_0_bn3",
+    "module": "layer1.0.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.0",
+      "layer1.0.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 12,
+    "node": "layer1_0_downsample_0",
+    "module": "layer1.0.downsample.0",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.0",
+      "layer1.0.downsample",
+      "layer1.0.downsample.0"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 13,
+    "node": "layer1_0_downsample_1",
+    "module": "layer1.0.downsample.1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.0",
+      "layer1.0.downsample",
+      "layer1.0.downsample.1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 14,
+    "node": "add",
+    "module": "layer1.0",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer1",
+      "layer1.0"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ],
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 15,
+    "node": "layer1_0_relu_2",
+    "module": "layer1.0.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.0",
+      "layer1.0.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 16,
+    "node": "layer1_1_conv1",
+    "module": "layer1.1.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.1",
+      "layer1.1.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 17,
+    "node": "layer1_1_bn1",
+    "module": "layer1.1.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.1",
+      "layer1.1.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 18,
+    "node": "layer1_1_relu",
+    "module": "layer1.1.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.1",
+      "layer1.1.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 19,
+    "node": "layer1_1_conv2",
+    "module": "layer1.1.conv2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.1",
+      "layer1.1.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 20,
+    "node": "layer1_1_bn2",
+    "module": "layer1.1.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.1",
+      "layer1.1.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 21,
+    "node": "layer1_1_relu_1",
+    "module": "layer1.1.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.1",
+      "layer1.1.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 22,
+    "node": "layer1_1_conv3",
+    "module": "layer1.1.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.1",
+      "layer1.1.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 23,
+    "node": "layer1_1_bn3",
+    "module": "layer1.1.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.1",
+      "layer1.1.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 24,
+    "node": "add_1",
+    "module": "layer1.1",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer1",
+      "layer1.1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ],
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 25,
+    "node": "layer1_1_relu_2",
+    "module": "layer1.1.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.1",
+      "layer1.1.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 26,
+    "node": "layer1_2_conv1",
+    "module": "layer1.2.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.2",
+      "layer1.2.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 27,
+    "node": "layer1_2_bn1",
+    "module": "layer1.2.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.2",
+      "layer1.2.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 28,
+    "node": "layer1_2_relu",
+    "module": "layer1.2.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.2",
+      "layer1.2.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 29,
+    "node": "layer1_2_conv2",
+    "module": "layer1.2.conv2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.2",
+      "layer1.2.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 30,
+    "node": "layer1_2_bn2",
+    "module": "layer1.2.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.2",
+      "layer1.2.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 31,
+    "node": "layer1_2_relu_1",
+    "module": "layer1.2.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.2",
+      "layer1.2.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      64,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 32,
+    "node": "layer1_2_conv3",
+    "module": "layer1.2.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.2",
+      "layer1.2.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        64,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 33,
+    "node": "layer1_2_bn3",
+    "module": "layer1.2.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.2",
+      "layer1.2.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 34,
+    "node": "add_2",
+    "module": "layer1.2",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer1",
+      "layer1.2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ],
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 35,
+    "node": "layer1_2_relu_2",
+    "module": "layer1.2.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer1",
+      "layer1.2",
+      "layer1.2.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 36,
+    "node": "layer2_0_conv1",
+    "module": "layer2.0.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.0",
+      "layer2.0.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 37,
+    "node": "layer2_0_bn1",
+    "module": "layer2.0.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.0",
+      "layer2.0.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        128,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 38,
+    "node": "layer2_0_relu",
+    "module": "layer2.0.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.0",
+      "layer2.0.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      56,
+      56
+    ]
+  },
+  {
+    "index": 39,
+    "node": "layer2_0_conv2",
+    "module": "layer2.0.conv2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.0",
+      "layer2.0.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 40,
+    "node": "layer2_0_bn2",
+    "module": "layer2.0.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.0",
+      "layer2.0.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 41,
+    "node": "layer2_0_relu_1",
+    "module": "layer2.0.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.0",
+      "layer2.0.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 42,
+    "node": "layer2_0_conv3",
+    "module": "layer2.0.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.0",
+      "layer2.0.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 43,
+    "node": "layer2_0_bn3",
+    "module": "layer2.0.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.0",
+      "layer2.0.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 44,
+    "node": "layer2_0_downsample_0",
+    "module": "layer2.0.downsample.0",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.0",
+      "layer2.0.downsample",
+      "layer2.0.downsample.0"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        56,
+        56
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 45,
+    "node": "layer2_0_downsample_1",
+    "module": "layer2.0.downsample.1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.0",
+      "layer2.0.downsample",
+      "layer2.0.downsample.1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 46,
+    "node": "add_3",
+    "module": "layer2.0",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer2",
+      "layer2.0"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ],
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 47,
+    "node": "layer2_0_relu_2",
+    "module": "layer2.0.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.0",
+      "layer2.0.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 48,
+    "node": "layer2_1_conv1",
+    "module": "layer2.1.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.1",
+      "layer2.1.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 49,
+    "node": "layer2_1_bn1",
+    "module": "layer2.1.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.1",
+      "layer2.1.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 50,
+    "node": "layer2_1_relu",
+    "module": "layer2.1.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.1",
+      "layer2.1.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 51,
+    "node": "layer2_1_conv2",
+    "module": "layer2.1.conv2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.1",
+      "layer2.1.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 52,
+    "node": "layer2_1_bn2",
+    "module": "layer2.1.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.1",
+      "layer2.1.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 53,
+    "node": "layer2_1_relu_1",
+    "module": "layer2.1.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.1",
+      "layer2.1.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 54,
+    "node": "layer2_1_conv3",
+    "module": "layer2.1.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.1",
+      "layer2.1.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 55,
+    "node": "layer2_1_bn3",
+    "module": "layer2.1.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.1",
+      "layer2.1.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 56,
+    "node": "add_4",
+    "module": "layer2.1",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer2",
+      "layer2.1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ],
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 57,
+    "node": "layer2_1_relu_2",
+    "module": "layer2.1.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.1",
+      "layer2.1.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 58,
+    "node": "layer2_2_conv1",
+    "module": "layer2.2.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.2",
+      "layer2.2.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 59,
+    "node": "layer2_2_bn1",
+    "module": "layer2.2.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.2",
+      "layer2.2.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 60,
+    "node": "layer2_2_relu",
+    "module": "layer2.2.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.2",
+      "layer2.2.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 61,
+    "node": "layer2_2_conv2",
+    "module": "layer2.2.conv2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.2",
+      "layer2.2.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 62,
+    "node": "layer2_2_bn2",
+    "module": "layer2.2.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.2",
+      "layer2.2.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 63,
+    "node": "layer2_2_relu_1",
+    "module": "layer2.2.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.2",
+      "layer2.2.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 64,
+    "node": "layer2_2_conv3",
+    "module": "layer2.2.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.2",
+      "layer2.2.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 65,
+    "node": "layer2_2_bn3",
+    "module": "layer2.2.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.2",
+      "layer2.2.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 66,
+    "node": "add_5",
+    "module": "layer2.2",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer2",
+      "layer2.2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ],
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 67,
+    "node": "layer2_2_relu_2",
+    "module": "layer2.2.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.2",
+      "layer2.2.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 68,
+    "node": "layer2_3_conv1",
+    "module": "layer2.3.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.3",
+      "layer2.3.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 69,
+    "node": "layer2_3_bn1",
+    "module": "layer2.3.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.3",
+      "layer2.3.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 70,
+    "node": "layer2_3_relu",
+    "module": "layer2.3.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.3",
+      "layer2.3.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 71,
+    "node": "layer2_3_conv2",
+    "module": "layer2.3.conv2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.3",
+      "layer2.3.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 72,
+    "node": "layer2_3_bn2",
+    "module": "layer2.3.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.3",
+      "layer2.3.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 73,
+    "node": "layer2_3_relu_1",
+    "module": "layer2.3.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.3",
+      "layer2.3.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 74,
+    "node": "layer2_3_conv3",
+    "module": "layer2.3.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.3",
+      "layer2.3.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        128,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 75,
+    "node": "layer2_3_bn3",
+    "module": "layer2.3.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.3",
+      "layer2.3.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 76,
+    "node": "add_6",
+    "module": "layer2.3",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer2",
+      "layer2.3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ],
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 77,
+    "node": "layer2_3_relu_2",
+    "module": "layer2.3.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer2",
+      "layer2.3",
+      "layer2.3.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 78,
+    "node": "layer3_0_conv1",
+    "module": "layer3.0.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.0",
+      "layer3.0.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 79,
+    "node": "layer3_0_bn1",
+    "module": "layer3.0.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.0",
+      "layer3.0.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 80,
+    "node": "layer3_0_relu",
+    "module": "layer3.0.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.0",
+      "layer3.0.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      28,
+      28
+    ]
+  },
+  {
+    "index": 81,
+    "node": "layer3_0_conv2",
+    "module": "layer3.0.conv2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.0",
+      "layer3.0.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 82,
+    "node": "layer3_0_bn2",
+    "module": "layer3.0.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.0",
+      "layer3.0.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 83,
+    "node": "layer3_0_relu_1",
+    "module": "layer3.0.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.0",
+      "layer3.0.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 84,
+    "node": "layer3_0_conv3",
+    "module": "layer3.0.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.0",
+      "layer3.0.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 85,
+    "node": "layer3_0_bn3",
+    "module": "layer3.0.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.0",
+      "layer3.0.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 86,
+    "node": "layer3_0_downsample_0",
+    "module": "layer3.0.downsample.0",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.0",
+      "layer3.0.downsample",
+      "layer3.0.downsample.0"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        28,
+        28
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 87,
+    "node": "layer3_0_downsample_1",
+    "module": "layer3.0.downsample.1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.0",
+      "layer3.0.downsample",
+      "layer3.0.downsample.1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 88,
+    "node": "add_7",
+    "module": "layer3.0",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer3",
+      "layer3.0"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ],
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 89,
+    "node": "layer3_0_relu_2",
+    "module": "layer3.0.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.0",
+      "layer3.0.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 90,
+    "node": "layer3_1_conv1",
+    "module": "layer3.1.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.1",
+      "layer3.1.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 91,
+    "node": "layer3_1_bn1",
+    "module": "layer3.1.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.1",
+      "layer3.1.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 92,
+    "node": "layer3_1_relu",
+    "module": "layer3.1.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.1",
+      "layer3.1.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 93,
+    "node": "layer3_1_conv2",
+    "module": "layer3.1.conv2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.1",
+      "layer3.1.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 94,
+    "node": "layer3_1_bn2",
+    "module": "layer3.1.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.1",
+      "layer3.1.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 95,
+    "node": "layer3_1_relu_1",
+    "module": "layer3.1.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.1",
+      "layer3.1.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 96,
+    "node": "layer3_1_conv3",
+    "module": "layer3.1.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.1",
+      "layer3.1.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 97,
+    "node": "layer3_1_bn3",
+    "module": "layer3.1.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.1",
+      "layer3.1.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 98,
+    "node": "add_8",
+    "module": "layer3.1",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer3",
+      "layer3.1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ],
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 99,
+    "node": "layer3_1_relu_2",
+    "module": "layer3.1.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.1",
+      "layer3.1.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 100,
+    "node": "layer3_2_conv1",
+    "module": "layer3.2.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.2",
+      "layer3.2.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 101,
+    "node": "layer3_2_bn1",
+    "module": "layer3.2.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.2",
+      "layer3.2.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 102,
+    "node": "layer3_2_relu",
+    "module": "layer3.2.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.2",
+      "layer3.2.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 103,
+    "node": "layer3_2_conv2",
+    "module": "layer3.2.conv2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.2",
+      "layer3.2.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 104,
+    "node": "layer3_2_bn2",
+    "module": "layer3.2.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.2",
+      "layer3.2.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 105,
+    "node": "layer3_2_relu_1",
+    "module": "layer3.2.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.2",
+      "layer3.2.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 106,
+    "node": "layer3_2_conv3",
+    "module": "layer3.2.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.2",
+      "layer3.2.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 107,
+    "node": "layer3_2_bn3",
+    "module": "layer3.2.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.2",
+      "layer3.2.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 108,
+    "node": "add_9",
+    "module": "layer3.2",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer3",
+      "layer3.2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ],
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 109,
+    "node": "layer3_2_relu_2",
+    "module": "layer3.2.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.2",
+      "layer3.2.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 110,
+    "node": "layer3_3_conv1",
+    "module": "layer3.3.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.3",
+      "layer3.3.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 111,
+    "node": "layer3_3_bn1",
+    "module": "layer3.3.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.3",
+      "layer3.3.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 112,
+    "node": "layer3_3_relu",
+    "module": "layer3.3.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.3",
+      "layer3.3.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 113,
+    "node": "layer3_3_conv2",
+    "module": "layer3.3.conv2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.3",
+      "layer3.3.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 114,
+    "node": "layer3_3_bn2",
+    "module": "layer3.3.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.3",
+      "layer3.3.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 115,
+    "node": "layer3_3_relu_1",
+    "module": "layer3.3.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.3",
+      "layer3.3.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 116,
+    "node": "layer3_3_conv3",
+    "module": "layer3.3.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.3",
+      "layer3.3.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 117,
+    "node": "layer3_3_bn3",
+    "module": "layer3.3.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.3",
+      "layer3.3.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 118,
+    "node": "add_10",
+    "module": "layer3.3",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer3",
+      "layer3.3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ],
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 119,
+    "node": "layer3_3_relu_2",
+    "module": "layer3.3.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.3",
+      "layer3.3.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 120,
+    "node": "layer3_4_conv1",
+    "module": "layer3.4.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.4",
+      "layer3.4.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 121,
+    "node": "layer3_4_bn1",
+    "module": "layer3.4.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.4",
+      "layer3.4.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 122,
+    "node": "layer3_4_relu",
+    "module": "layer3.4.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.4",
+      "layer3.4.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 123,
+    "node": "layer3_4_conv2",
+    "module": "layer3.4.conv2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.4",
+      "layer3.4.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 124,
+    "node": "layer3_4_bn2",
+    "module": "layer3.4.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.4",
+      "layer3.4.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 125,
+    "node": "layer3_4_relu_1",
+    "module": "layer3.4.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.4",
+      "layer3.4.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 126,
+    "node": "layer3_4_conv3",
+    "module": "layer3.4.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.4",
+      "layer3.4.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 127,
+    "node": "layer3_4_bn3",
+    "module": "layer3.4.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.4",
+      "layer3.4.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 128,
+    "node": "add_11",
+    "module": "layer3.4",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer3",
+      "layer3.4"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ],
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 129,
+    "node": "layer3_4_relu_2",
+    "module": "layer3.4.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.4",
+      "layer3.4.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 130,
+    "node": "layer3_5_conv1",
+    "module": "layer3.5.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.5",
+      "layer3.5.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 131,
+    "node": "layer3_5_bn1",
+    "module": "layer3.5.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.5",
+      "layer3.5.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 132,
+    "node": "layer3_5_relu",
+    "module": "layer3.5.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.5",
+      "layer3.5.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 133,
+    "node": "layer3_5_conv2",
+    "module": "layer3.5.conv2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.5",
+      "layer3.5.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 134,
+    "node": "layer3_5_bn2",
+    "module": "layer3.5.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.5",
+      "layer3.5.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 135,
+    "node": "layer3_5_relu_1",
+    "module": "layer3.5.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.5",
+      "layer3.5.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      256,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 136,
+    "node": "layer3_5_conv3",
+    "module": "layer3.5.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.5",
+      "layer3.5.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        256,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 137,
+    "node": "layer3_5_bn3",
+    "module": "layer3.5.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.5",
+      "layer3.5.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 138,
+    "node": "add_12",
+    "module": "layer3.5",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer3",
+      "layer3.5"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ],
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 139,
+    "node": "layer3_5_relu_2",
+    "module": "layer3.5.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer3",
+      "layer3.5",
+      "layer3.5.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      1024,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 140,
+    "node": "layer4_0_conv1",
+    "module": "layer4.0.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 141,
+    "node": "layer4_0_bn1",
+    "module": "layer4.0.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        512,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 142,
+    "node": "layer4_0_relu",
+    "module": "layer4.0.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      14,
+      14
+    ]
+  },
+  {
+    "index": 143,
+    "node": "layer4_0_conv2_parts_0",
+    "module": "layer4.0.conv2.parts.0",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.conv2",
+      "layer4.0.conv2.parts.0"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 144,
+    "node": "layer4_0_conv2_parts_1",
+    "module": "layer4.0.conv2.parts.1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.conv2",
+      "layer4.0.conv2.parts.1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 145,
+    "node": "layer4_0_conv2_parts_2",
+    "module": "layer4.0.conv2.parts.2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.conv2",
+      "layer4.0.conv2.parts.2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 146,
+    "node": "layer4_0_conv2_parts_3",
+    "module": "layer4.0.conv2.parts.3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.conv2",
+      "layer4.0.conv2.parts.3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 147,
+    "node": "cat",
+    "module": "layer4.0.conv2",
+    "operator": "cat",
+    "kind": "call_function",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        [
+          1,
+          128,
+          7,
+          7
+        ],
+        [
+          1,
+          128,
+          7,
+          7
+        ],
+        [
+          1,
+          128,
+          7,
+          7
+        ],
+        [
+          1,
+          128,
+          7,
+          7
+        ]
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 148,
+    "node": "layer4_0_bn2",
+    "module": "layer4.0.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 149,
+    "node": "layer4_0_relu_1",
+    "module": "layer4.0.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 150,
+    "node": "layer4_0_conv3",
+    "module": "layer4.0.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 151,
+    "node": "layer4_0_bn3",
+    "module": "layer4.0.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 152,
+    "node": "layer4_0_downsample_0",
+    "module": "layer4.0.downsample.0",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.downsample",
+      "layer4.0.downsample.0"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        1024,
+        14,
+        14
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 153,
+    "node": "layer4_0_downsample_1",
+    "module": "layer4.0.downsample.1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.downsample",
+      "layer4.0.downsample.1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 154,
+    "node": "add_13",
+    "module": "layer4.0",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer4",
+      "layer4.0"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        7,
+        7
+      ],
+      [
+        1,
+        2048,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 155,
+    "node": "layer4_0_relu_2",
+    "module": "layer4.0.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.0",
+      "layer4.0.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 156,
+    "node": "layer4_1_conv1",
+    "module": "layer4.1.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.1",
+      "layer4.1.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 157,
+    "node": "layer4_1_bn1",
+    "module": "layer4.1.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.1",
+      "layer4.1.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 158,
+    "node": "layer4_1_relu",
+    "module": "layer4.1.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.1",
+      "layer4.1.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 159,
+    "node": "layer4_1_conv2_parts_0",
+    "module": "layer4.1.conv2.parts.0",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.1",
+      "layer4.1.conv2",
+      "layer4.1.conv2.parts.0"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 160,
+    "node": "layer4_1_conv2_parts_1",
+    "module": "layer4.1.conv2.parts.1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.1",
+      "layer4.1.conv2",
+      "layer4.1.conv2.parts.1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 161,
+    "node": "layer4_1_conv2_parts_2",
+    "module": "layer4.1.conv2.parts.2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.1",
+      "layer4.1.conv2",
+      "layer4.1.conv2.parts.2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 162,
+    "node": "layer4_1_conv2_parts_3",
+    "module": "layer4.1.conv2.parts.3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.1",
+      "layer4.1.conv2",
+      "layer4.1.conv2.parts.3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 163,
+    "node": "cat_1",
+    "module": "layer4.1.conv2",
+    "operator": "cat",
+    "kind": "call_function",
+    "module_stack": [
+      "layer4",
+      "layer4.1",
+      "layer4.1.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        [
+          1,
+          128,
+          7,
+          7
+        ],
+        [
+          1,
+          128,
+          7,
+          7
+        ],
+        [
+          1,
+          128,
+          7,
+          7
+        ],
+        [
+          1,
+          128,
+          7,
+          7
+        ]
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 164,
+    "node": "layer4_1_bn2",
+    "module": "layer4.1.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.1",
+      "layer4.1.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 165,
+    "node": "layer4_1_relu_1",
+    "module": "layer4.1.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.1",
+      "layer4.1.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 166,
+    "node": "layer4_1_conv3",
+    "module": "layer4.1.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.1",
+      "layer4.1.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 167,
+    "node": "layer4_1_bn3",
+    "module": "layer4.1.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.1",
+      "layer4.1.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 168,
+    "node": "add_14",
+    "module": "layer4.1",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer4",
+      "layer4.1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        7,
+        7
+      ],
+      [
+        1,
+        2048,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 169,
+    "node": "layer4_1_relu_2",
+    "module": "layer4.1.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.1",
+      "layer4.1.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 170,
+    "node": "layer4_2_conv1",
+    "module": "layer4.2.conv1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.2",
+      "layer4.2.conv1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 171,
+    "node": "layer4_2_bn1",
+    "module": "layer4.2.bn1",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.2",
+      "layer4.2.bn1"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 172,
+    "node": "layer4_2_relu",
+    "module": "layer4.2.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.2",
+      "layer4.2.relu"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 173,
+    "node": "layer4_2_conv2_parts_0",
+    "module": "layer4.2.conv2.parts.0",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.2",
+      "layer4.2.conv2",
+      "layer4.2.conv2.parts.0"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 174,
+    "node": "layer4_2_conv2_parts_1",
+    "module": "layer4.2.conv2.parts.1",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.2",
+      "layer4.2.conv2",
+      "layer4.2.conv2.parts.1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 175,
+    "node": "layer4_2_conv2_parts_2",
+    "module": "layer4.2.conv2.parts.2",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.2",
+      "layer4.2.conv2",
+      "layer4.2.conv2.parts.2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 176,
+    "node": "layer4_2_conv2_parts_3",
+    "module": "layer4.2.conv2.parts.3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.2",
+      "layer4.2.conv2",
+      "layer4.2.conv2.parts.3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      128,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 177,
+    "node": "cat_2",
+    "module": "layer4.2.conv2",
+    "operator": "cat",
+    "kind": "call_function",
+    "module_stack": [
+      "layer4",
+      "layer4.2",
+      "layer4.2.conv2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        [
+          1,
+          128,
+          7,
+          7
+        ],
+        [
+          1,
+          128,
+          7,
+          7
+        ],
+        [
+          1,
+          128,
+          7,
+          7
+        ],
+        [
+          1,
+          128,
+          7,
+          7
+        ]
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 178,
+    "node": "layer4_2_bn2",
+    "module": "layer4.2.bn2",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.2",
+      "layer4.2.bn2"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 179,
+    "node": "layer4_2_relu_1",
+    "module": "layer4.2.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.2",
+      "layer4.2.relu@1"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      512,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 180,
+    "node": "layer4_2_conv3",
+    "module": "layer4.2.conv3",
+    "operator": "Conv2d",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.2",
+      "layer4.2.conv3"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        512,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 181,
+    "node": "layer4_2_bn3",
+    "module": "layer4.2.bn3",
+    "operator": "Identity",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.2",
+      "layer4.2.bn3"
+    ],
+    "identity": true,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 182,
+    "node": "add_15",
+    "module": "layer4.2",
+    "operator": "add",
+    "kind": "call_function",
+    "module_stack": [
+      "layer4",
+      "layer4.2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        7,
+        7
+      ],
+      [
+        1,
+        2048,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 183,
+    "node": "layer4_2_relu_2",
+    "module": "layer4.2.relu",
+    "operator": "ReLU",
+    "kind": "call_module",
+    "module_stack": [
+      "layer4",
+      "layer4.2",
+      "layer4.2.relu@2"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 184,
+    "node": "avgpool",
+    "module": "avgpool",
+    "operator": "AdaptiveAvgPool2d",
+    "kind": "call_module",
+    "module_stack": [
+      "avgpool"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        7,
+        7
+      ]
+    ],
+    "output_shape": [
+      1,
+      2048,
+      1,
+      1
+    ]
+  },
+  {
+    "index": 185,
+    "node": "flatten",
+    "module": "<model>",
+    "operator": "flatten",
+    "kind": "call_function",
+    "module_stack": [],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        2048,
+        1,
+        1
+      ],
+      1
+    ],
+    "output_shape": [
+      1,
+      2048
+    ]
+  },
+  {
+    "index": 186,
+    "node": "fc",
+    "module": "fc",
+    "operator": "Linear",
+    "kind": "call_module",
+    "module_stack": [
+      "fc"
+    ],
+    "identity": false,
+    "input_shapes": [
+      [
+        1,
+        2048
+      ]
+    ],
+    "output_shape": [
+      1,
+      1000
+    ]
+  }
+]

@@ -1,0 +1,3 @@
+kind,batch,left,right,status,samples,top1_matches,bitwise_equal,max_abs_error,mean_abs_error,rmse,cosine_min
+phase1_cpu_bf16_reference_vs_npu,1,cpu-bf16,compile-t1,measured,1,1,False,0.015625,0.0010206032311543822,0.002082016784697771,0.999997234728832
+eager_vs_compile_same_trial,16,eager-t1,compile-t1,measured,16,16,False,0.03125,0.0014767134562134743,0.002867401810362935,0.9999921489825915

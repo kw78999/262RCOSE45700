@@ -1,0 +1,13 @@
+{
+  "tests_passed": 26,
+  "total_nodes": 187,
+  "identity_nodes": 53,
+  "timed_nodes": 134,
+  "output_shape": [
+    1,
+    1000
+  ],
+  "time_kst": "2026-11-04T17:21:58.084294+09:00",
+  "atomic_csv_updates": true,
+  "runner_crash_cleanup": true
+}

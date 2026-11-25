@@ -1,0 +1,5 @@
+eager-b64-t1: start
+eager-b64-t1: ok (1068.6s)
+compile-b64-t1: start
+compile-b64-t1: moved (3.3s)
+{"run_dir": "/root/Resnet/Phase_2/results/matrix-f1-20261125", "status": "finished"}

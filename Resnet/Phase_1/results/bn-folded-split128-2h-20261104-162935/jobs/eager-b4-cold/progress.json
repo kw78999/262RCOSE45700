@@ -1,0 +1,434 @@
+{
+  "status": "interrupted",
+  "mode": "eager",
+  "target": "resnet50",
+  "workload": "fixed",
+  "batch": 4,
+  "cache_intent": "empty_project_cache",
+  "cache_dir": "/root/Resnet/Phase_1/results/bn-folded-split128-2h-20261104-162935/caches/eager-b4",
+  "profile_enabled": false,
+  "config": {
+    "model": "resnet50",
+    "model_variant": "bn_folded_output_split128",
+    "weights": "IMAGENET1K_V2",
+    "precision": "bfloat16",
+    "bn_folded": true,
+    "output_split_channels": 128,
+    "validation_file": "evidence/full-model-split128-validation/validation.json",
+    "device": "furiosa:0",
+    "seed": 2026,
+    "image_size": 224,
+    "batches": [
+      1,
+      4,
+      8,
+      16
+    ],
+    "warmup": 3,
+    "iterations": 10,
+    "mixed_batches": [
+      1,
+      4,
+      1,
+      8,
+      4,
+      16,
+      1
+    ],
+    "timeout_s": 1800,
+    "mixed_timeout_s": 7200,
+    "cpu_threads": 1,
+    "workspace_only": true,
+    "max_runtime_s": 7200
+  },
+  "cpu_fallback": false,
+  "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+  "compile_options": "SDK defaults; counting wrapper delegates unchanged to ft.backend",
+  "stage": "first:e2e:b4:cycle-1:step0",
+  "model_load_ms": 448.248654,
+  "weights": {
+    "model": "torchvision.models.resnet50",
+    "weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "checkpoint": "/root/Resnet/.cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth",
+    "sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+  },
+  "model_transform": {
+    "name": "bn_folded_output_split128",
+    "api": "torch.nn.utils.fuse_conv_bn_eval",
+    "fold_dtype": "float32",
+    "cast_after_fold": "bfloat16",
+    "pair_count": 53,
+    "pairs": [
+      {
+        "conv": "conv1",
+        "batchnorm": "bn1"
+      },
+      {
+        "conv": "layer1.0.conv1",
+        "batchnorm": "layer1.0.bn1"
+      },
+      {
+        "conv": "layer1.0.conv2",
+        "batchnorm": "layer1.0.bn2"
+      },
+      {
+        "conv": "layer1.0.conv3",
+        "batchnorm": "layer1.0.bn3"
+      },
+      {
+        "conv": "layer1.0.downsample.0",
+        "batchnorm": "layer1.0.downsample.1"
+      },
+      {
+        "conv": "layer1.1.conv1",
+        "batchnorm": "layer1.1.bn1"
+      },
+      {
+        "conv": "layer1.1.conv2",
+        "batchnorm": "layer1.1.bn2"
+      },
+      {
+        "conv": "layer1.1.conv3",
+        "batchnorm": "layer1.1.bn3"
+      },
+      {
+        "conv": "layer1.2.conv1",
+        "batchnorm": "layer1.2.bn1"
+      },
+      {
+        "conv": "layer1.2.conv2",
+        "batchnorm": "layer1.2.bn2"
+      },
+      {
+        "conv": "layer1.2.conv3",
+        "batchnorm": "layer1.2.bn3"
+      },
+      {
+        "conv": "layer2.0.conv1",
+        "batchnorm": "layer2.0.bn1"
+      },
+      {
+        "conv": "layer2.0.conv2",
+        "batchnorm": "layer2.0.bn2"
+      },
+      {
+        "conv": "layer2.0.conv3",
+        "batchnorm": "layer2.0.bn3"
+      },
+      {
+        "conv": "layer2.0.downsample.0",
+        "batchnorm": "layer2.0.downsample.1"
+      },
+      {
+        "conv": "layer2.1.conv1",
+        "batchnorm": "layer2.1.bn1"
+      },
+      {
+        "conv": "layer2.1.conv2",
+        "batchnorm": "layer2.1.bn2"
+      },
+      {
+        "conv": "layer2.1.conv3",
+        "batchnorm": "layer2.1.bn3"
+      },
+      {
+        "conv": "layer2.2.conv1",
+        "batchnorm": "layer2.2.bn1"
+      },
+      {
+        "conv": "layer2.2.conv2",
+        "batchnorm": "layer2.2.bn2"
+      },
+      {
+        "conv": "layer2.2.conv3",
+        "batchnorm": "layer2.2.bn3"
+      },
+      {
+        "conv": "layer2.3.conv1",
+        "batchnorm": "layer2.3.bn1"
+      },
+      {
+        "conv": "layer2.3.conv2",
+        "batchnorm": "layer2.3.bn2"
+      },
+      {
+        "conv": "layer2.3.conv3",
+        "batchnorm": "layer2.3.bn3"
+      },
+      {
+        "conv": "layer3.0.conv1",
+        "batchnorm": "layer3.0.bn1"
+      },
+      {
+        "conv": "layer3.0.conv2",
+        "batchnorm": "layer3.0.bn2"
+      },
+      {
+        "conv": "layer3.0.conv3",
+        "batchnorm": "layer3.0.bn3"
+      },
+      {
+        "conv": "layer3.0.downsample.0",
+        "batchnorm": "layer3.0.downsample.1"
+      },
+      {
+        "conv": "layer3.1.conv1",
+        "batchnorm": "layer3.1.bn1"
+      },
+      {
+        "conv": "layer3.1.conv2",
+        "batchnorm": "layer3.1.bn2"
+      },
+      {
+        "conv": "layer3.1.conv3",
+        "batchnorm": "layer3.1.bn3"
+      },
+      {
+        "conv": "layer3.2.conv1",
+        "batchnorm": "layer3.2.bn1"
+      },
+      {
+        "conv": "layer3.2.conv2",
+        "batchnorm": "layer3.2.bn2"
+      },
+      {
+        "conv": "layer3.2.conv3",
+        "batchnorm": "layer3.2.bn3"
+      },
+      {
+        "conv": "layer3.3.conv1",
+        "batchnorm": "layer3.3.bn1"
+      },
+      {
+        "conv": "layer3.3.conv2",
+        "batchnorm": "layer3.3.bn2"
+      },
+      {
+        "conv": "layer3.3.conv3",
+        "batchnorm": "layer3.3.bn3"
+      },
+      {
+        "conv": "layer3.4.conv1",
+        "batchnorm": "layer3.4.bn1"
+      },
+      {
+        "conv": "layer3.4.conv2",
+        "batchnorm": "layer3.4.bn2"
+      },
+      {
+        "conv": "layer3.4.conv3",
+        "batchnorm": "layer3.4.bn3"
+      },
+      {
+        "conv": "layer3.5.conv1",
+        "batchnorm": "layer3.5.bn1"
+      },
+      {
+        "conv": "layer3.5.conv2",
+        "batchnorm": "layer3.5.bn2"
+      },
+      {
+        "conv": "layer3.5.conv3",
+        "batchnorm": "layer3.5.bn3"
+      },
+      {
+        "conv": "layer4.0.conv1",
+        "batchnorm": "layer4.0.bn1"
+      },
+      {
+        "conv": "layer4.0.conv2",
+        "batchnorm": "layer4.0.bn2"
+      },
+      {
+        "conv": "layer4.0.conv3",
+        "batchnorm": "layer4.0.bn3"
+      },
+      {
+        "conv": "layer4.0.downsample.0",
+        "batchnorm": "layer4.0.downsample.1"
+      },
+      {
+        "conv": "layer4.1.conv1",
+        "batchnorm": "layer4.1.bn1"
+      },
+      {
+        "conv": "layer4.1.conv2",
+        "batchnorm": "layer4.1.bn2"
+      },
+      {
+        "conv": "layer4.1.conv3",
+        "batchnorm": "layer4.1.bn3"
+      },
+      {
+        "conv": "layer4.2.conv1",
+        "batchnorm": "layer4.2.bn1"
+      },
+      {
+        "conv": "layer4.2.conv2",
+        "batchnorm": "layer4.2.bn2"
+      },
+      {
+        "conv": "layer4.2.conv3",
+        "batchnorm": "layer4.2.bn3"
+      }
+    ],
+    "remaining_batchnorm": [],
+    "output_partition": {
+      "axis": "output_channels",
+      "chunk_size": 128,
+      "all_input_channels_in_every_part": true,
+      "combine": "concat_dim1",
+      "modules": [
+        {
+          "module": "layer4.0.conv2",
+          "weight_shape": [
+            512,
+            512,
+            3,
+            3
+          ],
+          "stride": [
+            2,
+            2
+          ],
+          "padding": [
+            1,
+            1
+          ],
+          "part_weight_shapes": [
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ]
+          ]
+        },
+        {
+          "module": "layer4.1.conv2",
+          "weight_shape": [
+            512,
+            512,
+            3,
+            3
+          ],
+          "stride": [
+            1,
+            1
+          ],
+          "padding": [
+            1,
+            1
+          ],
+          "part_weight_shapes": [
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ]
+          ]
+        },
+        {
+          "module": "layer4.2.conv2",
+          "weight_shape": [
+            512,
+            512,
+            3,
+            3
+          ],
+          "stride": [
+            1,
+            1
+          ],
+          "padding": [
+            1,
+            1
+          ],
+          "part_weight_shapes": [
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    "state_sha256": "f4ffc8727491492e195b9c024f145293f422696cdbeed6d8c064016158753469"
+  },
+  "model_variant": "bn_folded_output_split128",
+  "interpretation": "BN-folded ResNet50 with layer4.0/1/2.conv2 output-channel split128 in both modes",
+  "model_to_device_ms": 45.873587,
+  "mode_wrapper_ms": 0.0052,
+  "shape_call_frequencies_per_cycle": {
+    "4": 1
+  },
+  "cache_files_before": {},
+  "attempted_sample": {
+    "batch": 4,
+    "phase": "first",
+    "scope": "e2e",
+    "cycle": -1,
+    "step": 0
+  },
+  "error_type": "UserRequestedStop",
+  "error": "사용자 요청: 배치 1 모듈별 4개 케이스로 전환",
+  "stopped_kst": "2026-11-04T17:17:28.810463+09:00"
+}

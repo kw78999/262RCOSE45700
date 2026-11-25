@@ -1,0 +1,59 @@
+job,phase,mode,batch,trial,state,note
+eager-b1-t1,core,eager,1,1,ok,
+compile-b1-t1,core,compile,1,1,ok,
+compile-b2-t1,core,compile,2,1,ok,
+eager-b2-t1,core,eager,2,1,failed,
+eager-b4-t1,core,eager,4,1,failed,
+compile-b4-t1,core,compile,4,1,timeout,
+compile-b8-t1,core,compile,8,1,skipped,worker-time budget exhausted before this job started
+eager-b8-t1,core,eager,8,1,skipped,worker-time budget exhausted before this job started
+eager-b16-t1,core,eager,16,1,skipped,worker-time budget exhausted before this job started
+compile-b16-t1,core,compile,16,1,skipped,worker-time budget exhausted before this job started
+compile-b32-t1,core,compile,32,1,skipped,worker-time budget exhausted before this job started
+eager-b32-t1,core,eager,32,1,skipped,worker-time budget exhausted before this job started
+compile-b1-t2,core,compile,1,2,skipped,worker-time budget exhausted before this job started
+eager-b1-t2,core,eager,1,2,skipped,worker-time budget exhausted before this job started
+eager-b2-t2,core,eager,2,2,skipped,same mode and batch already failed or timed out in an earlier trial
+compile-b2-t2,core,compile,2,2,skipped,worker-time budget exhausted before this job started
+compile-b4-t2,core,compile,4,2,skipped,same mode and batch already failed or timed out in an earlier trial
+eager-b4-t2,core,eager,4,2,skipped,same mode and batch already failed or timed out in an earlier trial
+eager-b8-t2,core,eager,8,2,skipped,worker-time budget exhausted before this job started
+compile-b8-t2,core,compile,8,2,skipped,worker-time budget exhausted before this job started
+compile-b16-t2,core,compile,16,2,skipped,worker-time budget exhausted before this job started
+eager-b16-t2,core,eager,16,2,skipped,worker-time budget exhausted before this job started
+eager-b32-t2,core,eager,32,2,skipped,worker-time budget exhausted before this job started
+compile-b32-t2,core,compile,32,2,skipped,worker-time budget exhausted before this job started
+eager-b1-t3,core,eager,1,3,skipped,worker-time budget exhausted before this job started
+compile-b1-t3,core,compile,1,3,skipped,worker-time budget exhausted before this job started
+compile-b2-t3,core,compile,2,3,skipped,worker-time budget exhausted before this job started
+eager-b2-t3,core,eager,2,3,skipped,same mode and batch already failed or timed out in an earlier trial
+eager-b4-t3,core,eager,4,3,skipped,same mode and batch already failed or timed out in an earlier trial
+compile-b4-t3,core,compile,4,3,skipped,same mode and batch already failed or timed out in an earlier trial
+compile-b8-t3,core,compile,8,3,skipped,worker-time budget exhausted before this job started
+eager-b8-t3,core,eager,8,3,skipped,worker-time budget exhausted before this job started
+eager-b16-t3,core,eager,16,3,skipped,worker-time budget exhausted before this job started
+compile-b16-t3,core,compile,16,3,skipped,worker-time budget exhausted before this job started
+compile-b32-t3,core,compile,32,3,skipped,worker-time budget exhausted before this job started
+eager-b32-t3,core,eager,32,3,skipped,worker-time budget exhausted before this job started
+compile-b1-t4,revalidation_extra,compile,1,4,skipped,worker-time budget exhausted before this job started
+eager-b1-t4,revalidation_extra,eager,1,4,skipped,worker-time budget exhausted before this job started
+eager-b1-t5,revalidation_extra,eager,1,5,skipped,worker-time budget exhausted before this job started
+compile-b1-t5,revalidation_extra,compile,1,5,skipped,worker-time budget exhausted before this job started
+eager-b64-t1,extension,eager,64,1,skipped,extension stops for this mode: batch 32 did not succeed
+compile-b64-t1,extension,compile,64,1,skipped,extension stops for this mode: batch 32 did not succeed
+compile-b64-t2,extension,compile,64,2,skipped,extension stops for this mode: batch 32 did not succeed
+eager-b64-t2,extension,eager,64,2,skipped,extension stops for this mode: batch 32 did not succeed
+eager-b64-t3,extension,eager,64,3,skipped,extension stops for this mode: batch 32 did not succeed
+compile-b64-t3,extension,compile,64,3,skipped,extension stops for this mode: batch 32 did not succeed
+compile-b128-t1,extension,compile,128,1,skipped,extension stops for this mode: batch 32 did not succeed
+eager-b128-t1,extension,eager,128,1,skipped,extension stops for this mode: batch 32 did not succeed
+eager-b128-t2,extension,eager,128,2,skipped,extension stops for this mode: batch 32 did not succeed
+compile-b128-t2,extension,compile,128,2,skipped,extension stops for this mode: batch 32 did not succeed
+compile-b128-t3,extension,compile,128,3,skipped,extension stops for this mode: batch 32 did not succeed
+eager-b128-t3,extension,eager,128,3,skipped,extension stops for this mode: batch 32 did not succeed
+eager-b256-t1,extension,eager,256,1,skipped,extension stops for this mode: batch 32 did not succeed
+compile-b256-t1,extension,compile,256,1,skipped,extension stops for this mode: batch 32 did not succeed
+compile-b256-t2,extension,compile,256,2,skipped,extension stops for this mode: batch 32 did not succeed
+eager-b256-t2,extension,eager,256,2,skipped,extension stops for this mode: batch 32 did not succeed
+eager-b256-t3,extension,eager,256,3,skipped,extension stops for this mode: batch 32 did not succeed
+compile-b256-t3,extension,compile,256,3,skipped,extension stops for this mode: batch 32 did not succeed

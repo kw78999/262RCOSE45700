@@ -1,0 +1,73 @@
+{
+  "time_kst": "2026-11-19T10:31:48.442979+09:00",
+  "scope": "environment readiness only; no ResNet50 NPU compile and no latency measurement",
+  "checks": {
+    "cross_compiler_libc_headers": {
+      "ok": true,
+      "command": "aarch64-linux-gnu-gcc -E (assert.h)",
+      "stderr": ""
+    },
+    "packages": {
+      "ok": true,
+      "torch": "2.10.0+cpu",
+      "torchvision": "0.25.0+cpu",
+      "furiosa-torch": "2026.4.0",
+      "furiosa-kernels": "2026.4.0",
+      "numpy": "2.5.4"
+    },
+    "device": {
+      "ok": true,
+      "configuration": "(Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3', 'furiosa:4', 'furiosa:5', 'furiosa:6', 'furiosa:7'])",
+      "other_npu_processes": [],
+      "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 38.47°C |  38 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n"
+    },
+    "model_variant": {
+      "ok": true,
+      "state_sha256": "f4ffc8727491492e195b9c024f145293f422696cdbeed6d8c064016158753469",
+      "variant": "bn_folded_output_split128",
+      "weights": {
+        "model": "torchvision.models.resnet50",
+        "weights": "ResNet50_Weights.IMAGENET1K_V2",
+        "url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+        "checkpoint": "/root/Resnet/.cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth",
+        "sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+      }
+    },
+    "small_fresh_cache_compile_eager": {
+      "ok": true,
+      "status": "ok",
+      "first_call_s": 1.122176222037524,
+      "backend_calls": 0,
+      "output_shape": [
+        1,
+        8,
+        16,
+        16
+      ],
+      "output_dtype": "torch.bfloat16",
+      "max_abs_error_vs_cpu_bf16": 0.0,
+      "cache_files": 5
+    },
+    "small_fresh_cache_compile_compile": {
+      "ok": true,
+      "status": "ok",
+      "first_call_s": 0.9499384798109531,
+      "backend_calls": 1,
+      "output_shape": [
+        1,
+        8,
+        16,
+        16
+      ],
+      "output_dtype": "torch.bfloat16",
+      "max_abs_error_vs_cpu_bf16": 0.0,
+      "cache_files": 5
+    },
+    "plot_interpreter": {
+      "ok": true,
+      "path": "/root/ViT/vit_pilot/.plot-venv/bin/python",
+      "note": "only needed for figures; reads CSV tables"
+    }
+  },
+  "ready": true
+}

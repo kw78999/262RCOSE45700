@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+.rngd-benchmark.lock
+**/compiler-cache/
+**/caches/
+*.pt
+*.pth
+.cache/
+.tmp/
+.budgeted-run.lock
+# compile caches, locks and per-run code snapshots (2026-11-25, for the course repo PR)
+*.lock
+**/cache/
+**/cache-b*/
+**/tmp/
+*.interrupted-*
+*/results/*/source/
+Phase_2/results/oom-check-*/

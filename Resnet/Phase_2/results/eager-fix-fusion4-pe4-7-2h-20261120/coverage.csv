@@ -1,0 +1,6 @@
+job,phase,mode,batch,trial,state,note
+eager-b2-t1,core,eager,2,1,ok,
+eager-b16-t1,core,eager,16,1,ok,
+eager-b32-t1,core,eager,32,1,ok,
+eager-b64-t1,extension,eager,64,1,ok,
+eager-b128-t1,extension,eager,128,1,ok,

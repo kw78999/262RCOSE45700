@@ -1,0 +1,23 @@
+{
+  "status": "finished",
+  "started_kst": "2026-11-04T17:32:45.778651+09:00",
+  "deadline_kst": "2026-11-04T18:29:32.778651+09:00",
+  "max_runtime_s": 3407,
+  "supervisor_pid": 74995,
+  "command": [
+    "/root/venv/bin/python",
+    "-u",
+    "-c",
+    "import importlib.util,sys,runpy;from pathlib import Path;p=Path.cwd();s=importlib.util.spec_from_file_location('Resnet',p/'__init__.py',submodule_search_locations=[str(p)]);m=importlib.util.module_from_spec(s);sys.modules['Resnet']=m;s.loader.exec_module(m);runpy.run_module('Resnet.Phase_1.module_run',run_name='__main__')",
+    "--config",
+    "/root/Resnet/Phase_1/config-b1-module-latency.json",
+    "--run-dir",
+    "/root/Resnet/Phase_1/results/b1-module-latency-20261104-173245"
+  ],
+  "cleanup_reserve_s": 10,
+  "run_dir": "/root/Resnet/Phase_1/results/b1-module-latency-20261104-173245",
+  "runner_pid": 74996,
+  "exit_code": 0,
+  "elapsed_s": 1052.5786777981557,
+  "finished_kst": "2026-11-04T17:50:18.357242+09:00"
+}

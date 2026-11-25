@@ -1,0 +1,19 @@
+{
+  "ok_jobs": 1,
+  "failed_jobs": 0,
+  "batches_measured": [
+    64
+  ],
+  "planned": 1,
+  "not_run": 0,
+  "num_fusion": 1,
+  "phase1_comparison": "same fusion as Phase 1",
+  "primary_scope": "input pre-staged on NPU; forward until output.to('cpu') returned",
+  "scaling_trials": "trial <= 1 for every batch; pooled statistics use all repeats of those trials",
+  "stdev": "sample standard deviation (n-1)",
+  "p95": "linear interpolation",
+  "speedup": "eager mean / compile mean",
+  "throughput": "batch * 1000 / mean latency",
+  "scaling_efficiency": "(throughput(B) / throughput(1)) / B",
+  "numerical_acceptance": "not defined; metrics only, no ImageNet accuracy claim"
+}

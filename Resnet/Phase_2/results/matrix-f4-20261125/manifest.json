@@ -1,0 +1,393 @@
+{
+  "experiment": "phase2_fusion_matrix_f4",
+  "started_kst": "2026-11-25T10:54:02.726896+09:00",
+  "status": "finished",
+  "plan": [
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 1,
+      "name": "eager-b1-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "name": "compile-b1-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 16,
+      "trial": 1,
+      "name": "compile-b16-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 16,
+      "trial": 1,
+      "name": "eager-b16-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 64,
+      "trial": 1,
+      "name": "eager-b64-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 64,
+      "trial": 1,
+      "name": "compile-b64-t1"
+    }
+  ],
+  "jobs": [
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 1,
+      "trial": 1,
+      "name": "eager-b1-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/config.json",
+        "--mode",
+        "eager",
+        "--batch",
+        "1",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/caches/eager-b1-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/jobs/eager-b1-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/matrix-f4-20261125/tmp/eager-b1-t1"
+      },
+      "timeout_s": 7200,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 37.91°C |  37 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-25T10:54:02.752671+09:00",
+      "worker_pid": 1057127,
+      "elapsed_s": 576.4788901517168,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 569526.428108,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 41.63°C |  42 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 1,
+      "trial": 1,
+      "name": "compile-b1-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/config.json",
+        "--mode",
+        "compile",
+        "--batch",
+        "1",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/caches/compile-b1-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/jobs/compile-b1-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/matrix-f4-20261125/tmp/compile-b1-t1"
+      },
+      "timeout_s": 7200,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 41.63°C |  42 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-25T11:03:39.382104+09:00",
+      "worker_pid": 1066928,
+      "elapsed_s": 529.0150772151537,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 520571.757373,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 41.26°C |  39 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 16,
+      "trial": 1,
+      "name": "compile-b16-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/config.json",
+        "--mode",
+        "compile",
+        "--batch",
+        "16",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/caches/compile-b16-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/jobs/compile-b16-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/matrix-f4-20261125/tmp/compile-b16-t1"
+      },
+      "timeout_s": 7200,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 41.26°C |  39 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-25T11:12:28.533606+09:00",
+      "worker_pid": 1069703,
+      "elapsed_s": 1779.417684189044,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 1767088.847266,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 38.47°C |  46 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 16,
+      "trial": 1,
+      "name": "eager-b16-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/config.json",
+        "--mode",
+        "eager",
+        "--batch",
+        "16",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/caches/eager-b16-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/jobs/eager-b16-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/matrix-f4-20261125/tmp/eager-b16-t1"
+      },
+      "timeout_s": 7200,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 38.47°C |  46 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-25T11:42:08.084294+09:00",
+      "worker_pid": 1090822,
+      "elapsed_s": 1118.0550058861263,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 1107471.319292,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 40.70°C |  59 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 64,
+      "trial": 1,
+      "name": "eager-b64-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/config.json",
+        "--mode",
+        "eager",
+        "--batch",
+        "64",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/caches/eager-b64-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/jobs/eager-b64-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/matrix-f4-20261125/tmp/eager-b64-t1"
+      },
+      "timeout_s": 7200,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 40.70°C |  59 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-25T12:00:46.228141+09:00",
+      "worker_pid": 1105512,
+      "elapsed_s": 1897.7309853769839,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 1877872.507242,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.77°C |  62 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+---------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| PID     | NPU core | CMD                                                                                                                                                                                                                                                                                                                   |\n+---------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| 1124424 | npu0:2   | /root/venv/bin/python -u -m Resnet.Phase_2.worker --config /root/Resnet/Phase_2/results/matrix-f1-20261125/config.json --mode compile --batch 16 --trial 1 --cache /root/Resnet/Phase_2/results/matrix-f1-20261125/caches/compile-b16-t1 --output /root/Resnet/Phase_2/results/matrix-f1-20261125/jobs/compile-b16-t1 |\n+---------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n"
+      }
+    },
+    {
+      "phase": "core",
+      "mode": "compile",
+      "batch": 64,
+      "trial": 1,
+      "name": "compile-b64-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/config.json",
+        "--mode",
+        "compile",
+        "--batch",
+        "64",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/caches/compile-b64-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/matrix-f4-20261125/jobs/compile-b64-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/matrix-f4-20261125/tmp/compile-b64-t1"
+      },
+      "timeout_s": 7200,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 40.51°C |  38 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+---------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| PID     | NPU core | CMD                                                                                                                                                                                                                                                                                                                   |\n+---------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| 1124424 | npu0:2   | /root/venv/bin/python -u -m Resnet.Phase_2.worker --config /root/Resnet/Phase_2/results/matrix-f1-20261125/config.json --mode compile --batch 16 --trial 1 --cache /root/Resnet/Phase_2/results/matrix-f1-20261125/caches/compile-b16-t1 --output /root/Resnet/Phase_2/results/matrix-f1-20261125/jobs/compile-b16-t1 |\n+---------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n"
+      },
+      "started_kst": "2026-11-25T12:53:16.317119+09:00",
+      "worker_pid": 1137040,
+      "elapsed_s": 4096.211615961045,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 4077506.77763,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 42.37°C |  40 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+---------+-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| PID     | NPU core    | CMD                                                                                                                                                                                                                                                                                                                   |\n+---------+-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| 1154209 | npu0:[0, 1] | /root/venv/bin/python -u -m Resnet.Phase_2.worker --config /root/Resnet/Phase_2/results/matrix-f2-20261125/config.json --mode compile --batch 16 --trial 1 --cache /root/Resnet/Phase_2/results/matrix-f2-20261125/caches/compile-b16-t1 --output /root/Resnet/Phase_2/results/matrix-f2-20261125/jobs/compile-b16-t1 |\n+---------+-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| 1177855 | npu0:2      | /root/venv/bin/python -u -m Resnet.Phase_2.worker --config /root/Resnet/Phase_2/results/matrix-f1-20261125/config.json --mode eager --batch 64 --trial 1 --cache /root/Resnet/Phase_2/results/matrix-f1-20261125/caches/eager-b64-t1 --output /root/Resnet/Phase_2/results/matrix-f1-20261125/jobs/eager-b64-t1       |\n+---------+-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n"
+      }
+    }
+  ],
+  "skipped": [],
+  "worker_elapsed_s": 9996.90925878007,
+  "max_total_s": 36000,
+  "num_fusion": 4,
+  "device": "furiosa:1",
+  "physical_pes": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "new_process_per_job": true,
+  "new_cache_directory_per_job": true,
+  "serial_device_execution": true,
+  "cache_reset_scope": "new project directory per job; system and device state untouched",
+  "runner_pid": 1137027,
+  "toolchain_preflight": {
+    "ok": true,
+    "command": "aarch64-linux-gnu-gcc -E (assert.h)",
+    "stderr": ""
+  },
+  "tables": {
+    "ok_jobs": 6,
+    "failed_jobs": 0,
+    "batches_measured": [
+      1,
+      16,
+      64
+    ],
+    "planned": 6,
+    "not_run": 0
+  },
+  "resumes": [
+    "2026-11-25T12:53:16.261755+09:00"
+  ],
+  "finished_kst": "2026-11-25T14:01:39.000159+09:00"
+}

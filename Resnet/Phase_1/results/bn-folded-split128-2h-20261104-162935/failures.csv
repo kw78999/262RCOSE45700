@@ -1,0 +1,2 @@
+job,model_variant,mode,target,status,stage,error_type,error
+eager-b4-cold,bn_folded_output_split128,eager,resnet50,interrupted,first:e2e:b4:cycle-1:step0,UserRequestedStop,사용자 요청: 배치 1 모듈별 4개 케이스로 전환

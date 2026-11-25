@@ -1,0 +1,6 @@
+batch,eager_trials,eager_n,eager_mean_ms,eager_stdev_ms,eager_median_ms,eager_p95_ms,eager_throughput_samples_per_s,eager_ms_per_sample,eager_throughput_gain_vs_b1,eager_scaling_efficiency,compile_trials,compile_n,compile_mean_ms,compile_stdev_ms,compile_median_ms,compile_p95_ms,compile_throughput_samples_per_s,compile_ms_per_sample,compile_throughput_gain_vs_b1,compile_scaling_efficiency,speedup_mean,speedup_median,speedup_trial_min,speedup_trial_max,speedup_trials
+2,1,50,16.89089662,0.1168366959818475,16.866403499999997,17.022248,118.40697655042543,8.44544831,,,,,,,,,,,,,,,,,
+16,1,50,32.687752,17.720357060631564,30.013706499999998,30.2392919,489.47997402819254,2.0429845,,,,,,,,,,,,,,,,,
+32,1,50,62.7119793,0.1365583267130321,62.705105,62.94464105,510.2693354154746,1.959749353125,,,,,,,,,,,,,,,,,
+64,1,50,120.42376452,0.12013022162046263,120.4233095,120.5766855,531.4565630388582,1.881621320625,,,,,,,,,,,,,,,,,
+128,1,50,300.0604404,0.5335155024606815,300.04175799999996,300.51612055000004,426.5807243013031,2.344222190625,,,,,,,,,,,,,,,,,

@@ -1,0 +1,17 @@
+17:35:14 f4-eager-b1-rerun start 
+17:42:58 f4-eager-b1-rerun end 0
+17:42:58 f2-eager-b16 start 
+18:01:50 f2-eager-b16 end 0
+18:01:50 f1-eager-b64 start 
+18:19:46 f1-eager-b64 end 0
+18:19:46 f1-compile-b64 start 
+18:52:46 f1-compile-b64 end 0
+18:52:46 f2-b64-probe start 
+19:22:01 f2-b64-probe end 0
+b16: 5 failing ops -> chunk 1 on ['layer3.0', 'layer3.1', 'layer3.2', 'layer3.3', 'layer3.4', 'layer3.5', 'layer4.0.conv2.parts.0', 'layer4.0.conv2.parts.1', 'layer4.0.conv2.parts.2', 'layer4.0.conv2.parts.3']
+b64: 8 failing ops -> chunk 1 on ['avgpool', 'layer3.0', 'layer3.1', 'layer3.2', 'layer3.3', 'layer3.4', 'layer3.5', 'layer4.0', 'layer4.1', 'layer4.2']
+f2x b64 plan: 10 modules
+19:22:07 f2-b64-plan done 
+19:22:07 f2-compile-eager-b64 start 
+20:16:06 f2-compile-eager-b64 end 0
+20:16:06 all done 

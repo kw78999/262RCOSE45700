@@ -1,0 +1,153 @@
+ERROR npu_compiler::compile::dfg_to_ldfg::lower::tactic: uncompilable subgraph detected
+
+Traceback (most recent call last):
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/compiler/__init__.py", line 83, in compile
+    runnable = compiler.compile(
+               ^^^^^^^^^^^^^^^^^
+furiosa.torch._C.error.CompileError: (cache at /root/Resnet/Phase_1/results/bn-folded-20261104/caches/eager-b1/1ffcfe6f08c246d9)
+
+Caused by:
+   0: O167 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=512:4608, 1_1=512:9, 2_1=3:3, 3_1=3:1])
+      -> [] | [] | [0_32=16, 1_64=4] | [1_256=2, 0_1=32, 1_1=64, 2_1=3] | [3_1=3](4)
+      -> (E) [1_256=2]|[]|[]|[0_32=16, 1_64=4]|[0_1=32, 2_1=3, 3_1=3]|[1_1=64](8) @ [0=512, 1=512, 2=3, 3=3]
+   1: while verifying LowLevelTailCrop
+   2: verification of operator failed:
+      LowLevelTailCrop
+      broadcast_axes: [AxisIndex(0), AxisIndex(2), AxisIndex(4), AxisIndex(6)]
+      name: 
+
+      input tensors: 1
+        input T7: [] | [] | [A3_1=16, E_12=1, A2_1=4, E_12=1] | [A1_1=32, E_12=1, A0_1=16, E_3=4, E_1=3] | [TAIL_1=8](4), 6291456 B, bf16, sram
+        source: unknown
+        total bytes: 6291456
+      output tensors: 1
+        output T12: [] | [] | [A3_1=16, E_12=1, A2_1=4, E_12=1] | [A1_1=32, E_12=1, A0_1=16, E_3=4, E_1=3] | [TAIL_1=4](4), 3145728 B, bf16, sram
+        source: unknown
+        total bytes: 3145728
+   3: Condition failed: `tensors.try_get(input)?
+      .element_type.size_in_bytes_with_length(input_shape.slice_volume()) <=
+      u16::MAX as usize`
+
+Location:
+    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/global-compiler/src/lib.rs:65:30
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/Resnet/Phase_1/worker.py", line 186, in main
+    execute(args, result)
+  File "/root/Resnet/Phase_1/worker.py", line 105, in execute
+    sample(batch, "first" if args.workload == "fixed" else "first_cycle", -1, step)
+  File "/root/Resnet/Phase_1/worker.py", line 84, in sample
+    elapsed, cpu_output = measure_e2e(function, inputs[batch], device)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/Resnet/runtime.py", line 38, in measure_e2e
+    output = function(device_input)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torchvision/models/resnet.py", line 276, in _forward_impl
+    x = self.layer4(x)
+        ^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torchvision/models/resnet.py", line 150, in forward
+    out = self.conv2(out)
+          ^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 553, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 548, in _conv_forward
+    return F.conv2d(
+           ^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py", line 19, in run_aten_op
+    return _run_aten_op(qualified_aten_op_name, op_callable, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py", line 42, in _run_aten_op
+    raise e
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py", line 38, in _run_aten_op
+    m = aten_op.compile_and_load(device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py", line 173, in compile_and_load
+    return _compile_and_load_cached(self, device).out()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py", line 28, in out
+    raise self.cached.with_traceback(self.original_traceback)
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py", line 96, in _compile
+    compiled = CompileModule.from_exported(exported, task_name=task_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_module/runnable.py", line 222, in from_exported
+    compiler.compile(exported, compiler_config, task_name=task_name)
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/profiler/__init__.py", line 35, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/compiler/__init__.py", line 94, in compile
+    raise error.UnsupportedOpError(
+furiosa.torch._C.error.UnsupportedOpError: failed to compile
+graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %args_2 : [num_users=1] = placeholder[target=args_2]
+    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%args_0, %args_1, %args_2, [2, 2], [1, 1], [1, 1], False, [0, 0], 1), kwargs = {})
+    return (convolution,)
+source:
+    convolution          venv/lib/python3.12/site-packages/torchvision/models/resnet.py:150 out = self.conv2(out)
+compile error:
+(cache at /root/Resnet/Phase_1/results/bn-folded-20261104/caches/eager-b1/1ffcfe6f08c246d9)
+
+Caused by:
+   0: O167 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=512:4608, 1_1=512:9, 2_1=3:3, 3_1=3:1])
+      -> [] | [] | [0_32=16, 1_64=4] | [1_256=2, 0_1=32, 1_1=64, 2_1=3] | [3_1=3](4)
+      -> (E) [1_256=2]|[]|[]|[0_32=16, 1_64=4]|[0_1=32, 2_1=3, 3_1=3]|[1_1=64](8) @ [0=512, 1=512, 2=3, 3=3]
+   1: while verifying LowLevelTailCrop
+   2: verification of operator failed:
+      LowLevelTailCrop
+      broadcast_axes: [AxisIndex(0), AxisIndex(2), AxisIndex(4), AxisIndex(6)]
+      name: 
+
+      input tensors: 1
+        input T7: [] | [] | [A3_1=16, E_12=1, A2_1=4, E_12=1] | [A1_1=32, E_12=1, A0_1=16, E_3=4, E_1=3] | [TAIL_1=8](4), 6291456 B, bf16, sram
+        source: unknown
+        total bytes: 6291456
+      output tensors: 1
+        output T12: [] | [] | [A3_1=16, E_12=1, A2_1=4, E_12=1] | [A1_1=32, E_12=1, A0_1=16, E_3=4, E_1=3] | [TAIL_1=4](4), 3145728 B, bf16, sram
+        source: unknown
+        total bytes: 3145728
+   3: Condition failed: `tensors.try_get(input)?
+      .element_type.size_in_bytes_with_length(input_shape.slice_volume()) <=
+      u16::MAX as usize`
+
+Location:
+    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/global-compiler/src/lib.rs:65:30

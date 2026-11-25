@@ -1,0 +1,11 @@
+{
+  "successful_jobs": 1,
+  "failed_jobs": 0,
+  "failed_job_samples_excluded": true,
+  "startup_estimate": "model load + model transfer + mode wrapper + max(0, first/warmup E2E sum - call count * measured median)",
+  "startup_estimate_is_not_pure_compile_time": true,
+  "mixed_totals": "Actual measured E2E sums in recorded order; initial/fixed warmup/steady phases retained",
+  "cache_hits": "Not established by timings, same path, or backend entry counts",
+  "correctness": "Synthetic tensors, numerical agreement only; no dataset accuracy or acceptance threshold",
+  "conv1": "Diagnostic submodule only; never interpret as ResNet50 inference performance"
+}

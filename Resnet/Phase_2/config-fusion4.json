@@ -1,0 +1,38 @@
+{
+  "experiment": "phase2_batch_scaling_fusion4",
+  "model": "resnet50",
+  "model_variant": "bn_folded_output_split128",
+  "weights": "IMAGENET1K_V2",
+  "precision": "bfloat16",
+  "bn_folded": true,
+  "output_split_channels": 128,
+  "expected_state_sha256": "f4ffc8727491492e195b9c024f145293f422696cdbeed6d8c064016158753469",
+  "device": "furiosa:1",
+  "seed": 2026,
+  "image_size": 224,
+  "cpu_threads": 1,
+  "warmup": 10,
+  "repeats": 50,
+  "aux_warmup": 5,
+  "aux_repeats": 50,
+  "core_batches": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "core_trials": 3,
+  "revalidation_batch": 1,
+  "revalidation_trials": 5,
+  "extension_batches": [
+    64,
+    128,
+    256
+  ],
+  "extension_trials": 3,
+  "timeout_s": 7200,
+  "max_total_s": 43200,
+  "num_fusion": 4
+}

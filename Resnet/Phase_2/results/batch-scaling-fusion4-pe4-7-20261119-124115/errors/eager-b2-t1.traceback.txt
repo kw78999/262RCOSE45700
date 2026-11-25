@@ -1,0 +1,107 @@
+Traceback (most recent call last):
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/compiler/__init__.py", line 83, in compile
+    runnable = compiler.compile(
+               ^^^^^^^^^^^^^^^^^
+furiosa.torch._C.error.CompileError: (cache at /root/Resnet/Phase_2/results/batch-scaling-fusion4-pe4-7-20261119-124115/caches/eager-b2-t1/3edba5ee92436235)
+
+Caused by:
+   0: On populating O25
+   1: called `Option::unwrap()` on a `None` value
+
+Location:
+    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/npu-utils/src/panic.rs:22:5
+
+Location:
+    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/global-compiler/src/lib.rs:95:64
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/Resnet/Phase_2/results/batch-scaling-fusion4-pe4-7-20261119-124115/source/Resnet/Phase_2/worker.py", line 168, in main
+    execute(args, result, samples)
+  File "/root/Resnet/Phase_2/results/batch-scaling-fusion4-pe4-7-20261119-124115/source/Resnet/Phase_2/worker.py", line 108, in execute
+    first_output, _ = run_primary("first", 1, device_input)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/Resnet/Phase_2/results/batch-scaling-fusion4-pe4-7-20261119-124115/source/Resnet/Phase_2/worker.py", line 94, in run_primary
+    elapsed, _, cpu_output = forward_to_cpu(function, device_input, device)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/Resnet/Phase_2/results/batch-scaling-fusion4-pe4-7-20261119-124115/source/Resnet/Phase_2/measure.py", line 19, in forward_to_cpu
+    output = function(device_input)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torchvision/models/resnet.py", line 271, in _forward_impl
+    x = self.maxpool(x)
+        ^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/pooling.py", line 224, in forward
+    return F.max_pool2d(
+           ^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/_jit_internal.py", line 619, in fn
+    return if_false(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/functional.py", line 833, in _max_pool2d
+    return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py", line 19, in run_aten_op
+    return _run_aten_op(qualified_aten_op_name, op_callable, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py", line 42, in _run_aten_op
+    raise e
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py", line 38, in _run_aten_op
+    m = aten_op.compile_and_load(device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py", line 173, in compile_and_load
+    return _compile_and_load_cached(self, device).out()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py", line 28, in out
+    raise self.cached.with_traceback(self.original_traceback)
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py", line 96, in _compile
+    compiled = CompileModule.from_exported(exported, task_name=task_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/_module/runnable.py", line 222, in from_exported
+    compiler.compile(exported, compiler_config, task_name=task_name)
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/profiler/__init__.py", line 35, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/furiosa/torch/compiler/__init__.py", line 94, in compile
+    raise error.UnsupportedOpError(
+furiosa.torch._C.error.UnsupportedOpError: failed to compile
+graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %max_pool2d_with_indices : [num_users=1] = call_function[target=torch.ops.aten.max_pool2d_with_indices.default](args = (%args_0, [3, 3], [2, 2], [1, 1]), kwargs = {})
+    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%max_pool2d_with_indices, 0), kwargs = {})
+    return (getitem,)
+source:
+    max_pool2d_with_indices ../../../../../venv/lib/python3.12/site-packages/torchvision/models/resnet.py:285 return self._forward_impl(x)
+    getitem              ../../../../../venv/lib/python3.12/site-packages/torchvision/models/resnet.py:285 return self._forward_impl(x)
+compile error:
+(cache at /root/Resnet/Phase_2/results/batch-scaling-fusion4-pe4-7-20261119-124115/caches/eager-b2-t1/3edba5ee92436235)
+
+Caused by:
+   0: On populating O25
+   1: called `Option::unwrap()` on a `None` value
+
+Location:
+    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/npu-utils/src/panic.rs:22:5
+
+Location:
+    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/global-compiler/src/lib.rs:95:64

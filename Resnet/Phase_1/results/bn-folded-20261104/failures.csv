@@ -1,0 +1,3 @@
+job,mode,target,status,stage,error_type,error
+compile-b1-cold,compile,resnet50,failed,first:e2e:b1:cycle-1:step0,UnsupportedOpError,failed to compile
+eager-b1-cold,eager,resnet50,failed,first:e2e:b1:cycle-1:step0,UnsupportedOpError,failed to compile

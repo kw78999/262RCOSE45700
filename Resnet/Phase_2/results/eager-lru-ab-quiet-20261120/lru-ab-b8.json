@@ -1,0 +1,40 @@
+{
+  "batch": 8,
+  "device": "furiosa:1",
+  "first_call_s": 14.031036978587508,
+  "blocks": [
+    {
+      "num_load": 32,
+      "mean_ms": 18.2954553,
+      "median_ms": 18.278487,
+      "stdev_ms": 0.14410707969356018,
+      "load_misses_per_forward": 42.0,
+      "load_hits_per_forward": 88.0
+    },
+    {
+      "num_load": 2048,
+      "mean_ms": 14.225147199999999,
+      "median_ms": 14.230972999999999,
+      "stdev_ms": 0.07381113481593635,
+      "load_misses_per_forward": 0.0,
+      "load_hits_per_forward": 130.0
+    },
+    {
+      "num_load": 32,
+      "mean_ms": 18.58228974,
+      "median_ms": 18.514782,
+      "stdev_ms": 0.2363708110634826,
+      "load_misses_per_forward": 42.0,
+      "load_hits_per_forward": 88.0
+    },
+    {
+      "num_load": 2048,
+      "mean_ms": 14.161824979999999,
+      "median_ms": 14.142875,
+      "stdev_ms": 0.08076871058226717,
+      "load_misses_per_forward": 0.0,
+      "load_hits_per_forward": 130.0
+    }
+  ],
+  "note": "diagnostic, copied cache; not a Phase 2 measurement"
+}

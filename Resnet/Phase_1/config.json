@@ -1,0 +1,14 @@
+{
+  "model": "resnet50",
+  "weights": "IMAGENET1K_V2",
+  "precision": "bfloat16",
+  "device": "furiosa:0",
+  "seed": 2026,
+  "image_size": 224,
+  "batches": [1, 4, 8, 16],
+  "warmup": 3,
+  "iterations": 10,
+  "mixed_batches": [1, 4, 1, 8, 4, 16, 1],
+  "timeout_s": 180,
+  "cpu_threads": 1
+}

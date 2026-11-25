@@ -1,0 +1,7 @@
+{
+  "status": "moved",
+  "job": "eager-b64-t1",
+  "mode": "eager",
+  "batch": 64,
+  "moved_to": "matrix-f2x-20261125"
+}

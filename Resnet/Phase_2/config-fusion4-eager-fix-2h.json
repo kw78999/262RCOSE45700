@@ -1,0 +1,128 @@
+{
+  "experiment": "phase2_batch_scaling_fusion4_eager_fix_2h",
+  "model": "resnet50",
+  "model_variant": "bn_folded_output_split128",
+  "weights": "IMAGENET1K_V2",
+  "precision": "bfloat16",
+  "bn_folded": true,
+  "output_split_channels": 128,
+  "expected_state_sha256": "f4ffc8727491492e195b9c024f145293f422696cdbeed6d8c064016158753469",
+  "device": "furiosa:1",
+  "seed": 2026,
+  "image_size": 224,
+  "cpu_threads": 1,
+  "warmup": 10,
+  "repeats": 50,
+  "aux_warmup": 5,
+  "aux_repeats": 50,
+  "core_batches": [
+    2,
+    16,
+    32
+  ],
+  "core_trials": 1,
+  "revalidation_batch": 2,
+  "revalidation_trials": 1,
+  "extension_batches": [
+    64,
+    128
+  ],
+  "extension_trials": 1,
+  "timeout_s": 2400,
+  "max_total_s": 6600,
+  "num_fusion": 4,
+  "eager_batch_partition": {
+    "2": {
+      "chunk": 1,
+      "modules": [
+        "layer3.1.conv2",
+        "layer3.2.conv2",
+        "layer3.3.conv2",
+        "layer3.4.conv2",
+        "layer3.5.conv2",
+        "layer4.0.conv2.parts.0",
+        "layer4.0.conv2.parts.1",
+        "layer4.0.conv2.parts.2",
+        "layer4.0.conv2.parts.3",
+        "maxpool"
+      ]
+    },
+    "16": {
+      "chunk": 8,
+      "modules": [
+        "layer3.0.conv3",
+        "layer3.1.conv2",
+        "layer3.1.conv3",
+        "layer3.2.conv2",
+        "layer3.2.conv3",
+        "layer3.3.conv2",
+        "layer3.3.conv3",
+        "layer3.4.conv2",
+        "layer3.4.conv3",
+        "layer3.5.conv2",
+        "layer3.5.conv3",
+        "layer4.0.conv2.parts.0",
+        "layer4.0.conv2.parts.1",
+        "layer4.0.conv2.parts.2",
+        "layer4.0.conv2.parts.3"
+      ]
+    },
+    "32": {
+      "chunk": 8,
+      "modules": [
+        "layer3.0",
+        "layer3.1",
+        "layer3.2",
+        "layer3.3",
+        "layer3.4",
+        "layer3.5",
+        "layer4.0.conv2.parts.0",
+        "layer4.0.conv2.parts.1",
+        "layer4.0.conv2.parts.2",
+        "layer4.0.conv2.parts.3"
+      ]
+    },
+    "64": {
+      "chunk": 8,
+      "modules": [
+        "avgpool",
+        "layer3.0",
+        "layer3.1",
+        "layer3.2",
+        "layer3.3",
+        "layer3.4",
+        "layer3.5",
+        "layer4.0",
+        "layer4.1",
+        "layer4.2",
+        "relu"
+      ]
+    },
+    "128": {
+      "chunk": 8,
+      "modules": [
+        "avgpool",
+        "layer1.0.conv3",
+        "layer1.0.downsample.0",
+        "layer1.1.conv3",
+        "layer1.2.conv3",
+        "layer2.0.conv3",
+        "layer2.1.conv3",
+        "layer2.2.conv3",
+        "layer2.3.conv3",
+        "layer3.0",
+        "layer3.1",
+        "layer3.2",
+        "layer3.3",
+        "layer3.4",
+        "layer3.5",
+        "layer4.0",
+        "layer4.1",
+        "layer4.2"
+      ]
+    }
+  },
+  "modes": [
+    "eager"
+  ]
+}

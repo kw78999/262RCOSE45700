@@ -1,0 +1,5 @@
+eager-b1-cold: start
+eager-b1-cold: failed (9.2s)
+compile-b1-cold: start
+compile-b1-cold: failed (9.9s)
+{"run_dir": "/root/Resnet/Phase_1/results/baseline-20261104", "status": "blocked_model_support", "tables": {"summary_rows": 0, "failures": 2, "comparisons": 0}}

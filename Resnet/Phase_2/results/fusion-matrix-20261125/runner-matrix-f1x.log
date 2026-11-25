@@ -1,0 +1,3 @@
+compile-b64-t1: start
+compile-b64-t1: ok (1979.8s)
+{"run_dir": "/root/Resnet/Phase_2/results/matrix-f1x-20261125", "status": "finished"}

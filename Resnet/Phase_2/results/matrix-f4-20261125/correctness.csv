@@ -1,0 +1,6 @@
+kind,batch,left,right,status,samples,top1_matches,bitwise_equal,max_abs_error,mean_abs_error,rmse,cosine_min
+phase1_cpu_bf16_reference_vs_npu,1,cpu-bf16,compile-t1,measured,1,1,False,0.015625,0.0014211769448593259,0.002561297034844756,0.9999959374635938
+eager_vs_compile_same_trial,1,eager-t1,compile-t1,measured,1,1,False,0.015625,0.0012955551501363516,0.0023867907002568245,0.9999963787670488
+phase1_cpu_bf16_reference_vs_npu,1,cpu-bf16,eager-t1,measured,1,1,False,0.015625,0.0014637107960879803,0.0025301435962319374,0.999996124754917
+eager_vs_compile_same_trial,16,eager-t1,compile-t1,measured,16,16,False,0.03125,0.0016983173554763198,0.003149778349325061,0.9999918466397941
+eager_vs_compile_same_trial,64,eager-t1,compile-t1,measured,64,64,False,0.03125,0.0016557414783164859,0.0030781179666519165,0.9999902950026454

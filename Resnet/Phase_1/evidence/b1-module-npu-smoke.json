@@ -1,0 +1,132 @@
+{
+  "status": "ok",
+  "rows": [
+    {
+      "mode": "eager",
+      "node": "conv1",
+      "operator": "Conv2d",
+      "status": "ok",
+      "elapsed_ms": 511.78873,
+      "max_abs_error": 0.0625
+    },
+    {
+      "mode": "eager",
+      "node": "relu",
+      "operator": "ReLU",
+      "status": "ok",
+      "elapsed_ms": 358.885617,
+      "max_abs_error": 0.0
+    },
+    {
+      "mode": "eager",
+      "node": "maxpool",
+      "operator": "MaxPool2d",
+      "status": "ok",
+      "elapsed_ms": 886.966571,
+      "max_abs_error": 0.0
+    },
+    {
+      "mode": "eager",
+      "node": "add",
+      "operator": "add",
+      "status": "ok",
+      "elapsed_ms": 369.545841,
+      "max_abs_error": 0.0
+    },
+    {
+      "mode": "eager",
+      "node": "cat",
+      "operator": "cat",
+      "status": "ok",
+      "elapsed_ms": 0.432851,
+      "max_abs_error": 0.0
+    },
+    {
+      "mode": "eager",
+      "node": "avgpool",
+      "operator": "AdaptiveAvgPool2d",
+      "status": "ok",
+      "elapsed_ms": 1568.359883,
+      "max_abs_error": 0.0
+    },
+    {
+      "mode": "eager",
+      "node": "flatten",
+      "operator": "flatten",
+      "status": "ok",
+      "elapsed_ms": 0.16068,
+      "max_abs_error": 0.0
+    },
+    {
+      "mode": "eager",
+      "node": "fc",
+      "operator": "Linear",
+      "status": "ok",
+      "elapsed_ms": 583.903194,
+      "max_abs_error": 0.0
+    },
+    {
+      "mode": "compile",
+      "node": "conv1",
+      "operator": "Conv2d",
+      "status": "ok",
+      "elapsed_ms": 447.20629,
+      "max_abs_error": 0.0625
+    },
+    {
+      "mode": "compile",
+      "node": "relu",
+      "operator": "ReLU",
+      "status": "ok",
+      "elapsed_ms": 176.968855,
+      "max_abs_error": 0.0
+    },
+    {
+      "mode": "compile",
+      "node": "maxpool",
+      "operator": "MaxPool2d",
+      "status": "ok",
+      "elapsed_ms": 805.22662,
+      "max_abs_error": 0.0
+    },
+    {
+      "mode": "compile",
+      "node": "add",
+      "operator": "add",
+      "status": "ok",
+      "elapsed_ms": 175.650494,
+      "max_abs_error": 0.0
+    },
+    {
+      "mode": "compile",
+      "node": "cat",
+      "operator": "cat",
+      "status": "ok",
+      "elapsed_ms": 187.481722,
+      "max_abs_error": 0.0
+    },
+    {
+      "mode": "compile",
+      "node": "avgpool",
+      "operator": "AdaptiveAvgPool2d",
+      "status": "ok",
+      "elapsed_ms": 1372.787018,
+      "max_abs_error": 0.0
+    },
+    {
+      "mode": "compile",
+      "node": "flatten",
+      "operator": "flatten",
+      "status": "metadata_only_no_binary",
+      "error": "RunnableSequence requires at least one runnable with a binary"
+    },
+    {
+      "mode": "compile",
+      "node": "fc",
+      "operator": "Linear",
+      "status": "ok",
+      "elapsed_ms": 460.557523,
+      "max_abs_error": 0.0
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+eager-b2-t1: start
+eager-b2-t1: failed (7.1s)
+eager-b4-t1: start
+eager-b4-t1: ok (494.0s)
+compile-b4-t1: start
+compile-b4-t1: ok (889.2s)
+compile-b8-t1: start
+compile-b8-t1: ok (954.6s)
+eager-b8-t1: start
+eager-b8-t1: ok (576.0s)
+eager-b16-t1: start
+eager-b16-t1: failed (601.4s)
+compile-b16-t1: start
+compile-b16-t1: ok (1011.0s)
+compile-b32-t1: start
+compile-b32-t1: ok (1421.7s)
+eager-b32-t1: start
+eager-b32-t1: failed (1152.2s)
+compile-b1-t2: start
+compile-b1-t2: ok (501.5s)
+eager-b1-t2: start
+eager-b1-t2: ok (465.8s)
+compile-b2-t2: start
+compile-b2-t2: failed (30.5s)
+compile-b4-t2: start
+compile-b4-t2: ok (897.2s)
+eager-b4-t2: start
+eager-b4-t2: ok (496.5s)
+eager-b8-t2: start
+eager-b8-t2: ok (578.7s)
+compile-b8-t2: start
+compile-b8-t2: ok (942.5s)
+compile-b16-t2: start
+compile-b16-t2: ok (1041.7s)
+compile-b32-t2: start
+compile-b32-t2: ok (1432.4s)
+eager-b1-t3: start
+eager-b1-t3: ok (465.8s)
+compile-b1-t3: start
+compile-b1-t3: ok (505.0s)
+eager-b4-t3: start
+eager-b4-t3: ok (496.5s)
+compile-b4-t3: start
+compile-b4-t3: ok (911.4s)
+compile-b8-t3: start
+compile-b8-t3: ok (945.5s)
+eager-b8-t3: start
+eager-b8-t3: ok (585.2s)
+compile-b16-t3: start
+compile-b16-t3: ok (1038.7s)
+compile-b32-t3: start
+compile-b32-t3: ok (1442.4s)
+compile-b1-t4: start
+compile-b1-t4: ok (504.6s)
+eager-b1-t4: start
+eager-b1-t4: ok (466.4s)
+eager-b1-t5: start
+eager-b1-t5: ok (466.1s)
+compile-b1-t5: start
+compile-b1-t5: ok (507.6s)
+compile-b64-t1: start
+compile-b64-t1: ok (1789.0s)
+compile-b64-t2: start
+compile-b64-t2: ok (1815.4s)
+compile-b64-t3: start
+compile-b64-t3: ok (1774.8s)
+compile-b128-t1: start
+compile-b128-t1: ok (2184.7s)
+compile-b128-t2: start
+compile-b128-t2: ok (2205.1s)
+compile-b128-t3: start
+compile-b128-t3: ok (2267.3s)
+compile-b256-t1: start
+compile-b256-t1: ok (2474.4s)
+compile-b256-t2: start
+compile-b256-t2: ok (2491.7s)
+compile-b256-t3: start
+compile-b256-t3: ok (2459.1s)
+{"run_dir": "/root/Resnet/Phase_2/results/batch-scaling-fusion4-pe4-7-20261119-124115", "status": "finished"}

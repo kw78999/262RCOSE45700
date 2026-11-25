@@ -1,0 +1,9 @@
+b64 aten::conv2d conv1 (+0) OK 23.3s
+b64 aten::relu_ relu (+0) OK 8.9s
+b64 aten::max_pool2d maxpool (+0) OK 8.1s
+b64 aten::conv2d layer1.0.conv1 (+0) OK 40.6s
+b64 aten::relu_ layer1.0.relu (+2) OK 1.2s
+b64 aten::conv2d layer1.0.conv2 (+2) OK 35.6s
+b64 aten::conv2d layer1.0.conv3 (+3) OK 144.9s
+b64 aten::add_.Tensor layer1.0 (+2) OK 7.9s
+b64 aten::relu_ layer1.0.relu (+2) OK 5.6s

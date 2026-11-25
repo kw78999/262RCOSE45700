@@ -1,0 +1,5 @@
+03:09:04 small probe exited
+chunk=1
+b16: 5 failing ops -> chunk 1 on ['layer3.0', 'layer3.1', 'layer3.2', 'layer3.3', 'layer3.4', 'layer3.5', 'layer4.0.conv2.parts.0', 'layer4.0.conv2.parts.1', 'layer4.0.conv2.parts.2', 'layer4.0.conv2.parts.3']
+['eager-b1-t1', 'compile-b1-t1', 'compile-b16-t1', 'eager-b16-t1', 'eager-b64-t1', 'compile-b64-t1']
+03:09:17 f2 runner started

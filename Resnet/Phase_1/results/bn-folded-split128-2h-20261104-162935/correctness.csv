@@ -1,0 +1,3 @@
+model_variant,target,workload,cache_intent,batch,status,max_abs_error,mean_abs_error,rmse,cosine_mean,cosine_min,cosine_undefined_samples,prediction_agreement,acceptance
+bn_folded_output_split128,resnet50,fixed,disk_reuse_attempt,1,measured,0.015625,0.0012440071441233158,0.0023630608338862658,0.9999964380209903,0.9999964380209903,0,1.0,"not_defined; numerical metrics only, no ImageNet accuracy claim"
+bn_folded_output_split128,resnet50,fixed,empty_project_cache,1,measured,0.015625,0.0012440071441233158,0.0023630608338862658,0.9999964380209903,0.9999964380209903,0,1.0,"not_defined; numerical metrics only, no ImageNet accuracy claim"

@@ -1,0 +1,25 @@
+{
+  "traces": [
+    {
+      "trace": "profiles/compile-b1-reuse-profile/furiosa-trace.json",
+      "event_count": 19,
+      "phases": {
+        "X": 16,
+        "M": 3
+      },
+      "named_npu_tasks": 1
+    },
+    {
+      "trace": "profiles/eager-b1-reuse-profile/furiosa-trace.json",
+      "event_count": 32,
+      "phases": {
+        "X": 29,
+        "M": 3
+      },
+      "named_npu_tasks": 1
+    }
+  ],
+  "units": "Chrome trace duration in microseconds",
+  "limit": "Spans may nest or overlap; sums are not end-to-end latency. Named NPU tasks are identified from trace labels, not assumed for all events.",
+  "fusion": "A separately compiled Conv or block changes fusion boundaries; module times cannot be added to reconstruct compiled ResNet50"
+}

@@ -1,0 +1,18 @@
+{
+  "ok_jobs": 3,
+  "failed_jobs": 3,
+  "batches_measured": [
+    1,
+    2
+  ],
+  "planned": 58,
+  "not_run": 52,
+  "primary_scope": "input pre-staged on NPU; forward until output.to('cpu') returned",
+  "scaling_trials": "trial <= 3 for every batch; pooled statistics use all repeats of those trials",
+  "stdev": "sample standard deviation (n-1)",
+  "p95": "linear interpolation",
+  "speedup": "eager mean / compile mean",
+  "throughput": "batch * 1000 / mean latency",
+  "scaling_efficiency": "(throughput(B) / throughput(1)) / B",
+  "numerical_acceptance": "not defined; metrics only, no ImageNet accuracy claim"
+}
