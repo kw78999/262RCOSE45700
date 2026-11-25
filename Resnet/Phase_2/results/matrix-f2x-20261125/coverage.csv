@@ -1,0 +1,5 @@
+job,phase,mode,batch,trial,state,note
+eager-b1-t1,core,eager,1,1,ok,
+compile-b1-t1,core,compile,1,1,moved,
+compile-b64-t1,core,compile,64,1,ok,
+eager-b64-t1,core,eager,64,1,ok,

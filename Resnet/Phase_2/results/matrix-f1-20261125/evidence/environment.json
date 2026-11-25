@@ -1,0 +1,69 @@
+{
+  "time_kst": "2026-11-25T12:05:06.957555+09:00",
+  "python_executable": "/root/venv/bin/python",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "furiosa-torch": "2026.4.0",
+    "furiosa-kernels": "2026.4.0",
+    "numpy": "2.5.4",
+    "pillow": "13.0.0"
+  },
+  "furiosa_build": "furiosa-torch 2026.4.0 (rev: 5800e2ba24, built_at: 2026-10-12T09:11:33Z)",
+  "available": true,
+  "devices": [
+    "furiosa:0",
+    "furiosa:1",
+    "furiosa:2",
+    "furiosa:3",
+    "furiosa:4",
+    "furiosa:5",
+    "furiosa:6",
+    "furiosa:7"
+  ],
+  "device_configuration": "(Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1', 'furiosa:2', 'furiosa:3', 'furiosa:4', 'furiosa:5', 'furiosa:6', 'furiosa:7'])",
+  "dynamo_automatic_dynamic_shapes_after_sdk_import": false,
+  "cpu_fallback_default": true,
+  "cache_default": "CacheConfig { root_dir: Some(\"/root/Resnet/.cache/furiosa/compiler\"), summary: false, ensure: false, failure_link_dir: None }",
+  "compiler_default": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+  "num_threads_before_worker_override": 22,
+  "environment": {},
+  "device_info": {
+    "command": [
+      "furiosa-smi",
+      "info"
+    ],
+    "exit_code": 0,
+    "stdout": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 40.33°C |  38 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+    "stderr": ""
+  },
+  "device_status": {
+    "command": [
+      "furiosa-smi",
+      "status"
+    ],
+    "exit_code": 0,
+    "stdout": "+------+--------+---------------------------+-------------+\n| Arch | Device | Memory                    | Utilization |\n+------+--------+---------------------------+-------------+\n| RNGD | npu0   |  0.00/47.50 GiB   (0.00%) |    0.00%    |\n+------+--------+---------------------------+-------------+\n",
+    "stderr": ""
+  },
+  "device_processes": {
+    "command": [
+      "furiosa-smi",
+      "ps"
+    ],
+    "exit_code": 0,
+    "stdout": "+---------+-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| PID     | NPU core    | CMD                                                                                                                                                                                                                                                                                                             |\n+---------+-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| 1105512 | npu0:[4, 7] | /root/venv/bin/python -u -m Resnet.Phase_2.worker --config /root/Resnet/Phase_2/results/matrix-f4-20261125/config.json --mode eager --batch 64 --trial 1 --cache /root/Resnet/Phase_2/results/matrix-f4-20261125/caches/eager-b64-t1 --output /root/Resnet/Phase_2/results/matrix-f4-20261125/jobs/eager-b64-t1 |\n+---------+-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n",
+    "stderr": ""
+  },
+  "device_versions": {
+    "command": [
+      "furiosa-smi",
+      "version"
+    ],
+    "exit_code": 0,
+    "stdout": "- furiosa-smi\n  2026.4.0\n\n- device driver\n  2026.4.0, 32ffd4e\n\n",
+    "stderr": ""
+  }
+}

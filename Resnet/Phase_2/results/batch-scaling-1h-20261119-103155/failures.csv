@@ -1,0 +1,4 @@
+job,mode,batch,trial,status,stage,error_type,error,log
+compile-b4-t1,compile,4,1,timeout,first_call,TimeoutExpired,Worker exit -15 after the 1085 s limit; see the preserved log,errors/compile-b4-t1.log
+eager-b2-t1,eager,2,1,failed,first_call,UnsupportedOpError,failed to compile,errors/eager-b2-t1.log
+eager-b4-t1,eager,4,1,failed,first_call,UnsupportedOpError,failed to compile,errors/eager-b4-t1.log

@@ -1,0 +1,5 @@
+job,mode,batch,trial,status,stage,error_type,error,log
+compile-b2-t2,compile,2,2,failed,first_call,UnsupportedOpError,failed to compile,errors/compile-b2-t2.log
+eager-b16-t1,eager,16,1,failed,first_call,UnsupportedOpError,failed to compile,errors/eager-b16-t1.log
+eager-b2-t1,eager,2,1,failed,first_call,UnsupportedOpError,failed to compile,errors/eager-b2-t1.log
+eager-b32-t1,eager,32,1,failed,first_call,UnsupportedOpError,failed to compile,errors/eager-b32-t1.log

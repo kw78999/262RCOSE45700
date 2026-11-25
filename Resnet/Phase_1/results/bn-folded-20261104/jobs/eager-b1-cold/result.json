@@ -1,0 +1,956 @@
+{
+  "status": "failed",
+  "mode": "eager",
+  "target": "resnet50",
+  "workload": "fixed",
+  "batch": 1,
+  "cache_intent": "empty_project_cache",
+  "cache_dir": "/root/Resnet/Phase_1/results/bn-folded-20261104/caches/eager-b1",
+  "profile_enabled": false,
+  "config": {
+    "model": "resnet50",
+    "weights": "IMAGENET1K_V2",
+    "precision": "bfloat16",
+    "bn_folded": true,
+    "device": "furiosa:0",
+    "seed": 2026,
+    "image_size": 224,
+    "batches": [
+      1,
+      4,
+      8,
+      16
+    ],
+    "warmup": 3,
+    "iterations": 10,
+    "mixed_batches": [
+      1,
+      4,
+      1,
+      8,
+      4,
+      16,
+      1
+    ],
+    "timeout_s": 900,
+    "cpu_threads": 1
+  },
+  "cpu_fallback": false,
+  "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+  "compile_options": "SDK defaults; counting wrapper delegates unchanged to ft.backend",
+  "stage": "first:e2e:b1:cycle-1:step0",
+  "model_load_ms": 421.120271,
+  "weights": {
+    "model": "torchvision.models.resnet50",
+    "weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "checkpoint": "/root/.cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth",
+    "sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+  },
+  "model_transform": {
+    "name": "conv_bn_eval_folded",
+    "api": "torch.nn.utils.fuse_conv_bn_eval",
+    "fold_dtype": "float32",
+    "cast_after_fold": "bfloat16",
+    "pair_count": 53,
+    "pairs": [
+      {
+        "conv": "conv1",
+        "batchnorm": "bn1"
+      },
+      {
+        "conv": "layer1.0.conv1",
+        "batchnorm": "layer1.0.bn1"
+      },
+      {
+        "conv": "layer1.0.conv2",
+        "batchnorm": "layer1.0.bn2"
+      },
+      {
+        "conv": "layer1.0.conv3",
+        "batchnorm": "layer1.0.bn3"
+      },
+      {
+        "conv": "layer1.0.downsample.0",
+        "batchnorm": "layer1.0.downsample.1"
+      },
+      {
+        "conv": "layer1.1.conv1",
+        "batchnorm": "layer1.1.bn1"
+      },
+      {
+        "conv": "layer1.1.conv2",
+        "batchnorm": "layer1.1.bn2"
+      },
+      {
+        "conv": "layer1.1.conv3",
+        "batchnorm": "layer1.1.bn3"
+      },
+      {
+        "conv": "layer1.2.conv1",
+        "batchnorm": "layer1.2.bn1"
+      },
+      {
+        "conv": "layer1.2.conv2",
+        "batchnorm": "layer1.2.bn2"
+      },
+      {
+        "conv": "layer1.2.conv3",
+        "batchnorm": "layer1.2.bn3"
+      },
+      {
+        "conv": "layer2.0.conv1",
+        "batchnorm": "layer2.0.bn1"
+      },
+      {
+        "conv": "layer2.0.conv2",
+        "batchnorm": "layer2.0.bn2"
+      },
+      {
+        "conv": "layer2.0.conv3",
+        "batchnorm": "layer2.0.bn3"
+      },
+      {
+        "conv": "layer2.0.downsample.0",
+        "batchnorm": "layer2.0.downsample.1"
+      },
+      {
+        "conv": "layer2.1.conv1",
+        "batchnorm": "layer2.1.bn1"
+      },
+      {
+        "conv": "layer2.1.conv2",
+        "batchnorm": "layer2.1.bn2"
+      },
+      {
+        "conv": "layer2.1.conv3",
+        "batchnorm": "layer2.1.bn3"
+      },
+      {
+        "conv": "layer2.2.conv1",
+        "batchnorm": "layer2.2.bn1"
+      },
+      {
+        "conv": "layer2.2.conv2",
+        "batchnorm": "layer2.2.bn2"
+      },
+      {
+        "conv": "layer2.2.conv3",
+        "batchnorm": "layer2.2.bn3"
+      },
+      {
+        "conv": "layer2.3.conv1",
+        "batchnorm": "layer2.3.bn1"
+      },
+      {
+        "conv": "layer2.3.conv2",
+        "batchnorm": "layer2.3.bn2"
+      },
+      {
+        "conv": "layer2.3.conv3",
+        "batchnorm": "layer2.3.bn3"
+      },
+      {
+        "conv": "layer3.0.conv1",
+        "batchnorm": "layer3.0.bn1"
+      },
+      {
+        "conv": "layer3.0.conv2",
+        "batchnorm": "layer3.0.bn2"
+      },
+      {
+        "conv": "layer3.0.conv3",
+        "batchnorm": "layer3.0.bn3"
+      },
+      {
+        "conv": "layer3.0.downsample.0",
+        "batchnorm": "layer3.0.downsample.1"
+      },
+      {
+        "conv": "layer3.1.conv1",
+        "batchnorm": "layer3.1.bn1"
+      },
+      {
+        "conv": "layer3.1.conv2",
+        "batchnorm": "layer3.1.bn2"
+      },
+      {
+        "conv": "layer3.1.conv3",
+        "batchnorm": "layer3.1.bn3"
+      },
+      {
+        "conv": "layer3.2.conv1",
+        "batchnorm": "layer3.2.bn1"
+      },
+      {
+        "conv": "layer3.2.conv2",
+        "batchnorm": "layer3.2.bn2"
+      },
+      {
+        "conv": "layer3.2.conv3",
+        "batchnorm": "layer3.2.bn3"
+      },
+      {
+        "conv": "layer3.3.conv1",
+        "batchnorm": "layer3.3.bn1"
+      },
+      {
+        "conv": "layer3.3.conv2",
+        "batchnorm": "layer3.3.bn2"
+      },
+      {
+        "conv": "layer3.3.conv3",
+        "batchnorm": "layer3.3.bn3"
+      },
+      {
+        "conv": "layer3.4.conv1",
+        "batchnorm": "layer3.4.bn1"
+      },
+      {
+        "conv": "layer3.4.conv2",
+        "batchnorm": "layer3.4.bn2"
+      },
+      {
+        "conv": "layer3.4.conv3",
+        "batchnorm": "layer3.4.bn3"
+      },
+      {
+        "conv": "layer3.5.conv1",
+        "batchnorm": "layer3.5.bn1"
+      },
+      {
+        "conv": "layer3.5.conv2",
+        "batchnorm": "layer3.5.bn2"
+      },
+      {
+        "conv": "layer3.5.conv3",
+        "batchnorm": "layer3.5.bn3"
+      },
+      {
+        "conv": "layer4.0.conv1",
+        "batchnorm": "layer4.0.bn1"
+      },
+      {
+        "conv": "layer4.0.conv2",
+        "batchnorm": "layer4.0.bn2"
+      },
+      {
+        "conv": "layer4.0.conv3",
+        "batchnorm": "layer4.0.bn3"
+      },
+      {
+        "conv": "layer4.0.downsample.0",
+        "batchnorm": "layer4.0.downsample.1"
+      },
+      {
+        "conv": "layer4.1.conv1",
+        "batchnorm": "layer4.1.bn1"
+      },
+      {
+        "conv": "layer4.1.conv2",
+        "batchnorm": "layer4.1.bn2"
+      },
+      {
+        "conv": "layer4.1.conv3",
+        "batchnorm": "layer4.1.bn3"
+      },
+      {
+        "conv": "layer4.2.conv1",
+        "batchnorm": "layer4.2.bn1"
+      },
+      {
+        "conv": "layer4.2.conv2",
+        "batchnorm": "layer4.2.bn2"
+      },
+      {
+        "conv": "layer4.2.conv3",
+        "batchnorm": "layer4.2.bn3"
+      }
+    ],
+    "remaining_batchnorm": [],
+    "state_sha256": "73d260e221fc017b5acd7066fbdfe3948195ce25e2c03916ef6d045a0abc68bb"
+  },
+  "interpretation": "Pretrained ResNet50 with identical FP32 Conv/BN folding before BF16 in both modes",
+  "model_to_device_ms": 44.61419,
+  "mode_wrapper_ms": 0.00527,
+  "shape_call_frequencies_per_cycle": {
+    "1": 1
+  },
+  "cache_files_before": {},
+  "attempted_sample": {
+    "batch": 1,
+    "phase": "first",
+    "scope": "e2e",
+    "cycle": -1,
+    "step": 0
+  },
+  "backend_calls": 0,
+  "cache_files_after": {
+    "8fe1abd39bebc66e/input.ir_viewer.json": {
+      "size": 2138,
+      "mtime_ns": 1793762177703584101
+    },
+    "8fe1abd39bebc66e/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762177702584091
+    },
+    "8fe1abd39bebc66e/key.bin": {
+      "size": 3103,
+      "mtime_ns": 1793762183172640819
+    },
+    "8fe1abd39bebc66e/output.bin": {
+      "size": 61376,
+      "mtime_ns": 1793762183172640819
+    },
+    "8fe1abd39bebc66e/input.fir": {
+      "size": 2415,
+      "mtime_ns": 1793762177703584101
+    },
+    "1ffcfe6f08c246d9/input.ir_viewer.json": {
+      "size": 3916,
+      "mtime_ns": 1793762220541648171
+    },
+    "1ffcfe6f08c246d9/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762220541648171
+    },
+    "1ffcfe6f08c246d9/key.bin": {
+      "size": 6244,
+      "mtime_ns": 1793762231417604893
+    },
+    "1ffcfe6f08c246d9/output.bin": {
+      "size": 1251,
+      "mtime_ns": 1793762231417604893
+    },
+    "1ffcfe6f08c246d9/input.fir": {
+      "size": 5556,
+      "mtime_ns": 1793762220541648171
+    },
+    "cd75e9213e9b1fc5/input.ir_viewer.json": {
+      "size": 3925,
+      "mtime_ns": 1793761977563530970
+    },
+    "cd75e9213e9b1fc5/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761977562530960
+    },
+    "cd75e9213e9b1fc5/key.bin": {
+      "size": 6278,
+      "mtime_ns": 1793762041044176998
+    },
+    "cd75e9213e9b1fc5/output.bin": {
+      "size": 35306,
+      "mtime_ns": 1793762041044176998
+    },
+    "cd75e9213e9b1fc5/input.fir": {
+      "size": 5590,
+      "mtime_ns": 1793761977562530960
+    },
+    "527e87fe0c81c70f/input.ir_viewer.json": {
+      "size": 3921,
+      "mtime_ns": 1793762193911752272
+    },
+    "527e87fe0c81c70f/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762193911752272
+    },
+    "527e87fe0c81c70f/key.bin": {
+      "size": 6238,
+      "mtime_ns": 1793762203265722885
+    },
+    "527e87fe0c81c70f/output.bin": {
+      "size": 451758,
+      "mtime_ns": 1793762203265722885
+    },
+    "527e87fe0c81c70f/input.fir": {
+      "size": 5550,
+      "mtime_ns": 1793762193911752272
+    },
+    "359667c5dda5db37/input.ir_viewer.json": {
+      "size": 3907,
+      "mtime_ns": 1793761846572216791
+    },
+    "359667c5dda5db37/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761846572216791
+    },
+    "359667c5dda5db37/key.bin": {
+      "size": 6255,
+      "mtime_ns": 1793761854138291917
+    },
+    "359667c5dda5db37/output.bin": {
+      "size": 38745,
+      "mtime_ns": 1793761854138291917
+    },
+    "359667c5dda5db37/input.fir": {
+      "size": 5567,
+      "mtime_ns": 1793761846572216791
+    },
+    "cfcd1c81d1038400/input.ir_viewer.json": {
+      "size": 3091,
+      "mtime_ns": 1793761892465674036
+    },
+    "cfcd1c81d1038400/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761892464674026
+    },
+    "cfcd1c81d1038400/key.bin": {
+      "size": 4569,
+      "mtime_ns": 1793761892667676056
+    },
+    "cfcd1c81d1038400/output.bin": {
+      "size": 25934,
+      "mtime_ns": 1793761892667676056
+    },
+    "cfcd1c81d1038400/input.fir": {
+      "size": 3881,
+      "mtime_ns": 1793761892465674036
+    },
+    "2099faa930f82524/input.ir_viewer.json": {
+      "size": 3082,
+      "mtime_ns": 1793762041434180984
+    },
+    "2099faa930f82524/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762041433180973
+    },
+    "2099faa930f82524/key.bin": {
+      "size": 4569,
+      "mtime_ns": 1793762041641183099
+    },
+    "2099faa930f82524/output.bin": {
+      "size": 28160,
+      "mtime_ns": 1793762041641183099
+    },
+    "2099faa930f82524/input.fir": {
+      "size": 3881,
+      "mtime_ns": 1793762041433180973
+    },
+    "c246c9ec2745e75c/input.ir_viewer.json": {
+      "size": 3920,
+      "mtime_ns": 1793762050454273207
+    },
+    "c246c9ec2745e75c/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762050454273207
+    },
+    "c246c9ec2745e75c/key.bin": {
+      "size": 6266,
+      "mtime_ns": 1793762064489416904
+    },
+    "c246c9ec2745e75c/output.bin": {
+      "size": 38065,
+      "mtime_ns": 1793762064489416904
+    },
+    "c246c9ec2745e75c/input.fir": {
+      "size": 5578,
+      "mtime_ns": 1793762050454273207
+    },
+    "2ea950853705420c/input.ir_viewer.json": {
+      "size": 2148,
+      "mtime_ns": 1793761836805119966
+    },
+    "2ea950853705420c/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761836804119955
+    },
+    "2ea950853705420c/key.bin": {
+      "size": 3117,
+      "mtime_ns": 1793761845336204528
+    },
+    "2ea950853705420c/output.bin": {
+      "size": 36641,
+      "mtime_ns": 1793761845336204528
+    },
+    "2ea950853705420c/input.fir": {
+      "size": 2429,
+      "mtime_ns": 1793761836804119955
+    },
+    "6c70012c1c17f347/input.ir_viewer.json": {
+      "size": 3910,
+      "mtime_ns": 1793761863489384910
+    },
+    "6c70012c1c17f347/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761863489384910
+    },
+    "6c70012c1c17f347/key.bin": {
+      "size": 6258,
+      "mtime_ns": 1793761880240551878
+    },
+    "6c70012c1c17f347/output.bin": {
+      "size": 73675,
+      "mtime_ns": 1793761880240551878
+    },
+    "6c70012c1c17f347/input.fir": {
+      "size": 5570,
+      "mtime_ns": 1793761863489384910
+    },
+    "bdda0f5f585a437a/input.ir_viewer.json": {
+      "size": 3921,
+      "mtime_ns": 1793761831392066380
+    },
+    "bdda0f5f585a437a/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761831392066380
+    },
+    "bdda0f5f585a437a/key.bin": {
+      "size": 6250,
+      "mtime_ns": 1793761836379115746
+    },
+    "bdda0f5f585a437a/output.bin": {
+      "size": 55184,
+      "mtime_ns": 1793761836379115746
+    },
+    "bdda0f5f585a437a/input.fir": {
+      "size": 5562,
+      "mtime_ns": 1793761831392066380
+    },
+    "351be3680c9f2de8/input.ir_viewer.json": {
+      "size": 3929,
+      "mtime_ns": 1793762203651721135
+    },
+    "351be3680c9f2de8/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762203650721140
+    },
+    "351be3680c9f2de8/key.bin": {
+      "size": 6250,
+      "mtime_ns": 1793762214250674519
+    },
+    "351be3680c9f2de8/output.bin": {
+      "size": 79150,
+      "mtime_ns": 1793762214250674519
+    },
+    "351be3680c9f2de8/input.fir": {
+      "size": 5562,
+      "mtime_ns": 1793762203651721135
+    },
+    "8203707db811c1f7/input.ir_viewer.json": {
+      "size": 3927,
+      "mtime_ns": 1793762120735995071
+    },
+    "8203707db811c1f7/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762120735995071
+    },
+    "8203707db811c1f7/key.bin": {
+      "size": 6244,
+      "mtime_ns": 1793762130415094916
+    },
+    "8203707db811c1f7/output.bin": {
+      "size": 51552,
+      "mtime_ns": 1793762130415094916
+    },
+    "8203707db811c1f7/input.fir": {
+      "size": 5556,
+      "mtime_ns": 1793762120735995071
+    },
+    "2a229eb85937de54/input.ir_viewer.json": {
+      "size": 2140,
+      "mtime_ns": 1793761893030679687
+    },
+    "2a229eb85937de54/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761893030679687
+    },
+    "2a229eb85937de54/key.bin": {
+      "size": 3123,
+      "mtime_ns": 1793761901642765901
+    },
+    "2a229eb85937de54/output.bin": {
+      "size": 36515,
+      "mtime_ns": 1793761901642765901
+    },
+    "2a229eb85937de54/input.fir": {
+      "size": 2435,
+      "mtime_ns": 1793761893030679687
+    },
+    "05855c8c13ff692b/input.ir_viewer.json": {
+      "size": 3924,
+      "mtime_ns": 1793762183549644729
+    },
+    "05855c8c13ff692b/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762183549644729
+    },
+    "05855c8c13ff692b/key.bin": {
+      "size": 6244,
+      "mtime_ns": 1793762193652749583
+    },
+    "05855c8c13ff692b/output.bin": {
+      "size": 70741,
+      "mtime_ns": 1793762193652749583
+    },
+    "05855c8c13ff692b/input.fir": {
+      "size": 5556,
+      "mtime_ns": 1793762183549644729
+    },
+    "e6c6b66e27f95d69/input.ir_viewer.json": {
+      "size": 3922,
+      "mtime_ns": 1793761916032910227
+    },
+    "e6c6b66e27f95d69/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761916032910227
+    },
+    "e6c6b66e27f95d69/key.bin": {
+      "size": 6266,
+      "mtime_ns": 1793761932882079637
+    },
+    "e6c6b66e27f95d69/output.bin": {
+      "size": 38573,
+      "mtime_ns": 1793761932882079637
+    },
+    "e6c6b66e27f95d69/input.fir": {
+      "size": 5578,
+      "mtime_ns": 1793761916032910227
+    },
+    "6fb7a7e597cbe1cf/input.ir_viewer.json": {
+      "size": 2134,
+      "mtime_ns": 1793762093815717908
+    },
+    "6fb7a7e597cbe1cf/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762093814717898
+    },
+    "6fb7a7e597cbe1cf/key.bin": {
+      "size": 3123,
+      "mtime_ns": 1793762102104803165
+    },
+    "6fb7a7e597cbe1cf/output.bin": {
+      "size": 29702,
+      "mtime_ns": 1793762102103803155
+    },
+    "6fb7a7e597cbe1cf/input.fir": {
+      "size": 2435,
+      "mtime_ns": 1793762093814717898
+    },
+    "610684c608b0f474/input.ir_viewer.json": {
+      "size": 2132,
+      "mtime_ns": 1793761854502295534
+    },
+    "610684c608b0f474/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761854501295524
+    },
+    "610684c608b0f474/key.bin": {
+      "size": 3117,
+      "mtime_ns": 1793761863231382342
+    },
+    "610684c608b0f474/output.bin": {
+      "size": 30681,
+      "mtime_ns": 1793761863231382342
+    },
+    "610684c608b0f474/input.fir": {
+      "size": 2429,
+      "mtime_ns": 1793761854501295524
+    },
+    "0fbace15ed737eb5/input.ir_viewer.json": {
+      "size": 3921,
+      "mtime_ns": 1793762064872420828
+    },
+    "0fbace15ed737eb5/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762064871420818
+    },
+    "0fbace15ed737eb5/key.bin": {
+      "size": 6258,
+      "mtime_ns": 1793762077141546642
+    },
+    "0fbace15ed737eb5/output.bin": {
+      "size": 155625,
+      "mtime_ns": 1793762077141546642
+    },
+    "0fbace15ed737eb5/input.fir": {
+      "size": 5570,
+      "mtime_ns": 1793762064872420828
+    },
+    "52bbe220dc2422c3/input.ir_viewer.json": {
+      "size": 3917,
+      "mtime_ns": 1793761880613555601
+    },
+    "52bbe220dc2422c3/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761880613555601
+    },
+    "52bbe220dc2422c3/key.bin": {
+      "size": 6267,
+      "mtime_ns": 1793761892206671445
+    },
+    "52bbe220dc2422c3/output.bin": {
+      "size": 36797,
+      "mtime_ns": 1793761892206671445
+    },
+    "52bbe220dc2422c3/input.fir": {
+      "size": 5579,
+      "mtime_ns": 1793761880613555601
+    },
+    "fdcebf9a5cd534cd/input.ir_viewer.json": {
+      "size": 2499,
+      "mtime_ns": 1793761845602207167
+    },
+    "fdcebf9a5cd534cd/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761845602207167
+    },
+    "fdcebf9a5cd534cd/key.bin": {
+      "size": 4203,
+      "mtime_ns": 1793761846175212852
+    },
+    "fdcebf9a5cd534cd/output.bin": {
+      "size": 31564,
+      "mtime_ns": 1793761846175212852
+    },
+    "fdcebf9a5cd534cd/input.fir": {
+      "size": 3515,
+      "mtime_ns": 1793761845602207167
+    },
+    "9630efc98c3474a1/input.ir_viewer.json": {
+      "size": 2132,
+      "mtime_ns": 1793762114833934237
+    },
+    "9630efc98c3474a1/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762114832934227
+    },
+    "9630efc98c3474a1/key.bin": {
+      "size": 3095,
+      "mtime_ns": 1793762120476992401
+    },
+    "9630efc98c3474a1/output.bin": {
+      "size": 34022,
+      "mtime_ns": 1793762120476992401
+    },
+    "9630efc98c3474a1/input.fir": {
+      "size": 2407,
+      "mtime_ns": 1793762114833934237
+    },
+    "1c94b728923a700b/input.ir_viewer.json": {
+      "size": 2136,
+      "mtime_ns": 1793761933246083301
+    },
+    "1c94b728923a700b/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761933246083301
+    },
+    "1c94b728923a700b/key.bin": {
+      "size": 3117,
+      "mtime_ns": 1793761942255174069
+    },
+    "1c94b728923a700b/output.bin": {
+      "size": 30019,
+      "mtime_ns": 1793761942255174069
+    },
+    "1c94b728923a700b/input.fir": {
+      "size": 2429,
+      "mtime_ns": 1793761933246083301
+    },
+    "49e75ca0384ee0dc/input.ir_viewer.json": {
+      "size": 3916,
+      "mtime_ns": 1793761902016769648
+    },
+    "49e75ca0384ee0dc/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761902016769648
+    },
+    "49e75ca0384ee0dc/key.bin": {
+      "size": 6266,
+      "mtime_ns": 1793761915773907627
+    },
+    "49e75ca0384ee0dc/output.bin": {
+      "size": 40055,
+      "mtime_ns": 1793761915773907627
+    },
+    "49e75ca0384ee0dc/input.fir": {
+      "size": 5578,
+      "mtime_ns": 1793761902016769648
+    },
+    "ceca98380b24a9b7/input.ir_viewer.json": {
+      "size": 2134,
+      "mtime_ns": 1793762214502673446
+    },
+    "ceca98380b24a9b7/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762214501673450
+    },
+    "ceca98380b24a9b7/key.bin": {
+      "size": 3103,
+      "mtime_ns": 1793762220162649729
+    },
+    "ceca98380b24a9b7/output.bin": {
+      "size": 46141,
+      "mtime_ns": 1793762220161649734
+    },
+    "ceca98380b24a9b7/input.fir": {
+      "size": 2415,
+      "mtime_ns": 1793762214501673450
+    },
+    "8c699764d4d842b1/input.ir_viewer.json": {
+      "size": 3088,
+      "mtime_ns": 1793762177238579280
+    },
+    "8c699764d4d842b1/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762177238579280
+    },
+    "8c699764d4d842b1/key.bin": {
+      "size": 4535,
+      "mtime_ns": 1793762177452581499
+    },
+    "8c699764d4d842b1/output.bin": {
+      "size": 58854,
+      "mtime_ns": 1793762177452581499
+    },
+    "8c699764d4d842b1/input.fir": {
+      "size": 3847,
+      "mtime_ns": 1793762177238579280
+    },
+    "1e41a9bfb486966b/input.ir_viewer.json": {
+      "size": 2134,
+      "mtime_ns": 1793762041890185643
+    },
+    "1e41a9bfb486966b/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762041889185633
+    },
+    "1e41a9bfb486966b/key.bin": {
+      "size": 3123,
+      "mtime_ns": 1793762050079269371
+    },
+    "1e41a9bfb486966b/output.bin": {
+      "size": 29969,
+      "mtime_ns": 1793762050079269371
+    },
+    "1e41a9bfb486966b/input.fir": {
+      "size": 2435,
+      "mtime_ns": 1793762041890185643
+    },
+    "31b92411fa28aca9/input.ir_viewer.json": {
+      "size": 3920,
+      "mtime_ns": 1793762077399549290
+    },
+    "31b92411fa28aca9/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762077399549290
+    },
+    "31b92411fa28aca9/key.bin": {
+      "size": 6278,
+      "mtime_ns": 1793762093443714084
+    },
+    "31b92411fa28aca9/output.bin": {
+      "size": 39522,
+      "mtime_ns": 1793762093443714084
+    },
+    "31b92411fa28aca9/input.fir": {
+      "size": 5590,
+      "mtime_ns": 1793762077399549290
+    },
+    "6b57079e34da00e0/input.ir_viewer.json": {
+      "size": 3922,
+      "mtime_ns": 1793761965593409771
+    },
+    "6b57079e34da00e0/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761965592409761
+    },
+    "6b57079e34da00e0/key.bin": {
+      "size": 6267,
+      "mtime_ns": 1793761977189527180
+    },
+    "6b57079e34da00e0/output.bin": {
+      "size": 35816,
+      "mtime_ns": 1793761977189527180
+    },
+    "6b57079e34da00e0/input.fir": {
+      "size": 5579,
+      "mtime_ns": 1793761965592409761
+    },
+    "2a454caf5158c841/input.ir_viewer.json": {
+      "size": 2134,
+      "mtime_ns": 1793761957375326682
+    },
+    "2a454caf5158c841/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761957375326682
+    },
+    "2a454caf5158c841/key.bin": {
+      "size": 3117,
+      "mtime_ns": 1793761965323407040
+    },
+    "2a454caf5158c841/output.bin": {
+      "size": 26038,
+      "mtime_ns": 1793761965323407040
+    },
+    "2a454caf5158c841/input.fir": {
+      "size": 2429,
+      "mtime_ns": 1793761957375326682
+    },
+    "e8b6b92c07738854/input.ir_viewer.json": {
+      "size": 3930,
+      "mtime_ns": 1793762130798098869
+    },
+    "e8b6b92c07738854/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762130798098869
+    },
+    "e8b6b92c07738854/key.bin": {
+      "size": 6264,
+      "mtime_ns": 1793762176850575257
+    },
+    "e8b6b92c07738854/output.bin": {
+      "size": 43613,
+      "mtime_ns": 1793762176850575257
+    },
+    "e8b6b92c07738854/input.fir": {
+      "size": 5576,
+      "mtime_ns": 1793762130798098869
+    },
+    "cb85679b450a78c7/input.ir_viewer.json": {
+      "size": 3922,
+      "mtime_ns": 1793761942512176660
+    },
+    "cb85679b450a78c7/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793761942512176660
+    },
+    "cb85679b450a78c7/key.bin": {
+      "size": 6258,
+      "mtime_ns": 1793761957009322983
+    },
+    "cb85679b450a78c7/output.bin": {
+      "size": 153628,
+      "mtime_ns": 1793761957009322983
+    },
+    "cb85679b450a78c7/input.fir": {
+      "size": 5570,
+      "mtime_ns": 1793761942512176660
+    },
+    "ee5ca9ce4260fabd/input.ir_viewer.json": {
+      "size": 3922,
+      "mtime_ns": 1793762102361805810
+    },
+    "ee5ca9ce4260fabd/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793762102361805810
+    },
+    "ee5ca9ce4260fabd/key.bin": {
+      "size": 6258,
+      "mtime_ns": 1793762114448930271
+    },
+    "ee5ca9ce4260fabd/output.bin": {
+      "size": 458920,
+      "mtime_ns": 1793762114447930261
+    },
+    "ee5ca9ce4260fabd/input.fir": {
+      "size": 5570,
+      "mtime_ns": 1793762102361805810
+    }
+  },
+  "cache_evidence_limit": "Same disk path and file changes are observations, not verified disk hits or compiler invocation counts",
+  "successful_sample_count": 0,
+  "error_type": "UnsupportedOpError",
+  "error": "failed to compile\ngraph():\n    %args_0 : [num_users=1] = placeholder[target=args_0]\n    %args_1 : [num_users=1] = placeholder[target=args_1]\n    %args_2 : [num_users=1] = placeholder[target=args_2]\n    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%args_0, %args_1, %args_2, [2, 2], [1, 1], [1, 1], False, [0, 0], 1), kwargs = {})\n    return (convolution,)\nsource:\n    convolution          venv/lib/python3.12/site-packages/torchvision/models/resnet.py:150 out = self.conv2(out)\ncompile error:\n(cache at /root/Resnet/Phase_1/results/bn-folded-20261104/caches/eager-b1/1ffcfe6f08c246d9)\n\nCaused by:\n   0: O167 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=512:4608, 1_1=512:9, 2_1=3:3, 3_1=3:1])\n      -> [] | [] | [0_32=16, 1_64=4] | [1_256=2, 0_1=32, 1_1=64, 2_1=3] | [3_1=3](4)\n      -> (E) [1_256=2]|[]|[]|[0_32=16, 1_64=4]|[0_1=32, 2_1=3, 3_1=3]|[1_1=64](8) @ [0=512, 1=512, 2=3, 3=3]\n   1: while verifying LowLevelTailCrop\n   2: verification of operator failed:\n      LowLevelTailCrop\n      broadcast_axes: [AxisIndex(0), AxisIndex(2), AxisIndex(4), AxisIndex(6)]\n      name: \n\n      input tensors: 1\n        input T7: [] | [] | [A3_1=16, E_12=1, A2_1=4, E_12=1] | [A1_1=32, E_12=1, A0_1=16, E_3=4, E_1=3] | [TAIL_1=8](4), 6291456 B, bf16, sram\n        source: unknown\n        total bytes: 6291456\n      output tensors: 1\n        output T12: [] | [] | [A3_1=16, E_12=1, A2_1=4, E_12=1] | [A1_1=32, E_12=1, A0_1=16, E_3=4, E_1=3] | [TAIL_1=4](4), 3145728 B, bf16, sram\n        source: unknown\n        total bytes: 3145728\n   3: Condition failed: `tensors.try_get(input)?\n      .element_type.size_in_bytes_with_length(input_shape.slice_volume()) <=\n      u16::MAX as usize`\n\nLocation:\n    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/global-compiler/src/lib.rs:65:30",
+  "traceback": "Traceback (most recent call last):\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/compiler/__init__.py\", line 83, in compile\n    runnable = compiler.compile(\n               ^^^^^^^^^^^^^^^^^\nfuriosa.torch._C.error.CompileError: (cache at /root/Resnet/Phase_1/results/bn-folded-20261104/caches/eager-b1/1ffcfe6f08c246d9)\n\nCaused by:\n   0: O167 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=512:4608, 1_1=512:9, 2_1=3:3, 3_1=3:1])\n      -> [] | [] | [0_32=16, 1_64=4] | [1_256=2, 0_1=32, 1_1=64, 2_1=3] | [3_1=3](4)\n      -> (E) [1_256=2]|[]|[]|[0_32=16, 1_64=4]|[0_1=32, 2_1=3, 3_1=3]|[1_1=64](8) @ [0=512, 1=512, 2=3, 3=3]\n   1: while verifying LowLevelTailCrop\n   2: verification of operator failed:\n      LowLevelTailCrop\n      broadcast_axes: [AxisIndex(0), AxisIndex(2), AxisIndex(4), AxisIndex(6)]\n      name: \n\n      input tensors: 1\n        input T7: [] | [] | [A3_1=16, E_12=1, A2_1=4, E_12=1] | [A1_1=32, E_12=1, A0_1=16, E_3=4, E_1=3] | [TAIL_1=8](4), 6291456 B, bf16, sram\n        source: unknown\n        total bytes: 6291456\n      output tensors: 1\n        output T12: [] | [] | [A3_1=16, E_12=1, A2_1=4, E_12=1] | [A1_1=32, E_12=1, A0_1=16, E_3=4, E_1=3] | [TAIL_1=4](4), 3145728 B, bf16, sram\n        source: unknown\n        total bytes: 3145728\n   3: Condition failed: `tensors.try_get(input)?\n      .element_type.size_in_bytes_with_length(input_shape.slice_volume()) <=\n      u16::MAX as usize`\n\nLocation:\n    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/global-compiler/src/lib.rs:65:30\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/root/Resnet/Phase_1/worker.py\", line 186, in main\n    execute(args, result)\n  File \"/root/Resnet/Phase_1/worker.py\", line 105, in execute\n    sample(batch, \"first\" if args.workload == \"fixed\" else \"first_cycle\", -1, step)\n  File \"/root/Resnet/Phase_1/worker.py\", line 84, in sample\n    elapsed, cpu_output = measure_e2e(function, inputs[batch], device)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/Resnet/runtime.py\", line 38, in measure_e2e\n    output = function(device_input)\n             ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torchvision/models/resnet.py\", line 285, in forward\n    return self._forward_impl(x)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torchvision/models/resnet.py\", line 276, in _forward_impl\n    x = self.layer4(x)\n        ^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/container.py\", line 253, in forward\n    input = module(input)\n            ^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torchvision/models/resnet.py\", line 150, in forward\n    out = self.conv2(out)\n          ^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/conv.py\", line 553, in forward\n    return self._conv_forward(input, self.weight, self.bias)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/conv.py\", line 548, in _conv_forward\n    return F.conv2d(\n           ^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1181, in _fn\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py\", line 19, in run_aten_op\n    return _run_aten_op(qualified_aten_op_name, op_callable, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1181, in _fn\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py\", line 42, in _run_aten_op\n    raise e\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/eager.py\", line 38, in _run_aten_op\n    m = aten_op.compile_and_load(device)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py\", line 173, in compile_and_load\n    return _compile_and_load_cached(self, device).out()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py\", line 28, in out\n    raise self.cached.with_traceback(self.original_traceback)\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_backend/aten.py\", line 96, in _compile\n    compiled = CompileModule.from_exported(exported, task_name=task_name)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/_module/runnable.py\", line 222, in from_exported\n    compiler.compile(exported, compiler_config, task_name=task_name)\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/profiler/__init__.py\", line 35, in wrapped\n    return f(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/furiosa/torch/compiler/__init__.py\", line 94, in compile\n    raise error.UnsupportedOpError(\nfuriosa.torch._C.error.UnsupportedOpError: failed to compile\ngraph():\n    %args_0 : [num_users=1] = placeholder[target=args_0]\n    %args_1 : [num_users=1] = placeholder[target=args_1]\n    %args_2 : [num_users=1] = placeholder[target=args_2]\n    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%args_0, %args_1, %args_2, [2, 2], [1, 1], [1, 1], False, [0, 0], 1), kwargs = {})\n    return (convolution,)\nsource:\n    convolution          venv/lib/python3.12/site-packages/torchvision/models/resnet.py:150 out = self.conv2(out)\ncompile error:\n(cache at /root/Resnet/Phase_1/results/bn-folded-20261104/caches/eager-b1/1ffcfe6f08c246d9)\n\nCaused by:\n   0: O167 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=512:4608, 1_1=512:9, 2_1=3:3, 3_1=3:1])\n      -> [] | [] | [0_32=16, 1_64=4] | [1_256=2, 0_1=32, 1_1=64, 2_1=3] | [3_1=3](4)\n      -> (E) [1_256=2]|[]|[]|[0_32=16, 1_64=4]|[0_1=32, 2_1=3, 3_1=3]|[1_1=64](8) @ [0=512, 1=512, 2=3, 3=3]\n   1: while verifying LowLevelTailCrop\n   2: verification of operator failed:\n      LowLevelTailCrop\n      broadcast_axes: [AxisIndex(0), AxisIndex(2), AxisIndex(4), AxisIndex(6)]\n      name: \n\n      input tensors: 1\n        input T7: [] | [] | [A3_1=16, E_12=1, A2_1=4, E_12=1] | [A1_1=32, E_12=1, A0_1=16, E_3=4, E_1=3] | [TAIL_1=8](4), 6291456 B, bf16, sram\n        source: unknown\n        total bytes: 6291456\n      output tensors: 1\n        output T12: [] | [] | [A3_1=16, E_12=1, A2_1=4, E_12=1] | [A1_1=32, E_12=1, A0_1=16, E_3=4, E_1=3] | [TAIL_1=4](4), 3145728 B, bf16, sram\n        source: unknown\n        total bytes: 3145728\n   3: Condition failed: `tensors.try_get(input)?\n      .element_type.size_in_bytes_with_length(input_shape.slice_volume()) <=\n      u16::MAX as usize`\n\nLocation:\n    /usr/local/cargo/git/checkouts/npu-tools-dec42ebd45bb55cf/fc43f6a7/crates/global-compiler/src/lib.rs:65:30\n",
+  "process_elapsed_s": 401.1371816759929
+}

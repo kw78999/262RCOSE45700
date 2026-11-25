@@ -1,0 +1,214 @@
+{
+  "started_kst": "2026-11-04T11:46:39.667782+09:00",
+  "target": "resnet50",
+  "status": "blocked_model_support",
+  "jobs": [
+    {
+      "name": "eager-b1-cold",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.worker",
+        "--config",
+        "/root/Resnet/Phase_1/results/baseline-20261104/config.json",
+        "--mode",
+        "eager",
+        "--target",
+        "resnet50",
+        "--workload",
+        "fixed",
+        "--batch",
+        "1",
+        "--cache-intent",
+        "empty_project_cache",
+        "--cache",
+        "/root/Resnet/Phase_1/results/baseline-20261104/caches/eager-b1",
+        "--output",
+        "/root/Resnet/Phase_1/results/baseline-20261104/jobs/eager-b1-cold"
+      ],
+      "status": "failed",
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      },
+      "exit_code": 1,
+      "timed_out": false,
+      "elapsed_s": 9.191616850206628
+    },
+    {
+      "name": "compile-b1-cold",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.worker",
+        "--config",
+        "/root/Resnet/Phase_1/results/baseline-20261104/config.json",
+        "--mode",
+        "compile",
+        "--target",
+        "resnet50",
+        "--workload",
+        "fixed",
+        "--batch",
+        "1",
+        "--cache-intent",
+        "empty_project_cache",
+        "--cache",
+        "/root/Resnet/Phase_1/results/baseline-20261104/caches/compile-b1",
+        "--output",
+        "/root/Resnet/Phase_1/results/baseline-20261104/jobs/compile-b1-cold"
+      ],
+      "status": "failed",
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      },
+      "exit_code": 1,
+      "timed_out": false,
+      "elapsed_s": 9.935412826016545
+    }
+  ],
+  "skipped": [
+    {
+      "mode": "compile",
+      "workload": "fixed",
+      "batch": 1,
+      "reuse": true,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "eager",
+      "workload": "fixed",
+      "batch": 1,
+      "reuse": true,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "compile",
+      "workload": "fixed",
+      "batch": 4,
+      "reuse": false,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "eager",
+      "workload": "fixed",
+      "batch": 4,
+      "reuse": false,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "eager",
+      "workload": "fixed",
+      "batch": 4,
+      "reuse": true,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "compile",
+      "workload": "fixed",
+      "batch": 4,
+      "reuse": true,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "eager",
+      "workload": "fixed",
+      "batch": 8,
+      "reuse": false,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "compile",
+      "workload": "fixed",
+      "batch": 8,
+      "reuse": false,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "compile",
+      "workload": "fixed",
+      "batch": 8,
+      "reuse": true,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "eager",
+      "workload": "fixed",
+      "batch": 8,
+      "reuse": true,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "compile",
+      "workload": "fixed",
+      "batch": 16,
+      "reuse": false,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "eager",
+      "workload": "fixed",
+      "batch": 16,
+      "reuse": false,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "eager",
+      "workload": "fixed",
+      "batch": 16,
+      "reuse": true,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "compile",
+      "workload": "fixed",
+      "batch": 16,
+      "reuse": true,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "eager",
+      "workload": "mixed",
+      "batch": 1,
+      "reuse": false,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "compile",
+      "workload": "mixed",
+      "batch": 1,
+      "reuse": false,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "eager",
+      "workload": "mixed",
+      "batch": 1,
+      "reuse": true,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    },
+    {
+      "mode": "compile",
+      "workload": "mixed",
+      "batch": 1,
+      "reuse": true,
+      "reason": "Smallest original-model condition failed; no mode comparison available"
+    }
+  ],
+  "new_process_per_job": true,
+  "serial_device_execution": true,
+  "cache_reset_scope": "New project directory only; shared/system caches untouched",
+  "tables": {
+    "summary_rows": 0,
+    "failures": 2,
+    "comparisons": 0
+  },
+  "finished_kst": "2026-11-04T11:46:58.807019+09:00"
+}

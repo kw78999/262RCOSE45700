@@ -1,0 +1,187 @@
+{
+  "rule": "smallest module containing each failing op; ReLU inside a block -> the block; chunk 1",
+  "num_fusion": [
+    2
+  ],
+  "batches": {
+    "16": {
+      "batch": 16,
+      "chunk": 1,
+      "modules": [
+        "layer3.0",
+        "layer3.1",
+        "layer3.2",
+        "layer3.3",
+        "layer3.4",
+        "layer3.5",
+        "layer4.0.conv2.parts.0",
+        "layer4.0.conv2.parts.1",
+        "layer4.0.conv2.parts.2",
+        "layer4.0.conv2.parts.3"
+      ],
+      "failures": [
+        {
+          "op": "aten::conv2d",
+          "args": "[[\"(16, 256, 14, 14):bfloat16:(50176, 196, 14, 1)\", \"(1024, 256, 1, 1):bfloat16:(256, 1, 1, 1)\", \"(1024,):bfloat16:(1,)\"], {}]",
+          "reason": "insufficient sequencer entries: required 9",
+          "modules": [
+            "layer3.0.conv3",
+            "layer3.1.conv3",
+            "layer3.2.conv3",
+            "layer3.3.conv3",
+            "layer3.4.conv3",
+            "layer3.5.conv3"
+          ]
+        },
+        {
+          "op": "aten::add_.Tensor",
+          "args": "[[\"(16, 1024, 14, 14):bfloat16:(200704, 196, 14, 1)\", \"(16, 1024, 14, 14):bfloat16:(200704, 196, 14, 1)\"], {}]",
+          "reason": "0: O18 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=16:200704, 1_1=1024:196, 2_1=14:14, 3_1=14:1]) | -> [] | [] | [0_8=2, 1_16=64] | [0_1=8, 1_1=16, 2_1=14] | [3_1=16](8) | -> (E) []|[",
+          "modules": [
+            "layer3.0",
+            "layer3.1",
+            "layer3.2",
+            "layer3.3",
+            "layer3.4",
+            "layer3.5"
+          ]
+        },
+        {
+          "op": "aten::relu_",
+          "args": "[[\"(16, 1024, 14, 14):bfloat16:(200704, 196, 14, 1)\"], {}]",
+          "reason": "0: O20 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=16:200704, 1_1=1024:196, 2_1=14:14, 3_1=14:1]) | -> [] | [] | [1_128=8, 0_1=16] | [1_1=128, 2_1=14] | [3_1=14](4) | -> (E) []|[]|[]|",
+          "modules": [
+            "layer3.0.relu",
+            "layer3.1.relu",
+            "layer3.2.relu",
+            "layer3.3.relu",
+            "layer3.4.relu",
+            "layer3.5.relu"
+          ]
+        },
+        {
+          "op": "aten::conv2d",
+          "args": "[[\"(16, 256, 14, 14):bfloat16:(50176, 196, 14, 1)\", \"(256, 256, 3, 3):bfloat16:(2304, 9, 3, 1)\", \"(256,):bfloat16:(1,)\", [\"1\", \"1\"], [\"1\", \"1\"]], {}]",
+          "reason": "insufficient sequencer entries: required 9",
+          "modules": [
+            "layer3.1.conv2",
+            "layer3.2.conv2",
+            "layer3.3.conv2",
+            "layer3.4.conv2",
+            "layer3.5.conv2"
+          ]
+        },
+        {
+          "op": "aten::conv2d",
+          "args": "[[\"(16, 512, 14, 14):bfloat16:(100352, 196, 14, 1)\", \"(128, 512, 3, 3):bfloat16:(4608, 9, 3, 1)\", \"(128,):bfloat16:(1,)\", [\"2\", \"2\"], [\"1\", \"1\"]], {}]",
+          "reason": "insufficient sequencer entries: required 9",
+          "modules": [
+            "layer4.0.conv2.parts.0",
+            "layer4.0.conv2.parts.1",
+            "layer4.0.conv2.parts.2",
+            "layer4.0.conv2.parts.3"
+          ]
+        }
+      ]
+    },
+    "64": {
+      "batch": 64,
+      "chunk": 1,
+      "modules": [
+        "avgpool",
+        "layer3.0",
+        "layer3.1",
+        "layer3.2",
+        "layer3.3",
+        "layer3.4",
+        "layer3.5",
+        "layer4.0",
+        "layer4.1",
+        "layer4.2"
+      ],
+      "failures": [
+        {
+          "op": "aten::relu_",
+          "args": "[[\"(64, 256, 14, 14):bfloat16:(50176, 196, 14, 1)\"], {}]",
+          "reason": "0: O20 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=64:50176, 1_1=256:196, 2_1=14:14, 3_1=14:1]) | -> [] | [] | [1_4=64, 2_8=2] | [0_1=64, 1_1=4, 2_1=8] | [3_1=16](8) | -> (E) []|[]|[]",
+          "modules": [
+            "layer3.0.relu",
+            "layer3.1.relu",
+            "layer3.2.relu",
+            "layer3.3.relu",
+            "layer3.4.relu",
+            "layer3.5.relu"
+          ]
+        },
+        {
+          "op": "aten::conv2d",
+          "args": "[[\"(64, 256, 14, 14):bfloat16:(50176, 196, 14, 1)\", \"(256, 256, 3, 3):bfloat16:(2304, 9, 3, 1)\", \"(256,):bfloat16:(1,)\", [\"1\", \"1\"], [\"1\", \"1\"]], {}]",
+          "reason": "0: O89 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=64:50176, 1_1=256:196, 2_1=14:14, 3_1=14:1]) | -> [] | [] | [0_2=32, 1_64=4] | [0_1=2, 1_2=32, 2_1=2, 1_1=2, 2_2=7] | [3_1=14](4) | ",
+          "modules": [
+            "layer3.1.conv2",
+            "layer3.2.conv2",
+            "layer3.3.conv2",
+            "layer3.4.conv2",
+            "layer3.5.conv2"
+          ]
+        },
+        {
+          "op": "aten::relu_",
+          "args": "[[\"(64, 512, 14, 14):bfloat16:(100352, 196, 14, 1)\"], {}]",
+          "reason": "0: O20 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=64:100352, 1_1=512:196, 2_1=14:14, 3_1=14:1]) | -> [] | [] | [0_16=4, 1_8=32] | [1_256=2, 0_1=16, 1_1=8, 2_1=16] | [3_1=16](8) | -> ",
+          "modules": [
+            "layer4.0.relu"
+          ]
+        },
+        {
+          "op": "aten::conv2d",
+          "args": "[[\"(64, 512, 14, 14):bfloat16:(100352, 196, 14, 1)\", \"(128, 512, 3, 3):bfloat16:(4608, 9, 3, 1)\", \"(128,):bfloat16:(1,)\", [\"2\", \"2\"], [\"1\", \"1\"]], {}]",
+          "reason": "0: O93 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=64:100352, 1_1=512:196, 2_1=14:14, 3_1=14:1]) | -> [] | [] | [0_8=8, 1_16=16] | [1_256=2, 0_1=8, 1_2=8, 2_1=2, 1_1=2, 2_2=7] | [3_1=",
+          "modules": [
+            "layer4.0.conv2.parts.0",
+            "layer4.0.conv2.parts.1",
+            "layer4.0.conv2.parts.2",
+            "layer4.0.conv2.parts.3"
+          ]
+        },
+        {
+          "op": "aten::add_.Tensor",
+          "args": "[[\"(64, 2048, 7, 7):bfloat16:(100352, 49, 7, 1)\", \"(64, 2048, 7, 7):bfloat16:(100352, 49, 7, 1)\"], {}]",
+          "reason": "0: O17 lowering failed: BridgeTacticFailure{(E) [2_1=7]|[]|[]|[0_2=32, 1_512=4]|[1_1=512, 3_1=7]|[0_1=2](8) @ [0=64, 1=2048, 2=7, 3=7] | ->[]|[Broadcast=1]|[0_1=64:100352, 1_1=2048:49, 2_1=7:7, 3_1=7:",
+          "modules": [
+            "layer4.0",
+            "layer4.1",
+            "layer4.2"
+          ]
+        },
+        {
+          "op": "aten::relu_",
+          "args": "[[\"(64, 2048, 7, 7):bfloat16:(100352, 49, 7, 1)\"], {}]",
+          "reason": "0: O20 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=64:100352, 1_1=2048:49, 2_1=7:7, 3_1=7:1]) | -> [] | [] | [1_8=128] | [1_1024=2, 0_1=64, 1_1=8, 2_1=8] | [3_1=7](4) | -> (E) [1_1024",
+          "modules": [
+            "layer4.0.relu",
+            "layer4.1.relu",
+            "layer4.2.relu"
+          ]
+        },
+        {
+          "op": "aten::conv2d",
+          "args": "[[\"(64, 2048, 7, 7):bfloat16:(100352, 49, 7, 1)\", \"(512, 2048, 1, 1):bfloat16:(2048, 1, 1, 1)\", \"(512,):bfloat16:(1,)\"], {}]",
+          "reason": "0: O72 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=64:100352, 1_1=2048:49, 2_1=7:7, 3_1=7:1]) | -> [] | [] | [0_16=4, 1_64=32] | [2_4=2, 0_1=16, 1_1=64, 2_1=4] | [3_1=7](4) | -> (E) [",
+          "modules": [
+            "layer4.1.conv1",
+            "layer4.2.conv1"
+          ]
+        },
+        {
+          "op": "aten::adaptive_avg_pool2d",
+          "args": "[[\"(64, 2048, 7, 7):bfloat16:(100352, 49, 7, 1)\", [\"1\", \"1\"]], {}]",
+          "reason": "0: O50 lowering failed: TransposedLower[bf16]([]|[Broadcast=1]|[0_1=64:100352, 1_1=2048:49, 2_1=7:7, 3_1=7:1]) | -> [] | [] | [1_128=16, 2_1=8] | [0_32=2, 0_1=32, 1_1=128] | [3_1=7](4) | -> (E) [0_32=",
+          "modules": [
+            "avgpool"
+          ]
+        }
+      ]
+    }
+  }
+}

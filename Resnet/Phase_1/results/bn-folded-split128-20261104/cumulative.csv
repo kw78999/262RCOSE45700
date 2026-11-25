@@ -1,0 +1,15 @@
+job,model_variant,target,mode,workload,cache_intent,phase,cycle,step,batch,call,elapsed_ms,cumulative_ms
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,first,-1,0,1,1,456145.921974,456145.921974
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,warmup,0,0,1,2,18.11936,456164.041334
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,warmup,1,0,1,3,16.656173,456180.697507
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,warmup,2,0,1,4,17.514544,456198.212051
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,measure,0,0,1,5,16.547212,456214.759263
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,measure,1,0,1,6,16.610253,456231.369516
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,measure,2,0,1,7,16.581343,456247.950859
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,measure,3,0,1,8,16.631544,456264.582403
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,measure,4,0,1,9,16.729364,456281.311767
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,measure,5,0,1,10,16.644563,456297.95633
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,measure,6,0,1,11,16.783555,456314.739885
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,measure,7,0,1,12,16.644023,456331.38390799996
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,measure,8,0,1,13,16.871406,456348.25531399995
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,measure,9,0,1,14,16.951617,456365.20693099994

@@ -1,0 +1,2 @@
+02:48:46 started eager-op-probe-fusion2-small --num-fusion 2 --device-index 0 --batches 4 2
+02:56:47 started eager-op-probe-fusion2-b64 --num-fusion 2 --device-index 1 --batches 64

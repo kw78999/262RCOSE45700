@@ -1,0 +1,8 @@
+eager-b1-cold: start
+eager-b1-cold: ok (475.4s)
+eager-b1-reuse: start
+eager-b1-reuse: ok (33.9s)
+compile-b1-cold: start
+compile-b1-cold: ok (491.0s)
+compile-b1-reuse: start
+compile-b1-reuse: ok (48.5s)

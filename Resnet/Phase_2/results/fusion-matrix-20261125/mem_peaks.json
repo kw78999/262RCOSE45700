@@ -1,0 +1,14 @@
+{
+ "9880 /root/venv/bin/python -u -m Resnet.Phase_2.worker --config /root/Resnet/Phase_2/results/matrix-f4-20261125/config.json --mode eager --batch 1 --trial 1 --cache ": 2.3738479614257812,
+ "9880 /root/venv/bin/python -u -m Resnet.Phase_2.run --resume --run-dir Resnet/Phase_2/results/matrix-f2-20261125": 0.3466949462890625,
+ "11925 /root/venv/bin/python -u -m Resnet.Phase_2.worker --config /root/Resnet/Phase_2/results/matrix-f2-20261125/config.json --mode eager --batch 16 --trial 1 --cache": 8.777973175048828,
+ "15803 /root/venv/bin/python -u -m Resnet.Phase_2.worker --config /root/Resnet/Phase_2/results/matrix-f2-20261125/config.json --mode eager --batch 64 --trial 1 --cache": 0.2710838317871094,
+ "9880 /root/venv/bin/python -u -m Resnet.Phase_2.run --resume --run-dir Resnet/Phase_2/results/matrix-f1-20261125": 0.34781646728515625,
+ "15835 /root/venv/bin/python -u -m Resnet.Phase_2.worker --config /root/Resnet/Phase_2/results/matrix-f1-20261125/config.json --mode eager --batch 64 --trial 1 --cache": 8.891704559326172,
+ "9880 /root/venv/bin/python -u -m Resnet.Phase_2.run --resume --run-dir Resnet/Phase_2/results/matrix-f1x-20261125": 0.024997711181640625,
+ "27690 /root/venv/bin/python -u -m Resnet.Phase_2.worker --config /root/Resnet/Phase_2/results/matrix-f1x-20261125/config.json --mode compile --batch 64 --trial 1 --ca": 71.26697540283203,
+ "9880 /root/venv/bin/python -u -m Resnet.Phase_2.eager_op_probe --output Resnet/Phase_2/results/eager-op-probe-fusion2-b64 --num-fusion 2 --device-index 2 --batches 6": 16.514400482177734,
+ "9880 /root/venv/bin/python -u -m Resnet.Phase_2.run --resume --run-dir Resnet/Phase_2/results/matrix-f2x-20261125": 0.3456306457519531,
+ "60898 /root/venv/bin/python -u -m Resnet.Phase_2.worker --config /root/Resnet/Phase_2/results/matrix-f2x-20261125/config.json --mode compile --batch 64 --trial 1 --ca": 91.86277389526367,
+ "74884 /root/venv/bin/python -u -m Resnet.Phase_2.worker --config /root/Resnet/Phase_2/results/matrix-f2x-20261125/config.json --mode eager --batch 64 --trial 1 --cach": 11.042129516601562
+}

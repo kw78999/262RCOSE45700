@@ -1,0 +1,45 @@
+eager-b1-cold: start
+eager-b1-cold: ok (9.3s)
+compile-b1-cold: start
+compile-b1-cold: ok (9.3s)
+compile-b1-reuse: start
+compile-b1-reuse: ok (4.4s)
+eager-b1-reuse: start
+eager-b1-reuse: ok (4.4s)
+compile-b4-cold: start
+compile-b4-cold: ok (6.6s)
+eager-b4-cold: start
+eager-b4-cold: ok (6.6s)
+eager-b4-reuse: start
+eager-b4-reuse: ok (4.6s)
+compile-b4-reuse: start
+compile-b4-reuse: ok (4.7s)
+eager-b8-cold: start
+eager-b8-cold: ok (7.1s)
+compile-b8-cold: start
+compile-b8-cold: ok (7.0s)
+compile-b8-reuse: start
+compile-b8-reuse: ok (5.0s)
+eager-b8-reuse: start
+eager-b8-reuse: ok (5.0s)
+compile-b16-cold: start
+compile-b16-cold: ok (9.0s)
+eager-b16-cold: start
+eager-b16-cold: ok (9.0s)
+eager-b16-reuse: start
+eager-b16-reuse: ok (5.7s)
+compile-b16-reuse: start
+compile-b16-reuse: ok (5.7s)
+eager-mixed-cold: start
+eager-mixed-cold: ok (20.0s)
+compile-mixed-cold: start
+compile-mixed-cold: ok (19.8s)
+eager-mixed-reuse: start
+eager-mixed-reuse: ok (7.9s)
+compile-mixed-reuse: start
+compile-mixed-reuse: ok (7.6s)
+eager-b1-reuse-profile: start
+eager-b1-reuse-profile: ok (4.4s)
+compile-b1-reuse-profile: start
+compile-b1-reuse-profile: ok (4.4s)
+{"run_dir": "/root/Resnet/Phase_1/results/conv1-diagnostic-20261104", "status": "complete", "tables": {"summary_rows": 48, "failures": 0, "comparisons": 16}}

@@ -1,0 +1,44 @@
+[
+  {
+    "target": "resnet50",
+    "workload": "fixed",
+    "cache_intent": "disk_reuse_attempt",
+    "job_batch": 1,
+    "model_variant": "bn_folded_output_split128",
+    "batch": 1,
+    "status": "measured",
+    "shape": [
+      1,
+      1000
+    ],
+    "max_abs_error": 0.015625,
+    "mean_abs_error": 0.0012440071441233158,
+    "rmse": 0.0023630608338862658,
+    "cosine_mean": 0.9999964380209903,
+    "cosine_min": 0.9999964380209903,
+    "cosine_undefined_samples": 0,
+    "prediction_agreement": 1.0,
+    "acceptance": "not_defined; numerical metrics only, no ImageNet accuracy claim"
+  },
+  {
+    "target": "resnet50",
+    "workload": "fixed",
+    "cache_intent": "empty_project_cache",
+    "job_batch": 1,
+    "model_variant": "bn_folded_output_split128",
+    "batch": 1,
+    "status": "measured",
+    "shape": [
+      1,
+      1000
+    ],
+    "max_abs_error": 0.015625,
+    "mean_abs_error": 0.0012440071441233158,
+    "rmse": 0.0023630608338862658,
+    "cosine_mean": 0.9999964380209903,
+    "cosine_min": 0.9999964380209903,
+    "cosine_undefined_samples": 0,
+    "prediction_agreement": 1.0,
+    "acceptance": "not_defined; numerical metrics only, no ImageNet accuracy claim"
+  }
+]

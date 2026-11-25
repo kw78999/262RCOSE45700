@@ -1,0 +1,103 @@
+{
+  "started_kst": "2026-11-04T13:05:42.894428+09:00",
+  "target": "resnet50",
+  "status": "stopped_by_user",
+  "jobs": [
+    {
+      "name": "eager-b1-cold",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.worker",
+        "--config",
+        "/root/Resnet/Phase_1/results/bn-folded-split128-20261104/config.json",
+        "--mode",
+        "eager",
+        "--target",
+        "resnet50",
+        "--workload",
+        "fixed",
+        "--batch",
+        "1",
+        "--cache-intent",
+        "empty_project_cache",
+        "--cache",
+        "/root/Resnet/Phase_1/results/bn-folded-split128-20261104/caches/eager-b1",
+        "--output",
+        "/root/Resnet/Phase_1/results/bn-folded-split128-20261104/jobs/eager-b1-cold"
+      ],
+      "status": "ok",
+      "profile": false,
+      "working_directory": "/root/Resnet/Phase_1/results/bn-folded-split128-20261104/source",
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      },
+      "timeout_s": 1800,
+      "worker_pid": 32749,
+      "elapsed_s": 460.7388151108753,
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "name": "compile-b1-cold",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.worker",
+        "--config",
+        "/root/Resnet/Phase_1/results/bn-folded-split128-20261104/config.json",
+        "--mode",
+        "compile",
+        "--target",
+        "resnet50",
+        "--workload",
+        "fixed",
+        "--batch",
+        "1",
+        "--cache-intent",
+        "empty_project_cache",
+        "--cache",
+        "/root/Resnet/Phase_1/results/bn-folded-split128-20261104/caches/compile-b1",
+        "--output",
+        "/root/Resnet/Phase_1/results/bn-folded-split128-20261104/jobs/compile-b1-cold"
+      ],
+      "status": "interrupted",
+      "profile": false,
+      "working_directory": "/root/Resnet/Phase_1/results/bn-folded-split128-20261104/source",
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      },
+      "timeout_s": 1800,
+      "worker_pid": 34754,
+      "elapsed_s": 300.0153859690763,
+      "stopped_kst": "2026-11-04T13:19:21.706840+09:00",
+      "stop_reason": "user_requested_stop"
+    }
+  ],
+  "skipped": [],
+  "model_variant": "bn_folded_output_split128",
+  "runner_pid": 32722,
+  "phase": "stopped",
+  "support_gate": {
+    "status": "pending"
+  },
+  "worker_source_snapshot": "/root/Resnet/Phase_1/results/bn-folded-split128-20261104/source",
+  "new_process_per_job": true,
+  "serial_device_execution": true,
+  "cache_reset_scope": "New project directory only; shared/system caches untouched",
+  "tables": {
+    "summary_rows": 2,
+    "failures": 0,
+    "comparisons": 0
+  },
+  "stopped_kst": "2026-11-04T13:19:21.706840+09:00",
+  "stop_reason": "사용자 요청으로 Resnet 관련 프로세스 모두 종료. runner/worker 종료 및 furiosa-smi ps의 빈 목록 확인."
+}

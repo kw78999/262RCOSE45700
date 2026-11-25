@@ -1,0 +1,3 @@
+batch,num_fusion,op,modules,args,status,error_type,reason,location,compile_s
+2,4,aten::linear,fc,"[[""(2, 2048):bfloat16:(2048, 1)"", ""(1000, 2048):bfloat16:(2048, 1)"", ""(1000,):bfloat16:(1,)""], {}]",OK,,,,2.1
+16,4,aten::linear,fc,"[[""(16, 2048):bfloat16:(2048, 1)"", ""(1000, 2048):bfloat16:(2048, 1)"", ""(1000,):bfloat16:(1,)""], {}]",OK,,,,3.4

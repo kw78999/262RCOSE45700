@@ -1,0 +1,3 @@
+model_variant,target,mode,workload,cache_intent,scope,batch,n,median_ms,min_ms,max_ms,mean_ms,stdev_ms,cv,median_images_per_s
+bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,e2e,1,10,16.644293,16.547212,16.951617,16.699488,0.1320367300084839,0.00790663342543699,60.08065347083231
+bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,forward,1,10,16.430036,16.273079,16.733105,16.4611893,0.1500629652949795,0.00911616788800184,60.86413931168501

@@ -1,0 +1,6 @@
+job,model_variant,target,mode,workload,cache_intent,calls,total_actual_e2e_ms,backend_calls
+compile-b1-cold,bn_folded_output_split128,resnet50,compile,fixed,empty_project_cache,14,418703.223254,1
+compile-b1-reuse,bn_folded_output_split128,resnet50,compile,fixed,disk_reuse_attempt,14,3454.1543549999997,1
+compile-b4-cold,bn_folded_output_split128,resnet50,compile,fixed,empty_project_cache,14,1172480.544444,1
+eager-b1-cold,bn_folded_output_split128,resnet50,eager,fixed,empty_project_cache,14,456931.5894279999,0
+eager-b1-reuse,bn_folded_output_split128,resnet50,eager,fixed,disk_reuse_attempt,14,14226.339145000002,0

@@ -1,0 +1,334 @@
+{
+  "experiment": "phase2_batch_scaling_fusion4_eager_fix_2h",
+  "started_kst": "2026-11-20T09:04:56.666763+09:00",
+  "status": "finished",
+  "plan": [
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 2,
+      "trial": 1,
+      "name": "eager-b2-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 16,
+      "trial": 1,
+      "name": "eager-b16-t1"
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 32,
+      "trial": 1,
+      "name": "eager-b32-t1"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 64,
+      "trial": 1,
+      "name": "eager-b64-t1"
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 128,
+      "trial": 1,
+      "name": "eager-b128-t1"
+    }
+  ],
+  "jobs": [
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 2,
+      "trial": 1,
+      "name": "eager-b2-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/config.json",
+        "--mode",
+        "eager",
+        "--batch",
+        "2",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/caches/eager-b2-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/jobs/eager-b2-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/tmp/eager-b2-t1"
+      },
+      "timeout_s": 2400,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.77°C |  38 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-20T09:04:56.693920+09:00",
+      "worker_pid": 456102,
+      "elapsed_s": 422.48974545206875,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 416263.366632,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.58°C |  44 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 16,
+      "trial": 1,
+      "name": "eager-b16-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/config.json",
+        "--mode",
+        "eager",
+        "--batch",
+        "16",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/caches/eager-b16-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/jobs/eager-b16-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/tmp/eager-b16-t1"
+      },
+      "timeout_s": 2400,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.58°C |  44 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-20T09:11:59.234557+09:00",
+      "worker_pid": 457974,
+      "elapsed_s": 858.7433051127009,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 850482.029963,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.58°C |  59 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    },
+    {
+      "phase": "core",
+      "mode": "eager",
+      "batch": 32,
+      "trial": 1,
+      "name": "eager-b32-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/config.json",
+        "--mode",
+        "eager",
+        "--batch",
+        "32",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/caches/eager-b32-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/jobs/eager-b32-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/tmp/eager-b32-t1"
+      },
+      "timeout_s": 2400,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.58°C |  59 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-20T09:26:18.036367+09:00",
+      "worker_pid": 460044,
+      "elapsed_s": 1313.316174712032,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 1301179.265549,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 40.70°C |  63 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 64,
+      "trial": 1,
+      "name": "eager-b64-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/config.json",
+        "--mode",
+        "eager",
+        "--batch",
+        "64",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/caches/eager-b64-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/jobs/eager-b64-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/tmp/eager-b64-t1"
+      },
+      "timeout_s": 2400,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 40.70°C |  63 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-20T09:48:11.407253+09:00",
+      "worker_pid": 463164,
+      "elapsed_s": 1292.170233814977,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 1273258.832559,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.21°C |  66 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    },
+    {
+      "phase": "extension",
+      "mode": "eager",
+      "batch": 128,
+      "trial": 1,
+      "name": "eager-b128-t1",
+      "status": "ok",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_2.worker",
+        "--config",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/config.json",
+        "--mode",
+        "eager",
+        "--batch",
+        "128",
+        "--trial",
+        "1",
+        "--cache",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/caches/eager-b128-t1",
+        "--output",
+        "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/jobs/eager-b128-t1"
+      ],
+      "environment_overrides": {
+        "FURIOSA_TORCH_LOG": "error",
+        "FURIOSA_TORCH_PROFILE": "error",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "XDG_CACHE_HOME": "/root/Resnet/.cache",
+        "TMPDIR": "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120/tmp/eager-b128-t1"
+      },
+      "timeout_s": 2400,
+      "waited_for_device_s": 0,
+      "device_before": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 39.21°C |  66 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      },
+      "started_kst": "2026-11-20T10:09:43.643245+09:00",
+      "worker_pid": 466907,
+      "elapsed_s": 1272.9495872310363,
+      "exit_code": 0,
+      "timed_out": false,
+      "first_call_ms": 1232797.111342,
+      "stage": "aux_transfer",
+      "device_after": {
+        "info": "+------+--------+-------------------+---------+-------+--------------+\n| Arch | Device | Firmware          | Temp.   | Power | PCI-BDF      |\n+------+--------+-------------------+---------+-------+--------------+\n| RNGD | npu0   | 2026.4.0, 93d67f3 | 42.37°C |  64 W | 0000:03:00.0 |\n+------+--------+-------------------+---------+-------+--------------+\n",
+        "ps": "+-----+----------+-----+\n| PID | NPU core | CMD |\n+-----+----------+-----+\n"
+      }
+    }
+  ],
+  "skipped": [],
+  "worker_elapsed_s": 5159.669046322815,
+  "max_total_s": 6600,
+  "num_fusion": 4,
+  "device": "furiosa:1",
+  "physical_pes": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "new_process_per_job": true,
+  "new_cache_directory_per_job": true,
+  "serial_device_execution": true,
+  "cache_reset_scope": "new project directory per job; system and device state untouched",
+  "runner_pid": 456059,
+  "toolchain_preflight": {
+    "ok": true,
+    "command": "aarch64-linux-gnu-gcc -E (assert.h)",
+    "stderr": ""
+  },
+  "tables": {
+    "ok_jobs": 5,
+    "failed_jobs": 0,
+    "batches_measured": [
+      2,
+      16,
+      32,
+      64,
+      128
+    ],
+    "planned": 5,
+    "not_run": 0
+  },
+  "finished_kst": "2026-11-20T10:30:56.625338+09:00"
+}

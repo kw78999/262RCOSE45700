@@ -1,0 +1,1 @@
+kind,batch,left,right,status,samples,top1_matches,bitwise_equal,max_abs_error,mean_abs_error,rmse,cosine_min

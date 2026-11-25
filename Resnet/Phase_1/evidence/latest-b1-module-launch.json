@@ -1,0 +1,35 @@
+{
+  "started_kst": "2026-11-04T17:32:45.741703+09:00",
+  "supervisor_pid": 74995,
+  "command": [
+    "/root/venv/bin/python",
+    "-u",
+    "/root/Resnet/Phase_1/budget.py",
+    "--config",
+    "/root/Resnet/Phase_1/config-b1-module-latency.json",
+    "--run-dir",
+    "/root/Resnet/Phase_1/results/b1-module-latency-20261104-173245",
+    "--max-runtime-s",
+    "3407",
+    "--runner",
+    "Resnet.Phase_1.module_run"
+  ],
+  "run_dir": "/root/Resnet/Phase_1/results/b1-module-latency-20261104-173245",
+  "log": "/root/Resnet/Phase_1/evidence/b1-module-latency-20261104-173245-supervisor.log",
+  "budget_record": "/root/Resnet/Phase_1/results/b1-module-latency-20261104-173245-budget.json",
+  "max_runtime_s": 3407,
+  "inherited_deadline_kst": "2026-11-04T18:29:35.123505+09:00",
+  "cases": [
+    "eager-b1-cold",
+    "eager-b1-reuse",
+    "compile-b1-cold",
+    "compile-b1-reuse"
+  ],
+  "total_nodes_per_case": 187,
+  "identity_nodes": 53,
+  "candidate_timed_nodes": 134,
+  "compile_metadata_only_nodes": 1,
+  "tests_passed": 26,
+  "npu_smoke": "evidence/b1-module-npu-smoke.json",
+  "detached": true
+}

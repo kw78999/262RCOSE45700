@@ -1,0 +1,6 @@
+compile-b1-t1: start
+compile-b1-t1: ok (1339.5s)
+compile-b16-t1: start
+compile-b16-t1: ok (4046.4s)
+eager-b16-t1: start
+eager-b16-t1: start

@@ -1,0 +1,20 @@
+{
+  "checked_kst": "2026-11-04T13:09:28.567955+09:00",
+  "preparation_status": "verified",
+  "run_status_at_check": "running",
+  "phase_at_check": "minimum_condition",
+  "runner_pid": 32722,
+  "worker_pid": 32749,
+  "worker_stage": "first:e2e:b1:cycle-1:step0",
+  "model_variant": "bn_folded_output_split128",
+  "state_sha256": "f4ffc8727491492e195b9c024f145293f422696cdbeed6d8c064016158753469",
+  "cpu_full_model_validation": "passed for batches 1 and 4",
+  "tests_passed": 19,
+  "worker_snapshot_used": true,
+  "partitioned_modules": [
+    "layer4.0.conv2",
+    "layer4.1.conv2",
+    "layer4.2.conv2"
+  ],
+  "experiment_continues_in_detached_process": true
+}

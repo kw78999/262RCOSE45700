@@ -1,0 +1,2118 @@
+{
+  "status": "ok",
+  "mode": "eager",
+  "target": "resnet50",
+  "workload": "fixed",
+  "batch": 1,
+  "cache_intent": "disk_reuse_attempt",
+  "cache_dir": "/root/Resnet/Phase_1/results/bn-folded-split128-2h-20261104-162935/caches/eager-b1",
+  "profile_enabled": false,
+  "config": {
+    "model": "resnet50",
+    "model_variant": "bn_folded_output_split128",
+    "weights": "IMAGENET1K_V2",
+    "precision": "bfloat16",
+    "bn_folded": true,
+    "output_split_channels": 128,
+    "validation_file": "evidence/full-model-split128-validation/validation.json",
+    "device": "furiosa:0",
+    "seed": 2026,
+    "image_size": 224,
+    "batches": [
+      1,
+      4,
+      8,
+      16
+    ],
+    "warmup": 3,
+    "iterations": 10,
+    "mixed_batches": [
+      1,
+      4,
+      1,
+      8,
+      4,
+      16,
+      1
+    ],
+    "timeout_s": 1800,
+    "mixed_timeout_s": 7200,
+    "cpu_threads": 1,
+    "workspace_only": true,
+    "max_runtime_s": 7200
+  },
+  "cpu_fallback": false,
+  "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+  "compile_options": "SDK defaults; counting wrapper delegates unchanged to ft.backend",
+  "stage": "measure:forward:b1:cycle9:step0",
+  "model_load_ms": 444.851578,
+  "weights": {
+    "model": "torchvision.models.resnet50",
+    "weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "checkpoint": "/root/Resnet/.cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth",
+    "sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+  },
+  "model_transform": {
+    "name": "bn_folded_output_split128",
+    "api": "torch.nn.utils.fuse_conv_bn_eval",
+    "fold_dtype": "float32",
+    "cast_after_fold": "bfloat16",
+    "pair_count": 53,
+    "pairs": [
+      {
+        "conv": "conv1",
+        "batchnorm": "bn1"
+      },
+      {
+        "conv": "layer1.0.conv1",
+        "batchnorm": "layer1.0.bn1"
+      },
+      {
+        "conv": "layer1.0.conv2",
+        "batchnorm": "layer1.0.bn2"
+      },
+      {
+        "conv": "layer1.0.conv3",
+        "batchnorm": "layer1.0.bn3"
+      },
+      {
+        "conv": "layer1.0.downsample.0",
+        "batchnorm": "layer1.0.downsample.1"
+      },
+      {
+        "conv": "layer1.1.conv1",
+        "batchnorm": "layer1.1.bn1"
+      },
+      {
+        "conv": "layer1.1.conv2",
+        "batchnorm": "layer1.1.bn2"
+      },
+      {
+        "conv": "layer1.1.conv3",
+        "batchnorm": "layer1.1.bn3"
+      },
+      {
+        "conv": "layer1.2.conv1",
+        "batchnorm": "layer1.2.bn1"
+      },
+      {
+        "conv": "layer1.2.conv2",
+        "batchnorm": "layer1.2.bn2"
+      },
+      {
+        "conv": "layer1.2.conv3",
+        "batchnorm": "layer1.2.bn3"
+      },
+      {
+        "conv": "layer2.0.conv1",
+        "batchnorm": "layer2.0.bn1"
+      },
+      {
+        "conv": "layer2.0.conv2",
+        "batchnorm": "layer2.0.bn2"
+      },
+      {
+        "conv": "layer2.0.conv3",
+        "batchnorm": "layer2.0.bn3"
+      },
+      {
+        "conv": "layer2.0.downsample.0",
+        "batchnorm": "layer2.0.downsample.1"
+      },
+      {
+        "conv": "layer2.1.conv1",
+        "batchnorm": "layer2.1.bn1"
+      },
+      {
+        "conv": "layer2.1.conv2",
+        "batchnorm": "layer2.1.bn2"
+      },
+      {
+        "conv": "layer2.1.conv3",
+        "batchnorm": "layer2.1.bn3"
+      },
+      {
+        "conv": "layer2.2.conv1",
+        "batchnorm": "layer2.2.bn1"
+      },
+      {
+        "conv": "layer2.2.conv2",
+        "batchnorm": "layer2.2.bn2"
+      },
+      {
+        "conv": "layer2.2.conv3",
+        "batchnorm": "layer2.2.bn3"
+      },
+      {
+        "conv": "layer2.3.conv1",
+        "batchnorm": "layer2.3.bn1"
+      },
+      {
+        "conv": "layer2.3.conv2",
+        "batchnorm": "layer2.3.bn2"
+      },
+      {
+        "conv": "layer2.3.conv3",
+        "batchnorm": "layer2.3.bn3"
+      },
+      {
+        "conv": "layer3.0.conv1",
+        "batchnorm": "layer3.0.bn1"
+      },
+      {
+        "conv": "layer3.0.conv2",
+        "batchnorm": "layer3.0.bn2"
+      },
+      {
+        "conv": "layer3.0.conv3",
+        "batchnorm": "layer3.0.bn3"
+      },
+      {
+        "conv": "layer3.0.downsample.0",
+        "batchnorm": "layer3.0.downsample.1"
+      },
+      {
+        "conv": "layer3.1.conv1",
+        "batchnorm": "layer3.1.bn1"
+      },
+      {
+        "conv": "layer3.1.conv2",
+        "batchnorm": "layer3.1.bn2"
+      },
+      {
+        "conv": "layer3.1.conv3",
+        "batchnorm": "layer3.1.bn3"
+      },
+      {
+        "conv": "layer3.2.conv1",
+        "batchnorm": "layer3.2.bn1"
+      },
+      {
+        "conv": "layer3.2.conv2",
+        "batchnorm": "layer3.2.bn2"
+      },
+      {
+        "conv": "layer3.2.conv3",
+        "batchnorm": "layer3.2.bn3"
+      },
+      {
+        "conv": "layer3.3.conv1",
+        "batchnorm": "layer3.3.bn1"
+      },
+      {
+        "conv": "layer3.3.conv2",
+        "batchnorm": "layer3.3.bn2"
+      },
+      {
+        "conv": "layer3.3.conv3",
+        "batchnorm": "layer3.3.bn3"
+      },
+      {
+        "conv": "layer3.4.conv1",
+        "batchnorm": "layer3.4.bn1"
+      },
+      {
+        "conv": "layer3.4.conv2",
+        "batchnorm": "layer3.4.bn2"
+      },
+      {
+        "conv": "layer3.4.conv3",
+        "batchnorm": "layer3.4.bn3"
+      },
+      {
+        "conv": "layer3.5.conv1",
+        "batchnorm": "layer3.5.bn1"
+      },
+      {
+        "conv": "layer3.5.conv2",
+        "batchnorm": "layer3.5.bn2"
+      },
+      {
+        "conv": "layer3.5.conv3",
+        "batchnorm": "layer3.5.bn3"
+      },
+      {
+        "conv": "layer4.0.conv1",
+        "batchnorm": "layer4.0.bn1"
+      },
+      {
+        "conv": "layer4.0.conv2",
+        "batchnorm": "layer4.0.bn2"
+      },
+      {
+        "conv": "layer4.0.conv3",
+        "batchnorm": "layer4.0.bn3"
+      },
+      {
+        "conv": "layer4.0.downsample.0",
+        "batchnorm": "layer4.0.downsample.1"
+      },
+      {
+        "conv": "layer4.1.conv1",
+        "batchnorm": "layer4.1.bn1"
+      },
+      {
+        "conv": "layer4.1.conv2",
+        "batchnorm": "layer4.1.bn2"
+      },
+      {
+        "conv": "layer4.1.conv3",
+        "batchnorm": "layer4.1.bn3"
+      },
+      {
+        "conv": "layer4.2.conv1",
+        "batchnorm": "layer4.2.bn1"
+      },
+      {
+        "conv": "layer4.2.conv2",
+        "batchnorm": "layer4.2.bn2"
+      },
+      {
+        "conv": "layer4.2.conv3",
+        "batchnorm": "layer4.2.bn3"
+      }
+    ],
+    "remaining_batchnorm": [],
+    "output_partition": {
+      "axis": "output_channels",
+      "chunk_size": 128,
+      "all_input_channels_in_every_part": true,
+      "combine": "concat_dim1",
+      "modules": [
+        {
+          "module": "layer4.0.conv2",
+          "weight_shape": [
+            512,
+            512,
+            3,
+            3
+          ],
+          "stride": [
+            2,
+            2
+          ],
+          "padding": [
+            1,
+            1
+          ],
+          "part_weight_shapes": [
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ]
+          ]
+        },
+        {
+          "module": "layer4.1.conv2",
+          "weight_shape": [
+            512,
+            512,
+            3,
+            3
+          ],
+          "stride": [
+            1,
+            1
+          ],
+          "padding": [
+            1,
+            1
+          ],
+          "part_weight_shapes": [
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ]
+          ]
+        },
+        {
+          "module": "layer4.2.conv2",
+          "weight_shape": [
+            512,
+            512,
+            3,
+            3
+          ],
+          "stride": [
+            1,
+            1
+          ],
+          "padding": [
+            1,
+            1
+          ],
+          "part_weight_shapes": [
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    "state_sha256": "f4ffc8727491492e195b9c024f145293f422696cdbeed6d8c064016158753469"
+  },
+  "model_variant": "bn_folded_output_split128",
+  "interpretation": "BN-folded ResNet50 with layer4.0/1/2.conv2 output-channel split128 in both modes",
+  "model_to_device_ms": 46.334713,
+  "mode_wrapper_ms": 0.0043,
+  "shape_call_frequencies_per_cycle": {
+    "1": 1
+  },
+  "cache_files_before": {
+    "8fe1abd39bebc66e/input.ir_viewer.json": {
+      "size": 2138,
+      "mtime_ns": 1793777728256449034
+    },
+    "8fe1abd39bebc66e/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777728256449034
+    },
+    "8fe1abd39bebc66e/key.bin": {
+      "size": 3103,
+      "mtime_ns": 1793777733818509477
+    },
+    "8fe1abd39bebc66e/output.bin": {
+      "size": 61376,
+      "mtime_ns": 1793777733818509477
+    },
+    "8fe1abd39bebc66e/input.fir": {
+      "size": 2415,
+      "mtime_ns": 1793777728256449034
+    },
+    "18505dfd8ea2bd8d/input.ir_viewer.json": {
+      "size": 2240,
+      "mtime_ns": 1793777836094608943
+    },
+    "18505dfd8ea2bd8d/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777836094608943
+    },
+    "18505dfd8ea2bd8d/key.bin": {
+      "size": 3927,
+      "mtime_ns": 1793777837352622335
+    },
+    "18505dfd8ea2bd8d/output.bin": {
+      "size": 54548,
+      "mtime_ns": 1793777837352622335
+    },
+    "18505dfd8ea2bd8d/input.fir": {
+      "size": 3239,
+      "mtime_ns": 1793777836094608943
+    },
+    "cd75e9213e9b1fc5/input.ir_viewer.json": {
+      "size": 3925,
+      "mtime_ns": 1793777527434211589
+    },
+    "cd75e9213e9b1fc5/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777527434211589
+    },
+    "cd75e9213e9b1fc5/key.bin": {
+      "size": 6278,
+      "mtime_ns": 1793777591150934222
+    },
+    "cd75e9213e9b1fc5/output.bin": {
+      "size": 35306,
+      "mtime_ns": 1793777591150934222
+    },
+    "cd75e9213e9b1fc5/input.fir": {
+      "size": 5590,
+      "mtime_ns": 1793777527434211589
+    },
+    "7a793313de4aafcd/input.ir_viewer.json": {
+      "size": 3070,
+      "mtime_ns": 1793777821617454610
+    },
+    "7a793313de4aafcd/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777821617454610
+    },
+    "7a793313de4aafcd/key.bin": {
+      "size": 4535,
+      "mtime_ns": 1793777821808456649
+    },
+    "7a793313de4aafcd/output.bin": {
+      "size": 57601,
+      "mtime_ns": 1793777821808456649
+    },
+    "7a793313de4aafcd/input.fir": {
+      "size": 3847,
+      "mtime_ns": 1793777821617454610
+    },
+    "527e87fe0c81c70f/input.ir_viewer.json": {
+      "size": 3921,
+      "mtime_ns": 1793777744646626941
+    },
+    "527e87fe0c81c70f/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777744645626930
+    },
+    "527e87fe0c81c70f/key.bin": {
+      "size": 6238,
+      "mtime_ns": 1793777754057728818
+    },
+    "527e87fe0c81c70f/output.bin": {
+      "size": 451758,
+      "mtime_ns": 1793777754057728818
+    },
+    "527e87fe0c81c70f/input.fir": {
+      "size": 5550,
+      "mtime_ns": 1793777744646626941
+    },
+    "afd9066d271ba88a/input.ir_viewer.json": {
+      "size": 2116,
+      "mtime_ns": 1793777778995997839
+    },
+    "afd9066d271ba88a/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777778995997839
+    },
+    "afd9066d271ba88a/key.bin": {
+      "size": 3095,
+      "mtime_ns": 1793777781491024680
+    },
+    "afd9066d271ba88a/output.bin": {
+      "size": 34005,
+      "mtime_ns": 1793777781491024680
+    },
+    "afd9066d271ba88a/input.fir": {
+      "size": 2407,
+      "mtime_ns": 1793777778995997839
+    },
+    "d2783ae46fe2c5f7/input.ir_viewer.json": {
+      "size": 3904,
+      "mtime_ns": 1793777830214546307
+    },
+    "d2783ae46fe2c5f7/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777830214546307
+    },
+    "d2783ae46fe2c5f7/key.bin": {
+      "size": 6226,
+      "mtime_ns": 1793777835843606270
+    },
+    "d2783ae46fe2c5f7/output.bin": {
+      "size": 457961,
+      "mtime_ns": 1793777835843606270
+    },
+    "d2783ae46fe2c5f7/input.fir": {
+      "size": 5538,
+      "mtime_ns": 1793777830214546307
+    },
+    "a257222ecbf35dfd/input.ir_viewer.json": {
+      "size": 3913,
+      "mtime_ns": 1793777771235914271
+    },
+    "a257222ecbf35dfd/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777771235914271
+    },
+    "a257222ecbf35dfd/key.bin": {
+      "size": 6232,
+      "mtime_ns": 1793777778745995148
+    },
+    "a257222ecbf35dfd/output.bin": {
+      "size": 450514,
+      "mtime_ns": 1793777778744995137
+    },
+    "a257222ecbf35dfd/input.fir": {
+      "size": 5544,
+      "mtime_ns": 1793777771235914271
+    },
+    "359667c5dda5db37/input.ir_viewer.json": {
+      "size": 3907,
+      "mtime_ns": 1793777397193688795
+    },
+    "359667c5dda5db37/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777397193688795
+    },
+    "359667c5dda5db37/key.bin": {
+      "size": 6255,
+      "mtime_ns": 1793777404753779080
+    },
+    "359667c5dda5db37/output.bin": {
+      "size": 38745,
+      "mtime_ns": 1793777404753779080
+    },
+    "359667c5dda5db37/input.fir": {
+      "size": 5567,
+      "mtime_ns": 1793777397193688795
+    },
+    "cfcd1c81d1038400/input.ir_viewer.json": {
+      "size": 3091,
+      "mtime_ns": 1793777443263235158
+    },
+    "cfcd1c81d1038400/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777443263235158
+    },
+    "cfcd1c81d1038400/key.bin": {
+      "size": 4569,
+      "mtime_ns": 1793777443464237522
+    },
+    "cfcd1c81d1038400/output.bin": {
+      "size": 25934,
+      "mtime_ns": 1793777443464237522
+    },
+    "cfcd1c81d1038400/input.fir": {
+      "size": 3881,
+      "mtime_ns": 1793777443263235158
+    },
+    "2099faa930f82524/input.ir_viewer.json": {
+      "size": 3082,
+      "mtime_ns": 1793777591563938863
+    },
+    "2099faa930f82524/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777591563938863
+    },
+    "2099faa930f82524/key.bin": {
+      "size": 4569,
+      "mtime_ns": 1793777591774941235
+    },
+    "2099faa930f82524/output.bin": {
+      "size": 28160,
+      "mtime_ns": 1793777591774941235
+    },
+    "2099faa930f82524/input.fir": {
+      "size": 3881,
+      "mtime_ns": 1793777591563938863
+    },
+    "c246c9ec2745e75c/input.ir_viewer.json": {
+      "size": 3920,
+      "mtime_ns": 1793777600733041786
+    },
+    "c246c9ec2745e75c/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777600733041786
+    },
+    "c246c9ec2745e75c/key.bin": {
+      "size": 6266,
+      "mtime_ns": 1793777614740198530
+    },
+    "c246c9ec2745e75c/output.bin": {
+      "size": 38065,
+      "mtime_ns": 1793777614740198530
+    },
+    "c246c9ec2745e75c/input.fir": {
+      "size": 5578,
+      "mtime_ns": 1793777600733041786
+    },
+    "2ea950853705420c/input.ir_viewer.json": {
+      "size": 2148,
+      "mtime_ns": 1793777387379571210
+    },
+    "2ea950853705420c/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777387379571210
+    },
+    "2ea950853705420c/key.bin": {
+      "size": 3117,
+      "mtime_ns": 1793777395967674130
+    },
+    "2ea950853705420c/output.bin": {
+      "size": 36641,
+      "mtime_ns": 1793777395967674130
+    },
+    "2ea950853705420c/input.fir": {
+      "size": 2429,
+      "mtime_ns": 1793777387379571210
+    },
+    "6c70012c1c17f347/input.ir_viewer.json": {
+      "size": 3910,
+      "mtime_ns": 1793777414090890242
+    },
+    "6c70012c1c17f347/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777414090890242
+    },
+    "6c70012c1c17f347/key.bin": {
+      "size": 6258,
+      "mtime_ns": 1793777430800088237
+    },
+    "6c70012c1c17f347/output.bin": {
+      "size": 73675,
+      "mtime_ns": 1793777430799088225
+    },
+    "6c70012c1c17f347/input.fir": {
+      "size": 5570,
+      "mtime_ns": 1793777414090890242
+    },
+    "bdda0f5f585a437a/input.ir_viewer.json": {
+      "size": 3921,
+      "mtime_ns": 1793777381869505003
+    },
+    "bdda0f5f585a437a/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777381868504991
+    },
+    "bdda0f5f585a437a/key.bin": {
+      "size": 6250,
+      "mtime_ns": 1793777386957566145
+    },
+    "bdda0f5f585a437a/output.bin": {
+      "size": 55184,
+      "mtime_ns": 1793777386957566145
+    },
+    "bdda0f5f585a437a/input.fir": {
+      "size": 5562,
+      "mtime_ns": 1793777381868504991
+    },
+    "351be3680c9f2de8/input.ir_viewer.json": {
+      "size": 3929,
+      "mtime_ns": 1793777754444733003
+    },
+    "351be3680c9f2de8/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777754443732992
+    },
+    "351be3680c9f2de8/key.bin": {
+      "size": 6250,
+      "mtime_ns": 1793777764944846428
+    },
+    "351be3680c9f2de8/output.bin": {
+      "size": 79150,
+      "mtime_ns": 1793777764944846428
+    },
+    "351be3680c9f2de8/input.fir": {
+      "size": 5562,
+      "mtime_ns": 1793777754444733003
+    },
+    "8203707db811c1f7/input.ir_viewer.json": {
+      "size": 3927,
+      "mtime_ns": 1793777671051823066
+    },
+    "8203707db811c1f7/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777671050823055
+    },
+    "8203707db811c1f7/key.bin": {
+      "size": 6244,
+      "mtime_ns": 1793777680859930973
+    },
+    "8203707db811c1f7/output.bin": {
+      "size": 51552,
+      "mtime_ns": 1793777680859930973
+    },
+    "8203707db811c1f7/input.fir": {
+      "size": 5556,
+      "mtime_ns": 1793777671050823055
+    },
+    "2a229eb85937de54/input.ir_viewer.json": {
+      "size": 2140,
+      "mtime_ns": 1793777443821241721
+    },
+    "2a229eb85937de54/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777443821241721
+    },
+    "2a229eb85937de54/key.bin": {
+      "size": 3123,
+      "mtime_ns": 1793777452408342561
+    },
+    "2a229eb85937de54/output.bin": {
+      "size": 36515,
+      "mtime_ns": 1793777452408342561
+    },
+    "2a229eb85937de54/input.fir": {
+      "size": 2435,
+      "mtime_ns": 1793777443821241721
+    },
+    "05855c8c13ff692b/input.ir_viewer.json": {
+      "size": 3924,
+      "mtime_ns": 1793777734075512268
+    },
+    "05855c8c13ff692b/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777734074512257
+    },
+    "05855c8c13ff692b/key.bin": {
+      "size": 6244,
+      "mtime_ns": 1793777744261622769
+    },
+    "05855c8c13ff692b/output.bin": {
+      "size": 70741,
+      "mtime_ns": 1793777744261622769
+    },
+    "05855c8c13ff692b/input.fir": {
+      "size": 5556,
+      "mtime_ns": 1793777734074512257
+    },
+    "e6c6b66e27f95d69/input.ir_viewer.json": {
+      "size": 3922,
+      "mtime_ns": 1793777466740510213
+    },
+    "e6c6b66e27f95d69/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777466740510213
+    },
+    "e6c6b66e27f95d69/key.bin": {
+      "size": 6266,
+      "mtime_ns": 1793777483389703967
+    },
+    "e6c6b66e27f95d69/output.bin": {
+      "size": 38573,
+      "mtime_ns": 1793777483389703967
+    },
+    "e6c6b66e27f95d69/input.fir": {
+      "size": 5578,
+      "mtime_ns": 1793777466740510213
+    },
+    "6fb7a7e597cbe1cf/input.ir_viewer.json": {
+      "size": 2134,
+      "mtime_ns": 1793777644233526722
+    },
+    "6fb7a7e597cbe1cf/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777644233526722
+    },
+    "6fb7a7e597cbe1cf/key.bin": {
+      "size": 3123,
+      "mtime_ns": 1793777652439617605
+    },
+    "6fb7a7e597cbe1cf/output.bin": {
+      "size": 29702,
+      "mtime_ns": 1793777652439617605
+    },
+    "6fb7a7e597cbe1cf/input.fir": {
+      "size": 2435,
+      "mtime_ns": 1793777644233526722
+    },
+    "610684c608b0f474/input.ir_viewer.json": {
+      "size": 2132,
+      "mtime_ns": 1793777405116783409
+    },
+    "610684c608b0f474/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777405116783409
+    },
+    "610684c608b0f474/key.bin": {
+      "size": 3117,
+      "mtime_ns": 1793777413835887211
+    },
+    "610684c608b0f474/output.bin": {
+      "size": 30681,
+      "mtime_ns": 1793777413835887211
+    },
+    "610684c608b0f474/input.fir": {
+      "size": 2429,
+      "mtime_ns": 1793777405116783409
+    },
+    "0fbace15ed737eb5/input.ir_viewer.json": {
+      "size": 3921,
+      "mtime_ns": 1793777615000201435
+    },
+    "0fbace15ed737eb5/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777615000201435
+    },
+    "0fbace15ed737eb5/key.bin": {
+      "size": 6258,
+      "mtime_ns": 1793777627250338040
+    },
+    "0fbace15ed737eb5/output.bin": {
+      "size": 155625,
+      "mtime_ns": 1793777627250338040
+    },
+    "0fbace15ed737eb5/input.fir": {
+      "size": 5570,
+      "mtime_ns": 1793777615000201435
+    },
+    "52bbe220dc2422c3/input.ir_viewer.json": {
+      "size": 3917,
+      "mtime_ns": 1793777431169092596
+    },
+    "52bbe220dc2422c3/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777431169092596
+    },
+    "52bbe220dc2422c3/key.bin": {
+      "size": 6267,
+      "mtime_ns": 1793777443008232159
+    },
+    "52bbe220dc2422c3/output.bin": {
+      "size": 36797,
+      "mtime_ns": 1793777443008232159
+    },
+    "52bbe220dc2422c3/input.fir": {
+      "size": 5579,
+      "mtime_ns": 1793777431169092596
+    },
+    "fdcebf9a5cd534cd/input.ir_viewer.json": {
+      "size": 2499,
+      "mtime_ns": 1793777396228677252
+    },
+    "fdcebf9a5cd534cd/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777396228677252
+    },
+    "fdcebf9a5cd534cd/key.bin": {
+      "size": 4203,
+      "mtime_ns": 1793777396801684106
+    },
+    "fdcebf9a5cd534cd/output.bin": {
+      "size": 31564,
+      "mtime_ns": 1793777396801684106
+    },
+    "fdcebf9a5cd534cd/input.fir": {
+      "size": 3515,
+      "mtime_ns": 1793777396228677252
+    },
+    "9630efc98c3474a1/input.ir_viewer.json": {
+      "size": 2132,
+      "mtime_ns": 1793777665123757726
+    },
+    "9630efc98c3474a1/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777665123757726
+    },
+    "9630efc98c3474a1/key.bin": {
+      "size": 3095,
+      "mtime_ns": 1793777670796820257
+    },
+    "9630efc98c3474a1/output.bin": {
+      "size": 34022,
+      "mtime_ns": 1793777670796820257
+    },
+    "9630efc98c3474a1/input.fir": {
+      "size": 2407,
+      "mtime_ns": 1793777665123757726
+    },
+    "1c94b728923a700b/input.ir_viewer.json": {
+      "size": 2136,
+      "mtime_ns": 1793777483758708249
+    },
+    "1c94b728923a700b/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777483758708249
+    },
+    "1c94b728923a700b/key.bin": {
+      "size": 3117,
+      "mtime_ns": 1793777492369808037
+    },
+    "1c94b728923a700b/output.bin": {
+      "size": 30019,
+      "mtime_ns": 1793777492369808037
+    },
+    "1c94b728923a700b/input.fir": {
+      "size": 2429,
+      "mtime_ns": 1793777483758708249
+    },
+    "d48254aa48358be8/input.ir_viewer.json": {
+      "size": 3915,
+      "mtime_ns": 1793777781873028789
+    },
+    "d48254aa48358be8/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777781873028789
+    },
+    "d48254aa48358be8/key.bin": {
+      "size": 6244,
+      "mtime_ns": 1793777786963083504
+    },
+    "d48254aa48358be8/output.bin": {
+      "size": 46669,
+      "mtime_ns": 1793777786963083504
+    },
+    "d48254aa48358be8/input.fir": {
+      "size": 5556,
+      "mtime_ns": 1793777781873028789
+    },
+    "49e75ca0384ee0dc/input.ir_viewer.json": {
+      "size": 3916,
+      "mtime_ns": 1793777452780346923
+    },
+    "49e75ca0384ee0dc/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777452780346923
+    },
+    "49e75ca0384ee0dc/key.bin": {
+      "size": 6266,
+      "mtime_ns": 1793777466483507214
+    },
+    "49e75ca0384ee0dc/output.bin": {
+      "size": 40055,
+      "mtime_ns": 1793777466483507214
+    },
+    "49e75ca0384ee0dc/input.fir": {
+      "size": 5578,
+      "mtime_ns": 1793777452780346923
+    },
+    "ceca98380b24a9b7/input.ir_viewer.json": {
+      "size": 2134,
+      "mtime_ns": 1793777765193849114
+    },
+    "ceca98380b24a9b7/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777765193849114
+    },
+    "ceca98380b24a9b7/key.bin": {
+      "size": 3103,
+      "mtime_ns": 1793777770856910186
+    },
+    "ceca98380b24a9b7/output.bin": {
+      "size": 46141,
+      "mtime_ns": 1793777770856910186
+    },
+    "ceca98380b24a9b7/input.fir": {
+      "size": 2415,
+      "mtime_ns": 1793777765193849114
+    },
+    "8c699764d4d842b1/input.ir_viewer.json": {
+      "size": 3088,
+      "mtime_ns": 1793777727661442564
+    },
+    "8c699764d4d842b1/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777727661442564
+    },
+    "8c699764d4d842b1/key.bin": {
+      "size": 4535,
+      "mtime_ns": 1793777727881444957
+    },
+    "8c699764d4d842b1/output.bin": {
+      "size": 58854,
+      "mtime_ns": 1793777727881444957
+    },
+    "8c699764d4d842b1/input.fir": {
+      "size": 3847,
+      "mtime_ns": 1793777727661442564
+    },
+    "1e41a9bfb486966b/input.ir_viewer.json": {
+      "size": 2134,
+      "mtime_ns": 1793777592021944011
+    },
+    "1e41a9bfb486966b/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777592021944011
+    },
+    "1e41a9bfb486966b/key.bin": {
+      "size": 3123,
+      "mtime_ns": 1793777600349037480
+    },
+    "1e41a9bfb486966b/output.bin": {
+      "size": 29969,
+      "mtime_ns": 1793777600349037480
+    },
+    "1e41a9bfb486966b/input.fir": {
+      "size": 2435,
+      "mtime_ns": 1793777592021944011
+    },
+    "31b92411fa28aca9/input.ir_viewer.json": {
+      "size": 3920,
+      "mtime_ns": 1793777627640342382
+    },
+    "31b92411fa28aca9/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777627639342370
+    },
+    "31b92411fa28aca9/key.bin": {
+      "size": 6278,
+      "mtime_ns": 1793777643864522631
+    },
+    "31b92411fa28aca9/output.bin": {
+      "size": 39522,
+      "mtime_ns": 1793777643864522631
+    },
+    "31b92411fa28aca9/input.fir": {
+      "size": 5590,
+      "mtime_ns": 1793777627640342382
+    },
+    "54c3a018dd709eab/input.ir_viewer.json": {
+      "size": 6904,
+      "mtime_ns": 1793777837803627135
+    },
+    "54c3a018dd709eab/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777837803627135
+    },
+    "54c3a018dd709eab/key.bin": {
+      "size": 8300,
+      "mtime_ns": 1793777838061629881
+    },
+    "54c3a018dd709eab/output.bin": {
+      "size": 30941,
+      "mtime_ns": 1793777838061629881
+    },
+    "54c3a018dd709eab/input.fir": {
+      "size": 7612,
+      "mtime_ns": 1793777837803627135
+    },
+    "d9ceb023823057b9/input.ir_viewer.json": {
+      "size": 3914,
+      "mtime_ns": 1793777824724487766
+    },
+    "d9ceb023823057b9/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777824724487766
+    },
+    "d9ceb023823057b9/key.bin": {
+      "size": 6244,
+      "mtime_ns": 1793777829826542172
+    },
+    "d9ceb023823057b9/output.bin": {
+      "size": 72446,
+      "mtime_ns": 1793777829826542172
+    },
+    "d9ceb023823057b9/input.fir": {
+      "size": 5556,
+      "mtime_ns": 1793777824724487766
+    },
+    "5257df2260eb2a67/input.ir_viewer.json": {
+      "size": 3929,
+      "mtime_ns": 1793777787363087801
+    },
+    "5257df2260eb2a67/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777787363087801
+    },
+    "5257df2260eb2a67/key.bin": {
+      "size": 6250,
+      "mtime_ns": 1793777821359451856
+    },
+    "5257df2260eb2a67/output.bin": {
+      "size": 75064,
+      "mtime_ns": 1793777821359451856
+    },
+    "5257df2260eb2a67/input.fir": {
+      "size": 5562,
+      "mtime_ns": 1793777787363087801
+    },
+    "6b57079e34da00e0/input.ir_viewer.json": {
+      "size": 3922,
+      "mtime_ns": 1793777515837078603
+    },
+    "6b57079e34da00e0/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777515837078603
+    },
+    "6b57079e34da00e0/key.bin": {
+      "size": 6267,
+      "mtime_ns": 1793777527175208624
+    },
+    "6b57079e34da00e0/output.bin": {
+      "size": 35816,
+      "mtime_ns": 1793777527175208624
+    },
+    "6b57079e34da00e0/input.fir": {
+      "size": 5579,
+      "mtime_ns": 1793777515837078603
+    },
+    "3172fdacd69f0404/input.ir_viewer.json": {
+      "size": 2126,
+      "mtime_ns": 1793777822186460684
+    },
+    "3172fdacd69f0404/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777822186460684
+    },
+    "3172fdacd69f0404/key.bin": {
+      "size": 3103,
+      "mtime_ns": 1793777824466485014
+    },
+    "3172fdacd69f0404/output.bin": {
+      "size": 58259,
+      "mtime_ns": 1793777824466485014
+    },
+    "3172fdacd69f0404/input.fir": {
+      "size": 2415,
+      "mtime_ns": 1793777822186460684
+    },
+    "2a454caf5158c841/input.ir_viewer.json": {
+      "size": 2134,
+      "mtime_ns": 1793777507568983503
+    },
+    "2a454caf5158c841/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777507568983503
+    },
+    "2a454caf5158c841/key.bin": {
+      "size": 3117,
+      "mtime_ns": 1793777515462074295
+    },
+    "2a454caf5158c841/output.bin": {
+      "size": 26038,
+      "mtime_ns": 1793777515462074295
+    },
+    "2a454caf5158c841/input.fir": {
+      "size": 2429,
+      "mtime_ns": 1793777507568983503
+    },
+    "e8b6b92c07738854/input.ir_viewer.json": {
+      "size": 3930,
+      "mtime_ns": 1793777681237935126
+    },
+    "e8b6b92c07738854/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777681236935115
+    },
+    "e8b6b92c07738854/key.bin": {
+      "size": 6264,
+      "mtime_ns": 1793777727405439780
+    },
+    "e8b6b92c07738854/output.bin": {
+      "size": 43613,
+      "mtime_ns": 1793777727405439780
+    },
+    "e8b6b92c07738854/input.fir": {
+      "size": 5576,
+      "mtime_ns": 1793777681236935115
+    },
+    "cb85679b450a78c7/input.ir_viewer.json": {
+      "size": 3922,
+      "mtime_ns": 1793777492626811011
+    },
+    "cb85679b450a78c7/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777492626811011
+    },
+    "cb85679b450a78c7/key.bin": {
+      "size": 6258,
+      "mtime_ns": 1793777507200979264
+    },
+    "cb85679b450a78c7/output.bin": {
+      "size": 153628,
+      "mtime_ns": 1793777507199979253
+    },
+    "cb85679b450a78c7/input.fir": {
+      "size": 5570,
+      "mtime_ns": 1793777492626811011
+    },
+    "ee5ca9ce4260fabd/input.ir_viewer.json": {
+      "size": 3922,
+      "mtime_ns": 1793777652696620448
+    },
+    "ee5ca9ce4260fabd/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777652696620448
+    },
+    "ee5ca9ce4260fabd/key.bin": {
+      "size": 6258,
+      "mtime_ns": 1793777664755753666
+    },
+    "ee5ca9ce4260fabd/output.bin": {
+      "size": 458920,
+      "mtime_ns": 1793777664754753655
+    },
+    "ee5ca9ce4260fabd/input.fir": {
+      "size": 5570,
+      "mtime_ns": 1793777652696620448
+    }
+  },
+  "attempted_sample": {
+    "batch": 1,
+    "phase": "measure",
+    "scope": "forward",
+    "cycle": 9,
+    "step": 0
+  },
+  "backend_calls": 0,
+  "cache_files_after": {
+    "8fe1abd39bebc66e/input.ir_viewer.json": {
+      "size": 2138,
+      "mtime_ns": 1793777728256449034
+    },
+    "8fe1abd39bebc66e/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777728256449034
+    },
+    "8fe1abd39bebc66e/key.bin": {
+      "size": 3103,
+      "mtime_ns": 1793777733818509477
+    },
+    "8fe1abd39bebc66e/output.bin": {
+      "size": 61376,
+      "mtime_ns": 1793777733818509477
+    },
+    "8fe1abd39bebc66e/input.fir": {
+      "size": 2415,
+      "mtime_ns": 1793777728256449034
+    },
+    "18505dfd8ea2bd8d/input.ir_viewer.json": {
+      "size": 2240,
+      "mtime_ns": 1793777836094608943
+    },
+    "18505dfd8ea2bd8d/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777836094608943
+    },
+    "18505dfd8ea2bd8d/key.bin": {
+      "size": 3927,
+      "mtime_ns": 1793777837352622335
+    },
+    "18505dfd8ea2bd8d/output.bin": {
+      "size": 54548,
+      "mtime_ns": 1793777837352622335
+    },
+    "18505dfd8ea2bd8d/input.fir": {
+      "size": 3239,
+      "mtime_ns": 1793777836094608943
+    },
+    "cd75e9213e9b1fc5/input.ir_viewer.json": {
+      "size": 3925,
+      "mtime_ns": 1793777527434211589
+    },
+    "cd75e9213e9b1fc5/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777527434211589
+    },
+    "cd75e9213e9b1fc5/key.bin": {
+      "size": 6278,
+      "mtime_ns": 1793777591150934222
+    },
+    "cd75e9213e9b1fc5/output.bin": {
+      "size": 35306,
+      "mtime_ns": 1793777591150934222
+    },
+    "cd75e9213e9b1fc5/input.fir": {
+      "size": 5590,
+      "mtime_ns": 1793777527434211589
+    },
+    "7a793313de4aafcd/input.ir_viewer.json": {
+      "size": 3070,
+      "mtime_ns": 1793777821617454610
+    },
+    "7a793313de4aafcd/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777821617454610
+    },
+    "7a793313de4aafcd/key.bin": {
+      "size": 4535,
+      "mtime_ns": 1793777821808456649
+    },
+    "7a793313de4aafcd/output.bin": {
+      "size": 57601,
+      "mtime_ns": 1793777821808456649
+    },
+    "7a793313de4aafcd/input.fir": {
+      "size": 3847,
+      "mtime_ns": 1793777821617454610
+    },
+    "527e87fe0c81c70f/input.ir_viewer.json": {
+      "size": 3921,
+      "mtime_ns": 1793777744646626941
+    },
+    "527e87fe0c81c70f/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777744645626930
+    },
+    "527e87fe0c81c70f/key.bin": {
+      "size": 6238,
+      "mtime_ns": 1793777754057728818
+    },
+    "527e87fe0c81c70f/output.bin": {
+      "size": 451758,
+      "mtime_ns": 1793777754057728818
+    },
+    "527e87fe0c81c70f/input.fir": {
+      "size": 5550,
+      "mtime_ns": 1793777744646626941
+    },
+    "afd9066d271ba88a/input.ir_viewer.json": {
+      "size": 2116,
+      "mtime_ns": 1793777778995997839
+    },
+    "afd9066d271ba88a/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777778995997839
+    },
+    "afd9066d271ba88a/key.bin": {
+      "size": 3095,
+      "mtime_ns": 1793777781491024680
+    },
+    "afd9066d271ba88a/output.bin": {
+      "size": 34005,
+      "mtime_ns": 1793777781491024680
+    },
+    "afd9066d271ba88a/input.fir": {
+      "size": 2407,
+      "mtime_ns": 1793777778995997839
+    },
+    "d2783ae46fe2c5f7/input.ir_viewer.json": {
+      "size": 3904,
+      "mtime_ns": 1793777830214546307
+    },
+    "d2783ae46fe2c5f7/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777830214546307
+    },
+    "d2783ae46fe2c5f7/key.bin": {
+      "size": 6226,
+      "mtime_ns": 1793777835843606270
+    },
+    "d2783ae46fe2c5f7/output.bin": {
+      "size": 457961,
+      "mtime_ns": 1793777835843606270
+    },
+    "d2783ae46fe2c5f7/input.fir": {
+      "size": 5538,
+      "mtime_ns": 1793777830214546307
+    },
+    "a257222ecbf35dfd/input.ir_viewer.json": {
+      "size": 3913,
+      "mtime_ns": 1793777771235914271
+    },
+    "a257222ecbf35dfd/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777771235914271
+    },
+    "a257222ecbf35dfd/key.bin": {
+      "size": 6232,
+      "mtime_ns": 1793777778745995148
+    },
+    "a257222ecbf35dfd/output.bin": {
+      "size": 450514,
+      "mtime_ns": 1793777778744995137
+    },
+    "a257222ecbf35dfd/input.fir": {
+      "size": 5544,
+      "mtime_ns": 1793777771235914271
+    },
+    "359667c5dda5db37/input.ir_viewer.json": {
+      "size": 3907,
+      "mtime_ns": 1793777397193688795
+    },
+    "359667c5dda5db37/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777397193688795
+    },
+    "359667c5dda5db37/key.bin": {
+      "size": 6255,
+      "mtime_ns": 1793777404753779080
+    },
+    "359667c5dda5db37/output.bin": {
+      "size": 38745,
+      "mtime_ns": 1793777404753779080
+    },
+    "359667c5dda5db37/input.fir": {
+      "size": 5567,
+      "mtime_ns": 1793777397193688795
+    },
+    "cfcd1c81d1038400/input.ir_viewer.json": {
+      "size": 3091,
+      "mtime_ns": 1793777443263235158
+    },
+    "cfcd1c81d1038400/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777443263235158
+    },
+    "cfcd1c81d1038400/key.bin": {
+      "size": 4569,
+      "mtime_ns": 1793777443464237522
+    },
+    "cfcd1c81d1038400/output.bin": {
+      "size": 25934,
+      "mtime_ns": 1793777443464237522
+    },
+    "cfcd1c81d1038400/input.fir": {
+      "size": 3881,
+      "mtime_ns": 1793777443263235158
+    },
+    "2099faa930f82524/input.ir_viewer.json": {
+      "size": 3082,
+      "mtime_ns": 1793777591563938863
+    },
+    "2099faa930f82524/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777591563938863
+    },
+    "2099faa930f82524/key.bin": {
+      "size": 4569,
+      "mtime_ns": 1793777591774941235
+    },
+    "2099faa930f82524/output.bin": {
+      "size": 28160,
+      "mtime_ns": 1793777591774941235
+    },
+    "2099faa930f82524/input.fir": {
+      "size": 3881,
+      "mtime_ns": 1793777591563938863
+    },
+    "c246c9ec2745e75c/input.ir_viewer.json": {
+      "size": 3920,
+      "mtime_ns": 1793777600733041786
+    },
+    "c246c9ec2745e75c/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777600733041786
+    },
+    "c246c9ec2745e75c/key.bin": {
+      "size": 6266,
+      "mtime_ns": 1793777614740198530
+    },
+    "c246c9ec2745e75c/output.bin": {
+      "size": 38065,
+      "mtime_ns": 1793777614740198530
+    },
+    "c246c9ec2745e75c/input.fir": {
+      "size": 5578,
+      "mtime_ns": 1793777600733041786
+    },
+    "2ea950853705420c/input.ir_viewer.json": {
+      "size": 2148,
+      "mtime_ns": 1793777387379571210
+    },
+    "2ea950853705420c/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777387379571210
+    },
+    "2ea950853705420c/key.bin": {
+      "size": 3117,
+      "mtime_ns": 1793777395967674130
+    },
+    "2ea950853705420c/output.bin": {
+      "size": 36641,
+      "mtime_ns": 1793777395967674130
+    },
+    "2ea950853705420c/input.fir": {
+      "size": 2429,
+      "mtime_ns": 1793777387379571210
+    },
+    "6c70012c1c17f347/input.ir_viewer.json": {
+      "size": 3910,
+      "mtime_ns": 1793777414090890242
+    },
+    "6c70012c1c17f347/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777414090890242
+    },
+    "6c70012c1c17f347/key.bin": {
+      "size": 6258,
+      "mtime_ns": 1793777430800088237
+    },
+    "6c70012c1c17f347/output.bin": {
+      "size": 73675,
+      "mtime_ns": 1793777430799088225
+    },
+    "6c70012c1c17f347/input.fir": {
+      "size": 5570,
+      "mtime_ns": 1793777414090890242
+    },
+    "bdda0f5f585a437a/input.ir_viewer.json": {
+      "size": 3921,
+      "mtime_ns": 1793777381869505003
+    },
+    "bdda0f5f585a437a/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777381868504991
+    },
+    "bdda0f5f585a437a/key.bin": {
+      "size": 6250,
+      "mtime_ns": 1793777386957566145
+    },
+    "bdda0f5f585a437a/output.bin": {
+      "size": 55184,
+      "mtime_ns": 1793777386957566145
+    },
+    "bdda0f5f585a437a/input.fir": {
+      "size": 5562,
+      "mtime_ns": 1793777381868504991
+    },
+    "351be3680c9f2de8/input.ir_viewer.json": {
+      "size": 3929,
+      "mtime_ns": 1793777754444733003
+    },
+    "351be3680c9f2de8/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777754443732992
+    },
+    "351be3680c9f2de8/key.bin": {
+      "size": 6250,
+      "mtime_ns": 1793777764944846428
+    },
+    "351be3680c9f2de8/output.bin": {
+      "size": 79150,
+      "mtime_ns": 1793777764944846428
+    },
+    "351be3680c9f2de8/input.fir": {
+      "size": 5562,
+      "mtime_ns": 1793777754444733003
+    },
+    "8203707db811c1f7/input.ir_viewer.json": {
+      "size": 3927,
+      "mtime_ns": 1793777671051823066
+    },
+    "8203707db811c1f7/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777671050823055
+    },
+    "8203707db811c1f7/key.bin": {
+      "size": 6244,
+      "mtime_ns": 1793777680859930973
+    },
+    "8203707db811c1f7/output.bin": {
+      "size": 51552,
+      "mtime_ns": 1793777680859930973
+    },
+    "8203707db811c1f7/input.fir": {
+      "size": 5556,
+      "mtime_ns": 1793777671050823055
+    },
+    "2a229eb85937de54/input.ir_viewer.json": {
+      "size": 2140,
+      "mtime_ns": 1793777443821241721
+    },
+    "2a229eb85937de54/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777443821241721
+    },
+    "2a229eb85937de54/key.bin": {
+      "size": 3123,
+      "mtime_ns": 1793777452408342561
+    },
+    "2a229eb85937de54/output.bin": {
+      "size": 36515,
+      "mtime_ns": 1793777452408342561
+    },
+    "2a229eb85937de54/input.fir": {
+      "size": 2435,
+      "mtime_ns": 1793777443821241721
+    },
+    "05855c8c13ff692b/input.ir_viewer.json": {
+      "size": 3924,
+      "mtime_ns": 1793777734075512268
+    },
+    "05855c8c13ff692b/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777734074512257
+    },
+    "05855c8c13ff692b/key.bin": {
+      "size": 6244,
+      "mtime_ns": 1793777744261622769
+    },
+    "05855c8c13ff692b/output.bin": {
+      "size": 70741,
+      "mtime_ns": 1793777744261622769
+    },
+    "05855c8c13ff692b/input.fir": {
+      "size": 5556,
+      "mtime_ns": 1793777734074512257
+    },
+    "e6c6b66e27f95d69/input.ir_viewer.json": {
+      "size": 3922,
+      "mtime_ns": 1793777466740510213
+    },
+    "e6c6b66e27f95d69/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777466740510213
+    },
+    "e6c6b66e27f95d69/key.bin": {
+      "size": 6266,
+      "mtime_ns": 1793777483389703967
+    },
+    "e6c6b66e27f95d69/output.bin": {
+      "size": 38573,
+      "mtime_ns": 1793777483389703967
+    },
+    "e6c6b66e27f95d69/input.fir": {
+      "size": 5578,
+      "mtime_ns": 1793777466740510213
+    },
+    "6fb7a7e597cbe1cf/input.ir_viewer.json": {
+      "size": 2134,
+      "mtime_ns": 1793777644233526722
+    },
+    "6fb7a7e597cbe1cf/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777644233526722
+    },
+    "6fb7a7e597cbe1cf/key.bin": {
+      "size": 3123,
+      "mtime_ns": 1793777652439617605
+    },
+    "6fb7a7e597cbe1cf/output.bin": {
+      "size": 29702,
+      "mtime_ns": 1793777652439617605
+    },
+    "6fb7a7e597cbe1cf/input.fir": {
+      "size": 2435,
+      "mtime_ns": 1793777644233526722
+    },
+    "610684c608b0f474/input.ir_viewer.json": {
+      "size": 2132,
+      "mtime_ns": 1793777405116783409
+    },
+    "610684c608b0f474/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777405116783409
+    },
+    "610684c608b0f474/key.bin": {
+      "size": 3117,
+      "mtime_ns": 1793777413835887211
+    },
+    "610684c608b0f474/output.bin": {
+      "size": 30681,
+      "mtime_ns": 1793777413835887211
+    },
+    "610684c608b0f474/input.fir": {
+      "size": 2429,
+      "mtime_ns": 1793777405116783409
+    },
+    "0fbace15ed737eb5/input.ir_viewer.json": {
+      "size": 3921,
+      "mtime_ns": 1793777615000201435
+    },
+    "0fbace15ed737eb5/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777615000201435
+    },
+    "0fbace15ed737eb5/key.bin": {
+      "size": 6258,
+      "mtime_ns": 1793777627250338040
+    },
+    "0fbace15ed737eb5/output.bin": {
+      "size": 155625,
+      "mtime_ns": 1793777627250338040
+    },
+    "0fbace15ed737eb5/input.fir": {
+      "size": 5570,
+      "mtime_ns": 1793777615000201435
+    },
+    "52bbe220dc2422c3/input.ir_viewer.json": {
+      "size": 3917,
+      "mtime_ns": 1793777431169092596
+    },
+    "52bbe220dc2422c3/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777431169092596
+    },
+    "52bbe220dc2422c3/key.bin": {
+      "size": 6267,
+      "mtime_ns": 1793777443008232159
+    },
+    "52bbe220dc2422c3/output.bin": {
+      "size": 36797,
+      "mtime_ns": 1793777443008232159
+    },
+    "52bbe220dc2422c3/input.fir": {
+      "size": 5579,
+      "mtime_ns": 1793777431169092596
+    },
+    "fdcebf9a5cd534cd/input.ir_viewer.json": {
+      "size": 2499,
+      "mtime_ns": 1793777396228677252
+    },
+    "fdcebf9a5cd534cd/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777396228677252
+    },
+    "fdcebf9a5cd534cd/key.bin": {
+      "size": 4203,
+      "mtime_ns": 1793777396801684106
+    },
+    "fdcebf9a5cd534cd/output.bin": {
+      "size": 31564,
+      "mtime_ns": 1793777396801684106
+    },
+    "fdcebf9a5cd534cd/input.fir": {
+      "size": 3515,
+      "mtime_ns": 1793777396228677252
+    },
+    "9630efc98c3474a1/input.ir_viewer.json": {
+      "size": 2132,
+      "mtime_ns": 1793777665123757726
+    },
+    "9630efc98c3474a1/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777665123757726
+    },
+    "9630efc98c3474a1/key.bin": {
+      "size": 3095,
+      "mtime_ns": 1793777670796820257
+    },
+    "9630efc98c3474a1/output.bin": {
+      "size": 34022,
+      "mtime_ns": 1793777670796820257
+    },
+    "9630efc98c3474a1/input.fir": {
+      "size": 2407,
+      "mtime_ns": 1793777665123757726
+    },
+    "1c94b728923a700b/input.ir_viewer.json": {
+      "size": 2136,
+      "mtime_ns": 1793777483758708249
+    },
+    "1c94b728923a700b/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777483758708249
+    },
+    "1c94b728923a700b/key.bin": {
+      "size": 3117,
+      "mtime_ns": 1793777492369808037
+    },
+    "1c94b728923a700b/output.bin": {
+      "size": 30019,
+      "mtime_ns": 1793777492369808037
+    },
+    "1c94b728923a700b/input.fir": {
+      "size": 2429,
+      "mtime_ns": 1793777483758708249
+    },
+    "d48254aa48358be8/input.ir_viewer.json": {
+      "size": 3915,
+      "mtime_ns": 1793777781873028789
+    },
+    "d48254aa48358be8/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777781873028789
+    },
+    "d48254aa48358be8/key.bin": {
+      "size": 6244,
+      "mtime_ns": 1793777786963083504
+    },
+    "d48254aa48358be8/output.bin": {
+      "size": 46669,
+      "mtime_ns": 1793777786963083504
+    },
+    "d48254aa48358be8/input.fir": {
+      "size": 5556,
+      "mtime_ns": 1793777781873028789
+    },
+    "49e75ca0384ee0dc/input.ir_viewer.json": {
+      "size": 3916,
+      "mtime_ns": 1793777452780346923
+    },
+    "49e75ca0384ee0dc/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777452780346923
+    },
+    "49e75ca0384ee0dc/key.bin": {
+      "size": 6266,
+      "mtime_ns": 1793777466483507214
+    },
+    "49e75ca0384ee0dc/output.bin": {
+      "size": 40055,
+      "mtime_ns": 1793777466483507214
+    },
+    "49e75ca0384ee0dc/input.fir": {
+      "size": 5578,
+      "mtime_ns": 1793777452780346923
+    },
+    "ceca98380b24a9b7/input.ir_viewer.json": {
+      "size": 2134,
+      "mtime_ns": 1793777765193849114
+    },
+    "ceca98380b24a9b7/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777765193849114
+    },
+    "ceca98380b24a9b7/key.bin": {
+      "size": 3103,
+      "mtime_ns": 1793777770856910186
+    },
+    "ceca98380b24a9b7/output.bin": {
+      "size": 46141,
+      "mtime_ns": 1793777770856910186
+    },
+    "ceca98380b24a9b7/input.fir": {
+      "size": 2415,
+      "mtime_ns": 1793777765193849114
+    },
+    "8c699764d4d842b1/input.ir_viewer.json": {
+      "size": 3088,
+      "mtime_ns": 1793777727661442564
+    },
+    "8c699764d4d842b1/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777727661442564
+    },
+    "8c699764d4d842b1/key.bin": {
+      "size": 4535,
+      "mtime_ns": 1793777727881444957
+    },
+    "8c699764d4d842b1/output.bin": {
+      "size": 58854,
+      "mtime_ns": 1793777727881444957
+    },
+    "8c699764d4d842b1/input.fir": {
+      "size": 3847,
+      "mtime_ns": 1793777727661442564
+    },
+    "1e41a9bfb486966b/input.ir_viewer.json": {
+      "size": 2134,
+      "mtime_ns": 1793777592021944011
+    },
+    "1e41a9bfb486966b/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777592021944011
+    },
+    "1e41a9bfb486966b/key.bin": {
+      "size": 3123,
+      "mtime_ns": 1793777600349037480
+    },
+    "1e41a9bfb486966b/output.bin": {
+      "size": 29969,
+      "mtime_ns": 1793777600349037480
+    },
+    "1e41a9bfb486966b/input.fir": {
+      "size": 2435,
+      "mtime_ns": 1793777592021944011
+    },
+    "31b92411fa28aca9/input.ir_viewer.json": {
+      "size": 3920,
+      "mtime_ns": 1793777627640342382
+    },
+    "31b92411fa28aca9/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777627639342370
+    },
+    "31b92411fa28aca9/key.bin": {
+      "size": 6278,
+      "mtime_ns": 1793777643864522631
+    },
+    "31b92411fa28aca9/output.bin": {
+      "size": 39522,
+      "mtime_ns": 1793777643864522631
+    },
+    "31b92411fa28aca9/input.fir": {
+      "size": 5590,
+      "mtime_ns": 1793777627640342382
+    },
+    "54c3a018dd709eab/input.ir_viewer.json": {
+      "size": 6904,
+      "mtime_ns": 1793777837803627135
+    },
+    "54c3a018dd709eab/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777837803627135
+    },
+    "54c3a018dd709eab/key.bin": {
+      "size": 8300,
+      "mtime_ns": 1793777838061629881
+    },
+    "54c3a018dd709eab/output.bin": {
+      "size": 30941,
+      "mtime_ns": 1793777838061629881
+    },
+    "54c3a018dd709eab/input.fir": {
+      "size": 7612,
+      "mtime_ns": 1793777837803627135
+    },
+    "d9ceb023823057b9/input.ir_viewer.json": {
+      "size": 3914,
+      "mtime_ns": 1793777824724487766
+    },
+    "d9ceb023823057b9/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777824724487766
+    },
+    "d9ceb023823057b9/key.bin": {
+      "size": 6244,
+      "mtime_ns": 1793777829826542172
+    },
+    "d9ceb023823057b9/output.bin": {
+      "size": 72446,
+      "mtime_ns": 1793777829826542172
+    },
+    "d9ceb023823057b9/input.fir": {
+      "size": 5556,
+      "mtime_ns": 1793777824724487766
+    },
+    "5257df2260eb2a67/input.ir_viewer.json": {
+      "size": 3929,
+      "mtime_ns": 1793777787363087801
+    },
+    "5257df2260eb2a67/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777787363087801
+    },
+    "5257df2260eb2a67/key.bin": {
+      "size": 6250,
+      "mtime_ns": 1793777821359451856
+    },
+    "5257df2260eb2a67/output.bin": {
+      "size": 75064,
+      "mtime_ns": 1793777821359451856
+    },
+    "5257df2260eb2a67/input.fir": {
+      "size": 5562,
+      "mtime_ns": 1793777787363087801
+    },
+    "6b57079e34da00e0/input.ir_viewer.json": {
+      "size": 3922,
+      "mtime_ns": 1793777515837078603
+    },
+    "6b57079e34da00e0/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777515837078603
+    },
+    "6b57079e34da00e0/key.bin": {
+      "size": 6267,
+      "mtime_ns": 1793777527175208624
+    },
+    "6b57079e34da00e0/output.bin": {
+      "size": 35816,
+      "mtime_ns": 1793777527175208624
+    },
+    "6b57079e34da00e0/input.fir": {
+      "size": 5579,
+      "mtime_ns": 1793777515837078603
+    },
+    "3172fdacd69f0404/input.ir_viewer.json": {
+      "size": 2126,
+      "mtime_ns": 1793777822186460684
+    },
+    "3172fdacd69f0404/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777822186460684
+    },
+    "3172fdacd69f0404/key.bin": {
+      "size": 3103,
+      "mtime_ns": 1793777824466485014
+    },
+    "3172fdacd69f0404/output.bin": {
+      "size": 58259,
+      "mtime_ns": 1793777824466485014
+    },
+    "3172fdacd69f0404/input.fir": {
+      "size": 2415,
+      "mtime_ns": 1793777822186460684
+    },
+    "2a454caf5158c841/input.ir_viewer.json": {
+      "size": 2134,
+      "mtime_ns": 1793777507568983503
+    },
+    "2a454caf5158c841/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777507568983503
+    },
+    "2a454caf5158c841/key.bin": {
+      "size": 3117,
+      "mtime_ns": 1793777515462074295
+    },
+    "2a454caf5158c841/output.bin": {
+      "size": 26038,
+      "mtime_ns": 1793777515462074295
+    },
+    "2a454caf5158c841/input.fir": {
+      "size": 2429,
+      "mtime_ns": 1793777507568983503
+    },
+    "e8b6b92c07738854/input.ir_viewer.json": {
+      "size": 3930,
+      "mtime_ns": 1793777681237935126
+    },
+    "e8b6b92c07738854/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777681236935115
+    },
+    "e8b6b92c07738854/key.bin": {
+      "size": 6264,
+      "mtime_ns": 1793777727405439780
+    },
+    "e8b6b92c07738854/output.bin": {
+      "size": 43613,
+      "mtime_ns": 1793777727405439780
+    },
+    "e8b6b92c07738854/input.fir": {
+      "size": 5576,
+      "mtime_ns": 1793777681236935115
+    },
+    "cb85679b450a78c7/input.ir_viewer.json": {
+      "size": 3922,
+      "mtime_ns": 1793777492626811011
+    },
+    "cb85679b450a78c7/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777492626811011
+    },
+    "cb85679b450a78c7/key.bin": {
+      "size": 6258,
+      "mtime_ns": 1793777507200979264
+    },
+    "cb85679b450a78c7/output.bin": {
+      "size": 153628,
+      "mtime_ns": 1793777507199979253
+    },
+    "cb85679b450a78c7/input.fir": {
+      "size": 5570,
+      "mtime_ns": 1793777492626811011
+    },
+    "ee5ca9ce4260fabd/input.ir_viewer.json": {
+      "size": 3922,
+      "mtime_ns": 1793777652696620448
+    },
+    "ee5ca9ce4260fabd/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793777652696620448
+    },
+    "ee5ca9ce4260fabd/key.bin": {
+      "size": 6258,
+      "mtime_ns": 1793777664755753666
+    },
+    "ee5ca9ce4260fabd/output.bin": {
+      "size": 458920,
+      "mtime_ns": 1793777664754753655
+    },
+    "ee5ca9ce4260fabd/input.fir": {
+      "size": 5570,
+      "mtime_ns": 1793777652696620448
+    }
+  },
+  "cache_evidence_limit": "Same disk path and file changes are observations, not verified disk hits or compiler invocation counts",
+  "successful_sample_count": 24,
+  "process_elapsed_s": 15.063187032938004
+}

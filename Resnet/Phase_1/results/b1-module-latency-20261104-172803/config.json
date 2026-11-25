@@ -1,0 +1,31 @@
+{
+  "model": "resnet50",
+  "model_variant": "bn_folded_output_split128",
+  "weights": "IMAGENET1K_V2",
+  "precision": "bfloat16",
+  "bn_folded": true,
+  "output_split_channels": 128,
+  "validation_file": "evidence/transform-validation.json",
+  "device": "furiosa:0",
+  "seed": 2026,
+  "image_size": 224,
+  "batches": [
+    1
+  ],
+  "warmup": 3,
+  "iterations": 10,
+  "mixed_batches": [
+    1
+  ],
+  "timeout_s": 1800,
+  "mixed_timeout_s": 7200,
+  "cpu_threads": 1,
+  "workspace_only": true,
+  "max_runtime_s": 3690,
+  "experiment": "isolated_module_latency",
+  "previous_full_model_run": "results/bn-folded-split128-2h-20261104-162935",
+  "inherited_deadline_kst": "2026-11-04T18:29:35.123505+09:00",
+  "cache_scope": "empty at case start; shared within mode sequence; reuse in fresh process",
+  "compile_scope": "independent FX node; no cross-module fusion",
+  "standalone_flatten_policy": "report metadata_only_no_binary if SDK cannot create standalone runnable"
+}

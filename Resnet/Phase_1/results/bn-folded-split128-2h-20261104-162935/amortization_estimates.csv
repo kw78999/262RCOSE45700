@@ -1,0 +1,3 @@
+model_variant,target,workload,cache_intent,job_batch,eager_median_ms,compile_median_ms,eager_startup_estimate_ms,compile_startup_estimate_ms,speedup,status,boundary_calls,boundary_ceil_calls,first_strict_compile_win_calls
+bn_folded_output_split128,resnet50,fixed,disk_reuse_attempt,1,16.827867,7.0905945,14481.839957,3984.120589,2.373266021629075,estimated,-1078.096496529187,1,1
+bn_folded_output_split128,resnet50,fixed,empty_project_cache,1,16.3927295,7.068960000000001,457192.802218,419246.46103299997,2.318973300174283,estimated,-4069.8497732060005,1,1

@@ -1,0 +1,21 @@
+ INFO furiosa_torch::python_ext: Total 926 supported aten ops
+ INFO furiosa_torch::python_ext: Total 802 decomposition rules are added
+DEBUG furiosa_torch::cpp::extension: manual_seed_all is not implemented yet; please use `torch.Generator`
+DEBUG furiosa_torch::device: set num fusion: Fusion(num_fusion=1, num_pe_per_cluster=1, num_chips=1, num_clusters_per_chip=1)
+DEBUG furiosa_torch::device: device index 0: alloc dram & sram 0x100 to avoid allocate 0x0 for tensors, torch treat it as a null pointer
+DEBUG furiosa_torch::device: adjust DRAM shared size to 4294967296
+DEBUG furiosa_torch::device: device index 0: allocated addr isn't 0x0 but NpuOffset(0x17bffff00), possibly memory fusioned or not 0th pe or there is a shared area
+ INFO furiosa_torch::config::cache: Using HOME for cache directory: /root/.cache/furiosa/compiler
+ INFO furiosa_torch::config::cache: Using HOME for cache directory: /root/.cache/furiosa/compiler
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=1:150528, 1_1=3:50176, 2_1=224:224, 3_1=224:1], [Broadcast=1]|[0_1=64:147, 1_1=3:49, 2_1=7:7, 3_1=7:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=4:150528, 1_1=3:50176, 2_1=224:224, 3_1=224:1], [Broadcast=1]|[0_1=64:147, 1_1=3:49, 2_1=7:7, 3_1=7:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=8:150528, 1_1=3:50176, 2_1=224:224, 3_1=224:1], [Broadcast=1]|[0_1=64:147, 1_1=3:49, 2_1=7:7, 3_1=7:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config
+DEBUG furiosa_torch::compiler: importing dfg with signature: ImportSignature { input_dram_shapes: Some([[Broadcast=1]|[0_1=16:150528, 1_1=3:50176, 2_1=224:224, 3_1=224:1], [Broadcast=1]|[0_1=64:147, 1_1=3:49, 2_1=7:7, 3_1=7:1]]), output_dram_shapes: None }
+DEBUG furiosa_torch::ir::dfg: call dfg importer for exported program
+DEBUG furiosa_torch::compiler: compile without given compiler config, use default config

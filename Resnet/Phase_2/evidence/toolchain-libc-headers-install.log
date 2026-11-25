@@ -1,0 +1,25 @@
+## before (2026-11-19T09:48:20+09:00)
+<stdin>:1:10: fatal error: assert.h: No such file or directory
+compilation terminated.
+## apt-get install --dry-run
+The following NEW packages will be installed:
+0 upgraded, 2 newly installed, 0 to remove and 17 not upgraded.
+Inst linux-libc-dev-arm64-cross (6.8.0-25.25cross1 Ubuntu:24.04/noble [all])
+Inst libc6-dev-arm64-cross (2.39-0ubuntu8cross1 Ubuntu:24.04/noble [all])
+## apt-get install -y libc6-dev-arm64-cross (2026-11-19T09:52:39+09:00, 사용자 승인)
+Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 libc6-dev-arm64-cross all 2.39-0ubuntu8cross1 [1629 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 3003 kB in 2s (1370 kB/s)
+Selecting previously unselected package linux-libc-dev-arm64-cross.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19104 files and directories currently installed.)
+Preparing to unpack .../linux-libc-dev-arm64-cross_6.8.0-25.25cross1_all.deb ...
+Unpacking linux-libc-dev-arm64-cross (6.8.0-25.25cross1) ...
+Selecting previously unselected package libc6-dev-arm64-cross.
+Preparing to unpack .../libc6-dev-arm64-cross_2.39-0ubuntu8cross1_all.deb ...
+Unpacking libc6-dev-arm64-cross (2.39-0ubuntu8cross1) ...
+Setting up linux-libc-dev-arm64-cross (6.8.0-25.25cross1) ...
+Setting up libc6-dev-arm64-cross (2.39-0ubuntu8cross1) ...
+## after
+assert.h: found
+ii  libc6-dev-arm64-cross      2.39-0ubuntu8cross1 all          GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ii  linux-libc-dev-arm64-cross 6.8.0-25.25cross1   all          Linux Kernel Headers for development (for cross-compiling)

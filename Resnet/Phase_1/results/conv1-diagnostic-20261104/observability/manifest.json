@@ -1,0 +1,74 @@
+{
+  "instrumented_timings_excluded": true,
+  "observations": [
+    {
+      "mode": "eager",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.worker",
+        "--config",
+        "/root/Resnet/Phase_1/results/conv1-diagnostic-20261104/config.json",
+        "--mode",
+        "eager",
+        "--target",
+        "conv1",
+        "--workload",
+        "mixed",
+        "--cache-intent",
+        "disk_reuse_attempt",
+        "--cache",
+        "/root/Resnet/Phase_1/results/conv1-diagnostic-20261104/caches/eager-mixed",
+        "--output",
+        "/root/Resnet/Phase_1/results/conv1-diagnostic-20261104/observability/eager"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log_line_count": 21,
+      "selected_log_lines": [],
+      "interpretation": "Log entries and backend counters observe recompilation paths, not verified disk hits or codegen counts"
+    },
+    {
+      "mode": "compile",
+      "command": [
+        "/root/venv/bin/python",
+        "-u",
+        "-m",
+        "Resnet.Phase_1.worker",
+        "--config",
+        "/root/Resnet/Phase_1/results/conv1-diagnostic-20261104/config.json",
+        "--mode",
+        "compile",
+        "--target",
+        "conv1",
+        "--workload",
+        "mixed",
+        "--cache-intent",
+        "disk_reuse_attempt",
+        "--cache",
+        "/root/Resnet/Phase_1/results/conv1-diagnostic-20261104/caches/compile-mixed",
+        "--output",
+        "/root/Resnet/Phase_1/results/conv1-diagnostic-20261104/observability/compile"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log_line_count": 61,
+      "selected_log_lines": [
+        "V1104 02:51:37.690000 26942 venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:4514] [0/1] [__recompiles] Recompiling function inner in /root/venv/lib/python3.12/site-packages/torch/_dynamo/external_utils.py:67",
+        "V1104 02:51:37.690000 26942 venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:4514] [0/1] [__recompiles]     triggered by the following guard failure(s):",
+        "V1104 02:51:37.690000 26942 venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:4514] [0/1] [__recompiles]     - 0/0: tensor 'args[0]' size mismatch at index 0. expected 1, actual 4",
+        "V1104 02:51:37.903000 26942 venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:4514] [0/2] [__recompiles] Recompiling function inner in /root/venv/lib/python3.12/site-packages/torch/_dynamo/external_utils.py:67",
+        "V1104 02:51:37.903000 26942 venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:4514] [0/2] [__recompiles]     triggered by the following guard failure(s):",
+        "V1104 02:51:37.903000 26942 venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:4514] [0/2] [__recompiles]     - 0/0: tensor 'args[0]' size mismatch at index 0. expected 1, actual 8",
+        "V1104 02:51:37.903000 26942 venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:4514] [0/2] [__recompiles]     - 0/1: tensor 'args[0]' size mismatch at index 0. expected 4, actual 8",
+        "V1104 02:51:38.280000 26942 venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:4514] [0/3] [__recompiles] Recompiling function inner in /root/venv/lib/python3.12/site-packages/torch/_dynamo/external_utils.py:67",
+        "V1104 02:51:38.280000 26942 venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:4514] [0/3] [__recompiles]     triggered by the following guard failure(s):",
+        "V1104 02:51:38.280000 26942 venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:4514] [0/3] [__recompiles]     - 0/1: tensor 'args[0]' size mismatch at index 0. expected 4, actual 16",
+        "V1104 02:51:38.280000 26942 venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:4514] [0/3] [__recompiles]     - 0/2: tensor 'args[0]' size mismatch at index 0. expected 8, actual 16",
+        "V1104 02:51:38.280000 26942 venv/lib/python3.12/site-packages/torch/_dynamo/guards.py:4514] [0/3] [__recompiles]     - 0/0: tensor 'args[0]' size mismatch at index 0. expected 1, actual 16"
+      ],
+      "interpretation": "Log entries and backend counters observe recompilation paths, not verified disk hits or codegen counts"
+    }
+  ]
+}

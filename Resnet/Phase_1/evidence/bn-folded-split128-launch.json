@@ -1,0 +1,18 @@
+{
+  "started_kst": "2026-11-04T13:05:39.979429+09:00",
+  "runner_pid": 32722,
+  "command": [
+    "/root/venv/bin/python",
+    "-u",
+    "-m",
+    "Resnet.Phase_1.run",
+    "--config",
+    "/root/Resnet/Phase_1/config-bn-folded-split128.json",
+    "--run-dir",
+    "/root/Resnet/Phase_1/results/bn-folded-split128-20261104",
+    "--profiles"
+  ],
+  "log": "/root/Resnet/Phase_1/evidence/bn-folded-split128-console.log",
+  "run_dir": "/root/Resnet/Phase_1/results/bn-folded-split128-20261104",
+  "detached": true
+}

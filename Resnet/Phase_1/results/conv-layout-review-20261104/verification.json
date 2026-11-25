@@ -1,0 +1,11 @@
+{
+  "status": "ok",
+  "diagnostic_trials": 8,
+  "main_model_and_config_unchanged": true,
+  "conv1_lowering_observed": true,
+  "u16_limit_failure_supported_by_layout": true,
+  "split128_verified_in_eager_and_compile": true,
+  "scope": "Single Conv, synthetic batch1; full ResNet50 and other batches not tested",
+  "script_sha256": "f9fa654ba2519bd0abf8b531ad28eb3c3e1a3932282c5f89a51243aac68c4a00",
+  "status_links_valid": true
+}

@@ -1,0 +1,474 @@
+{
+  "status": "ok",
+  "scope": "CPU transformation validation; not NPU inference performance",
+  "weights": {
+    "model": "torchvision.models.resnet50",
+    "weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "checkpoint": "/root/.cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth",
+    "sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+  },
+  "model_transform": {
+    "name": "bn_folded_output_split128",
+    "api": "torch.nn.utils.fuse_conv_bn_eval",
+    "fold_dtype": "float32",
+    "cast_after_fold": "bfloat16",
+    "pair_count": 53,
+    "pairs": [
+      {
+        "conv": "conv1",
+        "batchnorm": "bn1"
+      },
+      {
+        "conv": "layer1.0.conv1",
+        "batchnorm": "layer1.0.bn1"
+      },
+      {
+        "conv": "layer1.0.conv2",
+        "batchnorm": "layer1.0.bn2"
+      },
+      {
+        "conv": "layer1.0.conv3",
+        "batchnorm": "layer1.0.bn3"
+      },
+      {
+        "conv": "layer1.0.downsample.0",
+        "batchnorm": "layer1.0.downsample.1"
+      },
+      {
+        "conv": "layer1.1.conv1",
+        "batchnorm": "layer1.1.bn1"
+      },
+      {
+        "conv": "layer1.1.conv2",
+        "batchnorm": "layer1.1.bn2"
+      },
+      {
+        "conv": "layer1.1.conv3",
+        "batchnorm": "layer1.1.bn3"
+      },
+      {
+        "conv": "layer1.2.conv1",
+        "batchnorm": "layer1.2.bn1"
+      },
+      {
+        "conv": "layer1.2.conv2",
+        "batchnorm": "layer1.2.bn2"
+      },
+      {
+        "conv": "layer1.2.conv3",
+        "batchnorm": "layer1.2.bn3"
+      },
+      {
+        "conv": "layer2.0.conv1",
+        "batchnorm": "layer2.0.bn1"
+      },
+      {
+        "conv": "layer2.0.conv2",
+        "batchnorm": "layer2.0.bn2"
+      },
+      {
+        "conv": "layer2.0.conv3",
+        "batchnorm": "layer2.0.bn3"
+      },
+      {
+        "conv": "layer2.0.downsample.0",
+        "batchnorm": "layer2.0.downsample.1"
+      },
+      {
+        "conv": "layer2.1.conv1",
+        "batchnorm": "layer2.1.bn1"
+      },
+      {
+        "conv": "layer2.1.conv2",
+        "batchnorm": "layer2.1.bn2"
+      },
+      {
+        "conv": "layer2.1.conv3",
+        "batchnorm": "layer2.1.bn3"
+      },
+      {
+        "conv": "layer2.2.conv1",
+        "batchnorm": "layer2.2.bn1"
+      },
+      {
+        "conv": "layer2.2.conv2",
+        "batchnorm": "layer2.2.bn2"
+      },
+      {
+        "conv": "layer2.2.conv3",
+        "batchnorm": "layer2.2.bn3"
+      },
+      {
+        "conv": "layer2.3.conv1",
+        "batchnorm": "layer2.3.bn1"
+      },
+      {
+        "conv": "layer2.3.conv2",
+        "batchnorm": "layer2.3.bn2"
+      },
+      {
+        "conv": "layer2.3.conv3",
+        "batchnorm": "layer2.3.bn3"
+      },
+      {
+        "conv": "layer3.0.conv1",
+        "batchnorm": "layer3.0.bn1"
+      },
+      {
+        "conv": "layer3.0.conv2",
+        "batchnorm": "layer3.0.bn2"
+      },
+      {
+        "conv": "layer3.0.conv3",
+        "batchnorm": "layer3.0.bn3"
+      },
+      {
+        "conv": "layer3.0.downsample.0",
+        "batchnorm": "layer3.0.downsample.1"
+      },
+      {
+        "conv": "layer3.1.conv1",
+        "batchnorm": "layer3.1.bn1"
+      },
+      {
+        "conv": "layer3.1.conv2",
+        "batchnorm": "layer3.1.bn2"
+      },
+      {
+        "conv": "layer3.1.conv3",
+        "batchnorm": "layer3.1.bn3"
+      },
+      {
+        "conv": "layer3.2.conv1",
+        "batchnorm": "layer3.2.bn1"
+      },
+      {
+        "conv": "layer3.2.conv2",
+        "batchnorm": "layer3.2.bn2"
+      },
+      {
+        "conv": "layer3.2.conv3",
+        "batchnorm": "layer3.2.bn3"
+      },
+      {
+        "conv": "layer3.3.conv1",
+        "batchnorm": "layer3.3.bn1"
+      },
+      {
+        "conv": "layer3.3.conv2",
+        "batchnorm": "layer3.3.bn2"
+      },
+      {
+        "conv": "layer3.3.conv3",
+        "batchnorm": "layer3.3.bn3"
+      },
+      {
+        "conv": "layer3.4.conv1",
+        "batchnorm": "layer3.4.bn1"
+      },
+      {
+        "conv": "layer3.4.conv2",
+        "batchnorm": "layer3.4.bn2"
+      },
+      {
+        "conv": "layer3.4.conv3",
+        "batchnorm": "layer3.4.bn3"
+      },
+      {
+        "conv": "layer3.5.conv1",
+        "batchnorm": "layer3.5.bn1"
+      },
+      {
+        "conv": "layer3.5.conv2",
+        "batchnorm": "layer3.5.bn2"
+      },
+      {
+        "conv": "layer3.5.conv3",
+        "batchnorm": "layer3.5.bn3"
+      },
+      {
+        "conv": "layer4.0.conv1",
+        "batchnorm": "layer4.0.bn1"
+      },
+      {
+        "conv": "layer4.0.conv2",
+        "batchnorm": "layer4.0.bn2"
+      },
+      {
+        "conv": "layer4.0.conv3",
+        "batchnorm": "layer4.0.bn3"
+      },
+      {
+        "conv": "layer4.0.downsample.0",
+        "batchnorm": "layer4.0.downsample.1"
+      },
+      {
+        "conv": "layer4.1.conv1",
+        "batchnorm": "layer4.1.bn1"
+      },
+      {
+        "conv": "layer4.1.conv2",
+        "batchnorm": "layer4.1.bn2"
+      },
+      {
+        "conv": "layer4.1.conv3",
+        "batchnorm": "layer4.1.bn3"
+      },
+      {
+        "conv": "layer4.2.conv1",
+        "batchnorm": "layer4.2.bn1"
+      },
+      {
+        "conv": "layer4.2.conv2",
+        "batchnorm": "layer4.2.bn2"
+      },
+      {
+        "conv": "layer4.2.conv3",
+        "batchnorm": "layer4.2.bn3"
+      }
+    ],
+    "remaining_batchnorm": [],
+    "output_partition": {
+      "axis": "output_channels",
+      "chunk_size": 128,
+      "all_input_channels_in_every_part": true,
+      "combine": "concat_dim1",
+      "modules": [
+        {
+          "module": "layer4.0.conv2",
+          "weight_shape": [
+            512,
+            512,
+            3,
+            3
+          ],
+          "stride": [
+            2,
+            2
+          ],
+          "padding": [
+            1,
+            1
+          ],
+          "part_weight_shapes": [
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ]
+          ]
+        },
+        {
+          "module": "layer4.1.conv2",
+          "weight_shape": [
+            512,
+            512,
+            3,
+            3
+          ],
+          "stride": [
+            1,
+            1
+          ],
+          "padding": [
+            1,
+            1
+          ],
+          "part_weight_shapes": [
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ]
+          ]
+        },
+        {
+          "module": "layer4.2.conv2",
+          "weight_shape": [
+            512,
+            512,
+            3,
+            3
+          ],
+          "stride": [
+            1,
+            1
+          ],
+          "padding": [
+            1,
+            1
+          ],
+          "part_weight_shapes": [
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ],
+            [
+              128,
+              512,
+              3,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    "state_sha256": "f4ffc8727491492e195b9c024f145293f422696cdbeed6d8c064016158753469"
+  },
+  "fp32_assert_close": {
+    "rtol": 0.0001,
+    "atol": 0.0001,
+    "passed": true
+  },
+  "comparisons": [
+    {
+      "batch": 1,
+      "fp32_folded_vs_split": {
+        "status": "measured",
+        "shape": [
+          1,
+          1000
+        ],
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "rmse": 0.0,
+        "cosine_mean": 1.0,
+        "cosine_min": 1.0,
+        "cosine_undefined_samples": 0,
+        "prediction_agreement": 1.0,
+        "acceptance": "not_defined; numerical metrics only, no ImageNet accuracy claim"
+      },
+      "bf16_folded_vs_split": {
+        "status": "measured",
+        "shape": [
+          1,
+          1000
+        ],
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "rmse": 0.0,
+        "cosine_mean": 0.9999999999999999,
+        "cosine_min": 0.9999999999999999,
+        "cosine_undefined_samples": 0,
+        "prediction_agreement": 1.0,
+        "acceptance": "not_defined; numerical metrics only, no ImageNet accuracy claim"
+      },
+      "bf16_original_vs_folded_split": {
+        "status": "measured",
+        "shape": [
+          1,
+          1000
+        ],
+        "max_abs_error": 0.06689453125,
+        "mean_abs_error": 0.010175323113799095,
+        "rmse": 0.013638717122375965,
+        "cosine_mean": 0.9999227254288366,
+        "cosine_min": 0.9999227254288366,
+        "cosine_undefined_samples": 0,
+        "prediction_agreement": 1.0,
+        "acceptance": "not_defined; numerical metrics only, no ImageNet accuracy claim"
+      }
+    },
+    {
+      "batch": 4,
+      "fp32_folded_vs_split": {
+        "status": "measured",
+        "shape": [
+          4,
+          1000
+        ],
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "rmse": 0.0,
+        "cosine_mean": 1.0,
+        "cosine_min": 1.0,
+        "cosine_undefined_samples": 0,
+        "prediction_agreement": 1.0,
+        "acceptance": "not_defined; numerical metrics only, no ImageNet accuracy claim"
+      },
+      "bf16_folded_vs_split": {
+        "status": "measured",
+        "shape": [
+          4,
+          1000
+        ],
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "rmse": 0.0,
+        "cosine_mean": 1.0,
+        "cosine_min": 0.9999999999999999,
+        "cosine_undefined_samples": 0,
+        "prediction_agreement": 1.0,
+        "acceptance": "not_defined; numerical metrics only, no ImageNet accuracy claim"
+      },
+      "bf16_original_vs_folded_split": {
+        "status": "measured",
+        "shape": [
+          4,
+          1000
+        ],
+        "max_abs_error": 0.1484375,
+        "mean_abs_error": 0.01360346656292677,
+        "rmse": 0.018968861550092697,
+        "cosine_mean": 0.9998260443724408,
+        "cosine_min": 0.9997620038446559,
+        "cosine_undefined_samples": 0,
+        "prediction_agreement": 1.0,
+        "acceptance": "not_defined; numerical metrics only, no ImageNet accuracy claim"
+      }
+    }
+  ]
+}

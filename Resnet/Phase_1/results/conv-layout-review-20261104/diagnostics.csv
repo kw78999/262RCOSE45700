@@ -1,0 +1,9 @@
+trial,case,mode,status,chunk_size,cpu_max_abs_error,tailcrop_error
+conv1-eager,conv1,eager,ok,,0.0009765625,False
+dma_only-eager,dma_only,eager,failed,,,True
+split128-compile,split_out,compile,ok,128,0.00048828125,False
+split128-eager,split_out,eager,ok,128,0.00048828125,False
+split_out-compile,split_out,compile,failed,256,,True
+split_out-eager,split_out,eager,failed,256,,True
+stride1-eager,stride1,eager,failed,,,True
+vision_hint-eager,vision_hint,eager,failed,,,True

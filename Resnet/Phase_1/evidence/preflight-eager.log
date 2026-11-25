@@ -1,0 +1,48 @@
+Downloading: "https://download.pytorch.org/models/resnet50-11ad3fa6.pth" to /root/.cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth
+INFO:furiosa_torch:Building exported program AtenOp(aten_op_name=aten::conv2d, args=((torch.Size([1, 3, 224, 224]), (150528, 50176, 224, 1), torch.bfloat16, ((1, 3, 224, 224), (150528, 50176, 224, 1), ((None, 1),))), (torch.Size([64, 3, 7, 7]), (147, 49, 7, 1), torch.bfloat16, ((64, 3, 7, 7), (147, 49, 7, 1), ((None, 1),))), None, 2, 2, 3, 3), traceable_kwargs=(), non_traceable_kwargs=())
+DEBUG:furiosa_torch:original gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%args_0, %args_1, None, [2, 2], [3, 3], [1, 1], False, [0, 0], 1), kwargs = {})
+    return (convolution,)
+preprocessed gm graph():
+    %args_0 : [num_users=1] = placeholder[target=args_0]
+    %args_1 : [num_users=1] = placeholder[target=args_1]
+    %convolution : [num_users=1] = call_function[target=torch.ops.aten.convolution.default](args = (%args_0, %args_1, None, [2, 2], [3, 3], [1, 1], False, [0, 0], 1), kwargs = {})
+    return (convolution,)
+source:
+    convolution          venv/lib/python3.12/site-packages/torchvision/models/resnet.py:285 return self._forward_impl(x)
+DEBUG:furiosa_torch:graph compiled successfully
+INFO:furiosa_torch:Loading to furiosa:0 for AtenOp(aten_op_name=aten::conv2d, args=((torch.Size([1, 3, 224, 224]), (150528, 50176, 224, 1), torch.bfloat16, ((1, 3, 224, 224), (150528, 50176, 224, 1), ((None, 1),))), (torch.Size([64, 3, 7, 7]), (147, 49, 7, 1), torch.bfloat16, ((64, 3, 7, 7), (147, 49, 7, 1), ((None, 1),))), None, 2, 2, 3, 3), traceable_kwargs=(), non_traceable_kwargs=())
+Traceback (most recent call last):
+  File "/root/Resnet/Phase_1/probe.py", line 42, in main
+    elapsed, output = measure_e2e(function, make_input(1), device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/Resnet/runtime.py", line 38, in measure_e2e
+    output = function(device_input)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torchvision/models/resnet.py", line 269, in _forward_impl
+    x = self.bn1(x)
+        ^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/modules/batchnorm.py", line 194, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "/root/venv/lib/python3.12/site-packages/torch/nn/functional.py", line 2846, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+RuntimeError: CPU fallback is disabled for aten::native_batch_norm

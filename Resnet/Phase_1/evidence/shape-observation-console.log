@@ -1,0 +1,2 @@
+eager: exit=0, timeout=False, log_lines=21
+compile: exit=0, timeout=False, log_lines=61

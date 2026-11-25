@@ -1,0 +1,14 @@
+{"step": "f4-eager-b1-rerun", "event": "start", "t": 1795595714, "kst": "17:35:14"}
+{"step": "f4-eager-b1-rerun", "event": "end", "t": 1795596178, "kst": "17:42:58", "rc": 0}
+{"step": "f2-eager-b16", "event": "start", "t": 1795596178, "kst": "17:42:58"}
+{"step": "f2-eager-b16", "event": "end", "t": 1795597310, "kst": "18:01:50", "rc": 0}
+{"step": "f1-eager-b64", "event": "start", "t": 1795597310, "kst": "18:01:50"}
+{"step": "f1-eager-b64", "event": "end", "t": 1795598386, "kst": "18:19:46", "rc": 0}
+{"step": "f1-compile-b64", "event": "start", "t": 1795598386, "kst": "18:19:46"}
+{"step": "f1-compile-b64", "event": "end", "t": 1795600366, "kst": "18:52:46", "rc": 0}
+{"step": "f2-b64-probe", "event": "start", "t": 1795600366, "kst": "18:52:46"}
+{"step": "f2-b64-probe", "event": "end", "t": 1795602121, "kst": "19:22:01", "rc": 0}
+{"step": "f2-b64-plan", "event": "done", "t": 1795602127, "kst": "19:22:07"}
+{"step": "f2-compile-eager-b64", "event": "start", "t": 1795602127, "kst": "19:22:07"}
+{"step": "f2-compile-eager-b64", "event": "end", "t": 1795605366, "kst": "20:16:06", "rc": 0}
+{"step": "all", "event": "done", "t": 1795605366, "kst": "20:16:06"}

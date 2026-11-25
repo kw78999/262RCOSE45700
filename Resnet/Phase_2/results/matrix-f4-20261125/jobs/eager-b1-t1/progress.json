@@ -1,0 +1,222 @@
+{
+  "status": "running",
+  "job": "eager-b1-t1",
+  "mode": "eager",
+  "batch": 1,
+  "trial": 1,
+  "cache_dir": "/root/Resnet/Phase_2/results/matrix-f4-20261125/caches/eager-b1-t1",
+  "smoke": false,
+  "config": {
+    "experiment": "phase2_fusion_matrix_f4",
+    "model": "resnet50",
+    "model_variant": "bn_folded_output_split128",
+    "weights": "IMAGENET1K_V2",
+    "precision": "bfloat16",
+    "bn_folded": true,
+    "output_split_channels": 128,
+    "expected_state_sha256": "f4ffc8727491492e195b9c024f145293f422696cdbeed6d8c064016158753469",
+    "device": "furiosa:1",
+    "seed": 2026,
+    "image_size": 224,
+    "cpu_threads": 1,
+    "warmup": 10,
+    "repeats": 50,
+    "aux_warmup": 5,
+    "aux_repeats": 50,
+    "core_batches": [
+      1,
+      16,
+      64
+    ],
+    "core_trials": 1,
+    "revalidation_batch": 1,
+    "revalidation_trials": 1,
+    "extension_batches": [],
+    "extension_trials": 1,
+    "timeout_s": 7200,
+    "max_total_s": 36000,
+    "num_fusion": 4,
+    "eager_batch_partition": {
+      "16": {
+        "chunk": 8,
+        "modules": [
+          "layer3.0.conv3",
+          "layer3.1.conv2",
+          "layer3.1.conv3",
+          "layer3.2.conv2",
+          "layer3.2.conv3",
+          "layer3.3.conv2",
+          "layer3.3.conv3",
+          "layer3.4.conv2",
+          "layer3.4.conv3",
+          "layer3.5.conv2",
+          "layer3.5.conv3",
+          "layer4.0.conv2.parts.0",
+          "layer4.0.conv2.parts.1",
+          "layer4.0.conv2.parts.2",
+          "layer4.0.conv2.parts.3"
+        ]
+      },
+      "64": {
+        "chunk": 8,
+        "modules": [
+          "avgpool",
+          "layer3.0",
+          "layer3.1",
+          "layer3.2",
+          "layer3.3",
+          "layer3.4",
+          "layer3.5",
+          "layer4.0",
+          "layer4.1",
+          "layer4.2",
+          "relu"
+        ]
+      }
+    },
+    "modes": [
+      "eager",
+      "compile"
+    ],
+    "exclusive_measurement": {
+      "lock": "/root/Resnet/.measure.lock",
+      "pause_log": "/root/Resnet/Phase_2/results/fusion-matrix-20261125/pauses.jsonl",
+      "results": "/root/Resnet/Phase_2/results"
+    }
+  },
+  "num_fusion": 4,
+  "fusion": "Fusion(num_fusion=4, num_pe_per_cluster=4, num_chips=1, num_clusters_per_chip=1)",
+  "physical_pes": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "cpu_fallback": false,
+  "device_configuration": "(Fusion(num_fusion=4, num_pe_per_cluster=4, num_chips=1, num_clusters_per_chip=1), Single, ['furiosa:0', 'furiosa:1'])",
+  "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+  "compile_options": "SDK defaults; torch.compile(model, backend=counter -> ft.backend)",
+  "torch_threads": 1,
+  "timing_scope": {
+    "forward_to_cpu": "input pre-staged on NPU; forward until output.to('cpu') returned",
+    "aux": "separate loop: H2D | forward+synchronize | D2H, each closed by synchronize"
+  },
+  "cache_state": "new_empty_project_cache_directory",
+  "stage": "aux_transfer",
+  "model_load_ms": 456.261399,
+  "weights": {
+    "model": "torchvision.models.resnet50",
+    "weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "checkpoint": "/root/Resnet/.cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth",
+    "sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+  },
+  "model_variant": "bn_folded_output_split128",
+  "state_sha256": "f4ffc8727491492e195b9c024f145293f422696cdbeed6d8c064016158753469",
+  "model_to_device_ms": 72.504085,
+  "input": {
+    "shape": [
+      1,
+      3,
+      224,
+      224
+    ],
+    "dtype": "torch.bfloat16",
+    "device": "furiosa:1",
+    "kind": "synthetic normal, Phase 1 seed rule"
+  },
+  "eager_cache_initial": {
+    "_build_exported_program_cached": {
+      "hits": 0,
+      "misses": 0,
+      "maxsize": 8192,
+      "currsize": 0
+    },
+    "_compile_cached": {
+      "hits": 0,
+      "misses": 0,
+      "maxsize": 8192,
+      "currsize": 0
+    },
+    "_compile_and_load_cached": {
+      "hits": 0,
+      "misses": 0,
+      "maxsize": 32,
+      "currsize": 0
+    }
+  },
+  "first_call_wall": [
+    1795595718.2698011,
+    1795596176.4136016
+  ],
+  "first_call_ms": 458143.73748,
+  "backend_calls_after_first": 0,
+  "eager_cache_after_first": {
+    "_build_exported_program_cached": {
+      "hits": 0,
+      "misses": 42,
+      "maxsize": 8192,
+      "currsize": 42
+    },
+    "_compile_cached": {
+      "hits": 0,
+      "misses": 42,
+      "maxsize": 8192,
+      "currsize": 42
+    },
+    "_compile_and_load_cached": {
+      "hits": 88,
+      "misses": 42,
+      "maxsize": 32,
+      "currsize": 32
+    }
+  },
+  "exclusive_measurement": {
+    "lock_wait_s": 4.5299530029296875e-05,
+    "other_timed_job_wait_s": 0.014108896255493164,
+    "paused_groups": {}
+  },
+  "eager_cache_after_warmup": {
+    "_build_exported_program_cached": {
+      "hits": 0,
+      "misses": 42,
+      "maxsize": 8192,
+      "currsize": 42
+    },
+    "_compile_cached": {
+      "hits": 420,
+      "misses": 42,
+      "maxsize": 8192,
+      "currsize": 42
+    },
+    "_compile_and_load_cached": {
+      "hits": 968,
+      "misses": 462,
+      "maxsize": 32,
+      "currsize": 32
+    }
+  },
+  "stream_idle_after_every_cpu_copy": true,
+  "eager_cache_after_repeat": {
+    "_build_exported_program_cached": {
+      "hits": 0,
+      "misses": 42,
+      "maxsize": 8192,
+      "currsize": 42
+    },
+    "_compile_cached": {
+      "hits": 2520,
+      "misses": 42,
+      "maxsize": 8192,
+      "currsize": 42
+    },
+    "_compile_and_load_cached": {
+      "hits": 5368,
+      "misses": 2562,
+      "maxsize": 32,
+      "currsize": 32
+    }
+  },
+  "backend_calls_after_repeat": 0,
+  "first_vs_last_output_max_abs_diff": 0.0
+}

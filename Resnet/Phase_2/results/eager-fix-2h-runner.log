@@ -1,0 +1,11 @@
+eager-b2-t1: start
+eager-b2-t1: ok (422.5s)
+eager-b16-t1: start
+eager-b16-t1: ok (858.7s)
+eager-b32-t1: start
+eager-b32-t1: ok (1313.3s)
+eager-b64-t1: start
+eager-b64-t1: ok (1292.2s)
+eager-b128-t1: start
+eager-b128-t1: ok (1272.9s)
+{"run_dir": "/root/Resnet/Phase_2/results/eager-fix-fusion4-pe4-7-2h-20261120", "status": "finished"}

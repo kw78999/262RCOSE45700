@@ -1,0 +1,6 @@
+eager-b1-t1: start
+eager-b1-t1: ok (1344.2s)
+compile-b1-t1: start
+compile-b1-t1: moved (10.5s)
+compile-b64-t1: start
+compile-b64-t1: start

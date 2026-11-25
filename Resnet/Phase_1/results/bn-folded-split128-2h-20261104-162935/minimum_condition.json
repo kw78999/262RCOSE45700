@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "basis": "Both full-model executions completed; same model state and configuration; finite expected output shape",
+  "eager_vs_compile": {
+    "status": "measured",
+    "shape": [
+      1,
+      1000
+    ],
+    "max_abs_error": 0.015625,
+    "mean_abs_error": 0.0012440071441233158,
+    "rmse": 0.0023630608338862658,
+    "cosine_mean": 0.9999964380209903,
+    "cosine_min": 0.9999964380209903,
+    "cosine_undefined_samples": 0,
+    "prediction_agreement": 1.0,
+    "acceptance": "not_defined; numerical metrics only, no ImageNet accuracy claim"
+  },
+  "numerical_acceptance": "No dataset accuracy threshold defined",
+  "cpu_reference": {
+    "eager": {
+      "status": "measured",
+      "shape": [
+        1,
+        1000
+      ],
+      "max_abs_error": 0.015625,
+      "mean_abs_error": 0.0012111549731343985,
+      "rmse": 0.0023100306279957294,
+      "cosine_mean": 0.9999966235767611,
+      "cosine_min": 0.9999966235767611,
+      "cosine_undefined_samples": 0,
+      "prediction_agreement": 1.0,
+      "acceptance": "not_defined; numerical metrics only, no ImageNet accuracy claim"
+    },
+    "compile": {
+      "status": "measured",
+      "shape": [
+        1,
+        1000
+      ],
+      "max_abs_error": 0.015625,
+      "mean_abs_error": 0.0011681061005219817,
+      "rmse": 0.002227997640147805,
+      "cosine_mean": 0.9999968716700597,
+      "cosine_min": 0.9999968716700597,
+      "cosine_undefined_samples": 0,
+      "prediction_agreement": 1.0,
+      "acceptance": "not_defined; numerical metrics only, no ImageNet accuracy claim"
+    }
+  }
+}

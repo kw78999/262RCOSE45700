@@ -1,0 +1,58 @@
+{
+  "mode": "eager",
+  "status": "failed",
+  "stage": "first_call",
+  "cpu_fallback": false,
+  "weights": {
+    "model": "torchvision.models.resnet50",
+    "weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "checkpoint": "/root/.cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth",
+    "sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+  },
+  "cache_before": {
+    "_build_exported_program_cached": {
+      "hits": 0,
+      "misses": 0,
+      "maxsize": 8192,
+      "currsize": 0
+    },
+    "_compile_cached": {
+      "hits": 0,
+      "misses": 0,
+      "maxsize": 8192,
+      "currsize": 0
+    },
+    "_compile_and_load_cached": {
+      "hits": 0,
+      "misses": 0,
+      "maxsize": 32,
+      "currsize": 0
+    }
+  },
+  "attempt_elapsed_s": 5.453117152908817,
+  "backend_calls": 0,
+  "cache_after": {
+    "_build_exported_program_cached": {
+      "hits": 0,
+      "misses": 1,
+      "maxsize": 8192,
+      "currsize": 1
+    },
+    "_compile_cached": {
+      "hits": 0,
+      "misses": 1,
+      "maxsize": 8192,
+      "currsize": 1
+    },
+    "_compile_and_load_cached": {
+      "hits": 0,
+      "misses": 1,
+      "maxsize": 32,
+      "currsize": 1
+    }
+  },
+  "error_type": "RuntimeError",
+  "error": "CPU fallback is disabled for aten::native_batch_norm",
+  "traceback": "Traceback (most recent call last):\n  File \"/root/Resnet/Phase_1/probe.py\", line 42, in main\n    elapsed, output = measure_e2e(function, make_input(1), device)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/Resnet/runtime.py\", line 38, in measure_e2e\n    output = function(device_input)\n             ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torchvision/models/resnet.py\", line 285, in forward\n    return self._forward_impl(x)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torchvision/models/resnet.py\", line 269, in _forward_impl\n    x = self.bn1(x)\n        ^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/modules/batchnorm.py\", line 194, in forward\n    return F.batch_norm(\n           ^^^^^^^^^^^^^\n  File \"/root/venv/lib/python3.12/site-packages/torch/nn/functional.py\", line 2846, in batch_norm\n    return torch.batch_norm(\n           ^^^^^^^^^^^^^^^^^\nRuntimeError: CPU fallback is disabled for aten::native_batch_norm\n"
+}

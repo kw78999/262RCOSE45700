@@ -1,0 +1,23 @@
+{
+  "status": "stopped_by_user",
+  "started_kst": "2026-11-04T16:29:35.123505+09:00",
+  "deadline_kst": "2026-11-04T18:29:35.123505+09:00",
+  "max_runtime_s": 7200,
+  "supervisor_pid": 59766,
+  "command": [
+    "/root/venv/bin/python",
+    "-u",
+    "-c",
+    "import importlib.util,sys,runpy;from pathlib import Path;p=Path.cwd();s=importlib.util.spec_from_file_location('Resnet',p/'__init__.py',submodule_search_locations=[str(p)]);m=importlib.util.module_from_spec(s);sys.modules['Resnet']=m;s.loader.exec_module(m);runpy.run_module('Resnet.Phase_1.run',run_name='__main__')",
+    "--config",
+    "/root/Resnet/Phase_1/config-bn-folded-split128-2h.json",
+    "--run-dir",
+    "/root/Resnet/Phase_1/results/bn-folded-split128-2h-20261104-162935",
+    "--profiles"
+  ],
+  "cleanup_reserve_s": 10,
+  "run_dir": "/root/Resnet/Phase_1/results/bn-folded-split128-2h-20261104-162935",
+  "runner_pid": 59767,
+  "finished_kst": "2026-11-04T17:17:28.810463+09:00",
+  "stop_reason": "배치 1 세부 모듈 계측으로 전환"
+}

@@ -1,0 +1,29 @@
+{
+  "status": "running",
+  "case": "vision_hint",
+  "mode": "eager",
+  "scope": "Isolated compiler diagnostic, not ResNet50 benchmark",
+  "cpu_fallback": false,
+  "sdk": "furiosa-torch 2026.4.0 (rev: 5800e2ba24, built_at: 2026-10-12T09:11:33Z)",
+  "module": "layer4.0.conv2",
+  "input_shape": [
+    1,
+    512,
+    14,
+    14
+  ],
+  "weight_shape": [
+    512,
+    512,
+    3,
+    3
+  ],
+  "stride": [
+    2,
+    2
+  ],
+  "logical_weight_bytes": 4718592,
+  "compiler_config_before": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+  "compiler_config_effective": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: ForVisionModel, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+  "stage": "first_call"
+}

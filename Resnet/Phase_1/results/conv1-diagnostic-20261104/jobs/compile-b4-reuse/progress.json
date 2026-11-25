@@ -1,0 +1,84 @@
+{
+  "status": "running",
+  "mode": "compile",
+  "target": "conv1",
+  "workload": "fixed",
+  "batch": 4,
+  "cache_intent": "disk_reuse_attempt",
+  "cache_dir": "/root/Resnet/Phase_1/results/conv1-diagnostic-20261104/caches/compile-b4",
+  "profile_enabled": false,
+  "config": {
+    "model": "resnet50",
+    "weights": "IMAGENET1K_V2",
+    "precision": "bfloat16",
+    "device": "furiosa:0",
+    "seed": 2026,
+    "image_size": 224,
+    "batches": [
+      1,
+      4,
+      8,
+      16
+    ],
+    "warmup": 3,
+    "iterations": 10,
+    "mixed_batches": [
+      1,
+      4,
+      1,
+      8,
+      4,
+      16,
+      1
+    ],
+    "timeout_s": 180,
+    "cpu_threads": 1
+  },
+  "cpu_fallback": false,
+  "compiler_config": "CompilerConfig { implicit_type_casting: true, implicit_type_casting_all_activation: false, allow_external_operators: false, enable_tactic_pruning: true, tactic_hint: Default, reshape_remover_ignores_slice_concat: true, max_num_unique_shapes: None, tactic_sorting_policy: Random, normalize_sine_cosine_operator_domain: true, cast_64bit_types: true, allow_out_of_place_scatter: true, progress_mode: Silence, padding_policy_small: None, local_population_threshold: None, tensor_unit_bridge_threshold_in_page: None, allow_reduce_by_ve_cluster_chip_reduce: None, allow_reduce_by_ve_cluster_chip_reduce_base_population: None, use_attention_kernel: false, expected_total_beam_states: None, scheduler_beam_search: None, use_dma_bridges_only: None, hierarchical_tactic_population: None, extra_config: {} }",
+  "compile_options": "SDK defaults; counting wrapper delegates unchanged to ft.backend",
+  "stage": "measure:forward:b4:cycle9:step0",
+  "model_load_ms": 282.542388,
+  "weights": {
+    "model": "torchvision.models.resnet50",
+    "weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "checkpoint": "/root/.cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth",
+    "sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+  },
+  "interpretation": "Original ResNet50 conv1 only; diagnostic, NOT full-model performance",
+  "model_to_device_ms": 22.928598,
+  "mode_wrapper_ms": 140.079523,
+  "shape_call_frequencies_per_cycle": {
+    "4": 1
+  },
+  "cache_files_before": {
+    "0637636582cadc69/input.ir_viewer.json": {
+      "size": 3274,
+      "mtime_ns": 1793760475025831965
+    },
+    "0637636582cadc69/compile_params.yaml": {
+      "size": 5061,
+      "mtime_ns": 1793760475024831968
+    },
+    "0637636582cadc69/key.bin": {
+      "size": 5408,
+      "mtime_ns": 1793760476950826628
+    },
+    "0637636582cadc69/output.bin": {
+      "size": 42776,
+      "mtime_ns": 1793760476950826628
+    },
+    "0637636582cadc69/input.fir": {
+      "size": 4720,
+      "mtime_ns": 1793760475025831965
+    }
+  },
+  "attempted_sample": {
+    "batch": 4,
+    "phase": "measure",
+    "scope": "forward",
+    "cycle": 9,
+    "step": 0
+  }
+}

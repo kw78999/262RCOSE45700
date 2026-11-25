@@ -1,0 +1,2 @@
+mode,batch,trials,first_call_median_s,first_call_min_s,first_call_max_s
+compile,64,1,1965.065486892,1965.065486892,1965.065486892
